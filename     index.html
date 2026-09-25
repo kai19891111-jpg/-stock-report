@@ -1,0 +1,1009 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>技術與基本面報告｜2026-09-25</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#08162B;--navy-2:#0C2240;--gold:#C9A96A;--gold-2:#E4C98A;--ivory:#F6F1E7;--paper:#FFFcf7;--ink:#1A2332;--line:#E7DFD0;--up:#B42318;--dn:#0F6E66;}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+section,[id]{scroll-margin-top:100px;}
+body{margin:0;background:#071221;color:var(--ivory);font-family:"Noto Sans TC","PingFang TC",sans-serif;}
+.page{max-width:1240px;margin:0 auto;padding:20px 14px 64px;}
+.kicker{color:var(--gold);letter-spacing:.22em;font-size:11px;margin:0 0 6px;}
+h1{font-family:Georgia,serif;font-size:30px;margin:0;color:#F3E6C8;}
+.meta-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin:14px 0;}
+.meta{background:rgba(255,255,255,.04);border:1px solid rgba(201,169,106,.25);padding:10px 12px;font-size:13px;}
+.meta b{display:block;color:var(--gold);font-size:11px;letter-spacing:.08em;}
+.warn{background:#3b1d12;border-left:3px solid #e07a5f;padding:10px 12px;margin:0 0 14px;color:#F6D6C8;}
+.legend{font-size:12px;color:#C5D0DE;margin:0 0 12px;line-height:1.7;}
+.nav{display:flex;gap:6px;flex-wrap:wrap;margin:0 0 14px;position:sticky;top:0;background:#071221ee;padding:8px 0;z-index:5;}
+.nav a{color:var(--gold-2);text-decoration:none;border:1px solid rgba(201,169,106,.3);padding:6px 10px;font-size:12px;white-space:nowrap;}
+.overview{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin:0 0 16px;}
+.ov{background:rgba(255,255,255,.04);border:1px solid rgba(201,169,106,.22);padding:10px;}
+.ov .k{font-size:11px;color:var(--gold);}
+.ov .v{font-size:16px;margin-top:4px;}
+.panel{background:var(--paper);color:var(--ink);margin:0 0 16px;box-shadow:0 12px 28px rgba(0,0,0,.2);}
+.panel-h{background:var(--navy-2);color:var(--gold-2);padding:11px 14px;display:flex;justify-content:space-between;align-items:center;}
+.panel-h h2{margin:0;font-size:14px;letter-spacing:.1em;}
+.table-wrap{overflow-x:auto;}
+table{width:100%;border-collapse:collapse;font-size:12.5px;}
+th{background:#F3EDE1;text-align:left;padding:8px;white-space:nowrap;}
+td{padding:8px;border-bottom:1px solid var(--line);vertical-align:top;}
+.num{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap;}
+.chg-up{color:var(--up);font-weight:700;} .chg-dn{color:var(--dn);font-weight:700;}
+.badge{display:inline-block;padding:2px 7px;border-radius:99px;font-size:11px;font-weight:700;}
+.b-bull{background:#FDECEC;color:#B42318;} .b-bear{background:#E7F5F2;color:#0F6E66;} .b-neu{background:#EEF1F4;color:#4B5563;}
+.cards{display:none;}
+.card{border-bottom:1px solid var(--line);padding:12px 14px;}
+.card .ttl{font-weight:700;}
+.card .px{font-size:22px;margin:4px 0;}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:6px;font-size:12px;color:#4B5563;}
+.tsmc-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;padding:12px;}
+.tsmc-grid div{background:#F7F1E6;padding:8px;}
+.tsmc-grid b{display:block;font-size:11px;color:#6B7280;}
+.guide pre{white-space:pre-wrap;font-family:inherit;font-size:12.5px;line-height:1.6;margin:0;padding:12px;color:#E8E0CC;}
+.guide{background:rgba(255,255,255,.04);border:1px solid rgba(201,169,106,.25);margin:0 0 16px;}
+.guide-h{display:flex;justify-content:space-between;padding:10px 12px;align-items:center;gap:8px;flex-wrap:wrap;}
+.btn{background:transparent;border:1px solid var(--gold);color:var(--gold-2);padding:6px 10px;}
+.note{color:#9AA8B8;font-size:12px;line-height:1.7;}
+.bar{height:6px;background:#EDE4D4;border-radius:99px;overflow:hidden;}
+.bar>i{display:block;height:100%;background:#C9A96A;}
+.radar{display:grid;grid-template-columns:1fr;gap:8px;margin:0 0 16px;}
+.radar .ov ul{margin:6px 0 0;padding-left:18px;font-size:13px;color:#E8E0CC;}
+.dgrid{display:grid;grid-template-columns:1fr 1fr;gap:12px;padding:12px;}
+.dcard{background:#F7F1E6;padding:12px;border:1px solid var(--line);}
+.dcard h3{margin:0 0 8px;font-size:16px;}
+.dcard .act{font-size:18px;font-weight:700;margin:0 0 8px;}
+.dcard .ck{font-size:12px;color:#4B5563;line-height:1.7;}
+.dcard .box{font-size:13px;margin-top:8px;padding-top:8px;border-top:1px solid #E7DFD0;color:#374151;}
+@media(max-width:800px){.dgrid{grid-template-columns:1fr;}}
+@media(max-width:800px){
+  .meta-grid,.overview,.tsmc-grid{grid-template-columns:1fr 1fr;}
+  h1{font-size:24px;}
+  .desktop-only{display:none;}
+  .cards{display:block;}
+  .nav{flex-wrap:nowrap;overflow-x:auto;-webkit-overflow-scrolling:touch;}
+}
+
+.trade-alert-panel{margin:14px 0 18px;background:#0C2240;border:1px solid rgba(201,169,106,.35);box-shadow:0 10px 25px rgba(0,0,0,.22);}
+.trade-alert-head{display:flex;justify-content:space-between;align-items:center;gap:10px;padding:12px 14px;border-bottom:1px solid rgba(201,169,106,.25);}
+.trade-alert-title{font-size:16px;font-weight:700;color:#E4C98A;}
+.trade-alert-copy{background:transparent;color:#E4C98A;border:1px solid #C9A96A;padding:6px 10px;cursor:pointer;border-radius:4px;font-size:12px;}
+.trade-alert-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:8px;padding:12px;}
+.trade-alert-box{background:#FFFcf7;color:#1A2332;padding:10px;min-height:110px;border-radius:4px;}
+.trade-alert-box h3{margin:0 0 8px;font-size:13px;}
+.trade-alert-item{padding:7px 0;border-bottom:1px solid #E7DFD0;font-size:12px;line-height:1.55;}
+.trade-alert-item:last-child{border-bottom:none;}
+.trade-alert-item b{display:block;font-size:13px;}
+.trade-empty{font-size:12px;color:#6B7280;}
+.trade-green{border-top:4px solid #16A34A;}
+.trade-yellow{border-top:4px solid #EAB308;}
+.trade-orange{border-top:4px solid #F97316;}
+.trade-blue{border-top:4px solid #2563EB;}
+.trade-red{border-top:4px solid #DC2626;}
+@media(max-width:900px){.trade-alert-grid{grid-template-columns:1fr;}}
+
+.cat-badges{display:flex;gap:6px;flex-wrap:wrap;margin:2px 0 8px;}
+.cat-badge{display:inline-block;padding:3px 8px;border-radius:20px;font-size:11px;font-weight:600;letter-spacing:.02em;}
+.cat-mkt{background:#EEF1F4;color:#374151;}
+.cat-sub{background:#FFF3D6;color:#8A5A00;font-weight:700;}
+.cat-tag{background:#E8F0FE;color:#1D4ED8;}
+.ai-cat-wrap{padding:12px;}
+.ai-cat-col{display:grid;grid-template-columns:1fr 1fr;gap:14px;}
+.ai-cat-block{padding:10px 12px;margin-bottom:8px;background:#F7F1E6;border-left:4px solid #C9A96A;}
+.ai-cat-block b{display:block;font-size:13px;color:#0C2240;}
+.ai-cat-block .names{margin-top:5px;font-size:13px;color:#374151;line-height:1.6;}
+.ai-cat-h{margin:0 0 10px;font-size:15px;color:#0C2240;}
+.trade-alert-item .sub{color:#6B7280;font-size:11px;font-weight:400;}
+@media(max-width:800px){.ai-cat-col{grid-template-columns:1fr;}}
+
+
+/* ===== 2026-09-25 watch / opportunity / radar upgrade ===== */
+.nav{flex-wrap:nowrap;overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:thin;}
+.nav a{flex:0 0 auto;}
+.session-bar{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:0 0 14px;}
+.session-box{background:rgba(255,255,255,.04);border:1px solid rgba(201,169,106,.25);padding:10px 12px;font-size:12px;line-height:1.65;color:#E8E0CC;}
+.session-box b{display:block;color:var(--gold-2);margin-bottom:4px;letter-spacing:.08em;font-size:11px;}
+.upgrade-note{font-size:12px;color:#C5D0DE;margin:0 0 12px;line-height:1.7;}
+.watch-theme{margin:0 0 14px;}
+.watch-theme-h{display:flex;justify-content:space-between;align-items:center;gap:8px;padding:10px 4px 8px;color:#F3E6C8;}
+.watch-theme-h h3{margin:0;font-size:15px;}
+.watch-theme-h small{color:#9AA8B8;}
+.watch-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;}
+.wcard{background:var(--paper);color:var(--ink);border-radius:6px;overflow:hidden;border:1px solid rgba(201,169,106,.28);box-shadow:0 8px 18px rgba(0,0,0,.16);}
+.wcard-h{padding:10px 12px 8px;display:flex;justify-content:space-between;gap:8px;align-items:flex-start;}
+.wcard-h .nm{font-weight:700;font-size:15px;}
+.wcard-h .sy{color:#6B7280;font-size:11px;font-weight:400;}
+.st{display:inline-block;padding:3px 8px;border-radius:99px;font-size:11px;font-weight:700;white-space:nowrap;}
+.st-g{background:#E8F8EE;color:#15803D;} .st-y{background:#FEF9C3;color:#A16207;}
+.st-b{background:#DBEAFE;color:#1D4ED8;} .st-o{background:#FFEDD5;color:#C2410C;}
+.st-r{background:#FEE2E2;color:#B91C1C;} .st-w{background:#F3F4F6;color:#6B7280;}
+.wcard.edge-g{border-top:4px solid #16A34A;} .wcard.edge-y{border-top:4px solid #EAB308;}
+.wcard.edge-b{border-top:4px solid #2563EB;} .wcard.edge-o{border-top:4px solid #F97316;}
+.wcard.edge-r{border-top:4px solid #DC2626;} .wcard.edge-w{border-top:4px solid #9CA3AF;}
+.wpx{padding:0 12px 8px;font-size:22px;font-weight:700;}
+.wmeta{padding:0 12px 10px;display:grid;grid-template-columns:1fr 1fr;gap:6px 10px;font-size:12px;color:#374151;}
+.wmeta b{display:block;color:#6B7280;font-size:10px;letter-spacing:.04em;font-weight:600;}
+.walert{padding:8px 12px 12px;border-top:1px solid var(--line);font-size:12px;color:#374151;line-height:1.65;}
+.walert .t{color:#8A5A00;font-weight:700;margin-bottom:4px;}
+.opp-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;padding:12px;}
+.opp-box{background:#F7F1E6;border:1px solid var(--line);padding:10px 12px;}
+.opp-box h3{margin:0 0 8px;font-size:13px;}
+.opp-item{padding:8px 0;border-bottom:1px solid #E7DFD0;font-size:12px;line-height:1.55;}
+.opp-item:last-child{border-bottom:none;}
+.opp-item b{display:block;font-size:13px;}
+.radar-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;padding:12px;}
+.radar-card{background:#F7F1E6;border:1px solid var(--line);padding:10px;}
+.radar-card h3{margin:0 0 6px;font-size:14px;}
+.radar-card .avg{font-size:16px;font-weight:700;margin-bottom:6px;}
+.radar-dots{display:flex;flex-wrap:wrap;gap:6px;font-size:11px;}
+.radar-dots span{background:#fff;border:1px solid #E7DFD0;padding:2px 6px;border-radius:99px;}
+.move-list{padding:8px 12px 12px;}
+.move-item{padding:10px 0;border-bottom:1px solid var(--line);font-size:13px;line-height:1.55;}
+.move-item:last-child{border-bottom:none;}
+.theme-sec .wcard{margin:0;}
+.fold{font-size:12px;color:#6B7280;}
+.missing-reason{color:#9A3412;}
+.copy-row{display:flex;gap:6px;flex-wrap:wrap;}
+.holiday-chip{display:inline-block;background:#3b1d12;color:#F6D6C8;border:1px solid #e07a5f;padding:2px 8px;border-radius:99px;font-size:11px;margin-left:6px;}
+@media(max-width:900px){
+  .watch-grid,.opp-grid,.radar-grid,.session-bar{grid-template-columns:1fr;}
+  .wpx{font-size:20px;}
+  .wmeta{grid-template-columns:1fr 1fr;}
+}
+
+</style>
+</head>
+<body>
+<main class="page">
+  <p class="kicker">DAILY MARKET BRIEFING · ASIA/TAIPEI</p>
+  <h1>技術面與基本面報告</h1>
+  <div class="meta-grid" id="summary">
+    <div class="meta"><b>報告日期</b>2026-09-25</div>
+    <div class="meta"><b>台股個股</b>2026-09-24</div>
+    <div class="meta"><b>加權指數</b>2026-09-24</div>
+    <div class="meta"><b>美股資料</b>2026-09-24</div>
+    <div class="meta"><b>美債資料</b>2026-09-24</div>
+    <div class="meta"><b>最後更新</b>2026-09-25 06:01</div>
+    <div class="meta"><b>資料品質</b>🟡 部分資料延遲／基本面缺失</div>
+  </div>
+  <p class="legend">資料狀態：台股個股／加權：09/24 正式收盤　｜　美股：09/24 正式收盤　｜　美債：09/24 正式收盤<br>今日 09/25 台股中秋休市，下個台股交易日 09/29（教師節 09/28 亦休市）。<br>
+  狀態燈只代表交易狀態，不代表漲跌。🟢 觀察進場　🟡 等待／條件不足　🔵 持有觀察　🟠 過熱／接近壓力／風報比偏低　🔴 結構轉弱／跌破失效價<br>
+  漲跌顏色：上漲紅　下跌綠。</p>
+  <nav class="nav">
+    <a href="#summary">市場總覽</a>
+    <a href="#watchlist">⭐ 我的關注股</a>
+    <a href="#trade-alert">🚦 今日交易提示</a>
+    <a href="#opportunity">🎯 今日機會</a>
+    <a href="#decision">交易決策卡</a>
+    <a href="#ai-category">AI分類</a>
+    <a href="#tsmc">台積電</a>
+    <a href="#tech-tw">台股權值</a>
+    <a href="#tech-ai">AI族群</a>
+    <a href="#tech-us">美股科技</a>
+    <a href="#theme-chip">AI晶片</a>
+    <a href="#theme-cooling">AI散熱</a>
+    <a href="#theme-glasses">AI眼鏡</a>
+    <a href="#theme-robot">AI機器人</a>
+    <a href="#theme-auto">AI自駕</a>
+    <a href="#theme-cloud">AI雲端</a>
+    <a href="#theme-memory">AI記憶體</a>
+    <a href="#theme-space">航太科技</a>
+    <a href="#theme-abf">ABF</a>
+    <a href="#theme-ccl">CCL</a>
+    <a href="#fund">基本面</a>
+    <a href="#guide">使用說明</a>
+  </nav>
+  <div class="warn">🗓️ 台股中秋連假：09/25（五）–09/28（一）休市，下個交易日 09/29。個股決策卡仍以 09/24 收盤為準，連假期間不重算進出場訊號。</div><div class="warn">過熱：聯發科、雙鴻、健策、超微、Meta</div><div class="warn">接近觀察區：輝達、SpaceX</div><div class="warn">新增關注：特斯拉（TSLA）、SpaceX（SPCX）。SPCX 技術參數為依公開日線估算，與原系統同框架但非同一套自動回測；09/24 另有解禁日風險。</div><div class="warn">加權已同步 09/24 收盤 48,024.60（-0.28%），創高後連假前回檔、仍守 48K。</div>
+  <h2 style="font-size:14px;letter-spacing:.12em;color:var(--gold-2)">今日市場重點</h2>
+  <div class="overview">
+    <div class='ov'><div class='k'>大盤</div><div class='v'>🟠 48,025 <span class='chg-dn'>-0.28%</span></div><div style='font-size:12px;color:#C5D0DE'>多頭　創高後回檔／連假休市</div></div><div class='ov'><div class='k'>台積電</div><div class='v'>🟠 2,475 <span class='chg-dn'>-1.00%</span></div><div style='font-size:12px;color:#C5D0DE'>多頭　接近觀察區</div></div><div class='ov'><div class='k'>費半</div><div class='v'>🟡 12,493 <span class='chg-dn'>-0.33%</span></div><div style='font-size:12px;color:#C5D0DE'>整理　等待</div></div><div class='ov'><div class='k'>那斯達克</div><div class='v'>🟢 26,939 <span class='chg-up'>+0.01%</span></div><div style='font-size:12px;color:#C5D0DE'>多頭　接近觀察區</div></div>
+    <div class='ov'><div class='k'>特斯拉</div><div class='v'>🟠 378 <span class='chg-dn'>-0.57%</span></div><div style='font-size:12px;color:#C5D0DE'>日多／週整理　不宜追價</div></div><div class='ov'><div class='k'>SpaceX</div><div class='v'>🟡 148.03 <span class='chg-dn'>-0.22%</span></div><div style='font-size:12px;color:#C5D0DE'>整理偏多　靠近月線／解禁日</div></div>
+    <div class='ov'><div class='k'>散熱族群</div><div class='v'><span class='chg-up'>平均漲跌 +5.87%</span></div><div style='font-size:12px;color:#C5D0DE'>偏多 1　過熱 2</div></div><div class='ov'><div class='k'>ABF族群</div><div class='v'><span class='chg-up'>平均漲跌 +3.61%</span></div><div style='font-size:12px;color:#C5D0DE'>偏多 1　過熱 0</div></div><div class='ov'><div class='k'>CCL族群</div><div class='v'><span class='chg-up'>平均漲跌 +5.29%</span></div><div style='font-size:12px;color:#C5D0DE'>偏多 0　過熱 0</div></div><div class='ov'><div class='k'>美債10年期</div><div class='v'>殖利率 5.18%</div><div style='font-size:12px;color:#C5D0DE'>單日變化約 +6 bp　美債：09/24 收盤（各源 5.12–5.21）</div></div>
+  </div>
+  <h2 style='font-size:14px;letter-spacing:.12em;color:var(--gold-2)'>今日交易雷達（未持有視角，與決策卡同一套結果）</h2><div class='overview'><div class='ov'><div class='k'>🟡 等待回檔（未持有）</div><div class='v' style='font-size:14px'>輝達、SpaceX</div></div><div class='ov'><div class='k'>🟠 不宜追價（未持有）</div><div class='v' style='font-size:14px'>台積電、聯發科、台達電、雙鴻、健策、奇鋐、景碩、欣興、南電、聯茂、台積電ADR、超微、微軟、Meta、美光、特斯拉</div></div><div class='ov'><div class='k'>🔴 暫停做多（未持有）</div><div class='v' style='font-size:14px'>台光電、博通</div></div></div>
+  <div class="session-bar" id="session-body"></div>
+  <p class="upgrade-note">本頁升級區塊全部讀取下方「交易決策卡」同一份結果。觀察進場 ≠ 買進指令。缺少資料顯示 N/A，不虛構價格。<span class="holiday-chip">台股連假 09/25–09/28　不重算訊號</span></p>
+
+  <section class="panel" id="watchlist">
+    <div class="panel-h">
+      <h2>⭐ 我的關注股</h2>
+      <span class="copy-row"><button class="btn" type="button" id="copyWatch">複製關注股</button></span>
+    </div>
+    <div id="watchlist-body" style="padding:8px 12px 12px"></div>
+  </section>
+
+  <section class="panel" id="opportunity">
+    <div class="panel-h">
+      <h2>🎯 今日機會</h2>
+      <span class="copy-row"><button class="btn" type="button" id="copyOpp">複製今日機會</button></span>
+    </div>
+    <div id="opportunity-body"></div>
+  </section>
+
+  <div id="trade-alert-slot"></div>
+
+  <section class="panel" id="radar">
+    <div class="panel-h">
+      <h2>📡 AI產業雷達</h2>
+      <span class="copy-row"><button class="btn" type="button" id="copyRadar">複製產業雷達</button></span>
+    </div>
+    <div id="radar-body"></div>
+  </section>
+
+  <section class="panel" id="movers">
+    <div class="panel-h"><h2>⚡ 今日異動</h2><small>漲跌／量能／RSI／結構　同一決策卡</small></div>
+    <div id="movers-body"></div>
+  </section>
+
+  <p class="upgrade-note" id="close-note"></p>
+
+  <section class='panel' id='decision'><div class='panel-h'><h2>交易決策卡</h2><small>進場觀察≠買進；以收盤為準</small></div><div class='dgrid'><div class='dcard'><h3>台積電 2330.TW</h3><div class='cat-badges'><span class='cat-badge cat-mkt'>🇹🇼 台股</span><span class='cat-badge cat-sub'>AI晶片</span></div><div class='act'>目前結論：趨勢仍多，但距離壓力太近／現價高於最高可接受進場價，現在不追。</div><div class='ck'><b>未持有</b> 🟠 不宜追價<br><b>已持有</b> 🟠 減碼觀察</div><div class='ck'>現價：2,475 <span class='chg-dn'>-1.00%</span><br>技術支撐區：2,417～2,448<br>有效進場區：2,417～2,448<br>最高可接受進場價：2,452<br>結構失效價：2,413（以收盤跌破為主）<br>第一壓力：2,510<br>第二壓力：2,552<br>距進場區：+1.1%　距第一壓力：1.4%<br>現價風報比：0.6：1｜偏低　偏低，不建議追價<br>進場區風報比：4.0：1｜較佳</div><div class='ck'><b>必要條件</b><br>☑ 收盤守住支撐／進場區<br>☑ 日線不是空頭<br>☑ 週線不是空頭<br>☑ 收盤位於 MA20 上方或重新站回<br>☑ 進場區風報比 ≥ 1.5<br><b>加分條件</b><br>☑ MACD 未轉弱<br>☐ 成交量 ≥ 1.5 倍均量<br>☑ RSI 未過熱（僅輔助）<br>☐ 距第一壓力仍有空間<br></div><div class='box'><b>進場觸發</b><br>價格回到 2,417～2,448 ＋ 收盤守住支撐 ＋ 進場區風報比 ≥ 1.5 → 轉為進場觀察。必要條件全過才是條件確認。<br><br><b>取消條件</b><br>收盤跌破 2,413.21 → 原本做多邏輯失效 → 取消做多觀察<br><br><b>持股管理</b><br>第一壓力＝第一次減碼觀察；站穩突破後看第二壓力；碰壓力無法突破則降低部位；收盤跌破結構失效價出場。</div><div class='ck'><b>技術確認</b><br>日線 多頭　週線 多頭<br>MA20 2,432　MA60 2,401<br>RSI 57 中性區　MACD 零軸上　量比 0.70</div></div><div class='dcard'><h3>聯發科 2454.TW</h3><div class='cat-badges'><span class='cat-badge cat-mkt'>🇹🇼 台股</span><span class='cat-badge cat-sub'>AI晶片</span></div><div class='act'>目前結論：趨勢仍多，但距離壓力太近／現價高於最高可接受進場價，現在不追。</div><div class='ck'><b>未持有</b> 🟠 不宜追價<br><b>已持有</b> 🟠 減碼觀察</div><div class='ck'>現價：5,285 <span class='chg-up'>+1.93%</span><br>技術支撐區：4,508～4,697<br>有效進場區：4,508～4,697<br>最高可接受進場價：4,883<br>結構失效價：4,484（以收盤跌破為主）<br>第一壓力：5,480<br>第二壓力：5,756<br>距進場區：+11.1%　距第一壓力：3.7%<br>現價風報比：0.2：1｜偏低　偏低，不建議追價<br>進場區風報比：7.4：1｜較佳</div><div class='ck'><b>必要條件</b><br>☑ 收盤守住支撐／進場區<br>☑ 日線不是空頭<br>☑ 週線不是空頭<br>☑ 收盤位於 MA20 上方或重新站回<br>☑ 進場區風報比 ≥ 1.5<br><b>加分條件</b><br>☑ MACD 未轉弱<br>☐ 成交量 ≥ 1.5 倍均量<br>☐ RSI 未過熱（僅輔助）<br>☑ 距第一壓力仍有空間<br></div><div class='box'><b>進場觸發</b><br>價格回到 4,508～4,697 ＋ 收盤守住支撐 ＋ 進場區風報比 ≥ 1.5 → 轉為進場觀察。必要條件全過才是條件確認。<br><br><b>取消條件</b><br>收盤跌破 4,484.39 → 原本做多邏輯失效 → 取消做多觀察<br><br><b>持股管理</b><br>第一壓力＝第一次減碼觀察；站穩突破後看第二壓力；碰壓力無法突破則降低部位；收盤跌破結構失效價出場。</div><div class='ck'><b>技術確認</b><br>日線 多頭　週線 多頭<br>MA20 4,602　MA60 4,076<br>RSI 74 過熱　MACD 零軸上　量比 0.93</div></div><div class='dcard'><h3>台達電 2308.TW</h3><div class='cat-badges'><span class='cat-badge cat-mkt'>🇹🇼 台股</span><span class='cat-badge cat-sub'>AI電源</span></div><div class='act'>目前結論：趨勢仍多，但距離壓力太近／現價高於最高可接受進場價，現在不追。</div><div class='ck'><b>未持有</b> 🟠 不宜追價<br><b>已持有</b> 🔵 續抱觀察</div><div class='ck'>現價：1,910 <span class='chg-up'>+0.53%</span><br>技術支撐區：1,772～1,789<br>有效進場區：1,772～1,789<br>最高可接受進場價：1,830<br>結構失效價：1,741（以收盤跌破為主）<br>第一壓力：1,965<br>第二壓力：2,071<br>距進場區：+6.3%　距第一壓力：2.9%<br>現價風報比：0.3：1｜偏低　偏低，不建議追價<br>進場區風報比：4.6：1｜較佳</div><div class='ck'><b>必要條件</b><br>☑ 收盤守住支撐／進場區<br>☑ 日線不是空頭<br>☑ 週線不是空頭<br>☑ 收盤位於 MA20 上方或重新站回<br>☑ 進場區風報比 ≥ 1.5<br><b>加分條件</b><br>☑ MACD 未轉弱<br>☐ 成交量 ≥ 1.5 倍均量<br>☑ RSI 未過熱（僅輔助）<br>☐ 距第一壓力仍有空間<br></div><div class='box'><b>進場觸發</b><br>價格回到 1,772～1,789 ＋ 收盤守住支撐 ＋ 進場區風報比 ≥ 1.5 → 轉為進場觀察。必要條件全過才是條件確認。<br><br><b>取消條件</b><br>收盤跌破 1,740.64 → 原本做多邏輯失效 → 取消做多觀察<br><br><b>持股管理</b><br>第一壓力＝第一次減碼觀察；站穩突破後看第二壓力；碰壓力無法突破則降低部位；收盤跌破結構失效價出場。</div><div class='ck'><b>技術確認</b><br>日線 整理　週線 整理<br>MA20 1,780　MA60 1,781<br>RSI 61 偏強　MACD 零軸上　量比 0.76</div></div><div class='dcard'><h3>雙鴻 3324.TWO</h3><div class='cat-badges'><span class='cat-badge cat-mkt'>🇹🇼 台股</span><span class='cat-badge cat-sub'>AI散熱</span></div><div class='act'>目前結論：趨勢仍多，但距離壓力太近／現價高於最高可接受進場價，現在不追。</div><div class='ck'><b>未持有</b> 🟠 不宜追價<br><b>已持有</b> 🟠 減碼觀察</div><div class='ck'>現價：1,710 <span class='chg-up'>+7.21%</span><br>技術支撐區：1,368～1,454<br>有效進場區：1,368～1,454<br>最高可接受進場價：1,584<br>結構失效價：1,357（以收盤跌破為主）<br>第一壓力：1,924<br>第二壓力：2,031<br>距進場區：+15.0%　距第一壓力：12.5%<br>現價風報比：0.6：1｜偏低　偏低，不建議追價<br>進場區風報比：9.6：1｜較佳</div><div class='ck'><b>必要條件</b><br>☑ 收盤守住支撐／進場區<br>☑ 日線不是空頭<br>☑ 週線不是空頭<br>☑ 收盤位於 MA20 上方或重新站回<br>☑ 進場區風報比 ≥ 1.5<br><b>加分條件</b><br>☑ MACD 未轉弱<br>☐ 成交量 ≥ 1.5 倍均量<br>☐ RSI 未過熱（僅輔助）<br>☑ 距第一壓力仍有空間<br></div><div class='box'><b>進場觸發</b><br>價格回到 1,368～1,454 ＋ 收盤守住支撐 ＋ 進場區風報比 ≥ 1.5 → 轉為進場觀察。必要條件全過才是條件確認。<br><br><b>取消條件</b><br>收盤跌破 1,357.18 → 原本做多邏輯失效 → 取消做多觀察<br><br><b>持股管理</b><br>第一壓力＝第一次減碼觀察；站穩突破後看第二壓力；碰壓力無法突破則降低部位；收盤跌破結構失效價出場。</div><div class='ck'><b>技術確認</b><br>日線 多頭　週線 多頭<br>MA20 1,411　MA60 1,110<br>RSI 73 過熱　MACD 零軸上　量比 1.43</div></div><div class='dcard'><h3>健策 3653.TW</h3><div class='cat-badges'><span class='cat-badge cat-mkt'>🇹🇼 台股</span><span class='cat-badge cat-sub'>AI散熱</span></div><div class='act'>目前結論：趨勢仍多，但距離壓力太近／現價高於最高可接受進場價，現在不追。</div><div class='ck'><b>未持有</b> 🟠 不宜追價<br><b>已持有</b> 🟠 減碼觀察</div><div class='ck'>現價：6,920 <span class='chg-up'>+7.96%</span><br>技術支撐區：5,631～5,933<br>有效進場區：5,631～5,933<br>最高可接受進場價：6,426<br>結構失效價：5,593（以收盤跌破為主）<br>第一壓力：7,675<br>第二壓力：8,052<br>距進場區：+14.3%　距第一壓力：10.9%<br>現價風報比：0.6：1｜偏低　偏低，不建議追價<br>進場區風報比：10.0：1｜較佳</div><div class='ck'><b>必要條件</b><br>☑ 收盤守住支撐／進場區<br>☑ 日線不是空頭<br>☑ 週線不是空頭<br>☑ 收盤位於 MA20 上方或重新站回<br>☑ 進場區風報比 ≥ 1.5<br><b>加分條件</b><br>☑ MACD 未轉弱<br>☑ 成交量 ≥ 1.5 倍均量<br>☐ RSI 未過熱（僅輔助）<br>☑ 距第一壓力仍有空間<br></div><div class='box'><b>進場觸發</b><br>價格回到 5,631～5,933 ＋ 收盤守住支撐 ＋ 進場區風報比 ≥ 1.5 → 轉為進場觀察。必要條件全過才是條件確認。<br><br><b>取消條件</b><br>收盤跌破 5,593.25 → 原本做多邏輯失效 → 取消做多觀察<br><br><b>持股管理</b><br>第一壓力＝第一次減碼觀察；站穩突破後看第二壓力；碰壓力無法突破則降低部位；收盤跌破結構失效價出場。</div><div class='ck'><b>技術確認</b><br>日線 多頭　週線 多頭<br>MA20 5,782　MA60 4,623<br>RSI 74 過熱　MACD 零軸上　量比 2.39</div></div><div class='dcard'><h3>奇鋐 3017.TW</h3><div class='cat-badges'><span class='cat-badge cat-mkt'>🇹🇼 台股</span><span class='cat-badge cat-sub'>AI散熱</span></div><div class='act'>目前結論：趨勢仍多，但距離壓力太近／現價高於最高可接受進場價，現在不追。</div><div class='ck'><b>未持有</b> 🟠 不宜追價<br><b>已持有</b> 🟠 減碼觀察</div><div class='ck'>現價：3,555 <span class='chg-up'>+2.45%</span><br>技術支撐區：3,301～3,433<br>有效進場區：3,301～3,409<br>最高可接受進場價：3,409<br>結構失效價：3,284（以收盤跌破為主）<br>第一壓力：3,595<br>第二壓力：3,884<br>距進場區：+4.1%　距第一壓力：1.1%<br>現價風報比：0.1：1｜偏低　偏低，不建議追價<br>進場區風報比：3.4：1｜較佳</div><div class='ck'><b>必要條件</b><br>☑ 收盤守住支撐／進場區<br>☑ 日線不是空頭<br>☑ 週線不是空頭<br>☑ 收盤位於 MA20 上方或重新站回<br>☑ 進場區風報比 ≥ 1.5<br><b>加分條件</b><br>☐ MACD 未轉弱<br>☐ 成交量 ≥ 1.5 倍均量<br>☑ RSI 未過熱（僅輔助）<br>☐ 距第一壓力仍有空間<br></div><div class='box'><b>進場觸發</b><br>價格回到 3,301～3,409 ＋ 收盤守住支撐 ＋ 進場區風報比 ≥ 1.5 → 轉為進場觀察。必要條件全過才是條件確認。<br><br><b>取消條件</b><br>收盤跌破 3,284.43 → 原本做多邏輯失效 → 取消做多觀察<br><br><b>持股管理</b><br>第一壓力＝第一次減碼觀察；站穩突破後看第二壓力；碰壓力無法突破則降低部位；收盤跌破結構失效價出場。</div><div class='ck'><b>技術確認</b><br>日線 多頭　週線 多頭<br>MA20 3,367　MA60 2,863<br>RSI 62 偏強　MACD 零軸下　量比 0.69</div></div><div class='dcard'><h3>景碩 3189.TW</h3><div class='cat-badges'><span class='cat-badge cat-mkt'>🇹🇼 台股</span><span class='cat-badge cat-sub'>ABF載板</span></div><div class='act'>目前結論：趨勢仍多，但距離壓力太近／現價高於最高可接受進場價，現在不追。</div><div class='ck'><b>未持有</b> 🟠 不宜追價<br><b>已持有</b> 🔵 續抱觀察</div><div class='ck'>現價：962.00 <span class='chg-up'>+6.18%</span><br>技術支撐區：819.71～856.39<br>有效進場區：819.71～856.39<br>最高可接受進場價：910.56<br>結構失效價：815.12（以收盤跌破為主）<br>第一壓力：1,054<br>第二壓力：1,100<br>距進場區：+11.0%　距第一壓力：9.5%<br>現價風報比：0.6：1｜偏低　偏低，不建議追價<br>進場區風報比：9.4：1｜較佳</div><div class='ck'><b>必要條件</b><br>☑ 收盤守住支撐／進場區<br>☑ 日線不是空頭<br>☑ 週線不是空頭<br>☑ 收盤位於 MA20 上方或重新站回<br>☑ 進場區風報比 ≥ 1.5<br><b>加分條件</b><br>☑ MACD 未轉弱<br>☑ 成交量 ≥ 1.5 倍均量<br>☑ RSI 未過熱（僅輔助）<br>☑ 距第一壓力仍有空間<br></div><div class='box'><b>進場觸發</b><br>價格回到 820～856 ＋ 收盤守住支撐 ＋ 進場區風報比 ≥ 1.5 → 轉為進場觀察。必要條件全過才是條件確認。<br><br><b>取消條件</b><br>收盤跌破 815.12 → 原本做多邏輯失效 → 取消做多觀察<br><br><b>持股管理</b><br>第一壓力＝第一次減碼觀察；站穩突破後看第二壓力；碰壓力無法突破則降低部位；收盤跌破結構失效價出場。</div><div class='ck'><b>技術確認</b><br>日線 多頭　週線 多頭<br>MA20 838.05　MA60 801.65<br>RSI 66 偏強　MACD 零軸上　量比 2.19</div></div><div class='dcard'><h3>欣興 3037.TW</h3><div class='cat-badges'><span class='cat-badge cat-mkt'>🇹🇼 台股</span><span class='cat-badge cat-sub'>ABF載板</span></div><div class='act'>目前結論：趨勢仍多，但距離壓力太近／現價高於最高可接受進場價，現在不追。</div><div class='ck'><b>未持有</b> 🟠 不宜追價<br><b>已持有</b> 🔵 續抱觀察</div><div class='ck'>現價：1,185 <span class='chg-up'>+2.16%</span><br>技術支撐區：980.36～1,023<br>有效進場區：980.36～1,023<br>最高可接受進場價：1,077<br>結構失效價：975.04（以收盤跌破為主）<br>第一壓力：1,230<br>第二壓力：1,291<br>距進場區：+13.7%　距第一壓力：3.8%<br>現價風報比：0.2：1｜偏低　偏低，不建議追價<br>進場區風報比：8.6：1｜較佳</div><div class='ck'><b>必要條件</b><br>☑ 收盤守住支撐／進場區<br>☑ 日線不是空頭<br>☑ 週線不是空頭<br>☑ 收盤位於 MA20 上方或重新站回<br>☑ 進場區風報比 ≥ 1.5<br><b>加分條件</b><br>☑ MACD 未轉弱<br>☐ 成交量 ≥ 1.5 倍均量<br>☑ RSI 未過熱（僅輔助）<br>☑ 距第一壓力仍有空間<br></div><div class='box'><b>進場觸發</b><br>價格回到 980～1,023 ＋ 收盤守住支撐 ＋ 進場區風報比 ≥ 1.5 → 轉為進場觀察。必要條件全過才是條件確認。<br><br><b>取消條件</b><br>收盤跌破 975.04 → 原本做多邏輯失效 → 取消做多觀察<br><br><b>持股管理</b><br>第一壓力＝第一次減碼觀察；站穩突破後看第二壓力；碰壓力無法突破則降低部位；收盤跌破結構失效價出場。</div><div class='ck'><b>技術確認</b><br>日線 多頭　週線 多頭<br>MA20 1,002　MA60 960.02<br>RSI 68 偏強　MACD 零軸上　量比 0.73</div></div><div class='dcard'><h3>南電 8046.TW</h3><div class='cat-badges'><span class='cat-badge cat-mkt'>🇹🇼 台股</span><span class='cat-badge cat-sub'>ABF載板</span></div><div class='act'>目前結論：趨勢仍多，但距離壓力太近／現價高於最高可接受進場價，現在不追。</div><div class='ck'><b>未持有</b> 🟠 不宜追價<br><b>已持有</b> 🔵 續抱觀察</div><div class='ck'>現價：1,240 <span class='chg-up'>+2.48%</span><br>技術支撐區：1,116～1,147<br>有效進場區：1,116～1,147<br>最高可接受進場價：1,198<br>結構失效價：1,106（以收盤跌破為主）<br>第一壓力：1,335<br>第二壓力：1,379<br>距進場區：+7.5%　距第一壓力：7.7%<br>現價風報比：0.7：1｜偏低　偏低，不建議追價<br>進場區風報比：7.9：1｜較佳</div><div class='ck'><b>必要條件</b><br>☑ 收盤守住支撐／進場區<br>☑ 日線不是空頭<br>☑ 週線不是空頭<br>☑ 收盤位於 MA20 上方或重新站回<br>☑ 進場區風報比 ≥ 1.5<br><b>加分條件</b><br>☑ MACD 未轉弱<br>☐ 成交量 ≥ 1.5 倍均量<br>☑ RSI 未過熱（僅輔助）<br>☑ 距第一壓力仍有空間<br></div><div class='box'><b>進場觸發</b><br>價格回到 1,116～1,147 ＋ 收盤守住支撐 ＋ 進場區風報比 ≥ 1.5 → 轉為進場觀察。必要條件全過才是條件確認。<br><br><b>取消條件</b><br>收盤跌破 1,105.86 → 原本做多邏輯失效 → 取消做多觀察<br><br><b>持股管理</b><br>第一壓力＝第一次減碼觀察；站穩突破後看第二壓力；碰壓力無法突破則降低部位；收盤跌破結構失效價出場。</div><div class='ck'><b>技術確認</b><br>日線 整理　週線 多頭<br>MA20 1,122　MA60 1,140<br>RSI 60 中性區　MACD 零軸上　量比 1.17</div></div><div class='dcard'><h3>聯茂 6213.TW</h3><div class='cat-badges'><span class='cat-badge cat-mkt'>🇹🇼 台股</span><span class='cat-badge cat-sub'>CCL</span></div><div class='act'>目前結論：趨勢仍多，但距離壓力太近／現價高於最高可接受進場價，現在不追。</div><div class='ck'><b>未持有</b> 🟠 不宜追價<br><b>已持有</b> 🟠 減碼觀察</div><div class='ck'>現價：595.00 <span class='chg-up'>+9.98%</span><br>技術支撐區：517.31～545.09<br>有效進場區：517.31～545.09<br>最高可接受進場價：547.91<br>結構失效價：513.84（以收盤跌破為主）<br>第一壓力：599.00<br>第二壓力：664.43<br>距進場區：+8.4%　距第一壓力：0.7%<br>現價風報比：0.0：1｜偏低　偏低，不建議追價<br>進場區風報比：3.9：1｜較佳</div><div class='ck'><b>必要條件</b><br>☑ 收盤守住支撐／進場區<br>☑ 日線不是空頭<br>☑ 週線不是空頭<br>☑ 收盤位於 MA20 上方或重新站回<br>☑ 進場區風報比 ≥ 1.5<br><b>加分條件</b><br>☑ MACD 未轉弱<br>☐ 成交量 ≥ 1.5 倍均量<br>☑ RSI 未過熱（僅輔助）<br>☐ 距第一壓力仍有空間<br></div><div class='box'><b>進場觸發</b><br>價格回到 517～545 ＋ 收盤守住支撐 ＋ 進場區風報比 ≥ 1.5 → 轉為進場觀察。必要條件全過才是條件確認。<br><br><b>取消條件</b><br>收盤跌破 513.84 → 原本做多邏輯失效 → 取消做多觀察<br><br><b>持股管理</b><br>第一壓力＝第一次減碼觀察；站穩突破後看第二壓力；碰壓力無法突破則降低部位；收盤跌破結構失效價出場。</div><div class='ck'><b>技術確認</b><br>日線 多頭　週線 多頭<br>MA20 531.20　MA60 438.44<br>RSI 67 偏強　MACD 零軸上　量比 0.94</div></div><div class='dcard'><h3>台光電 2383.TW</h3><div class='cat-badges'><span class='cat-badge cat-mkt'>🇹🇼 台股</span><span class='cat-badge cat-sub'>CCL</span></div><div class='act'>目前結論：結構轉弱，暫停做多。日線空頭不提供正常多頭進場價。</div><div class='ck'><b>未持有</b> 🔴 暫停做多觀察<br><b>已持有</b> 🔴 持股出場價資料不足，請勿自動產生停損價格</div><div class='ck'>現價：5,050 <span class='chg-up'>+0.60%</span><br>技術支撐區：N/A～<br>有效進場區：N/A（空頭不提供多頭進場價）<br>最高可接受進場價：N/A<br>結構失效價：N/A（以收盤跌破為主）<br>第一壓力：5,234<br>第二壓力：5,257<br>距進場區：N/A　距第一壓力：3.6%<br>現價風報比：N/A｜N/A<br>進場區風報比：N/A｜N/A</div><div class='ck'><b>必要條件</b><br>N/A<b>加分條件</b><br>N/A</div><div class='box'><b>進場觸發</b><br>需等待日線重新轉為多頭或整理偏多後，才重設進場區。<br><br><b>取消條件</b><br>取消條件：結構失效價資料不足<br><br><b>持股管理</b><br>空頭格局：未持有不做多；已持有若無可靠失效價，勿用系統自動停損。</div><div class='ck'><b>技術確認</b><br>日線 空頭　週線 整理<br>MA20 5,234　MA60 5,257<br>RSI 45 中性區　MACD 零軸下　量比 1.15</div></div><div class='dcard'><h3>台積電ADR TSM</h3><div class='cat-badges'><span class='cat-badge cat-mkt'>🇺🇸 美股</span><span class='cat-badge cat-sub'>AI晶片</span></div><div class='act'>目前結論：趨勢仍多，但距離壓力太近／現價高於最高可接受進場價，現在不追。</div><div class='ck'><b>未持有</b> 🟠 不宜追價<br><b>已持有</b> 🟠 減碼觀察</div><div class='ck'>現價：451.15 <span class='chg-up'>+1.03%</span><br>技術支撐區：424.75～433.29<br>有效進場區：424.75～433.29<br>最高可接受進場價：435.36<br>結構失效價：423.69（以收盤跌破為主）<br>第一壓力：452.88<br>第二壓力：472.50<br>距進場區：+4.0%　距第一壓力：0.4%<br>現價風報比：0.1：1｜偏低　偏低，不建議追價<br>進場區風報比：4.5：1｜較佳</div><div class='ck'><b>必要條件</b><br>☑ 收盤守住支撐／進場區<br>☑ 日線不是空頭<br>☑ 週線不是空頭<br>☑ 收盤位於 MA20 上方或重新站回<br>☑ 進場區風報比 ≥ 1.5<br><b>加分條件</b><br>☑ MACD 未轉弱<br>☐ 成交量 ≥ 1.5 倍均量<br>☑ RSI 未過熱（僅輔助）<br>☐ 距第一壓力仍有空間<br></div><div class='box'><b>進場觸發</b><br>價格回到 425～433 ＋ 收盤守住支撐 ＋ 進場區風報比 ≥ 1.5 → 轉為進場觀察。必要條件全過才是條件確認。<br><br><b>取消條件</b><br>收盤跌破 423.69 → 原本做多邏輯失效 → 取消做多觀察<br><br><b>持股管理</b><br>第一壓力＝第一次減碼觀察；站穩突破後看第二壓力；碰壓力無法突破則降低部位；收盤跌破結構失效價出場。</div><div class='ck'><b>技術確認</b><br>日線 多頭　週線 多頭<br>MA20 429.02　MA60 421.67<br>RSI 63 偏強　MACD 零軸上　量比 0.77</div></div><div class='dcard'><h3>輝達 NVDA</h3><div class='cat-badges'><span class='cat-badge cat-mkt'>🇺🇸 美股</span><span class='cat-badge cat-sub'>AI晶片</span></div><div class='act'>目前結論：靠近或進入進場區，但必要條件尚未齊，等待確認。</div><div class='ck'><b>未持有</b> 🟡 等待回檔<br><b>已持有</b> 🔵 續抱觀察</div><div class='ck'>現價：224.58 <span class='chg-dn'>-0.41%</span><br>技術支撐區：219.74～224.06<br>有效進場區：219.74～224.06<br>最高可接受進場價：225.42<br>結構失效價：219.20（以收盤跌破為主）<br>第一壓力：234.76<br>第二壓力：235.38<br>距進場區：+0.2%　距第一壓力：4.5%<br>現價風報比：1.9：1｜尚可<br>進場區風報比：4.8：1｜較佳</div><div class='ck'><b>必要條件</b><br>☑ 收盤守住支撐／進場區<br>☑ 日線不是空頭<br>☑ 週線不是空頭<br>☑ 收盤位於 MA20 上方或重新站回<br>☑ 進場區風報比 ≥ 1.5<br><b>加分條件</b><br>☑ MACD 未轉弱<br>☐ 成交量 ≥ 1.5 倍均量<br>☑ RSI 未過熱（僅輔助）<br>☑ 距第一壓力仍有空間<br></div><div class='box'><b>進場觸發</b><br>價格回到 220～224 ＋ 收盤守住支撐 ＋ 進場區風報比 ≥ 1.5 → 轉為進場觀察。必要條件全過才是條件確認。<br><br><b>取消條件</b><br>收盤跌破 219.20 → 原本做多邏輯失效 → 取消做多觀察<br><br><b>持股管理</b><br>第一壓力＝第一次減碼觀察；站穩突破後看第二壓力；碰壓力無法突破則降低部位；收盤跌破結構失效價出場。</div><div class='ck'><b>技術確認</b><br>日線 多頭　週線 多頭<br>MA20 221.90　MA60 213.53<br>RSI 55 中性區　MACD 零軸上　量比 0.58</div></div><div class='dcard'><h3>超微 AMD</h3><div class='cat-badges'><span class='cat-badge cat-mkt'>🇺🇸 美股</span><span class='cat-badge cat-sub'>AI晶片</span></div><div class='act'>目前結論：趨勢仍多，但距離壓力太近／現價高於最高可接受進場價，現在不追。</div><div class='ck'><b>未持有</b> 🟠 不宜追價<br><b>已持有</b> 🟠 減碼觀察</div><div class='ck'>現價：629.26 <span class='chg-up'>+2.38%</span><br>技術支撐區：509.66～531.15<br>有效進場區：509.66～531.15<br>最高可接受進場價：577.38<br>結構失效價：506.98（以收盤跌破為主）<br>第一壓力：682.98<br>第二壓力：709.84<br>距進場區：+15.6%　距第一壓力：8.5%<br>現價風報比：0.4：1｜偏低　偏低，不建議追價<br>進場區風報比：12.1：1｜較佳</div><div class='ck'><b>必要條件</b><br>☑ 收盤守住支撐／進場區<br>☑ 日線不是空頭<br>☑ 週線不是空頭<br>☑ 收盤位於 MA20 上方或重新站回<br>☑ 進場區風報比 ≥ 1.5<br><b>加分條件</b><br>☑ MACD 未轉弱<br>☐ 成交量 ≥ 1.5 倍均量<br>☐ RSI 未過熱（僅輔助）<br>☑ 距第一壓力仍有空間<br></div><div class='box'><b>進場觸發</b><br>價格回到 510～531 ＋ 收盤守住支撐 ＋ 進場區風報比 ≥ 1.5 → 轉為進場觀察。必要條件全過才是條件確認。<br><br><b>取消條件</b><br>收盤跌破 506.98 → 原本做多邏輯失效 → 取消做多觀察<br><br><b>持股管理</b><br>第一壓力＝第一次減碼觀察；站穩突破後看第二壓力；碰壓力無法突破則降低部位；收盤跌破結構失效價出場。</div><div class='ck'><b>技術確認</b><br>日線 多頭　週線 多頭<br>MA20 520.41　MA60 507.78<br>RSI 73 過熱　MACD 零軸上　量比 1.20</div></div><div class='dcard'><h3>博通 AVGO</h3><div class='cat-badges'><span class='cat-badge cat-mkt'>🇺🇸 美股</span><span class='cat-badge cat-sub'>AI晶片</span></div><div class='act'>目前結論：結構轉弱，暫停做多。日線空頭不提供正常多頭進場價。</div><div class='ck'><b>未持有</b> 🔴 暫停做多觀察<br><b>已持有</b> 🔴 持股出場價資料不足，請勿自動產生停損價格</div><div class='ck'>現價：350.36 <span class='chg-dn'>-1.30%</span><br>技術支撐區：N/A～<br>有效進場區：N/A（空頭不提供多頭進場價）<br>最高可接受進場價：N/A<br>結構失效價：N/A（以收盤跌破為主）<br>第一壓力：358.97<br>第二壓力：370.87<br>距進場區：N/A　距第一壓力：2.5%<br>現價風報比：N/A｜N/A<br>進場區風報比：N/A｜N/A</div><div class='ck'><b>必要條件</b><br>N/A<b>加分條件</b><br>N/A</div><div class='box'><b>進場觸發</b><br>需等待日線重新轉為多頭或整理偏多後，才重設進場區。<br><br><b>取消條件</b><br>取消條件：結構失效價資料不足<br><br><b>持股管理</b><br>空頭格局：未持有不做多；已持有若無可靠失效價，勿用系統自動停損。</div><div class='ck'><b>技術確認</b><br>日線 空頭　週線 整理<br>MA20 358.97　MA60 378.08<br>RSI 42 中性區　MACD 零軸上　量比 0.76</div></div><div class='dcard'><h3>微軟 MSFT</h3><div class='cat-badges'><span class='cat-badge cat-mkt'>🇺🇸 美股</span><span class='cat-badge cat-sub'>AI雲端</span></div><div class='act'>目前結論：趨勢仍多，但距離壓力太近／現價高於最高可接受進場價，現在不追。</div><div class='ck'><b>未持有</b> 🟠 不宜追價<br><b>已持有</b> 🟠 減碼觀察</div><div class='ck'>現價：497.93 <span class='chg-dn'>-0.53%</span><br>技術支撐區：484.98～500.50<br>有效進場區：484.98～488.34<br>最高可接受進場價：488.34<br>結構失效價：480.90（以收盤跌破為主）<br>第一壓力：499.49<br>第二壓力：517.78<br>距進場區：+1.9%　距第一壓力：0.3%<br>現價風報比：0.1：1｜偏低　偏低，不建議追價<br>進場區風報比：2.2：1｜較佳</div><div class='ck'><b>必要條件</b><br>☑ 收盤守住支撐／進場區<br>☑ 日線不是空頭<br>☑ 週線不是空頭<br>☐ 收盤位於 MA20 上方或重新站回<br>☑ 進場區風報比 ≥ 1.5<br><b>加分條件</b><br>☐ MACD 未轉弱<br>☐ 成交量 ≥ 1.5 倍均量<br>☑ RSI 未過熱（僅輔助）<br>☐ 距第一壓力仍有空間<br></div><div class='box'><b>進場觸發</b><br>價格回到 485～488 ＋ 收盤守住支撐 ＋ 進場區風報比 ≥ 1.5 → 轉為進場觀察。必要條件全過才是條件確認。<br><br><b>取消條件</b><br>收盤跌破 480.90 → 原本做多邏輯失效 → 取消做多觀察<br><br><b>持股管理</b><br>第一壓力＝第一次減碼觀察；站穩突破後看第二壓力；碰壓力無法突破則降低部位；收盤跌破結構失效價出場。</div><div class='ck'><b>技術確認</b><br>日線 整理　週線 整理<br>MA20 499.49　MA60 459.17<br>RSI 54 中性區　MACD 零軸下　量比 0.77</div></div><div class='dcard'><h3>Meta META</h3><div class='cat-badges'><span class='cat-badge cat-mkt'>🇺🇸 美股</span><span class='cat-badge cat-sub'>AI雲端</span></div><div class='act'>目前結論：趨勢仍多，但距離壓力太近／現價高於最高可接受進場價，現在不追。</div><div class='ck'><b>未持有</b> 🟠 不宜追價<br><b>已持有</b> 🟠 減碼觀察</div><div class='ck'>現價：777.59 <span class='chg-up'>+4.50%</span><br>技術支撐區：640.54～663.13<br>有效進場區：640.54～663.13<br>最高可接受進場價：716.25<br>結構失效價：637.71（以收盤跌破為主）<br>第一壓力：834.06<br>第二壓力：862.30<br>距進場區：+14.7%　距第一壓力：7.3%<br>現價風報比：0.4：1｜偏低　偏低，不建議追價<br>進場區風報比：12.9：1｜較佳</div><div class='ck'><b>必要條件</b><br>☑ 收盤守住支撐／進場區<br>☑ 日線不是空頭<br>☑ 週線不是空頭<br>☑ 收盤位於 MA20 上方或重新站回<br>☑ 進場區風報比 ≥ 1.5<br><b>加分條件</b><br>☑ MACD 未轉弱<br>☑ 成交量 ≥ 1.5 倍均量<br>☐ RSI 未過熱（僅輔助）<br>☑ 距第一壓力仍有空間<br></div><div class='box'><b>進場觸發</b><br>價格回到 641～663 ＋ 收盤守住支撐 ＋ 進場區風報比 ≥ 1.5 → 轉為進場觀察。必要條件全過才是條件確認。<br><br><b>取消條件</b><br>收盤跌破 637.71 → 原本做多邏輯失效 → 取消做多觀察<br><br><b>持股管理</b><br>第一壓力＝第一次減碼觀察；站穩突破後看第二壓力；碰壓力無法突破則降低部位；收盤跌破結構失效價出場。</div><div class='ck'><b>技術確認</b><br>日線 多頭　週線 整理<br>MA20 651.83　MA60 616.91<br>RSI 81 過熱　MACD 零軸上　量比 1.56</div></div><div class='dcard'><h3>美光 MU</h3><div class='cat-badges'><span class='cat-badge cat-mkt'>🇺🇸 美股</span><span class='cat-badge cat-sub'>AI記憶體</span></div><div class='act'>目前結論：趨勢仍多，但距離壓力太近／現價高於最高可接受進場價，現在不追。</div><div class='ck'><b>未持有</b> 🟠 不宜追價<br><b>已持有</b> 🔵 續抱觀察</div><div class='ck'>現價：1,081 <span class='chg-up'>+0.81%</span><br>技術支撐區：968.29～1,005<br>有效進場區：968.29～1,005<br>最高可接受進場價：1,020<br>結構失效價：963.66（以收盤跌破為主）<br>第一壓力：1,106<br>第二壓力：1,173<br>距進場區：+7.0%　距第一壓力：2.3%<br>現價風報比：0.2：1｜偏低　偏低，不建議追價<br>進場區風報比：5.1：1｜較佳</div><div class='ck'><b>必要條件</b><br>☑ 收盤守住支撐／進場區<br>☑ 日線不是空頭<br>☑ 週線不是空頭<br>☑ 收盤位於 MA20 上方或重新站回<br>☑ 進場區風報比 ≥ 1.5<br><b>加分條件</b><br>☑ MACD 未轉弱<br>☐ 成交量 ≥ 1.5 倍均量<br>☑ RSI 未過熱（僅輔助）<br>☐ 距第一壓力仍有空間<br></div><div class='box'><b>進場觸發</b><br>價格回到 968～1,005 ＋ 收盤守住支撐 ＋ 進場區風報比 ≥ 1.5 → 轉為進場觀察。必要條件全過才是條件確認。<br><br><b>取消條件</b><br>收盤跌破 963.66 → 原本做多邏輯失效 → 取消做多觀察<br><br><b>持股管理</b><br>第一壓力＝第一次減碼觀察；站穩突破後看第二壓力；碰壓力無法突破則降低部位；收盤跌破結構失效價出場。</div><div class='ck'><b>技術確認</b><br>日線 多頭　週線 多頭<br>MA20 986.80　MA60 942.11<br>RSI 63 偏強　MACD 零軸上　量比 0.87</div></div><div class='dcard'><h3>特斯拉 TSLA</h3><div class='cat-badges'><span class='cat-badge cat-mkt'>🇺🇸 美股</span><span class='cat-badge cat-sub'>AI自駕機器人</span></div><div class='act'>目前結論：日線仍多、站上月線，但現價高於最高可接受進場價、距第一壓力偏近，現在不追。週線仍在年線下，當整理偏多而非主升段。</div><div class='ck'><b>未持有</b> 🟠 不宜追價<br><b>已持有</b> 🔵 續抱觀察</div><div class='ck'>現價：377.94 <span class='chg-dn'>-0.57%</span><br>技術支撐區：360～365<br>有效進場區：360～365<br>最高可接受進場價：370<br>結構失效價：348（以收盤跌破為主）<br>第一壓力：387<br>第二壓力：406<br>距進場區：+3.5%　距第一壓力：2.4%<br>現價風報比：0.3：1｜偏低　偏低，不建議追價<br>進場區風報比：1.6：1｜尚可</div><div class='ck'><b>必要條件</b><br>☑ 收盤守住支撐／進場區<br>☑ 日線不是空頭<br>☑ 週線不是空頭<br>☑ 收盤位於 MA20 上方或重新站回<br>☑ 進場區風報比 ≥ 1.5<br><b>加分條件</b><br>☑ MACD 未轉弱<br>☐ 成交量 ≥ 1.5 倍均量<br>☑ RSI 未過熱（僅輔助）<br>☐ 距第一壓力仍有空間<br></div><div class='box'><b>進場觸發</b><br>價格回到 360～365 ＋ 收盤守住支撐 ＋ 進場區風報比 ≥ 1.5 → 轉為進場觀察。必要條件全過才是條件確認。<br><br><b>取消條件</b><br>收盤跌破 348 → 原本做多邏輯失效 → 取消做多觀察<br><br><b>持股管理</b><br>第一壓力＝第一次減碼觀察；站穩突破後看第二壓力；碰壓力無法突破則降低部位；收盤跌破結構失效價出場。<br><br><b>資料說明</b><br>MA20 364.82、MA50 348.63、RSI 59、MACD 零軸上。52週 297.38－498.83（約 40%）。量比約 0.66。技術區依公開日線估算，非原系統自動回測。</div><div class='ck'><b>技術確認</b><br>日線 多頭　週線 整理<br>MA20 365　MA60 349<br>RSI 59 中性區　MACD 零軸上　量比 0.66</div></div><div class='dcard'><h3>SpaceX SPCX</h3><div class='cat-badges'><span class='cat-badge cat-mkt'>🇺🇸 美股</span><span class='cat-badge cat-sub'>航太科技</span></div><div class='act'>目前結論：靠近月線／進場區，日線整理偏多，但 MACD 柱轉弱、量能不足，且 09/24 為解禁日，必要條件尚未齊，等待確認。</div><div class='ck'><b>未持有</b> 🟡 等待回檔<br><b>已持有</b> 🔵 續抱觀察</div><div class='ck'>現價：148.03 <span class='chg-dn'>-0.22%</span><br>技術支撐區：143.12～148.01<br>有效進場區：143～148<br>最高可接受進場價：149<br>結構失效價：142（以收盤跌破為主）<br>第一壓力：158<br>第二壓力：172<br>距進場區：+0.0%　距第一壓力：6.7%<br>現價風報比：1.7：1｜尚可<br>進場區風報比：2.0：1｜較佳</div><div class='ck'><b>必要條件</b><br>☑ 收盤守住支撐／進場區<br>☑ 日線不是空頭<br>☑ 週線不是空頭<br>☑ 收盤位於 MA20 上方或重新站回<br>☑ 進場區風報比 ≥ 1.5<br><b>加分條件</b><br>☐ MACD 未轉弱<br>☐ 成交量 ≥ 1.5 倍均量<br>☑ RSI 未過熱（僅輔助）<br>☑ 距第一壓力仍有空間<br></div><div class='box'><b>進場觸發</b><br>價格守住 143～148 ＋ 解禁賣壓消化 ＋ MACD 不再轉弱 ＋ 進場區風報比 ≥ 1.5 → 轉為進場觀察。必要條件全過才是條件確認。<br><br><b>取消條件</b><br>收盤跌破 142 → 原本做多邏輯失效 → 取消做多觀察<br><br><b>持股管理</b><br>第一壓力＝第一次減碼觀察；站穩突破後看第二壓力；碰壓力無法突破則降低部位；收盤跌破結構失效價出場。<br><br><b>資料說明</b><br>2026-06-12 上市，代碼 SPCX。MA20 148.01、MA50 135.57、MA200 143.12、RSI 52、MACD 柱微負。52週 104.83－225.64（約 36%）。市值約 1.95 兆美元。09/24 解禁日風險需單獨權重。技術區依公開日線估算，非原系統自動回測。</div><div class='ck'><b>技術確認</b><br>日線 整理　週線 多頭<br>MA20 148　MA60 136<br>RSI 52 中性區　MACD 零軸上轉弱　量比 0.77</div></div></div></div></section>
+
+  <section class="panel" id="ai-category">
+    <div class="panel-h"><h2>AI / 科技股分類</h2><small>台股 × 美股｜依 STOCK_META</small></div>
+    <div class="ai-cat-wrap">
+      <div class="ai-cat-col">
+        <div>
+          <h3 class="ai-cat-h">🇹🇼 台股 AI / 科技</h3>
+          <div class="ai-cat-block" id="ai-chip-tw"><b>AI晶片</b><div class="names">台積電、聯發科</div></div>
+          <div class="ai-cat-block" id="ai-power"><b>AI電源</b><div class="names">台達電</div></div>
+          <div class="ai-cat-block" id="ai-cooling"><b>AI散熱</b><div class="names">雙鴻、健策、奇鋐</div></div>
+          <div class="ai-cat-block" id="abf"><b>ABF載板</b><div class="names">景碩、欣興、南電</div></div>
+          <div class="ai-cat-block" id="ccl"><b>CCL</b><div class="names">台光電、聯茂</div></div>
+        </div>
+        <div>
+          <h3 class="ai-cat-h">🇺🇸 美股 AI / 科技</h3>
+          <div class="ai-cat-block" id="ai-chip"><b>AI晶片</b><div class="names">輝達 (NVDA)、超微 (AMD)、博通 (AVGO)、台積電ADR (TSM)</div></div>
+          <div class="ai-cat-block" id="ai-memory"><b>AI記憶體</b><div class="names">美光 (MU)</div></div>
+          <div class="ai-cat-block" id="ai-cloud"><b>AI雲端</b><div class="names">微軟 (MSFT)、Meta (META)</div></div>
+          <div class="ai-cat-block"><b>AI自駕機器人</b><div class="names">特斯拉 (TSLA)</div></div>
+          <div class="ai-cat-block"><b>航太科技</b><div class="names">SpaceX (SPCX)</div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class='panel' id='tsmc'><div class='panel-h'><h2>台積電 2330 核心觀察</h2><small>台股：09/24 正式收盤</small></div><div class='tsmc-grid'><div><b>目前價格</b>2,475</div><div><b>漲跌%</b>-1.00</div><div><b>日線趨勢</b>多頭</div><div><b>週線趨勢</b>多頭</div><div><b>MA5</b>2,475</div><div><b>MA20</b>2,432</div><div><b>MA60</b>2,401</div><div><b>RSI(14)</b>57 中性區</div><div><b>MACD 位置</b>零軸上</div><div><b>DIF</b>19.89</div><div><b>Signal</b>14.07</div><div><b>Histogram</b>5.82</div><div><b>量比</b>0.70</div><div><b>量能</b>未高於20日均量</div><div><b>第一支撐</b>2,432</div><div><b>第二支撐</b>2,401</div><div><b>第一壓力</b>2,510</div><div><b>第二壓力</b>2,552</div><div><b>距 MA20</b>+1.7%</div><div><b>距 MA60</b>+3.0%</div><div><b>距第一支撐</b>+1.7%</div><div><b>距第一壓力</b>+1.4%</div><div><b>52週位置</b>95%</div><div><b>風報比</b>0.6：1 偏低</div><div><b>位置狀態</b>接近壓力</div><div><b>操作觀察</b>🟠 不宜追價</div></div><div style='padding:0 14px 14px;color:#4B5563'>技術狀態：多頭。位置：接近壓力。操作觀察：🟠 不宜追價。非進出場指令。</div></section>
+  <section class='panel' id='sectors'><div class='panel-h'><h2>AI／科技族群統計</h2></div><div class='table-wrap'><table><thead><tr><th>族群</th><th class='num'>平均漲跌%</th><th class='num'>偏多</th><th class='num'>中性</th><th class='num'>偏空</th><th class='num'>過熱</th><th class='num'>突破</th></tr></thead><tbody><tr><td>AI晶片</td><td class='num chg-up'>+0.49</td><td class='num'>1</td><td class='num'>5</td><td class='num'>1</td><td class='num'>2</td><td class='num'>1</td></tr><tr><td>AI電源</td><td class='num chg-up'>+0.53</td><td class='num'>0</td><td class='num'>1</td><td class='num'>0</td><td class='num'>0</td><td class='num'>0</td></tr><tr><td>AI散熱</td><td class='num chg-up'>+5.87</td><td class='num'>1</td><td class='num'>2</td><td class='num'>0</td><td class='num'>2</td><td class='num'>2</td></tr><tr><td>ABF載板</td><td class='num chg-up'>+3.61</td><td class='num'>1</td><td class='num'>2</td><td class='num'>0</td><td class='num'>0</td><td class='num'>1</td></tr><tr><td>CCL</td><td class='num chg-up'>+5.29</td><td class='num'>0</td><td class='num'>1</td><td class='num'>1</td><td class='num'>0</td><td class='num'>0</td></tr><tr><td>AI雲端</td><td class='num chg-up'>+1.98</td><td class='num'>1</td><td class='num'>1</td><td class='num'>0</td><td class='num'>1</td><td class='num'>1</td></tr></tbody></table></div></section>
+  <section class='panel' id='tech-tw'><div class='panel-h'><h2>台股大盤與權值</h2><small>4 檔</small></div><div class='table-wrap desktop-only'><table><thead><tr><th>名稱</th><th class='num'>價格</th><th class='num'>漲跌%</th><th>趨勢</th><th class='num'>RSI</th><th class='num'>潛在進場區</th><th class='num'>第一壓力</th><th class='num'>結構失效價</th><th class='num'>風報比</th><th>目前動作</th><th>訊號</th></tr></thead><tbody><tr><td>加權指數<div style='color:#7B8491;font-size:11px'>^TWII　收盤價　09/24</div></td><td class='num'>48,025</td><td class='num chg-dn'>-0.28</td><td>日 多頭<br>週 多頭</td><td class='num'>65<div style='font-size:11px'>偏強</div></td><td class='num'>N/A～N/A<div style='font-size:11px'>N/A</div></td><td class='num'>49,579</td><td class='num'>N/A</td><td class='num'>N/A<div style='font-size:11px'>N/A</div></td><td><span class="badge b-neu">中性</span><div style='font-size:11px'>創高後回檔</div></td><td>連假前量縮守 48K</td></tr><tr><td>台積電<div style='color:#7B8491;font-size:11px'>2330.TW　收盤價　09/24</div></td><td class='num'>2,475</td><td class='num chg-dn'>-1.00</td><td>日 多頭<br>週 多頭</td><td class='num'>57<div style='font-size:11px'>中性區</div></td><td class='num'>2,417～2,448<div style='font-size:11px'>回檔至月線／支撐</div></td><td class='num'>2,510</td><td class='num'>2,413</td><td class='num'>0.6：1<div style='font-size:11px'>偏低</div></td><td>🟠 不宜追價<div style='font-size:11px'>🟠 不宜追價</div></td><td>N/A</td></tr><tr><td>聯發科<div style='color:#7B8491;font-size:11px'>2454.TW　收盤價　09/24</div></td><td class='num'>5,285</td><td class='num chg-up'>+1.93</td><td>日 多頭<br>週 多頭</td><td class='num'>74<div style='font-size:11px'>過熱</div></td><td class='num'>4,508～4,697<div style='font-size:11px'>回檔至月線／支撐</div></td><td class='num'>5,480</td><td class='num'>4,484</td><td class='num'>0.2：1<div style='font-size:11px'>偏低</div></td><td>🟠 不宜追價<div style='font-size:11px'>🟠 不宜追價</div></td><td>RSI過熱</td></tr><tr><td>台達電<div style='color:#7B8491;font-size:11px'>2308.TW　收盤價　09/24</div></td><td class='num'>1,910</td><td class='num chg-up'>+0.53</td><td>日 整理<br>週 整理</td><td class='num'>61<div style='font-size:11px'>偏強</div></td><td class='num'>1,772～1,789<div style='font-size:11px'>整理下緣</div></td><td class='num'>1,965</td><td class='num'>1,741</td><td class='num'>0.3：1<div style='font-size:11px'>偏低</div></td><td>🟠 不宜追價<div style='font-size:11px'>🟠 不宜追價</div></td><td>N/A</td></tr></tbody></table></div><div class='cards'><div class='card'><div class='ttl'>【加權指數 ^TWII】</div><div class='px chg-dn'>48,025 -0.28%</div><div class='grid2'><div>日線：多頭</div><div>週線：多頭</div><div>RSI：65 偏強</div><div><span class="badge b-neu">中性</span> 創高後回檔</div><div>潛在進場區：N/A～N/A</div><div>第一壓力：N/A</div><div>結構失效價：N/A</div><div>風報比：N/A N/A</div></div></div><div class='card'><div class='ttl'>【台積電 2330.TW】</div><div class='px chg-dn'>2,475 -1.00%</div><div class='grid2'><div>日線：多頭</div><div>週線：多頭</div><div>RSI：57 中性區</div><div><span class="badge b-neu">中性</span> 接近觀察區</div><div>潛在進場區：2,417～2,448</div><div>第一壓力：2,510</div><div>結構失效價：2,413</div><div>風報比：0.6：1 偏低</div></div></div><div class='card'><div class='ttl'>【聯發科 2454.TW】</div><div class='px chg-up'>5,285 +1.93%</div><div class='grid2'><div>日線：多頭</div><div>週線：多頭</div><div>RSI：74 過熱</div><div><span class="badge b-neu">中性</span> 過熱勿追</div><div>潛在進場區：4,508～4,697</div><div>第一壓力：5,480</div><div>結構失效價：4,484</div><div>風報比：0.2：1 偏低</div></div></div><div class='card'><div class='ttl'>【台達電 2308.TW】</div><div class='px chg-up'>1,910 +0.53%</div><div class='grid2'><div>日線：整理</div><div>週線：整理</div><div>RSI：61 偏強</div><div><span class="badge b-neu">中性</span> 等待</div><div>潛在進場區：1,772～1,789</div><div>第一壓力：1,965</div><div>結構失效價：1,741</div><div>風報比：0.3：1 偏低</div></div></div></div></section>
+  <section class='panel' id='tech-ai'><div class='panel-h'><h2>AI 次族群</h2><small>8 檔</small></div><div class='table-wrap desktop-only'><table><thead><tr><th>名稱</th><th class='num'>價格</th><th class='num'>漲跌%</th><th>趨勢</th><th class='num'>RSI</th><th class='num'>潛在進場區</th><th class='num'>第一壓力</th><th class='num'>結構失效價</th><th class='num'>風報比</th><th>目前動作</th><th>訊號</th></tr></thead><tbody><tr><td>雙鴻<div style='color:#7B8491;font-size:11px'>3324.TWO　收盤價　09/24</div></td><td class='num'>1,710</td><td class='num chg-up'>+7.21</td><td>日 多頭<br>週 多頭</td><td class='num'>73<div style='font-size:11px'>過熱</div></td><td class='num'>1,368～1,454<div style='font-size:11px'>回檔至月線／支撐</div></td><td class='num'>1,924</td><td class='num'>1,357</td><td class='num'>0.6：1<div style='font-size:11px'>偏低</div></td><td>🟠 不宜追價<div style='font-size:11px'>🟠 不宜追價</div></td><td>突破20日高｜量能不足｜待確認、RSI過熱</td></tr><tr><td>健策<div style='color:#7B8491;font-size:11px'>3653.TW　收盤價　09/24</div></td><td class='num'>6,920</td><td class='num chg-up'>+7.96</td><td>日 多頭<br>週 多頭</td><td class='num'>74<div style='font-size:11px'>過熱</div></td><td class='num'>5,631～5,933<div style='font-size:11px'>回檔至月線／支撐</div></td><td class='num'>7,675</td><td class='num'>5,593</td><td class='num'>0.6：1<div style='font-size:11px'>偏低</div></td><td>🟠 不宜追價<div style='font-size:11px'>🟠 不宜追價</div></td><td>放量突破20日高｜確認度較高、RSI過熱、MACD 金叉｜零軸上｜量能確認</td></tr><tr><td>奇鋐<div style='color:#7B8491;font-size:11px'>3017.TW　收盤價　09/24</div></td><td class='num'>3,555</td><td class='num chg-up'>+2.45</td><td>日 多頭<br>週 多頭</td><td class='num'>62<div style='font-size:11px'>偏強</div></td><td class='num'>3,301～3,409<div style='font-size:11px'>回檔至月線／支撐</div></td><td class='num'>3,595</td><td class='num'>3,284</td><td class='num'>0.1：1<div style='font-size:11px'>偏低</div></td><td>🟠 不宜追價<div style='font-size:11px'>🟠 不宜追價</div></td><td>N/A</td></tr><tr><td>景碩<div style='color:#7B8491;font-size:11px'>3189.TW　收盤價　09/24</div></td><td class='num'>962.00</td><td class='num chg-up'>+6.18</td><td>日 多頭<br>週 多頭</td><td class='num'>66<div style='font-size:11px'>偏強</div></td><td class='num'>819.71～856.39<div style='font-size:11px'>回檔至月線／支撐</div></td><td class='num'>1,054</td><td class='num'>815.12</td><td class='num'>0.6：1<div style='font-size:11px'>偏低</div></td><td>🟠 不宜追價<div style='font-size:11px'>🟠 不宜追價</div></td><td>放量突破20日高｜確認度較高</td></tr><tr><td>欣興<div style='color:#7B8491;font-size:11px'>3037.TW　收盤價　09/24</div></td><td class='num'>1,185</td><td class='num chg-up'>+2.16</td><td>日 多頭<br>週 多頭</td><td class='num'>68<div style='font-size:11px'>偏強</div></td><td class='num'>980.36～1,023<div style='font-size:11px'>回檔至月線／支撐</div></td><td class='num'>1,230</td><td class='num'>975.04</td><td class='num'>0.2：1<div style='font-size:11px'>偏低</div></td><td>🟠 不宜追價<div style='font-size:11px'>🟠 不宜追價</div></td><td>N/A</td></tr><tr><td>南電<div style='color:#7B8491;font-size:11px'>8046.TW　收盤價　09/24</div></td><td class='num'>1,240</td><td class='num chg-up'>+2.48</td><td>日 整理<br>週 多頭</td><td class='num'>60<div style='font-size:11px'>中性區</div></td><td class='num'>1,116～1,147<div style='font-size:11px'>整理下緣</div></td><td class='num'>1,335</td><td class='num'>1,106</td><td class='num'>0.7：1<div style='font-size:11px'>偏低</div></td><td>🟠 不宜追價<div style='font-size:11px'>🟠 不宜追價</div></td><td>N/A</td></tr><tr><td>聯茂<div style='color:#7B8491;font-size:11px'>6213.TW　收盤價　09/24</div></td><td class='num'>595.00</td><td class='num chg-up'>+9.98</td><td>日 多頭<br>週 多頭</td><td class='num'>67<div style='font-size:11px'>偏強</div></td><td class='num'>517.31～545.09<div style='font-size:11px'>回檔至月線／支撐</div></td><td class='num'>599.00</td><td class='num'>513.84</td><td class='num'>0.0：1<div style='font-size:11px'>偏低</div></td><td>🟠 不宜追價<div style='font-size:11px'>🟠 不宜追價</div></td><td>MACD 金叉｜確認不足</td></tr><tr><td>台光電<div style='color:#7B8491;font-size:11px'>2383.TW　收盤價　09/24</div></td><td class='num'>5,050</td><td class='num chg-up'>+0.60</td><td>日 空頭<br>週 整理</td><td class='num'>45<div style='font-size:11px'>中性區</div></td><td class='num'>N/A～N/A<div style='font-size:11px'>空頭結構，不提供多頭進場風報比</div></td><td class='num'>5,234</td><td class='num'>N/A</td><td class='num'>N/A<div style='font-size:11px'>N/A</div></td><td>🔴 暫停做多觀察<div style='font-size:11px'>暫停做多觀察</div></td><td>N/A</td></tr></tbody></table></div><div class='cards'><div class='card'><div class='ttl'>【雙鴻 3324.TWO】</div><div class='px chg-up'>1,710 +7.21%</div><div class='grid2'><div>日線：多頭</div><div>週線：多頭</div><div>RSI：73 過熱</div><div><span class="badge b-neu">中性</span> 過熱勿追</div><div>潛在進場區：1,368～1,454</div><div>第一壓力：1,924</div><div>結構失效價：1,357</div><div>風報比：0.6：1 偏低</div></div></div><div class='card'><div class='ttl'>【健策 3653.TW】</div><div class='px chg-up'>6,920 +7.96%</div><div class='grid2'><div>日線：多頭</div><div>週線：多頭</div><div>RSI：74 過熱</div><div><span class="badge b-bull">偏多</span> 過熱勿追</div><div>潛在進場區：5,631～5,933</div><div>第一壓力：7,675</div><div>結構失效價：5,593</div><div>風報比：0.6：1 偏低</div></div></div><div class='card'><div class='ttl'>【奇鋐 3017.TW】</div><div class='px chg-up'>3,555 +2.45%</div><div class='grid2'><div>日線：多頭</div><div>週線：多頭</div><div>RSI：62 偏強</div><div><span class="badge b-neu">中性</span> 等待回檔</div><div>潛在進場區：3,301～3,409</div><div>第一壓力：3,595</div><div>結構失效價：3,284</div><div>風報比：0.1：1 偏低</div></div></div><div class='card'><div class='ttl'>【景碩 3189.TW】</div><div class='px chg-up'>962.00 +6.18%</div><div class='grid2'><div>日線：多頭</div><div>週線：多頭</div><div>RSI：66 偏強</div><div><span class="badge b-bull">偏多</span> 接近觀察區</div><div>潛在進場區：819.71～856.39</div><div>第一壓力：1,054</div><div>結構失效價：815.12</div><div>風報比：0.6：1 偏低</div></div></div><div class='card'><div class='ttl'>【欣興 3037.TW】</div><div class='px chg-up'>1,185 +2.16%</div><div class='grid2'><div>日線：多頭</div><div>週線：多頭</div><div>RSI：68 偏強</div><div><span class="badge b-neu">中性</span> 等待回檔</div><div>潛在進場區：980.36～1,023</div><div>第一壓力：1,230</div><div>結構失效價：975.04</div><div>風報比：0.2：1 偏低</div></div></div><div class='card'><div class='ttl'>【南電 8046.TW】</div><div class='px chg-up'>1,240 +2.48%</div><div class='grid2'><div>日線：整理</div><div>週線：多頭</div><div>RSI：60 中性區</div><div><span class="badge b-neu">中性</span> 等待</div><div>潛在進場區：1,116～1,147</div><div>第一壓力：1,335</div><div>結構失效價：1,106</div><div>風報比：0.7：1 偏低</div></div></div><div class='card'><div class='ttl'>【聯茂 6213.TW】</div><div class='px chg-up'>595.00 +9.98%</div><div class='grid2'><div>日線：多頭</div><div>週線：多頭</div><div>RSI：67 偏強</div><div><span class="badge b-neu">中性</span> 等待回檔</div><div>潛在進場區：517.31～545.09</div><div>第一壓力：599.00</div><div>結構失效價：513.84</div><div>風報比：0.0：1 偏低</div></div></div><div class='card'><div class='ttl'>【台光電 2383.TW】</div><div class='px chg-up'>5,050 +0.60%</div><div class='grid2'><div>日線：空頭</div><div>週線：整理</div><div>RSI：45 中性區</div><div><span class="badge b-bear">偏空</span> 等待轉強</div><div>潛在進場區：N/A～N/A</div><div>第一壓力：N/A</div><div>結構失效價：N/A</div><div>風報比：N/A N/A</div></div></div></div></section>
+  <section class='panel' id='tech-us'><div class='panel-h'><h2>美股科技</h2><small>11 檔（含特斯拉、SpaceX）</small></div><div class='table-wrap desktop-only'><table><thead><tr><th>名稱</th><th class='num'>價格</th><th class='num'>漲跌%</th><th>趨勢</th><th class='num'>RSI</th><th class='num'>潛在進場區</th><th class='num'>第一壓力</th><th class='num'>結構失效價</th><th class='num'>風報比</th><th>目前動作</th><th>訊號</th></tr></thead><tbody><tr><td>那斯達克<div style='color:#7B8491;font-size:11px'>^IXIC　收盤價　09/24</div></td><td class='num'>26,939</td><td class='num chg-up'>+0.01</td><td>日 多頭<br>週 多頭</td><td class='num'>60<div style='font-size:11px'>偏強</div></td><td class='num'>N/A～N/A<div style='font-size:11px'>回檔至月線／支撐</div></td><td class='num'>27,217</td><td class='num'>26,236</td><td class='num'>N/A<div style='font-size:11px'>N/A</div></td><td><span class="badge b-neu">中性</span><div style='font-size:11px'>None</div></td><td>N/A</td></tr><tr><td>費城半導體<div style='color:#7B8491;font-size:11px'>^SOX　收盤價　09/24</div></td><td class='num'>12,493</td><td class='num chg-dn'>-0.33</td><td>日 整理<br>週 多頭</td><td class='num'>61<div style='font-size:11px'>偏強</div></td><td class='num'>N/A～N/A<div style='font-size:11px'>整理下緣</div></td><td class='num'>12,661</td><td class='num'>11,818</td><td class='num'>N/A<div style='font-size:11px'>N/A</div></td><td><span class="badge b-neu">中性</span><div style='font-size:11px'>None</div></td><td>N/A</td></tr><tr><td>台積電ADR<div style='color:#7B8491;font-size:11px'>TSM　收盤價　09/24</div></td><td class='num'>451.15</td><td class='num chg-up'>+1.03</td><td>日 多頭<br>週 多頭</td><td class='num'>63<div style='font-size:11px'>偏強</div></td><td class='num'>424.75～433.29<div style='font-size:11px'>回檔至月線／支撐</div></td><td class='num'>452.88</td><td class='num'>423.69</td><td class='num'>0.1：1<div style='font-size:11px'>偏低</div></td><td>🟠 不宜追價<div style='font-size:11px'>🟠 不宜追價</div></td><td>N/A</td></tr><tr><td>輝達<div style='color:#7B8491;font-size:11px'>NVDA　收盤價　09/24</div></td><td class='num'>224.58</td><td class='num chg-dn'>-0.41</td><td>日 多頭<br>週 多頭</td><td class='num'>55<div style='font-size:11px'>中性區</div></td><td class='num'>219.74～224.06<div style='font-size:11px'>回檔至月線／支撐</div></td><td class='num'>234.76</td><td class='num'>219.20</td><td class='num'>1.9：1<div style='font-size:11px'>尚可</div></td><td>🟡 等待回檔<div style='font-size:11px'>🟡 等待回檔</div></td><td>多頭回檔至月線附近</td></tr><tr><td>超微<div style='color:#7B8491;font-size:11px'>AMD　收盤價　09/24</div></td><td class='num'>629.26</td><td class='num chg-up'>+2.38</td><td>日 多頭<br>週 多頭</td><td class='num'>73<div style='font-size:11px'>過熱</div></td><td class='num'>509.66～531.15<div style='font-size:11px'>回檔至月線／支撐</div></td><td class='num'>682.98</td><td class='num'>506.98</td><td class='num'>0.4：1<div style='font-size:11px'>偏低</div></td><td>🟠 不宜追價<div style='font-size:11px'>🟠 不宜追價</div></td><td>突破20日高｜量能不足｜待確認、RSI過熱</td></tr><tr><td>博通<div style='color:#7B8491;font-size:11px'>AVGO　收盤價　09/24</div></td><td class='num'>350.36</td><td class='num chg-dn'>-1.30</td><td>日 空頭<br>週 整理</td><td class='num'>42<div style='font-size:11px'>中性區</div></td><td class='num'>N/A～N/A<div style='font-size:11px'>空頭結構，不提供多頭進場風報比</div></td><td class='num'>358.97</td><td class='num'>N/A</td><td class='num'>N/A<div style='font-size:11px'>N/A</div></td><td>🔴 暫停做多觀察<div style='font-size:11px'>暫停做多觀察</div></td><td>N/A</td></tr><tr><td>微軟<div style='color:#7B8491;font-size:11px'>MSFT　收盤價　09/24</div></td><td class='num'>497.93</td><td class='num chg-dn'>-0.53</td><td>日 整理<br>週 整理</td><td class='num'>54<div style='font-size:11px'>中性區</div></td><td class='num'>484.98～488.34<div style='font-size:11px'>整理下緣</div></td><td class='num'>499.49</td><td class='num'>480.90</td><td class='num'>0.1：1<div style='font-size:11px'>偏低</div></td><td>🟠 不宜追價<div style='font-size:11px'>🟠 不宜追價</div></td><td>多頭回檔至月線附近</td></tr><tr><td>Meta<div style='color:#7B8491;font-size:11px'>META　收盤價　09/24</div></td><td class='num'>777.59</td><td class='num chg-up'>+4.50</td><td>日 多頭<br>週 整理</td><td class='num'>81<div style='font-size:11px'>過熱</div></td><td class='num'>640.54～663.13<div style='font-size:11px'>回檔至月線／支撐</div></td><td class='num'>834.06</td><td class='num'>637.71</td><td class='num'>0.4：1<div style='font-size:11px'>偏低</div></td><td>🟠 不宜追價<div style='font-size:11px'>🟠 不宜追價</div></td><td>放量突破20日高｜確認度較高、RSI過熱</td></tr><tr><td>美光<div style='color:#7B8491;font-size:11px'>MU　收盤價　09/24</div></td><td class='num'>1,081</td><td class='num chg-up'>+0.81</td><td>日 多頭<br>週 多頭</td><td class='num'>63<div style='font-size:11px'>偏強</div></td><td class='num'>968.29～1,005<div style='font-size:11px'>回檔至月線／支撐</div></td><td class='num'>1,106</td><td class='num'>963.66</td><td class='num'>0.2：1<div style='font-size:11px'>偏低</div></td><td>🟠 不宜追價<div style='font-size:11px'>🟠 不宜追價</div></td><td>N/A</td></tr><tr><td>特斯拉<div style='color:#7B8491;font-size:11px'>TSLA　收盤價　09/24</div></td><td class='num'>377.94</td><td class='num chg-dn'>-0.57</td><td>日 多頭<br>週 整理</td><td class='num'>59<div style='font-size:11px'>中性區</div></td><td class='num'>360～365<div style='font-size:11px'>回檔至月線／支撐</div></td><td class='num'>387</td><td class='num'>348</td><td class='num'>0.3：1<div style='font-size:11px'>偏低</div></td><td>🟠 不宜追價<div style='font-size:11px'>🟠 不宜追價</div></td><td>站上月線｜低於年線｜量能不足</td></tr><tr><td>SpaceX<div style='color:#7B8491;font-size:11px'>SPCX　收盤價　09/24</div></td><td class='num'>148.03</td><td class='num chg-dn'>-0.22</td><td>日 整理<br>週 多頭</td><td class='num'>52<div style='font-size:11px'>中性區</div></td><td class='num'>143～148<div style='font-size:11px'>回檔至月線／年線</div></td><td class='num'>158</td><td class='num'>142</td><td class='num'>1.7：1<div style='font-size:11px'>尚可</div></td><td>🟡 等待回檔<div style='font-size:11px'>🟡 等待確認</div></td><td>貼月線｜MACD轉弱｜09/24解禁</td></tr></tbody></table></div><div class='cards'><div class='card'><div class='ttl'>【那斯達克 ^IXIC】</div><div class='px chg-up'>26,939 +0.01%</div><div class='grid2'><div>日線：多頭</div><div>週線：多頭</div><div>RSI：60 偏強</div><div><span class="badge b-neu">中性</span> 接近觀察區</div><div>潛在進場區：N/A～N/A</div><div>第一壓力：27,217</div><div>結構失效價：26,236</div><div>風報比：N/A N/A</div></div></div><div class='card'><div class='ttl'>【費城半導體 ^SOX】</div><div class='px chg-dn'>12,493 -0.33%</div><div class='grid2'><div>日線：整理</div><div>週線：多頭</div><div>RSI：61 偏強</div><div><span class="badge b-neu">中性</span> 等待</div><div>潛在進場區：N/A～N/A</div><div>第一壓力：12,661</div><div>結構失效價：11,818</div><div>風報比：N/A N/A</div></div></div><div class='card'><div class='ttl'>【台積電ADR TSM】</div><div class='px chg-up'>451.15 +1.03%</div><div class='grid2'><div>日線：多頭</div><div>週線：多頭</div><div>RSI：63 偏強</div><div><span class="badge b-neu">中性</span> 等待回檔</div><div>潛在進場區：424.75～433.29</div><div>第一壓力：452.88</div><div>結構失效價：423.69</div><div>風報比：0.1：1 偏低</div></div></div><div class='card'><div class='ttl'>【輝達 NVDA】</div><div class='px chg-dn'>224.58 -0.41%</div><div class='grid2'><div>日線：多頭</div><div>週線：多頭</div><div>RSI：55 中性區</div><div><span class="badge b-bull">偏多</span> 接近進場區</div><div>潛在進場區：219.74～224.06</div><div>第一壓力：234.76</div><div>結構失效價：219.20</div><div>風報比：1.9：1 尚可</div></div></div><div class='card'><div class='ttl'>【超微 AMD】</div><div class='px chg-up'>629.26 +2.38%</div><div class='grid2'><div>日線：多頭</div><div>週線：多頭</div><div>RSI：73 過熱</div><div><span class="badge b-neu">中性</span> 過熱勿追</div><div>潛在進場區：509.66～531.15</div><div>第一壓力：682.98</div><div>結構失效價：506.98</div><div>風報比：0.4：1 偏低</div></div></div><div class='card'><div class='ttl'>【博通 AVGO】</div><div class='px chg-dn'>350.36 -1.30%</div><div class='grid2'><div>日線：空頭</div><div>週線：整理</div><div>RSI：42 中性區</div><div><span class="badge b-bear">偏空</span> 等待轉強</div><div>潛在進場區：N/A～N/A</div><div>第一壓力：N/A</div><div>結構失效價：N/A</div><div>風報比：N/A N/A</div></div></div><div class='card'><div class='ttl'>【微軟 MSFT】</div><div class='px chg-dn'>497.93 -0.53%</div><div class='grid2'><div>日線：整理</div><div>週線：整理</div><div>RSI：54 中性區</div><div><span class="badge b-neu">中性</span> 等待</div><div>潛在進場區：484.98～488.34</div><div>第一壓力：499.49</div><div>結構失效價：480.90</div><div>風報比：0.1：1 偏低</div></div></div><div class='card'><div class='ttl'>【Meta META】</div><div class='px chg-up'>777.59 +4.50%</div><div class='grid2'><div>日線：多頭</div><div>週線：整理</div><div>RSI：81 過熱</div><div><span class="badge b-bull">偏多</span> 過熱勿追</div><div>潛在進場區：640.54～663.13</div><div>第一壓力：834.06</div><div>結構失效價：637.71</div><div>風報比：0.4：1 偏低</div></div></div><div class='card'><div class='ttl'>【美光 MU】</div><div class='px chg-up'>1,081 +0.81%</div><div class='grid2'><div>日線：多頭</div><div>週線：多頭</div><div>RSI：63 偏強</div><div><span class="badge b-neu">中性</span> 等待回檔</div><div>潛在進場區：968.29～1,005</div><div>第一壓力：1,106</div><div>結構失效價：963.66</div><div>風報比：0.2：1 偏低</div></div></div></div><div class='card'><div class='ttl'>【特斯拉 TSLA】</div><div class='px chg-dn'>377.94 -0.57%</div><div class='grid2'><div>日線：多頭</div><div>週線：整理</div><div>RSI：59 中性區</div><div><span class="badge b-neu">中性</span> 不宜追價</div><div>潛在進場區：360～365</div><div>第一壓力：387</div><div>結構失效價：348</div><div>風報比：0.3：1 偏低</div></div></div><div class='card'><div class='ttl'>【SpaceX SPCX】</div><div class='px chg-dn'>148.03 -0.22%</div><div class='grid2'><div>日線：整理</div><div>週線：多頭</div><div>RSI：52 中性區</div><div><span class="badge b-bull">偏多</span> 接近進場區</div><div>潛在進場區：143～148</div><div>第一壓力：158</div><div>結構失效價：142</div><div>風報比：1.7：1 尚可</div></div></div></div></section>
+  <section class='panel' id='idx'><div class='panel-h'><h2>市場指數位置</h2></div><div class='table-wrap'><table><thead><tr><th>指數</th><th class='num'>價格</th><th class='num'>漲跌%</th><th>趨勢</th><th class='num'>RSI</th><th class='num'>MA20</th><th class='num'>MA60</th><th>52週位置</th></tr></thead><tbody><tr><td>加權指數<div style='font-size:11px;color:#6B7280'>2026-09-24 </div></td><td class='num'>48,025</td><td class='num chg-dn'>-0.28</td><td>日 多頭<br>週 多頭</td><td class='num'>65</td><td class='num'>46,555</td><td class='num'>45,277</td><td><div class='bar'><i style='width:99%'></i></div><div style='font-size:11px;color:#6B7280'>99%　24,650－48,342　仍近高檔</div></td></tr><tr><td>那斯達克<div style='font-size:11px;color:#6B7280'>2026-09-24 </div></td><td class='num'>26,939</td><td class='num chg-up'>+0.01</td><td>日 多頭<br>週 多頭</td><td class='num'>60</td><td class='num'>26,401</td><td class='num'>26,111</td><td><div class='bar'><i style='width:96%'></i></div><div style='font-size:11px;color:#6B7280'>96%　20,690－27,217</div></td></tr><tr><td>費城半導體<div style='font-size:11px;color:#6B7280'>2026-09-24 </div></td><td class='num'>12,493</td><td class='num chg-dn'>-0.33</td><td>日 整理<br>週 多頭</td><td class='num'>61</td><td class='num'>11,700</td><td class='num'>11,992</td><td><div class='bar'><i style='width:75%'></i></div><div style='font-size:11px;color:#6B7280'>75%　6,125－14,655</div></td></tr></tbody></table></div></section>
+  <section class="panel theme-sec" id="theme-glasses">
+    <div class="panel-h"><h2>🥽 AI眼鏡</h2><small>Meta／NVDA／聯發科　同一檔可跨主題</small></div>
+    <div id="theme-glasses-body" style="padding:12px"></div>
+  </section>
+  <section class="panel theme-sec" id="theme-robot">
+    <div class="panel-h"><h2>🤖 AI機器人</h2><small>TSLA／NVDA／台達電／雙鴻／健策</small></div>
+    <div id="theme-robot-body" style="padding:12px"></div>
+  </section>
+  <section class="panel theme-sec" id="theme-auto">
+    <div class="panel-h"><h2>🚗 AI自駕</h2><small>目前：特斯拉</small></div>
+    <div id="theme-auto-body" style="padding:12px"></div>
+  </section>
+  <section class="panel theme-sec" id="theme-space">
+    <div class="panel-h"><h2>🚀 航太科技</h2><small>目前：SpaceX</small></div>
+    <div id="theme-space-body" style="padding:12px"></div>
+  </section>
+  <section class="panel theme-sec" id="theme-chip">
+    <div class="panel-h"><h2>🧠 AI晶片</h2><small>台積電／聯發科／TSM／NVDA／AMD／AVGO</small></div>
+    <div id="theme-chip-body" style="padding:12px"></div>
+  </section>
+  <section class="panel theme-sec" id="theme-cooling">
+    <div class="panel-h"><h2>❄️ AI散熱</h2><small>雙鴻／健策／奇鋐</small></div>
+    <div id="theme-cooling-body" style="padding:12px"></div>
+  </section>
+  <section class="panel theme-sec" id="theme-cloud">
+    <div class="panel-h"><h2>☁️ AI雲端</h2><small>微軟／Meta</small></div>
+    <div id="theme-cloud-body" style="padding:12px"></div>
+  </section>
+  <section class="panel theme-sec" id="theme-memory">
+    <div class="panel-h"><h2>💾 AI記憶體</h2><small>美光</small></div>
+    <div id="theme-memory-body" style="padding:12px"></div>
+  </section>
+  <section class="panel theme-sec" id="theme-abf">
+    <div class="panel-h"><h2>🧩 ABF載板</h2><small>景碩／欣興／南電</small></div>
+    <div id="theme-abf-body" style="padding:12px"></div>
+  </section>
+  <section class="panel theme-sec" id="theme-ccl">
+    <div class="panel-h"><h2>🔌 CCL</h2><small>聯茂／台光電</small></div>
+    <div id="theme-ccl-body" style="padding:12px"></div>
+  </section>
+  <section class='panel' id='fund'><div class='panel-h'><h2>基本面速覽</h2></div><div style='padding:8px 14px;font-size:12px;color:#4B5563'>⚠️ 基本面資料完整度不足時，本日交易判斷主要依技術面，基本面僅供參考。<br>個股基本面資料完整度　🟡 部分缺失　56%　PE：10 / 18　Forward PE：0 / 18　EPS：0 / 18　營收 YoY：0 / 18　EPS YoY：0 / 18</div><div class='table-wrap'><table><thead><tr><th>股票</th><th class='num'>PE</th><th class='num'>Forward PE</th><th class='num'>EPS</th><th class='num'>營收YoY</th><th class='num'>EPS YoY</th><th class='num'>殖利率</th><th>52週位置</th></tr></thead><tbody><tr><td>台積電<div style='font-size:11px;color:#6B7280'>2330.TW</div></td><td class='num'>28.98</td><td class='num'>N/A</td><td class='num'>N/A</td><td class='num'>N/A</td><td class='num'>N/A</td><td class='num'>0.88%</td><td><div class='bar'><i style='width:95%'></i></div><div style='font-size:11px;color:#6B7280'>95%　1,250－2,535</div></td></tr><tr><td>聯發科<div style='font-size:11px;color:#6B7280'>2454.TW</div></td><td class='num'>85.63</td><td class='num'>N/A</td><td class='num'>N/A</td><td class='num'>N/A</td><td class='num'>N/A</td><td class='num'>1.03%</td><td><div class='bar'><i style='width:96%'></i></div><div style='font-size:11px;color:#6B7280'>96%　1,130－5,480</div></td></tr><tr><td>台達電<div style='font-size:11px;color:#6B7280'>2308.TW</div></td><td class='num'>60.47</td><td class='num'>N/A</td><td class='num'>N/A</td><td class='num'>N/A</td><td class='num'>N/A</td><td class='num'>0.61%</td><td><div class='bar'><i style='width:62%'></i></div><div style='font-size:11px;color:#6B7280'>62%　821.00－2,585</div></td></tr><tr><td>雙鴻<div style='font-size:11px;color:#6B7280'>3324.TWO</div></td><td class='num'>N/A</td><td class='num'>N/A</td><td class='num'>N/A</td><td class='num'>N/A</td><td class='num'>N/A</td><td class='num'>N/A</td><td><div class='bar'><i style='width:96%'></i></div><div style='font-size:11px;color:#6B7280'>96%　772.00－1,750</div></td></tr><tr><td>健策<div style='font-size:11px;color:#6B7280'>3653.TW</div></td><td class='num'>144.66</td><td class='num'>N/A</td><td class='num'>N/A</td><td class='num'>N/A</td><td class='num'>N/A</td><td class='num'>0.34%</td><td><div class='bar'><i style='width:100%'></i></div><div style='font-size:11px;color:#6B7280'>100%　1,940－6,920</div></td></tr><tr><td>奇鋐<div style='font-size:11px;color:#6B7280'>3017.TW</div></td><td class='num'>46.25</td><td class='num'>N/A</td><td class='num'>N/A</td><td class='num'>N/A</td><td class='num'>N/A</td><td class='num'>0.60%</td><td><div class='bar'><i style='width:98%'></i></div><div style='font-size:11px;color:#6B7280'>98%　937.00－3,600</div></td></tr><tr><td>景碩<div style='font-size:11px;color:#6B7280'>3189.TW</div></td><td class='num'>168.09</td><td class='num'>N/A</td><td class='num'>N/A</td><td class='num'>N/A</td><td class='num'>N/A</td><td class='num'>0.17%</td><td><div class='bar'><i style='width:96%'></i></div><div style='font-size:11px;color:#6B7280'>96%　102.00－996.00</div></td></tr><tr><td>欣興<div style='font-size:11px;color:#6B7280'>3037.TW</div></td><td class='num'>77.23</td><td class='num'>N/A</td><td class='num'>N/A</td><td class='num'>N/A</td><td class='num'>N/A</td><td class='num'>0.17%</td><td><div class='bar'><i style='width:96%'></i></div><div style='font-size:11px;color:#6B7280'>96%　141.50－1,230</div></td></tr><tr><td>南電<div style='font-size:11px;color:#6B7280'>8046.TW</div></td><td class='num'>142.19</td><td class='num'>N/A</td><td class='num'>N/A</td><td class='num'>N/A</td><td class='num'>N/A</td><td class='num'>0.17%</td><td><div class='bar'><i style='width:86%'></i></div><div style='font-size:11px;color:#6B7280'>86%　177.50－1,415</div></td></tr><tr><td>聯茂<div style='font-size:11px;color:#6B7280'>6213.TW</div></td><td class='num'>83.88</td><td class='num'>N/A</td><td class='num'>N/A</td><td class='num'>N/A</td><td class='num'>N/A</td><td class='num'>0.55%</td><td><div class='bar'><i style='width:99%'></i></div><div style='font-size:11px;color:#6B7280'>99%　97.00－599.00</div></td></tr><tr><td>台光電<div style='font-size:11px;color:#6B7280'>2383.TW</div></td><td class='num'>78.50</td><td class='num'>N/A</td><td class='num'>N/A</td><td class='num'>N/A</td><td class='num'>N/A</td><td class='num'>0.50%</td><td><div class='bar'><i style='width:74%'></i></div><div style='font-size:11px;color:#6B7280'>74%　1,085－6,470</div></td></tr><tr><td>台積電ADR<div style='font-size:11px;color:#6B7280'>TSM</div></td><td class='num'>N/A</td><td class='num'>N/A</td><td class='num'>N/A</td><td class='num'>N/A</td><td class='num'>N/A</td><td class='num'>N/A</td><td><div class='bar'><i style='width:87%'></i></div><div style='font-size:11px;color:#6B7280'>87%　266.82－479.00</div></td></tr><tr><td>輝達<div style='font-size:11px;color:#6B7280'>NVDA</div></td><td class='num'>N/A</td><td class='num'>N/A</td><td class='num'>N/A</td><td class='num'>N/A</td><td class='num'>N/A</td><td class='num'>N/A</td><td><div class='bar'><i style='width:83%'></i></div><div style='font-size:11px;color:#6B7280'>83%　164.27－236.54</div></td></tr><tr><td>超微<div style='font-size:11px;color:#6B7280'>AMD</div></td><td class='num'>N/A</td><td class='num'>N/A</td><td class='num'>N/A</td><td class='num'>N/A</td><td class='num'>N/A</td><td class='num'>N/A</td><td><div class='bar'><i style='width:100%'></i></div><div style='font-size:11px;color:#6B7280'>100%　154.78－630.79</div></td></tr><tr><td>博通<div style='font-size:11px;color:#6B7280'>AVGO</div></td><td class='num'>N/A</td><td class='num'>N/A</td><td class='num'>N/A</td><td class='num'>N/A</td><td class='num'>N/A</td><td class='num'>N/A</td><td><div class='bar'><i style='width:29%'></i></div><div style='font-size:11px;color:#6B7280'>29%　289.96－495.00</div></td></tr><tr><td>微軟<div style='font-size:11px;color:#6B7280'>MSFT</div></td><td class='num'>N/A</td><td class='num'>N/A</td><td class='num'>N/A</td><td class='num'>N/A</td><td class='num'>N/A</td><td class='num'>N/A</td><td><div class='bar'><i style='width:73%'></i></div><div style='font-size:11px;color:#6B7280'>73%　349.20－553.72</div></td></tr><tr><td>Meta<div style='font-size:11px;color:#6B7280'>META</div></td><td class='num'>N/A</td><td class='num'>N/A</td><td class='num'>N/A</td><td class='num'>N/A</td><td class='num'>N/A</td><td class='num'>N/A</td><td><div class='bar'><i style='width:99%'></i></div><div style='font-size:11px;color:#6B7280'>99%　520.26－779.82</div></td></tr><tr><td>美光<div style='font-size:11px;color:#6B7280'>MU</div></td><td class='num'>N/A</td><td class='num'>N/A</td><td class='num'>N/A</td><td class='num'>N/A</td><td class='num'>N/A</td><td class='num'>N/A</td><td><div class='bar'><i style='width:84%'></i></div><div style='font-size:11px;color:#6B7280'>84%　154.65－1,255</div></td></tr><tr><td>特斯拉<div style='font-size:11px;color:#6B7280'>TSLA</div></td><td class='num'>353</td><td class='num'>199</td><td class='num'>1.08</td><td class='num'>N/A</td><td class='num'>N/A</td><td class='num'>0.00%</td><td><div class='bar'><i style='width:40%'></i></div><div style='font-size:11px;color:#6B7280'>40%　297.38－498.83</div></td></tr><tr><td>SpaceX<div style='font-size:11px;color:#6B7280'>SPCX</div></td><td class='num'>N/A</td><td class='num'>N/A</td><td class='num'>N/A</td><td class='num'>N/A</td><td class='num'>N/A</td><td class='num'>0.00%</td><td><div class='bar'><i style='width:36%'></i></div><div style='font-size:11px;color:#6B7280'>36%　104.83－225.64</div></td></tr></tbody></table></div></section>
+  <section class="guide" id="guide">
+    <div class="guide-h">
+      <b>使用說明</b>
+      <span>
+        <button class="btn" type="button" onclick="copyGuide()">一鍵複製小抄</button>
+        <button class="btn" type="button" onclick="copySummary()">一鍵複製今日摘要</button>
+      </span>
+    </div>
+    <pre id="guideText">【如何看懂這份報告｜一頁小抄】
+僅為技術整理，不是下單指令。
+
+一、先看大盤再看個股
+加權／那斯達克／費半若空頭或跌破季線，個股買點再漂亮也只當反彈。
+
+二、欄位怎麼讀
+趨勢：多頭=收盤>月線>季線；空頭相反；其餘=整理
+判讀：偏多=結構較完整；中性=等方向；偏空=不追價
+RSI：40–60較適合評估進場；≥70過熱偏減碼；≤30超賣但空頭裡不要當抄底訊號
+買點參考：多頭回檔區／整理下緣。空頭只是支撐短打，不宜追價
+賣點參考：壓力或反彈至月線。RSI過熱時當減碼觀察
+停損參考：結構破壞線。收盤跌破＝這筆看法作廢
+風報比：大於約1.5–2較說得通；太低表示停損太遠或上檔太近
+
+三、什麼時候才考慮「靠近進場觀察區」
+1) 大盤不是空頭
+2) 個股趨勢多頭或整理下緣
+3) 價格靠近買點，不是靠近賣點追高
+4) 已想好停損，且虧得起
+5) 優先訊號：站回月線、回檔至月線、MACD金叉（量能配合更好）
+
+四、什麼時候出場
+停損出：跌破停損／季線／轉偏空
+減碼出：靠近賣點且RSI過熱、碰到壓力過不了
+條件出：大盤轉空、預期沒走出來
+
+五、檢查口訣
+大盤允不允許做多？→結構對不對？→現價靠近買還是賣？→停損我賠得起嗎？
+缺一項就等，不要找理由進場。
+</pre>
+    <pre id="summaryText" style="display:none">報告日期：2026-09-25 06:01 台北
+資料品質：🟡 部分資料缺失（基本面）
+台股個股／加權：09/24 正式收盤
+美股：09/24 正式收盤
+美債：09/24 正式收盤
+休市：台股 09/25–09/28 中秋＋教師節連假，下個交易日 09/29
+大盤：48,025 -0.28%（官定 48,024.60，創高後回檔、守住 48K）
+台積電：2,475 -1.00%　不宜追價
+費半：12,493 -0.33%
+那斯達克：26,939 +0.01%
+10年美債：5.18%（約 +6 bp）
+偏多：健策、景碩、輝達、Meta
+觀察進場：無
+不宜追價：台積電、聯發科、台達電、雙鴻、健策、奇鋐、景碩、欣興、南電、聯茂、台積電ADR、超微、微軟、Meta、美光、特斯拉
+暫停做多：台光電、博通
+過熱（輔助）：聯發科、雙鴻、健策、超微、Meta
+接近進場區（距離≤2%）：輝達、SpaceX
+新增關注：特斯拉 TSLA 377.94 -0.57%　🟠 不宜追價｜進場區 360～365
+新增關注：SpaceX SPCX 148.03 -0.22%　🟡 等待確認｜進場區 143～148｜09/24 解禁
+連假期間不重算進出場訊號。僅為技術整理，不構成投資建議。</pre>
+  </section>
+  <p class="note">
+    技術參數：RSI 14日；MACD 12／26／9；ATR 14日；月線＝20日均線；季線＝60日均線。放量標準：成交量 ≥ 20日均量 × 1.5。<br>
+    風報比（僅多頭／整理）：（第一壓力−現價）÷（現價−結構失效價），顯示為「x.x：1」。空頭不提供多頭進場風報比，欄位為 N/A。<br>
+    市場行情：Yahoo Finance 日線（實際最後交易日）；台股指數備援 TWSE。基本面：TWSE BWIBBU＋日線 52週。資料可能延遲。<br>
+    美股 16:00 ET 後約 30 分鐘才標正式收盤。日線未更新則保留上一交易日並標「資料待同步」，不重算進出場訊號。<br>
+    特斯拉、SpaceX 為 2026-09-25 新增關注檔，技術區依 Yahoo／公開日線估算，標示於決策卡「資料說明」。缺值一律 N/A，不以 0 填補。僅供個人研究整理，不構成投資建議。
+  </p>
+</main>
+<script>
+function copyText(id, okMsg){
+  const text = document.getElementById(id).innerText;
+  const ok = function(){ alert(okMsg); };
+  const fail = function(){ alert("請長按文字複製"); };
+  if (navigator.clipboard && window.isSecureContext) {
+    navigator.clipboard.writeText(text).then(ok).catch(function(){ legacyCopy(text) ? ok() : fail(); });
+    return;
+  }
+  legacyCopy(text) ? ok() : fail();
+}
+function copyGuide(){ copyText("guideText", "已複製"); }
+function copySummary(){ copyText("summaryText", "已複製"); }
+function legacyCopy(text){
+  const ta = document.createElement("textarea");
+  ta.value = text; ta.setAttribute("readonly","");
+  ta.style.position="fixed"; ta.style.left="-9999px";
+  document.body.appendChild(ta); ta.focus(); ta.select();
+  let done=false; try { done=document.execCommand("copy"); } catch(e) { done=false; }
+  document.body.removeChild(ta); return done;
+}
+</script>
+<script>
+document.addEventListener("DOMContentLoaded", function(){
+
+    const STOCK_META = {
+      "台積電 2330.TW": {market:"台股", sub:"AI晶片", watch:["AI晶片"]},
+      "聯發科 2454.TW": {market:"台股", sub:"AI晶片", watch:["AI晶片","AI眼鏡"]},
+      "台達電 2308.TW": {market:"台股", sub:"AI電源", watch:["AI機器人"]},
+      "雙鴻 3324.TWO": {market:"台股", sub:"AI散熱", watch:["AI散熱","AI機器人"]},
+      "健策 3653.TW": {market:"台股", sub:"AI散熱", watch:["AI散熱","AI機器人"]},
+      "奇鋐 3017.TW": {market:"台股", sub:"AI散熱", watch:["AI散熱"]},
+      "景碩 3189.TW": {market:"台股", sub:"ABF載板", watch:["ABF載板"]},
+      "欣興 3037.TW": {market:"台股", sub:"ABF載板", watch:["ABF載板"]},
+      "南電 8046.TW": {market:"台股", sub:"ABF載板", watch:["ABF載板"]},
+      "聯茂 6213.TW": {market:"台股", sub:"CCL", watch:["CCL"]},
+      "台光電 2383.TW": {market:"台股", sub:"CCL", watch:["CCL"]},
+      "台積電ADR TSM": {market:"美股", sub:"AI晶片", watch:["AI晶片"]},
+      "輝達 NVDA": {market:"美股", sub:"AI晶片", watch:["AI晶片","AI機器人","AI眼鏡"]},
+      "超微 AMD": {market:"美股", sub:"AI晶片", watch:["AI晶片"]},
+      "博通 AVGO": {market:"美股", sub:"AI晶片", watch:["AI晶片"]},
+      "微軟 MSFT": {market:"美股", sub:"AI雲端", watch:["AI雲端"]},
+      "Meta META": {market:"美股", sub:"AI雲端", watch:["AI雲端","AI眼鏡"]},
+      "美光 MU": {market:"美股", sub:"AI記憶體", watch:["AI記憶體"]},
+      "特斯拉 TSLA": {market:"美股", sub:"AI自駕機器人", watch:["AI機器人","AI自駕"]},
+      "SpaceX SPCX": {market:"美股", sub:"航太科技", watch:["航太科技"]}
+    };
+
+    const WATCHLIST = {
+      "AI眼鏡": ["Meta META","輝達 NVDA","聯發科 2454.TW"],
+      "AI機器人": ["特斯拉 TSLA","輝達 NVDA","台達電 2308.TW","雙鴻 3324.TWO","健策 3653.TW"],
+      "AI自駕": ["特斯拉 TSLA"],
+      "航太科技": ["SpaceX SPCX"],
+      "AI晶片": ["台積電 2330.TW","聯發科 2454.TW","台積電ADR TSM","輝達 NVDA","超微 AMD","博通 AVGO"],
+      "AI散熱": ["雙鴻 3324.TWO","健策 3653.TW","奇鋐 3017.TW"],
+      "AI雲端": ["微軟 MSFT","Meta META"],
+      "AI記憶體": ["美光 MU"],
+      "ABF載板": ["景碩 3189.TW","欣興 3037.TW","南電 8046.TW"],
+      "CCL": ["聯茂 6213.TW","台光電 2383.TW"]
+    };
+
+    const THEME_ICON = {
+      "AI眼鏡":"🥽","AI機器人":"🤖","AI自駕":"🚗","航太科技":"🚀",
+      "AI晶片":"🧠","AI散熱":"❄️","AI雲端":"☁️","AI記憶體":"💾",
+      "ABF載板":"🧩","CCL":"🔌"
+    };
+
+    const THEME_IDS = {
+      "AI眼鏡":"theme-glasses","AI機器人":"theme-robot","AI自駕":"theme-auto",
+      "航太科技":"theme-space","AI晶片":"theme-chip","AI散熱":"theme-cooling",
+      "AI雲端":"theme-cloud","AI記憶體":"theme-memory","ABF載板":"theme-abf","CCL":"theme-ccl"
+    };
+
+    function catTitle(name){
+      const m = STOCK_META[name] || {market:"其他", sub:"其他"};
+      return `${m.market}｜${m.sub}｜${name}`;
+    }
+
+    function getValue(text, label){
+      const escaped = label.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+      const reg = new RegExp(escaped + "：\\s*([^\\n]+)");
+      const match = text.match(reg);
+      return match ? match[1].trim() : "";
+    }
+
+    function parseNum(s){
+      if(s==null) return null;
+      const t = String(s).replace(/,/g,"").replace(/%/g,"").replace(/：1.*/,"").trim();
+      if(!t || t==="N/A" || t==="—" || t.indexOf("N/A")>=0) return null;
+      const m = t.match(/-?\d+(\.\d+)?/);
+      return m ? parseFloat(m[0]) : null;
+    }
+
+    function parseRange(s){
+      if(!s || s.indexOf("N/A")>=0) return {low:null, high:null, raw:s||"N/A"};
+      const m = String(s).match(/([\d,\.]+)\s*[～~-]\s*([\d,\.]+)/);
+      if(!m) return {low:null, high:null, raw:s};
+      return {low:parseNum(m[1]), high:parseNum(m[2]), raw:s};
+    }
+
+    function splitName(name){
+      const parts = name.split(/\s+/);
+      if(parts.length>=2) return {cname:parts[0], symbol:parts.slice(1).join(" ")};
+      return {cname:name, symbol:name};
+    }
+
+    function na(v){ return (v===null || v===undefined || v==="" || v==="N/A") ? "N/A" : v; }
+
+    const decisionCards = document.querySelectorAll("#decision .dcard");
+    if(!decisionCards.length) return;
+
+    const stocks = [];
+    const byName = {};
+
+    decisionCards.forEach(card => {
+      const nameEl = card.querySelector("h3");
+      if(!nameEl) return;
+      const name = nameEl.innerText.trim();
+      const text = card.innerText;
+      const meta = STOCK_META[name] || {market:"其他", sub:"其他", watch:[]};
+      const ns = splitName(name);
+
+      const priceLine = getValue(text,"現價");
+      const chgM = priceLine.match(/([+\-＋－]?\d+(\.\d+)?)\s*%/);
+      const changePct = chgM ? parseFloat(chgM[1].replace("＋","+").replace("－","-")) : null;
+      const priceNum = parseNum(priceLine);
+
+      const entryZone = getValue(text,"有效進場區") || "N/A";
+      const entryR = parseRange(entryZone);
+      const maxEntry = getValue(text,"最高可接受進場價") || "N/A";
+      const firstResistance = getValue(text,"第一壓力") || "N/A";
+      const secondResistance = getValue(text,"第二壓力") || "N/A";
+      const invalidPrice = getValue(text,"結構失效價") || "N/A";
+      const rrLine = getValue(text,"現價風報比") || "N/A";
+      const entryRR = getValue(text,"進場區風報比") || "N/A";
+      const distEntryLine = (text.match(/距進場區：\s*([^\s　]+)/) || [])[1] || "";
+      const distR1Line = (text.match(/距第一壓力：\s*([^\s　]+)/) || [])[1] || "";
+
+      const dailyTrend = (text.match(/日線\s+([多空整理頭]+)/) || [])[1] || "";
+      const weeklyTrend = (text.match(/週線\s+([多空整理頭]+)/) || [])[1] || "";
+      const ma20 = parseNum((text.match(/MA20\s+([\d,\.]+|N\/A)/) || [])[1]);
+      const ma60 = parseNum((text.match(/MA60\s+([\d,\.]+|N\/A)/) || [])[1]);
+      const rsi = parseNum((text.match(/RSI\s+([\d\.]+|N\/A)/) || [])[1]);
+      const macd = (text.match(/MACD\s+([^\s]+(?:\s+[^\s]+)?)/) || [])[1] || "";
+      const volRatio = parseNum((text.match(/量比\s+([\d\.]+|N\/A)/) || [])[1]);
+
+      let unheldStatus = "⚪ 資料不足";
+      let heldStatus = "⚪ 資料不足";
+      if(text.includes("🟢") && (text.includes("進場觀察") || text.includes("條件確認"))){
+        unheldStatus = "🟢 進場觀察";
+      }else if(text.includes("🟡 等待回檔") || text.includes("必要條件尚未齊") || text.includes("等待確認")){
+        unheldStatus = "🟡 接近進場／等待確認";
+      }else if(text.includes("🔴 暫停做多") || text.includes("結構轉弱")){
+        unheldStatus = "🔴 結構轉弱／暫停做多／離場風控";
+      }else if(text.includes("🟠 不宜追價")){
+        unheldStatus = "🟠 不宜追價／過熱／減碼觀察";
+      }
+
+      if(text.includes("🔴") && (text.includes("持股出場") || text.includes("風控") || text.includes("結構轉弱") || text.includes("暫停做多"))){
+        heldStatus = "🔴 結構轉弱／暫停做多／離場風控";
+      }else if(text.includes("🟠 減碼觀察")){
+        heldStatus = "🟠 不宜追價／過熱／減碼觀察";
+      }else if(text.includes("🔵 續抱觀察")){
+        heldStatus = "🔵 續抱觀察";
+      }
+
+      const must = {
+        holdSupport: /☑\s*收盤守住支撐/.test(text),
+        dailyOk: /☑\s*日線不是空頭/.test(text),
+        weeklyOk: /☑\s*週線不是空頭/.test(text),
+        ma20Ok: /☑\s*收盤位於 MA20/.test(text),
+        rrOk: /☑\s*進場區風報比/.test(text)
+      };
+      const bonus = {
+        macdOk: /☑\s*MACD 未轉弱/.test(text),
+        volOk: /☑\s*成交量 ≥ 1\.5/.test(text),
+        rsiOk: /☑\s*RSI 未過熱/.test(text),
+        spaceOk: /☑\s*距第一壓力仍有空間/.test(text)
+      };
+      const missingMust = [];
+      if(!must.holdSupport) missingMust.push("收盤守住支撐／進場區");
+      if(!must.dailyOk) missingMust.push("日線不是空頭");
+      if(!must.weeklyOk) missingMust.push("週線不是空頭");
+      if(!must.ma20Ok) missingMust.push("站上／站回 MA20");
+      if(!must.rrOk) missingMust.push("進場區風報比 ≥ 1.5");
+      if(text.includes("必要條件") && text.includes("N/A") && !text.includes("☑")){
+        missingMust.length = 0;
+        missingMust.push("日線空頭，不提供多頭進場條件");
+      }
+
+      let distPct = parseNum(distEntryLine);
+      if(distPct==null && priceNum!=null && entryR.high!=null){
+        distPct = ((priceNum - entryR.high) / entryR.high) * 100;
+      }
+      const inZone = (priceNum!=null && entryR.low!=null && entryR.high!=null && priceNum>=entryR.low && priceNum<=entryR.high)
+        || (distPct!=null && distPct<=0);
+      let distLabel = "N/A";
+      if(entryZone.indexOf("N/A")>=0){
+        distLabel = "N/A";
+      }else if(inZone){
+        distLabel = "✅ 已進入進場區";
+      }else if(distPct!=null && distPct<=1){
+        distLabel = "🟡 非常接近　+" + distPct.toFixed(1) + "%";
+      }else if(distPct!=null && distPct<=3){
+        distLabel = "👀 接近　+" + distPct.toFixed(1) + "%";
+      }else if(distPct!=null && distPct<=8){
+        distLabel = "⏳ 等待回檔　+" + distPct.toFixed(1) + "%";
+      }else if(distPct!=null){
+        distLabel = "🟠 不宜追價　+" + distPct.toFixed(1) + "%";
+      }
+
+      const coreMissing = [];
+      if(priceNum==null) coreMissing.push("現價");
+      if(ma20==null) coreMissing.push("MA20");
+      if(rsi==null) coreMissing.push("RSI");
+      const dataStatus = coreMissing.length ? "⚪ 資料不足，暫不重算訊號" : "🟡 部分資料延遲";
+
+      const alerts = [];
+      if(inZone && entryZone.indexOf("N/A")<0) alerts.push("✅ 價格進入／貼近有效進場區");
+      else if(distPct!=null && distPct<=1 && entryZone.indexOf("N/A")<0) alerts.push("✅ 距離有效進場區 ≤ 1%");
+      if(rsi!=null && rsi>70) alerts.push("🔥 RSI過熱");
+      if(rsi!=null && rsi<30) alerts.push("👀 RSI超賣觀察");
+      if(volRatio!=null && volRatio>=1.5) alerts.push("📈 成交量放大");
+      if(/轉弱/.test(macd)) alerts.push("⚠️ MACD轉弱");
+      else if(/零軸上/.test(macd) && bonus.macdOk) alerts.push("MACD未轉弱");
+      if(dailyTrend.indexOf("空")>=0) alerts.push("日線轉弱／空頭");
+      if(unheldStatus.indexOf("🔴")>=0) alerts.push("🔴 結構轉弱，暫停做多");
+      if(invalidPrice.indexOf("N/A")>=0 && unheldStatus.indexOf("🔴")>=0){
+        alerts.push("目前無可靠失效價，不自動產生停損價格。");
+      }
+
+      const reasons = [];
+      if(distPct!=null && distPct>3) reasons.push("價格距進場區偏遠");
+      if(parseNum(distR1Line)!=null && parseNum(distR1Line)<2) reasons.push("距第一壓力太近");
+      if(rsi!=null && rsi>=70) reasons.push("RSI過熱");
+      if(parseNum(rrLine)!=null && parseNum(rrLine)<1.5) reasons.push("現價風報比不足");
+      if(volRatio!=null && volRatio<1.5) reasons.push("成交量尚未確認");
+      if(dailyTrend.indexOf("空")>=0) reasons.push("日線空頭");
+
+      /* Opportunity score = 條件完成度，不是勝率 */
+      let score = 0;
+      if(unheldStatus.indexOf("🔴")>=0) score -= 40;
+      if(inZone) score += 40;
+      else if(distPct!=null && distPct<=1) score += 30;
+      else if(distPct!=null && distPct<=3) score += 20;
+      else if(distPct!=null && distPct<=8) score += 8;
+      if(dailyTrend.indexOf("空")<0 && dailyTrend) score += 8;
+      if(weeklyTrend.indexOf("空")<0 && weeklyTrend) score += 8;
+      if(must.ma20Ok) score += 8;
+      if(bonus.macdOk) score += 5;
+      if(bonus.rsiOk) score += 5;
+      if(bonus.volOk) score += 5;
+      if(parseNum(entryRR)!=null && parseNum(entryRR)>=1.5) score += 10;
+      if(parseNum(rrLine)!=null && parseNum(rrLine)>=1.5) score += 8;
+      if(bonus.spaceOk) score += 5;
+      if(rsi!=null && rsi>=70) score -= 12;
+      if(distPct!=null && distPct>8) score -= 10;
+
+      const item = {
+        name, cname:ns.cname, symbol:ns.symbol,
+        market: meta.market, sub: meta.sub, watch: meta.watch || [],
+        price: priceLine.split(" ")[0] || "N/A",
+        priceNum, changePct,
+        changeText: changePct==null ? "N/A" : ((changePct>0?"+":"")+changePct.toFixed(2)+"%"),
+        tradeDate: "2026-09-24",
+        unheldStatus, heldStatus,
+        entryZone, maxEntry, firstResistance, secondResistance, invalidPrice,
+        rr: rrLine, entryRR,
+        distPct, distLabel, distR1: distR1Line || "N/A",
+        dailyTrend, weeklyTrend, ma20, ma60, rsi, macd, volRatio,
+        must, bonus, missingMust, reasons, alerts,
+        dataStatus, score, text, inZone
+      };
+      stocks.push(item);
+      byName[name] = item;
+    });
+
+    function toneOf(status){
+      if(status.indexOf("🟢")>=0) return "g";
+      if(status.indexOf("🟡")>=0) return "y";
+      if(status.indexOf("🔵")>=0) return "b";
+      if(status.indexOf("🔴")>=0) return "r";
+      if(status.indexOf("🟠")>=0) return "o";
+      return "w";
+    }
+
+    function chgSpan(pct){
+      if(pct==null) return "<span>N/A</span>";
+      const cls = pct>=0 ? "chg-up" : "chg-dn";
+      const t = (pct>0?"+":"")+pct.toFixed(2)+"%";
+      return `<span class="${cls}">${t}</span>`;
+    }
+
+    function stockCard(s){
+      const t = toneOf(s.unheldStatus);
+      const alertHtml = s.alerts.length
+        ? s.alerts.map(a=>`• ${a}`).join("<br>")
+        : "目前無即時狀態變化（靜態收盤快照）";
+      return `<article class="wcard edge-${t}">
+        <div class="wcard-h">
+          <div>
+            <div class="nm">${s.cname} <span class="sy">${s.symbol}</span></div>
+            <div class="cat-badges">
+              <span class="cat-badge cat-mkt">${s.market==="台股"?"🇹🇼 台股":"🇺🇸 美股"}</span>
+              <span class="cat-badge cat-sub">${s.sub}</span>
+              ${(s.watch||[]).map(w=>`<span class="cat-badge cat-tag">${w}</span>`).join("")}
+            </div>
+          </div>
+          <span class="st st-${t}">${s.unheldStatus}</span>
+        </div>
+        <div class="wpx">${na(s.price)} ${chgSpan(s.changePct)}</div>
+        <div class="wmeta">
+          <div><b>已持有</b>${s.heldStatus}</div>
+          <div><b>資料</b>${s.dataStatus}</div>
+          <div><b>有效進場區</b>${na(s.entryZone)}</div>
+          <div><b>距進場區</b>${s.distLabel}</div>
+          <div><b>最高可接受進場價</b>${na(s.maxEntry)}</div>
+          <div><b>現價風報比</b>${na(s.rr)}</div>
+          <div><b>第一壓力</b>${na(s.firstResistance)}</div>
+          <div><b>第二壓力</b>${na(s.secondResistance)}</div>
+          <div><b>結構失效價</b>${na(s.invalidPrice)}</div>
+          <div><b>RSI / 量比</b>${s.rsi==null?"N/A":s.rsi}　／　${s.volRatio==null?"N/A":s.volRatio}</div>
+        </div>
+        <div class="walert"><div class="t">🔔 提醒狀態</div>${alertHtml}</div>
+      </article>`;
+    }
+
+    /* ===== 導覽已在 HTML 更新；此處填內容 ===== */
+    const watchRoot = document.getElementById("watchlist-body");
+    if(watchRoot){
+      let html = "";
+      Object.keys(WATCHLIST).forEach(theme=>{
+        const names = WATCHLIST[theme];
+        html += `<div class="watch-theme" id="watch-${THEME_IDS[theme]}">
+          <div class="watch-theme-h"><h3>${THEME_ICON[theme]||""} ${theme}</h3><small>${names.length} 檔　同一檔可跨主題</small></div>
+          <div class="watch-grid">`;
+        names.forEach(n=>{
+          const s = byName[n];
+          if(!s){
+            html += `<article class="wcard edge-w"><div class="wcard-h"><div class="nm">${n}</div><span class="st st-w">⚪ 尚未載入</span></div><div class="wmeta"><div><b>說明</b>N/A　後端尚未提供決策卡資料，不虛構價格。</div></div></article>`;
+          }else html += stockCard(s);
+        });
+        html += `</div></div>`;
+      });
+      watchRoot.innerHTML = html;
+    }
+
+    /* ===== 今日機會 ===== */
+    const closest = stocks.slice().sort((a,b)=>b.score-a.score);
+    const near = stocks.filter(s=>s.unheldStatus.indexOf("🟡")>=0 || (s.distPct!=null && s.distPct<=3 && s.unheldStatus.indexOf("🔴")<0));
+    const hot = stocks.filter(s=> (s.rsi!=null && s.rsi>=70) || s.reasons.indexOf("RSI過熱")>=0);
+    const weak = stocks.filter(s=>s.unheldStatus.indexOf("🔴")>=0);
+    const wait = stocks.filter(s=>s.distPct!=null && s.distPct>3 && s.unheldStatus.indexOf("🔴")<0);
+
+    function oppItem(s, extra){
+      return `<div class="opp-item"><b>${s.name}</b>
+        ${s.unheldStatus}<br>
+        現價 ${na(s.price)}　${chgSpan(s.changePct)}<br>
+        ${s.distLabel}<br>
+        風報比 ${na(s.rr)}<br>
+        ${extra||""}
+      </div>`;
+    }
+
+    const oppRoot = document.getElementById("opportunity-body");
+    if(oppRoot){
+      const top = closest.filter(s=>s.unheldStatus.indexOf("🔴")<0).slice(0,4);
+      oppRoot.innerHTML = `
+        <div class="opp-grid">
+          <div class="opp-box"><h3>⭐ 最接近進場條件</h3>
+            ${top.length? top.map(s=>{
+              const miss = s.missingMust.length? "尚缺："+s.missingMust.join("、") : "必要條件多已勾選，仍須收盤確認";
+              const why = [];
+              if(s.inZone || (s.distPct!=null && s.distPct<=1)) why.push("價格已靠近有效進場區");
+              if(s.dailyTrend.indexOf("空")<0) why.push("日線未轉空");
+              if(s.weeklyTrend.indexOf("空")<0) why.push("週線未轉空");
+              if(s.must.ma20Ok) why.push("MA20 條件通過");
+              if(!s.bonus.volOk) why.push("但成交量尚未確認");
+              return oppItem(s, why.join("／")+"<br>"+miss);
+            }).join("") : `<div class="trade-empty">目前無符合條件標的</div>`}
+          </div>
+          <div class="opp-box"><h3>👀 值得優先觀察</h3>
+            ${near.length? near.map(s=>oppItem(s,"等待確認，不是保證買進")).join("") : `<div class="trade-empty">目前無</div>`}
+          </div>
+          <div class="opp-box"><h3>🔥 過熱勿追</h3>
+            ${hot.length? hot.map(s=>oppItem(s,"RSI／漲幅／距離壓力綜合過熱，輔助減碼而非必然賣出")).join("") : `<div class="trade-empty">目前無</div>`}
+          </div>
+          <div class="opp-box"><h3>⚠️ 結構轉弱</h3>
+            ${weak.length? weak.map(s=>oppItem(s, s.invalidPrice.indexOf("N/A")>=0? "目前無可靠失效價，不自動產生停損價格。":"失效以收盤跌破為主")).join("") : `<div class="trade-empty">目前無</div>`}
+          </div>
+          <div class="opp-box"><h3>⏳ 等待回檔</h3>
+            ${wait.length? wait.slice(0,8).map(s=>oppItem(s,"現價高於最高可接受進場價／距進場區偏遠")).join("") : `<div class="trade-empty">目前無</div>`}
+          </div>
+        </div>
+        <p class="upgrade-note" style="padding:0 12px 12px;color:#4B5563">排序只用「條件完成度」，不代表最好股票或一定會漲。觀察進場 ≠ 買進指令。</p>`;
+    }
+
+    /* ===== 交易提示五區（沿用決策卡狀態，不另算） ===== */
+    const buckets = {entry:[], waiting:[], reduce:[], hold:[], risk:[]};
+    stocks.forEach(s=>{
+      if(s.unheldStatus.indexOf("🟢")>=0) buckets.entry.push(s);
+      if(s.unheldStatus.indexOf("🟡")>=0) buckets.waiting.push(s);
+      if(s.heldStatus.indexOf("🟠")>=0 || (s.unheldStatus.indexOf("🟠")>=0 && s.heldStatus.indexOf("🔵")<0)) buckets.reduce.push(s);
+      if(s.heldStatus.indexOf("🔵")>=0) buckets.hold.push(s);
+      if(s.unheldStatus.indexOf("🔴")>=0 || s.heldStatus.indexOf("🔴")>=0) buckets.risk.push(s);
+    });
+
+    function alertItem(s, type){
+      const sub = `${s.market}｜${s.sub}`;
+      if(type==="entry"){
+        return `<div class="trade-alert-item"><b>${s.name}<span class="sub">　${sub}</span></b>現價 ${na(s.price)}<br>進場區：${na(s.entryZone)}<br>最高進場：${na(s.maxEntry)}<br>風報比：${na(s.rr)}</div>`;
+      }
+      if(type==="waiting"){
+        return `<div class="trade-alert-item"><b>${s.name}<span class="sub">　${sub}</span></b>現價 ${na(s.price)}　${s.distLabel}<br>有效進場區：${na(s.entryZone)}<br>最高可接受價：${na(s.maxEntry)}<br><span class="missing-reason">尚缺：${s.missingMust.length? s.missingMust.join("、"): "量能或其他加分條件"}</span></div>`;
+      }
+      if(type==="reduce"){
+        return `<div class="trade-alert-item"><b>${s.name}<span class="sub">　${sub}</span></b>現價 ${na(s.price)}　RSI ${s.rsi==null?"N/A":s.rsi}<br>第一壓力：${na(s.firstResistance)}　第二壓力：${na(s.secondResistance)}<br>風報比：${na(s.rr)}<br>原因：${s.reasons.join("／")||"現價高於最高可接受進場價"}</div>`;
+      }
+      if(type==="hold"){
+        return `<div class="trade-alert-item"><b>${s.name}<span class="sub">　${sub}</span></b>現價 ${na(s.price)}<br>第一壓力：${na(s.firstResistance)}　第二壓力：${na(s.secondResistance)}<br>失效價：${na(s.invalidPrice)}<br>持股管理：第一壓力＝減碼觀察；收盤跌破失效價才視為結構失效。</div>`;
+      }
+      const inv = (s.invalidPrice && s.invalidPrice.indexOf("N/A")<0)
+        ? `失效價 ${s.invalidPrice}（以收盤跌破為主）`
+        : "目前無可靠失效價，不自動產生停損價格。";
+      return `<div class="trade-alert-item"><b>${s.name}<span class="sub">　${sub}</span></b>現價 ${na(s.price)}<br>${inv}<br>轉弱原因：${s.dailyTrend? "日線 "+s.dailyTrend: "結構轉弱"}</div>`;
+    }
+
+    function renderList(list,type){
+      if(!list.length) return `<div class="trade-empty">目前無符合條件標的</div>`;
+      return list.map(x=>alertItem(x,type)).join("");
+    }
+
+    const panel = document.createElement("section");
+    panel.className = "trade-alert-panel";
+    panel.id = "trade-alert";
+    panel.innerHTML = `
+      <div class="trade-alert-head">
+        <div class="trade-alert-title">🚦 今日即時交易提示</div>
+        <div class="copy-row">
+          <button class="trade-alert-copy" id="copyTradeAlert" type="button">複製交易提示</button>
+        </div>
+      </div>
+      <div class="trade-alert-grid">
+        <div class="trade-alert-box trade-green"><h3>🟢 進場觀察</h3>${renderList(buckets.entry,"entry")}</div>
+        <div class="trade-alert-box trade-yellow"><h3>🟡 接近進場</h3>${renderList(buckets.waiting,"waiting")}</div>
+        <div class="trade-alert-box trade-orange"><h3>🟠 不宜追價／減碼</h3>${renderList(buckets.reduce,"reduce")}</div>
+        <div class="trade-alert-box trade-blue"><h3>🔵 續抱觀察</h3>${renderList(buckets.hold,"hold")}</div>
+        <div class="trade-alert-box trade-red"><h3>🔴 風控／暫停做多</h3>${renderList(buckets.risk,"risk")}</div>
+      </div>`;
+
+    const alertSlot = document.getElementById("trade-alert-slot");
+    if(alertSlot) alertSlot.replaceWith(panel);
+    else {
+      const nav = document.querySelector(".nav");
+      if(nav) nav.insertAdjacentElement("afterend", panel);
+    }
+
+    /* ===== 產業雷達 ===== */
+    const radarRoot = document.getElementById("radar-body");
+    if(radarRoot){
+      let h = `<div class="radar-grid">`;
+      Object.keys(WATCHLIST).forEach(theme=>{
+        const list = WATCHLIST[theme].map(n=>byName[n]).filter(Boolean);
+        const chgs = list.map(s=>s.changePct).filter(v=>v!=null);
+        const avg = chgs.length ? (chgs.reduce((a,b)=>a+b,0)/chgs.length) : null;
+        const cnt = k => list.filter(s=>s.unheldStatus.indexOf(k)>=0 || (k==="🔵" && s.heldStatus.indexOf("🔵")>=0)).length;
+        const avgHtml = avg==null ? "N/A" : `<span class="${avg>=0?"chg-up":"chg-dn"}">${avg>=0?"+":""}${avg.toFixed(2)}%</span>`;
+        h += `<div class="radar-card">
+          <h3>${THEME_ICON[theme]||""} ${theme}</h3>
+          <div class="avg">${list.length} 檔　均漲跌 ${avgHtml}</div>
+          <div class="radar-dots">
+            <span>🟢 ${list.filter(s=>s.unheldStatus.indexOf("🟢")>=0).length}</span>
+            <span>🟡 ${list.filter(s=>s.unheldStatus.indexOf("🟡")>=0).length}</span>
+            <span>🔵 ${list.filter(s=>s.heldStatus.indexOf("🔵")>=0).length}</span>
+            <span>🟠 ${list.filter(s=>s.unheldStatus.indexOf("🟠")>=0).length}</span>
+            <span>🔴 ${list.filter(s=>s.unheldStatus.indexOf("🔴")>=0).length}</span>
+          </div>
+        </div>`;
+      });
+      h += `</div>`;
+      radarRoot.innerHTML = h;
+    }
+
+    /* ===== 今日異動 ===== */
+    const moveRoot = document.getElementById("movers-body");
+    if(moveRoot){
+      const moves = [];
+      stocks.forEach(s=>{
+        if(s.changePct!=null && Math.abs(s.changePct)>=4){
+          moves.push({s, tag: s.changePct>0? "🔥 單日漲幅偏大":"⚠️ 單日跌幅偏大", why:`${s.changeText}　RSI ${s.rsi==null?"N/A":s.rsi}`});
+        }
+        if(s.volRatio!=null && s.volRatio>=1.5){
+          moves.push({s, tag:"📈 成交量放大", why:`量比 ${s.volRatio}`});
+        }
+        if(s.rsi!=null && s.rsi>=70){
+          moves.push({s, tag:"🔥 RSI快速偏高", why:`RSI ${s.rsi}　→ 過熱輔助，不宜追價`});
+        }
+        if(s.unheldStatus.indexOf("🟡")>=0 && s.distPct!=null && s.distPct<=1){
+          moves.push({s, tag:"📈 靠近／進入有效進場區", why:`${s.distLabel}　→ 等待確認`});
+        }
+        if(s.unheldStatus.indexOf("🔴")>=0){
+          moves.push({s, tag:"🔴 日線／結構轉弱", why:"→ 暫停做多"});
+        }
+      });
+      const seen = new Set();
+      const uniq = [];
+      moves.forEach(m=>{
+        const k = m.s.name+"|"+m.tag;
+        if(seen.has(k)) return;
+        seen.add(k); uniq.push(m);
+      });
+      moveRoot.innerHTML = `<div class="move-list">` + (
+        uniq.length? uniq.map(m=>`<div class="move-item"><b>${m.tag}　${m.s.name}</b><br>${m.why}</div>`).join("")
+        : `<div class="trade-empty">今日無符合異動條件的標的</div>`
+      ) + `</div>`;
+    }
+
+    /* ===== 主題專區（決策卡同一資料） ===== */
+    Object.keys(WATCHLIST).forEach(theme=>{
+      const id = THEME_IDS[theme];
+      const el = document.getElementById(id+"-body");
+      if(!el) return;
+      const names = WATCHLIST[theme];
+      el.innerHTML = `<div class="watch-grid">` + names.map(n=>{
+        const s = byName[n];
+        return s? stockCard(s) : `<article class="wcard edge-w"><div class="wcard-h"><div class="nm">${n}</div><span class="st st-w">⚪ 尚未載入</span></div></article>`;
+      }).join("") + `</div>`;
+    });
+
+    /* ===== 時段列 ===== */
+    const sess = document.getElementById("session-body");
+    if(sess){
+      sess.innerHTML = `
+        <div class="session-box"><b>🇹🇼 台股提醒時段</b>
+          盤前／開盤／盤中／收盤　分開計算。<br>
+          今日 09/25–09/28 中秋＋教師節連假，<b>台股休市</b>。<br>
+          資料日期：09/24 正式收盤。連假不重算進出場訊號。<br>
+          下個台股交易日：09/29。
+        </div>
+        <div class="session-box"><b>🇺🇸 美股提醒時段</b>
+          盤前／開盤 09:30 ET／盤中 12:30 ET／收盤 16:00 ET。<br>
+          本頁美股資料：09/24 正式收盤。<br>
+          盤中只在「狀態改變」時提示，不整份重算。<br>
+          同一事件不重複洗版（ALERT_STATE）。
+        </div>`;
+    }
+
+    /* ===== 收盤狀態變化（本頁為單日快照，無昨日檔則標示） ===== */
+    const closeNote = document.getElementById("close-note");
+    if(closeNote){
+      closeNote.innerHTML = `本頁為 2026-09-25 單日快照，未內嵌 09/23 狀態檔，故不虛構「昨日→今日」變化表。連假期間保留 09/24 收盤狀態，資料待同步則不重新計算交易訊號。`;
+    }
+
+    /* ===== 複製 ===== */
+    function copyPlain(text, btn){
+      const ok = ()=>{ if(btn){ const old=btn.innerText; btn.innerText="✅ 已複製"; setTimeout(()=>btn.innerText=old,1400);} else alert("已複製"); };
+      const fail = ()=>alert(text);
+      if(navigator.clipboard && window.isSecureContext){
+        navigator.clipboard.writeText(text).then(ok).catch(()=>{ legacyCopy(text)?ok():fail(); });
+      }else{
+        legacyCopy(text)?ok():fail();
+      }
+    }
+
+    function linesOf(list, fmt){
+      return list.length? list.map(fmt).join("\n") : "目前無";
+    }
+
+    const copyTrade = [
+      "🚦 今日交易提示",
+      "資料：09/24 收盤｜觀察進場≠買進",
+      "",
+      "🟢 進場觀察",
+      linesOf(buckets.entry, s=>`${catTitle(s.name)}｜現價 ${s.price}｜進場區 ${s.entryZone}｜最高進場 ${s.maxEntry}｜風報比 ${s.rr}`),
+      "",
+      "🟡 接近進場",
+      linesOf(buckets.waiting, s=>`${catTitle(s.name)}｜現價 ${s.price}｜${s.distLabel}｜進場區 ${s.entryZone}｜最高進場 ${s.maxEntry}`),
+      "",
+      "🟠 不宜追價／減碼",
+      linesOf(buckets.reduce, s=>`${catTitle(s.name)}｜現價 ${s.price}｜第一壓力 ${s.firstResistance}｜風報比 ${s.rr}`),
+      "",
+      "🔵 續抱觀察",
+      linesOf(buckets.hold, s=>`${catTitle(s.name)}｜現價 ${s.price}｜第一壓力 ${s.firstResistance}｜失效價 ${s.invalidPrice}`),
+      "",
+      "🔴 風控／暫停做多",
+      linesOf(buckets.risk, s=>`${catTitle(s.name)}｜現價 ${s.price}｜失效價 ${s.invalidPrice}`)
+    ].join("\n");
+
+    let copyWatch = "⭐ 我的關注股\n資料：09/24 收盤｜非下單指令\n";
+    Object.keys(WATCHLIST).forEach(theme=>{
+      copyWatch += `\n${THEME_ICON[theme]||""} ${theme}\n`;
+      WATCHLIST[theme].forEach(n=>{
+        const s = byName[n];
+        copyWatch += s? `${s.cname}｜${s.unheldStatus}｜現價 ${s.price}｜進場區 ${s.entryZone}\n`
+                      : `${n}｜⚪ 尚未載入｜N/A\n`;
+      });
+    });
+
+    let copyOpp = "🎯 今日機會（條件完成度，不是勝率）\n";
+    closest.filter(s=>s.unheldStatus.indexOf("🔴")<0).slice(0,6).forEach(s=>{
+      copyOpp += `\n${s.name}\n${s.unheldStatus}\n${s.distLabel}\n風報比 ${s.rr}\n`;
+    });
+
+    let copyRadar = "📡 AI產業雷達\n";
+    Object.keys(WATCHLIST).forEach(theme=>{
+      const list = WATCHLIST[theme].map(n=>byName[n]).filter(Boolean);
+      copyRadar += `\n${THEME_ICON[theme]||""} ${theme}　${list.length}檔\n`;
+      copyRadar += `🟢${list.filter(s=>s.unheldStatus.indexOf("🟢")>=0).length} 🟡${list.filter(s=>s.unheldStatus.indexOf("🟡")>=0).length} 🔵${list.filter(s=>s.heldStatus.indexOf("🔵")>=0).length} 🟠${list.filter(s=>s.unheldStatus.indexOf("🟠")>=0).length} 🔴${list.filter(s=>s.unheldStatus.indexOf("🔴")>=0).length}\n`;
+    });
+
+    const btnTA = document.getElementById("copyTradeAlert");
+    if(btnTA) btnTA.addEventListener("click", ()=>copyPlain(copyTrade, btnTA));
+    const b1 = document.getElementById("copyWatch");
+    if(b1) b1.addEventListener("click", ()=>copyPlain(copyWatch, b1));
+    const b2 = document.getElementById("copyOpp");
+    if(b2) b2.addEventListener("click", ()=>copyPlain(copyOpp, b2));
+    const b3 = document.getElementById("copyRadar");
+    if(b3) b3.addEventListener("click", ()=>copyPlain(copyRadar, b3));
+
+    window.__REPORT_STOCKS = stocks;
+});
+
+</script>
+
+
+</body></html>
