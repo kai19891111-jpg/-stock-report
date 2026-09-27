@@ -25,13 +25,12 @@ a{color:#C9A96A}
     card("力積電 6770.TW", "晶圓代工＋記憶體", "72.00", "-1.50%", "dn", "半導體／晶圓代工＋記憶體"),
     card("大甲 2221.TWO", "半導體廠務", "164.00", "+3.47%", "up", "半導體廠務／設備零組件／特殊氣體")
   ].join("");
-
   function card(name, sub, px, chg, dir, note){
     const cls = dir==="up" ? "chg-up" : "chg-dn";
     return "<div class='dcard'><h3>"+name+"</h3><div class='cat-badges'><span class='cat-badge cat-mkt'>🇹🇼 台股</span><span class='cat-badge cat-sub'>"+sub+"</span></div><div class='act'>目前結論：已列入關注。中秋連假不重算進出場訊號；09/24 收盤僅作價格錨點，完整技術區待 09/29 補上。</div><div class='ck'><b>未持有</b> ⚪ 關注列入<br><b>已持有</b> 🔵 持有觀察</div><div class='ck'>現價："+px+" <span class='"+cls+"'>"+chg+"</span><br>技術支撐區：N/A<br>有效進場區：N/A<br>最高可接受進場價：N/A<br>結構失效價：N/A（以收盤跌破為主）<br>第一壓力：N/A<br>第二壓力：N/A<br>距進場區：N/A　距第一壓力：N/A<br>現價風報比：N/A<br>進場區風報比：N/A</div><div class='ck'><b>必要條件</b><br>☐ 收盤守住支撐／進場區<br>☐ 日線不是空頭<br>☐ 週線不是空頭<br>☐ 收盤位於 MA20 上方或重新站回<br>☐ 進場區風報比 ≥ 1.5<br><b>加分條件</b><br>☐ MACD 未轉弱<br>☐ 成交量 ≥ 1.5 倍均量<br>☐ RSI 未過熱（僅輔助）<br>☐ 距第一壓力仍有空間<br></div><div class='box'><b>進場觸發</b><br>連假期間不觸發新訊號。09/29 起依完整日線重算後，必要條件全過才是條件確認。<br><br><b>取消條件</b><br>待結構失效價計算後再生效。<br><br><b>持股管理</b><br>連假不調倉規則優先。<br><br><b>資料說明</b><br>2026-09-27 新增關注。次族群："+note+"。現價為 09/24 收盤。缺值一律 N/A，不虛構均線或進出場價。</div><div class='ck'><b>技術確認</b><br>日線 N/A　週線 N/A<br>MA20 N/A　MA60 N/A<br>RSI N/A　MACD N/A　量比 N/A</div></div>";
   }
-
   fetch(SNAP).then(function(r){ return r.text(); }).then(function(html){
+    html = html.replace('</body>', '<script src="./quote.js"><\/script></body>');
     html = html.replace(
       '"SpaceX SPCX": {market:"美股", sub:"航太科技", watch:["航太科技"]}',
       '"SpaceX SPCX": {market:"美股", sub:"航太科技", watch:["航太科技"]},\n      "群創 3481.TW": {market:"台股", sub:"面板／光電", watch:["面板／光電"]},\n      "力積電 6770.TW": {market:"台股", sub:"晶圓代工＋記憶體", watch:["晶圓代工＋記憶體","AI記憶體"]},\n      "大甲 2221.TWO": {market:"台股", sub:"半導體廠務", watch:["半導體廠務"]}'
@@ -41,35 +40,13 @@ a{color:#C9A96A}
       '"AI記憶體": ["美光 MU","力積電 6770.TW"],\n      "面板／光電": ["群創 3481.TW"],\n      "晶圓代工＋記憶體": ["力積電 6770.TW"],\n      "半導體廠務": ["大甲 2221.TWO"],'
     );
     html = html.replace(
-      '"ABF載板":"🧩","CCL":"🔌"',
-      '"ABF載板":"🧩","CCL":"🔌","面板／光電":"🖥️","晶圓代工＋記憶體":"💿","半導體廠務":"🏭"'
-    );
-    html = html.replace(
-      '"ABF載板":"theme-abf","CCL":"theme-ccl"',
-      '"ABF載板":"theme-abf","CCL":"theme-ccl","面板／光電":"theme-panel","晶圓代工＋記憶體":"theme-foundry","半導體廠務":"theme-fab"'
-    );
-    html = html.replace(
-      '<a href="#theme-ccl">CCL</a>',
-      '<a href="#theme-ccl">CCL</a>\n    <a href="#theme-panel">面板／光電</a>\n    <a href="#theme-foundry">晶圓代工＋記憶體</a>\n    <a href="#theme-fab">半導體廠務</a>'
-    );
-    html = html.replace(
-      '<div class="warn">新增關注：特斯拉（TSLA）、SpaceX（SPCX）。',
-      '<div class="warn">新增關注：群創（3481）、力積電（6770）、大甲（2221）。連假期間僅列入關注與分類，不重算進出場。</div><div class="warn">新增關注：特斯拉（TSLA）、SpaceX（SPCX）。'
-    );
-    html = html.replace(
-      '<div class="ai-cat-block" id="ccl"><b>CCL</b><div class="names">台光電、聯茂</div></div>',
-      '<div class="ai-cat-block" id="ccl"><b>CCL</b><div class="names">台光電、聯茂</div></div>\n          <div class="ai-cat-block"><b>面板／光電</b><div class="names">群創</div></div>\n          <div class="ai-cat-block"><b>晶圓代工＋記憶體</b><div class="names">力積電</div></div>\n          <div class="ai-cat-block"><b>半導體廠務</b><div class="names">大甲</div></div>'
-    );
-    html = html.replace(
       '</div></div></div></section>\n\n  <section class="panel" id="ai-category">',
       CARDS + '</div></div></div></section>\n\n  <section class="panel" id="ai-category">'
     );
     document.open();
     document.write(html);
     document.close();
-  }).catch(function(){
-    location.replace(SNAP);
-  });
+  }).catch(function(){ location.replace(SNAP); });
 })();
 </script>
 </body>
