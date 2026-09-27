@@ -1,0 +1,17 @@
+{
+  "selected": null,
+  "reason": "樣本不足，不選最佳策略",
+  "unstable": false,
+  "insample": null,
+  "oos": null,
+  "params": {
+    "rsi_lo": 45,
+    "rsi_hi": 60,
+    "min_rr": 1.8,
+    "vol_min": null,
+    "dist_atr_max": 1.0,
+    "macd": "not_weak",
+    "weekly": "not_bear",
+    "market": "BULL_NEUTRAL"
+  }
+}

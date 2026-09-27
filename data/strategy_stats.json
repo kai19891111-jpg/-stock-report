@@ -1,0 +1,33 @@
+{
+  "updated": null,
+  "source": "pipeline",
+  "isFinalClose": true,
+  "marketRegime": "N/A",
+  "oos": {
+    "sampleSize": 0,
+    "wins": 0,
+    "losses": 0,
+    "winRate": null,
+    "lossRate": null,
+    "avgWinR": null,
+    "avgLossR": null,
+    "expectancyR": null,
+    "profitFactor": null,
+    "maxDrawdownR": null,
+    "medianR": null,
+    "avgHoldingDays": null,
+    "recent20WinRate": null,
+    "recent50WinRate": null,
+    "ciLow": null,
+    "ciHigh": null
+  },
+  "insample": {"sampleSize": 0, "winRate": null, "expectancyR": null, "profitFactor": null},
+  "byRegime": {
+    "BULL": {"n": 0, "winRate": null, "expectancyR": null, "profitFactor": null},
+    "NEUTRAL": {"n": 0, "winRate": null, "expectancyR": null, "profitFactor": null},
+    "BEAR": {"n": 0, "winRate": null, "expectancyR": null, "profitFactor": null}
+  },
+  "byTheme": {},
+  "similar": {},
+  "note": "N<30 不顯示勝率。尚未累積正式收盤交易樣本。"
+}
