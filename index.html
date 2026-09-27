@@ -14,23 +14,14 @@ a{color:#C9A96A}
 <body>
 <div class="boot" id="boot">
   <p class="k">DAILY MARKET BRIEFING</p>
-  <p>正在載入報告並寫入關注股…</p>
-  <p><a href="./%20%20%20%20index.html">若未自動開啟，點這裡看原快照</a></p>
+  <p>正在載入報告…</p>
 </div>
 <script>
 (function(){
-  const SNAP = "./%20%20%20%20index.html";
-  const CARDS = [
-    card("群創 3481.TW", "面板／光電", "49.55", "-0.10%", "dn", "面板／光電／FOPLP 概念"),
-    card("力積電 6770.TW", "晶圓代工＋記憶體", "72.00", "-1.50%", "dn", "半導體／晶圓代工＋記憶體"),
-    card("大甲 2221.TWO", "半導體廠務", "164.00", "+3.47%", "up", "半導體廠務／設備零組件／特殊氣體")
-  ].join("");
-  function card(name, sub, px, chg, dir, note){
-    const cls = dir==="up" ? "chg-up" : "chg-dn";
-    return "<div class='dcard'><h3>"+name+"</h3><div class='cat-badges'><span class='cat-badge cat-mkt'>🇹🇼 台股</span><span class='cat-badge cat-sub'>"+sub+"</span></div><div class='act'>目前結論：已列入關注。中秋連假不重算進出場訊號；09/24 收盤僅作價格錨點，完整技術區待 09/29 補上。</div><div class='ck'><b>未持有</b> ⚪ 關注列入<br><b>已持有</b> 🔵 持有觀察</div><div class='ck'>現價："+px+" <span class='"+cls+"'>"+chg+"</span><br>技術支撐區：N/A<br>有效進場區：N/A<br>最高可接受進場價：N/A<br>結構失效價：N/A（以收盤跌破為主）<br>第一壓力：N/A<br>第二壓力：N/A<br>距進場區：N/A　距第一壓力：N/A<br>現價風報比：N/A<br>進場區風報比：N/A</div><div class='ck'><b>必要條件</b><br>☐ 收盤守住支撐／進場區<br>☐ 日線不是空頭<br>☐ 週線不是空頭<br>☐ 收盤位於 MA20 上方或重新站回<br>☐ 進場區風報比 ≥ 1.5<br><b>加分條件</b><br>☐ MACD 未轉弱<br>☐ 成交量 ≥ 1.5 倍均量<br>☐ RSI 未過熱（僅輔助）<br>☐ 距第一壓力仍有空間<br></div><div class='box'><b>進場觸發</b><br>連假期間不觸發新訊號。09/29 起依完整日線重算後，必要條件全過才是條件確認。<br><br><b>取消條件</b><br>待結構失效價計算後再生效。<br><br><b>持股管理</b><br>連假不調倉規則優先。<br><br><b>資料說明</b><br>2026-09-27 新增關注。次族群："+note+"。現價為 09/24 收盤。缺值一律 N/A，不虛構均線或進出場價。</div><div class='ck'><b>技術確認</b><br>日線 N/A　週線 N/A<br>MA20 N/A　MA60 N/A<br>RSI N/A　MACD N/A　量比 N/A</div></div>";
-  }
+  var keepHash = location.hash || '#trade-alert';
+  var SNAP = "https://raw.githubusercontent.com/kai19891111-jpg/-stock-report/3c450fd06766bc59f991bd9c51d51e5dec1cd3b1/%20%20%20%20index.html";
   fetch(SNAP).then(function(r){ return r.text(); }).then(function(html){
-    html = html.replace('</body>', '<script src="./quote.js"><\/script></body>');
+    html = html.replace('</body>', '<script src="./quote.js"><\\/script></body>');
     html = html.replace(
       '"SpaceX SPCX": {market:"美股", sub:"航太科技", watch:["航太科技"]}',
       '"SpaceX SPCX": {market:"美股", sub:"航太科技", watch:["航太科技"]},\n      "群創 3481.TW": {market:"台股", sub:"面板／光電", watch:["面板／光電"]},\n      "力積電 6770.TW": {market:"台股", sub:"晶圓代工＋記憶體", watch:["晶圓代工＋記憶體","AI記憶體"]},\n      "大甲 2221.TWO": {market:"台股", sub:"半導體廠務", watch:["半導體廠務"]}'
@@ -39,14 +30,19 @@ a{color:#C9A96A}
       '"AI記憶體": ["美光 MU"],',
       '"AI記憶體": ["美光 MU","力積電 6770.TW"],\n      "面板／光電": ["群創 3481.TW"],\n      "晶圓代工＋記憶體": ["力積電 6770.TW"],\n      "半導體廠務": ["大甲 2221.TWO"],'
     );
-    html = html.replace(
-      '</div></div></div></section>\n\n  <section class="panel" id="ai-category">',
-      CARDS + '</div></div></div></section>\n\n  <section class="panel" id="ai-category">'
-    );
     document.open();
     document.write(html);
     document.close();
-  }).catch(function(){ location.replace(SNAP); });
+    if (keepHash) {
+      setTimeout(function(){
+        location.hash = keepHash;
+        var t = document.querySelector(keepHash);
+        if (t) t.scrollIntoView();
+      }, 80);
+    }
+  }).catch(function(e){
+    document.getElementById('boot').innerHTML = '<p>載入失敗</p><p>'+e+'</p>';
+  });
 })();
 </script>
 </body>
