@@ -3,6 +3,72 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>技術與基本面報告｜2026-09-28</title>
-<!-- truncated for tool; full content is the updated report -->
-</head><body><p>請見完整檔</p></body></html>
+<title>技術與基本面報告</title>
+<style>
+body{margin:0;background:#071221;color:#F6F1E7;font-family:"Noto Sans TC","PingFang TC",sans-serif;}
+.boot{max-width:520px;margin:18vh auto;padding:24px;text-align:center;border:1px solid rgba(201,169,106,.28);}
+.boot .k{color:#C9A96A;letter-spacing:.18em;font-size:11px;}
+a{color:#C9A96A}
+</style>
+</head>
+<body>
+<div class="boot" id="boot">
+  <p class="k">DAILY MARKET BRIEFING</p>
+  <p>正在載入報告…</p>
+</div>
+<script>
+(function(){
+  var keepHash = location.hash || '#trade-alert';
+  var SNAP = "https://raw.githubusercontent.com/kai19891111-jpg/-stock-report/3c450fd06766bc59f991bd9c51d51e5dec1cd3b1/%20%20%20%20index.html";
+  fetch(SNAP).then(function(r){ return r.text(); }).then(function(html){
+    html = html.replace('</body>', '<script src="./quote.js"><\\/script><script src="./patch.js"><\\/script></body>');
+    html = html.replace(
+      '"SpaceX SPCX": {market:"美股", sub:"航太科技", watch:["航太科技"]}',
+      '"SpaceX SPCX": {market:"美股", sub:"航太科技", watch:["航太科技"]},
+      "群創 3481.TW": {market:"台股", sub:"面板／光電", watch:["面板／光電"]},
+      "力積電 6770.TW": {market:"台股", sub:"晶圓代工＋記憶體", watch:["晶圓代工＋記憶體","AI記憶體"]},
+      "大甲 2221.TWO": {market:"台股", sub:"半導體廠務", watch:["半導體廠務"]}'
+    );
+    html = html.replace(
+      '"AI記憶體": ["美光 MU"],',
+      '"AI記憶體": ["美光 MU","力積電 6770.TW"],
+      "面板／光電": ["群創 3481.TW"],
+      "晶圓代工＋記憶體": ["力積電 6770.TW"],
+      "半導體廠務": ["大甲 2221.TWO"],'
+    );
+    html = html.replace(
+      'const inZone = (priceNum!=null && entryR.low!=null && entryR.high!=null && priceNum>=entryR.low && priceNum<=entryR.high)\n        || (distPct!=null && distPct<=0);',
+      'const invalidNum = parseNum(invalidPrice);\n      let zoneState = "NO_DATA";\n      if(priceNum!=null && entryR.low!=null && entryR.high!=null){\n        if(invalidNum!=null && priceNum<=invalidNum) zoneState = "INVALIDATED";\n        else if(priceNum < entryR.low) zoneState = "BELOW_ZONE";\n        else if(priceNum>=entryR.low && priceNum<=entryR.high) zoneState = "IN_ZONE";\n        else zoneState = "ABOVE_ZONE";\n      }\n      const inZone = zoneState === "IN_ZONE";'
+    );
+    html = html.replace('distLabel = "✅ 已進入進場區";',
+      'if(zoneState==="INVALIDATED") distLabel = "🔴 已跌破結構失效價，原做多策略失效";\n      else if(zoneState==="BELOW_ZONE") distLabel = "⚠️ 已跌破原進場區，重新確認支撐";\n      else distLabel = "✅ 已進入有效進場區";');
+    html = html.replace('if(inZone) score += 40;',
+      'if(zoneState==="INVALIDATED" || zoneState==="BELOW_ZONE") { /* no +40 */ }\n      else if(inZone) score += 40;');
+    html = html.replace('tradeDate: "2026-09-24",',
+      'tradeDate: (function(){var m=(document.querySelector("#summary")&&document.querySelector("#summary").innerText||"").match(/20\\d{2}-\\d{2}-\\d{2}/g);return (m&&m.length)?m[m.length-1]:new Date().toISOString().slice(0,10);}()), zoneState, conditionScore:score,');
+    html = html.replace('dataStatus, score, text, inZone',
+      'dataStatus, score, conditionScore:score, text, inZone, zoneState');
+    html = html.replace('const closest = stocks.slice().sort((a,b)=>b.score-a.score);',
+      'const closest = stocks.slice().filter(s=>s.zoneState!=="INVALIDATED").sort((a,b)=>b.score-a.score);');
+    html = html.replace('const top = closest.filter(s=>s.unheldStatus.indexOf("🔴")<0).slice(0,4);',
+      'const top = closest.filter(s=>s.unheldStatus.indexOf("🔴")<0 && s.zoneState!=="INVALIDATED").slice(0,4);');
+    html = html.replace('資料：09/24 收盤', '資料：收盤確認');
+    html = html.replace('本頁美股資料：09/24 正式收盤。', '本頁美股資料：依報告日期。');
+    html = html.replace('本頁為 2026-09-25 單日快照', '本頁為單日快照');
+    document.open();
+    document.write(html);
+    document.close();
+    if (keepHash) {
+      setTimeout(function(){
+        location.hash = keepHash;
+        var t = document.querySelector(keepHash);
+        if (t) t.scrollIntoView();
+      }, 80);
+    }
+  }).catch(function(e){
+    document.getElementById('boot').innerHTML = '<p>載入失敗</p><p>'+e+'</p>';
+  });
+})();
+</script>
+</body>
+</html>
