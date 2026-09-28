@@ -1,6 +1,6 @@
 {
   "updated": null,
-  "source": "pipeline",
+  "source": "backtest.py",
   "isFinalClose": true,
   "marketRegime": "N/A",
   "oos": {
@@ -21,13 +21,81 @@
     "ciLow": null,
     "ciHigh": null
   },
-  "insample": {"sampleSize": 0, "winRate": null, "expectancyR": null, "profitFactor": null},
+  "insample": {
+    "sampleSize": 0,
+    "wins": 0,
+    "losses": 0,
+    "winRate": null,
+    "lossRate": null,
+    "avgWinR": null,
+    "avgLossR": null,
+    "expectancyR": null,
+    "profitFactor": null,
+    "maxDrawdownR": null,
+    "medianR": null,
+    "avgHoldingDays": null,
+    "recent20WinRate": null,
+    "recent50WinRate": null,
+    "ciLow": null,
+    "ciHigh": null
+  },
   "byRegime": {
-    "BULL": {"n": 0, "winRate": null, "expectancyR": null, "profitFactor": null},
-    "NEUTRAL": {"n": 0, "winRate": null, "expectancyR": null, "profitFactor": null},
-    "BEAR": {"n": 0, "winRate": null, "expectancyR": null, "profitFactor": null}
+    "BULL": {
+      "sampleSize": 0,
+      "wins": 0,
+      "losses": 0,
+      "winRate": null,
+      "lossRate": null,
+      "avgWinR": null,
+      "avgLossR": null,
+      "expectancyR": null,
+      "profitFactor": null,
+      "maxDrawdownR": null,
+      "medianR": null,
+      "avgHoldingDays": null,
+      "recent20WinRate": null,
+      "recent50WinRate": null,
+      "ciLow": null,
+      "ciHigh": null
+    },
+    "NEUTRAL": {
+      "sampleSize": 0,
+      "wins": 0,
+      "losses": 0,
+      "winRate": null,
+      "lossRate": null,
+      "avgWinR": null,
+      "avgLossR": null,
+      "expectancyR": null,
+      "profitFactor": null,
+      "maxDrawdownR": null,
+      "medianR": null,
+      "avgHoldingDays": null,
+      "recent20WinRate": null,
+      "recent50WinRate": null,
+      "ciLow": null,
+      "ciHigh": null
+    },
+    "BEAR": {
+      "sampleSize": 0,
+      "wins": 0,
+      "losses": 0,
+      "winRate": null,
+      "lossRate": null,
+      "avgWinR": null,
+      "avgLossR": null,
+      "expectancyR": null,
+      "profitFactor": null,
+      "maxDrawdownR": null,
+      "medianR": null,
+      "avgHoldingDays": null,
+      "recent20WinRate": null,
+      "recent50WinRate": null,
+      "ciLow": null,
+      "ciHigh": null
+    }
   },
   "byTheme": {},
   "similar": {},
-  "note": "N<30 不顯示勝率。尚未累積正式收盤交易樣本。"
+  "note": "OOS 與 IS 禁止混用。N<30 不宣稱高勝率。"
 }
