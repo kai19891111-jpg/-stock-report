@@ -22,7 +22,7 @@ a{color:#C9A96A}
   var SNAP = 'https://cdn.jsdelivr.net/gh/kai19891111-jpg/-stock-report@3c450fd06766bc59f991bd9c51d51e5dec1cd3b1/%20%20%20%20index.html';
   var SNAP2 = 'https://raw.githubusercontent.com/kai19891111-jpg/-stock-report/3c450fd06766bc59f991bd9c51d51e5dec1cd3b1/%20%20%20%20index.html';
   function boot(html){
-    html = html.replace('</body>', '<script src="./quote.js"><\\/script><script src="./patch.js"><\\/script></body>');
+    html = html.replace('</body>', '<script src="./quote.js"><\\/script><script src="./patch.js"><\\/script><script src="./upgrade-v2.js"><\\/script></body>');
     html = html.replace(
       '"SpaceX SPCX": {market:"美股", sub:"航太科技", watch:["航太科技"]}',
       '"SpaceX SPCX": {market:"美股", sub:"航太科技", watch:["航太科技"]}, "群創 3481.TW": {market:"台股", sub:"面板／光電", watch:["面板／光電"]}, "力積電 6770.TW": {market:"台股", sub:"晶圓代工＋記憶體", watch:["晶圓代工＋記憶體","AI記憶體"]}, "大甲 2221.TWO": {market:"台股", sub:"半導體廠務", watch:["半導體廠務"]}'
@@ -44,7 +44,7 @@ a{color:#C9A96A}
   }
   function fail(e){
     var el = document.getElementById('boot');
-    if (el) el.innerHTML = '<p>載入失敗</p><p>'+e+'</p><p><a href="https://cdn.jsdelivr.net/gh/kai19891111-jpg/-stock-report@3c450fd06766bc59f991bd9c51d51e5dec1cd3b1/%20%20%20%20index.html">改開完整報告</a></p>';
+    if (el) el.innerHTML = '<p>載入失敗</p><p>'+e+'</p>';
   }
   fetch(SNAP).then(function(r){ if(!r.ok) throw new Error('cdn '+r.status); return r.text(); }).then(boot).catch(function(){
     return fetch(SNAP2).then(function(r){ if(!r.ok) throw new Error('raw '+r.status); return r.text(); }).then(boot).catch(fail);
