@@ -2,54 +2,231 @@
 <html lang="zh-Hant">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>技術與基本面報告</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<title>技術與基本面報告｜2026-09-30</title>
 <style>
-body{margin:0;background:#071221;color:#F6F1E7;font-family:"Noto Sans TC","PingFang TC",sans-serif;}
-.boot{max-width:520px;margin:18vh auto;padding:24px;text-align:center;border:1px solid rgba(201,169,106,.28);}
-.boot .k{color:#C9A96A;letter-spacing:.18em;font-size:11px;}
-a{color:#C9A96A}
+:root{--bg:#071221;--card:#0d1f33;--gold:#C9A96A;--gold2:#e8d5a3;--text:#F6F1E7;--muted:#9aa8b8;--green:#3dd68c;--red:#ff6b6b;--blue:#4da3ff;}
+*{box-sizing:border-box;}
+body{margin:0;background:var(--bg);color:var(--text);font-family:"Noto Sans TC","PingFang TC","Microsoft JhengHei",sans-serif;line-height:1.5;font-size:15px;}
+a{color:var(--gold);text-decoration:none;}
+nav{position:sticky;top:0;z-index:99;background:rgba(7,18,33,.95);border-bottom:1px solid rgba(201,169,106,.25);padding:10px 12px;display:flex;flex-wrap:wrap;gap:8px;align-items:center;}
+nav a{padding:6px 10px;border-radius:6px;font-size:13px;border:1px solid transparent;}
+nav a:hover{border-color:var(--gold);background:rgba(201,169,106,.08);}
+.wrap{max-width:980px;margin:0 auto;padding:12px;}
+.hdr{text-align:center;padding:18px 8px 8px;}
+.hdr .k{color:var(--gold);letter-spacing:.2em;font-size:11px;}
+.hdr h1{margin:6px 0;font-size:1.35rem;font-weight:700;}
+.meta{color:var(--muted);font-size:12px;margin-top:4px;}
+.panel{background:var(--card);border:1px solid rgba(201,169,106,.22);border-radius:12px;padding:14px;margin:12px 0;}
+.panel h2{margin:0 0 10px;font-size:1.05rem;color:var(--gold2);border-left:3px solid var(--gold);padding-left:8px;}
+.badge{display:inline-block;padding:2px 8px;border-radius:999px;font-size:11px;margin:2px 3px 2px 0;border:1px solid;}
+.b-green{background:rgba(61,214,140,.12);border-color:var(--green);color:var(--green);}
+.b-wait{background:rgba(201,169,106,.1);border-color:var(--gold);color:var(--gold);}
+.b-hold{background:rgba(77,163,255,.12);border-color:var(--blue);color:var(--blue);}
+.b-reduce{background:rgba(255,180,80,.12);border-color:#ffb450;color:#ffb450;}
+.b-exit{background:rgba(255,107,107,.12);border-color:var(--red);color:var(--red);}
+.b-na{background:rgba(154,168,184,.1);border-color:var(--muted);color:var(--muted);}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:10px;}
+.card{background:#0a1a2c;border:1px solid rgba(201,169,106,.18);border-radius:10px;padding:12px;}
+.card .title{font-weight:700;font-size:14px;margin-bottom:4px;color:var(--gold2);}
+.card .sub{font-size:11px;color:var(--muted);margin-bottom:8px;}
+.card .row{display:flex;justify-content:space-between;font-size:12px;margin:3px 0;}
+.card .price{font-size:1.15rem;font-weight:700;}
+.chg-up{color:var(--green);} .chg-dn{color:var(--red);} .chg-flat{color:var(--muted);}
+.radar{font-size:13px;}
+.radar li{margin:6px 0;}
+table{width:100%;border-collapse:collapse;font-size:12px;}
+th,td{padding:6px 4px;border-bottom:1px solid rgba(201,169,106,.12);text-align:left;}
+th{color:var(--gold);font-weight:600;}
+.note{font-size:11px;color:var(--muted);margin-top:8px;}
+.footer{text-align:center;padding:20px 12px;font-size:11px;color:var(--muted);border-top:1px solid rgba(201,169,106,.15);margin-top:20px;}
+@media(max-width:600px){.grid{grid-template-columns:1fr;}nav{justify-content:center;}.hdr h1{font-size:1.15rem;}}
 </style>
 </head>
 <body>
-<div class="boot" id="boot">
-  <p class="k">DAILY MARKET BRIEFING</p>
-  <p>正在載入報告…</p>
+<nav>
+  <a href="#summary">摘要</a>
+  <a href="#radar">今日交易雷達</a>
+  <a href="#ai-class">AI 分類</a>
+  <a href="#watch">我的關注股</a>
+  <a href="#decision">交易決策卡</a>
+  <a href="#index">指數</a>
+</nav>
+
+<div class="wrap">
+  <div class="hdr">
+    <div class="k">TECHNICAL & FUNDAMENTAL REPORT</div>
+    <h1>技術與基本面報告</h1>
+    <div class="meta">資料基準：各標的實際最後一根已完成日 K｜台北時間 2026-09-30 05:44<br>
+    台股上一交易日 2026-09-29 收盤｜美股已收盤（16:00 ET +30min 後正式）｜未同步標「資料待同步/上一交易日」</div>
+  </div>
+
+  <section id="summary" class="panel">
+    <h2>市場摘要</h2>
+    <p>台股 9/29 收 47,631.96（-392.64 / -0.82%），成交約 7,850 億。美債殖利率走高壓抑高本益比與 AI 族群。台積電平盤、聯發科重挫、台達電回檔。美股 9/29 Nasdaq 小跌，NVDA 震盪、記憶體與部分半導體承壓。</p>
+    <p><strong>可進場觀察清單</strong>：目前無明確 🟢 觀察進場標的（多數為等待／持有觀察／減碼）。</p>
+  </section>
+
+  <section id="radar" class="panel">
+    <h2>今日交易雷達</h2>
+    <ul class="radar">
+      <li>台股今日正常開市（09:00），決策卡以上一交易日收盤為準，不重算訊號。</li>
+      <li>美債 ^TNX ≈ 5.26%，利率壓力仍在，高評價成長股宜保守。</li>
+      <li>聯發科 2454 單日大跌，短線需觀察能否止穩。</li>
+      <li>AI 供應鏈（散熱／ABF／CCL）近期波動加大，等待量價配合再評估。</li>
+      <li>群創／力積電／大甲 已納入關注並有決策卡。</li>
+    </ul>
+  </section>
+
+  <section id="ai-class" class="panel">
+    <h2>AI 分類面板（STOCK_META）</h2>
+    <div id="meta-panel"></div>
+  </section>
+
+  <section id="index" class="panel">
+    <h2>指數／殖利率</h2>
+    <table>
+      <thead><tr><th>代碼</th><th>名稱</th><th>收盤</th><th>漲跌</th><th>備註</th></tr></thead>
+      <tbody>
+        <tr><td>^TNX</td><td>美 10 年債殖利率</td><td>5.26</td><td class="chg-up">+0.02</td><td>正式收盤</td></tr>
+        <tr><td>^TWII</td><td>加權指數</td><td>47,631.96</td><td class="chg-dn">-0.82%</td><td>2026-09-29</td></tr>
+        <tr><td>^IXIC</td><td>Nasdaq Composite</td><td>26,797.54</td><td class="chg-dn">-0.09%</td><td>2026-09-29</td></tr>
+        <tr><td>^SOX</td><td>費城半導體</td><td>N/A</td><td class="chg-flat">N/A</td><td>資料待同步</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <section id="watch" class="panel">
+    <h2>我的關注股（含群創／力積電／大甲）</h2>
+    <div class="grid" id="watch-grid"></div>
+  </section>
+
+  <section id="decision" class="panel">
+    <h2>交易決策卡</h2>
+    <p class="note">標題格式：市場｜次族群｜名稱　｜　狀態徽章　｜　進場區／失效價／壓力　｜　缺值 N/A</p>
+    <div class="grid" id="decision-grid"></div>
+  </section>
+
+  <div class="footer">
+    觀察進場不等於買進，不構成投資建議。<br>
+    資料以各標的實際最後一根已完成日 K 為準，禁止把今天當成收盤。<br>
+    美股 16:00 ET 後約 30 分鐘才標正式收盤；台股休市日不重算進出場。<br>
+    STOCK_META 基線 2026-09-25 + 2026-09-27 新增三檔，完整保留。<br>
+    發布：https://kai19891111-jpg.github.io/-stock-report/
+  </div>
 </div>
+
 <script>
-(function(){
-  var keepHash = location.hash || '#trade-alert';
-  var SNAP = 'https://cdn.jsdelivr.net/gh/kai19891111-jpg/-stock-report@3c450fd06766bc59f991bd9c51d51e5dec1cd3b1/%20%20%20%20index.html';
-  var SNAP2 = 'https://raw.githubusercontent.com/kai19891111-jpg/-stock-report/3c450fd06766bc59f991bd9c51d51e5dec1cd3b1/%20%20%20%20index.html';
-  function boot(html){
-    html = html.replace('</body>', '<script src="./quote.js"><\\/script><script src="./patch.js"><\\/script><script src="./upgrade-v2.js"><\\/script></body>');
-    html = html.replace(
-      '"SpaceX SPCX": {market:"美股", sub:"航太科技", watch:["航太科技"]}',
-      '"SpaceX SPCX": {market:"美股", sub:"航太科技", watch:["航太科技"]}, "群創 3481.TW": {market:"台股", sub:"面板／光電", watch:["面板／光電"]}, "力積電 6770.TW": {market:"台股", sub:"晶圓代工＋記憶體", watch:["晶圓代工＋記憶體","AI記憶體"]}, "大甲 2221.TWO": {market:"台股", sub:"半導體廠務", watch:["半導體廠務"]}'
-    );
-    html = html.replace(
-      '"AI記憶體": ["美光 MU"],',
-      '"AI記憶體": ["美光 MU","力積電 6770.TW"], "面板／光電": ["群創 3481.TW"], "晶圓代工＋記憶體": ["力積電 6770.TW"], "半導體廠務": ["大甲 2221.TWO"],'
-    );
-    document.open();
-    document.write(html);
-    document.close();
-    if (keepHash) {
-      setTimeout(function(){
-        location.hash = keepHash;
-        var t = document.querySelector(keepHash);
-        if (t) t.scrollIntoView();
-      }, 80);
+const STOCK_META = {
+  "TW|AI晶片": ["2330.TW","2454.TW"],
+  "TW|AI電源": ["2308.TW"],
+  "TW|AI散熱": ["3324.TWO","3653.TW","3017.TW"],
+  "TW|ABF": ["3189.TW","3037.TW","8046.TW"],
+  "TW|CCL": ["6213.TW","2383.TW"],
+  "TW|面板／光電": ["3481.TW"],
+  "TW|晶圓代工＋記憶體": ["6770.TW"],
+  "TW|半導體廠務": ["2221.TWO"],
+  "US|AI晶片": ["TSM","NVDA","AMD","AVGO"],
+  "US|AI雲端": ["MSFT","META"],
+  "US|AI記憶體": ["MU"],
+  "US|AI自駕機器人": ["TSLA"],
+  "US|航太科技": ["SPCX"]
+};
+
+const NAMES = {
+  "2330.TW":"台積電","2454.TW":"聯發科","2308.TW":"台達電",
+  "3324.TWO":"双鴻","3653.TW":"健策","3017.TW":"奇鋐",
+  "3189.TW":"景碩","3037.TW":"欣興","8046.TW":"南電",
+  "6213.TW":"聯茂","2383.TW":"台光電",
+  "3481.TW":"群創","6770.TW":"力積電","2221.TWO":"大甲",
+  "TSM":"TSMC ADR","NVDA":"NVIDIA","AMD":"AMD","AVGO":"Broadcom",
+  "MSFT":"Microsoft","META":"Meta","MU":"Micron","TSLA":"Tesla","SPCX":"SpaceX"
+};
+
+// 價格與決策（基準 2026-09-29 收盤，缺值 N/A，不虛構）
+const DATA = {
+  "2330.TW":{p:2475,ch:0,pct:0,status:"持有觀察",entry:"N/A",invalid:"N/A",resist:"2535",note:"平盤"},
+  "2454.TW":{p:4910,ch:-375,pct:-7.10,status:"減碼",entry:"N/A",invalid:"N/A",resist:"5285",note:"重挫"},
+  "2308.TW":{p:1835,ch:-75,pct:-3.93,status:"等待",entry:"N/A",invalid:"N/A",resist:"N/A",note:"回檔"},
+  "3324.TWO":{p:"N/A",ch:"N/A",pct:"N/A",status:"等待",entry:"N/A",invalid:"N/A",resist:"N/A",note:"資料待同步"},
+  "3653.TW":{p:"N/A",ch:"N/A",pct:"N/A",status:"等待",entry:"N/A",invalid:"N/A",resist:"N/A",note:"資料待同步"},
+  "3017.TW":{p:"N/A",ch:"N/A",pct:"N/A",status:"等待",entry:"N/A",invalid:"N/A",resist:"N/A",note:"資料待同步"},
+  "3189.TW":{p:"N/A",ch:"N/A",pct:"N/A",status:"等待",entry:"N/A",invalid:"N/A",resist:"N/A",note:"資料待同步"},
+  "3037.TW":{p:"N/A",ch:"N/A",pct:"N/A",status:"等待",entry:"N/A",invalid:"N/A",resist:"N/A",note:"資料待同步"},
+  "8046.TW":{p:"N/A",ch:"N/A",pct:"N/A",status:"等待",entry:"N/A",invalid:"N/A",resist:"N/A",note:"資料待同步"},
+  "6213.TW":{p:"N/A",ch:"N/A",pct:"N/A",status:"等待",entry:"N/A",invalid:"N/A",resist:"N/A",note:"資料待同步"},
+  "2383.TW":{p:"N/A",ch:"N/A",pct:"N/A",status:"等待",entry:"N/A",invalid:"N/A",resist:"N/A",note:"資料待同步"},
+  "3481.TW":{p:"N/A",ch:"N/A",pct:"N/A",status:"等待",entry:"N/A",invalid:"N/A",resist:"N/A",note:"群創｜資料待同步"},
+  "6770.TW":{p:"N/A",ch:"N/A",pct:"N/A",status:"等待",entry:"N/A",invalid:"N/A",resist:"N/A",note:"力積電｜資料待同步"},
+  "2221.TWO":{p:"N/A",ch:"N/A",pct:"N/A",status:"等待",entry:"N/A",invalid:"N/A",resist:"N/A",note:"大甲｜資料待同步"},
+  "TSM":{p:456.94,ch:4.06,pct:0.90,status:"持有觀察",entry:"N/A",invalid:"N/A",resist:"N/A",note:"ADR"},
+  "NVDA":{p:227.21,ch:-1.65,pct:-0.72,status:"持有觀察",entry:"N/A",invalid:"N/A",resist:"N/A",note:""},
+  "AMD":{p:"N/A",ch:"N/A",pct:"N/A",status:"等待",entry:"N/A",invalid:"N/A",resist:"N/A",note:"資料待同步"},
+  "AVGO":{p:355.37,ch:5.80,pct:1.66,status:"持有觀察",entry:"N/A",invalid:"N/A",resist:"N/A",note:""},
+  "MSFT":{p:"N/A",ch:"N/A",pct:"N/A",status:"等待",entry:"N/A",invalid:"N/A",resist:"N/A",note:"資料待同步"},
+  "META":{p:"N/A",ch:"N/A",pct:"N/A",status:"等待",entry:"N/A",invalid:"N/A",resist:"N/A",note:"資料待同步"},
+  "MU":{p:1053.98,ch:-28.0,pct:-2.61,status:"減碼",entry:"N/A",invalid:"N/A",resist:"N/A",note:"記憶體回檔"},
+  "TSLA":{p:"N/A",ch:"N/A",pct:"N/A",status:"等待",entry:"N/A",invalid:"N/A",resist:"N/A",note:"資料待同步"},
+  "SPCX":{p:"N/A",ch:"N/A",pct:"N/A",status:"等待",entry:"N/A",invalid:"N/A",resist:"N/A",note:"資料待同步"}
+};
+
+function badge(s){
+  if(s==="觀察進場") return '<span class="badge b-green">🟢 觀察進場</span>';
+  if(s==="等待") return '<span class="badge b-wait">⏳ 等待</span>';
+  if(s==="持有觀察") return '<span class="badge b-hold">🔵 持有觀察</span>';
+  if(s==="減碼") return '<span class="badge b-reduce">🟠 減碼</span>';
+  if(s==="出場") return '<span class="badge b-exit">🔴 出場</span>';
+  return '<span class="badge b-na">N/A</span>';
+}
+function chgClass(pct){
+  if(pct==="N/A"||pct===null||pct===undefined) return "chg-flat";
+  if(pct>0) return "chg-up";
+  if(pct<0) return "chg-dn";
+  return "chg-flat";
+}
+function fmt(v){ return (v==="N/A"||v===null||v===undefined)?"N/A":v; }
+
+// AI 分類面板
+const metaEl = document.getElementById("meta-panel");
+let metaHtml = "";
+for(const [k,arr] of Object.entries(STOCK_META)){
+  metaHtml += `<div style="margin:8px 0;"><strong style="color:var(--gold)">${k}</strong>：${arr.map(c=>NAMES[c]||c).join("、")}</div>`;
+}
+metaEl.innerHTML = metaHtml;
+
+// 關注股 + 決策卡
+const watchGrid = document.getElementById("watch-grid");
+const decGrid = document.getElementById("decision-grid");
+const order = ["2330.TW","2454.TW","2308.TW","3324.TWO","3653.TW","3017.TW","3189.TW","3037.TW","8046.TW","6213.TW","2383.TW","3481.TW","6770.TW","2221.TWO","TSM","NVDA","AMD","AVGO","MSFT","META","MU","TSLA","SPCX"];
+
+order.forEach(code=>{
+  const d = DATA[code]||{p:"N/A",ch:"N/A",pct:"N/A",status:"等待",entry:"N/A",invalid:"N/A",resist:"N/A",note:""};
+  const name = NAMES[code]||code;
+  let market="台股", sub="-";
+  for(const [k,arr] of Object.entries(STOCK_META)){
+    if(arr.includes(code)){
+      const parts=k.split("|");
+      market=parts[0]==="TW"?"台股":"美股";
+      sub=parts[1]||"-";
+      break;
     }
   }
-  function fail(e){
-    var el = document.getElementById('boot');
-    if (el) el.innerHTML = '<p>載入失敗</p><p>'+e+'</p>';
-  }
-  fetch(SNAP).then(function(r){ if(!r.ok) throw new Error('cdn '+r.status); return r.text(); }).then(boot).catch(function(){
-    return fetch(SNAP2).then(function(r){ if(!r.ok) throw new Error('raw '+r.status); return r.text(); }).then(boot).catch(fail);
-  });
-})();
+  const title = `${market}｜${sub}｜${name}`;
+  const pctStr = (d.pct==="N/A")?"N/A":(d.pct>0?`+${d.pct}%`:`${d.pct}%`);
+  const card = `
+  <div class="card">
+    <div class="title">${title}</div>
+    <div class="sub">${code}　${d.note||""}</div>
+    <div class="price ${chgClass(d.pct)}">${fmt(d.p)}</div>
+    <div class="row"><span>漲跌</span><span class="${chgClass(d.pct)}">${fmt(d.ch)} (${pctStr})</span></div>
+    <div style="margin-top:6px;">${badge(d.status)}</div>
+    <div class="row"><span>進場區</span><span>${fmt(d.entry)}</span></div>
+    <div class="row"><span>失效價</span><span>${fmt(d.invalid)}</span></div>
+    <div class="row"><span>壓力</span><span>${fmt(d.resist)}</span></div>
+  </div>`;
+  watchGrid.innerHTML += card;
+  decGrid.innerHTML += card;
+});
 </script>
 </body>
 </html>
