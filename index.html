@@ -2163,73 +2163,310 @@ ${d.note || 'N/A'}
 
 
 <!-- =========================================================
-     HOLDING DECISION NOTE PATCH
-     2026-10-03
-     臻鼎-KY：續抱／減碼／出場規則
+     我的持倉｜續抱 / 減碼 / 出場判斷
+     直接貼在 </body> 前面
 ========================================================= -->
-<style id="holding-decision-note-style">
-  .hold-decision-box{margin-top:12px;padding:12px;border-radius:10px;background:rgba(77,163,255,.08);border:1px solid rgba(77,163,255,.28)}
-  .hold-decision-head{display:flex;justify-content:space-between;gap:8px;align-items:center;flex-wrap:wrap;margin-bottom:8px}
-  .hold-decision-title{font-weight:800;color:var(--gold2);font-size:14px}
-  .hold-decision-badge{display:inline-block;padding:4px 9px;border-radius:999px;font-size:12px;font-weight:800;border:1px solid}
-  .hold-green{color:var(--green);border-color:var(--green);background:rgba(61,214,140,.10)}
-  .hold-orange{color:#ffb450;border-color:#ffb450;background:rgba(255,180,80,.10)}
-  .hold-red{color:var(--red);border-color:var(--red);background:rgba(255,107,107,.10)}
-  .hold-rule{display:grid;grid-template-columns:100px 1fr;gap:8px;padding:6px 0;border-bottom:1px solid rgba(255,255,255,.06);font-size:12px}
-  .hold-rule:last-child{border-bottom:0}
-  .hold-rule b{color:var(--gold2)}
-  .hold-reason{font-size:12px;line-height:1.65;margin:8px 0 4px}
-  @media(max-width:650px){.hold-rule{grid-template-columns:1fr;gap:2px}}
+
+<style>
+.position-action-box{
+  margin-top:12px;
+  padding:12px;
+  border-radius:10px;
+  background:#081a2d;
+  border:1px solid rgba(201,169,106,.28);
+}
+
+.position-action-title{
+  font-weight:800;
+  font-size:15px;
+  margin-bottom:8px;
+}
+
+.position-action-hold{
+  color:#3dd68c;
+}
+
+.position-action-reduce{
+  color:#ffb450;
+}
+
+.position-action-exit{
+  color:#ff6b6b;
+}
+
+.position-rule{
+  margin:6px 0;
+  font-size:12px;
+  line-height:1.6;
+}
+
+.position-level{
+  display:flex;
+  justify-content:space-between;
+  gap:10px;
+  padding:7px 0;
+  border-bottom:1px solid rgba(255,255,255,.06);
+  font-size:12px;
+}
+
+.position-level:last-child{
+  border-bottom:none;
+}
 </style>
-<script id="holding-decision-note-script">
+
+<script>
 (function(){
-  const box=document.getElementById('u2-position');
-  if(!box || typeof DATA==='undefined') return;
 
-  const d=DATA['4958.TW']||{};
-  const p=Number(d.p);
-  const avg=481.90;
-  const current=Number.isFinite(p)?p:561;
-  const gainPct=((current-avg)/avg)*100;
+  /* =========================
+     臻鼎-KY 持倉設定
+  ========================= */
 
-  // 10/02 已知結構：收 561 漲停、當日均價約 545、前一日收盤 510。
-  // 不預測未知目標價，以移動停利管理已存在的獲利。
-  let label='🟢 續抱｜移動停利';
-  let cls='hold-green';
-  let headline='趨勢仍強，暫不建議一次全部賣出。';
+  const HOLD_POSITION = {
+    code: '4958.TW',
+    name: '臻鼎-KY',
 
-  if(current < 510){
-    label='🔴 停利／出場優先';
-    cls='hold-red';
-    headline='已跌破前一日突破基準，短線結構明顯轉弱。';
-  }else if(current < 545){
-    label='🟠 分批減碼';
-    cls='hold-orange';
-    headline='跌破漲停日均價區，先保住已累積的獲利。';
+    shares: 80,
+    avgPrice: 481.90,
+
+    /* 短線判斷價位 */
+    holdAbove: 561,
+    reduceBelow: 545,
+    exitBelow: 510
+  };
+
+
+  function numberValue(v){
+    const n = Number(v);
+    return Number.isFinite(n) ? n : null;
   }
 
-  const card=box.querySelector('.u2-card');
-  if(!card || card.querySelector('.hold-decision-box')) return;
 
-  const div=document.createElement('div');
-  div.className='hold-decision-box';
-  div.innerHTML=`
-    <div class="hold-decision-head">
-      <div class="hold-decision-title">📌 持倉判斷｜臻鼎-KY 4958</div>
-      <span class="hold-decision-badge ${cls}">${label}</span>
-    </div>
-    <div class="hold-reason">
-      ${headline}<br>
-      目前 DATA 價 <b>${current.toFixed(2)}</b>，相對平均成本 <b>${avg.toFixed(2)}</b> 約 <b>${gainPct>=0?'+':''}${gainPct.toFixed(2)}%</b>。
-      10/02 收盤漲停且量能明顯放大，代表短線動能強，但連續上漲後也要防高檔震盪，因此採「續抱＋移動停利」而不是無條件死抱。
-    </div>
-    <div class="hold-rule"><b>561 以上</b><span>突破／站穩 561：續抱，觀察量價，不先猜目標價。</span></div>
-    <div class="hold-rule"><b>545～561</b><span>仍可續抱；545 附近視為短線第一防守區。</span></div>
-    <div class="hold-rule"><b>跌破 545</b><span>若收不回 545：建議分批減碼，先鎖住部分獲利。</span></div>
-    <div class="hold-rule"><b>跌破 510</b><span>視為短線轉弱：以停利／出場優先，不再單純續抱。</span></div>
-    <p class="note" style="margin-bottom:0">判斷依 2026-10-02 收盤結構設定；之後 DATA 更新時，本區會依最新價格自動切換「續抱／減碼／出場」狀態。價位是風險管理門檻，不是保證走勢。</p>
-  `;
-  card.appendChild(div);
+  function getPositionPrice(){
+
+    /* 優先讀取每天更新的 DATA */
+    if(
+      typeof DATA !== 'undefined' &&
+      DATA[HOLD_POSITION.code] &&
+      numberValue(DATA[HOLD_POSITION.code].p) !== null
+    ){
+      return Number(DATA[HOLD_POSITION.code].p);
+    }
+
+    return null;
+  }
+
+
+  function getPositionDecision(price){
+
+    if(price === null){
+      return {
+        status:'資料待更新',
+        cls:'',
+        icon:'⚪',
+        note:'目前沒有最新價格，先不要產生買賣判斷。'
+      };
+    }
+
+
+    /* ===== 出場區 ===== */
+
+    if(price < HOLD_POSITION.exitBelow){
+
+      return {
+        status:'出場優先',
+        cls:'position-action-exit',
+        icon:'🔴',
+
+        note:
+        `股價已跌破 ${HOLD_POSITION.exitBelow}，` +
+        `短線結構明顯轉弱，優先保護本金與既有獲利。`
+      };
+
+    }
+
+
+    /* ===== 減碼區 ===== */
+
+    if(price < HOLD_POSITION.reduceBelow){
+
+      return {
+        status:'分批減碼',
+        cls:'position-action-reduce',
+        icon:'🟠',
+
+        note:
+        `股價已跌破 ${HOLD_POSITION.reduceBelow}，` +
+        `代表短線動能開始轉弱，可考慮分批鎖住獲利。`
+      };
+
+    }
+
+
+    /* ===== 續抱區 ===== */
+
+    return {
+      status:'續抱＋移動停利',
+      cls:'position-action-hold',
+      icon:'🟢',
+
+      note:
+      `目前仍守在 ${HOLD_POSITION.reduceBelow} 以上，` +
+      `暫時不需要一次全部賣出，以續抱並提高停利點為主。`
+    };
+
+  }
+
+
+  function renderPositionDecision(){
+
+    const section = document.getElementById('u2-position');
+
+    if(!section) return;
+
+
+    /* 避免重複產生 */
+    const old = document.getElementById('position-action-analysis');
+
+    if(old) old.remove();
+
+
+    const price = getPositionPrice();
+
+    const decision = getPositionDecision(price);
+
+
+    const avg = HOLD_POSITION.avgPrice;
+
+    const pnlPct =
+      price !== null
+      ? ((price - avg) / avg * 100)
+      : null;
+
+
+    const pnl =
+      price !== null
+      ? ((price - avg) * HOLD_POSITION.shares)
+      : null;
+
+
+    const box = document.createElement('div');
+
+    box.id = 'position-action-analysis';
+
+    box.className = 'position-action-box';
+
+
+    box.innerHTML = `
+
+      <div class="position-action-title ${decision.cls}">
+        ${decision.icon}
+        持倉判斷：
+        ${decision.status}
+      </div>
+
+
+      <div class="position-level">
+        <span>目前價格</span>
+        <b>${price !== null ? price.toFixed(2) : 'N/A'}</b>
+      </div>
+
+
+      <div class="position-level">
+        <span>持倉成本</span>
+        <b>${avg.toFixed(2)}</b>
+      </div>
+
+
+      <div class="position-level">
+        <span>目前報酬率</span>
+        <b>
+          ${
+            pnlPct !== null
+            ? `${pnlPct >= 0 ? '+' : ''}${pnlPct.toFixed(2)}%`
+            : 'N/A'
+          }
+        </b>
+      </div>
+
+
+      <div class="position-level">
+        <span>試算損益</span>
+        <b>
+          ${
+            pnl !== null
+            ? `${pnl >= 0 ? '+' : ''}${Math.round(pnl).toLocaleString()}`
+            : 'N/A'
+          }
+        </b>
+      </div>
+
+
+      <div class="position-rule">
+        ${decision.note}
+      </div>
+
+
+      <div class="position-rule">
+
+        🚀 <b>561 以上：</b>
+        突破後若能站穩，繼續抱。
+
+      </div>
+
+
+      <div class="position-rule">
+
+        🔵 <b>545～561：</b>
+        仍以續抱為主，545 作為第一道短線防守。
+
+      </div>
+
+
+      <div class="position-rule">
+
+        🟠 <b>跌破 545：</b>
+        若收盤仍站不回，開始考慮分批減碼、鎖住獲利。
+
+      </div>
+
+
+      <div class="position-rule">
+
+        🔴 <b>跌破 510：</b>
+        短線結構明顯轉弱，改為停利／出場優先。
+
+      </div>
+
+
+      <div class="note" style="margin-top:10px;">
+
+        判斷會優先讀取 DATA['4958.TW'].p 的最新價格，
+        所以之後更新每日行情時，持倉狀態也會一起重新判斷。
+
+      </div>
+
+    `;
+
+
+    section.appendChild(box);
+
+  }
+
+
+  /* 頁面載入後執行 */
+  if(document.readyState === 'loading'){
+
+    document.addEventListener(
+      'DOMContentLoaded',
+      renderPositionDecision
+    );
+
+  }else{
+
+    renderPositionDecision();
+
+  }
+
 })();
 </script>
 
