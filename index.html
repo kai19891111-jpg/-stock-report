@@ -51,8 +51,11 @@ th{color:var(--gold);font-weight:600;}
   <a href="#watch">我的關注股</a>
   <a href="#decision">交易決策卡</a>
   <a href="#index">指數</a>
-  <a href="#smart-levels">支撐壓力</a>
-  <a href="#group-sync">族群同步</a>
+  <a href="#u2-market-levels">大盤關卡</a>
+  <a href="#u2-smart">新增關注</a>
+  <a href="#u2-position">我的持倉</a>
+  <a href="#u2-sync">族群同步</a>
+  <a href="#guide">使用方法</a>
 </nav>
 <div class="wrap">
   <div class="hdr">
@@ -83,7 +86,7 @@ th{color:var(--gold);font-weight:600;}
   <section id="ai-class" class="panel">
     <h2>AI 分類面板（STOCK_META）</h2>
     <div id="meta-panel"></div>
-    <p class="note">基線 2026-09-25 分類 + 2026-09-27 新增關注三檔（群創 3481.TW、力積電 6770.TW、大甲 2221.TWO）+ 2026-10-02 補丁新增關注，未丟棄。</p>
+    <p class="note">基線 2026-09-25 分類 + 2026-09-27 三檔（群創、力積電、大甲）+ 2026-10-02 補丁八檔，未丟棄。行情仍以 10/01 完成日K為準。</p>
   </section>
   <section id="index" class="panel">
     <h2>指數／殖利率</h2>
@@ -93,7 +96,7 @@ th{color:var(--gold);font-weight:600;}
     </table>
   </section>
   <section id="watch" class="panel">
-    <h2>我的關注股（含群創／力積電／大甲）</h2>
+    <h2>我的關注股</h2>
     <div class="grid" id="watch-grid"></div>
   </section>
   <section id="decision" class="panel">
@@ -122,7 +125,14 @@ const STOCK_META = {
   "US|AI雲端": ["MSFT","META"],
   "US|AI記憶體": ["MU"],
   "US|AI自駕機器人": ["TSLA"],
-  "US|航太科技": ["SPCX"]
+  "US|航太科技": ["SPCX"],
+  "TW|AI伺服器／機櫃": ["8210.TW"],
+  "TW|AI基建／電力": ["2371.TW"],
+  "TW|光學／CPO": ["3406.TW"],
+  "TW|記憶體": ["2408.TW"],
+  "TW|CCL／電子材料": ["1303.TW"],
+  "TW|PCB／銅箔": ["8358.TWO","4958.TW"],
+  "TW|電池監測IC": ["4919.TW"]
 };
 const NAMES = {
   "2330.TW":"台積電","2454.TW":"聯發科","2308.TW":"台達電",
@@ -132,9 +142,19 @@ const NAMES = {
   "3481.TW":"群創","6770.TW":"力積電","2221.TWO":"大甲",
   "TSM":"TSMC ADR","NVDA":"NVIDIA","AMD":"AMD","AVGO":"Broadcom",
   "MSFT":"Microsoft","META":"Meta","MU":"Micron","TSLA":"Tesla","SPCX":"SPCX",
-  "^TNX":"美10年債殖利率","^TWII":"加權指數","^IXIC":"Nasdaq","^SOX":"費城半導體"
+  "^TNX":"美10年債殖利率","^TWII":"加權指數","^IXIC":"Nasdaq","^SOX":"費城半導體",
+  "2371.TW":"大同","8210.TW":"勤誠","3406.TW":"玉晶光","2408.TW":"南亞科",
+  "1303.TW":"南亞","8358.TWO":"金居","4958.TW":"臻鼎-KY","4919.TW":"新唐"
 };
-const DATA = {"^TNX": {"p": 5.24, "ch": -0.06, "pct": -1.06, "date": "2026-10-01", "status": "N/A", "entry": "N/A", "invalid": "N/A", "resist": "5.34", "s20": 5.02, "s60": 4.78, "note": "2026-10-01 正式收盤 5.24；日內高 5.34"}, "^TWII": {"p": 48353.49, "ch": 413.36, "pct": 0.86, "date": "2026-10-01", "status": "持有觀察", "entry": "N/A", "invalid": "N/A", "resist": "N/A", "s20": "N/A", "s60": "N/A", "note": "正式收盤 48,353.49（中央社）。日K序列未併入 10/01，均線／進出場不重算（資料待同步／上一交易日序列）"}, "^IXIC": {"p": 26871.6, "ch": 10.54, "pct": 0.04, "date": "2026-10-01", "status": "持有觀察", "entry": "N/A", "invalid": "N/A", "resist": "27288.79", "s20": 26596.44, "s60": 26207.45, "note": "2026-10-01 正式收盤；指數不列個股進場"}, "^SOX": {"p": 12829.0, "ch": 200.38, "pct": 1.59, "date": "2026-10-01", "status": "持有觀察", "entry": "N/A", "invalid": "11056.38", "resist": "12913.40", "s20": 12039.48, "s60": 11956.84, "note": "2026-10-01 正式收盤"}, "2330.TW": {"p": 2510.0, "ch": 30.0, "pct": 1.21, "date": "2026-10-01", "status": "持有觀察", "entry": "2470.00-2442.50", "invalid": "2375.00", "resist": "2510.00", "s20": 2442.5, "s60": 2403.0, "note": "收在近20日高，不追；進場區為回檔觀察"}, "2454.TW": {"p": 4980.0, "ch": 60.0, "pct": 1.22, "date": "2026-10-01", "status": "持有觀察", "entry": "4875.00-4731.50", "invalid": "4230.00", "resist": "5480.00", "s20": 4731.5, "s60": 4117.0, "note": "SMA20>SMA60，乖離5.3%，量縮反彈，未回進場區"}, "2308.TW": {"p": 1905.0, "ch": 15.0, "pct": 0.79, "date": "2026-10-01", "status": "持有觀察", "entry": "1810.00-1784.75", "invalid": "1560.00", "resist": "1965.00", "s20": 1784.75, "s60": 1775.5, "note": "站上均線，乖離6.7%偏熱，等回檔"}, "3324.TWO": {"p": 1525.0, "ch": -5.0, "pct": -0.33, "date": "2026-10-01", "status": "持有觀察", "entry": "1480.00-1456.75", "invalid": "1240.00", "resist": "1750.00", "s20": 1456.75, "s60": 1138.45, "note": "高檔震盪，收1525仍在均線上"}, "3653.TW": {"p": 6875.0, "ch": 75.0, "pct": 1.1, "date": "2026-10-01", "status": "減碼", "entry": "5930.00-5927.50", "invalid": "5210.00", "resist": "7160.00", "s20": 5927.5, "s60": 4800.58, "note": "乖離SMA20約16%，短線過熱"}, "3017.TW": {"p": 3510.0, "ch": 75.0, "pct": 2.18, "date": "2026-10-01", "status": "持有觀察", "entry": "3285.00-3374.25", "invalid": "3100.00", "resist": "3600.00", "s20": 3374.25, "s60": 2904.17, "note": "站上均線，距20日高3600仍有空間，乖離4%"}, "3189.TW": {"p": 1010.0, "ch": 40.0, "pct": 4.12, "date": "2026-10-01", "status": "減碼", "entry": "881.00-855.20", "invalid": "766.00", "resist": "1020.00", "s20": 855.2, "s60": 812.52, "note": "單日+4.1%，乖離18%，不追"}, "3037.TW": {"p": 1215.0, "ch": 40.0, "pct": 3.4, "date": "2026-10-01", "status": "減碼", "entry": "1115.00-1025.40", "invalid": "873.00", "resist": "1230.00", "s20": 1025.4, "s60": 973.83, "note": "乖離18.5%，收在高檔"}, "8046.TW": {"p": 1420.0, "ch": 80.0, "pct": 5.97, "date": "2026-10-01", "status": "減碼", "entry": "1150.00-1139.25", "invalid": "1010.00", "resist": "1450.00", "s20": 1139.25, "s60": 1152.83, "note": "單日+6.0%，乖離24.6%，量增偏熱"}, "6213.TW": {"p": 642.0, "ch": 19.0, "pct": 3.05, "date": "2026-10-01", "status": "減碼", "entry": "525.00-541.45", "invalid": "482.00", "resist": "649.00", "s20": 541.45, "s60": 450.38, "note": "乖離18.6%，靠近20日高649"}, "2383.TW": {"p": 4975.0, "ch": 40.0, "pct": 0.81, "date": "2026-10-01", "status": "等待", "entry": "4855.00-5144.25", "invalid": "4635.00", "resist": "5670.00", "s20": 5144.25, "s60": 5224.83, "note": "收在SMA20下（5144），趨勢未修復"}, "3481.TW": {"p": 52.3, "ch": -2.4, "pct": -4.39, "date": "2026-10-01", "status": "等待", "entry": "48.55-49.41", "invalid": "46.25", "resist": "55.50", "s20": 49.41, "s60": 50.17, "note": "漲停後回檔-4.4%，量能2.3倍，不追"}, "6770.TW": {"p": 74.5, "ch": -0.8, "pct": -1.06, "date": "2026-10-01", "status": "持有觀察", "entry": "70.50-71.65", "invalid": "66.70", "resist": "75.40", "s20": 71.65, "s60": 68.61, "note": "站上SMA20，小幅回吐"}, "2221.TWO": {"p": 179.0, "ch": -18.5, "pct": -9.37, "date": "2026-10-01", "status": "減碼", "entry": "149.50-121.29", "invalid": "78.10", "resist": "198.00", "s20": 121.29, "s60": 76.2, "note": "單日-9.4%，仍大幅偏離SMA20（121），減碼不抄"}, "TSM": {"p": 459.2, "ch": 3.01, "pct": 0.66, "date": "2026-10-01", "status": "持有觀察", "entry": "443.11-438.33", "invalid": "407.82", "resist": "461.87", "s20": 438.33, "s60": 422.94, "note": "站上SMA20，接近20日高"}, "NVDA": {"p": 230.86, "ch": 2.48, "pct": 1.09, "date": "2026-10-01", "status": "持有觀察", "entry": "223.13-223.51", "invalid": "208.93", "resist": "234.76", "s20": 223.51, "s60": 216.05, "note": "站上SMA20，乖離3.3%"}, "AMD": {"p": 615.73, "ch": 3.97, "pct": 0.65, "date": "2026-10-01", "status": "持有觀察", "entry": "596.07-557.60", "invalid": "440.50", "resist": "639.00", "s20": 557.6, "s60": 514.93, "note": "乖離10.4%，趨勢仍在、不追高"}, "AVGO": {"p": 343.64, "ch": -7.55, "pct": -2.15, "date": "2026-10-01", "status": "等待", "entry": "343.29-354.20", "invalid": "335.81", "resist": "372.70", "s20": 354.2, "s60": 376.23, "note": "跌破SMA20，等待收復"}, "MSFT": {"p": 512.8, "ch": -0.1, "pct": -0.02, "date": "2026-10-01", "status": "觀察進場", "entry": "497.25-501.30", "invalid": "486.00", "resist": "522.85", "s20": 501.3, "s60": 469.61, "note": "站上SMA20、乖離2.3%，未貼20日高，列觀察進場（回檔區）"}, "META": {"p": 725.93, "ch": 0.75, "pct": 0.1, "date": "2026-10-01", "status": "持有觀察", "entry": "713.19-690.05", "invalid": "604.35", "resist": "779.82", "s20": 690.05, "s60": 627.62, "note": "站上均線，乖離5.2%"}, "MU": {"p": 1097.39, "ch": 32.28, "pct": 3.03, "date": "2026-10-01", "status": "持有觀察", "entry": "1022.90-1019.16", "invalid": "902.60", "resist": "1108.72", "s20": 1019.16, "s60": 950.18, "note": "創高附近，量能1.8倍，乖離7.7%，持有觀察不追"}, "TSLA": {"p": 354.11, "ch": -0.7, "pct": -0.2, "date": "2026-10-01", "status": "等待", "entry": "345.88-365.15", "invalid": "345.88", "resist": "386.83", "s20": 365.15, "s60": 353.71, "note": "收在SMA20下"}, "SPCX": {"p": 148.07, "ch": -2.79, "pct": -1.85, "date": "2026-10-01", "status": "等待", "entry": "145.36-149.67", "invalid": "141.05", "resist": "158.13", "s20": 149.67, "s60": 137.15, "note": "收在SMA20下，等待收復"}};
+const DATA = {"^TNX": {"p": 5.24, "ch": -0.06, "pct": -1.06, "date": "2026-10-01", "status": "N/A", "entry": "N/A", "invalid": "N/A", "resist": "5.34", "s20": 5.02, "s60": 4.78, "note": "2026-10-01 正式收盤 5.24；日內高 5.34"}, "^TWII": {"p": 48353.49, "ch": 413.36, "pct": 0.86, "date": "2026-10-01", "status": "持有觀察", "entry": "N/A", "invalid": "N/A", "resist": "N/A", "s20": "N/A", "s60": "N/A", "note": "正式收盤 48,353.49（中央社）。日K序列未併入 10/01，均線／進出場不重算（資料待同步／上一交易日序列）"}, "^IXIC": {"p": 26871.6, "ch": 10.54, "pct": 0.04, "date": "2026-10-01", "status": "持有觀察", "entry": "N/A", "invalid": "N/A", "resist": "27288.79", "s20": 26596.44, "s60": 26207.45, "note": "2026-10-01 正式收盤；指數不列個股進場"}, "^SOX": {"p": 12829.0, "ch": 200.38, "pct": 1.59, "date": "2026-10-01", "status": "持有觀察", "entry": "N/A", "invalid": "11056.38", "resist": "12913.40", "s20": 12039.48, "s60": 11956.84, "note": "2026-10-01 正式收盤"}, "2330.TW": {"p": 2510.0, "ch": 30.0, "pct": 1.21, "date": "2026-10-01", "status": "持有觀察", "entry": "2470.00-2442.50", "invalid": "2375.00", "resist": "2510.00", "s20": 2442.5, "s60": 2403.0, "note": "收在近20日高，不追；進場區為回檔觀察"}, "2454.TW": {"p": 4980.0, "ch": 60.0, "pct": 1.22, "date": "2026-10-01", "status": "持有觀察", "entry": "4875.00-4731.50", "invalid": "4230.00", "resist": "5480.00", "s20": 4731.5, "s60": 4117.0, "note": "SMA20>SMA60，乖離5.3%，量縮反彈，未回進場區"}, "2308.TW": {"p": 1905.0, "ch": 15.0, "pct": 0.79, "date": "2026-10-01", "status": "持有觀察", "entry": "1810.00-1784.75", "invalid": "1560.00", "resist": "1965.00", "s20": 1784.75, "s60": 1775.5, "note": "站上均線，乖離6.7%偏熱，等回檔"}, "3324.TWO": {"p": 1525.0, "ch": -5.0, "pct": -0.33, "date": "2026-10-01", "status": "持有觀察", "entry": "1480.00-1456.75", "invalid": "1240.00", "resist": "1750.00", "s20": 1456.75, "s60": 1138.45, "note": "高檔震盪，收1525仍在均線上"}, "3653.TW": {"p": 6875.0, "ch": 75.0, "pct": 1.1, "date": "2026-10-01", "status": "減碼", "entry": "5930.00-5927.50", "invalid": "5210.00", "resist": "7160.00", "s20": 5927.5, "s60": 4800.58, "note": "乖離SMA20約16%，短線過熱"}, "3017.TW": {"p": 3510.0, "ch": 75.0, "pct": 2.18, "date": "2026-10-01", "status": "持有觀察", "entry": "3285.00-3374.25", "invalid": "3100.00", "resist": "3600.00", "s20": 3374.25, "s60": 2904.17, "note": "站上均線，距20日高3600仍有空間，乖離4%"}, "3189.TW": {"p": 1010.0, "ch": 40.0, "pct": 4.12, "date": "2026-10-01", "status": "減碼", "entry": "881.00-855.20", "invalid": "766.00", "resist": "1020.00", "s20": 855.2, "s60": 812.52, "note": "單日+4.1%，乖離18%，不追"}, "3037.TW": {"p": 1215.0, "ch": 40.0, "pct": 3.4, "date": "2026-10-01", "status": "減碼", "entry": "1115.00-1025.40", "invalid": "873.00", "resist": "1230.00", "s20": 1025.4, "s60": 973.83, "note": "乖離18.5%，收在高檔"}, "8046.TW": {"p": 1420.0, "ch": 80.0, "pct": 5.97, "date": "2026-10-01", "status": "減碼", "entry": "1150.00-1139.25", "invalid": "1010.00", "resist": "1450.00", "s20": 1139.25, "s60": 1152.83, "note": "單日+6.0%，乖離24.6%，量增偏熱"}, "6213.TW": {"p": 642.0, "ch": 19.0, "pct": 3.05, "date": "2026-10-01", "status": "減碼", "entry": "525.00-541.45", "invalid": "482.00", "resist": "649.00", "s20": 541.45, "s60": 450.38, "note": "乖離18.6%，靠近20日高649"}, "2383.TW": {"p": 4975.0, "ch": 40.0, "pct": 0.81, "date": "2026-10-01", "status": "等待", "entry": "4855.00-5144.25", "invalid": "4635.00", "resist": "5670.00", "s20": 5144.25, "s60": 5224.83, "note": "收在SMA20下（5144），趨勢未修復"}, "3481.TW": {"p": 52.3, "ch": -2.4, "pct": -4.39, "date": "2026-10-01", "status": "等待", "entry": "48.55-49.41", "invalid": "46.25", "resist": "55.50", "s20": 49.41, "s60": 50.17, "note": "漲停後回檔-4.4%，量能2.3倍，不追"}, "6770.TW": {"p": 74.5, "ch": -0.8, "pct": -1.06, "date": "2026-10-01", "status": "持有觀察", "entry": "70.50-71.65", "invalid": "66.70", "resist": "75.40", "s20": 71.65, "s60": 68.61, "note": "站上SMA20，小幅回吐"}, "2221.TWO": {"p": 179.0, "ch": -18.5, "pct": -9.37, "date": "2026-10-01", "status": "減碼", "entry": "149.50-121.29", "invalid": "78.10", "resist": "198.00", "s20": 121.29, "s60": 76.2, "note": "單日-9.4%，仍大幅偏離SMA20（121），減碼不抄"}, "TSM": {"p": 459.2, "ch": 3.01, "pct": 0.66, "date": "2026-10-01", "status": "持有觀察", "entry": "443.11-438.33", "invalid": "407.82", "resist": "461.87", "s20": 438.33, "s60": 422.94, "note": "站上SMA20，接近20日高"}, "NVDA": {"p": 230.86, "ch": 2.48, "pct": 1.09, "date": "2026-10-01", "status": "持有觀察", "entry": "223.13-223.51", "invalid": "208.93", "resist": "234.76", "s20": 223.51, "s60": 216.05, "note": "站上SMA20，乖離3.3%"}, "AMD": {"p": 615.73, "ch": 3.97, "pct": 0.65, "date": "2026-10-01", "status": "持有觀察", "entry": "596.07-557.60", "invalid": "440.50", "resist": "639.00", "s20": 557.6, "s60": 514.93, "note": "乖離10.4%，趨勢仍在、不追高"}, "AVGO": {"p": 343.64, "ch": -7.55, "pct": -2.15, "date": "2026-10-01", "status": "等待", "entry": "343.29-354.20", "invalid": "335.81", "resist": "372.70", "s20": 354.2, "s60": 376.23, "note": "跌破SMA20，等待收復"}, "MSFT": {"p": 512.8, "ch": -0.1, "pct": -0.02, "date": "2026-10-01", "status": "觀察進場", "entry": "497.25-501.30", "invalid": "486.00", "resist": "522.85", "s20": 501.3, "s60": 469.61, "note": "站上SMA20、乖離2.3%，未貼20日高，列觀察進場（回檔區）"}, "META": {"p": 725.93, "ch": 0.75, "pct": 0.1, "date": "2026-10-01", "status": "持有觀察", "entry": "713.19-690.05", "invalid": "604.35", "resist": "779.82", "s20": 690.05, "s60": 627.62, "note": "站上均線，乖離5.2%"}, "MU": {"p": 1097.39, "ch": 32.28, "pct": 3.03, "date": "2026-10-01", "status": "持有觀察", "entry": "1022.90-1019.16", "invalid": "902.60", "resist": "1108.72", "s20": 1019.16, "s60": 950.18, "note": "創高附近，量能1.8倍，乖離7.7%，持有觀察不追"}, "TSLA": {"p": 354.11, "ch": -0.7, "pct": -0.2, "date": "2026-10-01", "status": "等待", "entry": "345.88-365.15", "invalid": "345.88", "resist": "386.83", "s20": 365.15, "s60": 353.71, "note": "收在SMA20下"}, "SPCX": {"p": 148.07, "ch": -2.79, "pct": -1.85, "date": "2026-10-01", "status": "等待", "entry": "145.36-149.67", "invalid": "141.05", "resist": "158.13", "s20": 149.67, "s60": 137.15, "note": "收在SMA20下，等待收復"},
+"8358.TWO": {"p": 505, "ch": "N/A", "pct": 2.02, "date": "2026-10-01", "status": "持有觀察", "entry": "484.50-502.00", "invalid": "N/A", "resist": "524.00", "s20": "N/A", "s60": "N/A", "note": "10/01 收盤 505；截圖支撐 502／484.5，壓力 524／543"},
+"3406.TW": {"p": 950, "ch": "N/A", "pct": 6.74, "date": "2026-10-01", "status": "持有觀察", "entry": "917.00-947.00", "invalid": "N/A", "resist": "970.00", "s20": "N/A", "s60": "N/A", "note": "10/01 收盤 950；截圖支撐 947／917，壓力 970／1000"},
+"8210.TW": {"p": 845, "ch": "N/A", "pct": 1.08, "date": "2026-10-01", "status": "持有觀察", "entry": "826.00-842.00", "invalid": "N/A", "resist": "858.00", "s20": "N/A", "s60": "N/A", "note": "10/01 收盤 845；截圖支撐 842／826，壓力 858／919"},
+"2371.TW": {"p": 30.50, "ch": "N/A", "pct": 0.16, "date": "2026-10-01", "status": "持有觀察", "entry": "29.90-30.45", "invalid": "N/A", "resist": "30.90", "s20": "N/A", "s60": "N/A", "note": "10/01 收盤 30.50；截圖支撐 30.45／29.90，壓力 30.90／31.65"},
+"1303.TW": {"p": 254, "ch": "N/A", "pct": -0.59, "date": "2026-10-01", "status": "等待", "entry": "N/A", "invalid": "N/A", "resist": "N/A", "s20": "N/A", "s60": "N/A", "note": "10/01 收盤 254；新聞題材為高階 CCL／電子材料，技術位待每日資料更新"},
+"2408.TW": {"p": "N/A", "ch": "N/A", "pct": "N/A", "date": "2026-10-01", "status": "等待", "entry": "N/A", "invalid": "N/A", "resist": "N/A", "s20": "N/A", "s60": "N/A", "note": "新增關注：南亞科；截圖重點為 3D 晶圓封測／屏東設廠案，行情待同步"},
+"4919.TW": {"p": "N/A", "ch": "N/A", "pct": "N/A", "date": "2026-10-02", "status": "等待", "entry": "N/A", "invalid": "N/A", "resist": "N/A", "s20": "N/A", "s60": "N/A", "note": "新增關注：新唐；電池診斷晶片 KA85010UA，預計 2027/1 提供樣品"},
+"4958.TW": {"p": 561, "ch": "N/A", "pct": "N/A", "date": "持倉截圖", "status": "持有觀察", "entry": "N/A", "invalid": "N/A", "resist": "N/A", "s20": "N/A", "s60": "N/A", "note": "持倉截圖：市價 561、均價 481.90、80 股；技術位待每日資料更新"}};
 function badge(s){
   if(s==="觀察進場") return '<span class="badge b-green">🟢 觀察進場</span>';
   if(s==="等待") return '<span class="badge b-wait">⏳ 等待</span>';
@@ -170,7 +190,7 @@ const idxBody=document.getElementById("idx-body");
 });
 const watchGrid=document.getElementById("watch-grid");
 const decGrid=document.getElementById("decision-grid");
-const order=["2330.TW","2454.TW","2308.TW","3324.TWO","3653.TW","3017.TW","3189.TW","3037.TW","8046.TW","6213.TW","2383.TW","3481.TW","6770.TW","2221.TWO","TSM","NVDA","AMD","AVGO","MSFT","META","MU","TSLA","SPCX"];
+const order=["2330.TW","2454.TW","2308.TW","3324.TWO","3653.TW","3017.TW","3189.TW","3037.TW","8046.TW","6213.TW","2383.TW","3481.TW","6770.TW","2221.TWO","TSM","NVDA","AMD","AVGO","MSFT","META","MU","TSLA","SPCX","8358.TWO","3406.TW","8210.TW","2371.TW","1303.TW","2408.TW","4919.TW","4958.TW"];
 order.forEach(code=>{
   const d=DATA[code];
   const name=NAMES[code]||code;
@@ -202,1405 +222,13 @@ order.forEach(code=>{
   decGrid.innerHTML += card;
 });
 </script>
-<!-- =========================================================
-     智慧支撐壓力 + 情境推演 + 族群同步雷達
-     直接貼在 </body> 前面即可
-========================================================= -->
 
-<style>
-.smart-toolbar{
-  display:flex;
-  gap:8px;
-  flex-wrap:wrap;
-  align-items:center;
-  margin:10px 0 14px;
-}
-
-.smart-select,
-.smart-btn{
-  background:#081a2d;
-  color:var(--text);
-  border:1px solid rgba(201,169,106,.35);
-  border-radius:8px;
-  padding:9px 10px;
-  font-size:13px;
-}
-
-.smart-select{
-  flex:1;
-  min-width:180px;
-}
-
-.smart-btn{
-  cursor:pointer;
-  color:var(--gold2);
-}
-
-.smart-btn:hover{
-  border-color:var(--gold);
-  background:rgba(201,169,106,.08);
-}
-
-.level-wrap{
-  display:grid;
-  grid-template-columns:repeat(2,minmax(0,1fr));
-  gap:10px;
-}
-
-.level-box{
-  background:#091b2e;
-  border:1px solid rgba(77,163,255,.25);
-  border-radius:12px;
-  padding:13px;
-}
-
-.level-box.support{
-  border-color:rgba(61,214,140,.35);
-}
-
-.level-box.breakout{
-  border-color:rgba(77,163,255,.45);
-}
-
-.level-box.resistance{
-  border-color:rgba(255,180,80,.4);
-}
-
-.level-head{
-  font-size:13px;
-  font-weight:700;
-  margin-bottom:10px;
-}
-
-.level-head.green{color:var(--green);}
-.level-head.blue{color:#55b6ff;}
-.level-head.orange{color:#ffb450;}
-
-.level-line{
-  display:flex;
-  justify-content:space-between;
-  gap:12px;
-  align-items:flex-start;
-  padding:8px 0;
-  border-bottom:1px solid rgba(255,255,255,.06);
-}
-
-.level-line:last-child{
-  border-bottom:none;
-}
-
-.level-name{
-  color:var(--muted);
-  font-size:12px;
-}
-
-.level-price{
-  font-size:1.22rem;
-  font-weight:800;
-  text-align:right;
-}
-
-.level-dist{
-  font-size:11px;
-  color:var(--muted);
-  text-align:right;
-}
-
-.level-reason{
-  margin-top:3px;
-  font-size:11px;
-  color:#9fb1c6;
-}
-
-.scenario-grid{
-  display:grid;
-  grid-template-columns:repeat(3,minmax(0,1fr));
-  gap:8px;
-  margin-top:12px;
-}
-
-.scenario{
-  padding:11px;
-  border-radius:10px;
-  background:#091a2b;
-  border:1px solid rgba(201,169,106,.15);
-}
-
-.scenario strong{
-  color:var(--gold2);
-  display:block;
-  margin-bottom:5px;
-}
-
-.scenario p{
-  margin:0;
-  color:#aebaca;
-  font-size:12px;
-}
-
-.sync-row{
-  padding:10px 0;
-  border-bottom:1px solid rgba(201,169,106,.12);
-}
-
-.sync-row:last-child{
-  border-bottom:none;
-}
-
-.sync-top{
-  display:flex;
-  justify-content:space-between;
-  gap:10px;
-  font-size:13px;
-  margin-bottom:5px;
-}
-
-.sync-name{
-  color:var(--gold2);
-  font-weight:700;
-}
-
-.sync-meter{
-  height:7px;
-  overflow:hidden;
-  border-radius:20px;
-  background:rgba(255,255,255,.08);
-}
-
-.sync-fill{
-  height:100%;
-  background:linear-gradient(90deg,#3dd68c,#4da3ff);
-  border-radius:20px;
-}
-
-.sync-note{
-  color:var(--muted);
-  font-size:11px;
-  margin-top:5px;
-}
-
-.smart-summary{
-  margin:10px 0;
-  padding:10px;
-  background:rgba(77,163,255,.07);
-  border-left:3px solid var(--blue);
-  border-radius:5px;
-  font-size:12px;
-  color:#b8c6d7;
-}
-
-.smart-tag{
-  display:inline-block;
-  font-size:10px;
-  padding:2px 6px;
-  border-radius:999px;
-  margin-left:4px;
-  border:1px solid rgba(255,255,255,.15);
-  color:#aebaca;
-}
-
-@media(max-width:650px){
-  .level-wrap{
-    grid-template-columns:1fr;
-  }
-
-  .scenario-grid{
-    grid-template-columns:1fr;
-  }
-
-  .level-price{
-    font-size:1.1rem;
-  }
-}
-</style>
-
-<script>
-(function(){
-
-/* =========================================================
-   0. 防呆：確認你原本資料存在
-========================================================= */
-if(typeof DATA === "undefined" ||
-   typeof STOCK_META === "undefined" ||
-   typeof NAMES === "undefined"){
-  console.warn("智慧分析模組：找不到 DATA / STOCK_META / NAMES");
-  return;
-}
-
-
-/* =========================================================
-   1. 可選擇手動覆寫特殊支撐壓力
-   沒填就完全使用原本 DATA，不亂產生價格
-
-   範例：
-   "2330.TW":{
-      support:[2450,2410],
-      breakout:2550,
-      resistance:[2550,2600]
-   }
-========================================================= */
-
-const LEVEL_OVERRIDES = {
-
-  /*
-  "2330.TW":{
-    support:[2450,2410],
-    breakout:2550,
-    resistance:[2550,2600]
-  }
-  */
-
-};
-
-
-/* =========================================================
-   2. 工具函數
-========================================================= */
-
-function smartNum(v){
-
-  if(
-    v === null ||
-    v === undefined ||
-    v === "N/A" ||
-    v === ""
-  ){
-    return null;
-  }
-
-  const n = Number(v);
-
-  return Number.isFinite(n) ? n : null;
-}
-
-
-function smartFmt(v){
-
-  const n = smartNum(v);
-
-  if(n === null){
-    return "N/A";
-  }
-
-  if(Math.abs(n) >= 1000){
-    return n.toLocaleString(
-      "en-US",
-      {maximumFractionDigits:2}
-    );
-  }
-
-  return Number.isInteger(n)
-    ? String(n)
-    : n.toFixed(2).replace(/\.00$/,"");
-}
-
-
-function smartPct(level,current){
-
-  const l = smartNum(level);
-  const c = smartNum(current);
-
-  if(l === null || c === null || c === 0){
-    return "N/A";
-  }
-
-  const x = ((l-c)/c)*100;
-
-  return (x>0?"+":"") + x.toFixed(1) + "%";
-}
-
-
-function smartParseEntry(entry){
-
-  if(!entry || entry === "N/A"){
-    return [];
-  }
-
-  const m = String(entry).match(
-    /-?\d+(?:\.\d+)?/g
-  );
-
-  if(!m){
-    return [];
-  }
-
-  return m
-    .map(Number)
-    .filter(Number.isFinite);
-}
-
-
-function smartUnique(arr){
-
-  return [...new Set(
-    arr
-      .filter(x=>Number.isFinite(x))
-      .map(x=>Number(x.toFixed(4)))
-  )];
-
-}
-
-
-function smartMarketInfo(code){
-
-  let market = "台股";
-  let group = "其他";
-
-  for(const [key,list] of Object.entries(STOCK_META)){
-
-    if(list.includes(code)){
-
-      const parts = key.split("|");
-
-      market =
-        parts[0] === "TW"
-        ? "台股"
-        : "美股";
-
-      group = parts[1] || "其他";
-
-      break;
-    }
-  }
-
-  return {market,group};
-}
-
-
-/* =========================================================
-   3. 自動判斷某個價位形成原因
-========================================================= */
-
-function smartReason(code,level,type){
-
-  const d = DATA[code];
-
-  if(!d || level === null){
-    return "資料不足";
-  }
-
-  const tolerance =
-    Math.max(Math.abs(level)*0.001,0.01);
-
-  function same(a,b){
-
-    const x = smartNum(a);
-    const y = smartNum(b);
-
-    if(x === null || y === null){
-      return false;
-    }
-
-    return Math.abs(x-y) <= tolerance;
-  }
-
-
-  if(same(level,d.s20)){
-    return "SMA20／短線結構";
-  }
-
-  if(same(level,d.s60)){
-    return "SMA60／中期趨勢";
-  }
-
-  if(same(level,d.invalid)){
-    return "結構失效價／風險防守";
-  }
-
-  const entries =
-    smartParseEntry(d.entry);
-
-  if(entries.some(x=>same(level,x))){
-    return "回檔觀察區／原進場區";
-  }
-
-  if(same(level,d.resist)){
-    return "原壓力／近波段高點";
-  }
-
-  if(type === "support"){
-    return "結構支撐觀察";
-  }
-
-  if(type === "resistance"){
-    return "壓力觀察";
-  }
-
-  return "技術結構價位";
-}
-
-
-/* =========================================================
-   4. 自動整理兩層支撐
-========================================================= */
-
-function smartSupports(code){
-
-  const d = DATA[code];
-
-  if(!d){
-    return [];
-  }
-
-  const p = smartNum(d.p);
-
-  if(p === null){
-    return [];
-  }
-
-  const override =
-    LEVEL_OVERRIDES[code];
-
-  if(
-    override &&
-    Array.isArray(override.support)
-  ){
-
-    return smartUnique(
-      override.support
-    )
-    .filter(x=>x<p)
-    .sort((a,b)=>b-a)
-    .slice(0,2);
-
-  }
-
-  const entries =
-    smartParseEntry(d.entry);
-
-  const candidates = smartUnique([
-    ...entries,
-    smartNum(d.s20),
-    smartNum(d.s60),
-    smartNum(d.invalid)
-  ]);
-
-  return candidates
-    .filter(x=>x<p)
-    .sort((a,b)=>b-a)
-    .slice(0,2);
-}
-
-
-/* =========================================================
-   5. 壓力／突破位置
-========================================================= */
-
-function smartResistance(code){
-
-  const d = DATA[code];
-
-  if(!d){
-    return {
-      breakout:null,
-      r1:null,
-      r2:null
-    };
-  }
-
-  const p = smartNum(d.p);
-
-  const override =
-    LEVEL_OVERRIDES[code] || {};
-
-  let resistance = [];
-
-  if(Array.isArray(override.resistance)){
-    resistance =
-      smartUnique(override.resistance)
-      .filter(x=>p===null || x>p)
-      .sort((a,b)=>a-b);
-  }
-
-  const existingResist =
-    smartNum(d.resist);
-
-  if(
-    existingResist !== null &&
-    p !== null &&
-    existingResist >= p * 0.9985
-  ){
-    resistance.push(existingResist);
-  }
-
-  resistance =
-    smartUnique(resistance)
-    .sort((a,b)=>a-b);
-
-
-  let breakout =
-    smartNum(override.breakout);
-
-  if(breakout === null){
-    breakout =
-      resistance.length
-      ? resistance[0]
-      : null;
-  }
-
-  return {
-    breakout,
-    r1: resistance[0] ?? null,
-    r2: resistance[1] ?? null
-  };
-}
-
-
-/* =========================================================
-   6. 情境推演
-========================================================= */
-
-function smartScenario(code){
-
-  const d = DATA[code];
-
-  if(!d){
-    return null;
-  }
-
-  const p =
-    smartNum(d.p);
-
-  const supports =
-    smartSupports(code);
-
-  const resistance =
-    smartResistance(code);
-
-  const s1 =
-    supports[0] ?? null;
-
-  const s2 =
-    supports[1] ?? null;
-
-  const r1 =
-    resistance.r1;
-
-
-  let openHigh = "";
-
-  if(r1 !== null){
-
-    const dist =
-      ((r1-p)/p)*100;
-
-    if(dist <= 2.5){
-
-      openHigh =
-        `若開高接近 ${smartFmt(r1)}，已靠近第一壓力，觀察成交量及是否能有效站穩；未站穩則留意短線賣壓。`;
-
-    }else{
-
-      openHigh =
-        `若開高且量價結構穩定，先觀察是否朝 ${smartFmt(r1)} 第一壓力推進，不直接把壓力當成追價目標。`;
-
-    }
-
-  }else{
-
-    openHigh =
-      "若開高，先觀察量價是否同步；目前缺少可靠的上方壓力資料，不額外虛構目標價。";
-  }
-
-
-  const flat =
-    s1 !== null
-    ? `若平開並守住 ${smartFmt(s1)} 近端支撐，可持續觀察原趨勢；若靠近壓力則等待突破確認。`
-    : "若平開，觀察 SMA20、量價與原趨勢是否維持。";
-
-
-  const openLow =
-    s1 !== null
-    ? (
-        s2 !== null
-        ? `若開低並跌破 ${smartFmt(s1)}，下一個結構觀察位置為 ${smartFmt(s2)}；若第二支撐也失守，風險升高。`
-        : `若開低並跌破 ${smartFmt(s1)}，代表短線結構轉弱，等待重新站回支撐再評估。`
-      )
-    : "若開低，優先觀察 SMA20／SMA60 與原失效價，不急於接回。";
-
-
-  return {
-    openHigh,
-    flat,
-    openLow
-  };
-}
-
-
-/* =========================================================
-   7. 新增導覽列
-========================================================= */
-
-const nav =
-  document.querySelector("nav");
-
-if(nav){
-
-  if(!nav.querySelector(
-    'a[href="#smart-levels"]'
-  )){
-
-    const a =
-      document.createElement("a");
-
-    a.href =
-      "#smart-levels";
-
-    a.textContent =
-      "支撐壓力";
-
-    nav.appendChild(a);
-  }
-
-
-  if(!nav.querySelector(
-    'a[href="#group-sync"]'
-  )){
-
-    const a =
-      document.createElement("a");
-
-    a.href =
-      "#group-sync";
-
-    a.textContent =
-      "族群同步";
-
-    nav.appendChild(a);
-  }
-}
-
-
-/* =========================================================
-   8. 建立智慧支撐壓力區
-========================================================= */
-
-const decisionSection =
-  document.getElementById("decision");
-
-const smartSection =
-  document.createElement("section");
-
-smartSection.id =
-  "smart-levels";
-
-smartSection.className =
-  "panel";
-
-smartSection.innerHTML = `
-
-<h2>🧭 智慧支撐／壓力與盤中情境</h2>
-
-<div class="smart-toolbar">
-
-  <select
-    id="smart-stock-select"
-    class="smart-select">
-  </select>
-
-  <button
-    id="smart-copy-btn"
-    class="smart-btn">
-    📋 複製分析
-  </button>
-
-</div>
-
-<div id="smart-stock-title"
-     class="smart-summary">
-</div>
-
-<div class="level-wrap">
-
-  <div class="level-box support">
-
-    <div class="level-head green">
-      🛡️ 支撐觀察
-    </div>
-
-    <div id="smart-support"></div>
-
-  </div>
-
-
-  <div class="level-box breakout">
-
-    <div class="level-head blue">
-      ⚡ 關鍵突破／壓力
-    </div>
-
-    <div id="smart-resistance"></div>
-
-  </div>
-
-</div>
-
-
-<div style="margin-top:14px">
-
-  <div style="
-    color:var(--gold2);
-    font-weight:700;
-    margin-bottom:7px;
-  ">
-    📍 今日三情境推演
-  </div>
-
-  <div
-    class="scenario-grid"
-    id="smart-scenario">
-  </div>
-
-</div>
-
-<p class="note">
-支撐／壓力會優先使用既有進場區、SMA20、SMA60、
-失效價及原壓力資料。沒有可靠資料時顯示 N/A，
-不自行虛構目標價。
-</p>
-`;
-
-
-if(decisionSection){
-
-  decisionSection.insertAdjacentElement(
-    "afterend",
-    smartSection
-  );
-
-}else{
-
-  document
-    .querySelector(".wrap")
-    .appendChild(smartSection);
-
-}
-
-
-/* =========================================================
-   9. 建立股票選單
-========================================================= */
-
-const smartSelect =
-  document.getElementById(
-    "smart-stock-select"
-  );
-
-
-const SMART_ORDER = [
-  "2330.TW","2454.TW","2308.TW","3324.TWO","3653.TW","3017.TW",
-  "3189.TW","3037.TW","8046.TW","6213.TW","2383.TW",
-  "3481.TW","6770.TW","2221.TWO",
-  "TSM","NVDA","AMD","AVGO","MSFT","META","MU","TSLA","SPCX"
-];
-
-const smartCodes = SMART_ORDER
-  .filter(code => DATA[code])
-  .concat(
-    Object.keys(DATA).filter(code =>
-      !code.startsWith("^") &&
-      !SMART_ORDER.includes(code)
-    )
-  );
-
-
-smartCodes.forEach(code=>{
-
-  const op =
-    document.createElement("option");
-
-  op.value =
-    code;
-
-  op.textContent =
-    `${NAMES[code] || code}｜${code}`;
-
-  smartSelect.appendChild(op);
-
-});
-
-
-if(DATA["2330.TW"]){
-  smartSelect.value = "2330.TW";
-}
-
-
-/* =========================================================
-   10. 畫支撐壓力
-========================================================= */
-
-function levelHTML(
-  title,
-  price,
-  current,
-  reason
-){
-
-  return `
-
-  <div class="level-line">
-
-    <div>
-      <div class="level-name">
-        ${title}
-      </div>
-
-      <div class="level-reason">
-        ${reason}
-      </div>
-    </div>
-
-    <div>
-      <div class="level-price">
-        ${smartFmt(price)}
-      </div>
-
-      <div class="level-dist">
-        距現價 ${smartPct(price,current)}
-      </div>
-    </div>
-
-  </div>
-
-  `;
-}
-
-
-function renderSmartStock(code){
-
-  const d =
-    DATA[code];
-
-  if(!d){
-    return;
-  }
-
-  const p =
-    smartNum(d.p);
-
-  const name =
-    NAMES[code] || code;
-
-  const info =
-    smartMarketInfo(code);
-
-  const supports =
-    smartSupports(code);
-
-  const resistance =
-    smartResistance(code);
-
-  const scenarios =
-    smartScenario(code);
-
-
-  document.getElementById(
-    "smart-stock-title"
-  ).innerHTML = `
-
-    <strong>${name}</strong>
-    <span class="smart-tag">${code}</span>
-    <span class="smart-tag">${info.market}</span>
-    <span class="smart-tag">${info.group}</span>
-
-    <br>
-
-    現價：
-    <strong style="color:var(--text)">
-      ${smartFmt(p)}
-    </strong>
-
-    ｜狀態：
-    ${d.status || "N/A"}
-
-    ｜最後完成日 K：
-    ${d.date || "N/A"}
-
-  `;
-
-
-  const supportBox =
-    document.getElementById(
-      "smart-support"
-    );
-
-  supportBox.innerHTML = "";
-
-
-  if(supports.length){
-
-    supportBox.innerHTML +=
-      levelHTML(
-        "近端支撐",
-        supports[0],
-        p,
-        smartReason(
-          code,
-          supports[0],
-          "support"
-        )
-      );
-
-
-    if(supports[1] !== undefined){
-
-      supportBox.innerHTML +=
-        levelHTML(
-          "第二支撐",
-          supports[1],
-          p,
-          smartReason(
-            code,
-            supports[1],
-            "support"
-          )
-        );
-
-    }else{
-
-      supportBox.innerHTML +=
-        levelHTML(
-          "第二支撐",
-          null,
-          p,
-          "目前資料不足"
-        );
-    }
-
-  }else{
-
-    supportBox.innerHTML +=
-      levelHTML(
-        "近端支撐",
-        null,
-        p,
-        "目前資料不足"
-      );
-
-    supportBox.innerHTML +=
-      levelHTML(
-        "第二支撐",
-        null,
-        p,
-        "目前資料不足"
-      );
-  }
-
-
-  const resistanceBox =
-    document.getElementById(
-      "smart-resistance"
-    );
-
-  resistanceBox.innerHTML = "";
-
-
-  resistanceBox.innerHTML +=
-    levelHTML(
-      "關鍵突破／第一壓力",
-      resistance.breakout,
-      p,
-      resistance.breakout !== null
-        ? smartReason(
-            code,
-            resistance.breakout,
-            "resistance"
-          )
-        : "目前沒有可靠的上方壓力資料"
-    );
-
-
-  resistanceBox.innerHTML +=
-    levelHTML(
-      "第二壓力",
-      resistance.r2,
-      p,
-      resistance.r2 !== null
-        ? smartReason(
-            code,
-            resistance.r2,
-            "resistance"
-          )
-        : "N/A｜不自行推算目標價"
-    );
-
-
-  const scenarioBox =
-    document.getElementById(
-      "smart-scenario"
-    );
-
-
-  scenarioBox.innerHTML = `
-
-    <div class="scenario">
-
-      <strong>
-        🚀 情境 A｜開高
-      </strong>
-
-      <p>
-        ${scenarios.openHigh}
-      </p>
-
-    </div>
-
-
-    <div class="scenario">
-
-      <strong>
-        ➡️ 情境 B｜平開
-      </strong>
-
-      <p>
-        ${scenarios.flat}
-      </p>
-
-    </div>
-
-
-    <div class="scenario">
-
-      <strong>
-        ⚠️ 情境 C｜開低
-      </strong>
-
-      <p>
-        ${scenarios.openLow}
-      </p>
-
-    </div>
-
-  `;
-
-}
-
-
-/* =========================================================
-   11. 族群同步雷達
-========================================================= */
-
-const groupSection =
-  document.createElement("section");
-
-groupSection.id =
-  "group-sync";
-
-groupSection.className =
-  "panel";
-
-groupSection.innerHTML = `
-
-<h2>📊 族群同步雷達</h2>
-
-<p class="note">
-同步度依該族群「當日上漲檔數 ÷ 有有效漲跌幅資料檔數」
-計算。同步度只反映當日族群一致性，不代表買進訊號。
-</p>
-
-<div id="group-sync-list"></div>
-
-`;
-
-
-smartSection.insertAdjacentElement(
-  "afterend",
-  groupSection
-);
-
-
-function renderGroupSync(){
-
-  const box =
-    document.getElementById(
-      "group-sync-list"
-    );
-
-  let html = "";
-
-
-  for(
-    const [group,list]
-    of Object.entries(STOCK_META)
-  ){
-
-    const rows =
-      list
-      .map(code=>({
-        code,
-        name:NAMES[code] || code,
-        pct:
-          smartNum(
-            DATA[code]?.pct
-          )
-      }))
-      .filter(x =>
-        x.pct !== null
-      );
-
-
-    if(!rows.length){
-      continue;
-    }
-
-
-    const up =
-      rows.filter(
-        x=>x.pct>0
-      ).length;
-
-
-    const down =
-      rows.filter(
-        x=>x.pct<0
-      ).length;
-
-
-    const flat =
-      rows.length-up-down;
-
-
-    const sync =
-      Math.round(
-        (up/rows.length)*100
-      );
-
-
-    let label;
-
-    if(sync >= 75){
-      label = "同步偏強";
-    }else if(sync >= 50){
-      label = "部分同步";
-    }else{
-      label = "族群分化";
-    }
-
-
-    const detail =
-      rows
-      .map(x=>
-        `${x.name} ${
-          x.pct>0
-            ?"▲"
-            :x.pct<0
-              ?"▼"
-              :"－"
-        }${Math.abs(x.pct).toFixed(2)}%`
-      )
-      .join(" ｜ ");
-
-
-    html += `
-
-    <div class="sync-row">
-
-      <div class="sync-top">
-
-        <div class="sync-name">
-          ${group}
-        </div>
-
-        <div>
-          ${label}
-          ｜${sync}%
-        </div>
-
-      </div>
-
-
-      <div class="sync-meter">
-
-        <div
-          class="sync-fill"
-          style="width:${sync}%">
-        </div>
-
-      </div>
-
-
-      <div class="sync-note">
-
-        上漲 ${up}
-        ／下跌 ${down}
-        ／平盤 ${flat}
-        ／共 ${rows.length} 檔
-
-        <br>
-
-        ${detail}
-
-      </div>
-
-    </div>
-
-    `;
-  }
-
-
-  box.innerHTML =
-    html || "目前沒有可計算資料";
-
-}
-
-
-/* =========================================================
-   12. 一鍵複製個股分析
-========================================================= */
-
-function buildCopyText(code){
-
-  const d =
-    DATA[code];
-
-  if(!d){
-    return "";
-  }
-
-
-  const p =
-    smartNum(d.p);
-
-  const name =
-    NAMES[code] || code;
-
-  const supports =
-    smartSupports(code);
-
-  const resistance =
-    smartResistance(code);
-
-  const scenarios =
-    smartScenario(code);
-
-
-  return `【${name} ${code}】
-
-現價：${smartFmt(p)}
-狀態：${d.status || "N/A"}
-最後完成日K：${d.date || "N/A"}
-
-🛡️ 支撐觀察
-近端支撐：${smartFmt(supports[0])}
-距現價：${smartPct(supports[0],p)}
-原因：${smartReason(code,supports[0],"support")}
-
-第二支撐：${smartFmt(supports[1])}
-距現價：${smartPct(supports[1],p)}
-原因：${
-  supports[1] !== undefined
-  ? smartReason(code,supports[1],"support")
-  : "資料不足"
-}
-
-⚡ 關鍵突破／壓力
-第一壓力：${smartFmt(resistance.r1)}
-距現價：${smartPct(resistance.r1,p)}
-
-第二壓力：${smartFmt(resistance.r2)}
-距現價：${smartPct(resistance.r2,p)}
-
-📍開高：
-${scenarios.openHigh}
-
-📍平開：
-${scenarios.flat}
-
-📍開低：
-${scenarios.openLow}
-
-備註：
-${d.note || "N/A"}
-
-※ 技術位置僅供觀察，不代表保證漲跌或投資建議。`;
-}
-
-
-document
-.getElementById("smart-copy-btn")
-.addEventListener(
-  "click",
-  async function(){
-
-    const code =
-      smartSelect.value;
-
-    const text =
-      buildCopyText(code);
-
-    try{
-
-      await navigator.clipboard
-        .writeText(text);
-
-      this.textContent =
-        "✅ 已複製";
-
-      setTimeout(()=>{
-        this.textContent =
-          "📋 複製分析";
-      },1500);
-
-    }catch(e){
-
-      const area =
-        document.createElement(
-          "textarea"
-        );
-
-      area.value = text;
-
-      document.body
-        .appendChild(area);
-
-      area.select();
-
-      document.execCommand(
-        "copy"
-      );
-
-      area.remove();
-
-      this.textContent =
-        "✅ 已複製";
-
-      setTimeout(()=>{
-        this.textContent =
-          "📋 複製分析";
-      },1500);
-    }
-  }
-);
-
-
-/* =========================================================
-   13. 切換股票
-========================================================= */
-
-smartSelect.addEventListener(
-  "change",
-  function(){
-
-    renderSmartStock(
-      this.value
-    );
-
-  }
-);
-
-
-/* =========================================================
-   14. 第一次載入
-========================================================= */
-
-renderSmartStock(
-  smartSelect.value
-);
-
-renderGroupSync();
-
-})();
-</script>
+<!--
+  2026-10-02 整理
+  上面是原報告：摘要、雷達、分類、關注股、決策卡、指數。10/01 行情沒改。
+  下面這段才是補丁：大盤三關、新增關注、持倉、族群同步、使用方法。
+  舊的智慧支撐壓力腳本已刪掉，避免和補丁各畫一套。
+-->
 <script>
 (function(){
   ['smart-levels','group-sync'].forEach(id=>document.getElementById(id)?.remove());
@@ -1799,6 +427,1736 @@ renderGroupSync();
     const wrap=document.querySelector('.wrap'); const footer=wrap?.querySelector('.footer');
     if(footer) footer.insertAdjacentElement('beforebegin',s); else wrap?.appendChild(s);
   }
+})();
+
+</script>
+
+<!--
+  2026-10-02 Final Hotfix（接在補丁後面才有效）
+  1. 進場區 484.50-502.00 不再被拆成負數
+  2. 族群只有 1 檔不顯示 100% 同步
+  3. 臻鼎持倉分開顯示試算損益與券商截圖損益
+  4. iPhone / Safari 複製改用 fallback
+  5. 手機導覽可橫滑、表格可橫滑
+  6. 行情以 DATA 為準
+-->
+<!-- =========================================================
+     STOCK REPORT FINAL HOTFIX
+     2026-10-02
+     功能：
+     1. 修正進場區 "-" 被解析成負數
+     2. 修正族群只有 1 檔也顯示 100% 同步
+     3. 修正臻鼎-KY 持倉損益計算
+     4. Safari / iPhone 複製分析 fallback
+     5. 手機版導航列與表格顯示優化
+     6. 統一以 DATA 為主要行情來源
+========================================================= -->
+
+<style id="final-hotfix-style">
+
+/* ===== 手機版導覽列 ===== */
+@media (max-width: 650px) {
+
+  nav {
+    display: flex !important;
+    flex-wrap: nowrap !important;
+    justify-content: flex-start !important;
+
+    overflow-x: auto !important;
+    overflow-y: hidden !important;
+
+    white-space: nowrap;
+    -webkit-overflow-scrolling: touch;
+
+    scrollbar-width: none;
+
+    padding: 8px 10px;
+  }
+
+  nav::-webkit-scrollbar {
+    display: none;
+  }
+
+  nav a {
+    flex: 0 0 auto;
+    white-space: nowrap;
+
+    padding: 7px 10px;
+    font-size: 12px;
+  }
+
+  .wrap {
+    padding: 8px;
+  }
+
+  .panel {
+    padding: 12px;
+  }
+
+  /* 表格可左右滑動 */
+  table {
+    display: block;
+    width: 100%;
+    overflow-x: auto;
+    white-space: nowrap;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  th,
+  td {
+    min-width: 85px;
+  }
+
+  .card .row,
+  .u2-row {
+    align-items: flex-start;
+  }
+
+  .card .row span:last-child,
+  .u2-row span:last-child {
+    text-align: right;
+    word-break: break-word;
+  }
+}
+
+
+/* ===== 資料不足提示 ===== */
+
+.u2-data-warning {
+  margin-top: 6px;
+
+  padding: 5px 8px;
+
+  border-radius: 6px;
+
+  background: rgba(255, 180, 80, .08);
+
+  border: 1px solid rgba(255, 180, 80, .25);
+
+  color: #ffca7a;
+
+  font-size: 11px;
+}
+
+
+/* ===== 持倉損益 ===== */
+
+.u2-profit {
+  color: var(--green);
+  font-weight: 700;
+}
+
+.u2-loss {
+  color: var(--red);
+  font-weight: 700;
+}
+
+</style>
+
+
+<script id="final-hotfix-script">
+
+(function () {
+
+  'use strict';
+
+
+  /* =========================================================
+     基本檢查
+  ========================================================= */
+
+  if (
+    typeof DATA === 'undefined' ||
+    typeof NAMES === 'undefined' ||
+    typeof STOCK_META === 'undefined'
+  ) {
+
+    console.warn(
+      'FINAL HOTFIX：找不到 DATA / NAMES / STOCK_META'
+    );
+
+    return;
+
+  }
+
+
+
+  /* =========================================================
+     1. DATA 為唯一主要行情來源
+
+     注意：
+     日後更新行情，
+     優先直接更新上方 const DATA。
+     
+     不要再單獨修改舊 seed，
+     避免 DATA 與 seed 數字不同。
+  ========================================================= */
+
+  const dataOf = code => {
+
+    return DATA[code] || null;
+
+  };
+
+
+
+  /* =========================================================
+     2. 通用數字工具
+  ========================================================= */
+
+  const toNum = v => {
+
+    if (
+      v === null ||
+      v === undefined ||
+      v === '' ||
+      v === 'N/A'
+    ) {
+
+      return null;
+
+    }
+
+    const n = Number(v);
+
+    return Number.isFinite(n)
+      ? n
+      : null;
+
+  };
+
+
+  const fmt2 = v => {
+
+    const n = toNum(v);
+
+    if (n === null) {
+
+      return 'N/A';
+
+    }
+
+    if (Math.abs(n) >= 1000) {
+
+      return n.toLocaleString(
+        'en-US',
+        {
+          maximumFractionDigits: 2
+        }
+      );
+
+    }
+
+    if (Number.isInteger(n)) {
+
+      return String(n);
+
+    }
+
+    return n
+      .toFixed(2)
+      .replace(/\.00$/, '');
+
+  };
+
+
+  const pctFmt = v => {
+
+    const n = toNum(v);
+
+    if (n === null) {
+
+      return 'N/A';
+
+    }
+
+    return `${n > 0 ? '+' : ''}${n.toFixed(2)}%`;
+
+  };
+
+
+
+  /* =========================================================
+     3. 修正支撐區間解析 BUG
+
+     舊版：
+     484.50-502.00
+
+     可能被解析：
+     484.50
+     -502.00
+
+     新版：
+     只抓正確價格數字。
+  ========================================================= */
+
+  function safeParseEntry(entry) {
+
+    if (
+      entry === null ||
+      entry === undefined ||
+      entry === 'N/A'
+    ) {
+
+      return [];
+
+    }
+
+
+    const matches =
+      String(entry)
+        .match(/\d+(?:\.\d+)?/g);
+
+
+    if (!matches) {
+
+      return [];
+
+    }
+
+
+    return matches
+      .map(Number)
+      .filter(
+        Number.isFinite
+      );
+
+  }
+
+
+
+  /* =========================================================
+     4. 已知支撐 / 壓力
+  ========================================================= */
+
+  const HOTFIX_LEVELS = {
+
+    '8358.TWO': {
+
+      support: [
+        502,
+        484.5
+      ],
+
+      resistance: [
+        524,
+        543
+      ]
+
+    },
+
+
+    '3406.TW': {
+
+      support: [
+        947,
+        917
+      ],
+
+      resistance: [
+        970,
+        1000
+      ]
+
+    },
+
+
+    '8210.TW': {
+
+      support: [
+        842,
+        826
+      ],
+
+      resistance: [
+        858,
+        919
+      ]
+
+    },
+
+
+    '2371.TW': {
+
+      support: [
+        30.45,
+        29.90
+      ],
+
+      resistance: [
+        30.90,
+        31.65
+      ]
+
+    }
+
+  };
+
+
+
+  /* =========================================================
+     5. 安全版支撐計算
+  ========================================================= */
+
+  function safeSupports(code) {
+
+    const d = dataOf(code);
+
+    if (!d) {
+
+      return [];
+
+    }
+
+
+    if (
+      HOTFIX_LEVELS[code] &&
+      Array.isArray(
+        HOTFIX_LEVELS[code].support
+      )
+    ) {
+
+      return HOTFIX_LEVELS[
+        code
+      ].support.slice(
+        0,
+        2
+      );
+
+    }
+
+
+    const price =
+      toNum(d.p);
+
+
+    if (price === null) {
+
+      return [];
+
+    }
+
+
+    const candidates = [
+
+      ...safeParseEntry(
+        d.entry
+      ),
+
+      toNum(d.s20),
+
+      toNum(d.s60),
+
+      toNum(d.invalid)
+
+    ]
+      .filter(
+        Number.isFinite
+      )
+      .filter(
+        value =>
+          value > 0 &&
+          value < price
+      );
+
+
+    return Array.from(
+      new Set(candidates)
+    )
+      .sort(
+        (a, b) =>
+          b - a
+      )
+      .slice(
+        0,
+        2
+      );
+
+  }
+
+
+
+  /* =========================================================
+     6. 安全版壓力計算
+  ========================================================= */
+
+  function safeResistances(code) {
+
+    const d = dataOf(code);
+
+    if (!d) {
+
+      return [];
+
+    }
+
+
+    if (
+      HOTFIX_LEVELS[code] &&
+      Array.isArray(
+        HOTFIX_LEVELS[code]
+          .resistance
+      )
+    ) {
+
+      return HOTFIX_LEVELS[
+        code
+      ].resistance.slice(
+        0,
+        2
+      );
+
+    }
+
+
+    const price =
+      toNum(d.p);
+
+    const resist =
+      toNum(d.resist);
+
+
+    if (
+      price !== null &&
+      resist !== null &&
+      resist > price
+    ) {
+
+      return [
+        resist
+      ];
+
+    }
+
+
+    return [];
+
+  }
+
+
+
+  /* =========================================================
+     7. 價位距離 %
+  ========================================================= */
+
+  function distancePct(
+    level,
+    current
+  ) {
+
+    const l =
+      toNum(level);
+
+    const c =
+      toNum(current);
+
+
+    if (
+      l === null ||
+      c === null ||
+      c === 0
+    ) {
+
+      return 'N/A';
+
+    }
+
+
+    const result =
+      (
+        (
+          l - c
+        ) /
+        c
+      ) * 100;
+
+
+    return (
+      result > 0
+        ? '+'
+        : ''
+    ) +
+      result.toFixed(1) +
+      '%';
+
+  }
+
+
+
+  /* =========================================================
+     8. 開高 / 平開 / 開低
+  ========================================================= */
+
+  function buildScenario(code) {
+
+    const d =
+      dataOf(code);
+
+
+    if (!d) {
+
+      return {
+
+        high:
+          '資料不足',
+
+        flat:
+          '資料不足',
+
+        low:
+          '資料不足'
+
+      };
+
+    }
+
+
+    const supports =
+      safeSupports(code);
+
+
+    const resistances =
+      safeResistances(code);
+
+
+
+    const high =
+      resistances[0] !== undefined
+
+        ? `若開高接近 ${fmt2(resistances[0])}，先觀察量價與能否站穩；未站穩先視為壓力。`
+
+        : '若開高，先看量價是否同步，目前沒有可靠上方壓力資料。';
+
+
+
+    const flat =
+      supports[0] !== undefined
+
+        ? `若平開並守住 ${fmt2(supports[0])}，維持原結構觀察；接近壓力區不追價。`
+
+        : '若平開，先觀察趨勢、均線及量價。';
+
+
+
+    let low;
+
+
+    if (
+      supports[0] !== undefined &&
+      supports[1] !== undefined
+    ) {
+
+      low =
+        `若跌破 ${fmt2(supports[0])}，下一支撐看 ${fmt2(supports[1])}；兩層皆失守則短線結構轉弱。`;
+
+    }
+
+    else if (
+      supports[0] !== undefined
+    ) {
+
+      low =
+        `若跌破 ${fmt2(supports[0])}，短線結構轉弱。`;
+
+    }
+
+    else {
+
+      low =
+        '若開低，先觀察 SMA20、SMA60 與原本設定的失效價。';
+
+    }
+
+
+    return {
+
+      high,
+
+      flat,
+
+      low
+
+    };
+
+  }
+
+
+
+  /* =========================================================
+     9. 新增關注股智慧支撐壓力
+     重新接管舊版 Select / Copy
+  ========================================================= */
+
+  const SMART_CODES = [
+
+    '8358.TWO',
+
+    '3406.TW',
+
+    '8210.TW',
+
+    '2371.TW',
+
+    '1303.TW',
+
+    '2408.TW',
+
+    '4919.TW',
+
+    '4958.TW'
+
+  ];
+
+
+  const oldSelect =
+    document.getElementById(
+      'u2-select'
+    );
+
+
+  if (oldSelect) {
+
+    /*
+      cloneNode：
+      移除舊 change listener，
+      避免舊 parseEntry 再執行。
+    */
+
+    const newSelect =
+      oldSelect.cloneNode(false);
+
+
+    SMART_CODES.forEach(
+      code => {
+
+        const option =
+          document.createElement(
+            'option'
+          );
+
+
+        option.value =
+          code;
+
+
+        option.textContent =
+          `${NAMES[code] || code}｜${code}`;
+
+
+        newSelect.appendChild(
+          option
+        );
+
+      }
+    );
+
+
+    oldSelect.replaceWith(
+      newSelect
+    );
+
+
+    const body =
+      document.getElementById(
+        'u2-smart-body'
+      );
+
+
+    function renderSmart(code) {
+
+      const d =
+        dataOf(code);
+
+
+      if (
+        !d ||
+        !body
+      ) {
+
+        return;
+
+      }
+
+
+      const supports =
+        safeSupports(code);
+
+
+      const resistances =
+        safeResistances(code);
+
+
+      const scenario =
+        buildScenario(code);
+
+
+
+      body.innerHTML = `
+
+        <div class="u2-card">
+
+          <h3>
+
+            ${NAMES[code] || code}
+            ｜${code}
+
+          </h3>
+
+
+          <div class="u2-row">
+
+            <span>現價</span>
+
+            <span class="u2-big">
+
+              ${fmt2(d.p)}
+
+            </span>
+
+          </div>
+
+
+          <div class="u2-grid">
+
+
+            <div>
+
+              <div class="u2-lv">
+
+                🛡️ 近端支撐
+
+                <b>
+                  ${fmt2(supports[0])}
+                </b>
+
+                <div class="u2-muted">
+
+                  距現價
+                  ${distancePct(
+                    supports[0],
+                    d.p
+                  )}
+
+                </div>
+
+              </div>
+
+
+              <div class="u2-lv">
+
+                🛡️ 第二支撐
+
+                <b>
+                  ${fmt2(supports[1])}
+                </b>
+
+                <div class="u2-muted">
+
+                  距現價
+                  ${distancePct(
+                    supports[1],
+                    d.p
+                  )}
+
+                </div>
+
+              </div>
+
+            </div>
+
+
+            <div>
+
+              <div class="u2-lv">
+
+                ⚡ 第一壓力
+
+                <b>
+                  ${fmt2(resistances[0])}
+                </b>
+
+                <div class="u2-muted">
+
+                  距現價
+                  ${distancePct(
+                    resistances[0],
+                    d.p
+                  )}
+
+                </div>
+
+              </div>
+
+
+              <div class="u2-lv">
+
+                🔥 第二壓力
+
+                <b>
+                  ${fmt2(resistances[1])}
+                </b>
+
+                <div class="u2-muted">
+
+                  距現價
+                  ${distancePct(
+                    resistances[1],
+                    d.p
+                  )}
+
+                </div>
+
+              </div>
+
+            </div>
+
+          </div>
+
+
+          <div
+            class="u2-grid"
+            style="margin-top:10px"
+          >
+
+
+            <div class="u2-scen">
+
+              <b>🚀 開高</b>
+
+              <br>
+
+              ${scenario.high}
+
+            </div>
+
+
+            <div class="u2-scen">
+
+              <b>➡️ 平開</b>
+
+              <br>
+
+              ${scenario.flat}
+
+            </div>
+
+
+            <div class="u2-scen">
+
+              <b>⚠️ 開低</b>
+
+              <br>
+
+              ${scenario.low}
+
+            </div>
+
+
+          </div>
+
+
+          <p class="note">
+
+            ${d.note || ''}
+
+          </p>
+
+
+        </div>
+
+      `;
+
+    }
+
+
+    newSelect.addEventListener(
+      'change',
+      function () {
+
+        renderSmart(
+          this.value
+        );
+
+      }
+    );
+
+
+    renderSmart(
+      newSelect.value ||
+      SMART_CODES[0]
+    );
+
+
+
+    /* =====================================================
+       10. iPhone / Safari 複製功能
+    ===================================================== */
+
+    const oldCopy =
+      document.getElementById(
+        'u2-copy'
+      );
+
+
+    if (oldCopy) {
+
+      /*
+        Clone 移除原本 clipboard listener
+      */
+
+      const newCopy =
+        oldCopy.cloneNode(true);
+
+
+      oldCopy.replaceWith(
+        newCopy
+      );
+
+
+      async function safeCopy(
+        text
+      ) {
+
+        /*
+          HTTPS / Chrome / Safari 新版
+        */
+
+        if (
+          navigator.clipboard &&
+          window.isSecureContext
+        ) {
+
+          try {
+
+            await navigator
+              .clipboard
+              .writeText(text);
+
+
+            return true;
+
+          }
+          catch (err) {}
+
+        }
+
+
+        /*
+          Safari / iPhone fallback
+        */
+
+        const textarea =
+          document.createElement(
+            'textarea'
+          );
+
+
+        textarea.value =
+          text;
+
+
+        textarea.setAttribute(
+          'readonly',
+          ''
+        );
+
+
+        textarea.style.position =
+          'fixed';
+
+
+        textarea.style.left =
+          '-9999px';
+
+
+        textarea.style.top =
+          '0';
+
+
+        document.body
+          .appendChild(
+            textarea
+          );
+
+
+        textarea.focus();
+
+        textarea.select();
+
+
+        let success =
+          false;
+
+
+        try {
+
+          success =
+            document.execCommand(
+              'copy'
+            );
+
+        }
+        catch (err) {
+
+          success =
+            false;
+
+        }
+
+
+        textarea.remove();
+
+
+        return success;
+
+      }
+
+
+      newCopy.addEventListener(
+        'click',
+        async function () {
+
+          const code =
+            newSelect.value;
+
+
+          const d =
+            dataOf(code);
+
+
+          if (!d) {
+
+            return;
+
+          }
+
+
+          const supports =
+            safeSupports(code);
+
+
+          const resistances =
+            safeResistances(code);
+
+
+          const scenario =
+            buildScenario(code);
+
+
+
+          const text =
+
+`【${NAMES[code] || code} ${code}】
+
+現價：${fmt2(d.p)}
+
+近端支撐：${fmt2(supports[0])}
+距現價：${distancePct(supports[0], d.p)}
+
+第二支撐：${fmt2(supports[1])}
+距現價：${distancePct(supports[1], d.p)}
+
+第一壓力：${fmt2(resistances[0])}
+距現價：${distancePct(resistances[0], d.p)}
+
+第二壓力：${fmt2(resistances[1])}
+距現價：${distancePct(resistances[1], d.p)}
+
+【開高】
+${scenario.high}
+
+【平開】
+${scenario.flat}
+
+【開低】
+${scenario.low}
+
+備註：
+${d.note || 'N/A'}
+
+※ 僅供市場觀察，不構成投資建議。`;
+
+
+          const ok =
+            await safeCopy(
+              text
+            );
+
+
+          if (ok) {
+
+            this.textContent =
+              '✅ 已複製';
+
+          }
+
+          else {
+
+            this.textContent =
+              '⚠️ 複製失敗';
+
+          }
+
+
+          setTimeout(
+            () => {
+
+              this.textContent =
+                '📋 複製分析';
+
+            },
+            1500
+          );
+
+        }
+      );
+
+    }
+
+  }
+
+
+
+  /* =========================================================
+     11. 修正族群同步雷達
+
+     舊問題：
+     只有 1 檔有效資料，
+     上漲時會顯示 100% 同步偏強。
+
+     新規則：
+     0-1 檔 = 資料不足
+     2 檔   = 樣本偏少
+     3 檔以上才正式判斷同步度
+  ========================================================= */
+
+  const syncBox =
+    document.getElementById(
+      'u2-sync-list'
+    );
+
+
+  if (syncBox) {
+
+    syncBox.innerHTML =
+      Object.entries(
+        STOCK_META
+      )
+        .map(
+          ([group, list]) => {
+
+            const rows =
+              list
+                .map(
+                  code => ({
+
+                    code,
+
+                    pct:
+                      toNum(
+                        DATA[
+                          code
+                        ]?.pct
+                      )
+
+                  })
+                )
+                .filter(
+                  item =>
+                    item.pct !== null
+                );
+
+
+            const valid =
+              rows.length;
+
+
+            if (
+              valid === 0
+            ) {
+
+              return `
+
+                <div
+                  class="u2-card"
+                  style="margin-bottom:8px"
+                >
+
+                  <div class="u2-row">
+
+                    <b>
+                      ${group}
+                    </b>
+
+                    <span>
+                      資料不足
+                    </span>
+
+                  </div>
+
+                  <div class="u2-data-warning">
+
+                    目前沒有有效漲跌幅資料
+
+                  </div>
+
+                </div>
+
+              `;
+
+            }
+
+
+            const up =
+              rows.filter(
+                x => x.pct > 0
+              ).length;
+
+
+            const down =
+              rows.filter(
+                x => x.pct < 0
+              ).length;
+
+
+            const flat =
+              rows.filter(
+                x => x.pct === 0
+              ).length;
+
+
+            const syncPct =
+              Math.round(
+                up /
+                valid *
+                100
+              );
+
+
+            let label;
+
+
+            let sampleNote =
+              '';
+
+
+            if (
+              valid === 1
+            ) {
+
+              label =
+                '資料不足';
+
+
+              sampleNote =
+                '只有 1 檔有效資料，不判斷族群同步。';
+
+            }
+
+            else if (
+              valid === 2
+            ) {
+
+              label =
+                '樣本偏少';
+
+
+              sampleNote =
+                '目前只有 2 檔有效資料，百分比僅供參考。';
+
+            }
+
+            else if (
+              syncPct >= 75
+            ) {
+
+              label =
+                '同步偏強';
+
+            }
+
+            else if (
+              syncPct >= 50
+            ) {
+
+              label =
+                '部分同步';
+
+            }
+
+            else {
+
+              label =
+                '族群分化';
+
+            }
+
+
+
+            return `
+
+              <div
+                class="u2-card"
+                style="margin-bottom:8px"
+              >
+
+                <div class="u2-row">
+
+                  <b>
+                    ${group}
+                  </b>
+
+                  <span>
+
+                    ${valid === 1
+                      ? '—'
+                      : syncPct + '%'
+                    }
+
+                    ｜${label}
+
+                  </span>
+
+                </div>
+
+
+                <div class="u2-syncbar">
+
+                  <div
+                    class="u2-syncfill"
+                    style="
+                      width:
+                      ${
+                        valid === 1
+                          ? 0
+                          : syncPct
+                      }%
+                    "
+                  ></div>
+
+                </div>
+
+
+                <div
+                  class="u2-muted"
+                  style="margin-top:5px"
+                >
+
+                  上漲 ${up}
+                  ／下跌 ${down}
+                  ／平盤 ${flat}
+                  ／有效 ${valid}
+
+                </div>
+
+
+                ${
+                  sampleNote
+
+                  ? `<div class="u2-data-warning">${sampleNote}</div>`
+
+                  : ''
+                }
+
+              </div>
+
+            `;
+
+          }
+        )
+        .join('');
+
+  }
+
+
+
+  /* =========================================================
+     12. 修正臻鼎-KY 持倉損益
+
+     原設定：
+     80 股
+     均價 481.90
+     市價 561
+
+     依價格自行計算：
+     成本 = 38,552
+     市值 = 44,880
+     試算損益 = 6,328
+     試算報酬率 ≈ 16.41%
+
+     同時保留券商截圖：
+     6,131 / 15.90%
+  ========================================================= */
+
+  const positionBox =
+    document.getElementById(
+      'u2-position'
+    );
+
+
+  if (positionBox) {
+
+    const HOLDING = {
+
+      code:
+        '4958.TW',
+
+      shares:
+        80,
+
+      avg:
+        481.90,
+
+      brokerPnl:
+        6131,
+
+      brokerPnlPct:
+        15.90
+
+    };
+
+
+    const stock =
+      DATA[
+        HOLDING.code
+      ] || {};
+
+
+    const market =
+      toNum(
+        stock.p
+      ) ??
+      561;
+
+
+    const cost =
+      HOLDING.avg *
+      HOLDING.shares;
+
+
+    const marketValue =
+      market *
+      HOLDING.shares;
+
+
+    const calcPnl =
+      marketValue -
+      cost;
+
+
+    const calcPct =
+      cost !== 0
+
+        ? (
+          calcPnl /
+          cost
+        ) * 100
+
+        : 0;
+
+
+    const profitClass =
+      calcPnl >= 0
+
+        ? 'u2-profit'
+
+        : 'u2-loss';
+
+
+
+    positionBox.innerHTML = `
+
+      <h2>
+        💼 我的持倉
+      </h2>
+
+
+      <div
+        class="u2-card u2-pos"
+      >
+
+        <h3>
+
+          ${
+            NAMES[
+              HOLDING.code
+            ] ||
+            HOLDING.code
+          }
+
+          ｜${HOLDING.code}
+
+        </h3>
+
+
+        <div class="u2-row">
+
+          <span>
+            股數
+          </span>
+
+          <b>
+            ${HOLDING.shares}
+          </b>
+
+        </div>
+
+
+        <div class="u2-row">
+
+          <span>
+            平均成本
+          </span>
+
+          <b>
+            ${HOLDING.avg.toFixed(2)}
+          </b>
+
+        </div>
+
+
+        <div class="u2-row">
+
+          <span>
+            DATA 市價
+          </span>
+
+          <b>
+            ${fmt2(market)}
+          </b>
+
+        </div>
+
+
+        <div class="u2-row">
+
+          <span>
+            成本金額
+          </span>
+
+          <b>
+            ${fmt2(cost)}
+          </b>
+
+        </div>
+
+
+        <div class="u2-row">
+
+          <span>
+            目前市值
+          </span>
+
+          <b>
+            ${fmt2(marketValue)}
+          </b>
+
+        </div>
+
+
+        <div class="u2-row">
+
+          <span>
+            依市價試算損益
+          </span>
+
+          <b class="${profitClass}">
+
+            ${calcPnl >= 0 ? '+' : ''}
+            ${fmt2(calcPnl)}
+
+            （
+            ${calcPct >= 0 ? '+' : ''}
+            ${calcPct.toFixed(2)}%
+            ）
+
+          </b>
+
+        </div>
+
+
+        <hr
+          style="
+            border:0;
+            border-top:
+            1px solid rgba(201,169,106,.15);
+            margin:10px 0;
+          "
+        >
+
+
+        <div class="u2-row">
+
+          <span>
+            券商截圖損益
+          </span>
+
+          <b>
+
+            ${fmt2(
+              HOLDING.brokerPnl
+            )}
+
+            （
+            ${HOLDING.brokerPnlPct.toFixed(2)}%
+            ）
+
+          </b>
+
+        </div>
+
+
+        <p class="note">
+
+          「依市價試算」直接使用股數 × 平均成本與 DATA 市價計算；
+          「券商截圖損益」保留原截圖數字。
+          因券商可能計入手續費、稅費或不同成本口徑，
+          兩者分開顯示，避免數字互相矛盾。
+
+        </p>
+
+      </div>
+
+    `;
+
+  }
+
+
+
+  /* =========================================================
+     13. 修正 viewport
+     允許 iPhone 使用者手勢放大
+  ========================================================= */
+
+  const viewport =
+    document.querySelector(
+      'meta[name="viewport"]'
+    );
+
+
+  if (viewport) {
+
+    viewport.setAttribute(
+
+      'content',
+
+      'width=device-width, initial-scale=1'
+
+    );
+
+  }
+
+
+
+  /* =========================================================
+     完成
+  ========================================================= */
+
+  console.log(
+    '✅ Stock Report Final Hotfix 已載入'
+  );
+
+
 })();
 
 </script>
