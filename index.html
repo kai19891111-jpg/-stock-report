@@ -51,6 +51,8 @@ th{color:var(--gold);font-weight:600;}
   <a href="#watch">我的關注股</a>
   <a href="#decision">交易決策卡</a>
   <a href="#index">指數</a>
+  <a href="#smart-levels">支撐壓力</a>
+  <a href="#group-sync">族群同步</a>
 </nav>
 <div class="wrap">
   <div class="hdr">
@@ -119,12 +121,12 @@ const STOCK_META = {
   "US|AI晶片": ["TSM","NVDA","AMD","AVGO"],
   "US|AI雲端": ["MSFT","META"],
   "US|AI記憶體": ["MU"],
-  "US|AI自駖機器人": ["TSLA"],
+  "US|AI自駕機器人": ["TSLA"],
   "US|航太科技": ["SPCX"]
 };
 const NAMES = {
   "2330.TW":"台積電","2454.TW":"聯發科","2308.TW":"台達電",
-  "3324.TWO":"双鴻","3653.TW":"健策","3017.TW":"奇鈮",
+  "3324.TWO":"双鴻","3653.TW":"健策","3017.TW":"奇鋐",
   "3189.TW":"景碩","3037.TW":"欣興","8046.TW":"南電",
   "6213.TW":"聯茂","2383.TW":"台光電",
   "3481.TW":"群創","6770.TW":"力積電","2221.TWO":"大甲",
@@ -199,6 +201,1405 @@ order.forEach(code=>{
   watchGrid.innerHTML += card;
   decGrid.innerHTML += card;
 });
+</script>
+<!-- =========================================================
+     智慧支撐壓力 + 情境推演 + 族群同步雷達
+     直接貼在 </body> 前面即可
+========================================================= -->
+
+<style>
+.smart-toolbar{
+  display:flex;
+  gap:8px;
+  flex-wrap:wrap;
+  align-items:center;
+  margin:10px 0 14px;
+}
+
+.smart-select,
+.smart-btn{
+  background:#081a2d;
+  color:var(--text);
+  border:1px solid rgba(201,169,106,.35);
+  border-radius:8px;
+  padding:9px 10px;
+  font-size:13px;
+}
+
+.smart-select{
+  flex:1;
+  min-width:180px;
+}
+
+.smart-btn{
+  cursor:pointer;
+  color:var(--gold2);
+}
+
+.smart-btn:hover{
+  border-color:var(--gold);
+  background:rgba(201,169,106,.08);
+}
+
+.level-wrap{
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:10px;
+}
+
+.level-box{
+  background:#091b2e;
+  border:1px solid rgba(77,163,255,.25);
+  border-radius:12px;
+  padding:13px;
+}
+
+.level-box.support{
+  border-color:rgba(61,214,140,.35);
+}
+
+.level-box.breakout{
+  border-color:rgba(77,163,255,.45);
+}
+
+.level-box.resistance{
+  border-color:rgba(255,180,80,.4);
+}
+
+.level-head{
+  font-size:13px;
+  font-weight:700;
+  margin-bottom:10px;
+}
+
+.level-head.green{color:var(--green);}
+.level-head.blue{color:#55b6ff;}
+.level-head.orange{color:#ffb450;}
+
+.level-line{
+  display:flex;
+  justify-content:space-between;
+  gap:12px;
+  align-items:flex-start;
+  padding:8px 0;
+  border-bottom:1px solid rgba(255,255,255,.06);
+}
+
+.level-line:last-child{
+  border-bottom:none;
+}
+
+.level-name{
+  color:var(--muted);
+  font-size:12px;
+}
+
+.level-price{
+  font-size:1.22rem;
+  font-weight:800;
+  text-align:right;
+}
+
+.level-dist{
+  font-size:11px;
+  color:var(--muted);
+  text-align:right;
+}
+
+.level-reason{
+  margin-top:3px;
+  font-size:11px;
+  color:#9fb1c6;
+}
+
+.scenario-grid{
+  display:grid;
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:8px;
+  margin-top:12px;
+}
+
+.scenario{
+  padding:11px;
+  border-radius:10px;
+  background:#091a2b;
+  border:1px solid rgba(201,169,106,.15);
+}
+
+.scenario strong{
+  color:var(--gold2);
+  display:block;
+  margin-bottom:5px;
+}
+
+.scenario p{
+  margin:0;
+  color:#aebaca;
+  font-size:12px;
+}
+
+.sync-row{
+  padding:10px 0;
+  border-bottom:1px solid rgba(201,169,106,.12);
+}
+
+.sync-row:last-child{
+  border-bottom:none;
+}
+
+.sync-top{
+  display:flex;
+  justify-content:space-between;
+  gap:10px;
+  font-size:13px;
+  margin-bottom:5px;
+}
+
+.sync-name{
+  color:var(--gold2);
+  font-weight:700;
+}
+
+.sync-meter{
+  height:7px;
+  overflow:hidden;
+  border-radius:20px;
+  background:rgba(255,255,255,.08);
+}
+
+.sync-fill{
+  height:100%;
+  background:linear-gradient(90deg,#3dd68c,#4da3ff);
+  border-radius:20px;
+}
+
+.sync-note{
+  color:var(--muted);
+  font-size:11px;
+  margin-top:5px;
+}
+
+.smart-summary{
+  margin:10px 0;
+  padding:10px;
+  background:rgba(77,163,255,.07);
+  border-left:3px solid var(--blue);
+  border-radius:5px;
+  font-size:12px;
+  color:#b8c6d7;
+}
+
+.smart-tag{
+  display:inline-block;
+  font-size:10px;
+  padding:2px 6px;
+  border-radius:999px;
+  margin-left:4px;
+  border:1px solid rgba(255,255,255,.15);
+  color:#aebaca;
+}
+
+@media(max-width:650px){
+  .level-wrap{
+    grid-template-columns:1fr;
+  }
+
+  .scenario-grid{
+    grid-template-columns:1fr;
+  }
+
+  .level-price{
+    font-size:1.1rem;
+  }
+}
+</style>
+
+<script>
+(function(){
+
+/* =========================================================
+   0. 防呆：確認你原本資料存在
+========================================================= */
+if(typeof DATA === "undefined" ||
+   typeof STOCK_META === "undefined" ||
+   typeof NAMES === "undefined"){
+  console.warn("智慧分析模組：找不到 DATA / STOCK_META / NAMES");
+  return;
+}
+
+
+/* =========================================================
+   1. 可選擇手動覆寫特殊支撐壓力
+   沒填就完全使用原本 DATA，不亂產生價格
+
+   範例：
+   "2330.TW":{
+      support:[2450,2410],
+      breakout:2550,
+      resistance:[2550,2600]
+   }
+========================================================= */
+
+const LEVEL_OVERRIDES = {
+
+  /*
+  "2330.TW":{
+    support:[2450,2410],
+    breakout:2550,
+    resistance:[2550,2600]
+  }
+  */
+
+};
+
+
+/* =========================================================
+   2. 工具函數
+========================================================= */
+
+function smartNum(v){
+
+  if(
+    v === null ||
+    v === undefined ||
+    v === "N/A" ||
+    v === ""
+  ){
+    return null;
+  }
+
+  const n = Number(v);
+
+  return Number.isFinite(n) ? n : null;
+}
+
+
+function smartFmt(v){
+
+  const n = smartNum(v);
+
+  if(n === null){
+    return "N/A";
+  }
+
+  if(Math.abs(n) >= 1000){
+    return n.toLocaleString(
+      "en-US",
+      {maximumFractionDigits:2}
+    );
+  }
+
+  return Number.isInteger(n)
+    ? String(n)
+    : n.toFixed(2).replace(/\.00$/,"");
+}
+
+
+function smartPct(level,current){
+
+  const l = smartNum(level);
+  const c = smartNum(current);
+
+  if(l === null || c === null || c === 0){
+    return "N/A";
+  }
+
+  const x = ((l-c)/c)*100;
+
+  return (x>0?"+":"") + x.toFixed(1) + "%";
+}
+
+
+function smartParseEntry(entry){
+
+  if(!entry || entry === "N/A"){
+    return [];
+  }
+
+  const m = String(entry).match(
+    /-?\d+(?:\.\d+)?/g
+  );
+
+  if(!m){
+    return [];
+  }
+
+  return m
+    .map(Number)
+    .filter(Number.isFinite);
+}
+
+
+function smartUnique(arr){
+
+  return [...new Set(
+    arr
+      .filter(x=>Number.isFinite(x))
+      .map(x=>Number(x.toFixed(4)))
+  )];
+
+}
+
+
+function smartMarketInfo(code){
+
+  let market = "台股";
+  let group = "其他";
+
+  for(const [key,list] of Object.entries(STOCK_META)){
+
+    if(list.includes(code)){
+
+      const parts = key.split("|");
+
+      market =
+        parts[0] === "TW"
+        ? "台股"
+        : "美股";
+
+      group = parts[1] || "其他";
+
+      break;
+    }
+  }
+
+  return {market,group};
+}
+
+
+/* =========================================================
+   3. 自動判斷某個價位形成原因
+========================================================= */
+
+function smartReason(code,level,type){
+
+  const d = DATA[code];
+
+  if(!d || level === null){
+    return "資料不足";
+  }
+
+  const tolerance =
+    Math.max(Math.abs(level)*0.001,0.01);
+
+  function same(a,b){
+
+    const x = smartNum(a);
+    const y = smartNum(b);
+
+    if(x === null || y === null){
+      return false;
+    }
+
+    return Math.abs(x-y) <= tolerance;
+  }
+
+
+  if(same(level,d.s20)){
+    return "SMA20／短線結構";
+  }
+
+  if(same(level,d.s60)){
+    return "SMA60／中期趨勢";
+  }
+
+  if(same(level,d.invalid)){
+    return "結構失效價／風險防守";
+  }
+
+  const entries =
+    smartParseEntry(d.entry);
+
+  if(entries.some(x=>same(level,x))){
+    return "回檔觀察區／原進場區";
+  }
+
+  if(same(level,d.resist)){
+    return "原壓力／近波段高點";
+  }
+
+  if(type === "support"){
+    return "結構支撐觀察";
+  }
+
+  if(type === "resistance"){
+    return "壓力觀察";
+  }
+
+  return "技術結構價位";
+}
+
+
+/* =========================================================
+   4. 自動整理兩層支撐
+========================================================= */
+
+function smartSupports(code){
+
+  const d = DATA[code];
+
+  if(!d){
+    return [];
+  }
+
+  const p = smartNum(d.p);
+
+  if(p === null){
+    return [];
+  }
+
+  const override =
+    LEVEL_OVERRIDES[code];
+
+  if(
+    override &&
+    Array.isArray(override.support)
+  ){
+
+    return smartUnique(
+      override.support
+    )
+    .filter(x=>x<p)
+    .sort((a,b)=>b-a)
+    .slice(0,2);
+
+  }
+
+  const entries =
+    smartParseEntry(d.entry);
+
+  const candidates = smartUnique([
+    ...entries,
+    smartNum(d.s20),
+    smartNum(d.s60),
+    smartNum(d.invalid)
+  ]);
+
+  return candidates
+    .filter(x=>x<p)
+    .sort((a,b)=>b-a)
+    .slice(0,2);
+}
+
+
+/* =========================================================
+   5. 壓力／突破位置
+========================================================= */
+
+function smartResistance(code){
+
+  const d = DATA[code];
+
+  if(!d){
+    return {
+      breakout:null,
+      r1:null,
+      r2:null
+    };
+  }
+
+  const p = smartNum(d.p);
+
+  const override =
+    LEVEL_OVERRIDES[code] || {};
+
+  let resistance = [];
+
+  if(Array.isArray(override.resistance)){
+    resistance =
+      smartUnique(override.resistance)
+      .filter(x=>p===null || x>p)
+      .sort((a,b)=>a-b);
+  }
+
+  const existingResist =
+    smartNum(d.resist);
+
+  if(
+    existingResist !== null &&
+    p !== null &&
+    existingResist >= p * 0.9985
+  ){
+    resistance.push(existingResist);
+  }
+
+  resistance =
+    smartUnique(resistance)
+    .sort((a,b)=>a-b);
+
+
+  let breakout =
+    smartNum(override.breakout);
+
+  if(breakout === null){
+    breakout =
+      resistance.length
+      ? resistance[0]
+      : null;
+  }
+
+  return {
+    breakout,
+    r1: resistance[0] ?? null,
+    r2: resistance[1] ?? null
+  };
+}
+
+
+/* =========================================================
+   6. 情境推演
+========================================================= */
+
+function smartScenario(code){
+
+  const d = DATA[code];
+
+  if(!d){
+    return null;
+  }
+
+  const p =
+    smartNum(d.p);
+
+  const supports =
+    smartSupports(code);
+
+  const resistance =
+    smartResistance(code);
+
+  const s1 =
+    supports[0] ?? null;
+
+  const s2 =
+    supports[1] ?? null;
+
+  const r1 =
+    resistance.r1;
+
+
+  let openHigh = "";
+
+  if(r1 !== null){
+
+    const dist =
+      ((r1-p)/p)*100;
+
+    if(dist <= 2.5){
+
+      openHigh =
+        `若開高接近 ${smartFmt(r1)}，已靠近第一壓力，觀察成交量及是否能有效站穩；未站穩則留意短線賣壓。`;
+
+    }else{
+
+      openHigh =
+        `若開高且量價結構穩定，先觀察是否朝 ${smartFmt(r1)} 第一壓力推進，不直接把壓力當成追價目標。`;
+
+    }
+
+  }else{
+
+    openHigh =
+      "若開高，先觀察量價是否同步；目前缺少可靠的上方壓力資料，不額外虛構目標價。";
+  }
+
+
+  const flat =
+    s1 !== null
+    ? `若平開並守住 ${smartFmt(s1)} 近端支撐，可持續觀察原趨勢；若靠近壓力則等待突破確認。`
+    : "若平開，觀察 SMA20、量價與原趨勢是否維持。";
+
+
+  const openLow =
+    s1 !== null
+    ? (
+        s2 !== null
+        ? `若開低並跌破 ${smartFmt(s1)}，下一個結構觀察位置為 ${smartFmt(s2)}；若第二支撐也失守，風險升高。`
+        : `若開低並跌破 ${smartFmt(s1)}，代表短線結構轉弱，等待重新站回支撐再評估。`
+      )
+    : "若開低，優先觀察 SMA20／SMA60 與原失效價，不急於接回。";
+
+
+  return {
+    openHigh,
+    flat,
+    openLow
+  };
+}
+
+
+/* =========================================================
+   7. 新增導覽列
+========================================================= */
+
+const nav =
+  document.querySelector("nav");
+
+if(nav){
+
+  if(!nav.querySelector(
+    'a[href="#smart-levels"]'
+  )){
+
+    const a =
+      document.createElement("a");
+
+    a.href =
+      "#smart-levels";
+
+    a.textContent =
+      "支撐壓力";
+
+    nav.appendChild(a);
+  }
+
+
+  if(!nav.querySelector(
+    'a[href="#group-sync"]'
+  )){
+
+    const a =
+      document.createElement("a");
+
+    a.href =
+      "#group-sync";
+
+    a.textContent =
+      "族群同步";
+
+    nav.appendChild(a);
+  }
+}
+
+
+/* =========================================================
+   8. 建立智慧支撐壓力區
+========================================================= */
+
+const decisionSection =
+  document.getElementById("decision");
+
+const smartSection =
+  document.createElement("section");
+
+smartSection.id =
+  "smart-levels";
+
+smartSection.className =
+  "panel";
+
+smartSection.innerHTML = `
+
+<h2>🧭 智慧支撐／壓力與盤中情境</h2>
+
+<div class="smart-toolbar">
+
+  <select
+    id="smart-stock-select"
+    class="smart-select">
+  </select>
+
+  <button
+    id="smart-copy-btn"
+    class="smart-btn">
+    📋 複製分析
+  </button>
+
+</div>
+
+<div id="smart-stock-title"
+     class="smart-summary">
+</div>
+
+<div class="level-wrap">
+
+  <div class="level-box support">
+
+    <div class="level-head green">
+      🛡️ 支撐觀察
+    </div>
+
+    <div id="smart-support"></div>
+
+  </div>
+
+
+  <div class="level-box breakout">
+
+    <div class="level-head blue">
+      ⚡ 關鍵突破／壓力
+    </div>
+
+    <div id="smart-resistance"></div>
+
+  </div>
+
+</div>
+
+
+<div style="margin-top:14px">
+
+  <div style="
+    color:var(--gold2);
+    font-weight:700;
+    margin-bottom:7px;
+  ">
+    📍 今日三情境推演
+  </div>
+
+  <div
+    class="scenario-grid"
+    id="smart-scenario">
+  </div>
+
+</div>
+
+<p class="note">
+支撐／壓力會優先使用既有進場區、SMA20、SMA60、
+失效價及原壓力資料。沒有可靠資料時顯示 N/A，
+不自行虛構目標價。
+</p>
+`;
+
+
+if(decisionSection){
+
+  decisionSection.insertAdjacentElement(
+    "afterend",
+    smartSection
+  );
+
+}else{
+
+  document
+    .querySelector(".wrap")
+    .appendChild(smartSection);
+
+}
+
+
+/* =========================================================
+   9. 建立股票選單
+========================================================= */
+
+const smartSelect =
+  document.getElementById(
+    "smart-stock-select"
+  );
+
+
+const SMART_ORDER = [
+  "2330.TW","2454.TW","2308.TW","3324.TWO","3653.TW","3017.TW",
+  "3189.TW","3037.TW","8046.TW","6213.TW","2383.TW",
+  "3481.TW","6770.TW","2221.TWO",
+  "TSM","NVDA","AMD","AVGO","MSFT","META","MU","TSLA","SPCX"
+];
+
+const smartCodes = SMART_ORDER
+  .filter(code => DATA[code])
+  .concat(
+    Object.keys(DATA).filter(code =>
+      !code.startsWith("^") &&
+      !SMART_ORDER.includes(code)
+    )
+  );
+
+
+smartCodes.forEach(code=>{
+
+  const op =
+    document.createElement("option");
+
+  op.value =
+    code;
+
+  op.textContent =
+    `${NAMES[code] || code}｜${code}`;
+
+  smartSelect.appendChild(op);
+
+});
+
+
+if(DATA["2330.TW"]){
+  smartSelect.value = "2330.TW";
+}
+
+
+/* =========================================================
+   10. 畫支撐壓力
+========================================================= */
+
+function levelHTML(
+  title,
+  price,
+  current,
+  reason
+){
+
+  return `
+
+  <div class="level-line">
+
+    <div>
+      <div class="level-name">
+        ${title}
+      </div>
+
+      <div class="level-reason">
+        ${reason}
+      </div>
+    </div>
+
+    <div>
+      <div class="level-price">
+        ${smartFmt(price)}
+      </div>
+
+      <div class="level-dist">
+        距現價 ${smartPct(price,current)}
+      </div>
+    </div>
+
+  </div>
+
+  `;
+}
+
+
+function renderSmartStock(code){
+
+  const d =
+    DATA[code];
+
+  if(!d){
+    return;
+  }
+
+  const p =
+    smartNum(d.p);
+
+  const name =
+    NAMES[code] || code;
+
+  const info =
+    smartMarketInfo(code);
+
+  const supports =
+    smartSupports(code);
+
+  const resistance =
+    smartResistance(code);
+
+  const scenarios =
+    smartScenario(code);
+
+
+  document.getElementById(
+    "smart-stock-title"
+  ).innerHTML = `
+
+    <strong>${name}</strong>
+    <span class="smart-tag">${code}</span>
+    <span class="smart-tag">${info.market}</span>
+    <span class="smart-tag">${info.group}</span>
+
+    <br>
+
+    現價：
+    <strong style="color:var(--text)">
+      ${smartFmt(p)}
+    </strong>
+
+    ｜狀態：
+    ${d.status || "N/A"}
+
+    ｜最後完成日 K：
+    ${d.date || "N/A"}
+
+  `;
+
+
+  const supportBox =
+    document.getElementById(
+      "smart-support"
+    );
+
+  supportBox.innerHTML = "";
+
+
+  if(supports.length){
+
+    supportBox.innerHTML +=
+      levelHTML(
+        "近端支撐",
+        supports[0],
+        p,
+        smartReason(
+          code,
+          supports[0],
+          "support"
+        )
+      );
+
+
+    if(supports[1] !== undefined){
+
+      supportBox.innerHTML +=
+        levelHTML(
+          "第二支撐",
+          supports[1],
+          p,
+          smartReason(
+            code,
+            supports[1],
+            "support"
+          )
+        );
+
+    }else{
+
+      supportBox.innerHTML +=
+        levelHTML(
+          "第二支撐",
+          null,
+          p,
+          "目前資料不足"
+        );
+    }
+
+  }else{
+
+    supportBox.innerHTML +=
+      levelHTML(
+        "近端支撐",
+        null,
+        p,
+        "目前資料不足"
+      );
+
+    supportBox.innerHTML +=
+      levelHTML(
+        "第二支撐",
+        null,
+        p,
+        "目前資料不足"
+      );
+  }
+
+
+  const resistanceBox =
+    document.getElementById(
+      "smart-resistance"
+    );
+
+  resistanceBox.innerHTML = "";
+
+
+  resistanceBox.innerHTML +=
+    levelHTML(
+      "關鍵突破／第一壓力",
+      resistance.breakout,
+      p,
+      resistance.breakout !== null
+        ? smartReason(
+            code,
+            resistance.breakout,
+            "resistance"
+          )
+        : "目前沒有可靠的上方壓力資料"
+    );
+
+
+  resistanceBox.innerHTML +=
+    levelHTML(
+      "第二壓力",
+      resistance.r2,
+      p,
+      resistance.r2 !== null
+        ? smartReason(
+            code,
+            resistance.r2,
+            "resistance"
+          )
+        : "N/A｜不自行推算目標價"
+    );
+
+
+  const scenarioBox =
+    document.getElementById(
+      "smart-scenario"
+    );
+
+
+  scenarioBox.innerHTML = `
+
+    <div class="scenario">
+
+      <strong>
+        🚀 情境 A｜開高
+      </strong>
+
+      <p>
+        ${scenarios.openHigh}
+      </p>
+
+    </div>
+
+
+    <div class="scenario">
+
+      <strong>
+        ➡️ 情境 B｜平開
+      </strong>
+
+      <p>
+        ${scenarios.flat}
+      </p>
+
+    </div>
+
+
+    <div class="scenario">
+
+      <strong>
+        ⚠️ 情境 C｜開低
+      </strong>
+
+      <p>
+        ${scenarios.openLow}
+      </p>
+
+    </div>
+
+  `;
+
+}
+
+
+/* =========================================================
+   11. 族群同步雷達
+========================================================= */
+
+const groupSection =
+  document.createElement("section");
+
+groupSection.id =
+  "group-sync";
+
+groupSection.className =
+  "panel";
+
+groupSection.innerHTML = `
+
+<h2>📊 族群同步雷達</h2>
+
+<p class="note">
+同步度依該族群「當日上漲檔數 ÷ 有有效漲跌幅資料檔數」
+計算。同步度只反映當日族群一致性，不代表買進訊號。
+</p>
+
+<div id="group-sync-list"></div>
+
+`;
+
+
+smartSection.insertAdjacentElement(
+  "afterend",
+  groupSection
+);
+
+
+function renderGroupSync(){
+
+  const box =
+    document.getElementById(
+      "group-sync-list"
+    );
+
+  let html = "";
+
+
+  for(
+    const [group,list]
+    of Object.entries(STOCK_META)
+  ){
+
+    const rows =
+      list
+      .map(code=>({
+        code,
+        name:NAMES[code] || code,
+        pct:
+          smartNum(
+            DATA[code]?.pct
+          )
+      }))
+      .filter(x =>
+        x.pct !== null
+      );
+
+
+    if(!rows.length){
+      continue;
+    }
+
+
+    const up =
+      rows.filter(
+        x=>x.pct>0
+      ).length;
+
+
+    const down =
+      rows.filter(
+        x=>x.pct<0
+      ).length;
+
+
+    const flat =
+      rows.length-up-down;
+
+
+    const sync =
+      Math.round(
+        (up/rows.length)*100
+      );
+
+
+    let label;
+
+    if(sync >= 75){
+      label = "同步偏強";
+    }else if(sync >= 50){
+      label = "部分同步";
+    }else{
+      label = "族群分化";
+    }
+
+
+    const detail =
+      rows
+      .map(x=>
+        `${x.name} ${
+          x.pct>0
+            ?"▲"
+            :x.pct<0
+              ?"▼"
+              :"－"
+        }${Math.abs(x.pct).toFixed(2)}%`
+      )
+      .join(" ｜ ");
+
+
+    html += `
+
+    <div class="sync-row">
+
+      <div class="sync-top">
+
+        <div class="sync-name">
+          ${group}
+        </div>
+
+        <div>
+          ${label}
+          ｜${sync}%
+        </div>
+
+      </div>
+
+
+      <div class="sync-meter">
+
+        <div
+          class="sync-fill"
+          style="width:${sync}%">
+        </div>
+
+      </div>
+
+
+      <div class="sync-note">
+
+        上漲 ${up}
+        ／下跌 ${down}
+        ／平盤 ${flat}
+        ／共 ${rows.length} 檔
+
+        <br>
+
+        ${detail}
+
+      </div>
+
+    </div>
+
+    `;
+  }
+
+
+  box.innerHTML =
+    html || "目前沒有可計算資料";
+
+}
+
+
+/* =========================================================
+   12. 一鍵複製個股分析
+========================================================= */
+
+function buildCopyText(code){
+
+  const d =
+    DATA[code];
+
+  if(!d){
+    return "";
+  }
+
+
+  const p =
+    smartNum(d.p);
+
+  const name =
+    NAMES[code] || code;
+
+  const supports =
+    smartSupports(code);
+
+  const resistance =
+    smartResistance(code);
+
+  const scenarios =
+    smartScenario(code);
+
+
+  return `【${name} ${code}】
+
+現價：${smartFmt(p)}
+狀態：${d.status || "N/A"}
+最後完成日K：${d.date || "N/A"}
+
+🛡️ 支撐觀察
+近端支撐：${smartFmt(supports[0])}
+距現價：${smartPct(supports[0],p)}
+原因：${smartReason(code,supports[0],"support")}
+
+第二支撐：${smartFmt(supports[1])}
+距現價：${smartPct(supports[1],p)}
+原因：${
+  supports[1] !== undefined
+  ? smartReason(code,supports[1],"support")
+  : "資料不足"
+}
+
+⚡ 關鍵突破／壓力
+第一壓力：${smartFmt(resistance.r1)}
+距現價：${smartPct(resistance.r1,p)}
+
+第二壓力：${smartFmt(resistance.r2)}
+距現價：${smartPct(resistance.r2,p)}
+
+📍開高：
+${scenarios.openHigh}
+
+📍平開：
+${scenarios.flat}
+
+📍開低：
+${scenarios.openLow}
+
+備註：
+${d.note || "N/A"}
+
+※ 技術位置僅供觀察，不代表保證漲跌或投資建議。`;
+}
+
+
+document
+.getElementById("smart-copy-btn")
+.addEventListener(
+  "click",
+  async function(){
+
+    const code =
+      smartSelect.value;
+
+    const text =
+      buildCopyText(code);
+
+    try{
+
+      await navigator.clipboard
+        .writeText(text);
+
+      this.textContent =
+        "✅ 已複製";
+
+      setTimeout(()=>{
+        this.textContent =
+          "📋 複製分析";
+      },1500);
+
+    }catch(e){
+
+      const area =
+        document.createElement(
+          "textarea"
+        );
+
+      area.value = text;
+
+      document.body
+        .appendChild(area);
+
+      area.select();
+
+      document.execCommand(
+        "copy"
+      );
+
+      area.remove();
+
+      this.textContent =
+        "✅ 已複製";
+
+      setTimeout(()=>{
+        this.textContent =
+          "📋 複製分析";
+      },1500);
+    }
+  }
+);
+
+
+/* =========================================================
+   13. 切換股票
+========================================================= */
+
+smartSelect.addEventListener(
+  "change",
+  function(){
+
+    renderSmartStock(
+      this.value
+    );
+
+  }
+);
+
+
+/* =========================================================
+   14. 第一次載入
+========================================================= */
+
+renderSmartStock(
+  smartSelect.value
+);
+
+renderGroupSync();
+
+})();
 </script>
 </body>
 </html>
