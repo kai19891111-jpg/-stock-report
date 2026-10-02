@@ -2160,5 +2160,78 @@ ${d.note || 'N/A'}
 })();
 
 </script>
+
+
+<!-- =========================================================
+     HOLDING DECISION NOTE PATCH
+     2026-10-03
+     臻鼎-KY：續抱／減碼／出場規則
+========================================================= -->
+<style id="holding-decision-note-style">
+  .hold-decision-box{margin-top:12px;padding:12px;border-radius:10px;background:rgba(77,163,255,.08);border:1px solid rgba(77,163,255,.28)}
+  .hold-decision-head{display:flex;justify-content:space-between;gap:8px;align-items:center;flex-wrap:wrap;margin-bottom:8px}
+  .hold-decision-title{font-weight:800;color:var(--gold2);font-size:14px}
+  .hold-decision-badge{display:inline-block;padding:4px 9px;border-radius:999px;font-size:12px;font-weight:800;border:1px solid}
+  .hold-green{color:var(--green);border-color:var(--green);background:rgba(61,214,140,.10)}
+  .hold-orange{color:#ffb450;border-color:#ffb450;background:rgba(255,180,80,.10)}
+  .hold-red{color:var(--red);border-color:var(--red);background:rgba(255,107,107,.10)}
+  .hold-rule{display:grid;grid-template-columns:100px 1fr;gap:8px;padding:6px 0;border-bottom:1px solid rgba(255,255,255,.06);font-size:12px}
+  .hold-rule:last-child{border-bottom:0}
+  .hold-rule b{color:var(--gold2)}
+  .hold-reason{font-size:12px;line-height:1.65;margin:8px 0 4px}
+  @media(max-width:650px){.hold-rule{grid-template-columns:1fr;gap:2px}}
+</style>
+<script id="holding-decision-note-script">
+(function(){
+  const box=document.getElementById('u2-position');
+  if(!box || typeof DATA==='undefined') return;
+
+  const d=DATA['4958.TW']||{};
+  const p=Number(d.p);
+  const avg=481.90;
+  const current=Number.isFinite(p)?p:561;
+  const gainPct=((current-avg)/avg)*100;
+
+  // 10/02 已知結構：收 561 漲停、當日均價約 545、前一日收盤 510。
+  // 不預測未知目標價，以移動停利管理已存在的獲利。
+  let label='🟢 續抱｜移動停利';
+  let cls='hold-green';
+  let headline='趨勢仍強，暫不建議一次全部賣出。';
+
+  if(current < 510){
+    label='🔴 停利／出場優先';
+    cls='hold-red';
+    headline='已跌破前一日突破基準，短線結構明顯轉弱。';
+  }else if(current < 545){
+    label='🟠 分批減碼';
+    cls='hold-orange';
+    headline='跌破漲停日均價區，先保住已累積的獲利。';
+  }
+
+  const card=box.querySelector('.u2-card');
+  if(!card || card.querySelector('.hold-decision-box')) return;
+
+  const div=document.createElement('div');
+  div.className='hold-decision-box';
+  div.innerHTML=`
+    <div class="hold-decision-head">
+      <div class="hold-decision-title">📌 持倉判斷｜臻鼎-KY 4958</div>
+      <span class="hold-decision-badge ${cls}">${label}</span>
+    </div>
+    <div class="hold-reason">
+      ${headline}<br>
+      目前 DATA 價 <b>${current.toFixed(2)}</b>，相對平均成本 <b>${avg.toFixed(2)}</b> 約 <b>${gainPct>=0?'+':''}${gainPct.toFixed(2)}%</b>。
+      10/02 收盤漲停且量能明顯放大，代表短線動能強，但連續上漲後也要防高檔震盪，因此採「續抱＋移動停利」而不是無條件死抱。
+    </div>
+    <div class="hold-rule"><b>561 以上</b><span>突破／站穩 561：續抱，觀察量價，不先猜目標價。</span></div>
+    <div class="hold-rule"><b>545～561</b><span>仍可續抱；545 附近視為短線第一防守區。</span></div>
+    <div class="hold-rule"><b>跌破 545</b><span>若收不回 545：建議分批減碼，先鎖住部分獲利。</span></div>
+    <div class="hold-rule"><b>跌破 510</b><span>視為短線轉弱：以停利／出場優先，不再單純續抱。</span></div>
+    <p class="note" style="margin-bottom:0">判斷依 2026-10-02 收盤結構設定；之後 DATA 更新時，本區會依最新價格自動切換「續抱／減碼／出場」狀態。價位是風險管理門檻，不是保證走勢。</p>
+  `;
+  card.appendChild(div);
+})();
+</script>
+
 </body>
 </html>
