@@ -64,7 +64,7 @@ async function getFugleQuote(code) {
 }
 async function getFinnhubQuote(code) {
   const url = `${CONFIG.finnhubBase}/quote?symbol=${encodeURIComponent(code)}&token=${encodeURIComponent(FINNHUB_API_KEY)}`;
-  const r = await fetch(url, { headers: { 'Accept': 'application/json' }, cache: 'no-store' });
+  const r = await fetch(url, { headers: { 'X-Finnhub-Token': FINNHUB_API_KEY, 'Accept': 'application/json' }, cache: 'no-store' });
   if (!r.ok) throw new Error(`Finnhub ${code}: ${r.status}`);
   const d = await r.json();
   const price = toNumber(d.c);
@@ -113,7 +113,7 @@ async function safeQuote(code) {
 export async function GET(request) {
   const symbols = parseSymbols(request);
   const needsFugle = symbols.some(code => code === '^TWII' || code.endsWith('.TW') || code.endsWith('.TWO'));
-  if (needsFugle && !FUGLE_API_KEY) return response({ ok: false, error: '有台股代碼，但 Vercel 尚未設定 FUGLE_API_KEY' }, 500);
+  if (needsFugle && !FUGLE_API_KEY) return response({ ok: false, error: '有台股代碼，但 Vercel 尚未設定 FUGLE_API_KEY', checks: { fugleKey: false, finnhubKey: Boolean(FINNHUB_API_KEY) } }, 500);
   if (!symbols.length) return response({ ok: false, error: '沒有有效股票代碼' }, 400);
   const cacheKey = symbols.slice().sort().join(',');
   const cached = CACHE.get(cacheKey);
@@ -122,7 +122,22 @@ export async function GET(request) {
   const quotes = {};
   const errors = {};
   results.forEach(item => { if (item.quote) quotes[item.code] = item.quote; if (item.error) errors[item.code] = item.error; });
-  const data = { ok: Object.keys(quotes).length > 0, generatedAt: new Date().toISOString(), requested: symbols.length, received: Object.keys(quotes).length, cached: false, usProvider: FINNHUB_API_KEY ? 'finnhub-with-yahoo-fallback' : 'yahoo', quotes, errors };
+  const data = {
+    ok: Object.keys(quotes).length > 0,
+    checks: {
+      fugleKey: Boolean(FUGLE_API_KEY),
+      finnhubKey: Boolean(FINNHUB_API_KEY),
+      usRoute: FINNHUB_API_KEY ? 'finnhub-then-yahoo' : 'yahoo',
+      rule: '缺少 FINNHUB_API_KEY 不整段 500；台股請求缺少 FUGLE_API_KEY 才 500'
+    },
+    usProvider: FINNHUB_API_KEY ? 'finnhub-with-yahoo-fallback' : 'yahoo',
+    generatedAt: new Date().toISOString(),
+    requested: symbols.length,
+    received: Object.keys(quotes).length,
+    cached: false,
+    quotes,
+    errors
+  };
   if (data.ok) CACHE.set(cacheKey, { timestamp: Date.now(), data });
   return response(data, data.ok ? 200 : 502);
 }
