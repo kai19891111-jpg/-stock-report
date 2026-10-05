@@ -2497,5 +2497,1866 @@ ${d.note || 'N/A'}
 })();
 </script>
 
+
+<!-- =========================================================
+     即時行情 + 全站放大 MASTER PATCH
+     貼在 </body> 前面
+========================================================= -->
+
+<style id="realtime-master-style">
+
+/* =========================
+   1. 全站整體放大
+========================= */
+
+html {
+  font-size: 18px !important;
+}
+
+body {
+  font-size: 18px !important;
+  line-height: 1.7 !important;
+}
+
+.wrap {
+  max-width: 1200px !important;
+  padding: 18px !important;
+}
+
+.hdr {
+  padding: 26px 10px 16px !important;
+}
+
+.hdr h1 {
+  font-size: 2rem !important;
+}
+
+.hdr .k {
+  font-size: 14px !important;
+}
+
+.meta {
+  font-size: 15px !important;
+  line-height: 1.7 !important;
+}
+
+
+/* =========================
+   2. 導覽列放大
+========================= */
+
+nav {
+  padding: 14px 16px !important;
+  gap: 10px !important;
+}
+
+nav a {
+  font-size: 15px !important;
+  padding: 10px 14px !important;
+  border-radius: 9px !important;
+}
+
+
+/* =========================
+   3. Panel 放大
+========================= */
+
+.panel {
+  padding: 20px !important;
+  margin: 18px 0 !important;
+  border-radius: 16px !important;
+}
+
+.panel h2 {
+  font-size: 1.35rem !important;
+  padding-left: 12px !important;
+  margin-bottom: 15px !important;
+}
+
+
+/* =========================
+   4. 股票卡片放大
+========================= */
+
+.grid,
+.u2-grid {
+  grid-template-columns:
+    repeat(auto-fill, minmax(320px, 1fr)) !important;
+
+  gap: 15px !important;
+}
+
+.card,
+.u2-card {
+  padding: 18px !important;
+  border-radius: 14px !important;
+}
+
+.card .title,
+.u2-card h3 {
+  font-size: 18px !important;
+}
+
+.card .sub,
+.u2-muted {
+  font-size: 14px !important;
+}
+
+.card .price,
+.u2-big {
+  font-size: 1.65rem !important;
+}
+
+.card .row,
+.u2-row {
+  font-size: 15px !important;
+  margin: 7px 0 !important;
+}
+
+
+/* =========================
+   5. 狀態標籤放大
+========================= */
+
+.badge {
+  font-size: 14px !important;
+  padding: 5px 11px !important;
+}
+
+
+/* =========================
+   6. 表格放大
+========================= */
+
+table {
+  font-size: 15px !important;
+}
+
+th,
+td {
+  padding: 10px 8px !important;
+}
+
+
+/* =========================
+   7. 說明文字放大
+========================= */
+
+.note {
+  font-size: 14px !important;
+  line-height: 1.65 !important;
+}
+
+.radar {
+  font-size: 16px !important;
+}
+
+.radar li {
+  margin: 10px 0 !important;
+}
+
+
+/* =========================
+   8. 即時行情狀態列
+========================= */
+
+#realtime-status-panel {
+  position: sticky;
+  top: 58px;
+  z-index: 90;
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(10, 30, 50, .98),
+      rgba(5, 20, 35, .98)
+    );
+
+  border:
+    1px solid rgba(61, 214, 140, .45);
+
+  border-radius: 14px;
+
+  padding: 14px 18px;
+
+  margin: 12px 0 18px;
+
+  box-shadow:
+    0 6px 25px rgba(0, 0, 0, .25);
+}
+
+.rt-status-grid {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.rt-left {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.rt-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+
+  background: #ffb450;
+
+  box-shadow:
+    0 0 10px rgba(255, 180, 80, .8);
+}
+
+.rt-dot.online {
+  background: #3dd68c;
+
+  box-shadow:
+    0 0 12px rgba(61, 214, 140, .9);
+}
+
+.rt-dot.error {
+  background: #ff6b6b;
+
+  box-shadow:
+    0 0 12px rgba(255, 107, 107, .9);
+}
+
+.rt-title {
+  font-size: 17px;
+  font-weight: 800;
+}
+
+.rt-time {
+  font-size: 14px;
+  color: var(--muted);
+}
+
+.rt-button {
+  border:
+    1px solid rgba(201, 169, 106, .45);
+
+  background: #081a2d;
+
+  color: var(--gold2);
+
+  border-radius: 9px;
+
+  padding: 9px 14px;
+
+  font-size: 14px;
+
+  cursor: pointer;
+}
+
+
+/* =========================
+   9. 即時標誌
+========================= */
+
+.live-price-tag {
+  display: inline-block;
+
+  margin-left: 7px;
+
+  padding: 2px 7px;
+
+  border-radius: 999px;
+
+  background:
+    rgba(61, 214, 140, .12);
+
+  border:
+    1px solid rgba(61, 214, 140, .45);
+
+  color: var(--green);
+
+  font-size: 11px;
+}
+
+
+/* =========================
+   10. 手機版
+========================= */
+
+@media(max-width: 700px) {
+
+  html {
+    font-size: 17px !important;
+  }
+
+  body {
+    font-size: 17px !important;
+  }
+
+  .wrap {
+    padding: 10px !important;
+  }
+
+  .panel {
+    padding: 15px !important;
+  }
+
+  .hdr h1 {
+    font-size: 1.55rem !important;
+  }
+
+  .grid,
+  .u2-grid {
+    grid-template-columns:
+      1fr !important;
+  }
+
+  .card .price,
+  .u2-big {
+    font-size: 1.5rem !important;
+  }
+
+  nav a {
+    font-size: 14px !important;
+  }
+
+  #realtime-status-panel {
+    top: 55px;
+  }
+
+}
+
+</style>
+
+
+<script id="realtime-master-script">
+
+(function () {
+
+  'use strict';
+
+
+  /* =========================================================
+     A. 設定
+  ========================================================= */
+
+  const REALTIME_CONFIG = {
+
+    /*
+      改成你的 Vercel API 網址。
+
+      例如：
+
+      https://stock-api-abc.vercel.app/api/quotes
+
+      如果網站跟 API 都在同一個 Vercel 專案，
+      可改成：
+
+      /api/quotes
+    */
+
+    apiUrl:
+      'https://你的Vercel網址.vercel.app/api/quotes',
+
+
+    /*
+      每幾秒更新一次。
+
+      5000  = 5 秒
+      10000 = 10 秒
+
+      建議先使用 10000。
+    */
+
+    refreshMs: 10000,
+
+
+    /*
+      API 失敗時是否繼續自動重試
+    */
+
+    autoRetry: true
+
+  };
+
+
+  /* =========================================================
+     B. 股票清單
+  ========================================================= */
+
+  const REALTIME_CODES = [
+
+    /* 台股 */
+
+    '2330.TW',
+    '2454.TW',
+    '2308.TW',
+
+    '3324.TWO',
+    '3653.TW',
+    '3017.TW',
+
+    '3189.TW',
+    '3037.TW',
+    '8046.TW',
+
+    '6213.TW',
+    '2383.TW',
+
+    '3481.TW',
+    '6770.TW',
+    '2221.TWO',
+
+    '8358.TWO',
+    '3406.TW',
+    '8210.TW',
+    '2371.TW',
+
+    '1303.TW',
+    '2408.TW',
+    '4919.TW',
+    '4958.TW',
+    '2327.TW',
+
+
+    /* 美股 */
+
+    'TSM',
+    'NVDA',
+    'AMD',
+    'AVGO',
+
+    'MSFT',
+    'META',
+    'MU',
+    'TSLA',
+    'SPCX',
+
+
+    /* 指數 */
+
+    '^TWII',
+    '^IXIC',
+    '^SOX',
+    '^TNX'
+
+  ];
+
+
+  /* =========================================================
+     C. 基本檢查
+  ========================================================= */
+
+  if (
+    typeof DATA === 'undefined'
+  ) {
+
+    console.error(
+      '即時行情：找不到 DATA'
+    );
+
+    return;
+
+  }
+
+
+  /* =========================================================
+     D. 建立即時狀態列
+  ========================================================= */
+
+  function createRealtimePanel() {
+
+    if (
+      document.getElementById(
+        'realtime-status-panel'
+      )
+    ) {
+
+      return;
+
+    }
+
+
+    const wrap =
+      document.querySelector(
+        '.wrap'
+      );
+
+
+    if (!wrap) {
+
+      return;
+
+    }
+
+
+    const panel =
+      document.createElement(
+        'div'
+      );
+
+
+    panel.id =
+      'realtime-status-panel';
+
+
+    panel.innerHTML = `
+
+      <div class="rt-status-grid">
+
+        <div class="rt-left">
+
+          <span
+            id="rt-dot"
+            class="rt-dot"
+          ></span>
+
+          <div>
+
+            <div class="rt-title">
+
+              📡 即時行情
+
+            </div>
+
+            <div
+              id="rt-status-text"
+              class="rt-time"
+            >
+
+              等待連線…
+
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <div>
+
+          <button
+            id="rt-refresh"
+            class="rt-button"
+            type="button"
+          >
+
+            🔄 立即更新
+
+          </button>
+
+        </div>
+
+      </div>
+
+    `;
+
+
+    wrap.insertBefore(
+      panel,
+      wrap.firstChild
+    );
+
+
+    document
+      .getElementById(
+        'rt-refresh'
+      )
+      ?.addEventListener(
+        'click',
+        () => {
+
+          loadRealtimeQuotes(
+            true
+          );
+
+        }
+      );
+
+  }
+
+
+  createRealtimePanel();
+
+
+  /* =========================================================
+     E. 狀態列
+  ========================================================= */
+
+  function setStatus(
+    type,
+    text
+  ) {
+
+    const dot =
+      document.getElementById(
+        'rt-dot'
+      );
+
+
+    const status =
+      document.getElementById(
+        'rt-status-text'
+      );
+
+
+    if (dot) {
+
+      dot.classList.remove(
+        'online',
+        'error'
+      );
+
+
+      if (
+        type === 'online'
+      ) {
+
+        dot.classList.add(
+          'online'
+        );
+
+      }
+
+
+      if (
+        type === 'error'
+      ) {
+
+        dot.classList.add(
+          'error'
+        );
+
+      }
+
+    }
+
+
+    if (status) {
+
+      status.textContent =
+        text;
+
+    }
+
+  }
+
+
+  /* =========================================================
+     F. 時間
+  ========================================================= */
+
+  function timeText() {
+
+    return new Date()
+      .toLocaleString(
+        'zh-TW',
+        {
+
+          hour12: false,
+
+          year: 'numeric',
+
+          month: '2-digit',
+
+          day: '2-digit',
+
+          hour: '2-digit',
+
+          minute: '2-digit',
+
+          second: '2-digit'
+
+        }
+      );
+
+  }
+
+
+  /* =========================================================
+     G. 數字
+  ========================================================= */
+
+  function numberValue(v) {
+
+    const n =
+      Number(v);
+
+
+    return Number.isFinite(n)
+      ? n
+      : null;
+
+  }
+
+
+  function priceText(v) {
+
+    const n =
+      numberValue(v);
+
+
+    if (
+      n === null
+    ) {
+
+      return 'N/A';
+
+    }
+
+
+    return n.toLocaleString(
+      'en-US',
+      {
+
+        maximumFractionDigits: 2
+
+      }
+    );
+
+  }
+
+
+  function pctText(v) {
+
+    const n =
+      numberValue(v);
+
+
+    if (
+      n === null
+    ) {
+
+      return 'N/A';
+
+    }
+
+
+    return `${n > 0 ? '+' : ''}${n.toFixed(2)}%`;
+
+  }
+
+
+  function changeText(v) {
+
+    const n =
+      numberValue(v);
+
+
+    if (
+      n === null
+    ) {
+
+      return 'N/A';
+
+    }
+
+
+    return `${n > 0 ? '+' : ''}${priceText(n)}`;
+
+  }
+
+
+  /* =========================================================
+     H. 更新 DATA
+
+     只更新即時欄位：
+
+     p    現價
+     ch   漲跌
+     pct  漲跌幅
+
+     不強制改：
+
+     SMA20
+     SMA60
+     支撐
+     壓力
+     status
+
+     避免盤中價格造成日K交易訊號亂跳。
+  ========================================================= */
+
+  function applyQuote(
+    code,
+    q
+  ) {
+
+    if (
+      !DATA[code] ||
+      !q
+    ) {
+
+      return;
+
+    }
+
+
+    const p =
+      numberValue(
+        q.price ??
+        q.p ??
+        q.last
+      );
+
+
+    const ch =
+      numberValue(
+        q.change ??
+        q.ch
+      );
+
+
+    const pct =
+      numberValue(
+        q.changePercent ??
+        q.pct
+      );
+
+
+    if (
+      p !== null
+    ) {
+
+      DATA[code].p =
+        p;
+
+    }
+
+
+    if (
+      ch !== null
+    ) {
+
+      DATA[code].ch =
+        ch;
+
+    }
+
+
+    if (
+      pct !== null
+    ) {
+
+      DATA[code].pct =
+        pct;
+
+    }
+
+
+    DATA[code].live =
+      true;
+
+
+    DATA[code].liveTime =
+      q.time ??
+      q.timestamp ??
+      timeText();
+
+  }
+
+
+  /* =========================================================
+     I. 尋找股票卡
+  ========================================================= */
+
+  function findCards(
+    code
+  ) {
+
+    const cards =
+      Array.from(
+        document.querySelectorAll(
+          '.card'
+        )
+      );
+
+
+    return cards.filter(
+      card => {
+
+        const sub =
+          card.querySelector(
+            '.sub'
+          );
+
+
+        return sub &&
+          sub.textContent.includes(
+            code
+          );
+
+      }
+    );
+
+  }
+
+
+  /* =========================================================
+     J. 更新股票卡
+  ========================================================= */
+
+  function updateCard(
+    card,
+    code
+  ) {
+
+    const d =
+      DATA[code];
+
+
+    if (
+      !card ||
+      !d
+    ) {
+
+      return;
+
+    }
+
+
+    const price =
+      card.querySelector(
+        '.price'
+      );
+
+
+    if (price) {
+
+      price.textContent =
+        priceText(
+          d.p
+        );
+
+
+      price.classList.remove(
+        'chg-up',
+        'chg-dn',
+        'chg-flat'
+      );
+
+
+      if (
+        d.pct > 0
+      ) {
+
+        price.classList.add(
+          'chg-up'
+        );
+
+      }
+
+      else if (
+        d.pct < 0
+      ) {
+
+        price.classList.add(
+          'chg-dn'
+        );
+
+      }
+
+      else {
+
+        price.classList.add(
+          'chg-flat'
+        );
+
+      }
+
+
+      if (
+        !price.querySelector(
+          '.live-price-tag'
+        )
+      ) {
+
+        const tag =
+          document.createElement(
+            'span'
+          );
+
+
+        tag.className =
+          'live-price-tag';
+
+
+        tag.textContent =
+          'LIVE';
+
+
+        price.appendChild(
+          tag
+        );
+
+      }
+
+    }
+
+
+    const rows =
+      Array.from(
+        card.querySelectorAll(
+          '.row'
+        )
+      );
+
+
+    rows.forEach(
+      row => {
+
+        const first =
+          row.children[0];
+
+
+        const last =
+          row.children[1];
+
+
+        if (
+          !first ||
+          !last
+        ) {
+
+          return;
+
+        }
+
+
+        const label =
+          first.textContent
+            .trim();
+
+
+        if (
+          label === '漲跌'
+        ) {
+
+          last.textContent =
+            `${changeText(d.ch)} (${pctText(d.pct)})`;
+
+
+          last.classList.remove(
+            'chg-up',
+            'chg-dn',
+            'chg-flat'
+          );
+
+
+          if (
+            d.pct > 0
+          ) {
+
+            last.classList.add(
+              'chg-up'
+            );
+
+          }
+
+          else if (
+            d.pct < 0
+          ) {
+
+            last.classList.add(
+              'chg-dn'
+            );
+
+          }
+
+          else {
+
+            last.classList.add(
+              'chg-flat'
+            );
+
+          }
+
+        }
+
+
+        if (
+          label === '漲跌幅'
+        ) {
+
+          last.textContent =
+            pctText(
+              d.pct
+            );
+
+        }
+
+      }
+    );
+
+  }
+
+
+  /* =========================================================
+     K. 更新所有股票卡
+  ========================================================= */
+
+  function updateAllCards() {
+
+    REALTIME_CODES.forEach(
+      code => {
+
+        findCards(
+          code
+        )
+        .forEach(
+          card => {
+
+            updateCard(
+              card,
+              code
+            );
+
+          }
+        );
+
+      }
+    );
+
+  }
+
+
+  /* =========================================================
+     L. 更新指數表格
+  ========================================================= */
+
+  function updateIndexTable() {
+
+    const tbody =
+      document.getElementById(
+        'idx-body'
+      );
+
+
+    if (
+      !tbody
+    ) {
+
+      return;
+
+    }
+
+
+    const codes = [
+
+      '^TNX',
+
+      '^TWII',
+
+      '^IXIC',
+
+      '^SOX'
+
+    ];
+
+
+    Array
+      .from(
+        tbody.querySelectorAll(
+          'tr'
+        )
+      )
+      .forEach(
+        row => {
+
+          const cells =
+            row.querySelectorAll(
+              'td'
+            );
+
+
+          if (
+            cells.length < 5
+          ) {
+
+            return;
+
+          }
+
+
+          const code =
+            cells[0]
+              .textContent
+              .trim();
+
+
+          if (
+            !codes.includes(
+              code
+            )
+          ) {
+
+            return;
+
+          }
+
+
+          const d =
+            DATA[code];
+
+
+          if (!d) {
+
+            return;
+
+          }
+
+
+          cells[3].textContent =
+            priceText(
+              d.p
+            );
+
+
+          cells[4].textContent =
+            `${changeText(d.ch)} (${pctText(d.pct)})`;
+
+
+          cells[4]
+            .classList
+            .remove(
+              'chg-up',
+              'chg-dn',
+              'chg-flat'
+            );
+
+
+          if (
+            d.pct > 0
+          ) {
+
+            cells[4]
+              .classList
+              .add(
+                'chg-up'
+              );
+
+          }
+
+          else if (
+            d.pct < 0
+          ) {
+
+            cells[4]
+              .classList
+              .add(
+                'chg-dn'
+              );
+
+          }
+
+          else {
+
+            cells[4]
+              .classList
+              .add(
+                'chg-flat'
+              );
+
+          }
+
+        }
+      );
+
+  }
+
+
+  /* =========================================================
+     M. 持倉設定
+
+     你目前有：
+
+     台積電 10 股
+     成本 2572.10
+
+     臻鼎-KY 80 股
+     成本 481.90
+  ========================================================= */
+
+  const LIVE_POSITIONS = [
+
+    {
+
+      code: '2330.TW',
+
+      shares: 10,
+
+      avg: 2572.10
+
+    },
+
+    {
+
+      code: '4958.TW',
+
+      shares: 80,
+
+      avg: 481.90
+
+    }
+
+  ];
+
+
+  /* =========================================================
+     N. 即時持倉面板
+  ========================================================= */
+
+  function renderLivePositions() {
+
+    let section =
+      document.getElementById(
+        'live-position-panel'
+      );
+
+
+    if (
+      !section
+    ) {
+
+      section =
+        document.createElement(
+          'section'
+        );
+
+
+      section.id =
+        'live-position-panel';
+
+
+      section.className =
+        'panel';
+
+
+      const anchor =
+        document.getElementById(
+          'u2-position'
+        );
+
+
+      if (anchor) {
+
+        anchor.insertAdjacentElement(
+          'afterend',
+          section
+        );
+
+      }
+
+      else {
+
+        document
+          .querySelector(
+            '.wrap'
+          )
+          ?.appendChild(
+            section
+          );
+
+      }
+
+    }
+
+
+    const cards =
+      LIVE_POSITIONS
+        .map(
+          pos => {
+
+            const d =
+              DATA[pos.code];
+
+
+            const price =
+              numberValue(
+                d?.p
+              );
+
+
+            const marketValue =
+              price !== null
+
+              ? price *
+                pos.shares
+
+              : null;
+
+
+            const cost =
+              pos.avg *
+              pos.shares;
+
+
+            const pnl =
+              marketValue !== null
+
+              ? marketValue -
+                cost
+
+              : null;
+
+
+            const pnlPct =
+              pnl !== null &&
+              cost !== 0
+
+              ? pnl /
+                cost *
+                100
+
+              : null;
+
+
+            const pnlClass =
+              pnl === null
+
+              ? ''
+
+              : pnl >= 0
+
+              ? 'u2-profit'
+
+              : 'u2-loss';
+
+
+            return `
+
+              <div class="u2-card">
+
+                <h3>
+
+                  ${NAMES?.[pos.code] || pos.code}
+
+                  ｜${pos.code}
+
+                  <span class="live-price-tag">
+
+                    LIVE
+
+                  </span>
+
+                </h3>
+
+
+                <div class="u2-row">
+
+                  <span>持有股數</span>
+
+                  <b>
+
+                    ${pos.shares}
+
+                  </b>
+
+                </div>
+
+
+                <div class="u2-row">
+
+                  <span>平均成本</span>
+
+                  <b>
+
+                    ${priceText(pos.avg)}
+
+                  </b>
+
+                </div>
+
+
+                <div class="u2-row">
+
+                  <span>即時價格</span>
+
+                  <b class="u2-big">
+
+                    ${priceText(price)}
+
+                  </b>
+
+                </div>
+
+
+                <div class="u2-row">
+
+                  <span>持倉成本</span>
+
+                  <b>
+
+                    ${priceText(cost)}
+
+                  </b>
+
+                </div>
+
+
+                <div class="u2-row">
+
+                  <span>即時市值</span>
+
+                  <b>
+
+                    ${priceText(marketValue)}
+
+                  </b>
+
+                </div>
+
+
+                <div class="u2-row">
+
+                  <span>即時損益</span>
+
+                  <b class="${pnlClass}">
+
+                    ${pnl === null
+                      ? 'N/A'
+                      : `${pnl >= 0 ? '+' : ''}${priceText(pnl)}`
+                    }
+
+                  </b>
+
+                </div>
+
+
+                <div class="u2-row">
+
+                  <span>報酬率</span>
+
+                  <b class="${pnlClass}">
+
+                    ${pnlPct === null
+                      ? 'N/A'
+                      : `${pnlPct >= 0 ? '+' : ''}${pnlPct.toFixed(2)}%`
+                    }
+
+                  </b>
+
+                </div>
+
+              </div>
+
+            `;
+
+          }
+        )
+        .join('');
+
+
+    section.innerHTML = `
+
+      <h2>
+
+        💰 即時持倉損益
+
+      </h2>
+
+
+      <div class="u2-grid">
+
+        ${cards}
+
+      </div>
+
+
+      <p class="note">
+
+        即時價格隨行情更新；
+        平均成本固定。
+        SMA20、SMA60、支撐、
+        壓力及正式交易訊號仍以
+        已完成日 K 為準。
+
+      </p>
+
+    `;
+
+  }
+
+
+  /* =========================================================
+     O. API 資料標準化
+
+     API 建議回傳格式：
+
+     {
+       "2330.TW": {
+         "price": 2575,
+         "change": 75,
+         "changePercent": 3.0
+       },
+
+       "NVDA": {
+         "price": 232.2,
+         "change": 1.34,
+         "changePercent": 0.58
+       }
+     }
+  ========================================================= */
+
+  function normalizeResponse(
+    json
+  ) {
+
+    if (
+      !json
+    ) {
+
+      return {};
+
+    }
+
+
+    if (
+      json.quotes &&
+      typeof json.quotes ===
+      'object'
+    ) {
+
+      return json.quotes;
+
+    }
+
+
+    if (
+      json.data &&
+      typeof json.data ===
+      'object' &&
+      !Array.isArray(
+        json.data
+      )
+    ) {
+
+      return json.data;
+
+    }
+
+
+    return json;
+
+  }
+
+
+  /* =========================================================
+     P. 抓即時行情
+  ========================================================= */
+
+  let loading =
+    false;
+
+
+  async function loadRealtimeQuotes(
+    manual = false
+  ) {
+
+    if (
+      loading
+    ) {
+
+      return;
+
+    }
+
+
+    loading =
+      true;
+
+
+    try {
+
+      setStatus(
+        'loading',
+        '行情更新中…'
+      );
+
+
+      const url =
+        `${REALTIME_CONFIG.apiUrl}?symbols=${encodeURIComponent(
+          REALTIME_CODES.join(',')
+        )}&t=${Date.now()}`;
+
+
+      const response =
+        await fetch(
+          url,
+          {
+
+            method: 'GET',
+
+            cache: 'no-store',
+
+            headers: {
+
+              'Accept':
+                'application/json'
+
+            }
+
+          }
+        );
+
+
+      if (
+        !response.ok
+      ) {
+
+        throw new Error(
+          `HTTP ${response.status}`
+        );
+
+      }
+
+
+      const raw =
+        await response.json();
+
+
+      const quotes =
+        normalizeResponse(
+          raw
+        );
+
+
+      let count =
+        0;
+
+
+      Object
+        .entries(
+          quotes
+        )
+        .forEach(
+          ([code, quote]) => {
+
+            if (
+              DATA[code]
+            ) {
+
+              applyQuote(
+                code,
+                quote
+              );
+
+
+              count++;
+
+            }
+
+          }
+        );
+
+
+      updateAllCards();
+
+      updateIndexTable();
+
+      renderLivePositions();
+
+
+      setStatus(
+
+        'online',
+
+        `✅ 已連線｜最後更新 ${timeText()}｜更新 ${count} 檔`
+
+      );
+
+
+    }
+
+    catch (error) {
+
+      console.error(
+        '即時行情更新失敗：',
+        error
+      );
+
+
+      setStatus(
+
+        'error',
+
+        `⚠️ 行情連線失敗｜${timeText()}｜保留上一筆資料`
+
+      );
+
+    }
+
+    finally {
+
+      loading =
+        false;
+
+    }
+
+  }
+
+
+  /* =========================================================
+     Q. 網頁回到前景立刻更新
+  ========================================================= */
+
+  document.addEventListener(
+    'visibilitychange',
+    () => {
+
+      if (
+        document.visibilityState ===
+        'visible'
+      ) {
+
+        loadRealtimeQuotes();
+
+      }
+
+    }
+  );
+
+
+  /* =========================================================
+     R. 網路恢復後更新
+  ========================================================= */
+
+  window.addEventListener(
+    'online',
+    () => {
+
+      loadRealtimeQuotes();
+
+    }
+  );
+
+
+  /* =========================================================
+     S. 第一次載入
+  ========================================================= */
+
+  renderLivePositions();
+
+  loadRealtimeQuotes();
+
+
+  /* =========================================================
+     T. 每 10 秒更新
+  ========================================================= */
+
+  setInterval(
+
+    () => {
+
+      loadRealtimeQuotes();
+
+    },
+
+    REALTIME_CONFIG.refreshMs
+
+  );
+
+
+})();
+
+</script>
 </body>
 </html>
