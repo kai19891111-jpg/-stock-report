@@ -2474,5 +2474,28 @@ ${d.note || 'N/A'}
 })();
 </script>
 
+
+<script id="holding-2330">
+(function(){
+  const box = document.getElementById('u2-position');
+  if (!box || box.querySelector('[data-code="2330.TW"]')) return;
+  const d = (typeof DATA !== 'undefined' && DATA['2330.TW']) || {};
+  const price = (d.p === undefined || d.p === 'N/A') ? 'N/A' : d.p;
+  const card = document.createElement('div');
+  card.className = 'u2-card u2-pos';
+  card.dataset.code = '2330.TW';
+  card.style.marginTop = '10px';
+  card.innerHTML = `
+    <h3>台積電｜2330.TW</h3>
+    <div class="u2-row"><span>股數</span><b>未提供</b></div>
+    <div class="u2-row"><span>平均成本</span><b>未提供</b></div>
+    <div class="u2-row"><span>DATA 市價</span><b>${price}</b></div>
+    <div class="u2-row"><span>日期</span><b>${d.date || 'N/A'}</b></div>
+    <div class="u2-row"><span>狀態</span><b>${d.status || 'N/A'}</b></div>
+    <p class="note">已加入持倉，但還沒有股數與平均成本，損益先不計算。補上後才會顯示成本、市值與試算損益。行情用 DATA，不把盤中價當收盤。</p>`;
+  box.appendChild(card);
+})();
+</script>
+
 </body>
 </html>
