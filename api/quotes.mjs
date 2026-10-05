@@ -844,7 +844,23 @@ export async function GET(
   }
 
 
+  /* =========================================================
+     股票
+  ========================================================= */
+
+  const symbols =
+    parseSymbols(
+      request
+    );
+
+  const needsFinnhub =
+    symbols.some(
+      code =>
+        US_CODES.has(code)
+    );
+
   if (
+    needsFinnhub &&
     !FINNHUB_API_KEY
   ) {
 
@@ -855,23 +871,13 @@ export async function GET(
           false,
 
         error:
-          'Vercel 尚未設定 FINNHUB_API_KEY'
+          '有美股代碼，但 Vercel 尚未設定 FINNHUB_API_KEY'
 
       },
       500
     );
 
   }
-
-
-  /* =========================================================
-     股票
-  ========================================================= */
-
-  const symbols =
-    parseSymbols(
-      request
-    );
 
 
   if (
