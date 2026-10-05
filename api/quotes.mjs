@@ -1,4 +1,4 @@
-/* US quotes: Finnhub if FINNHUB_API_KEY is set, otherwise Yahoo chart. Missing Finnhub key must not 500 the whole request. */
+/* 不要刪這段。美股沒有 FINNHUB_API_KEY 時必須走 Yahoo，不可以因為缺少金鑰讓整個 /api/quotes 回 500。台股仍用 Fugle；只有請求含台股且沒有 FUGLE_API_KEY 才可 500。 */
 const CONFIG = {
   allowedOrigin: 'https://kai19891111-jpg.github.io',
   cacheMs: 9000,
