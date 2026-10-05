@@ -57,6 +57,7 @@ th{color:var(--gold);font-weight:600;}
   <a href="#radar">今日交易雷達</a>
   <a href="#ai-class">AI 分類</a>
   <a href="#watch">我的關注股</a>
+  <a href="#entry-pick">可進場選擇</a>
   <a href="#decision">交易決策卡</a>
   <a href="#index">指數</a>
   <a href="#u2-market-levels">大盤關卡</a>
@@ -108,6 +109,14 @@ th{color:var(--gold);font-weight:600;}
     <h2>我的關注股</h2>
     <div class="grid" id="watch-grid"></div>
   </section>
+
+  <section id="entry-pick" class="panel">
+    <h2>可進場選擇</h2>
+    <p class="note">只列觀察進場、持有觀察。勾選後存在這台手機，重新整理不會消失。勾選只是你的進場清單，不是下單。</p>
+    <div id="entry-picked" class="note">尚未勾選</div>
+    <div id="entry-pick-list" class="grid"></div>
+  </section>
+
   <section id="decision" class="panel">
     <h2>交易決策卡</h2>
     <p class="note">標題：市場｜次族群｜名稱。狀態：觀察進場／等待／持有觀察／減碼／出場。進場區、失效價、壓力；缺值 N/A。</p>
@@ -2176,7 +2185,68 @@ ${d.note || 'N/A'}
 
 <!-- =========================================================
      我的持倉｜續抱 / 減碼 / 出場判斷
-     直接貼在 </body> 前面
+     直接貼在 
+<script id="entry-pick-script">
+(function () {
+  if (typeof DATA === 'undefined') return;
+  var KEY = 'entry-pick-v1';
+  var list = document.getElementById('entry-pick-list');
+  var picked = document.getElementById('entry-picked');
+  if (!list) return;
+  function load() {
+    try { return JSON.parse(localStorage.getItem(KEY) || '[]'); }
+    catch (e) { return []; }
+  }
+  function save(codes) {
+    localStorage.setItem(KEY, JSON.stringify(codes));
+  }
+  function nameOf(code) {
+    return (typeof NAMES !== 'undefined' && NAMES[code]) || code;
+  }
+  function groupOf(code) {
+    if (typeof STOCK_META === 'undefined') return '';
+    var found = '';
+    Object.keys(STOCK_META).forEach(function (g) {
+      if (STOCK_META[g].indexOf(code) >= 0) found = g;
+    });
+    return found;
+  }
+  function render() {
+    var selected = load();
+    var rows = Object.keys(DATA).filter(function (code) {
+      if (code.charAt(0) === '^') return false;
+      var s = DATA[code] && DATA[code].status;
+      return s === '觀察進場' || s === '持有觀察';
+    }).sort(function (a, b) {
+      var order = { '觀察進場': 0, '持有觀察': 1 };
+      return (order[DATA[a].status] - order[DATA[b].status]) || nameOf(a).localeCompare(nameOf(b), 'zh-Hant');
+    });
+    list.innerHTML = rows.map(function (code) {
+      var d = DATA[code];
+      var on = selected.indexOf(code) >= 0;
+      return '<label class="card" style="display:block;cursor:pointer">' +
+        '<div class="title"><input type="checkbox" data-code="' + code + '"' + (on ? ' checked' : '') + '> ' + nameOf(code) + '</div>' +
+        '<div class="sub">' + (groupOf(code) || code) + ' ｜ ' + code + '</div>' +
+        '<div class="row"><span>' + d.status + '</span><b>' + (d.entry || 'N/A') + '</b></div>' +
+        '<div class="row"><span>現價</span><b>' + (d.p == null ? 'N/A' : d.p) + '</b></div>' +
+        '</label>';
+    }).join('');
+    var names = selected.filter(function (code) { return DATA[code]; }).map(nameOf);
+    picked.textContent = names.length ? '已選可進場：' + names.join('、') : '尚未勾選';
+  }
+  list.addEventListener('change', function (e) {
+    var box = e.target;
+    if (!box || !box.dataset || !box.dataset.code) return;
+    var selected = load().filter(function (code) { return code !== box.dataset.code; });
+    if (box.checked) selected.push(box.dataset.code);
+    save(selected);
+    render();
+  });
+  render();
+})();
+</script>
+
+</body> 前面
 ========================================================= -->
 
 <style>
