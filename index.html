@@ -5,20 +5,30 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <title>技術與基本面報告｜2026-10-05 台北</title>
 <style>
-:root{--bg:#071221;--card:#0d1f33;--gold:#C9A96A;--gold2:#e8d5a3;--text:#F6F1E7;--muted:#9aa8b8;--green:#3dd68c;--red:#ff6b6b;--blue:#4da3ff;}
+:root{--bg:#07182e;--card:rgba(8,28,58,.88);--gold:#ef3e42;--gold2:#f6f8fb;--text:#f7f4ee;--muted:#c5d0de;--green:#3dd68c;--red:#ff6b6b;--blue:#8ec0ff;}
 *{box-sizing:border-box;}
-body{margin:0;background:var(--bg);color:var(--text);font-family:"Noto Sans TC","PingFang TC","Microsoft JhengHei",sans-serif;line-height:1.55;font-size:15px;}
+body{margin:0;color:var(--text);font-family:"Noto Sans TC","PingFang TC","Microsoft JhengHei",sans-serif;line-height:1.55;font-size:15px;background:
+radial-gradient(circle at 50% 120%, rgba(255,255,255,.18), transparent 26%),
+radial-gradient(circle at 12% 0, rgba(0,87,184,.62), transparent 36%),
+radial-gradient(circle at 92% 6%, rgba(239,62,66,.32), transparent 28%),
+linear-gradient(180deg,#07182e 0%,#0c2a52 48%,#16386a 100%);
+background-attachment:fixed;}
+body:before{content:"";position:fixed;inset:0;pointer-events:none;opacity:.22;background:
+repeating-linear-gradient(90deg, transparent 0 42px, rgba(255,255,255,.08) 42px 43px),
+linear-gradient(180deg, transparent 62%, rgba(255,255,255,.12) 63%, transparent 66%);}
+.ohtani-mark{position:fixed;right:-12px;bottom:-36px;font-size:210px;font-weight:800;letter-spacing:-10px;color:rgba(255,255,255,.06);pointer-events:none;z-index:0;line-height:1;}
+.wrap{position:relative;z-index:1;}
 a{color:var(--gold);text-decoration:none;}
-nav{position:sticky;top:0;z-index:99;background:rgba(7,18,33,.96);border-bottom:1px solid rgba(201,169,106,.28);padding:10px 12px;display:flex;flex-wrap:wrap;gap:8px;align-items:center;}
-nav a{padding:6px 10px;border-radius:6px;font-size:13px;border:1px solid transparent;}
-nav a:hover{border-color:var(--gold);background:rgba(201,169,106,.08);}
+nav{position:sticky;top:0;z-index:99;background:linear-gradient(90deg, rgba(7,24,46,.94), rgba(0,70,150,.92) 58%, rgba(130,20,32,.9));border-bottom:3px solid #ef3e42;padding:10px 12px;display:flex;flex-wrap:wrap;gap:8px;align-items:center;box-shadow:0 8px 22px rgba(0,0,0,.28);}
+nav a{padding:7px 12px;border-radius:999px;font-size:13px;color:#fff;background:linear-gradient(180deg,#2b78d6,#0b4f9c);border:1px solid rgba(255,255,255,.4);box-shadow:inset 0 -2px 0 rgba(0,0,0,.28), 0 1px 0 rgba(255,255,255,.28);}
+nav a:hover{background:linear-gradient(180deg,#ff5a5e,#c81e2b);border-color:#fff;}
 .wrap{max-width:980px;margin:0 auto;padding:12px;}
 .hdr{text-align:center;padding:18px 8px 8px;}
 .hdr .k{color:var(--gold);letter-spacing:.18em;font-size:11px;}
 .hdr h1{margin:6px 0;font-size:1.35rem;font-weight:700;}
 .meta{color:var(--muted);font-size:12px;margin-top:4px;}
-.panel{background:var(--card);border:1px solid rgba(201,169,106,.22);border-radius:12px;padding:14px;margin:12px 0;}
-.panel h2{margin:0 0 10px;font-size:1.05rem;color:var(--gold2);border-left:3px solid var(--gold);padding-left:8px;}
+.panel{background:var(--card);border:1px solid rgba(255,255,255,.16);border-top:3px solid #ef3e42;border-radius:16px;padding:14px;margin:12px 0;backdrop-filter:blur(8px);}
+.panel h2{margin:0 0 10px;font-size:1.05rem;color:#fff;border-left:4px solid #ef3e42;padding-left:8px;letter-spacing:.04em;}
 .badge{display:inline-block;padding:2px 8px;border-radius:999px;font-size:11px;margin:2px 3px 2px 0;border:1px solid;}
 .b-green{background:rgba(61,214,140,.12);border-color:var(--green);color:var(--green);}
 .b-wait{background:rgba(201,169,106,.1);border-color:var(--gold);color:var(--gold);}
@@ -27,7 +37,7 @@ nav a:hover{border-color:var(--gold);background:rgba(201,169,106,.08);}
 .b-exit{background:rgba(255,107,107,.12);border-color:var(--red);color:var(--red);}
 .b-na{background:rgba(154,168,184,.1);border-color:var(--muted);color:var(--muted);}
 .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:10px;}
-.card{background:#0a1a2c;border:1px solid rgba(201,169,106,.18);border-radius:10px;padding:12px;}
+.card{background:rgba(8,32,64,.92);border:1px solid rgba(142,192,255,.3);border-radius:14px;padding:12px;}
 .card .title{font-weight:700;font-size:14px;margin-bottom:4px;color:var(--gold2);}
 .card .sub{font-size:11px;color:var(--muted);margin-bottom:8px;}
 .card .row{display:flex;justify-content:space-between;gap:8px;font-size:12px;margin:3px 0;}
@@ -45,6 +55,7 @@ th{color:var(--gold);font-weight:600;}
 </style>
 </head>
 <body>
+<div class="ohtani-mark" aria-hidden="true">17</div>
 <nav>
   <a href="#summary">摘要</a>
   <a href="#radar">今日交易雷達</a>
@@ -60,7 +71,7 @@ th{color:var(--gold);font-weight:600;}
 </nav>
 <div class="wrap">
   <div class="hdr">
-    <div class="k">TECHNICAL & FUNDAMENTAL REPORT</div>
+    <div class="k">OHTANI SERIES · 17 · TECHNICAL REPORT</div>
     <h1>技術與基本面報告</h1>
     <div class="meta">產出：台北時間 2026-10-05 13:46｜台股 10/05 已收盤<br>
     台股最後完成日 K：2026-10-05｜美股 10/05 尚未開盤，沿用上一個完成日，不重算美股進出場<br>
