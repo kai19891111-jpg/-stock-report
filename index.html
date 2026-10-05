@@ -41,6 +41,7 @@ th{color:var(--gold);font-weight:600;}
 .note{font-size:11px;color:var(--muted);margin-top:8px;}
 .footer{text-align:center;padding:20px 12px;font-size:11px;color:var(--muted);border-top:1px solid rgba(201,169,106,.15);margin-top:20px;}
 @media(max-width:600px){.grid{grid-template-columns:1fr;}nav{justify-content:center;}.hdr h1{font-size:1.15rem;}table{font-size:11px;}}
+#realtime-status-panel{display:none !important;}
 </style>
 </head>
 <body>
@@ -3038,6 +3039,10 @@ td {
 
     panel.id =
       'realtime-status-panel';
+
+    panel.hidden = true;
+    panel.setAttribute('aria-hidden', 'true');
+    panel.style.display = 'none';
 
 
     panel.innerHTML = `
