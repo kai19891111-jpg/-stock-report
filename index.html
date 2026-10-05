@@ -4045,7 +4045,7 @@ td {
         .join('');
 
 
-    section.innerHTML = `
+    const nextHtml = `
 
       <h2>
 
@@ -4072,6 +4072,11 @@ td {
       </p>
 
     `;
+
+    if (section.innerHTML !== nextHtml) {
+      section.innerHTML = nextHtml;
+    }
+
 
   }
 
@@ -4166,10 +4171,12 @@ td {
 
     try {
 
-      setStatus(
-        'loading',
-        '行情更新中…'
-      );
+      if (manual) {
+        setStatus(
+          'loading',
+          '行情更新中…'
+        );
+      }
 
 
       const url =
@@ -4709,7 +4716,7 @@ td {
       DATA['2330.TW'];
 
 
-    meta.innerHTML = `
+    const headerHtml = `
 
       📡 畫面最後更新：
       ${nowText()}
@@ -4734,9 +4741,14 @@ td {
 
     `;
 
+    if (meta.dataset.paint !== headerHtml) {
+      meta.dataset.paint = headerHtml;
+      meta.innerHTML = headerHtml;
+    }
 
-    document.title =
-      `技術與基本面報告｜LIVE`;
+    if (document.title !== '技術與基本面報告｜LIVE') {
+      document.title = '技術與基本面報告｜LIVE';
+    }
 
   }
 
@@ -4782,7 +4794,7 @@ td {
       DATA['4958.TW'];
 
 
-    box.innerHTML = `
+    const summaryHtml = `
 
       <h2>
         市場摘要｜LIVE
@@ -4879,6 +4891,11 @@ td {
       </p>
 
     `;
+
+    if (box.dataset.paint !== summaryHtml) {
+      box.dataset.paint = summaryHtml;
+      box.innerHTML = summaryHtml;
+    }
 
   }
 
@@ -5531,14 +5548,7 @@ td {
      不另外打股票 API
   ========================================================= */
 
-  setInterval(
-    () => {
-
-      renderWholePage();
-
-    },
-    10000
-  );
+  /* 不再每 10 秒整頁重畫。現價由即時腳本改文字，避免摘要／雷達／頁尾閃爍。 */
 
 
   /* =========================================================
@@ -5575,7 +5585,9 @@ td {
         'visible'
       ) {
 
-        renderWholePage();
+        if (typeof loadRealtimeQuotes === 'function') {
+          loadRealtimeQuotes();
+        }
 
       }
 
