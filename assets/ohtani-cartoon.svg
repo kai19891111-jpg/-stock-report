@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 1400" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#07182e"/>
+      <stop offset=".55" stop-color="#12325f"/>
+      <stop offset="1" stop-color="#1b4b86"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="50%" cy="18%" r="45%">
+      <stop offset="0" stop-color="#fff" stop-opacity=".35"/>
+      <stop offset="1" stop-color="#fff" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="900" height="1400" fill="url(#sky)"/>
+  <rect width="900" height="1400" fill="url(#glow)"/>
+  <path d="M0 980 C180 900 320 1040 470 980 C640 910 760 1080 900 980 V1400 H0 Z" fill="#0d4a2a"/>
+  <path d="M450 1040 L900 820 V1400 H0 V1120 Z" fill="#8a5a32"/>
+  <path d="M430 1080 L900 860" stroke="#f4f1ea" stroke-width="8" fill="none"/>
+  <path d="M0 1160 L470 1040" stroke="#f4f1ea" stroke-width="8" fill="none"/>
+  <g transform="translate(250 430)">
+    <ellipse cx="150" cy="430" rx="120" ry="18" fill="#000" opacity=".25"/>
+    <path d="M40 250 C20 300 30 390 70 430 L120 430 C150 360 150 300 130 250 Z" fill="#d9dde3"/>
+    <path d="M150 250 C170 310 165 380 145 430 L210 430 C250 360 230 290 190 250 Z" fill="#e8edf2"/>
+    <path d="M78 300 h46 v70 h-46 z" fill="#0057b8"/>
+    <path d="M168 305 h42 v62 h-42 z" fill="#0057b8"/>
+    <circle cx="118" cy="150" r="62" fill="#f1c7a2"/>
+    <path d="M58 150 C58 90 178 78 186 150 C170 118 78 118 58 150 Z" fill="#0057b8"/>
+    <path d="M70 132 h96 v16 h-96 z" fill="#ef3e42"/>
+    <text x="92" y="146" font-size="16" font-family="Arial" fill="#fff" font-weight="700">LA</text>
+    <path d="M86 168 q32 22 64 0" stroke="#333" stroke-width="3" fill="none"/>
+    <circle cx="96" cy="160" r="4" fill="#222"/>
+    <circle cx="142" cy="160" r="4" fill="#222"/>
+    <path d="M118 250 L70 150" stroke="#222" stroke-width="10" fill="none"/>
+    <rect x="18" y="118" width="78" height="14" rx="4" fill="#222" transform="rotate(-28 18 118)"/>
+    <text x="118" y="300" text-anchor="middle" font-size="42" font-family="Arial" font-weight="800" fill="#0057b8">17</text>
+  </g>
+  <text x="70" y="180" font-size="64" font-family="Arial" font-weight="800" fill="rgba(255,255,255,.16)">17</text>
+  <text x="620" y="250" font-size="120" font-family="Arial" font-weight="800" fill="rgba(255,255,255,.08)">17</text>
+</svg>
