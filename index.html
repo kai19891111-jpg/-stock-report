@@ -4358,5 +4358,1238 @@ td {
 })();
 
 </script>
+
+<!-- =========================================================
+     STOCK REPORT｜全網頁即時同步補丁
+     功能：
+     1. 讀取 data/latest.json 日K資料
+     2. 配合原本 Vercel 即時行情
+     3. 自動更新市場摘要
+     4. 自動更新今日交易雷達
+     5. 自動更新所有股票卡
+     6. 自動更新族群同步
+     7. 自動更新智慧支撐壓力
+     8. 自動更新頁面時間
+========================================================= -->
+
+<script id="whole-page-live-sync">
+
+(function () {
+
+  'use strict';
+
+
+  /* =========================================================
+     0. 基本檢查
+  ========================================================= */
+
+  if (
+    typeof DATA === 'undefined' ||
+    typeof NAMES === 'undefined' ||
+    typeof STOCK_META === 'undefined'
+  ) {
+
+    console.error(
+      '全站即時同步失敗：找不到 DATA / NAMES / STOCK_META'
+    );
+
+    return;
+
+  }
+
+
+  /* =========================================================
+     1. 工具
+  ========================================================= */
+
+  function toNum(v) {
+
+    if (
+      v === null ||
+      v === undefined ||
+      v === '' ||
+      v === 'N/A'
+    ) {
+
+      return null;
+
+    }
+
+    const n = Number(v);
+
+    return Number.isFinite(n)
+      ? n
+      : null;
+
+  }
+
+
+  function fmt(v) {
+
+    const n = toNum(v);
+
+    if (n === null) {
+
+      return 'N/A';
+
+    }
+
+    return n.toLocaleString(
+      'en-US',
+      {
+        maximumFractionDigits: 2
+      }
+    );
+
+  }
+
+
+  function pct(v) {
+
+    const n = toNum(v);
+
+    if (n === null) {
+
+      return 'N/A';
+
+    }
+
+    return (
+      (n > 0 ? '+' : '') +
+      n.toFixed(2) +
+      '%'
+    );
+
+  }
+
+
+  function nowText() {
+
+    return new Date()
+      .toLocaleString(
+        'zh-TW',
+        {
+          hour12: false,
+
+          year: 'numeric',
+
+          month: '2-digit',
+
+          day: '2-digit',
+
+          hour: '2-digit',
+
+          minute: '2-digit',
+
+          second: '2-digit'
+        }
+      );
+
+  }
+
+
+  /* =========================================================
+     2. 讀取 GitHub 每日完成日K資料
+  ========================================================= */
+
+  async function loadDailyData() {
+
+    try {
+
+      const response =
+        await fetch(
+          './data/latest.json?t=' +
+          Date.now(),
+          {
+            cache: 'no-store'
+          }
+        );
+
+
+      if (!response.ok) {
+
+        throw new Error(
+          'latest.json HTTP ' +
+          response.status
+        );
+
+      }
+
+
+      const json =
+        await response.json();
+
+
+      const quotes =
+        json.quotes || {};
+
+
+      Object.entries(
+        quotes
+      )
+      .forEach(
+        ([code, q]) => {
+
+          if (!DATA[code]) {
+
+            return;
+
+          }
+
+
+          /* 日期 */
+
+          if (q.date) {
+
+            DATA[code].date =
+              q.date;
+
+          }
+
+
+          /* SMA20 */
+
+          if (
+            toNum(q.ma20) !== null
+          ) {
+
+            DATA[code].s20 =
+              Number(q.ma20);
+
+          }
+
+
+          /* SMA60 */
+
+          if (
+            toNum(q.ma60) !== null
+          ) {
+
+            DATA[code].s60 =
+              Number(q.ma60);
+
+          }
+
+
+          /* RSI */
+
+          if (
+            toNum(q.rsi14) !== null
+          ) {
+
+            DATA[code].rsi14 =
+              Number(q.rsi14);
+
+          }
+
+
+          /* MACD */
+
+          if (q.macd) {
+
+            DATA[code].macd =
+              q.macd;
+
+          }
+
+
+          /* 日線趨勢 */
+
+          if (q.dailyTrend) {
+
+            DATA[code].dailyTrend =
+              q.dailyTrend;
+
+          }
+
+
+          /* 市場狀態 */
+
+          if (q.marketRegime) {
+
+            DATA[code].marketRegime =
+              q.marketRegime;
+
+          }
+
+
+          /* 進場區 */
+
+          if (
+            toNum(q.entryLow) !== null &&
+            toNum(q.entryHigh) !== null
+          ) {
+
+            DATA[code].entry =
+              `${fmt(q.entryLow)}-${fmt(q.entryHigh)}`;
+
+          }
+
+
+          /* 失效價 */
+
+          if (
+            toNum(q.stop) !== null
+          ) {
+
+            DATA[code].invalid =
+              fmt(q.stop);
+
+          }
+
+
+          /* 第一目標／壓力 */
+
+          if (
+            toNum(q.target1) !== null
+          ) {
+
+            DATA[code].resist =
+              fmt(q.target1);
+
+          }
+
+
+          DATA[code].dailySource =
+            q.source ||
+            'daily';
+
+        }
+      );
+
+
+      window.__DAILY_DATA_TIME__ =
+        json.marketTimestamp ||
+        json.dataTimestamp ||
+        null;
+
+
+      console.log(
+        '✅ 每日日K資料已同步',
+        window.__DAILY_DATA_TIME__
+      );
+
+    }
+
+    catch (error) {
+
+      console.error(
+        '每日資料同步失敗：',
+        error
+      );
+
+    }
+
+  }
+
+
+  /* =========================================================
+     3. 更新頁首
+  ========================================================= */
+
+  function updateHeader() {
+
+    const meta =
+      document.querySelector(
+        '.hdr .meta'
+      );
+
+
+    if (!meta) {
+
+      return;
+
+    }
+
+
+    const tw =
+      DATA['^TWII'];
+
+    const tsm =
+      DATA['2330.TW'];
+
+
+    meta.innerHTML = `
+
+      📡 畫面最後更新：
+      ${nowText()}
+
+      <br>
+
+      台股最後完成日 K：
+      ${tsm?.date || 'N/A'}
+
+      ｜加權指數：
+      ${fmt(tw?.p)}
+
+      <br>
+
+      LIVE：
+      現價／漲跌／漲跌幅
+
+      ｜
+
+      日 K：
+      SMA20／SMA60／支撐／壓力／進出場
+
+    `;
+
+
+    document.title =
+      `技術與基本面報告｜LIVE`;
+
+  }
+
+
+  /* =========================================================
+     4. 市場摘要
+  ========================================================= */
+
+  function updateSummary() {
+
+    const box =
+      document.getElementById(
+        'summary'
+      );
+
+
+    if (!box) {
+
+      return;
+
+    }
+
+
+    const tw =
+      DATA['^TWII'];
+
+    const tsm =
+      DATA['2330.TW'];
+
+    const med =
+      DATA['2454.TW'];
+
+    const delta =
+      DATA['2308.TW'];
+
+    const inn =
+      DATA['3481.TW'];
+
+    const power =
+      DATA['6770.TW'];
+
+    const zd =
+      DATA['4958.TW'];
+
+
+    box.innerHTML = `
+
+      <h2>
+        市場摘要｜LIVE
+      </h2>
+
+
+      <p>
+
+        台股加權：
+
+        <strong>
+          ${fmt(tw?.p)}
+        </strong>
+
+        （${pct(tw?.pct)}）
+
+      </p>
+
+
+      <p>
+
+        台積電：
+
+        <strong>
+          ${fmt(tsm?.p)}
+        </strong>
+
+        （${pct(tsm?.pct)}）
+
+        ｜
+
+        聯發科：
+
+        <strong>
+          ${fmt(med?.p)}
+        </strong>
+
+        （${pct(med?.pct)}）
+
+        ｜
+
+        台達電：
+
+        <strong>
+          ${fmt(delta?.p)}
+        </strong>
+
+        （${pct(delta?.pct)}）
+
+      </p>
+
+
+      <p>
+
+        群創：
+
+        ${fmt(inn?.p)}
+        （${pct(inn?.pct)}）
+
+        ｜
+
+        力積電：
+
+        ${fmt(power?.p)}
+        （${pct(power?.pct)}）
+
+        ｜
+
+        臻鼎-KY：
+
+        ${fmt(zd?.p)}
+        （${pct(zd?.pct)}）
+
+      </p>
+
+
+      <p class="note">
+
+        📡 LIVE：
+        現價、漲跌、漲跌幅
+
+        ｜
+
+        📊 完成日 K：
+        SMA20、SMA60、
+        RSI、支撐、壓力、
+        進場區、失效價
+
+        ｜
+
+        更新：
+        ${nowText()}
+
+      </p>
+
+    `;
+
+  }
+
+
+  /* =========================================================
+     5. 今日交易雷達
+  ========================================================= */
+
+  function updateRadar() {
+
+    const box =
+      document.getElementById(
+        'radar'
+      );
+
+
+    if (!box) {
+
+      return;
+
+    }
+
+
+    const stocks =
+      Object.entries(
+        DATA
+      )
+      .filter(
+        ([code, d]) => {
+
+          return (
+            !code.startsWith('^') &&
+            toNum(d?.pct) !== null &&
+            toNum(d?.p) !== null
+          );
+
+        }
+      )
+      .map(
+        ([code, d]) => {
+
+          return {
+
+            code,
+
+            name:
+              NAMES[code] ||
+              code,
+
+            price:
+              toNum(d.p),
+
+            pct:
+              toNum(d.pct)
+
+          };
+
+        }
+      );
+
+
+    const gainers =
+      stocks
+      .slice()
+      .sort(
+        (a, b) =>
+          b.pct - a.pct
+      )
+      .slice(
+        0,
+        5
+      );
+
+
+    const losers =
+      stocks
+      .slice()
+      .sort(
+        (a, b) =>
+          a.pct - b.pct
+      )
+      .slice(
+        0,
+        5
+      );
+
+
+    const gainText =
+      gainers
+      .map(
+        x =>
+          `${x.name} ${pct(x.pct)}`
+      )
+      .join('、');
+
+
+    const lossText =
+      losers
+      .map(
+        x =>
+          `${x.name} ${pct(x.pct)}`
+      )
+      .join('、');
+
+
+    const tw =
+      DATA['^TWII'];
+
+    const nasdaq =
+      DATA['^IXIC'];
+
+    const sox =
+      DATA['^SOX'];
+
+    const tnx =
+      DATA['^TNX'];
+
+
+    box.innerHTML = `
+
+      <h2>
+        今日交易雷達｜LIVE
+      </h2>
+
+
+      <ul class="radar">
+
+        <li>
+
+          台股加權：
+          ${fmt(tw?.p)}
+          （${pct(tw?.pct)}）
+
+        </li>
+
+
+        <li>
+
+          即時領漲：
+
+          ${gainText || '等待行情'}
+
+        </li>
+
+
+        <li>
+
+          即時弱勢：
+
+          ${lossText || '等待行情'}
+
+        </li>
+
+
+        <li>
+
+          Nasdaq：
+
+          ${fmt(nasdaq?.p)}
+          （${pct(nasdaq?.pct)}）
+
+        </li>
+
+
+        <li>
+
+          費城半導體：
+
+          ${fmt(sox?.p)}
+          （${pct(sox?.pct)}）
+
+        </li>
+
+
+        <li>
+
+          美國 10 年債：
+
+          ${fmt(tnx?.p)}
+
+        </li>
+
+
+        <li>
+
+          最後刷新：
+
+          ${nowText()}
+
+        </li>
+
+      </ul>
+
+    `;
+
+  }
+
+
+  /* =========================================================
+     6. 更新股票卡日期／LIVE 標示
+  ========================================================= */
+
+  function updateCardInfo() {
+
+    document
+      .querySelectorAll(
+        '.card'
+      )
+      .forEach(
+        card => {
+
+          const sub =
+            card.querySelector(
+              '.sub'
+            );
+
+
+          if (!sub) {
+
+            return;
+
+          }
+
+
+          let code =
+            card.dataset.code;
+
+
+          if (!code) {
+
+            code =
+              Object.keys(
+                DATA
+              )
+              .find(
+                c =>
+                  sub.textContent
+                    .includes(c)
+              );
+
+          }
+
+
+          if (
+            !code ||
+            !DATA[code]
+          ) {
+
+            return;
+
+          }
+
+
+          const d =
+            DATA[code];
+
+
+          sub.textContent =
+
+            `${code} ｜ ` +
+
+            `日K ${d.date || 'N/A'} ｜ ` +
+
+            (
+              d.live
+              ? '📡 LIVE'
+              : '📊 日K'
+            );
+
+        }
+      );
+
+  }
+
+
+  /* =========================================================
+     7. 族群同步雷達
+  ========================================================= */
+
+  function updateSyncPanel() {
+
+    const box =
+      document.getElementById(
+        'u2-sync-list'
+      );
+
+
+    if (!box) {
+
+      return;
+
+    }
+
+
+    box.innerHTML =
+      Object.entries(
+        STOCK_META
+      )
+      .map(
+        ([group, list]) => {
+
+          const rows =
+            list
+            .map(
+              code => {
+
+                return {
+
+                  code,
+
+                  pct:
+                    toNum(
+                      DATA[code]?.pct
+                    )
+
+                };
+
+              }
+            )
+            .filter(
+              x =>
+                x.pct !== null
+            );
+
+
+          if (
+            rows.length <
+            2
+          ) {
+
+            return '';
+
+          }
+
+
+          const up =
+            rows
+            .filter(
+              x =>
+                x.pct >
+                0
+            )
+            .length;
+
+
+          const down =
+            rows
+            .filter(
+              x =>
+                x.pct <
+                0
+            )
+            .length;
+
+
+          const flat =
+            rows.length -
+            up -
+            down;
+
+
+          const rate =
+            Math.round(
+              (
+                up /
+                rows.length
+              ) *
+              100
+            );
+
+
+          let label =
+            '族群分化';
+
+
+          if (
+            rate >=
+            75
+          ) {
+
+            label =
+              '同步偏強';
+
+          }
+
+          else if (
+            rate >=
+            50
+          ) {
+
+            label =
+              '部分同步';
+
+          }
+
+
+          return `
+
+            <div
+              class="u2-card"
+              style="
+                margin-bottom:8px;
+              "
+            >
+
+              <div class="u2-row">
+
+                <b>
+                  ${group}
+                </b>
+
+                <span>
+
+                  ${rate}%
+                  ｜${label}
+
+                </span>
+
+              </div>
+
+
+              <div
+                class="u2-syncbar"
+              >
+
+                <div
+                  class="u2-syncfill"
+                  style="
+                    width:${rate}%;
+                  "
+                ></div>
+
+              </div>
+
+
+              <div
+                class="u2-muted"
+                style="
+                  margin-top:5px;
+                "
+              >
+
+                上漲 ${up}
+
+                ／
+
+                下跌 ${down}
+
+                ／
+
+                平盤 ${flat}
+
+                ／
+
+                有效 ${rows.length}
+
+                ｜LIVE
+
+              </div>
+
+            </div>
+
+          `;
+
+        }
+      )
+      .join('');
+
+  }
+
+
+  /* =========================================================
+     8. 智慧支撐壓力
+  ========================================================= */
+
+  function updateSmartPanel() {
+
+    const select =
+      document.getElementById(
+        'u2-select'
+      );
+
+
+    if (!select) {
+
+      return;
+
+    }
+
+
+    try {
+
+      select.dispatchEvent(
+        new Event(
+          'change'
+        )
+      );
+
+    }
+
+    catch (e) {
+
+      console.warn(
+        '智慧面板更新失敗',
+        e
+      );
+
+    }
+
+  }
+
+
+  /* =========================================================
+     9. 修正重複持倉
+  ========================================================= */
+
+  function fixPositionPanel() {
+
+    const oldPanel =
+      document.getElementById(
+        'u2-position'
+      );
+
+
+    const livePanel =
+      document.getElementById(
+        'live-position-panel'
+      );
+
+
+    if (
+      oldPanel &&
+      livePanel
+    ) {
+
+      oldPanel.style.display =
+        'none';
+
+
+      const link =
+        document.querySelector(
+          'nav a[href="#u2-position"]'
+        );
+
+
+      if (link) {
+
+        link.href =
+          '#live-position-panel';
+
+      }
+
+    }
+
+  }
+
+
+  /* =========================================================
+     10. Footer
+  ========================================================= */
+
+  function updateFooter() {
+
+    const footer =
+      document.querySelector(
+        '.footer'
+      );
+
+
+    if (!footer) {
+
+      return;
+
+    }
+
+
+    footer.innerHTML = `
+
+      行情與技術資料僅供追蹤，
+      不構成投資建議。
+
+      <br>
+
+      📡 現價／漲跌：
+      即時行情
+
+      ｜
+
+      📊 SMA／RSI／支撐／壓力：
+      最後完成日 K
+
+      <br>
+
+      畫面最後刷新：
+
+      ${nowText()}
+
+    `;
+
+  }
+
+
+  /* =========================================================
+     11. 全頁同步
+  ========================================================= */
+
+  function renderWholePage() {
+
+    updateHeader();
+
+    updateSummary();
+
+    updateRadar();
+
+    updateCardInfo();
+
+    updateSyncPanel();
+
+    updateSmartPanel();
+
+    fixPositionPanel();
+
+    updateFooter();
+
+  }
+
+
+  window.renderWholePage =
+    renderWholePage;
+
+
+  /* =========================================================
+     12. 第一次載入
+  ========================================================= */
+
+  async function start() {
+
+    await loadDailyData();
+
+    renderWholePage();
+
+  }
+
+
+  start();
+
+
+  /* =========================================================
+     13. 每 10 秒同步整個畫面
+     不另外打股票 API
+  ========================================================= */
+
+  setInterval(
+    () => {
+
+      renderWholePage();
+
+    },
+    10000
+  );
+
+
+  /* =========================================================
+     14. 每 5 分鐘重新讀一次 latest.json
+  ========================================================= */
+
+  setInterval(
+    () => {
+
+      loadDailyData()
+        .then(
+          () => {
+
+            renderWholePage();
+
+          }
+        );
+
+    },
+    300000
+  );
+
+
+  /* =========================================================
+     15. 回到網頁立即刷新
+  ========================================================= */
+
+  document.addEventListener(
+    'visibilitychange',
+    () => {
+
+      if (
+        document.visibilityState ===
+        'visible'
+      ) {
+
+        renderWholePage();
+
+      }
+
+    }
+  );
+
+
+  console.log(
+    '✅ 全網頁即時同步補丁已啟動'
+  );
+
+
+})();
+
+</script>
 </body>
 </html>
