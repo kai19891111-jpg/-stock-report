@@ -2479,20 +2479,20 @@ ${d.note || 'N/A'}
 (function(){
   const box = document.getElementById('u2-position');
   if (!box || box.querySelector('[data-code="2330.TW"]')) return;
-  const d = (typeof DATA !== 'undefined' && DATA['2330.TW']) || {};
-  const price = (d.p === undefined || d.p === 'N/A') ? 'N/A' : d.p;
   const card = document.createElement('div');
   card.className = 'u2-card u2-pos';
   card.dataset.code = '2330.TW';
   card.style.marginTop = '10px';
   card.innerHTML = `
     <h3>台積電｜2330.TW</h3>
-    <div class="u2-row"><span>股數</span><b>未提供</b></div>
-    <div class="u2-row"><span>平均成本</span><b>未提供</b></div>
-    <div class="u2-row"><span>DATA 市價</span><b>${price}</b></div>
-    <div class="u2-row"><span>日期</span><b>${d.date || 'N/A'}</b></div>
-    <div class="u2-row"><span>狀態</span><b>${d.status || 'N/A'}</b></div>
-    <p class="note">已加入持倉，但還沒有股數與平均成本，損益先不計算。補上後才會顯示成本、市值與試算損益。行情用 DATA，不把盤中價當收盤。</p>`;
+    <div class="u2-row"><span>股數</span><b>10</b></div>
+    <div class="u2-row"><span>可下單</span><b>0</b></div>
+    <div class="u2-row"><span>平均成本</span><b>2572.10</b></div>
+    <div class="u2-row"><span>10/05 收盤</span><b>2570</b></div>
+    <div class="u2-row"><span>成本金額</span><b>25,721</b></div>
+    <div class="u2-row"><span>收盤市值</span><b>25,700</b></div>
+    <div class="u2-row"><span>依收盤試算</span><b class="u2-loss">-21（-0.08%）</b></div>
+    <p class="note">股數與均價來自 2026-10-05 券商截圖。收盤用 Yahoo 日 K 2,570，不是盤中價。可下單 0。試算是 10×2570 減 10×2572.10。</p>`;
   box.appendChild(card);
 })();
 </script>
