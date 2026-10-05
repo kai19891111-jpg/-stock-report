@@ -2,6 +2,7 @@
 const CONFIG = {
   allowedOrigin: 'https://kai19891111-jpg.github.io',
   cacheMs: 9000,
+  timeoutMs: 8000,
   fugleBase: 'https://api.fugle.tw/marketdata/v1.0/stock',
   finnhubBase: 'https://finnhub.io/api/v1',
   yahooChart: 'https://query1.finance.yahoo.com/v8/finance/chart'
@@ -45,6 +46,15 @@ function response(data, status = 200) {
 export async function OPTIONS() {
   return new Response(null, { status: 204, headers: headers() });
 }
+function fetchWithTimeout(url, init) {
+  const timeout = CONFIG.timeoutMs;
+  if (typeof AbortSignal !== 'undefined' && AbortSignal.timeout) {
+    return fetch(url, { ...init, signal: AbortSignal.timeout(timeout) });
+  }
+  const ctrl = new AbortController();
+  const timer = setTimeout(() => ctrl.abort(), timeout);
+  return fetch(url, { ...init, signal: ctrl.signal }).finally(() => clearTimeout(timer));
+}
 function fugleSymbol(code) {
   if (code === '^TWII') return 'IX0001';
   return code.replace('.TWO', '').replace('.TW', '');
@@ -55,7 +65,7 @@ function fugleMarket(code) {
 }
 async function getFugleQuote(code) {
   const url = `${CONFIG.fugleBase}/intraday/quote/${encodeURIComponent(fugleSymbol(code))}`;
-  const r = await fetch(url, { headers: { 'X-API-KEY': FUGLE_API_KEY, 'Accept': 'application/json' }, cache: 'no-store' });
+  const r = await fetchWithTimeout(url, { headers: { 'X-API-KEY': FUGLE_API_KEY, 'Accept': 'application/json' }, cache: 'no-store' });
   if (!r.ok) throw new Error(`Fugle ${code}: ${r.status}`);
   const d = await r.json();
   const price = toNumber(d.lastPrice ?? d.closePrice);
@@ -63,8 +73,8 @@ async function getFugleQuote(code) {
   return { price, change: toNumber(d.change), changePercent: toNumber(d.changePercent), open: toNumber(d.openPrice), high: toNumber(d.highPrice), low: toNumber(d.lowPrice), previousClose: toNumber(d.previousClose ?? d.referencePrice), volume: toNumber(d.total?.tradeVolume ?? d.tradeVolume), time: toISO(d.lastUpdated ?? d.total?.time), provider: 'Fugle', market: fugleMarket(code) };
 }
 async function getFinnhubQuote(code) {
-  const url = `${CONFIG.finnhubBase}/quote?symbol=${encodeURIComponent(code)}&token=${encodeURIComponent(FINNHUB_API_KEY)}`;
-  const r = await fetch(url, { headers: { 'X-Finnhub-Token': FINNHUB_API_KEY, 'Accept': 'application/json' }, cache: 'no-store' });
+  const url = `${CONFIG.finnhubBase}/quote?symbol=${encodeURIComponent(code)}`;
+  const r = await fetchWithTimeout(url, { headers: { 'X-Finnhub-Token': FINNHUB_API_KEY, 'Accept': 'application/json' }, cache: 'no-store' });
   if (!r.ok) throw new Error(`Finnhub ${code}: ${r.status}`);
   const d = await r.json();
   const price = toNumber(d.c);
@@ -73,7 +83,7 @@ async function getFinnhubQuote(code) {
 }
 async function getYahooQuote(code) {
   const url = `${CONFIG.yahooChart}/${encodeURIComponent(code)}?interval=1d&range=5d`;
-  const r = await fetch(url, { headers: { 'Accept': 'application/json', 'User-Agent': 'Mozilla/5.0' }, cache: 'no-store' });
+  const r = await fetchWithTimeout(url, { headers: { 'Accept': 'application/json', 'User-Agent': 'Mozilla/5.0' }, cache: 'no-store' });
   if (!r.ok) throw new Error(`Yahoo ${code}: ${r.status}`);
   const body = await r.json();
   const meta = body?.chart?.result?.[0]?.meta;
@@ -96,8 +106,11 @@ async function getUsQuote(code) {
 }
 function parseSymbols(request) {
   const requested = new URL(request.url).searchParams.get('symbols');
-  if (!requested) return [...STOCKS];
-  return Array.from(new Set(requested.split(',').map(x => x.trim()).filter(x => ALLOWED.has(x))));
+  if (!requested) return { symbols: [...STOCKS], rejected: [] };
+  const raw = requested.split(',').map(x => x.trim()).filter(Boolean);
+  const rejected = Array.from(new Set(raw.filter(x => !ALLOWED.has(x))));
+  const symbols = Array.from(new Set(raw.filter(x => ALLOWED.has(x))));
+  return { symbols, rejected };
 }
 async function safeQuote(code) {
   try {
@@ -107,34 +120,34 @@ async function safeQuote(code) {
     if (!quote) throw new Error('沒有行情來源');
     return { code, quote, error: null };
   } catch (error) {
-    return { code, quote: null, error: error.message };
+    const message = error.name === 'TimeoutError' || error.name === 'AbortError' ? `${code} 逾時` : error.message;
+    return { code, quote: null, error: message };
   }
 }
 export async function GET(request) {
-  const symbols = parseSymbols(request);
+  const { symbols, rejected } = parseSymbols(request);
   const needsFugle = symbols.some(code => code === '^TWII' || code.endsWith('.TW') || code.endsWith('.TWO'));
-  if (needsFugle && !FUGLE_API_KEY) return response({ ok: false, error: '有台股代碼，但 Vercel 尚未設定 FUGLE_API_KEY', checks: { fugleKey: false, finnhubKey: Boolean(FINNHUB_API_KEY) } }, 500);
-  if (!symbols.length) return response({ ok: false, error: '沒有有效股票代碼' }, 400);
+  if (needsFugle && !FUGLE_API_KEY) {
+    return response({ ok: false, error: '有台股代碼，但 Vercel 尚未設定 FUGLE_API_KEY', checks: { fugleKey: false, finnhubKey: Boolean(FINNHUB_API_KEY) } }, 500);
+  }
+  if (!symbols.length) return response({ ok: false, error: '沒有有效股票代碼', rejected }, 400);
   const cacheKey = symbols.slice().sort().join(',');
   const cached = CACHE.get(cacheKey);
-  if (cached && Date.now() - cached.timestamp < CONFIG.cacheMs) return response({ ...cached.data, cached: true });
+  if (cached && Date.now() - cached.timestamp < CONFIG.cacheMs) return response({ ...cached.data, cached: true, rejected });
   const results = await Promise.all(symbols.map(safeQuote));
   const quotes = {};
   const errors = {};
   results.forEach(item => { if (item.quote) quotes[item.code] = item.quote; if (item.error) errors[item.code] = item.error; });
+  if (rejected.length) errors.__rejected = rejected;
   const data = {
     ok: Object.keys(quotes).length > 0,
-    checks: {
-      fugleKey: Boolean(FUGLE_API_KEY),
-      finnhubKey: Boolean(FINNHUB_API_KEY),
-      usRoute: FINNHUB_API_KEY ? 'finnhub-then-yahoo' : 'yahoo',
-      rule: '缺少 FINNHUB_API_KEY 不整段 500；台股請求缺少 FUGLE_API_KEY 才 500'
-    },
+    checks: { fugleKey: Boolean(FUGLE_API_KEY), finnhubKey: Boolean(FINNHUB_API_KEY), usRoute: FINNHUB_API_KEY ? 'finnhub-then-yahoo' : 'yahoo', rule: '缺少 FINNHUB_API_KEY 不整段 500；台股請求缺少 FUGLE_API_KEY 才 500' },
     usProvider: FINNHUB_API_KEY ? 'finnhub-with-yahoo-fallback' : 'yahoo',
     generatedAt: new Date().toISOString(),
     requested: symbols.length,
     received: Object.keys(quotes).length,
     cached: false,
+    rejected,
     quotes,
     errors
   };
