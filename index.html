@@ -2941,6 +2941,48 @@ td {
   ];
 
 
+  function marketClock(timeZone) {
+    const parts = {};
+    new Intl.DateTimeFormat('en-US', {
+      timeZone,
+      weekday: 'short',
+      hour: '2-digit',
+      minute: '2-digit',
+      hourCycle: 'h23'
+    }).formatToParts(new Date()).forEach(part => {
+      parts[part.type] = part.value;
+    });
+    return parts;
+  }
+
+  function minutes(parts) {
+    return Number(parts.hour) * 60 + Number(parts.minute);
+  }
+
+  function isWeekday(parts) {
+    return parts.weekday !== 'Sat' && parts.weekday !== 'Sun';
+  }
+
+  function openMarkets() {
+    const tw = marketClock('Asia/Taipei');
+    const us = marketClock('America/New_York');
+    const twMin = minutes(tw);
+    const usMin = minutes(us);
+    return {
+      tw: isWeekday(tw) && twMin >= 9 * 60 && twMin < 13 * 60 + 30,
+      us: isWeekday(us) && usMin >= 9 * 60 + 30 && usMin < 16 * 60
+    };
+  }
+
+  function isTwCode(code) {
+    return code === '^TWII' || code.endsWith('.TW') || code.endsWith('.TWO');
+  }
+
+  function openCodes() {
+    const markets = openMarkets();
+    return REALTIME_CODES.filter(code => isTwCode(code) ? markets.tw : markets.us);
+  }
+
   /* =========================================================
      C. 基本檢查
   ========================================================= */
@@ -3130,11 +3172,8 @@ td {
     }
 
 
-    if (status) {
-
-      status.textContent =
-        text;
-
+    if (status && status.textContent !== text) {
+      status.textContent = text;
     }
 
   }
@@ -3420,75 +3459,28 @@ td {
 
 
     if (price) {
-
-      price.textContent =
-        priceText(
-          d.p
-        );
-
-
-      price.classList.remove(
-        'chg-up',
-        'chg-dn',
-        'chg-flat'
-      );
-
-
-      if (
-        d.pct > 0
-      ) {
-
-        price.classList.add(
-          'chg-up'
-        );
-
+      let num = price.querySelector('.price-num');
+      if (!num) {
+        const current = price.textContent;
+        price.textContent = '';
+        num = document.createElement('span');
+        num.className = 'price-num';
+        num.textContent = current;
+        price.appendChild(num);
       }
-
-      else if (
-        d.pct < 0
-      ) {
-
-        price.classList.add(
-          'chg-dn'
-        );
-
+      const next = priceText(d.p);
+      if (num.textContent !== next) num.textContent = next;
+      const cls = d.pct > 0 ? 'chg-up' : d.pct < 0 ? 'chg-dn' : 'chg-flat';
+      if (!price.classList.contains(cls)) {
+        price.classList.remove('chg-up', 'chg-dn', 'chg-flat');
+        price.classList.add(cls);
       }
-
-      else {
-
-        price.classList.add(
-          'chg-flat'
-        );
-
+      if (!price.querySelector('.live-price-tag')) {
+        const tag = document.createElement('span');
+        tag.className = 'live-price-tag';
+        tag.textContent = 'LIVE';
+        price.appendChild(tag);
       }
-
-
-      if (
-        !price.querySelector(
-          '.live-price-tag'
-        )
-      ) {
-
-        const tag =
-          document.createElement(
-            'span'
-          );
-
-
-        tag.className =
-          'live-price-tag';
-
-
-        tag.textContent =
-          'LIVE';
-
-
-        price.appendChild(
-          tag
-        );
-
-      }
-
     }
 
 
@@ -4179,9 +4171,20 @@ td {
       }
 
 
+      const symbols = openCodes();
+      const markets = openMarkets();
+
+      if (!symbols.length) {
+        setStatus(
+          'online',
+          '休市，不更新｜台股 09:00–13:30｜美股 09:30–16:00'
+        );
+        return;
+      }
+
       const url =
         `${REALTIME_CONFIG.apiUrl}?symbols=${encodeURIComponent(
-          REALTIME_CODES.join(',')
+          symbols.join(',')
         )}&t=${Date.now()}`;
 
 
@@ -4266,7 +4269,7 @@ td {
 
         'online',
 
-        `✅ 已連線｜最後更新 ${timeText()}｜更新 ${count} 檔`
+        `✅ ${markets.tw ? '台股開市' : '台股休市'}｜${markets.us ? '美股開市' : '美股休市'}｜${timeText()}｜更新 ${count} 檔`
 
       );
 
