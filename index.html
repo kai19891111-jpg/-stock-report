@@ -3,1149 +3,490 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>技術與基本面報告｜2026-10-08 台北</title>
+<title>技術與基本面報告</title>
 <style>
-:root{--bg:#07182e;--card:rgba(8,28,58,.88);--gold:#ef3e42;--gold2:#f6f8fb;--text:#f7f4ee;--muted:#c5d0de;--green:#3dd68c;--red:#ff6b6b;--blue:#8ec0ff;}
+:root{--bg:#07182e;--card:rgba(8,32,64,.82);--accent:#ef3e42;--text:#f7f4ee;--muted:#c5d0de;--green:#3dd68c;--red:#ff6b6b;--blue:#8ec0ff;--amber:#ffb450;--line:rgba(255,255,255,.14);}
 *{box-sizing:border-box;}
-body{margin:0;color:var(--text);font-family:"Noto Sans TC","PingFang TC","Microsoft JhengHei",sans-serif;line-height:1.55;font-size:15px;background:#07182e;}
+html{scroll-behavior:smooth;scroll-padding-top:64px;}
+body{margin:0;color:var(--text);font-family:"Noto Sans TC","PingFang TC","Microsoft JhengHei",sans-serif;line-height:1.55;font-size:15px;background:var(--bg);}
 body:before{content:"";position:fixed;inset:0;z-index:0;pointer-events:none;background:
 linear-gradient(180deg, rgba(5,16,32,.45), rgba(5,16,32,.28) 35%, rgba(5,16,32,.55)),
-url("./assets/ohtani-cartoon.jpg") center top / cover no-repeat;
-background-color:#07182e;}
-.ohtani-mark{position:fixed;right:-12px;bottom:-36px;font-size:210px;font-weight:800;letter-spacing:-10px;color:rgba(255,255,255,.06);pointer-events:none;z-index:0;line-height:1;}
-.wrap{position:relative;z-index:1;}
-a{color:var(--gold);text-decoration:none;}
-nav{position:sticky;top:0;z-index:99;background:linear-gradient(90deg, rgba(7,24,46,.94), rgba(0,70,150,.92) 58%, rgba(130,20,32,.9));border-bottom:3px solid #ef3e42;padding:10px 12px;display:flex;flex-wrap:wrap;gap:8px;align-items:center;box-shadow:0 8px 22px rgba(0,0,0,.28);}
-nav a{padding:7px 12px;border-radius:999px;font-size:13px;color:#fff;background:linear-gradient(180deg,#2b78d6,#0b4f9c);border:1px solid rgba(255,255,255,.4);box-shadow:inset 0 -2px 0 rgba(0,0,0,.28), 0 1px 0 rgba(255,255,255,.28);}
-nav a:hover{background:linear-gradient(180deg,#ff5a5e,#c81e2b);border-color:#fff;}
-.wrap{max-width:980px;margin:0 auto;padding:12px;}
-.hdr{text-align:center;padding:18px 8px 8px;position:relative;z-index:1;}
-.hdr .k{color:var(--gold);letter-spacing:.18em;font-size:11px;}
-.hdr h1{margin:6px 0;font-size:1.35rem;font-weight:700;}
-.meta{color:var(--muted);font-size:12px;margin-top:4px;}
-.panel{background:rgba(8,28,58,.72);border:1px solid rgba(255,255,255,.16);border-top:3px solid #ef3e42;border-radius:16px;padding:14px;margin:12px 0;backdrop-filter:blur(8px);}
-.panel h2{margin:0 0 10px;font-size:1.05rem;color:#fff;border-left:4px solid #ef3e42;padding-left:8px;letter-spacing:.04em;}
-.badge{display:inline-block;padding:2px 8px;border-radius:999px;font-size:11px;margin:2px 3px 2px 0;border:1px solid;}
-.b-green{background:rgba(61,214,140,.12);border-color:var(--green);color:var(--green);}
-.b-wait{background:rgba(201,169,106,.1);border-color:var(--gold);color:var(--gold);}
-.b-hold{background:rgba(77,163,255,.12);border-color:var(--blue);color:var(--blue);}
-.b-reduce{background:rgba(255,180,80,.12);border-color:#ffb450;color:#ffb450;}
-.b-exit{background:rgba(255,107,107,.12);border-color:var(--red);color:var(--red);}
-.b-na{background:rgba(154,168,184,.1);border-color:var(--muted);color:var(--muted);}
-.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:10px;}
-.card{background:rgba(8,32,64,.78);border:1px solid rgba(142,192,255,.3);border-radius:14px;padding:12px;}
-.card .title{font-weight:700;font-size:14px;margin-bottom:4px;color:var(--gold2);}
-.card .sub{font-size:11px;color:var(--muted);margin-bottom:8px;}
-.card .row{display:flex;justify-content:space-between;gap:8px;font-size:12px;margin:3px 0;}
-.card .price{font-size:1.15rem;font-weight:700;}
-.chg-up{color:var(--green);} .chg-dn{color:var(--red);} .chg-flat{color:var(--muted);}
-.radar{font-size:13px;padding-left:18px;}
-.radar li{margin:6px 0;}
-table{width:100%;border-collapse:collapse;font-size:12px;}
-th,td{padding:6px 4px;border-bottom:1px solid rgba(201,169,106,.12);text-align:left;}
-th{color:var(--gold);font-weight:600;}
-.note{font-size:11px;color:var(--muted);margin-top:8px;}
-.footer{text-align:center;padding:20px 12px;font-size:11px;color:var(--muted);border-top:1px solid rgba(201,169,106,.15);margin-top:20px;}
-@media(max-width:600px){.grid{grid-template-columns:1fr;}nav{justify-content:center;}.hdr h1{font-size:1.15rem;}table{font-size:11px;}}
-#realtime-status-panel{display:none !important;}
-</style>
-<style>
-.badge{display:inline-block;padding:2px 8px;border-radius:999px;font-size:12px}
-.badge.go{background:#1f7a4d;color:#fff}
-.badge.hold{background:#1d4e89;color:#fff}
-.badge.trim{background:#8a5a12;color:#fff}
-.badge.wait{background:#5c6570;color:#fff}
-.badge.na{background:#444;color:#fff}
-.card .px{font-size:28px;font-weight:700}
-.card .chg{font-size:14px;font-weight:600}
-.card .grid{display:grid;grid-template-columns:1fr 1fr;gap:6px 12px;margin-top:8px}
-.card .grid span{display:block;color:#8aa;font-size:12px}
-.live-note{color:#c4a35a;font-size:12px;margin-top:4px}
-.meta-row{display:flex;gap:8px;flex-wrap:wrap;padding:6px 0;border-bottom:1px solid rgba(255,255,255,.08)}
-.meta-row b{min-width:140px;color:#e6d3a3}
-table{width:100%;border-collapse:collapse}
-td,th{padding:6px 4px;text-align:left;font-size:13px}
-td.num{text-align:right}
-.note{color:#c9c3b5}
+url("./assets/ohtani-cartoon.jpg") center top / cover no-repeat;background-color:var(--bg);}
+header,nav,main,footer{position:relative;z-index:1;}
+a{color:var(--blue);text-decoration:none;}
+header{text-align:center;padding:18px 12px 12px;background:linear-gradient(180deg,rgba(5,16,32,.72),rgba(5,16,32,.5));}
+header .brand{color:var(--accent);letter-spacing:.18em;font-size:11px;font-weight:700;}
+header h1{margin:6px 0;font-size:1.35rem;}
+.stamps{display:flex;flex-wrap:wrap;justify-content:center;gap:6px;margin-top:8px;}
+.stamp{font-size:12px;padding:3px 10px;border-radius:999px;background:rgba(8,28,58,.8);border:1px solid var(--line);color:var(--muted);}
+.stamp b{color:var(--text);font-weight:600;}
+.banner{max-width:1080px;margin:10px auto 0;padding:8px 12px;border-radius:10px;background:rgba(255,180,80,.16);border:1px solid var(--amber);color:#ffd9a3;font-size:13px;}
+nav{position:sticky;top:0;z-index:99;background:linear-gradient(90deg, rgba(7,24,46,.96), rgba(0,70,150,.94) 58%, rgba(130,20,32,.92));border-bottom:3px solid var(--accent);padding:8px 12px;display:flex;gap:8px;overflow-x:auto;-webkit-overflow-scrolling:touch;box-shadow:0 8px 22px rgba(0,0,0,.28);}
+nav a{flex:0 0 auto;padding:6px 12px;border-radius:999px;font-size:13px;color:#fff;background:linear-gradient(180deg,#2b78d6,#0b4f9c);border:1px solid rgba(255,255,255,.4);}
+nav a:hover{background:linear-gradient(180deg,#ff5a5e,#c81e2b);}
+@media(min-width:700px){nav{justify-content:center;}}
+main{max-width:1080px;margin:0 auto;padding:4px 12px 12px;}
+.panel{background:rgba(8,28,58,.76);border:1px solid var(--line);border-top:3px solid var(--accent);border-radius:16px;padding:14px;margin:12px 0;backdrop-filter:blur(8px);}
+.panel h2{margin:0 0 10px;font-size:1.05rem;border-left:4px solid var(--accent);padding-left:8px;letter-spacing:.04em;display:flex;flex-wrap:wrap;align-items:baseline;gap:8px;}
+.panel h2 small{font-size:11px;font-weight:400;color:var(--muted);letter-spacing:0;}
+.panel p{margin:6px 0;}
+.panel ul,.panel ol{margin:6px 0;padding-left:20px;}
+.panel li{margin:5px 0;}
+.note{font-size:12px;color:var(--muted);}
+.anchor{display:block;height:0;}
+
+.cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(270px,1fr));gap:10px;}
+.card{background:var(--card);border:1px solid rgba(142,192,255,.3);border-radius:14px;padding:12px;min-width:0;}
+.card.held{border-color:rgba(255,255,255,.75);}
+.card .title{font-weight:700;font-size:14px;display:flex;flex-wrap:wrap;gap:6px;align-items:center;}
+.card .sub{font-size:11px;color:var(--muted);margin:2px 0 6px;}
+.card .px{font-size:26px;font-weight:700;line-height:1.2;}
+.card .px .chg{font-size:14px;font-weight:600;margin-left:6px;white-space:nowrap;}
+.live-note{color:#e6d3a3;font-size:12px;margin-top:2px;}
+.status{display:flex;flex-wrap:wrap;gap:6px;align-items:center;margin:8px 0 2px;}
+.why{font-size:12px;color:var(--muted);}
+.kv{display:grid;grid-template-columns:1fr 1fr;gap:6px 12px;margin-top:8px;}
+.kv>div{min-width:0;}
+.kv>div>span{display:block;color:#9fb3c8;font-size:11px;}
+.kv b{font-size:13px;font-weight:600;overflow-wrap:anywhere;}
+.kv em{display:block;font-style:normal;font-size:11px;color:var(--muted);font-weight:400;}
+.kv .wide{grid-column:1 / -1;}
+.old{text-decoration:line-through;opacity:.55;font-weight:400;}
+.warn{color:#ffd08a;}
+
+.badge{display:inline-block;padding:2px 8px;border-radius:999px;font-size:12px;font-weight:600;white-space:nowrap;}
+.badge.go{background:#1f7a4d;color:#fff;}
+.badge.hold{background:#1d4e89;color:#fff;}
+.badge.trim{background:#8a5a12;color:#fff;}
+.badge.wait{background:#5c6570;color:#fff;}
+.badge.own{background:#fff;color:#0b2a52;}
+.badge.stale{background:transparent;border:1px solid var(--amber);color:var(--amber);font-weight:500;}
+
+.chips{display:flex;flex-wrap:wrap;gap:6px;margin:0 0 12px;}
+.chip{font:inherit;font-size:13px;padding:5px 12px;border-radius:999px;border:1px solid rgba(255,255,255,.35);background:rgba(8,28,58,.7);color:var(--text);cursor:pointer;}
+.chip b{font-weight:600;color:var(--muted);margin-left:4px;}
+.chip[aria-pressed="true"]{background:#fff;color:#0b2a52;border-color:#fff;}
+.chip[aria-pressed="true"] b{color:#0b2a52;}
+.chip:focus-visible{outline:2px solid var(--blue);outline-offset:2px;}
+
+.totals{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:10px;margin-bottom:10px;}
+.tot{background:var(--card);border:1px solid rgba(142,192,255,.3);border-radius:14px;padding:10px 12px;}
+.tot span{display:block;font-size:11px;color:#9fb3c8;}
+.tot b{font-size:20px;}
+.tot em{display:block;font-style:normal;font-size:12px;color:var(--muted);}
+.wbar{display:flex;height:14px;border-radius:999px;overflow:hidden;gap:2px;margin:4px 0 6px;}
+.wbar i{display:block;height:100%;}
+.wlegend{display:flex;flex-wrap:wrap;gap:4px 14px;font-size:12px;color:var(--muted);margin-bottom:12px;}
+.wlegend i{display:inline-block;width:10px;height:10px;border-radius:2px;margin-right:5px;}
+.subtotal{font-size:13px;margin-top:10px;border-top:1px solid var(--line);padding-top:8px;}
+.subtotal div{display:flex;flex-wrap:wrap;justify-content:space-between;gap:4px 12px;padding:3px 0;}
+.subtotal div.sum{font-weight:700;border-top:1px solid var(--line);margin-top:4px;padding-top:6px;}
+
+.scroll{overflow-x:auto;}
+table{width:100%;border-collapse:collapse;font-size:13px;}
+th,td{padding:6px 6px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top;}
+th{color:var(--muted);font-weight:600;font-size:12px;white-space:nowrap;}
+td.num{text-align:right;white-space:nowrap;font-variant-numeric:tabular-nums;}
+td.grp{white-space:nowrap;font-weight:600;color:#e6d3a3;}
+.mem{display:inline-block;margin:0 10px 2px 0;white-space:nowrap;}
+.mem small{color:var(--muted);}
+details{margin-top:8px;font-size:13px;}
+summary{cursor:pointer;color:var(--muted);}
+footer{text-align:center;padding:16px 12px 28px;font-size:11px;color:var(--muted);}
+@media(max-width:600px){.cards{grid-template-columns:1fr;}header h1{font-size:1.15rem;}.card .px{font-size:24px;}}
 </style>
 </head>
 <body>
 <header>
   <div class="brand">OHTANI SERIES · TECHNICAL REPORT</div>
   <h1>技術與基本面報告</h1>
-  <div class="meta">產出：台北時間 2026-10-08 01:20｜同一套資料，不再分決策卡與補丁<br>
-  台股最後完成日 K：2026-10-07 收盤｜美股最後完成日 K：2026-10-06 正式收盤<br>
-  美股 10/07 仍在交易，盤中價只註記、不寫進決策卡。觀察進場不等於買進。</div>
+  <div class="stamps" id="stamps"></div>
+  <div class="note" style="margin-top:8px">盤中價只當註記，不寫進日 K 與狀態。觀察進場不等於買進。</div>
 </header>
+<div id="stale-banner" class="banner" hidden></div>
 <nav>
   <a href="#summary">摘要</a>
-  <a href="#radar">今日交易雷達</a>
-  <a href="#ai-class">AI 分類</a>
+  <a href="#u2-position">我的持倉</a>
+  <a href="#decision">個股卡片</a>
+  <a href="#entry-pick">可進場選擇</a>
   <a href="#index">指數</a>
   <a href="#u2-market-levels">大盤關卡</a>
-  <a href="#watch">我的關注股</a>
-  <a href="#entry-pick">可進場選擇</a>
-  <a href="#decision">交易決策卡</a>
-  <a href="#u2-position">我的持倉</a>
-  <a href="#u2-sync">族群同步</a>
+  <a href="#ai-class">族群</a>
   <a href="#guide">使用方法</a>
 </nav>
 <main>
-<section id="summary" class="panel">
-  <h2>市場摘要</h2>
-  <p>台北 2026-10-08 01:20。台股 10/07 已收盤：加權 49,806.37（-0.03%）。日 K 歷史高沿用 10/06 的 49,968.92，Yahoo 尚未把 10/07 高低點寫進日 K，所以壓力只用已核對高點。</p>
-  <p>權值 10/07 收盤：台積電 2,585（+0.00%）、聯發科 4,835（-1.73%）、台達電 1,990（-2.93%）。群創 52.5；力積電 72.6；大甲 189.5。</p>
-  <p>美股 10/06 正式收盤：Nasdaq 27,599.79（+0.45%）、費半 13,217.82（+0.34%）、美 10 年債 5.269（-0.79%）。NVDA 239.24、TSM 482.30、AMD 649.42、AVGO 375.81、MU 1,045.56。10/07 美股盤中不覆蓋這些收盤。</p>
-  <p>持倉用各自最後完成日 K：台積電 10 股、均價 2572.10、10/07 收盤 2,585；臻鼎-KY 80 股、均價 481.90、10/07 收盤 595。狀態規則全站同一套：收在 SMA20 之上、乖離 0–6%、且未貼近 20 日高，才標觀察進場；乖離 >15% 標減碼。進場區／失效價／壓力沿用既有價位，本次不重畫價位。</p>
-  <p><b>可進場觀察</b>：双鴻、奇鋐、群創、Broadcom、Microsoft、Meta、Micron、Tesla、大同、南亞科。觀察進場不等於買進。</p>
-</section>
-<section id="radar" class="panel">
-  <h2>今日交易雷達</h2>
-  <ul>
-    <li>台股用 10/07 收盤，美股用 10/06 正式收盤。兩邊不混成同一個「今天」。</li>
-    <li>加權 10/07 收 49,806.37（-0.03%），SMA20 47,577.47，已核對前高 49,968.92。</li>
-    <li>美股 10/06：Nasdaq +0.45% 收 27,599.79；費半 +0.34%。^TNX 10/06 收 5.269。</li>
-    <li>各自最後完成日漲幅居前：南亞 +7.17%、新唐 +5.98%、玉晶光 +3.83%、Broadcom +3.67%、臻鼎-KY +3.66%。</li>
-    <li>偏弱：台達電 -2.93%、奇鋐 -3.80%、健策 -3.88%。</li>
-    <li>綠色觀察進場與決策卡使用同一狀態：双鴻、奇鋐、群創、Broadcom、Microsoft、Meta、Micron、Tesla、大同、南亞科。</li>
-    <li>10/02 的 48,218／48,380／48,601 關卡已低於現價約 1,200 點，這次改掛最後完成日 K，不再另畫一套。</li>
-  </ul>
-</section>
-<section id="ai-class" class="panel">
-  <h2>AI 分類面板（STOCK_META）</h2>
-  <p class="note">基線 2026-09-25 分類 + 2026-09-27 三檔 + 2026-10-02 補丁八檔 + 2026-10-03 國巨。分類未刪，只改掛到同一份 DATA。</p>
-  <div class="meta-row"><b>TW|AI晶片</b><span>台積電 2330.TW、聯發科 2454.TW</span></div><div class="meta-row"><b>TW|AI電源</b><span>台達電 2308.TW</span></div><div class="meta-row"><b>TW|AI散熱</b><span>双鴻 3324.TWO、健策 3653.TW、奇鋐 3017.TW</span></div><div class="meta-row"><b>TW|ABF</b><span>景碩 3189.TW、欣興 3037.TW、南電 8046.TW</span></div><div class="meta-row"><b>TW|CCL</b><span>聯茂 6213.TW、台光電 2383.TW</span></div><div class="meta-row"><b>TW|面板／光電</b><span>群創 3481.TW</span></div><div class="meta-row"><b>TW|晶圓代工＋記憶體</b><span>力積電 6770.TW</span></div><div class="meta-row"><b>TW|半導體廠務</b><span>大甲 2221.TWO</span></div><div class="meta-row"><b>US|AI晶片</b><span>TSMC ADR TSM、NVIDIA NVDA、AMD AMD、Broadcom AVGO</span></div><div class="meta-row"><b>US|AI雲端</b><span>Microsoft MSFT、Meta META</span></div><div class="meta-row"><b>US|AI記憶體</b><span>Micron MU</span></div><div class="meta-row"><b>US|AI自駕機器人</b><span>Tesla TSLA</span></div><div class="meta-row"><b>US|航太科技</b><span>SPCX SPCX</span></div><div class="meta-row"><b>TW|AI伺服器／機櫃</b><span>勤誠 8210.TW</span></div><div class="meta-row"><b>TW|AI基建／電力</b><span>大同 2371.TW</span></div><div class="meta-row"><b>TW|光學／CPO</b><span>玉晶光 3406.TW</span></div><div class="meta-row"><b>TW|記憶體</b><span>南亞科 2408.TW</span></div><div class="meta-row"><b>TW|CCL／電子材料</b><span>南亞 1303.TW</span></div><div class="meta-row"><b>TW|PCB／銅箔</b><span>金居 8358.TWO、臻鼎-KY 4958.TW</span></div><div class="meta-row"><b>TW|電池監測IC</b><span>新唐 4919.TW</span></div><div class="meta-row"><b>TW|被動元件</b><span>國巨 2327.TW</span></div>
-</section>
-<section id="index" class="panel">
-  <h2>指數／殖利率</h2>
-  <table>
-    <thead><tr><th>代碼</th><th>名稱</th><th>最後完成</th><th>收盤</th><th>漲跌</th><th>備註</th></tr></thead>
-    <tbody><tr><td>^TWII</td><td>加權指數</td><td>2026-10-07</td><td class="num">49,806.37</td><td class="num">-16.18 (-0.03%)</td><td>10/07 已收盤</td></tr><tr><td>^IXIC</td><td>Nasdaq</td><td>2026-10-06</td><td class="num">27,599.79</td><td class="num">+122.48 (+0.45%)</td><td>盤中 27,490.67，不寫入日K</td></tr><tr><td>^SOX</td><td>費城半導體</td><td>2026-10-06</td><td class="num">13,217.82</td><td class="num">+45.08 (+0.34%)</td><td>盤中 13,021.82，不寫入日K</td></tr><tr><td>^TNX</td><td>美10年債殖利率</td><td>2026-10-06</td><td class="num">5.269</td><td class="num">-0.042 (-0.79%)</td><td>盤中 5.316，不寫入日K</td></tr></tbody>
-  </table>
-</section>
-<section id="u2-market-levels" class="panel">
-  <h2>台股大盤關卡</h2>
-  <div class="card"><div class="title">前波已核對高點</div><div class="px">49,968.92</div><p>10/06 日 K 高。10/07 高低點 Yahoo 尚未回補，不用盤中高充當壓力。</p></div>
-  <div class="card"><div class="title">10/07 收盤</div><div class="px">49,806.37</div><p>最後完成日 K。貼近 20 日高，指數本身不標觀察進場。</p></div>
-  <div class="card"><div class="title">SMA20 觀察支撐</div><div class="px">47,577.47</div><p>用含 10/07 收盤的 20 日均線。舊補丁 48,218 不再當現行關卡。</p></div>
-</section>
-<section id="watch" class="panel">
-  <h2>我的關注股</h2>
-  <article class="card" data-code="2330.TW" data-status="持有觀察">
-      <div class="title">台股｜AI晶片｜台積電</div>
-      <div class="sub">2330.TW ｜ 日K 2026-10-07</div>
-      <div class="px">2,585 <span class="chg">0 (+0.00%)</span></div>
-      
-      <div class="grid">
-        <div><span>SMA20／SMA60</span><b>2,472.5／2,411.5</b></div>
-        <div><span>乖離</span><b>+4.55%</b></div>
-        <div><span>狀態</span><b><span class="badge hold">持有觀察</span></b></div>
-        <div><span>進場區</span><b>2470.00-2442.50</b></div>
-        <div><span>失效價</span><b>2375.00</b></div>
-        <div><span>壓力</span><b>2510.00</b></div>
-      </div>
-    </article><article class="card" data-code="2454.TW" data-status="等待">
-      <div class="title">台股｜AI晶片｜聯發科</div>
-      <div class="sub">2454.TW ｜ 日K 2026-10-07</div>
-      <div class="px">4,835 <span class="chg">-85 (-1.73%)</span></div>
-      
-      <div class="grid">
-        <div><span>SMA20／SMA60</span><b>4,835.5／4,187</b></div>
-        <div><span>乖離</span><b>-0.01%</b></div>
-        <div><span>狀態</span><b><span class="badge wait">等待</span></b></div>
-        <div><span>進場區</span><b>4875.00-4731.50</b></div>
-        <div><span>失效價</span><b>4230.00</b></div>
-        <div><span>壓力</span><b>5480.00</b></div>
-      </div>
-    </article><article class="card" data-code="2308.TW" data-status="持有觀察">
-      <div class="title">台股｜AI電源｜台達電</div>
-      <div class="sub">2308.TW ｜ 日K 2026-10-07</div>
-      <div class="px">1,990 <span class="chg">-60 (-2.93%)</span></div>
-      
-      <div class="grid">
-        <div><span>SMA20／SMA60</span><b>1,823／1,782.08</b></div>
-        <div><span>乖離</span><b>+9.16%</b></div>
-        <div><span>狀態</span><b><span class="badge hold">持有觀察</span></b></div>
-        <div><span>進場區</span><b>1810.00-1784.75</b></div>
-        <div><span>失效價</span><b>1560.00</b></div>
-        <div><span>壓力</span><b>1965.00</b></div>
-      </div>
-    </article><article class="card" data-code="3324.TWO" data-status="觀察進場">
-      <div class="title">台股｜AI散熱｜双鴻</div>
-      <div class="sub">3324.TWO ｜ 日K 2026-10-07</div>
-      <div class="px">1,525 <span class="chg">-5 (-0.33%)</span></div>
-      
-      <div class="grid">
-        <div><span>SMA20／SMA60</span><b>1,476.75／1,179.12</b></div>
-        <div><span>乖離</span><b>+3.27%</b></div>
-        <div><span>狀態</span><b><span class="badge go">觀察進場</span></b></div>
-        <div><span>進場區</span><b>1480.00-1456.75</b></div>
-        <div><span>失效價</span><b>1240.00</b></div>
-        <div><span>壓力</span><b>1750.00</b></div>
-      </div>
-    </article><article class="card" data-code="3653.TW" data-status="持有觀察">
-      <div class="title">台股｜AI散熱｜健策</div>
-      <div class="sub">3653.TW ｜ 日K 2026-10-07</div>
-      <div class="px">6,805 <span class="chg">-275 (-3.88%)</span></div>
-      
-      <div class="grid">
-        <div><span>SMA20／SMA60</span><b>6,176.25／5,052</b></div>
-        <div><span>乖離</span><b>+10.18%</b></div>
-        <div><span>狀態</span><b><span class="badge hold">持有觀察</span></b></div>
-        <div><span>進場區</span><b>5930.00-5927.50</b></div>
-        <div><span>失效價</span><b>5210.00</b></div>
-        <div><span>壓力</span><b>7160.00</b></div>
-      </div>
-    </article><article class="card" data-code="3017.TW" data-status="觀察進場">
-      <div class="title">台股｜AI散熱｜奇鋐</div>
-      <div class="sub">3017.TW ｜ 日K 2026-10-07</div>
-      <div class="px">3,545 <span class="chg">-140 (-3.80%)</span></div>
-      
-      <div class="grid">
-        <div><span>SMA20／SMA60</span><b>3,407／2,987.58</b></div>
-        <div><span>乖離</span><b>+4.05%</b></div>
-        <div><span>狀態</span><b><span class="badge go">觀察進場</span></b></div>
-        <div><span>進場區</span><b>3285.00-3374.25</b></div>
-        <div><span>失效價</span><b>3100.00</b></div>
-        <div><span>壓力</span><b>3600.00</b></div>
-      </div>
-    </article><article class="card" data-code="3189.TW" data-status="減碼">
-      <div class="title">台股｜ABF｜景碩</div>
-      <div class="sub">3189.TW ｜ 日K 2026-10-07</div>
-      <div class="px">1,100 <span class="chg">+30 (+2.80%)</span></div>
-      
-      <div class="grid">
-        <div><span>SMA20／SMA60</span><b>908.25／831.7</b></div>
-        <div><span>乖離</span><b>+21.11%</b></div>
-        <div><span>狀態</span><b><span class="badge trim">減碼</span></b></div>
-        <div><span>進場區</span><b>881.00-855.20</b></div>
-        <div><span>失效價</span><b>766.00</b></div>
-        <div><span>壓力</span><b>1020.00</b></div>
-      </div>
-    </article><article class="card" data-code="3037.TW" data-status="減碼">
-      <div class="title">台股｜ABF｜欣興</div>
-      <div class="sub">3037.TW ｜ 日K 2026-10-07</div>
-      <div class="px">1,305 <span class="chg">-5 (-0.38%)</span></div>
-      
-      <div class="grid">
-        <div><span>SMA20／SMA60</span><b>1,100.3／1,002.65</b></div>
-        <div><span>乖離</span><b>+18.60%</b></div>
-        <div><span>狀態</span><b><span class="badge trim">減碼</span></b></div>
-        <div><span>進場區</span><b>1115.00-1025.40</b></div>
-        <div><span>失效價</span><b>873.00</b></div>
-        <div><span>壓力</span><b>1230.00</b></div>
-      </div>
-    </article><article class="card" data-code="8046.TW" data-status="減碼">
-      <div class="title">台股｜ABF｜南電</div>
-      <div class="sub">8046.TW ｜ 日K 2026-10-07</div>
-      <div class="px">1,480 <span class="chg">-25 (-1.66%)</span></div>
-      
-      <div class="grid">
-        <div><span>SMA20／SMA60</span><b>1,217／1,171.75</b></div>
-        <div><span>乖離</span><b>+21.61%</b></div>
-        <div><span>狀態</span><b><span class="badge trim">減碼</span></b></div>
-        <div><span>進場區</span><b>1150.00-1139.25</b></div>
-        <div><span>失效價</span><b>1010.00</b></div>
-        <div><span>壓力</span><b>1450.00</b></div>
-      </div>
-    </article><article class="card" data-code="6213.TW" data-status="減碼">
-      <div class="title">台股｜CCL｜聯茂</div>
-      <div class="sub">6213.TW ｜ 日K 2026-10-07</div>
-      <div class="px">796 <span class="chg">+9 (+1.14%)</span></div>
-      
-      <div class="grid">
-        <div><span>SMA20／SMA60</span><b>588.4／475.27</b></div>
-        <div><span>乖離</span><b>+35.28%</b></div>
-        <div><span>狀態</span><b><span class="badge trim">減碼</span></b></div>
-        <div><span>進場區</span><b>525.00-541.45</b></div>
-        <div><span>失效價</span><b>482.00</b></div>
-        <div><span>壓力</span><b>649.00</b></div>
-      </div>
-    </article><article class="card" data-code="2383.TW" data-status="持有觀察">
-      <div class="title">台股｜CCL｜台光電</div>
-      <div class="sub">2383.TW ｜ 日K 2026-10-07</div>
-      <div class="px">5,950 <span class="chg">-45 (-0.75%)</span></div>
-      
-      <div class="grid">
-        <div><span>SMA20／SMA60</span><b>5,203.5／5,254.83</b></div>
-        <div><span>乖離</span><b>+14.35%</b></div>
-        <div><span>狀態</span><b><span class="badge hold">持有觀察</span></b></div>
-        <div><span>進場區</span><b>4855.00-5144.25</b></div>
-        <div><span>失效價</span><b>4635.00</b></div>
-        <div><span>壓力</span><b>5670.00</b></div>
-      </div>
-    </article><article class="card" data-code="3481.TW" data-status="觀察進場">
-      <div class="title">台股｜面板／光電｜群創</div>
-      <div class="sub">3481.TW ｜ 日K 2026-10-07</div>
-      <div class="px">52.5 <span class="chg">+1.4 (+2.74%)</span></div>
-      
-      <div class="grid">
-        <div><span>SMA20／SMA60</span><b>50.07／49.37</b></div>
-        <div><span>乖離</span><b>+4.86%</b></div>
-        <div><span>狀態</span><b><span class="badge go">觀察進場</span></b></div>
-        <div><span>進場區</span><b>48.55-49.41</b></div>
-        <div><span>失效價</span><b>46.25</b></div>
-        <div><span>壓力</span><b>55.50</b></div>
-      </div>
-    </article><article class="card" data-code="6770.TW" data-status="等待">
-      <div class="title">台股｜晶圓代工＋記憶體｜力積電</div>
-      <div class="sub">6770.TW ｜ 日K 2026-10-07</div>
-      <div class="px">72.6 <span class="chg">-1.7 (-2.29%)</span></div>
-      
-      <div class="grid">
-        <div><span>SMA20／SMA60</span><b>72.63／68.89</b></div>
-        <div><span>乖離</span><b>-0.04%</b></div>
-        <div><span>狀態</span><b><span class="badge wait">等待</span></b></div>
-        <div><span>進場區</span><b>70.50-71.65</b></div>
-        <div><span>失效價</span><b>66.70</b></div>
-        <div><span>壓力</span><b>75.40</b></div>
-      </div>
-    </article><article class="card" data-code="2221.TWO" data-status="減碼">
-      <div class="title">台股｜半導體廠務｜大甲</div>
-      <div class="sub">2221.TWO ｜ 日K 2026-10-07</div>
-      <div class="px">189.5 <span class="chg">+3.5 (+1.88%)</span></div>
-      
-      <div class="grid">
-        <div><span>SMA20／SMA60</span><b>141.15／85.49</b></div>
-        <div><span>乖離</span><b>+34.25%</b></div>
-        <div><span>狀態</span><b><span class="badge trim">減碼</span></b></div>
-        <div><span>進場區</span><b>149.50-121.29</b></div>
-        <div><span>失效價</span><b>78.10</b></div>
-        <div><span>壓力</span><b>198.00</b></div>
-      </div>
-    </article><article class="card" data-code="TSM" data-status="持有觀察">
-      <div class="title">美股｜AI晶片｜TSMC ADR</div>
-      <div class="sub">TSM ｜ 日K 2026-10-06</div>
-      <div class="px">482.30 <span class="chg">-3.50 (-0.72%)</span></div>
-      <div class="live-note">盤中 473.60｜10/07 美股盤中，不當作收盤</div>
-      <div class="grid">
-        <div><span>SMA20／SMA60</span><b>446.13／425.41</b></div>
-        <div><span>乖離</span><b>+8.11%</b></div>
-        <div><span>狀態</span><b><span class="badge hold">持有觀察</span></b></div>
-        <div><span>進場區</span><b>443.11-438.33</b></div>
-        <div><span>失效價</span><b>407.82</b></div>
-        <div><span>壓力</span><b>461.87</b></div>
-      </div>
-    </article><article class="card" data-code="NVDA" data-status="持有觀察">
-      <div class="title">美股｜AI晶片｜NVIDIA</div>
-      <div class="sub">NVDA ｜ 日K 2026-10-06</div>
-      <div class="px">239.24 <span class="chg">+0.34 (+0.14%)</span></div>
-      <div class="live-note">盤中 237.09｜10/07 美股盤中，不當作收盤</div>
-      <div class="grid">
-        <div><span>SMA20／SMA60</span><b>224.89／217.63</b></div>
-        <div><span>乖離</span><b>+6.38%</b></div>
-        <div><span>狀態</span><b><span class="badge hold">持有觀察</span></b></div>
-        <div><span>進場區</span><b>223.13-223.51</b></div>
-        <div><span>失效價</span><b>208.93</b></div>
-        <div><span>壓力</span><b>234.76</b></div>
-      </div>
-    </article><article class="card" data-code="AMD" data-status="持有觀察">
-      <div class="title">美股｜AI晶片｜AMD</div>
-      <div class="sub">AMD ｜ 日K 2026-10-06</div>
-      <div class="px">649.42 <span class="chg">+17.67 (+2.80%)</span></div>
-      <div class="live-note">盤中 645.46｜10/07 美股盤中，不當作收盤</div>
-      <div class="grid">
-        <div><span>SMA20／SMA60</span><b>581.38／519.53</b></div>
-        <div><span>乖離</span><b>+11.70%</b></div>
-        <div><span>狀態</span><b><span class="badge hold">持有觀察</span></b></div>
-        <div><span>進場區</span><b>596.07-557.60</b></div>
-        <div><span>失效價</span><b>440.50</b></div>
-        <div><span>壓力</span><b>639.00</b></div>
-      </div>
-    </article><article class="card" data-code="AVGO" data-status="觀察進場">
-      <div class="title">美股｜AI晶片｜Broadcom</div>
-      <div class="sub">AVGO ｜ 日K 2026-10-06</div>
-      <div class="px">375.81 <span class="chg">+13.30 (+3.67%)</span></div>
-      <div class="live-note">盤中 373.61｜10/07 美股盤中，不當作收盤</div>
-      <div class="grid">
-        <div><span>SMA20／SMA60</span><b>354.70／374.70</b></div>
-        <div><span>乖離</span><b>+5.95%</b></div>
-        <div><span>狀態</span><b><span class="badge go">觀察進場</span></b></div>
-        <div><span>進場區</span><b>343.29-354.20</b></div>
-        <div><span>失效價</span><b>335.81</b></div>
-        <div><span>壓力</span><b>372.70</b></div>
-      </div>
-    </article><article class="card" data-code="MSFT" data-status="觀察進場">
-      <div class="title">美股｜AI雲端｜Microsoft</div>
-      <div class="sub">MSFT ｜ 日K 2026-10-06</div>
-      <div class="px">529.30 <span class="chg">+4.12 (+0.78%)</span></div>
-      <div class="live-note">盤中 527.69｜10/07 美股盤中，不當作收盤</div>
-      <div class="grid">
-        <div><span>SMA20／SMA60</span><b>504.71／476.47</b></div>
-        <div><span>乖離</span><b>+4.87%</b></div>
-        <div><span>狀態</span><b><span class="badge go">觀察進場</span></b></div>
-        <div><span>進場區</span><b>497.25-501.30</b></div>
-        <div><span>失效價</span><b>486.00</b></div>
-        <div><span>壓力</span><b>522.85</b></div>
-      </div>
-    </article><article class="card" data-code="META" data-status="觀察進場">
-      <div class="title">美股｜AI雲端｜Meta</div>
-      <div class="sub">META ｜ 日K 2026-10-06</div>
-      <div class="px">738.88 <span class="chg">-3.02 (-0.41%)</span></div>
-      <div class="live-note">盤中 724.86｜10/07 美股盤中，不當作收盤</div>
-      <div class="grid">
-        <div><span>SMA20／SMA60</span><b>708.44／631.81</b></div>
-        <div><span>乖離</span><b>+4.30%</b></div>
-        <div><span>狀態</span><b><span class="badge go">觀察進場</span></b></div>
-        <div><span>進場區</span><b>713.19-690.05</b></div>
-        <div><span>失效價</span><b>604.35</b></div>
-        <div><span>壓力</span><b>779.82</b></div>
-      </div>
-    </article><article class="card" data-code="MU" data-status="觀察進場">
-      <div class="title">美股｜AI記憶體｜Micron</div>
-      <div class="sub">MU ｜ 日K 2026-10-06</div>
-      <div class="px">1,045.56 <span class="chg">-18.40 (-1.73%)</span></div>
-      <div class="live-note">盤中 1,086.18｜10/07 美股盤中，不當作收盤</div>
-      <div class="grid">
-        <div><span>SMA20／SMA60</span><b>1,029.64／954.79</b></div>
-        <div><span>乖離</span><b>+1.55%</b></div>
-        <div><span>狀態</span><b><span class="badge go">觀察進場</span></b></div>
-        <div><span>進場區</span><b>1022.90-1019.16</b></div>
-        <div><span>失效價</span><b>902.60</b></div>
-        <div><span>壓力</span><b>1108.72</b></div>
-      </div>
-    </article><article class="card" data-code="TSLA" data-status="觀察進場">
-      <div class="title">美股｜AI自駕機器人｜Tesla</div>
-      <div class="sub">TSLA ｜ 日K 2026-10-06</div>
-      <div class="px">380.68 <span class="chg">+1.95 (+0.51%)</span></div>
-      <div class="live-note">盤中 376.05｜10/07 美股盤中，不當作收盤</div>
-      <div class="grid">
-        <div><span>SMA20／SMA60</span><b>366.72／352.39</b></div>
-        <div><span>乖離</span><b>+3.81%</b></div>
-        <div><span>狀態</span><b><span class="badge go">觀察進場</span></b></div>
-        <div><span>進場區</span><b>345.88-365.15</b></div>
-        <div><span>失效價</span><b>345.88</b></div>
-        <div><span>壓力</span><b>386.83</b></div>
-      </div>
-    </article><article class="card" data-code="SPCX" data-status="持有觀察">
-      <div class="title">美股｜航太科技｜SPCX · 持倉</div>
-      <div class="sub">SPCX ｜ 日K 2026-10-06</div>
-      <div class="px">171.92 <span class="chg">+0.83 (+0.49%)</span></div>
-      <div class="live-note">盤中 167.31｜10/07 美股盤中，不當作收盤</div>
-      <div class="grid">
-        <div><span>SMA20／SMA60</span><b>152.21／138.24</b></div>
-        <div><span>乖離</span><b>+12.95%</b></div>
-        <div><span>狀態</span><b><span class="badge hold">持有觀察</span></b></div>
-        <div><span>進場區</span><b>145.36-149.67</b></div>
-        <div><span>失效價</span><b>141.05</b></div>
-        <div><span>壓力</span><b>158.13</b></div>
-      </div>
-    </article><article class="card" data-code="2371.TW" data-status="觀察進場">
-      <div class="title">台股｜AI基建／電力｜大同</div>
-      <div class="sub">2371.TW ｜ 日K 2026-10-07</div>
-      <div class="px">30.6 <span class="chg">-0 (-0.00%)</span></div>
-      
-      <div class="grid">
-        <div><span>SMA20／SMA60</span><b>29.21／27.5</b></div>
-        <div><span>乖離</span><b>+4.78%</b></div>
-        <div><span>狀態</span><b><span class="badge go">觀察進場</span></b></div>
-        <div><span>進場區</span><b>29.90-30.45</b></div>
-        <div><span>失效價</span><b>N/A</b></div>
-        <div><span>壓力</span><b>30.90</b></div>
-      </div>
-    </article><article class="card" data-code="8210.TW" data-status="等待">
-      <div class="title">台股｜AI伺服器／機櫃｜勤誠</div>
-      <div class="sub">8210.TW ｜ 日K 2026-10-07</div>
-      <div class="px">872 <span class="chg">-13 (-1.47%)</span></div>
-      
-      <div class="grid">
-        <div><span>SMA20／SMA60</span><b>885.1／990.77</b></div>
-        <div><span>乖離</span><b>-1.48%</b></div>
-        <div><span>狀態</span><b><span class="badge wait">等待</span></b></div>
-        <div><span>進場區</span><b>826.00-842.00</b></div>
-        <div><span>失效價</span><b>N/A</b></div>
-        <div><span>壓力</span><b>858.00</b></div>
-      </div>
-    </article><article class="card" data-code="3406.TW" data-status="持有觀察">
-      <div class="title">台股｜光學／CPO｜玉晶光</div>
-      <div class="sub">3406.TW ｜ 日K 2026-10-07</div>
-      <div class="px">1,085 <span class="chg">+40 (+3.83%)</span></div>
-      
-      <div class="grid">
-        <div><span>SMA20／SMA60</span><b>980.5／760.21</b></div>
-        <div><span>乖離</span><b>+10.66%</b></div>
-        <div><span>狀態</span><b><span class="badge hold">持有觀察</span></b></div>
-        <div><span>進場區</span><b>917.00-947.00</b></div>
-        <div><span>失效價</span><b>N/A</b></div>
-        <div><span>壓力</span><b>970.00</b></div>
-      </div>
-    </article><article class="card" data-code="2408.TW" data-status="觀察進場">
-      <div class="title">台股｜記憶體｜南亞科</div>
-      <div class="sub">2408.TW ｜ 日K 2026-10-07</div>
-      <div class="px">514 <span class="chg">-11 (-2.10%)</span></div>
-      
-      <div class="grid">
-        <div><span>SMA20／SMA60</span><b>508.8／480.08</b></div>
-        <div><span>乖離</span><b>+1.02%</b></div>
-        <div><span>狀態</span><b><span class="badge go">觀察進場</span></b></div>
-        <div><span>進場區</span><b>N/A</b></div>
-        <div><span>失效價</span><b>N/A</b></div>
-        <div><span>壓力</span><b>N/A</b></div>
-      </div>
-    </article><article class="card" data-code="1303.TW" data-status="減碼">
-      <div class="title">台股｜CCL／電子材料｜南亞</div>
-      <div class="sub">1303.TW ｜ 日K 2026-10-07</div>
-      <div class="px">314 <span class="chg">+21 (+7.17%)</span></div>
-      
-      <div class="grid">
-        <div><span>SMA20／SMA60</span><b>247.47／212.82</b></div>
-        <div><span>乖離</span><b>+26.88%</b></div>
-        <div><span>狀態</span><b><span class="badge trim">減碼</span></b></div>
-        <div><span>進場區</span><b>N/A</b></div>
-        <div><span>失效價</span><b>N/A</b></div>
-        <div><span>壓力</span><b>N/A</b></div>
-      </div>
-    </article><article class="card" data-code="8358.TWO" data-status="持有觀察">
-      <div class="title">台股｜PCB／銅箔｜金居</div>
-      <div class="sub">8358.TWO ｜ 日K 2026-10-07</div>
-      <div class="px">549 <span class="chg">-2 (-0.36%)</span></div>
-      
-      <div class="grid">
-        <div><span>SMA20／SMA60</span><b>510.9／445.58</b></div>
-        <div><span>乖離</span><b>+7.46%</b></div>
-        <div><span>狀態</span><b><span class="badge hold">持有觀察</span></b></div>
-        <div><span>進場區</span><b>484.50-502.00</b></div>
-        <div><span>失效價</span><b>N/A</b></div>
-        <div><span>壓力</span><b>524.00</b></div>
-      </div>
-    </article><article class="card" data-code="4958.TW" data-status="減碼">
-      <div class="title">台股｜PCB／銅箔｜臻鼎-KY</div>
-      <div class="sub">4958.TW ｜ 日K 2026-10-07</div>
-      <div class="px">595 <span class="chg">+21 (+3.66%)</span></div>
-      
-      <div class="grid">
-        <div><span>SMA20／SMA60</span><b>506.75／490.22</b></div>
-        <div><span>乖離</span><b>+17.41%</b></div>
-        <div><span>狀態</span><b><span class="badge trim">減碼</span></b></div>
-        <div><span>進場區</span><b>N/A</b></div>
-        <div><span>失效價</span><b>N/A</b></div>
-        <div><span>壓力</span><b>N/A</b></div>
-      </div>
-    </article><article class="card" data-code="4919.TW" data-status="減碼">
-      <div class="title">台股｜電池監測IC｜新唐</div>
-      <div class="sub">4919.TW ｜ 日K 2026-10-07</div>
-      <div class="px">159.5 <span class="chg">+9 (+5.98%)</span></div>
-      
-      <div class="grid">
-        <div><span>SMA20／SMA60</span><b>131.55／128.45</b></div>
-        <div><span>乖離</span><b>+21.25%</b></div>
-        <div><span>狀態</span><b><span class="badge trim">減碼</span></b></div>
-        <div><span>進場區</span><b>N/A</b></div>
-        <div><span>失效價</span><b>N/A</b></div>
-        <div><span>壓力</span><b>N/A</b></div>
-      </div>
-    </article><article class="card" data-code="2327.TW" data-status="持有觀察">
-      <div class="title">台股｜被動元件｜國巨</div>
-      <div class="sub">2327.TW ｜ 日K 2026-10-07</div>
-      <div class="px">647 <span class="chg">+22 (+3.52%)</span></div>
-      
-      <div class="grid">
-        <div><span>SMA20／SMA60</span><b>572.4／589.17</b></div>
-        <div><span>乖離</span><b>+13.03%</b></div>
-        <div><span>狀態</span><b><span class="badge hold">持有觀察</span></b></div>
-        <div><span>進場區</span><b>602.00-560.60</b></div>
-        <div><span>失效價</span><b>548.00</b></div>
-        <div><span>壓力</span><b>647.00</b></div>
-      </div>
-    </article>
-</section>
-<section id="entry-pick" class="panel">
-  <h2>可進場選擇</h2>
-  <p class="note">與決策卡同一規則：收在 SMA20 之上、乖離 0%–6%、現價未貼近 20 日高。差一條不會出現在這裡。</p>
-  <article class="card" data-code="3324.TWO" data-status="觀察進場">
-      <div class="title">台股｜AI散熱｜双鴻</div>
-      <div class="sub">3324.TWO ｜ 日K 2026-10-07</div>
-      <div class="px">1,525 <span class="chg">-5 (-0.33%)</span></div>
-      
-      <div class="grid">
-        <div><span>SMA20／SMA60</span><b>1,476.75／1,179.12</b></div>
-        <div><span>乖離</span><b>+3.27%</b></div>
-        <div><span>狀態</span><b><span class="badge go">觀察進場</span></b></div>
-        <div><span>進場區</span><b>1480.00-1456.75</b></div>
-        <div><span>失效價</span><b>1240.00</b></div>
-        <div><span>壓力</span><b>1750.00</b></div>
-      </div>
-    </article><article class="card" data-code="3017.TW" data-status="觀察進場">
-      <div class="title">台股｜AI散熱｜奇鋐</div>
-      <div class="sub">3017.TW ｜ 日K 2026-10-07</div>
-      <div class="px">3,545 <span class="chg">-140 (-3.80%)</span></div>
-      
-      <div class="grid">
-        <div><span>SMA20／SMA60</span><b>3,407／2,987.58</b></div>
-        <div><span>乖離</span><b>+4.05%</b></div>
-        <div><span>狀態</span><b><span class="badge go">觀察進場</span></b></div>
-        <div><span>進場區</span><b>3285.00-3374.25</b></div>
-        <div><span>失效價</span><b>3100.00</b></div>
-        <div><span>壓力</span><b>3600.00</b></div>
-      </div>
-    </article><article class="card" data-code="3481.TW" data-status="觀察進場">
-      <div class="title">台股｜面板／光電｜群創</div>
-      <div class="sub">3481.TW ｜ 日K 2026-10-07</div>
-      <div class="px">52.5 <span class="chg">+1.4 (+2.74%)</span></div>
-      
-      <div class="grid">
-        <div><span>SMA20／SMA60</span><b>50.07／49.37</b></div>
-        <div><span>乖離</span><b>+4.86%</b></div>
-        <div><span>狀態</span><b><span class="badge go">觀察進場</span></b></div>
-        <div><span>進場區</span><b>48.55-49.41</b></div>
-        <div><span>失效價</span><b>46.25</b></div>
-        <div><span>壓力</span><b>55.50</b></div>
-      </div>
-    </article><article class="card" data-code="AVGO" data-status="觀察進場">
-      <div class="title">美股｜AI晶片｜Broadcom</div>
-      <div class="sub">AVGO ｜ 日K 2026-10-06</div>
-      <div class="px">375.81 <span class="chg">+13.30 (+3.67%)</span></div>
-      <div class="live-note">盤中 373.61｜10/07 美股盤中，不當作收盤</div>
-      <div class="grid">
-        <div><span>SMA20／SMA60</span><b>354.70／374.70</b></div>
-        <div><span>乖離</span><b>+5.95%</b></div>
-        <div><span>狀態</span><b><span class="badge go">觀察進場</span></b></div>
-        <div><span>進場區</span><b>343.29-354.20</b></div>
-        <div><span>失效價</span><b>335.81</b></div>
-        <div><span>壓力</span><b>372.70</b></div>
-      </div>
-    </article><article class="card" data-code="MSFT" data-status="觀察進場">
-      <div class="title">美股｜AI雲端｜Microsoft</div>
-      <div class="sub">MSFT ｜ 日K 2026-10-06</div>
-      <div class="px">529.30 <span class="chg">+4.12 (+0.78%)</span></div>
-      <div class="live-note">盤中 527.69｜10/07 美股盤中，不當作收盤</div>
-      <div class="grid">
-        <div><span>SMA20／SMA60</span><b>504.71／476.47</b></div>
-        <div><span>乖離</span><b>+4.87%</b></div>
-        <div><span>狀態</span><b><span class="badge go">觀察進場</span></b></div>
-        <div><span>進場區</span><b>497.25-501.30</b></div>
-        <div><span>失效價</span><b>486.00</b></div>
-        <div><span>壓力</span><b>522.85</b></div>
-      </div>
-    </article><article class="card" data-code="META" data-status="觀察進場">
-      <div class="title">美股｜AI雲端｜Meta</div>
-      <div class="sub">META ｜ 日K 2026-10-06</div>
-      <div class="px">738.88 <span class="chg">-3.02 (-0.41%)</span></div>
-      <div class="live-note">盤中 724.86｜10/07 美股盤中，不當作收盤</div>
-      <div class="grid">
-        <div><span>SMA20／SMA60</span><b>708.44／631.81</b></div>
-        <div><span>乖離</span><b>+4.30%</b></div>
-        <div><span>狀態</span><b><span class="badge go">觀察進場</span></b></div>
-        <div><span>進場區</span><b>713.19-690.05</b></div>
-        <div><span>失效價</span><b>604.35</b></div>
-        <div><span>壓力</span><b>779.82</b></div>
-      </div>
-    </article><article class="card" data-code="MU" data-status="觀察進場">
-      <div class="title">美股｜AI記憶體｜Micron</div>
-      <div class="sub">MU ｜ 日K 2026-10-06</div>
-      <div class="px">1,045.56 <span class="chg">-18.40 (-1.73%)</span></div>
-      <div class="live-note">盤中 1,086.18｜10/07 美股盤中，不當作收盤</div>
-      <div class="grid">
-        <div><span>SMA20／SMA60</span><b>1,029.64／954.79</b></div>
-        <div><span>乖離</span><b>+1.55%</b></div>
-        <div><span>狀態</span><b><span class="badge go">觀察進場</span></b></div>
-        <div><span>進場區</span><b>1022.90-1019.16</b></div>
-        <div><span>失效價</span><b>902.60</b></div>
-        <div><span>壓力</span><b>1108.72</b></div>
-      </div>
-    </article><article class="card" data-code="TSLA" data-status="觀察進場">
-      <div class="title">美股｜AI自駕機器人｜Tesla</div>
-      <div class="sub">TSLA ｜ 日K 2026-10-06</div>
-      <div class="px">380.68 <span class="chg">+1.95 (+0.51%)</span></div>
-      <div class="live-note">盤中 376.05｜10/07 美股盤中，不當作收盤</div>
-      <div class="grid">
-        <div><span>SMA20／SMA60</span><b>366.72／352.39</b></div>
-        <div><span>乖離</span><b>+3.81%</b></div>
-        <div><span>狀態</span><b><span class="badge go">觀察進場</span></b></div>
-        <div><span>進場區</span><b>345.88-365.15</b></div>
-        <div><span>失效價</span><b>345.88</b></div>
-        <div><span>壓力</span><b>386.83</b></div>
-      </div>
-    </article><article class="card" data-code="2371.TW" data-status="觀察進場">
-      <div class="title">台股｜AI基建／電力｜大同</div>
-      <div class="sub">2371.TW ｜ 日K 2026-10-07</div>
-      <div class="px">30.6 <span class="chg">-0 (-0.00%)</span></div>
-      
-      <div class="grid">
-        <div><span>SMA20／SMA60</span><b>29.21／27.5</b></div>
-        <div><span>乖離</span><b>+4.78%</b></div>
-        <div><span>狀態</span><b><span class="badge go">觀察進場</span></b></div>
-        <div><span>進場區</span><b>29.90-30.45</b></div>
-        <div><span>失效價</span><b>N/A</b></div>
-        <div><span>壓力</span><b>30.90</b></div>
-      </div>
-    </article><article class="card" data-code="2408.TW" data-status="觀察進場">
-      <div class="title">台股｜記憶體｜南亞科</div>
-      <div class="sub">2408.TW ｜ 日K 2026-10-07</div>
-      <div class="px">514 <span class="chg">-11 (-2.10%)</span></div>
-      
-      <div class="grid">
-        <div><span>SMA20／SMA60</span><b>508.8／480.08</b></div>
-        <div><span>乖離</span><b>+1.02%</b></div>
-        <div><span>狀態</span><b><span class="badge go">觀察進場</span></b></div>
-        <div><span>進場區</span><b>N/A</b></div>
-        <div><span>失效價</span><b>N/A</b></div>
-        <div><span>壓力</span><b>N/A</b></div>
-      </div>
-    </article>
-</section>
-<section id="decision" class="panel">
-  <h2>交易決策卡</h2>
-  <p class="note">標題：市場｜次族群｜名稱。進場區、失效價、壓力沿用既有價位。狀態只用最後完成日 K。</p>
-  <article class="card" data-code="2330.TW" data-status="持有觀察">
-      <div class="title">台股｜AI晶片｜台積電</div>
-      <div class="sub">2330.TW ｜ 日K 2026-10-07</div>
-      <div class="px">2,585 <span class="chg">0 (+0.00%)</span></div>
-      
-      <div class="grid">
-        <div><span>SMA20／SMA60</span><b>2,472.5／2,411.5</b></div>
-        <div><span>乖離</span><b>+4.55%</b></div>
-        <div><span>狀態</span><b><span class="badge hold">持有觀察</span></b></div>
-        <div><span>進場區</span><b>2470.00-2442.50</b></div>
-        <div><span>失效價</span><b>2375.00</b></div>
-        <div><span>壓力</span><b>2510.00</b></div>
-      </div>
-    </article><article class="card" data-code="2454.TW" data-status="等待">
-      <div class="title">台股｜AI晶片｜聯發科</div>
-      <div class="sub">2454.TW ｜ 日K 2026-10-07</div>
-      <div class="px">4,835 <span class="chg">-85 (-1.73%)</span></div>
-      
-      <div class="grid">
-        <div><span>SMA20／SMA60</span><b>4,835.5／4,187</b></div>
-        <div><span>乖離</span><b>-0.01%</b></div>
-        <div><span>狀態</span><b><span class="badge wait">等待</span></b></div>
-        <div><span>進場區</span><b>4875.00-4731.50</b></div>
-        <div><span>失效價</span><b>4230.00</b></div>
-        <div><span>壓力</span><b>5480.00</b></div>
-      </div>
-    </article><article class="card" data-code="2308.TW" data-status="持有觀察">
-      <div class="title">台股｜AI電源｜台達電</div>
-      <div class="sub">2308.TW ｜ 日K 2026-10-07</div>
-      <div class="px">1,990 <span class="chg">-60 (-2.93%)</span></div>
-      
-      <div class="grid">
-        <div><span>SMA20／SMA60</span><b>1,823／1,782.08</b></div>
-        <div><span>乖離</span><b>+9.16%</b></div>
-        <div><span>狀態</span><b><span class="badge hold">持有觀察</span></b></div>
-        <div><span>進場區</span><b>1810.00-1784.75</b></div>
-        <div><span>失效價</span><b>1560.00</b></div>
-        <div><span>壓力</span><b>1965.00</b></div>
-      </div>
-    </article><article class="card" data-code="3324.TWO" data-status="觀察進場">
-      <div class="title">台股｜AI散熱｜双鴻</div>
-      <div class="sub">3324.TWO ｜ 日K 2026-10-07</div>
-      <div class="px">1,525 <span class="chg">-5 (-0.33%)</span></div>
-      
-      <div class="grid">
-        <div><span>SMA20／SMA60</span><b>1,476.75／1,179.12</b></div>
-        <div><span>乖離</span><b>+3.27%</b></div>
-        <div><span>狀態</span><b><span class="badge go">觀察進場</span></b></div>
-        <div><span>進場區</span><b>1480.00-1456.75</b></div>
-        <div><span>失效價</span><b>1240.00</b></div>
-        <div><span>壓力</span><b>1750.00</b></div>
-      </div>
-    </article><article class="card" data-code="3653.TW" data-status="持有觀察">
-      <div class="title">台股｜AI散熱｜健策</div>
-      <div class="sub">3653.TW ｜ 日K 2026-10-07</div>
-      <div class="px">6,805 <span class="chg">-275 (-3.88%)</span></div>
-      
-      <div class="grid">
-        <div><span>SMA20／SMA60</span><b>6,176.25／5,052</b></div>
-        <div><span>乖離</span><b>+10.18%</b></div>
-        <div><span>狀態</span><b><span class="badge hold">持有觀察</span></b></div>
-        <div><span>進場區</span><b>5930.00-5927.50</b></div>
-        <div><span>失效價</span><b>5210.00</b></div>
-        <div><span>壓力</span><b>7160.00</b></div>
-      </div>
-    </article><article class="card" data-code="3017.TW" data-status="觀察進場">
-      <div class="title">台股｜AI散熱｜奇鋐</div>
-      <div class="sub">3017.TW ｜ 日K 2026-10-07</div>
-      <div class="px">3,545 <span class="chg">-140 (-3.80%)</span></div>
-      
-      <div class="grid">
-        <div><span>SMA20／SMA60</span><b>3,407／2,987.58</b></div>
-        <div><span>乖離</span><b>+4.05%</b></div>
-        <div><span>狀態</span><b><span class="badge go">觀察進場</span></b></div>
-        <div><span>進場區</span><b>3285.00-3374.25</b></div>
-        <div><span>失效價</span><b>3100.00</b></div>
-        <div><span>壓力</span><b>3600.00</b></div>
-      </div>
-    </article><article class="card" data-code="3189.TW" data-status="減碼">
-      <div class="title">台股｜ABF｜景碩</div>
-      <div class="sub">3189.TW ｜ 日K 2026-10-07</div>
-      <div class="px">1,100 <span class="chg">+30 (+2.80%)</span></div>
-      
-      <div class="grid">
-        <div><span>SMA20／SMA60</span><b>908.25／831.7</b></div>
-        <div><span>乖離</span><b>+21.11%</b></div>
-        <div><span>狀態</span><b><span class="badge trim">減碼</span></b></div>
-        <div><span>進場區</span><b>881.00-855.20</b></div>
-        <div><span>失效價</span><b>766.00</b></div>
-        <div><span>壓力</span><b>1020.00</b></div>
-      </div>
-    </article><article class="card" data-code="3037.TW" data-status="減碼">
-      <div class="title">台股｜ABF｜欣興</div>
-      <div class="sub">3037.TW ｜ 日K 2026-10-07</div>
-      <div class="px">1,305 <span class="chg">-5 (-0.38%)</span></div>
-      
-      <div class="grid">
-        <div><span>SMA20／SMA60</span><b>1,100.3／1,002.65</b></div>
-        <div><span>乖離</span><b>+18.60%</b></div>
-        <div><span>狀態</span><b><span class="badge trim">減碼</span></b></div>
-        <div><span>進場區</span><b>1115.00-1025.40</b></div>
-        <div><span>失效價</span><b>873.00</b></div>
-        <div><span>壓力</span><b>1230.00</b></div>
-      </div>
-    </article><article class="card" data-code="8046.TW" data-status="減碼">
-      <div class="title">台股｜ABF｜南電</div>
-      <div class="sub">8046.TW ｜ 日K 2026-10-07</div>
-      <div class="px">1,480 <span class="chg">-25 (-1.66%)</span></div>
-      
-      <div class="grid">
-        <div><span>SMA20／SMA60</span><b>1,217／1,171.75</b></div>
-        <div><span>乖離</span><b>+21.61%</b></div>
-        <div><span>狀態</span><b><span class="badge trim">減碼</span></b></div>
-        <div><span>進場區</span><b>1150.00-1139.25</b></div>
-        <div><span>失效價</span><b>1010.00</b></div>
-        <div><span>壓力</span><b>1450.00</b></div>
-      </div>
-    </article><article class="card" data-code="6213.TW" data-status="減碼">
-      <div class="title">台股｜CCL｜聯茂</div>
-      <div class="sub">6213.TW ｜ 日K 2026-10-07</div>
-      <div class="px">796 <span class="chg">+9 (+1.14%)</span></div>
-      
-      <div class="grid">
-        <div><span>SMA20／SMA60</span><b>588.4／475.27</b></div>
-        <div><span>乖離</span><b>+35.28%</b></div>
-        <div><span>狀態</span><b><span class="badge trim">減碼</span></b></div>
-        <div><span>進場區</span><b>525.00-541.45</b></div>
-        <div><span>失效價</span><b>482.00</b></div>
-        <div><span>壓力</span><b>649.00</b></div>
-      </div>
-    </article><article class="card" data-code="2383.TW" data-status="持有觀察">
-      <div class="title">台股｜CCL｜台光電</div>
-      <div class="sub">2383.TW ｜ 日K 2026-10-07</div>
-      <div class="px">5,950 <span class="chg">-45 (-0.75%)</span></div>
-      
-      <div class="grid">
-        <div><span>SMA20／SMA60</span><b>5,203.5／5,254.83</b></div>
-        <div><span>乖離</span><b>+14.35%</b></div>
-        <div><span>狀態</span><b><span class="badge hold">持有觀察</span></b></div>
-        <div><span>進場區</span><b>4855.00-5144.25</b></div>
-        <div><span>失效價</span><b>4635.00</b></div>
-        <div><span>壓力</span><b>5670.00</b></div>
-      </div>
-    </article><article class="card" data-code="3481.TW" data-status="觀察進場">
-      <div class="title">台股｜面板／光電｜群創</div>
-      <div class="sub">3481.TW ｜ 日K 2026-10-07</div>
-      <div class="px">52.5 <span class="chg">+1.4 (+2.74%)</span></div>
-      
-      <div class="grid">
-        <div><span>SMA20／SMA60</span><b>50.07／49.37</b></div>
-        <div><span>乖離</span><b>+4.86%</b></div>
-        <div><span>狀態</span><b><span class="badge go">觀察進場</span></b></div>
-        <div><span>進場區</span><b>48.55-49.41</b></div>
-        <div><span>失效價</span><b>46.25</b></div>
-        <div><span>壓力</span><b>55.50</b></div>
-      </div>
-    </article><article class="card" data-code="6770.TW" data-status="等待">
-      <div class="title">台股｜晶圓代工＋記憶體｜力積電</div>
-      <div class="sub">6770.TW ｜ 日K 2026-10-07</div>
-      <div class="px">72.6 <span class="chg">-1.7 (-2.29%)</span></div>
-      
-      <div class="grid">
-        <div><span>SMA20／SMA60</span><b>72.63／68.89</b></div>
-        <div><span>乖離</span><b>-0.04%</b></div>
-        <div><span>狀態</span><b><span class="badge wait">等待</span></b></div>
-        <div><span>進場區</span><b>70.50-71.65</b></div>
-        <div><span>失效價</span><b>66.70</b></div>
-        <div><span>壓力</span><b>75.40</b></div>
-      </div>
-    </article><article class="card" data-code="2221.TWO" data-status="減碼">
-      <div class="title">台股｜半導體廠務｜大甲</div>
-      <div class="sub">2221.TWO ｜ 日K 2026-10-07</div>
-      <div class="px">189.5 <span class="chg">+3.5 (+1.88%)</span></div>
-      
-      <div class="grid">
-        <div><span>SMA20／SMA60</span><b>141.15／85.49</b></div>
-        <div><span>乖離</span><b>+34.25%</b></div>
-        <div><span>狀態</span><b><span class="badge trim">減碼</span></b></div>
-        <div><span>進場區</span><b>149.50-121.29</b></div>
-        <div><span>失效價</span><b>78.10</b></div>
-        <div><span>壓力</span><b>198.00</b></div>
-      </div>
-    </article><article class="card" data-code="TSM" data-status="持有觀察">
-      <div class="title">美股｜AI晶片｜TSMC ADR</div>
-      <div class="sub">TSM ｜ 日K 2026-10-06</div>
-      <div class="px">482.30 <span class="chg">-3.50 (-0.72%)</span></div>
-      <div class="live-note">盤中 473.60｜10/07 美股盤中，不當作收盤</div>
-      <div class="grid">
-        <div><span>SMA20／SMA60</span><b>446.13／425.41</b></div>
-        <div><span>乖離</span><b>+8.11%</b></div>
-        <div><span>狀態</span><b><span class="badge hold">持有觀察</span></b></div>
-        <div><span>進場區</span><b>443.11-438.33</b></div>
-        <div><span>失效價</span><b>407.82</b></div>
-        <div><span>壓力</span><b>461.87</b></div>
-      </div>
-    </article><article class="card" data-code="NVDA" data-status="持有觀察">
-      <div class="title">美股｜AI晶片｜NVIDIA</div>
-      <div class="sub">NVDA ｜ 日K 2026-10-06</div>
-      <div class="px">239.24 <span class="chg">+0.34 (+0.14%)</span></div>
-      <div class="live-note">盤中 237.09｜10/07 美股盤中，不當作收盤</div>
-      <div class="grid">
-        <div><span>SMA20／SMA60</span><b>224.89／217.63</b></div>
-        <div><span>乖離</span><b>+6.38%</b></div>
-        <div><span>狀態</span><b><span class="badge hold">持有觀察</span></b></div>
-        <div><span>進場區</span><b>223.13-223.51</b></div>
-        <div><span>失效價</span><b>208.93</b></div>
-        <div><span>壓力</span><b>234.76</b></div>
-      </div>
-    </article><article class="card" data-code="AMD" data-status="持有觀察">
-      <div class="title">美股｜AI晶片｜AMD</div>
-      <div class="sub">AMD ｜ 日K 2026-10-06</div>
-      <div class="px">649.42 <span class="chg">+17.67 (+2.80%)</span></div>
-      <div class="live-note">盤中 645.46｜10/07 美股盤中，不當作收盤</div>
-      <div class="grid">
-        <div><span>SMA20／SMA60</span><b>581.38／519.53</b></div>
-        <div><span>乖離</span><b>+11.70%</b></div>
-        <div><span>狀態</span><b><span class="badge hold">持有觀察</span></b></div>
-        <div><span>進場區</span><b>596.07-557.60</b></div>
-        <div><span>失效價</span><b>440.50</b></div>
-        <div><span>壓力</span><b>639.00</b></div>
-      </div>
-    </article><article class="card" data-code="AVGO" data-status="觀察進場">
-      <div class="title">美股｜AI晶片｜Broadcom</div>
-      <div class="sub">AVGO ｜ 日K 2026-10-06</div>
-      <div class="px">375.81 <span class="chg">+13.30 (+3.67%)</span></div>
-      <div class="live-note">盤中 373.61｜10/07 美股盤中，不當作收盤</div>
-      <div class="grid">
-        <div><span>SMA20／SMA60</span><b>354.70／374.70</b></div>
-        <div><span>乖離</span><b>+5.95%</b></div>
-        <div><span>狀態</span><b><span class="badge go">觀察進場</span></b></div>
-        <div><span>進場區</span><b>343.29-354.20</b></div>
-        <div><span>失效價</span><b>335.81</b></div>
-        <div><span>壓力</span><b>372.70</b></div>
-      </div>
-    </article><article class="card" data-code="MSFT" data-status="觀察進場">
-      <div class="title">美股｜AI雲端｜Microsoft</div>
-      <div class="sub">MSFT ｜ 日K 2026-10-06</div>
-      <div class="px">529.30 <span class="chg">+4.12 (+0.78%)</span></div>
-      <div class="live-note">盤中 527.69｜10/07 美股盤中，不當作收盤</div>
-      <div class="grid">
-        <div><span>SMA20／SMA60</span><b>504.71／476.47</b></div>
-        <div><span>乖離</span><b>+4.87%</b></div>
-        <div><span>狀態</span><b><span class="badge go">觀察進場</span></b></div>
-        <div><span>進場區</span><b>497.25-501.30</b></div>
-        <div><span>失效價</span><b>486.00</b></div>
-        <div><span>壓力</span><b>522.85</b></div>
-      </div>
-    </article><article class="card" data-code="META" data-status="觀察進場">
-      <div class="title">美股｜AI雲端｜Meta</div>
-      <div class="sub">META ｜ 日K 2026-10-06</div>
-      <div class="px">738.88 <span class="chg">-3.02 (-0.41%)</span></div>
-      <div class="live-note">盤中 724.86｜10/07 美股盤中，不當作收盤</div>
-      <div class="grid">
-        <div><span>SMA20／SMA60</span><b>708.44／631.81</b></div>
-        <div><span>乖離</span><b>+4.30%</b></div>
-        <div><span>狀態</span><b><span class="badge go">觀察進場</span></b></div>
-        <div><span>進場區</span><b>713.19-690.05</b></div>
-        <div><span>失效價</span><b>604.35</b></div>
-        <div><span>壓力</span><b>779.82</b></div>
-      </div>
-    </article><article class="card" data-code="MU" data-status="觀察進場">
-      <div class="title">美股｜AI記憶體｜Micron</div>
-      <div class="sub">MU ｜ 日K 2026-10-06</div>
-      <div class="px">1,045.56 <span class="chg">-18.40 (-1.73%)</span></div>
-      <div class="live-note">盤中 1,086.18｜10/07 美股盤中，不當作收盤</div>
-      <div class="grid">
-        <div><span>SMA20／SMA60</span><b>1,029.64／954.79</b></div>
-        <div><span>乖離</span><b>+1.55%</b></div>
-        <div><span>狀態</span><b><span class="badge go">觀察進場</span></b></div>
-        <div><span>進場區</span><b>1022.90-1019.16</b></div>
-        <div><span>失效價</span><b>902.60</b></div>
-        <div><span>壓力</span><b>1108.72</b></div>
-      </div>
-    </article><article class="card" data-code="TSLA" data-status="觀察進場">
-      <div class="title">美股｜AI自駕機器人｜Tesla</div>
-      <div class="sub">TSLA ｜ 日K 2026-10-06</div>
-      <div class="px">380.68 <span class="chg">+1.95 (+0.51%)</span></div>
-      <div class="live-note">盤中 376.05｜10/07 美股盤中，不當作收盤</div>
-      <div class="grid">
-        <div><span>SMA20／SMA60</span><b>366.72／352.39</b></div>
-        <div><span>乖離</span><b>+3.81%</b></div>
-        <div><span>狀態</span><b><span class="badge go">觀察進場</span></b></div>
-        <div><span>進場區</span><b>345.88-365.15</b></div>
-        <div><span>失效價</span><b>345.88</b></div>
-        <div><span>壓力</span><b>386.83</b></div>
-      </div>
-    </article><article class="card" data-code="SPCX" data-status="持有觀察">
-      <div class="title">美股｜航太科技｜SPCX</div>
-      <div class="sub">SPCX ｜ 日K 2026-10-06</div>
-      <div class="px">171.92 <span class="chg">+0.83 (+0.49%)</span></div>
-      <div class="live-note">盤中 167.31｜10/07 美股盤中，不當作收盤</div>
-      <div class="grid">
-        <div><span>SMA20／SMA60</span><b>152.21／138.24</b></div>
-        <div><span>乖離</span><b>+12.95%</b></div>
-        <div><span>狀態</span><b><span class="badge hold">持有觀察</span></b></div>
-        <div><span>進場區</span><b>145.36-149.67</b></div>
-        <div><span>失效價</span><b>141.05</b></div>
-        <div><span>壓力</span><b>158.13</b></div>
-      </div>
-    </article><article class="card" data-code="2371.TW" data-status="觀察進場">
-      <div class="title">台股｜AI基建／電力｜大同</div>
-      <div class="sub">2371.TW ｜ 日K 2026-10-07</div>
-      <div class="px">30.6 <span class="chg">-0 (-0.00%)</span></div>
-      
-      <div class="grid">
-        <div><span>SMA20／SMA60</span><b>29.21／27.5</b></div>
-        <div><span>乖離</span><b>+4.78%</b></div>
-        <div><span>狀態</span><b><span class="badge go">觀察進場</span></b></div>
-        <div><span>進場區</span><b>29.90-30.45</b></div>
-        <div><span>失效價</span><b>N/A</b></div>
-        <div><span>壓力</span><b>30.90</b></div>
-      </div>
-    </article><article class="card" data-code="8210.TW" data-status="等待">
-      <div class="title">台股｜AI伺服器／機櫃｜勤誠</div>
-      <div class="sub">8210.TW ｜ 日K 2026-10-07</div>
-      <div class="px">872 <span class="chg">-13 (-1.47%)</span></div>
-      
-      <div class="grid">
-        <div><span>SMA20／SMA60</span><b>885.1／990.77</b></div>
-        <div><span>乖離</span><b>-1.48%</b></div>
-        <div><span>狀態</span><b><span class="badge wait">等待</span></b></div>
-        <div><span>進場區</span><b>826.00-842.00</b></div>
-        <div><span>失效價</span><b>N/A</b></div>
-        <div><span>壓力</span><b>858.00</b></div>
-      </div>
-    </article><article class="card" data-code="3406.TW" data-status="持有觀察">
-      <div class="title">台股｜光學／CPO｜玉晶光</div>
-      <div class="sub">3406.TW ｜ 日K 2026-10-07</div>
-      <div class="px">1,085 <span class="chg">+40 (+3.83%)</span></div>
-      
-      <div class="grid">
-        <div><span>SMA20／SMA60</span><b>980.5／760.21</b></div>
-        <div><span>乖離</span><b>+10.66%</b></div>
-        <div><span>狀態</span><b><span class="badge hold">持有觀察</span></b></div>
-        <div><span>進場區</span><b>917.00-947.00</b></div>
-        <div><span>失效價</span><b>N/A</b></div>
-        <div><span>壓力</span><b>970.00</b></div>
-      </div>
-    </article><article class="card" data-code="2408.TW" data-status="觀察進場">
-      <div class="title">台股｜記憶體｜南亞科</div>
-      <div class="sub">2408.TW ｜ 日K 2026-10-07</div>
-      <div class="px">514 <span class="chg">-11 (-2.10%)</span></div>
-      
-      <div class="grid">
-        <div><span>SMA20／SMA60</span><b>508.8／480.08</b></div>
-        <div><span>乖離</span><b>+1.02%</b></div>
-        <div><span>狀態</span><b><span class="badge go">觀察進場</span></b></div>
-        <div><span>進場區</span><b>N/A</b></div>
-        <div><span>失效價</span><b>N/A</b></div>
-        <div><span>壓力</span><b>N/A</b></div>
-      </div>
-    </article><article class="card" data-code="1303.TW" data-status="減碼">
-      <div class="title">台股｜CCL／電子材料｜南亞</div>
-      <div class="sub">1303.TW ｜ 日K 2026-10-07</div>
-      <div class="px">314 <span class="chg">+21 (+7.17%)</span></div>
-      
-      <div class="grid">
-        <div><span>SMA20／SMA60</span><b>247.47／212.82</b></div>
-        <div><span>乖離</span><b>+26.88%</b></div>
-        <div><span>狀態</span><b><span class="badge trim">減碼</span></b></div>
-        <div><span>進場區</span><b>N/A</b></div>
-        <div><span>失效價</span><b>N/A</b></div>
-        <div><span>壓力</span><b>N/A</b></div>
-      </div>
-    </article><article class="card" data-code="8358.TWO" data-status="持有觀察">
-      <div class="title">台股｜PCB／銅箔｜金居</div>
-      <div class="sub">8358.TWO ｜ 日K 2026-10-07</div>
-      <div class="px">549 <span class="chg">-2 (-0.36%)</span></div>
-      
-      <div class="grid">
-        <div><span>SMA20／SMA60</span><b>510.9／445.58</b></div>
-        <div><span>乖離</span><b>+7.46%</b></div>
-        <div><span>狀態</span><b><span class="badge hold">持有觀察</span></b></div>
-        <div><span>進場區</span><b>484.50-502.00</b></div>
-        <div><span>失效價</span><b>N/A</b></div>
-        <div><span>壓力</span><b>524.00</b></div>
-      </div>
-    </article><article class="card" data-code="4958.TW" data-status="減碼">
-      <div class="title">台股｜PCB／銅箔｜臻鼎-KY</div>
-      <div class="sub">4958.TW ｜ 日K 2026-10-07</div>
-      <div class="px">595 <span class="chg">+21 (+3.66%)</span></div>
-      
-      <div class="grid">
-        <div><span>SMA20／SMA60</span><b>506.75／490.22</b></div>
-        <div><span>乖離</span><b>+17.41%</b></div>
-        <div><span>狀態</span><b><span class="badge trim">減碼</span></b></div>
-        <div><span>進場區</span><b>N/A</b></div>
-        <div><span>失效價</span><b>N/A</b></div>
-        <div><span>壓力</span><b>N/A</b></div>
-      </div>
-    </article><article class="card" data-code="4919.TW" data-status="減碼">
-      <div class="title">台股｜電池監測IC｜新唐</div>
-      <div class="sub">4919.TW ｜ 日K 2026-10-07</div>
-      <div class="px">159.5 <span class="chg">+9 (+5.98%)</span></div>
-      
-      <div class="grid">
-        <div><span>SMA20／SMA60</span><b>131.55／128.45</b></div>
-        <div><span>乖離</span><b>+21.25%</b></div>
-        <div><span>狀態</span><b><span class="badge trim">減碼</span></b></div>
-        <div><span>進場區</span><b>N/A</b></div>
-        <div><span>失效價</span><b>N/A</b></div>
-        <div><span>壓力</span><b>N/A</b></div>
-      </div>
-    </article><article class="card" data-code="2327.TW" data-status="持有觀察">
-      <div class="title">台股｜被動元件｜國巨</div>
-      <div class="sub">2327.TW ｜ 日K 2026-10-07</div>
-      <div class="px">647 <span class="chg">+22 (+3.52%)</span></div>
-      
-      <div class="grid">
-        <div><span>SMA20／SMA60</span><b>572.4／589.17</b></div>
-        <div><span>乖離</span><b>+13.03%</b></div>
-        <div><span>狀態</span><b><span class="badge hold">持有觀察</span></b></div>
-        <div><span>進場區</span><b>602.00-560.60</b></div>
-        <div><span>失效價</span><b>548.00</b></div>
-        <div><span>壓力</span><b>647.00</b></div>
-      </div>
-    </article>
-</section>
-<section id="u2-position" class="panel">
-  <h2>我的持倉</h2>
-  <article class="card" data-code="2330.TW">
-    <div class="title">台股｜AI晶片｜台積電</div>
-    <div class="sub">2330.TW ｜ 10 股 ｜ 均價 2,572.10 ｜ 日K 2026-10-07</div>
-    <div class="px">2,585</div>
-    <p>市值 25,850｜損益 +129｜+0.50%。可下單股數沿用截圖 0。</p>
-  </article>
-  <article class="card" data-code="4958.TW">
-    <div class="title">台股｜PCB／銅箔｜臻鼎-KY</div>
-    <div class="sub">4958.TW ｜ 80 股 ｜ 均價 481.90 ｜ 日K 2026-10-07</div>
-    <div class="px">595</div>
-    <p>市值 47,600｜損益 +9,048｜+23.47%。乖離 +17.41%，狀態 減碼。</p>
-  </article>
-    <article class="card" data-code="SPCX">
-    <div class="title">美股｜航太科技｜SPCX · 持倉</div>
-    <div class="sub">代幣持倉 ｜ 34.488502296 股 ｜ 成本 152.12 USDC ｜ 截圖 2026-10-08 02:57</div>
-    <div class="px">167.541 <span class="chg">-2.54%</span></div>
-    <p>報價 167.541。市值 NT$184,004.06｜未實現 +531.80 USDC（+10.14%）。可賣 34.488502296。截圖報價不覆蓋 10/06 正式收盤。</p>
-  </article>
-  <p class="note">券商庫存試算：市值 73,450｜成本 64,273｜損益 +9,177（+14.28%）。SPCX 另列，不併進台股券商損益。</p>
-</section>
-<section id="u2-sync" class="panel">
-  <h2>族群同步</h2>
-  <p class="note">同一份 STOCK_META。上漲／下跌用各自最後完成日漲跌，不另抓即時報價。</p>
-  <div class="meta-row"><b>TW|AI晶片</b><span>台積電 +0.00%、聯發科 -1.73%</span></div><div class="meta-row"><b>TW|AI電源</b><span>台達電 -2.93%</span></div><div class="meta-row"><b>TW|AI散熱</b><span>双鴻 -0.33%、健策 -3.88%、奇鋐 -3.80%</span></div><div class="meta-row"><b>TW|ABF</b><span>景碩 +2.80%、欣興 -0.38%、南電 -1.66%</span></div><div class="meta-row"><b>TW|CCL</b><span>聯茂 +1.14%、台光電 -0.75%</span></div><div class="meta-row"><b>TW|面板／光電</b><span>群創 +2.74%</span></div><div class="meta-row"><b>TW|晶圓代工＋記憶體</b><span>力積電 -2.29%</span></div><div class="meta-row"><b>TW|半導體廠務</b><span>大甲 +1.88%</span></div><div class="meta-row"><b>US|AI晶片</b><span>TSMC ADR -0.72%、NVIDIA +0.14%、AMD +2.80%、Broadcom +3.67%</span></div><div class="meta-row"><b>US|AI雲端</b><span>Microsoft +0.78%、Meta -0.41%</span></div><div class="meta-row"><b>US|AI記憶體</b><span>Micron -1.73%</span></div><div class="meta-row"><b>US|AI自駕機器人</b><span>Tesla +0.51%</span></div><div class="meta-row"><b>US|航太科技</b><span>SPCX +0.49%</span></div><div class="meta-row"><b>TW|AI伺服器／機櫃</b><span>勤誠 -1.47%</span></div><div class="meta-row"><b>TW|AI基建／電力</b><span>大同 -0.00%</span></div><div class="meta-row"><b>TW|光學／CPO</b><span>玉晶光 +3.83%</span></div><div class="meta-row"><b>TW|記憶體</b><span>南亞科 -2.10%</span></div><div class="meta-row"><b>TW|CCL／電子材料</b><span>南亞 +7.17%</span></div><div class="meta-row"><b>TW|PCB／銅箔</b><span>金居 -0.36%、臻鼎-KY +3.66%</span></div><div class="meta-row"><b>TW|電池監測IC</b><span>新唐 +5.98%</span></div><div class="meta-row"><b>TW|被動元件</b><span>國巨 +3.52%</span></div>
-</section>
-<section id="guide" class="panel">
-  <h2>使用方法</h2>
-  <ol>
-    <li>先看日期：台股卡是 10/07，美股卡是 10/06。盤中價不會改這兩個日期。</li>
-    <li>觀察進場要三條都過。減碼只代表乖離超過 15%，不是自動賣出。</li>
-    <li>進場區、失效價、壓力仍是舊價位。這次只統一狀態與收盤，沒有重算價位。</li>
-    <li>頁面不再掛 hotfix、即時重畫、第二套持倉。那些腳本就是決策卡和補丁各畫各的原因。</li>
-  </ol>
-</section>
+  <noscript><div class="banner">這個頁面需要開啟 JavaScript 才能顯示報告內容。</div></noscript>
+
+  <section id="summary" class="panel">
+    <h2>市場摘要</h2>
+    <div id="summary-body"></div>
+    <span id="radar" class="anchor"></span>
+    <h2 style="margin-top:14px">今日交易雷達</h2>
+    <ul id="radar-body"></ul>
+  </section>
+
+  <section id="u2-position" class="panel">
+    <h2>我的持倉 <small id="pos-stamp"></small></h2>
+    <div id="pos-body"></div>
+  </section>
+
+  <section id="decision" class="panel">
+    <span id="watch" class="anchor"></span><span id="entry-pick" class="anchor"></span><span id="trade-alert" class="anchor"></span>
+    <h2>個股卡片 <small id="card-stamp"></small></h2>
+    <div class="chips" id="chips" role="group" aria-label="篩選卡片"></div>
+    <div class="cards" id="cards"></div>
+    <p class="note" id="levels-note"></p>
+  </section>
+
+  <section id="index" class="panel">
+    <h2>指數／殖利率</h2>
+    <div class="scroll"><table>
+      <thead><tr><th>名稱</th><th>最後完成</th><th>收盤</th><th>漲跌</th><th>盤中註記</th></tr></thead>
+      <tbody id="index-body"></tbody>
+    </table></div>
+  </section>
+
+  <section id="u2-market-levels" class="panel">
+    <h2>台股大盤關卡 <small id="mkt-stamp"></small></h2>
+    <div class="cards" id="mkt-body"></div>
+  </section>
+
+  <section id="ai-class" class="panel">
+    <span id="u2-sync" class="anchor"></span>
+    <h2>AI 分類面板｜族群同步 <small>STOCK_META，漲跌為各自最後完成日</small></h2>
+    <div class="scroll"><table><tbody id="group-body"></tbody></table></div>
+  </section>
+
+  <section id="guide" class="panel">
+    <h2>使用方法</h2>
+    <ol>
+      <li>先看日期：每張卡片都寫了自己的日 K 日期，台股和美股不是同一天。</li>
+      <li>狀態只看三個條件：收在 SMA20 之上、乖離 0–6%、未貼近 20 日高。三條都過才是「觀察進場」，卡片上會寫沒過的是哪一條。</li>
+      <li>乖離超過 15%：有持倉顯示「減碼」，沒持倉顯示「過熱不追」。都只是提醒，不是自動賣出。</li>
+      <li>壓力被劃掉、標「價位待重算」的卡片，代表收盤已經穿過舊價位，該價位不能再當依據。</li>
+      <li>用上方的篩選按鈕切換：全部／觀察進場／持倉／價位待重算。</li>
+    </ol>
+    <details>
+      <summary>更新紀錄</summary>
+      <ul id="changelog"></ul>
+    </details>
+  </section>
 </main>
+<footer>歷史數據與技術條件的決策輔助，不是保證預測，不自動下單。</footer>
+
 <script>
+/* =====================================================================
+   ① 每次更新只需要改這一區（REPORT／POSITIONS／FX）和下面的 DATA。
+      頁面上所有卡片、持倉、摘要都從這幾份資料算出來，不要再另外貼 HTML。
+   ===================================================================== */
+const REPORT = {
+  generatedAt: "2026-10-08T01:20:00+08:00",          // 報告產出時間（台北）
+  staleAfterHours: 24,                                // 超過幾小時在頁首提醒資料可能過期
+  levelsNote: "進場區／失效價／壓力沿用舊價位，本次沒有重算。收盤已穿過壓力的卡片會自動標「價位待重算」。",
+  notes: [                                            // 手寫的補充說明，會出現在摘要最後
+    "加權 20 日高沿用 10/06 的 49,968.92；Yahoo 尚未把 10/07 高低點寫進日 K，所以壓力只用已核對高點。"
+  ],
+  marketNotes: {                                      // 大盤關卡三張卡的說明
+    high: "已核對的 20 日高。高低點還沒回補的當天，不用盤中高充當壓力。",
+    close: "最後完成日 K。",
+    sma20: "含最後完成日收盤的 20 日均線，當作觀察支撐。"
+  },
+  changelog: [
+    "2026-10-08：三組重複卡片合併成一套＋篩選；持倉加上合計、佔比與換算匯率；價位過期自動標示；狀態改由三條件即時計算。",
+    "2026-10-08：頁面不再掛 hotfix、即時重畫、第二套持倉腳本，全站只用同一份 DATA。",
+    "2026-10-08：10/02 的 48,218／48,380／48,601 大盤關卡已低於現價約 1,200 點，停用。",
+    "分類基線：2026-09-25 分類＋09-27 三檔＋10-02 八檔＋10-03 國巨。"
+  ]
+};
+
+/* 持倉：ccy 是計價幣別。台股用 DATA 的收盤價；
+   有 quote 的部位（例如代幣）用 quote 當現價，並顯示 quoteAt 的截圖時間。 */
+const POSITIONS = [
+  { code: "2330.TW", qty: 10, cost: 2572.10, ccy: "TWD", group: "台股券商", note: "可下單股數 0（沿用截圖）" },
+  { code: "4958.TW", qty: 80, cost: 481.90,  ccy: "TWD", group: "台股券商" },
+  { code: "SPCX",    qty: 34.488502296, cost: 152.12, ccy: "USDC", group: "代幣",
+    quote: 167.541, quoteAt: "2026-10-08T02:57:00+08:00", note: "可賣 34.488502296" }
+];
+
+/* 匯率：USDC 部位換算成台幣用。 */
+const FX = { USDTWD: 31.84432, source: "由截圖市值 NT$184,004.06 反推" };
+
+/* 分類、名稱、行情：沿用原本的格式。更新報告時整段換掉 DATA 即可。
+   DATA 欄位：p 收盤、ch/pct 漲跌、date 日K日期、s20/s60 均線、bias 乖離%、high20 20日高、
+   near 是否貼近20日高、live 盤中註記價、entry 進場區、invalid 失效價、resist 壓力。
+   status 欄位頁面已不使用（狀態改由三條件即時計算）。 */
 const STOCK_META = {"TW|AI晶片": ["2330.TW", "2454.TW"], "TW|AI電源": ["2308.TW"], "TW|AI散熱": ["3324.TWO", "3653.TW", "3017.TW"], "TW|ABF": ["3189.TW", "3037.TW", "8046.TW"], "TW|CCL": ["6213.TW", "2383.TW"], "TW|面板／光電": ["3481.TW"], "TW|晶圓代工＋記憶體": ["6770.TW"], "TW|半導體廠務": ["2221.TWO"], "US|AI晶片": ["TSM", "NVDA", "AMD", "AVGO"], "US|AI雲端": ["MSFT", "META"], "US|AI記憶體": ["MU"], "US|AI自駕機器人": ["TSLA"], "US|航太科技": ["SPCX"], "TW|AI伺服器／機櫃": ["8210.TW"], "TW|AI基建／電力": ["2371.TW"], "TW|光學／CPO": ["3406.TW"], "TW|記憶體": ["2408.TW"], "TW|CCL／電子材料": ["1303.TW"], "TW|PCB／銅箔": ["8358.TWO", "4958.TW"], "TW|電池監測IC": ["4919.TW"], "TW|被動元件": ["2327.TW"]};
 const NAMES = {"2330.TW": "台積電", "2454.TW": "聯發科", "2308.TW": "台達電", "3324.TWO": "双鴻", "3653.TW": "健策", "3017.TW": "奇鋐", "3189.TW": "景碩", "3037.TW": "欣興", "8046.TW": "南電", "6213.TW": "聯茂", "2383.TW": "台光電", "3481.TW": "群創", "6770.TW": "力積電", "2221.TWO": "大甲", "TSM": "TSMC ADR", "NVDA": "NVIDIA", "AMD": "AMD", "AVGO": "Broadcom", "MSFT": "Microsoft", "META": "Meta", "MU": "Micron", "TSLA": "Tesla", "SPCX": "SPCX", "^TNX": "美10年債殖利率", "^TWII": "加權指數", "^IXIC": "Nasdaq", "^SOX": "費城半導體", "2371.TW": "大同", "8210.TW": "勤誠", "3406.TW": "玉晶光", "2408.TW": "南亞科", "1303.TW": "南亞", "8358.TWO": "金居", "4958.TW": "臻鼎-KY", "4919.TW": "新唐", "2327.TW": "國巨"};
 const DATA = {"2330.TW": {"p": 2585.0, "ch": 0.0, "pct": 0.0, "date": "2026-10-07", "status": "持有觀察", "entry": "2470.00-2442.50", "invalid": "2375.00", "resist": "2510.00", "s20": 2472.5, "s60": 2411.5, "bias": 4.55, "high20": 2590.0, "near": true, "live": null, "session": "完成日K", "live_note": "10/07 已收盤"}, "2454.TW": {"p": 4835.0, "ch": -85.0, "pct": -1.73, "date": "2026-10-07", "status": "等待", "entry": "4875.00-4731.50", "invalid": "4230.00", "resist": "5480.00", "s20": 4835.5, "s60": 4187.0, "bias": -0.01, "high20": 5480.0, "near": false, "live": null, "session": "完成日K", "live_note": "10/07 已收盤"}, "2308.TW": {"p": 1990.0, "ch": -60.0, "pct": -2.93, "date": "2026-10-07", "status": "持有觀察", "entry": "1810.00-1784.75", "invalid": "1560.00", "resist": "1965.00", "s20": 1823.0, "s60": 1782.08, "bias": 9.16, "high20": 2115.0, "near": false, "live": null, "session": "完成日K", "live_note": "10/07 已收盤"}, "3324.TWO": {"p": 1525.0, "ch": -5.0, "pct": -0.33, "date": "2026-10-07", "status": "觀察進場", "entry": "1480.00-1456.75", "invalid": "1240.00", "resist": "1750.00", "s20": 1476.75, "s60": 1179.12, "bias": 3.27, "high20": 1750.0, "near": false, "live": null, "session": "完成日K", "live_note": "10/07 已收盤"}, "3653.TW": {"p": 6805.0, "ch": -275.0, "pct": -3.88, "date": "2026-10-07", "status": "持有觀察", "entry": "5930.00-5927.50", "invalid": "5210.00", "resist": "7160.00", "s20": 6176.25, "s60": 5052.0, "bias": 10.18, "high20": 7440.0, "near": false, "live": null, "session": "完成日K", "live_note": "10/07 已收盤"}, "3017.TW": {"p": 3545.0, "ch": -140.0, "pct": -3.8, "date": "2026-10-07", "status": "觀察進場", "entry": "3285.00-3374.25", "invalid": "3100.00", "resist": "3600.00", "s20": 3407.0, "s60": 2987.58, "bias": 4.05, "high20": 3700.0, "near": false, "live": null, "session": "完成日K", "live_note": "10/07 已收盤"}, "3189.TW": {"p": 1100.0, "ch": 30.0, "pct": 2.8, "date": "2026-10-07", "status": "減碼", "entry": "881.00-855.20", "invalid": "766.00", "resist": "1020.00", "s20": 908.25, "s60": 831.7, "bias": 21.11, "high20": 1150.0, "near": false, "live": null, "session": "完成日K", "live_note": "10/07 已收盤"}, "3037.TW": {"p": 1305.0, "ch": -5.0, "pct": -0.38, "date": "2026-10-07", "status": "減碼", "entry": "1115.00-1025.40", "invalid": "873.00", "resist": "1230.00", "s20": 1100.3, "s60": 1002.65, "bias": 18.6, "high20": 1420.0, "near": false, "live": null, "session": "完成日K", "live_note": "10/07 已收盤"}, "8046.TW": {"p": 1480.0, "ch": -25.0, "pct": -1.66, "date": "2026-10-07", "status": "減碼", "entry": "1150.00-1139.25", "invalid": "1010.00", "resist": "1450.00", "s20": 1217.0, "s60": 1171.75, "bias": 21.61, "high20": 1550.0, "near": false, "live": null, "session": "完成日K", "live_note": "10/07 已收盤"}, "6213.TW": {"p": 796.0, "ch": 9.0, "pct": 1.14, "date": "2026-10-07", "status": "減碼", "entry": "525.00-541.45", "invalid": "482.00", "resist": "649.00", "s20": 588.4, "s60": 475.27, "bias": 35.28, "high20": 818.0, "near": false, "live": null, "session": "完成日K", "live_note": "10/07 已收盤"}, "2383.TW": {"p": 5950.0, "ch": -45.0, "pct": -0.75, "date": "2026-10-07", "status": "持有觀察", "entry": "4855.00-5144.25", "invalid": "4635.00", "resist": "5670.00", "s20": 5203.5, "s60": 5254.83, "bias": 14.35, "high20": 6115.0, "near": false, "live": null, "session": "完成日K", "live_note": "10/07 已收盤"}, "3481.TW": {"p": 52.5, "ch": 1.4, "pct": 2.74, "date": "2026-10-07", "status": "觀察進場", "entry": "48.55-49.41", "invalid": "46.25", "resist": "55.50", "s20": 50.07, "s60": 49.37, "bias": 4.86, "high20": 56.2, "near": false, "live": null, "session": "完成日K", "live_note": "10/07 已收盤"}, "6770.TW": {"p": 72.6, "ch": -1.7, "pct": -2.29, "date": "2026-10-07", "status": "等待", "entry": "70.50-71.65", "invalid": "66.70", "resist": "75.40", "s20": 72.63, "s60": 68.89, "bias": -0.04, "high20": 78.1, "near": false, "live": null, "session": "完成日K", "live_note": "10/07 已收盤"}, "2221.TWO": {"p": 189.5, "ch": 3.5, "pct": 1.88, "date": "2026-10-07", "status": "減碼", "entry": "149.50-121.29", "invalid": "78.10", "resist": "198.00", "s20": 141.15, "s60": 85.49, "bias": 34.25, "high20": 198.0, "near": false, "live": null, "session": "完成日K", "live_note": "10/07 已收盤"}, "TSM": {"p": 482.3, "ch": -3.5, "pct": -0.72, "date": "2026-10-06", "status": "持有觀察", "entry": "443.11-438.33", "invalid": "407.82", "resist": "461.87", "s20": 446.13, "s60": 425.41, "bias": 8.11, "high20": 487.47, "near": false, "live": 473.6, "session": "完成日K", "live_note": "10/07 美股盤中，不當作收盤"}, "NVDA": {"p": 239.24, "ch": 0.34, "pct": 0.14, "date": "2026-10-06", "status": "持有觀察", "entry": "223.13-223.51", "invalid": "208.93", "resist": "234.76", "s20": 224.89, "s60": 217.63, "bias": 6.38, "high20": 243.37, "near": false, "live": 237.095, "session": "完成日K", "live_note": "10/07 美股盤中，不當作收盤"}, "AMD": {"p": 649.42, "ch": 17.67, "pct": 2.8, "date": "2026-10-06", "status": "持有觀察", "entry": "596.07-557.60", "invalid": "440.50", "resist": "639.00", "s20": 581.38, "s60": 519.53, "bias": 11.7, "high20": 658.52, "near": false, "live": 645.455, "session": "完成日K", "live_note": "10/07 美股盤中，不當作收盤"}, "AVGO": {"p": 375.81, "ch": 13.3, "pct": 3.67, "date": "2026-10-06", "status": "觀察進場", "entry": "343.29-354.20", "invalid": "335.81", "resist": "372.70", "s20": 354.7, "s60": 374.7, "bias": 5.95, "high20": 380.84, "near": false, "live": 373.61, "session": "完成日K", "live_note": "10/07 美股盤中，不當作收盤"}, "MSFT": {"p": 529.3, "ch": 4.12, "pct": 0.78, "date": "2026-10-06", "status": "觀察進場", "entry": "497.25-501.30", "invalid": "486.00", "resist": "522.85", "s20": 504.71, "s60": 476.47, "bias": 4.87, "high20": 535.69, "near": false, "live": 527.69, "session": "完成日K", "live_note": "10/07 美股盤中，不當作收盤"}, "META": {"p": 738.88, "ch": -3.02, "pct": -0.41, "date": "2026-10-06", "status": "觀察進場", "entry": "713.19-690.05", "invalid": "604.35", "resist": "779.82", "s20": 708.44, "s60": 631.81, "bias": 4.3, "high20": 779.82, "near": false, "live": 724.86, "session": "完成日K", "live_note": "10/07 美股盤中，不當作收盤"}, "MU": {"p": 1045.5601, "ch": -18.3999, "pct": -1.73, "date": "2026-10-06", "status": "觀察進場", "entry": "1022.90-1019.16", "invalid": "902.60", "resist": "1108.72", "s20": 1029.64, "s60": 954.79, "bias": 1.55, "high20": 1108.72, "near": false, "live": 1086.18, "session": "完成日K", "live_note": "10/07 美股盤中，不當作收盤"}, "TSLA": {"p": 380.68, "ch": 1.95, "pct": 0.51, "date": "2026-10-06", "status": "觀察進場", "entry": "345.88-365.15", "invalid": "345.88", "resist": "386.83", "s20": 366.72, "s60": 352.39, "bias": 3.81, "high20": 386.83, "near": false, "live": 376.05, "session": "完成日K", "live_note": "10/07 美股盤中，不當作收盤"}, "SPCX": {"p": 171.92, "ch": 0.83, "pct": 0.49, "date": "2026-10-06", "status": "持有觀察", "entry": "145.36-149.67", "invalid": "141.05", "resist": "158.13", "s20": 152.21, "s60": 138.24, "bias": 12.95, "high20": 176.42, "near": false, "live": 167.31, "session": "完成日K", "live_note": "10/07 美股盤中，不當作收盤"}, "^TNX": {"p": 5.269, "ch": -0.042, "pct": -0.79, "date": "2026-10-06", "status": "N/A", "entry": "N/A", "invalid": "N/A", "resist": "5.34", "s20": 5.1, "s60": 4.82, "bias": 3.38, "high20": 5.35, "near": false, "live": 5.316, "session": "完成日K", "live_note": "10/07 盤中，正式收盤仍用 10/06"}, "^TWII": {"p": 49806.37, "ch": -16.1808, "pct": -0.03, "date": "2026-10-07", "status": "持有觀察", "entry": "N/A", "invalid": "N/A", "resist": "N/A", "s20": 47577.47, "s60": 45650.53, "bias": 4.68, "high20": 49968.92, "near": true, "live": null, "session": "完成日K", "live_note": "10/07 已收盤"}, "^IXIC": {"p": 27599.7891, "ch": 122.4785, "pct": 0.45, "date": "2026-10-06", "status": "持有觀察", "entry": "N/A", "invalid": "N/A", "resist": "27288.79", "s20": 26734.22, "s60": 26272.55, "bias": 3.24, "high20": 27722.75, "near": true, "live": 27490.666, "session": "完成日K", "live_note": "10/07 美股盤中，不當作收盤"}, "^SOX": {"p": 13217.8203, "ch": 45.0801, "pct": 0.34, "date": "2026-10-06", "status": "持有觀察", "entry": "N/A", "invalid": "11056.38", "resist": "12913.40", "s20": 12267.08, "s60": 11977.71, "bias": 7.75, "high20": 13349.96, "near": true, "live": 13021.823, "session": "完成日K", "live_note": "10/07 美股盤中，不當作收盤"}, "2371.TW": {"p": 30.6, "ch": -0.0, "pct": -0.0, "date": "2026-10-07", "status": "觀察進場", "entry": "29.90-30.45", "invalid": "N/A", "resist": "30.90", "s20": 29.21, "s60": 27.5, "bias": 4.78, "high20": 31.6, "near": false, "live": null, "session": "完成日K", "live_note": "10/07 已收盤"}, "8210.TW": {"p": 872.0, "ch": -13.0, "pct": -1.47, "date": "2026-10-07", "status": "等待", "entry": "826.00-842.00", "invalid": "N/A", "resist": "858.00", "s20": 885.1, "s60": 990.77, "bias": -1.48, "high20": 938.0, "near": false, "live": null, "session": "完成日K", "live_note": "10/07 已收盤"}, "3406.TW": {"p": 1085.0, "ch": 40.0, "pct": 3.83, "date": "2026-10-07", "status": "持有觀察", "entry": "917.00-947.00", "invalid": "N/A", "resist": "970.00", "s20": 980.5, "s60": 760.21, "bias": 10.66, "high20": 1140.0, "near": false, "live": null, "session": "完成日K", "live_note": "10/07 已收盤"}, "2408.TW": {"p": 514.0, "ch": -11.0, "pct": -2.1, "date": "2026-10-07", "status": "觀察進場", "entry": "N/A", "invalid": "N/A", "resist": "N/A", "s20": 508.8, "s60": 480.08, "bias": 1.02, "high20": 540.0, "near": false, "live": null, "session": "完成日K", "live_note": "10/07 已收盤"}, "1303.TW": {"p": 314.0, "ch": 21.0, "pct": 7.17, "date": "2026-10-07", "status": "減碼", "entry": "N/A", "invalid": "N/A", "resist": "N/A", "s20": 247.47, "s60": 212.82, "bias": 26.88, "high20": 314.0, "near": true, "live": null, "session": "完成日K", "live_note": "10/07 已收盤"}, "8358.TWO": {"p": 549.0, "ch": -2.0, "pct": -0.36, "date": "2026-10-07", "status": "持有觀察", "entry": "484.50-502.00", "invalid": "N/A", "resist": "524.00", "s20": 510.9, "s60": 445.58, "bias": 7.46, "high20": 578.0, "near": false, "live": null, "session": "完成日K", "live_note": "10/07 已收盤"}, "4958.TW": {"p": 595.0, "ch": 21.0, "pct": 3.66, "date": "2026-10-07", "status": "減碼", "entry": "N/A", "invalid": "N/A", "resist": "N/A", "s20": 506.75, "s60": 490.22, "bias": 17.41, "high20": 604.0, "near": false, "live": null, "session": "完成日K", "live_note": "10/07 已收盤"}, "4919.TW": {"p": 159.5, "ch": 9.0, "pct": 5.98, "date": "2026-10-07", "status": "減碼", "entry": "N/A", "invalid": "N/A", "resist": "N/A", "s20": 131.55, "s60": 128.45, "bias": 21.25, "high20": 167.0, "near": false, "live": null, "session": "完成日K", "live_note": "10/07 已收盤"}, "2327.TW": {"p": 647.0, "ch": 22.0, "pct": 3.52, "date": "2026-10-07", "status": "持有觀察", "entry": "602.00-560.60", "invalid": "548.00", "resist": "647.00", "s20": 572.4, "s60": 589.17, "bias": 13.03, "high20": 658.0, "near": false, "live": null, "session": "完成日K", "live_note": "10/07 已收盤"}};
+
+/* =====================================================================
+   ② 以下是畫面邏輯，平常不用動。
+   ===================================================================== */
+(function () {
+  "use strict";
+  const $ = (id) => document.getElementById(id);
+  const esc = (s) => String(s).replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
+
+  /* ---------- 基本資料整理 ---------- */
+  const META = {};                       // code -> {mkt, grp}
+  const ORDER = [];
+  Object.keys(STOCK_META).forEach((key) => {
+    const [mkt, grp] = key.split("|");
+    STOCK_META[key].forEach((code) => { META[code] = { mkt, grp, key }; ORDER.push(code); });
+  });
+  const HELD = {};
+  POSITIONS.forEach((p) => { HELD[p.code] = p; });
+  const MKT_NAME = { TW: "台股", US: "美股" };
+
+  /* ---------- 數字格式 ---------- */
+  const num = (v, min, max) => Number(v).toLocaleString("en-US", { minimumFractionDigits: min, maximumFractionDigits: max });
+  function px(v, code) {                 // 價格：台股最多 2 位小數，美股固定 2 位
+    if (code === "^TNX") return num(v, 3, 3);
+    if (code && code.charAt(0) === "^") return num(v, 2, 2);
+    return (META[code] && META[code].mkt === "US") ? num(v, 2, 2) : num(v, 0, 2);
+  }
+  const pct = (v) => { const r = Math.round(v * 100) / 100; return (r > 0 ? "+" : r < 0 ? "−" : "") + Math.abs(r).toFixed(2) + "%"; };
+  function chg(d, code) {                // 漲跌：0 不再顯示成 -0
+    const up = d.pct > 0.004, dn = d.pct < -0.004;
+    const dec = code === "^TNX" ? 3 : (code.charAt(0) === "^" || (META[code] && META[code].mkt === "US")) ? 2 : null;
+    const a = Math.abs(d.ch);
+    const amt = dec === null ? num(a, 0, 2) : num(a, dec, dec);
+    return (up ? "▲ " : dn ? "▼ " : "— ") + amt + "（" + pct(up || dn ? d.pct : 0) + "）";
+  }
+  const twd = (v) => "NT$" + num(Math.round(v), 0, 0);
+  const signed = (v, f) => (v > 0 ? "+" : v < 0 ? "−" : "") + f(Math.abs(v));
+  const md = (iso) => iso.slice(5, 7) + "/" + iso.slice(8, 10);
+  const hm = (iso) => iso.slice(11, 16);
+  const level = (s) => (s === undefined || s === null || s === "N/A" || s === "") ? null : parseFloat(s);
+  function zone(s) {                     // 進場區一律整理成「低–高」
+    if (!s || s === "N/A") return null;
+    const p = String(s).split("-").map(parseFloat).filter((x) => !isNaN(x));
+    if (p.length < 2) return null;
+    return { lo: Math.min(p[0], p[1]), hi: Math.max(p[0], p[1]) };
+  }
+
+  /* ---------- 狀態：全站同一套三條件 ---------- */
+  function analyse(code) {
+    const d = DATA[code];
+    const held = !!HELD[code];
+    const gapHigh = d.high20 ? (d.high20 - d.p) / d.high20 * 100 : null;
+    const near = typeof d.near === "boolean" ? d.near : (gapHigh !== null && gapHigh < 1);
+    const above = d.bias >= 0;
+    let cat, why;
+    if (d.bias > 15) { cat = "trim"; why = "乖離 " + pct(d.bias) + "，超過 15%"; }
+    else if (!above) { cat = "wait"; why = "收在 SMA20 之下（乖離 " + pct(d.bias) + "）"; }
+    else if (d.bias <= 6 && !near) { cat = "go"; why = "三條件都過：SMA20 之上、乖離 0–6%、未貼近 20 日高"; }
+    else {
+      cat = "hold";
+      const miss = [];
+      if (d.bias > 6) miss.push("乖離 " + pct(d.bias) + "（需 0–6%）");
+      if (near) miss.push("貼近 20 日高" + (gapHigh !== null ? "（差 " + Math.max(gapHigh, 0).toFixed(2) + "%）" : ""));
+      why = "沒過：" + miss.join("、");
+    }
+    const label = { go: "觀察進場", wait: "等待", hold: held ? "持有觀察" : "觀望", trim: held ? "減碼" : "過熱不追" }[cat];
+    const z = zone(d.entry), inv = level(d.invalid), res = level(d.resist);
+    const broke = res !== null && d.p > res;
+    const lost = inv !== null && d.p < inv;
+    return { code, d, held, cat, label, why, z, inv, res, broke, lost, stale: broke || lost, gapHigh, noLevels: !z && inv === null && res === null };
+  }
+  const A = {};
+  ORDER.forEach((c) => { if (DATA[c]) A[c] = analyse(c); });
+  const CODES = ORDER.filter((c) => A[c]);
+  const name = (c) => NAMES[c] || c;
+  const lastDate = (mkt) => CODES.filter((c) => META[c].mkt === mkt).map((c) => DATA[c].date).sort().pop();
+  const TW_DATE = lastDate("TW"), US_DATE = lastDate("US");
+  const GEN = REPORT.generatedAt;
+
+  /* ---------- 頁首時間戳 ---------- */
+  const quoted = POSITIONS.filter((p) => p.quoteAt);
+  const stamps = [
+    ["產出", GEN.slice(0, 10) + " " + hm(GEN) + " 台北"],
+    ["台股日 K", TW_DATE + " 收盤"],
+    ["美股日 K", US_DATE + " 正式收盤"]
+  ];
+  quoted.forEach((p) => stamps.push([name(p.code) + " 報價", "截圖 " + md(p.quoteAt) + " " + hm(p.quoteAt)]));
+  $("stamps").innerHTML = stamps.map((s) => '<span class="stamp">' + esc(s[0]) + " <b>" + esc(s[1]) + "</b></span>").join("");
+  document.title = "技術與基本面報告｜" + GEN.slice(0, 10) + " 台北";
+  const ageH = (Date.now() - new Date(GEN).getTime()) / 36e5;
+  if (ageH > REPORT.staleAfterHours) {
+    const b = $("stale-banner");
+    b.hidden = false;
+    b.textContent = "這份報告是 " + Math.floor(ageH) + " 小時前產出的，之後的收盤還沒寫進來，狀態與持倉損益可能已經不同。";
+  }
+
+  /* ---------- 持倉計算 ---------- */
+  const rows = POSITIONS.filter((p) => DATA[p.code] || p.quote).map((p) => {
+    const d = DATA[p.code];
+    const fx = p.ccy === "TWD" ? 1 : FX.USDTWD;
+    const price = p.quote || d.p;
+    const value = p.qty * price, cost = p.qty * p.cost;
+    return { p, d, a: A[p.code], fx, price, value, cost, pl: value - cost, plPct: (value / cost - 1) * 100,
+             valueT: value * fx, costT: cost * fx };
+  });
+  const sum = (arr, k) => arr.reduce((s, r) => s + r[k], 0);
+  const totalV = sum(rows, "valueT"), totalC = sum(rows, "costT");
+  rows.forEach((r) => { r.w = r.valueT / totalV * 100; });
+  const biggest = rows.slice().sort((x, y) => y.w - x.w)[0];
+  const SEG = ["#8ec0ff", "#f0c36a", "#6fd3c0", "#d9a6ff", "#ff9e8a"];
+
+  function levelCells(a) {               // 卡片與持倉共用：進場區／失效價／壓力
+    const d = a.d, c = a.code, out = [];
+    if (a.noLevels) {
+      out.push('<div class="wide"><span>進場區／失效價／壓力</span><b class="' + (a.held ? "warn" : "") + '">' +
+        (a.held ? "持倉尚未設定失效價" : "尚未設定") + "</b><em>均線參考：SMA20 " + px(d.s20, c) + "｜SMA60 " + px(d.s60, c) + "｜20 日高 " + px(d.high20, c) + "</em></div>");
+      return out.join("");
+    }
+    let zt = "未設定", zn = "";
+    if (a.z) {
+      zt = px(a.z.lo, c) + "–" + px(a.z.hi, c);
+      zn = d.p > a.z.hi ? "現價高於進場區 " + ((d.p / a.z.hi - 1) * 100).toFixed(1) + "%"
+         : d.p < a.z.lo ? "現價低於進場區 " + ((1 - d.p / a.z.lo) * 100).toFixed(1) + "%" : "現價在進場區內";
+    }
+    out.push("<div><span>進場區</span><b>" + zt + "</b>" + (zn ? "<em>" + zn + "</em>" : "") + "</div>");
+    out.push("<div><span>失效價</span><b" + (a.inv === null && a.held ? ' class="warn"' : "") + ">" +
+      (a.inv === null ? "未設定" : px(a.inv, c)) + "</b>" + (a.lost ? '<em class="warn">收盤已跌破</em>' : "") + "</div>");
+    if (a.res === null) out.push("<div><span>壓力</span><b>未設定</b><em>20 日高 " + px(d.high20, c) + "</em></div>");
+    else if (a.broke) out.push('<div><span>壓力</span><b><span class="old">' + px(a.res, c) + "</span> 已突破</b><em>" +
+      (d.high20 > d.p ? "上方參考：20 日高 " + px(d.high20, c) : "已在 20 日高") + "</em></div>");
+    else out.push("<div><span>壓力</span><b>" + px(a.res, c) + "</b><em>距離 " + ((a.res / d.p - 1) * 100).toFixed(1) + "%</em></div>");
+    return out.join("");
+  }
+
+  (function renderPositions() {
+    if (!rows.length) { $("pos-body").innerHTML = '<p class="note">目前沒有持倉。</p>'; return; }
+    const tPl = totalV - totalC;
+    let h = '<div class="totals">' +
+      '<div class="tot"><span>總市值（台幣）</span><b>' + twd(totalV) + "</b><em>" + rows.length + " 個部位</em></div>" +
+      '<div class="tot"><span>未實現損益</span><b>' + signed(tPl, twd) + "</b><em>" + pct(tPl / totalC * 100) + "｜成本 " + twd(totalC) + "</em></div>" +
+      '<div class="tot"><span>最大部位</span><b>' + esc(name(biggest.p.code)) + " " + biggest.w.toFixed(1) + "%</b><em>佔總市值</em></div></div>";
+    h += '<div class="wbar" role="img" aria-label="部位佔比">' + rows.map((r, i) => '<i style="flex:' + r.w.toFixed(2) + " 0 0;background:" + SEG[i % SEG.length] + '"></i>').join("") + "</div>";
+    h += '<div class="wlegend">' + rows.map((r, i) => '<span><i style="background:' + SEG[i % SEG.length] + '"></i>' + esc(name(r.p.code)) + " " + r.w.toFixed(1) + "%</span>").join("") + "</div>";
+    h += '<div class="cards">' + rows.map((r) => {
+      const p = r.p, c = p.code, m = META[c], a = r.a, isT = p.ccy === "TWD";
+      const money = (v) => isT ? num(Math.round(v), 0, 0) : num(v, 2, 2) + " " + p.ccy;
+      const when = p.quoteAt ? "截圖 " + md(p.quoteAt) + " " + hm(p.quoteAt) : "日K " + r.d.date;
+      let cmp = "";
+      if (p.quote && r.d) cmp = '<div class="live-note">較 ' + md(r.d.date) + " 正式收盤 " + px(r.d.p, c) + "：" + pct((p.quote / r.d.p - 1) * 100) + "</div>";
+      return '<article class="card held"><div class="title">' + esc((m ? MKT_NAME[m.mkt] + "｜" + m.grp + "｜" : "") + name(c)) + "</div>" +
+        '<div class="sub">' + esc(c) + "｜" + num(p.qty, 0, 9) + " 股｜均價 " + num(p.cost, 2, 2) + (isT ? "" : " " + p.ccy) + "｜" + when + "</div>" +
+        '<div class="px">' + (p.quote ? num(r.price, 2, 3) : px(r.price, c)) + '<span class="chg">' + signed(r.pl, money) + "（" + pct(r.plPct) + "）</span></div>" + cmp +
+        (a ? '<div class="status"><span class="badge ' + a.cat + '">' + a.label + "</span>" + (a.stale ? '<span class="badge stale">價位待重算</span>' : "") + '</div><div class="why">' + esc(a.why) + "</div>" : "") +
+        '<div class="kv"><div><span>市值</span><b>' + (isT ? twd(r.valueT) : money(r.value)) + "</b>" + (isT ? "" : "<em>≈ " + twd(r.valueT) + "</em>") + "</div>" +
+        "<div><span>佔總市值</span><b>" + r.w.toFixed(1) + "%</b></div>" + (a ? levelCells(a) : "") + "</div>" +
+        (p.note ? '<div class="note" style="margin-top:8px">' + esc(p.note) + "</div>" : "") + "</article>";
+    }).join("") + "</div>";
+    const groups = [];
+    rows.forEach((r) => { const g = r.p.group || "其他"; if (groups.indexOf(g) < 0) groups.push(g); });
+    const line = (label, rs, cls) => {
+      const v = sum(rs, "valueT"), c0 = sum(rs, "costT");
+      return '<div class="' + (cls || "") + '"><span>' + esc(label) + "</span><span>市值 " + twd(v) + "｜成本 " + twd(c0) + "｜損益 " + signed(v - c0, twd) + "（" + pct((v / c0 - 1) * 100) + "）</span></div>";
+    };
+    h += '<div class="subtotal">' + groups.map((g) => line(g + "小計", rows.filter((r) => (r.p.group || "其他") === g))).join("") + line("合計", rows, "sum") + "</div>";
+    if (rows.some((r) => r.p.ccy !== "TWD")) h += '<p class="note">換算匯率：1 USDC ≈ NT$' + FX.USDTWD.toFixed(2) + "（" + esc(FX.source) + "）。成本與市值用同一匯率換算，沒有另計匯差。</p>";
+    $("pos-body").innerHTML = h;
+    $("pos-stamp").textContent = "台股 " + TW_DATE + " 收盤" + quoted.map((p) => "｜" + name(p.code) + " 截圖 " + md(p.quoteAt) + " " + hm(p.quoteAt)).join("");
+  })();
+
+  /* ---------- 個股卡片（只有一套） ---------- */
+  function cardHTML(a) {
+    const d = a.d, c = a.code, m = META[c];
+    return '<article class="card' + (a.held ? " held" : "") + '" data-code="' + esc(c) + '" data-status="' + a.label + '">' +
+      '<div class="title">' + esc(MKT_NAME[m.mkt] + "｜" + m.grp + "｜" + name(c)) + (a.held ? '<span class="badge own">持倉</span>' : "") + "</div>" +
+      '<div class="sub">' + esc(c) + "｜日K " + d.date + "</div>" +
+      '<div class="px">' + px(d.p, c) + '<span class="chg">' + chg(d, c) + "</span></div>" +
+      (d.live !== null && d.live !== undefined ? '<div class="live-note">盤中 ' + px(d.live, c) + "（" + md(GEN) + " " + hm(GEN) + " 擷取，不當作收盤）</div>" : "") +
+      '<div class="status"><span class="badge ' + a.cat + '">' + a.label + "</span>" + (a.stale ? '<span class="badge stale">價位待重算</span>' : "") + "</div>" +
+      '<div class="why">' + esc(a.why) + "</div>" +
+      '<div class="kv"><div><span>SMA20／SMA60</span><b>' + px(d.s20, c) + "／" + px(d.s60, c) + "</b></div>" +
+      "<div><span>乖離</span><b>" + pct(d.bias) + "</b></div>" + levelCells(a) + "</div></article>";
+  }
+  const FILTERS = [
+    ["all", "全部", () => true],
+    ["go", "觀察進場", (a) => a.cat === "go"],
+    ["held", "持倉", (a) => a.held],
+    ["hold", "觀望／持有觀察", (a) => a.cat === "hold"],
+    ["wait", "等待", (a) => a.cat === "wait"],
+    ["trim", "過熱／減碼", (a) => a.cat === "trim"],
+    ["stale", "價位待重算", (a) => a.stale]
+  ];
+  let current = "all";
+  function setFilter(key) {
+    const f = FILTERS.filter((x) => x[0] === key)[0] || FILTERS[0];
+    current = f[0];
+    const list = CODES.map((c) => A[c]).filter(f[2]);
+    $("cards").innerHTML = list.length ? list.map(cardHTML).join("") : '<p class="note">這個分類目前沒有股票。</p>';
+    Array.prototype.forEach.call($("chips").children, (b) => b.setAttribute("aria-pressed", String(b.dataset.f === current)));
+    try { sessionStorage.setItem("cardFilter", current); } catch (e) {}
+  }
+  $("chips").innerHTML = FILTERS.map((f) => '<button type="button" class="chip" data-f="' + f[0] + '" aria-pressed="false">' + f[1] + "<b>" + CODES.filter((c) => f[2](A[c])).length + "</b></button>").join("");
+  $("chips").addEventListener("click", (e) => { const b = e.target.closest(".chip"); if (b) setFilter(b.dataset.f); });
+  $("card-stamp").textContent = "台股 " + TW_DATE + "｜美股 " + US_DATE + "｜共 " + CODES.length + " 檔";
+  $("levels-note").textContent = REPORT.levelsNote;
+  function fromHash() {                  // 舊連結照樣能用：#entry-pick 直接切到「觀察進場」
+    const h = location.hash;
+    if (h === "#entry-pick") setFilter("go");
+    else if (h === "#watch" || h === "#trade-alert") setFilter("all");
+  }
+  let saved = null;
+  try { saved = sessionStorage.getItem("cardFilter"); } catch (e) {}
+  setFilter(saved || "all");
+  fromHash();
+  window.addEventListener("hashchange", fromHash);
+
+  /* ---------- 摘要與雷達（由 DATA 產生） ---------- */
+  const q = (c) => name(c) + " " + px(DATA[c].p, c) + "（" + pct(DATA[c].pct) + "）";
+  const have = (list) => list.filter((c) => DATA[c]);
+  const go = CODES.filter((c) => A[c].cat === "go"), staleN = CODES.filter((c) => A[c].stale).length;
+  const withRes = CODES.filter((c) => A[c].res !== null), brokeN = CODES.filter((c) => A[c].broke).length;
+  const sp = [];
+  if (DATA["^TWII"]) sp.push("<b>台股 " + md(DATA["^TWII"].date) + " 收盤</b>：" + q("^TWII") + "。" + have(["2330.TW", "2454.TW", "2308.TW"]).map(q).join("、") + "。");
+  const usIdx = have(["^IXIC", "^SOX", "^TNX"]);
+  if (usIdx.length) sp.push("<b>美股 " + md(DATA[usIdx[0]].date) + " 正式收盤</b>：" + usIdx.map(q).join("、") + "。" + have(["NVDA", "TSM", "AMD", "AVGO", "MU"]).map((c) => c + " " + px(DATA[c].p, c)).join("、") + "。");
+  if (rows.length) sp.push("<b>持倉</b>：總市值 " + twd(totalV) + "，未實現 " + signed(totalV - totalC, twd) + "（" + pct((totalV / totalC - 1) * 100) + "）。最大部位 " + esc(name(biggest.p.code)) + " 佔 " + biggest.w.toFixed(1) + "%。");
+  sp.push("<b>可進場觀察（" + go.length + " 檔）</b>：" + (go.length ? go.map(name).map(esc).join("、") : "目前沒有") + "。觀察進場不等於買進。");
+  if (withRes.length) sp.push("<b>價位提醒</b>：" + withRes.length + " 檔有壓力價，其中 " + brokeN + " 檔收盤已經站上壓力，卡片標「價位待重算」。");
+  REPORT.notes.forEach((n) => sp.push('<span class="note">' + esc(n) + "</span>"));
+  $("summary-body").innerHTML = sp.map((s) => "<p>" + s + "</p>").join("");
+
+  const byPct = CODES.slice().sort((x, y) => DATA[y].pct - DATA[x].pct);
+  const top = byPct.filter((c) => DATA[c].pct > 0).slice(0, 5), weak = byPct.filter((c) => DATA[c].pct < 0).slice(-3).reverse();
+  const heldAlert = rows.filter((r) => r.a && (r.a.cat === "trim" || r.a.noLevels || r.a.inv === null || r.a.stale));
+  const radar = [];
+  radar.push("台股用 " + md(TW_DATE) + " 收盤，美股用 " + md(US_DATE) + " 正式收盤，兩邊不是同一個「今天」。");
+  if (DATA["^TWII"]) { const t = DATA["^TWII"]; radar.push("加權收 " + px(t.p, "^TWII") + "（" + pct(t.pct) + "），SMA20 " + px(t.s20, "^TWII") + "，20 日高 " + px(t.high20, "^TWII") + "。"); }
+  if (top.length) radar.push("漲幅居前：" + top.map((c) => esc(name(c)) + " " + pct(DATA[c].pct)).join("、") + "。");
+  if (weak.length) radar.push("偏弱：" + weak.map((c) => esc(name(c)) + " " + pct(DATA[c].pct)).join("、") + "。");
+  heldAlert.forEach((r) => {
+    const a = r.a, bits = [];
+    if (a.cat === "trim") bits.push("乖離 " + pct(a.d.bias) + "，狀態「減碼」");
+    if (a.noLevels || a.inv === null) bits.push("還沒設定失效價");
+    if (a.stale) bits.push("舊價位已被穿過");
+    radar.push("持倉 " + esc(name(a.code)) + "：" + bits.join("、") + "。");
+  });
+  $("radar-body").innerHTML = radar.map((s) => "<li>" + s + "</li>").join("");
+
+  /* ---------- 指數／大盤關卡／族群 ---------- */
+  $("index-body").innerHTML = have(["^TWII", "^IXIC", "^SOX", "^TNX"]).map((c) => {
+    const d = DATA[c];
+    return "<tr><td>" + esc(name(c)) + '<br><span class="note">' + esc(c) + "</span></td><td>" + d.date + '</td><td class="num">' + px(d.p, c) +
+      '</td><td class="num">' + chg(d, c) + "</td><td>" + (d.live !== null && d.live !== undefined ? "盤中 " + px(d.live, c) + "（" + md(GEN) + " " + hm(GEN) + " 擷取）" : "已收盤") + "</td></tr>";
+  }).join("");
+  if (DATA["^TWII"]) {
+    const t = DATA["^TWII"], k = "^TWII", n = REPORT.marketNotes;
+    $("mkt-stamp").textContent = "日K " + t.date;
+    $("mkt-body").innerHTML = [
+      ["20 日高（壓力）", t.high20, "距離收盤 " + Math.max((t.high20 / t.p - 1) * 100, 0).toFixed(2) + "%。" + n.high],
+      [md(t.date) + " 收盤", t.p, n.close + (A_index(t) ? "貼近 20 日高，指數本身不標觀察進場。" : "")],
+      ["SMA20（觀察支撐）", t.s20, "在收盤下方 " + ((1 - t.s20 / t.p) * 100).toFixed(2) + "%。" + n.sma20]
+    ].map((x) => '<article class="card"><div class="title">' + x[0] + '</div><div class="px">' + px(x[1], k) + '</div><div class="note" style="margin-top:6px">' + esc(x[2]) + "</div></article>").join("");
+  }
+  function A_index(t) { return typeof t.near === "boolean" ? t.near : (t.high20 - t.p) / t.high20 < 0.01; }
+  $("group-body").innerHTML = Object.keys(STOCK_META).map((key) => {
+    const mem = STOCK_META[key].filter((c) => DATA[c]);
+    return '<tr><td class="grp">' + esc(key) + "</td><td>" + mem.map((c) => '<span class="mem">' + esc(name(c)) + " <small>" + esc(c) + "</small> " + pct(DATA[c].pct) + "</span>").join("") + "</td></tr>";
+  }).join("");
+  $("changelog").innerHTML = REPORT.changelog.map((s) => "<li>" + esc(s) + "</li>").join("");
+})();
 </script>
 </body>
 </html>
