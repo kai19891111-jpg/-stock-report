@@ -2239,338 +2239,1536 @@ ${d.note || 'N/A'}
 </script>
 
 
-<script id="live-section-sync">
-(function () {
+
+
+<!-- =========================================================
+     FINAL FIX｜全頁 LIVE 同步修正版
+     用途：
+     1. 不新增第二個/第三個行情 API
+     2. 使用原本每 10 秒更新後的 DATA
+     3. 阻止舊 renderWholePage 把 LIVE 資料蓋回去
+     4. 全頁同步顯示最新 DATA
+     5. 顯示即時行情連線狀態
+========================================================= -->
+
+<style id="final-live-fix-style">
+
+/* 強制顯示即時行情狀態 */
+#realtime-status-panel{
+  display:block !important;
+  position:sticky;
+  top:52px;
+  z-index:98;
+  margin:8px auto;
+  max-width:980px;
+  padding:8px 12px;
+  border-radius:10px;
+  background:rgba(7,24,46,.96);
+  border:1px solid rgba(142,192,255,.35);
+  color:#fff;
+  font-size:12px;
+  backdrop-filter:blur(8px);
+}
+
+#realtime-status-panel .rt-dot{
+  display:inline-block;
+  width:8px;
+  height:8px;
+  margin-right:6px;
+  border-radius:50%;
+  background:#ffb450;
+}
+
+#realtime-status-panel .rt-dot.online{
+  background:#3dd68c;
+}
+
+#realtime-status-panel .rt-dot.error{
+  background:#ff6b6b;
+}
+
+.final-live-tag{
+  display:inline-block;
+  margin-left:6px;
+  padding:1px 6px;
+  border-radius:999px;
+  border:1px solid rgba(61,214,140,.45);
+  background:rgba(61,214,140,.10);
+  color:#3dd68c;
+  font-size:10px;
+  vertical-align:middle;
+}
+
+</style>
+
+
+<script id="final-live-page-fix">
+
+(function(){
+
   'use strict';
-  if (typeof DATA === 'undefined') return;
 
-  var API = 'https://stock-report-jp20260318-3497.vercel.app/api/quotes';
-  var LEVELS = { support: 48218, mid: 48380, high: 48601 };
 
-  function taipeiNow() {
-    return new Date().toLocaleString('zh-TW', {
-      timeZone: 'Asia/Taipei',
-      hour12: false,
-      year: 'numeric',
-      month: '2-digit',
-      day: '2-digit',
-      hour: '2-digit',
-      minute: '2-digit',
-      second: '2-digit'
-    });
+  /* ==========================================
+     0. 基本檢查
+  ========================================== */
+
+  if(
+    typeof DATA === 'undefined'
+  ){
+    console.error(
+      'FINAL LIVE FIX：找不到 DATA'
+    );
+    return;
   }
 
-  function num(v) {
-    var n = Number(v);
-    return Number.isFinite(n) ? n : null;
-  }
 
-  function fmt(v) {
-    var n = num(v);
-    return n === null ? 'N/A' : n.toLocaleString('en-US', { maximumFractionDigits: 2 });
-  }
+  /* ==========================================
+     1. 工具
+  ========================================== */
 
-  function pct(v) {
-    var n = num(v);
-    return n === null ? 'N/A' : (n > 0 ? '+' : '') + n.toFixed(2) + '%';
-  }
+  function num(v){
 
-  function chg(v) {
-    var n = num(v);
-    return n === null ? 'N/A' : (n > 0 ? '+' : '') + fmt(n);
-  }
-
-  function cls(v) {
-    var n = num(v);
-    return n > 0 ? 'chg-up' : n < 0 ? 'chg-dn' : 'chg-flat';
-  }
-
-  function ensureStatus() {
-    var panel = document.getElementById('realtime-status-panel');
-    if (!panel) return;
-    panel.hidden = false;
-    panel.style.display = '';
-    panel.removeAttribute('aria-hidden');
-  }
-
-  function setStatus(ok, text) {
-    ensureStatus();
-    var dot = document.getElementById('rt-dot');
-    var status = document.getElementById('rt-status-text');
-    if (dot) {
-      dot.classList.remove('online', 'error');
-      dot.classList.add(ok ? 'online' : 'error');
+    if(
+      v === null ||
+      v === undefined ||
+      v === '' ||
+      v === 'N/A'
+    ){
+      return null;
     }
-    if (status) status.textContent = text;
+
+    const n = Number(v);
+
+    return Number.isFinite(n)
+      ? n
+      : null;
   }
 
-  function codes() {
-    return Object.keys(DATA);
-  }
 
-  async function fetchQuotes() {
-    var list = codes();
-    var quotes = {};
-    var failed = 0;
-    for (var i = 0; i < list.length; i += 8) {
-      var chunk = list.slice(i, i + 8);
-      var url = API + '?symbols=' + encodeURIComponent(chunk.join(',')) + '&t=' + Date.now();
-      try {
-        var res = await fetch(url, { cache: 'no-store', headers: { Accept: 'application/json' } });
-        if (!res.ok) { failed++; continue; }
-        var json = await res.json();
-        Object.assign(quotes, json.quotes || {});
-      } catch (e) {
-        failed++;
+  function fmt(v){
+
+    const n = num(v);
+
+    if(n === null){
+      return 'N/A';
+    }
+
+    return n.toLocaleString(
+      'en-US',
+      {
+        maximumFractionDigits:2
       }
+    );
+  }
+
+
+  function pct(v){
+
+    const n = num(v);
+
+    if(n === null){
+      return 'N/A';
     }
-    return { quotes: quotes, failed: failed };
+
+    return (
+      (n > 0 ? '+' : '') +
+      n.toFixed(2) +
+      '%'
+    );
   }
 
-  function applyQuotes(quotes) {
-    var n = 0;
-    Object.keys(quotes).forEach(function (code) {
-      var q = quotes[code];
-      if (!DATA[code] || num(q && q.price) === null) return;
-      DATA[code].p = Number(q.price);
-      if (num(q.change) !== null) DATA[code].ch = Number(q.change);
-      if (num(q.changePercent) !== null) DATA[code].pct = Number(q.changePercent);
-      DATA[code].live = true;
-      DATA[code].liveTime = q.time || taipeiNow();
-      n++;
-    });
-    return n;
+
+  function change(v){
+
+    const n = num(v);
+
+    if(n === null){
+      return 'N/A';
+    }
+
+    return (
+      (n > 0 ? '+' : '') +
+      fmt(n)
+    );
   }
 
-  function paintCards() {
-    document.querySelectorAll('.card').forEach(function (card) {
-      var sub = card.querySelector('.sub');
-      if (!sub) return;
-      var code = codes().find(function (c) { return sub.textContent.indexOf(c) !== -1; });
-      if (!code || !DATA[code] || !DATA[code].live) return;
-      var d = DATA[code];
-      var price = card.querySelector('.price');
-      if (price) {
-        var numEl = price.querySelector('.price-num');
-        if (!numEl) {
-          price.textContent = '';
-          numEl = document.createElement('span');
-          numEl.className = 'price-num';
-          price.appendChild(numEl);
+
+  function colorClass(v){
+
+    const n = num(v);
+
+    if(n === null){
+      return 'chg-flat';
+    }
+
+    if(n > 0){
+      return 'chg-up';
+    }
+
+    if(n < 0){
+      return 'chg-dn';
+    }
+
+    return 'chg-flat';
+  }
+
+
+  function nameOf(code){
+
+    if(
+      typeof NAMES !== 'undefined' &&
+      NAMES[code]
+    ){
+      return NAMES[code];
+    }
+
+    return code;
+  }
+
+
+  function nowTaipei(){
+
+    return new Date()
+      .toLocaleString(
+        'zh-TW',
+        {
+          timeZone:'Asia/Taipei',
+          hour12:false,
+          year:'numeric',
+          month:'2-digit',
+          day:'2-digit',
+          hour:'2-digit',
+          minute:'2-digit',
+          second:'2-digit'
         }
-        numEl.textContent = fmt(d.p);
-        price.classList.remove('chg-up', 'chg-dn', 'chg-flat');
-        price.classList.add(cls(d.pct));
-        if (!price.querySelector('.live-price-tag')) {
-          var tag = document.createElement('span');
-          tag.className = 'live-price-tag';
-          tag.textContent = 'LIVE';
-          price.appendChild(tag);
-        }
+      );
+  }
+
+
+  function allCodes(){
+
+    return Object.keys(DATA)
+      .sort(
+        (a,b) =>
+          b.length - a.length
+      );
+  }
+
+
+  function findCode(text){
+
+    if(!text){
+      return null;
+    }
+
+    return allCodes()
+      .find(
+        code =>
+          text.indexOf(code) !== -1
+      ) || null;
+  }
+
+
+  function liveLine(label,code){
+
+    const d =
+      DATA[code] || {};
+
+    return (
+      label +
+      '：' +
+      fmt(d.p) +
+      '（' +
+      pct(d.pct) +
+      '）' +
+      (
+        d.live
+          ? ' LIVE'
+          : ''
+      )
+    );
+  }
+
+
+  /* ==========================================
+     2. 顯示狀態列
+  ========================================== */
+
+  function ensureStatus(){
+
+    let panel =
+      document.getElementById(
+        'realtime-status-panel'
+      );
+
+
+    if(!panel){
+
+      panel =
+        document.createElement('div');
+
+      panel.id =
+        'realtime-status-panel';
+
+      panel.innerHTML = `
+        <span
+          id="rt-dot"
+          class="rt-dot"
+        ></span>
+
+        <span id="rt-status-text">
+          等待即時行情…
+        </span>
+      `;
+
+
+      const nav =
+        document.querySelector('nav');
+
+      if(nav){
+        nav.insertAdjacentElement(
+          'afterend',
+          panel
+        );
       }
-      card.querySelectorAll('.row').forEach(function (row) {
-        var label = row.children[0] && row.children[0].textContent || '';
-        if (label.indexOf('漲跌') !== -1 && row.children[1]) {
-          row.children[1].textContent = chg(d.ch) + ' (' + pct(d.pct) + ')';
-          row.children[1].classList.remove('chg-up', 'chg-dn', 'chg-flat');
-          row.children[1].classList.add(cls(d.pct));
-        }
-      });
-    });
-  }
-
-  function line(name, code) {
-    var d = DATA[code] || {};
-    return name + '： ' + fmt(d.p) + ' （' + pct(d.pct) + '）' + (d.live ? ' LIVE' : '');
-  }
-
-  function paintSummary() {
-    var box = document.getElementById('summary');
-    if (!box) return;
-    var html = '<h2>市場摘要｜LIVE</h2>'
-      + '<p>' + line('台股加權', '^TWII') + '</p>'
-      + '<p>' + line('台積電', '2330.TW') + ' ｜ ' + line('聯發科', '2454.TW') + ' ｜ ' + line('台達電', '2308.TW') + '</p>'
-      + '<p>' + line('群創', '3481.TW') + ' ｜ ' + line('力積電', '6770.TW') + ' ｜ ' + line('臻鼎-KY', '4958.TW') + '</p>'
-      + '<p class="note">📡 LIVE：現價、漲跌、漲跌幅 ｜ 📊 完成日 K：SMA20、SMA60、RSI、支撐、壓力、進場區、失效價 ｜ 更新：' + taipeiNow() + ' 台北</p>';
-    if (box.dataset.livePaint !== html) {
-      box.dataset.livePaint = html;
-      box.innerHTML = html;
-    }
-  }
-
-  function paintRadar() {
-    var box = document.getElementById('radar');
-    if (!box) return;
-    var stocks = codes().filter(function (c) {
-      return c.charAt(0) !== '^' && num(DATA[c] && DATA[c].pct) !== null;
-    }).map(function (c) {
-      return { name: (typeof NAMES !== 'undefined' && NAMES[c]) || c, pct: num(DATA[c].pct), live: !!DATA[c].live };
-    });
-    var gain = stocks.slice().sort(function (a, b) { return b.pct - a.pct; }).slice(0, 5);
-    var loss = stocks.slice().sort(function (a, b) { return a.pct - b.pct; }).slice(0, 5);
-    var html = '<h2>今日交易雷達｜LIVE</h2><ul class="radar">'
-      + '<li>' + line('台股加權', '^TWII') + '</li>'
-      + '<li>即時領漲： ' + (gain.map(function (x) { return x.name + ' ' + pct(x.pct); }).join('、') || '等待行情') + '</li>'
-      + '<li>即時弱勢： ' + (loss.map(function (x) { return x.name + ' ' + pct(x.pct); }).join('、') || '等待行情') + '</li>'
-      + '<li>' + line('Nasdaq', '^IXIC') + '</li>'
-      + '<li>' + line('費城半導體', '^SOX') + '</li>'
-      + '<li>美國 10 年債： ' + fmt(DATA['^TNX'] && DATA['^TNX'].p) + (DATA['^TNX'] && DATA['^TNX'].live ? ' LIVE' : '') + '</li>'
-      + '<li>最後刷新： ' + taipeiNow() + ' 台北。進場區與失效價仍用完成日 K，不因盤中價重算。</li>'
-      + '</ul>';
-    if (box.dataset.livePaint !== html) {
-      box.dataset.livePaint = html;
-      box.innerHTML = html;
-    }
-  }
-
-  function paintIndex() {
-    var body = document.getElementById('idx-body');
-    if (!body) return;
-    body.querySelectorAll('tr').forEach(function (row) {
-      var cells = row.querySelectorAll('td');
-      if (cells.length < 5) return;
-      var code = cells[0].textContent.trim();
-      var d = DATA[code];
-      if (!d || !d.live) return;
-      cells[3].textContent = fmt(d.p);
-      cells[4].textContent = chg(d.ch) + ' (' + pct(d.pct) + ') LIVE';
-      cells[4].classList.remove('chg-up', 'chg-dn', 'chg-flat');
-      cells[4].classList.add(cls(d.pct));
-      if (cells[5]) {
-        cells[5].textContent = '盤中報價 ' + taipeiNow() + ' 台北。SMA／進出場仍用最後完成日 K，未把未完成 K 當收盤。';
+      else{
+        document.body.prepend(panel);
       }
-    });
-  }
 
-  function paintLevels() {
-    var box = document.getElementById('u2-market-levels');
-    if (!box) return;
-    var d = DATA['^TWII'];
-    var old = box.querySelector('[data-live-levels]');
-    if (old) old.remove();
-    if (!d || num(d.p) === null) return;
-    var p = num(d.p);
-    var note = document.createElement('p');
-    note.className = 'note';
-    note.setAttribute('data-live-levels', '1');
-    note.textContent = '加權即時 ' + fmt(p) + '（' + pct(d.pct) + '）｜距 48,218 ' + pct((p - LEVELS.support) / LEVELS.support * 100) + '｜距 48,380 ' + pct((p - LEVELS.mid) / LEVELS.mid * 100) + '｜距 48,601 ' + pct((p - LEVELS.high) / LEVELS.high * 100) + '。關卡價不改。';
-    box.appendChild(note);
-  }
-
-  function paintSmart() {
-    var sel = document.getElementById('u2-select');
-    if (sel) sel.dispatchEvent(new Event('change'));
-  }
-
-  function paintPositions() {
-    if (typeof window.renderWholePage === 'function') {
-      try { window.renderWholePage(); } catch (e) {}
     }
-    var live = document.getElementById('live-position-panel');
-    var holds = [
-      { code: '2330.TW', shares: 10, avg: 2572.10 },
-      { code: '4958.TW', shares: 80, avg: 481.90 }
+
+
+    panel.style.setProperty(
+      'display',
+      'block',
+      'important'
+    );
+
+
+    return panel;
+  }
+
+
+  /* ==========================================
+     3. 更新所有股票卡片
+  ========================================== */
+
+  function updateCards(){
+
+    document
+      .querySelectorAll('.card')
+      .forEach(
+        card => {
+
+          const text =
+            card.textContent || '';
+
+          const code =
+            card.dataset.code ||
+            findCode(text);
+
+          if(
+            !code ||
+            !DATA[code]
+          ){
+            return;
+          }
+
+
+          const d =
+            DATA[code];
+
+
+          /* 大價格 */
+
+          const price =
+            card.querySelector(
+              '.price'
+            );
+
+          if(price){
+
+            price.innerHTML = `
+              <span>
+                ${fmt(d.p)}
+              </span>
+
+              ${
+                d.live
+                  ? '<span class="final-live-tag">LIVE</span>'
+                  : ''
+              }
+            `;
+
+            price.classList.remove(
+              'chg-up',
+              'chg-dn',
+              'chg-flat'
+            );
+
+            price.classList.add(
+              colorClass(d.pct)
+            );
+
+          }
+
+
+          /* 每一列 */
+
+          card
+            .querySelectorAll('.row')
+            .forEach(
+              row => {
+
+                if(
+                  row.children.length < 2
+                ){
+                  return;
+                }
+
+                const label =
+                  (
+                    row.children[0]
+                      .textContent || ''
+                  ).trim();
+
+
+                /* 漲跌 */
+
+                if(
+                  label.indexOf(
+                    '漲跌'
+                  ) !== -1
+                ){
+
+                  row.children[1]
+                    .textContent =
+                      change(d.ch) +
+                      ' (' +
+                      pct(d.pct) +
+                      ')';
+
+                  row.children[1]
+                    .classList.remove(
+                      'chg-up',
+                      'chg-dn',
+                      'chg-flat'
+                    );
+
+                  row.children[1]
+                    .classList.add(
+                      colorClass(d.pct)
+                    );
+
+                }
+
+
+                /* 現價 */
+
+                if(
+                  label === '現價' ||
+                  label === '即時價格'
+                ){
+
+                  row.children[1]
+                    .textContent =
+                      fmt(d.p);
+
+                }
+
+              }
+            );
+
+        }
+      );
+
+  }
+
+
+  /* ==========================================
+     4. 指數表
+  ========================================== */
+
+  function updateIndex(){
+
+    const body =
+      document.getElementById(
+        'idx-body'
+      );
+
+    if(!body){
+      return;
+    }
+
+
+    body
+      .querySelectorAll('tr')
+      .forEach(
+        row => {
+
+          const cells =
+            row.querySelectorAll('td');
+
+          if(
+            cells.length < 5
+          ){
+            return;
+          }
+
+          const code =
+            cells[0]
+              .textContent
+              .trim();
+
+          const d =
+            DATA[code];
+
+          if(!d){
+            return;
+          }
+
+
+          cells[3].textContent =
+            fmt(d.p);
+
+
+          cells[4].textContent =
+            change(d.ch) +
+            ' (' +
+            pct(d.pct) +
+            ')' +
+            (
+              d.live
+                ? ' LIVE'
+                : ''
+            );
+
+
+          cells[4]
+            .classList.remove(
+              'chg-up',
+              'chg-dn',
+              'chg-flat'
+            );
+
+          cells[4]
+            .classList.add(
+              colorClass(d.pct)
+            );
+
+        }
+      );
+
+  }
+
+
+  /* ==========================================
+     5. 市場摘要
+  ========================================== */
+
+  function updateSummary(){
+
+    const box =
+      document.getElementById(
+        'summary'
+      );
+
+    if(!box){
+      return;
+    }
+
+
+    box.innerHTML = `
+
+      <h2>
+        市場摘要｜LIVE
+      </h2>
+
+      <p>
+        ${liveLine(
+          '台股加權',
+          '^TWII'
+        )}
+      </p>
+
+      <p>
+        ${liveLine(
+          '台積電',
+          '2330.TW'
+        )}
+
+        ｜
+
+        ${liveLine(
+          '聯發科',
+          '2454.TW'
+        )}
+
+        ｜
+
+        ${liveLine(
+          '台達電',
+          '2308.TW'
+        )}
+      </p>
+
+      <p>
+        ${liveLine(
+          'Nasdaq',
+          '^IXIC'
+        )}
+
+        ｜
+
+        ${liveLine(
+          '費城半導體',
+          '^SOX'
+        )}
+      </p>
+
+      <p>
+        ${liveLine(
+          'NVIDIA',
+          'NVDA'
+        )}
+
+        ｜
+
+        ${liveLine(
+          'TSMC ADR',
+          'TSM'
+        )}
+
+        ｜
+
+        ${liveLine(
+          'AMD',
+          'AMD'
+        )}
+      </p>
+
+      <p class="note">
+
+        📡 現價／漲跌／漲跌幅：
+        即時行情
+
+        <br>
+
+        📊 SMA20／SMA60／支撐／壓力／進場區：
+        最後完成日 K
+
+        <br>
+
+        畫面更新：
+        ${nowTaipei()} 台北
+
+      </p>
+
+    `;
+
+  }
+
+
+  /* ==========================================
+     6. 今日交易雷達
+  ========================================== */
+
+  function updateRadar(){
+
+    const box =
+      document.getElementById(
+        'radar'
+      );
+
+    if(!box){
+      return;
+    }
+
+
+    const stocks =
+      allCodes()
+      .filter(
+        code =>
+          code.charAt(0) !== '^' &&
+          num(
+            DATA[code]?.pct
+          ) !== null
+      )
+      .map(
+        code => ({
+          code:code,
+          name:nameOf(code),
+          pct:num(
+            DATA[code].pct
+          )
+        })
+      );
+
+
+    const gain =
+      stocks
+      .slice()
+      .sort(
+        (a,b) =>
+          b.pct - a.pct
+      )
+      .slice(0,5);
+
+
+    const loss =
+      stocks
+      .slice()
+      .sort(
+        (a,b) =>
+          a.pct - b.pct
+      )
+      .slice(0,5);
+
+
+    box.innerHTML = `
+
+      <h2>
+        今日交易雷達｜LIVE
+      </h2>
+
+      <ul class="radar">
+
+        <li>
+          ${liveLine(
+            '加權指數',
+            '^TWII'
+          )}
+        </li>
+
+        <li>
+          即時領漲：
+          ${
+            gain
+              .map(
+                x =>
+                  x.name +
+                  ' ' +
+                  pct(x.pct)
+              )
+              .join('、')
+          }
+        </li>
+
+        <li>
+          即時弱勢：
+          ${
+            loss
+              .map(
+                x =>
+                  x.name +
+                  ' ' +
+                  pct(x.pct)
+              )
+              .join('、')
+          }
+        </li>
+
+        <li>
+          ${liveLine(
+            'Nasdaq',
+            '^IXIC'
+          )}
+        </li>
+
+        <li>
+          ${liveLine(
+            '費城半導體',
+            '^SOX'
+          )}
+        </li>
+
+        <li>
+          美國 10 年債：
+          ${fmt(
+            DATA['^TNX']?.p
+          )}
+        </li>
+
+        <li>
+          最後畫面同步：
+          ${nowTaipei()} 台北
+        </li>
+
+      </ul>
+
+    `;
+
+  }
+
+
+  /* ==========================================
+     7. 可進場選擇
+  ========================================== */
+
+  function updateEntryPick(){
+
+    const list =
+      document.getElementById(
+        'entry-pick-list'
+      );
+
+    if(!list){
+      return;
+    }
+
+
+    list
+      .querySelectorAll('.card')
+      .forEach(
+        card => {
+
+          const input =
+            card.querySelector(
+              '[data-code]'
+            );
+
+          if(!input){
+            return;
+          }
+
+          const code =
+            input.dataset.code;
+
+          const d =
+            DATA[code];
+
+          if(!d){
+            return;
+          }
+
+
+          card
+            .querySelectorAll('.row')
+            .forEach(
+              row => {
+
+                if(
+                  row.children.length < 2
+                ){
+                  return;
+                }
+
+                const label =
+                  row.children[0]
+                    .textContent
+                    .trim();
+
+                if(
+                  label === '現價'
+                ){
+
+                  row.children[1]
+                    .textContent =
+                      fmt(d.p);
+
+                }
+
+              }
+            );
+
+        }
+      );
+
+  }
+
+
+  /* ==========================================
+     8. 智慧支撐壓力
+  ========================================== */
+
+  function updateSmart(){
+
+    const select =
+      document.getElementById(
+        'u2-select'
+      );
+
+    if(select){
+
+      select.dispatchEvent(
+        new Event('change')
+      );
+
+    }
+
+  }
+
+
+  /* ==========================================
+     9. 大盤關卡增加即時價
+  ========================================== */
+
+  function updateMarketLevels(){
+
+    const box =
+      document.getElementById(
+        'u2-market-levels'
+      );
+
+    if(!box){
+      return;
+    }
+
+
+    let live =
+      box.querySelector(
+        '[data-final-live-index]'
+      );
+
+
+    if(!live){
+
+      live =
+        document.createElement('p');
+
+      live.className =
+        'note';
+
+      live.dataset.finalLiveIndex =
+        '1';
+
+      box.appendChild(live);
+
+    }
+
+
+    const d =
+      DATA['^TWII'] || {};
+
+
+    live.innerHTML = `
+
+      📡 加權即時：
+
+      <strong>
+        ${fmt(d.p)}
+      </strong>
+
+      （${pct(d.pct)}）
+
+      ｜更新：
+      ${nowTaipei()}
+
+    `;
+
+  }
+
+
+  /* ==========================================
+     10. 族群同步
+  ========================================== */
+
+  function updateSync(){
+
+    if(
+      typeof STOCK_META ===
+      'undefined'
+    ){
+      return;
+    }
+
+
+    const section =
+      document.getElementById(
+        'u2-sync'
+      );
+
+    if(!section){
+      return;
+    }
+
+
+    let target =
+      document.getElementById(
+        'u2-sync-list'
+      );
+
+
+    if(!target){
+
+      target =
+        document.createElement('div');
+
+      target.id =
+        'u2-sync-list';
+
+      section.appendChild(target);
+
+    }
+
+
+    target.innerHTML =
+      Object.entries(
+        STOCK_META
+      )
+      .map(
+        ([group,codes]) => {
+
+          const rows =
+            codes
+            .map(
+              code =>
+                DATA[code]
+            )
+            .filter(
+              d =>
+                d &&
+                num(d.pct) !== null
+            );
+
+
+          if(!rows.length){
+            return '';
+          }
+
+
+          const up =
+            rows.filter(
+              d =>
+                num(d.pct) > 0
+            ).length;
+
+
+          const down =
+            rows.filter(
+              d =>
+                num(d.pct) < 0
+            ).length;
+
+
+          const flat =
+            rows.length -
+            up -
+            down;
+
+
+          const strong =
+            Math.max(
+              up,
+              down
+            );
+
+
+          const rate =
+            Math.round(
+              strong /
+              rows.length *
+              100
+            );
+
+
+          let label =
+            '族群分化';
+
+
+          if(rate >= 80){
+
+            label =
+              up >= down
+                ? '同步偏強'
+                : '同步偏弱';
+
+          }
+          else if(
+            rate >= 50
+          ){
+
+            label =
+              '部分同步';
+
+          }
+
+
+          return `
+
+            <div
+              class="u2-card"
+              style="margin-bottom:8px"
+            >
+
+              <div class="u2-row">
+
+                <b>
+                  ${group}
+                </b>
+
+                <span>
+                  ${rate}%｜
+                  ${label}
+                </span>
+
+              </div>
+
+              <div
+                class="u2-muted"
+                style="margin-top:5px"
+              >
+
+                上漲 ${up}
+                ／
+                下跌 ${down}
+                ／
+                平盤 ${flat}
+                ／
+                有效 ${rows.length}
+
+                <span class="final-live-tag">
+                  LIVE
+                </span>
+
+              </div>
+
+            </div>
+
+          `;
+
+        }
+      )
+      .join('');
+
+  }
+
+
+  /* ==========================================
+     11. 持倉即時損益
+  ========================================== */
+
+  function updatePositions(){
+
+    const holds = [
+
+      {
+        code:'2330.TW',
+        shares:10,
+        avg:2572.10
+      },
+
+      {
+        code:'4958.TW',
+        shares:80,
+        avg:481.90
+      }
+
     ];
-    if (live) {
-      var cards = holds.map(function (pos) {
-        var price = num(DATA[pos.code] && DATA[pos.code].p);
-        var cost = pos.avg * pos.shares;
-        var mv = price === null ? null : price * pos.shares;
-        var pnl = mv === null ? null : mv - cost;
-        var rate = pnl === null ? null : pnl / cost * 100;
-        var klass = pnl >= 0 ? 'u2-profit' : 'u2-loss';
-        return '<div class="u2-card"><h3>' + ((typeof NAMES !== 'undefined' && NAMES[pos.code]) || pos.code) + ' ｜' + pos.code + ' <span class="live-price-tag">LIVE</span></h3>'
-          + '<div class="u2-row"><span>持有股數</span><b>' + pos.shares + '</b></div>'
-          + '<div class="u2-row"><span>平均成本</span><b>' + fmt(pos.avg) + '</b></div>'
-          + '<div class="u2-row"><span>即時價格</span><b class="u2-big">' + fmt(price) + '</b></div>'
-          + '<div class="u2-row"><span>持倉成本</span><b>' + fmt(cost) + '</b></div>'
-          + '<div class="u2-row"><span>即時市值</span><b>' + fmt(mv) + '</b></div>'
-          + '<div class="u2-row"><span>即時損益</span><b class="' + klass + '">' + (pnl === null ? 'N/A' : (pnl >= 0 ? '+' : '') + fmt(pnl)) + '</b></div>'
-          + '<div class="u2-row"><span>報酬率</span><b class="' + klass + '">' + (rate === null ? 'N/A' : (rate >= 0 ? '+' : '') + rate.toFixed(2) + '%') + '</b></div></div>';
-      }).join('');
-      live.innerHTML = '<h2>💰 即時持倉損益</h2><div class="u2-grid">' + cards + '</div><p class="note">即時價格隨行情更新；平均成本固定。SMA20、SMA60、支撐、壓力及正式交易訊號仍以已完成日 K 為準。更新 ' + taipeiNow() + ' 台北。</p>';
+
+
+    let live =
+      document.getElementById(
+        'live-position-panel'
+      );
+
+
+    if(!live){
+      live = document.createElement('section');
+      live.id = 'live-position-panel';
+      live.className = 'panel';
+      const anchor = document.getElementById('u2-position') || document.getElementById('decision');
+      if(anchor) anchor.insertAdjacentElement('afterend', live);
+      else document.body.appendChild(live);
     }
-    var old = document.getElementById('u2-position');
-    if (old) {
-      old.style.display = '';
-      var stamp = old.querySelector('[data-live-pos]');
-      if (!stamp) {
-        stamp = document.createElement('p');
-        stamp.className = 'note';
-        stamp.setAttribute('data-live-pos', '1');
-        old.appendChild(stamp);
-      }
-      stamp.textContent = holds.map(function (pos) {
-        var price = num(DATA[pos.code] && DATA[pos.code].p);
-        var pnl = price === null ? null : (price - pos.avg) * pos.shares;
-        return ((typeof NAMES !== 'undefined' && NAMES[pos.code]) || pos.code) + ' 即時 ' + fmt(price) + '，試算 ' + (pnl === null ? 'N/A' : (pnl >= 0 ? '+' : '') + fmt(pnl));
-      }).join(' ｜ ') + '。截圖成本不變。' + taipeiNow() + ' 台北。';
-    }
+
+
+    const cards =
+      holds
+      .map(
+        pos => {
+
+          const price =
+            num(
+              DATA[pos.code]?.p
+            );
+
+
+          const cost =
+            pos.avg *
+            pos.shares;
+
+
+          const value =
+            price === null
+              ? null
+              : price *
+                pos.shares;
+
+
+          const pnl =
+            value === null
+              ? null
+              : value -
+                cost;
+
+
+          const rate =
+            pnl === null
+              ? null
+              : pnl /
+                cost *
+                100;
+
+
+          const cls =
+            pnl !== null &&
+            pnl >= 0
+              ? 'chg-up'
+              : 'chg-dn';
+
+
+          return `
+
+            <div class="u2-card">
+
+              <h3>
+
+                ${nameOf(pos.code)}
+                ｜${pos.code}
+
+                <span class="final-live-tag">
+                  LIVE
+                </span>
+
+              </h3>
+
+              <div class="u2-row">
+
+                <span>
+                  股數
+                </span>
+
+                <b>
+                  ${pos.shares}
+                </b>
+
+              </div>
+
+              <div class="u2-row">
+
+                <span>
+                  平均成本
+                </span>
+
+                <b>
+                  ${fmt(pos.avg)}
+                </b>
+
+              </div>
+
+              <div class="u2-row">
+
+                <span>
+                  即時價格
+                </span>
+
+                <b class="u2-big">
+                  ${fmt(price)}
+                </b>
+
+              </div>
+
+              <div class="u2-row">
+
+                <span>
+                  即時市值
+                </span>
+
+                <b>
+                  ${fmt(value)}
+                </b>
+
+              </div>
+
+              <div class="u2-row">
+
+                <span>
+                  即時損益
+                </span>
+
+                <b class="${cls}">
+
+                  ${
+                    pnl === null
+                      ? 'N/A'
+                      :
+                      (
+                        pnl >= 0
+                          ? '+'
+                          : ''
+                      ) +
+                      fmt(pnl)
+                  }
+
+                </b>
+
+              </div>
+
+              <div class="u2-row">
+
+                <span>
+                  報酬率
+                </span>
+
+                <b class="${cls}">
+
+                  ${
+                    rate === null
+                      ? 'N/A'
+                      :
+                      (
+                        rate >= 0
+                          ? '+'
+                          : ''
+                      ) +
+                      rate.toFixed(2) +
+                      '%'
+                  }
+
+                </b>
+
+              </div>
+
+            </div>
+
+          `;
+
+        }
+      )
+      .join('');
+
+
+    live.innerHTML = `
+
+      <h2>
+        💰 即時持倉損益
+      </h2>
+
+      <div class="u2-grid">
+        ${cards}
+      </div>
+
+      <p class="note">
+
+        即時價格：
+        每次行情 API 更新後同步。
+
+        <br>
+
+        SMA／支撐／壓力／正式交易訊號：
+        仍使用最後完成日 K。
+
+      </p>
+
+    `;
+
   }
 
-  function paintSync() {
-    var box = document.getElementById('u2-sync-list') || document.getElementById('u2-sync');
-    if (!box || typeof STOCK_META === 'undefined') return;
-    var list = box.id === 'u2-sync' ? box : box;
-    var html = Object.keys(STOCK_META).map(function (group) {
-      var rows = STOCK_META[group].map(function (code) { return DATA[code]; }).filter(function (d) { return d && num(d.pct) !== null; });
-      if (!rows.length) return '';
-      var up = rows.filter(function (d) { return num(d.pct) > 0; }).length;
-      var down = rows.filter(function (d) { return num(d.pct) < 0; }).length;
-      var flat = rows.length - up - down;
-      var rate = Math.round(Math.max(up, down) / rows.length * 100);
-      var label = rate >= 80 ? (up >= down ? '同步偏強' : '同步偏弱') : rate >= 50 ? '部分同步' : '族群分化';
-      return '<div class="u2-card" style="margin-bottom:8px"><div class="u2-row"><b>' + group + '</b><span>' + rate + '% ｜' + label + '</span></div><div class="u2-muted" style="margin-top:5px">上漲 ' + up + ' ／ 下跌 ' + down + ' ／ 平盤 ' + flat + ' ／ 有效 ' + rows.length + ' ｜LIVE</div></div>';
-    }).join('');
-    var target = document.getElementById('u2-sync-list');
-    if (target) target.innerHTML = html;
+
+  /* ==========================================
+     12. 頁首
+  ========================================== */
+
+  function updateHeader(){
+
+    const meta =
+      document.querySelector(
+        '.hdr .meta'
+      );
+
+    if(!meta){
+      return;
+    }
+
+
+    meta.innerHTML = `
+
+      📡 畫面最後同步：
+      ${nowTaipei()} 台北
+
+      <br>
+
+      LIVE：
+      現價／漲跌／漲跌幅
+
+      ｜
+
+      完成日 K：
+      SMA20／SMA60／RSI／支撐／壓力／進出場
+
+    `;
+
   }
 
-  function paintAll() {
-    paintCards();
-    paintSummary();
-    paintRadar();
-    paintIndex();
-    paintLevels();
-    paintSmart();
-    paintPositions();
-    paintSync();
-    var meta = document.querySelector('.hdr .meta');
-    if (meta) {
-      meta.innerHTML = '📡 畫面最後更新： ' + taipeiNow() + ' 台北<br>台股最後完成日 K： ' + ((DATA['2330.TW'] && DATA['2330.TW'].date) || 'N/A') + ' ｜加權即時： ' + fmt(DATA['^TWII'] && DATA['^TWII'].p) + '<br>LIVE：現價／漲跌／漲跌幅 ｜ 日 K：SMA20／SMA60／支撐／壓力／進出場';
+
+  /* ==========================================
+     13. Footer
+  ========================================== */
+
+  function updateFooter(){
+
+    const footer =
+      document.querySelector(
+        '.footer'
+      );
+
+    if(!footer){
+      return;
     }
+
+
+    footer.innerHTML = `
+
+      行情與技術資料僅供追蹤，
+      不構成投資建議。
+
+      <br>
+
+      📡 即時行情：
+      現價／漲跌／漲跌幅
+
+      ｜
+
+      📊 技術資料：
+      最後完成日 K
+
+      <br>
+
+      最後畫面同步：
+      ${nowTaipei()} 台北
+
+    `;
+
   }
 
-  var loading = false;
-  async function tick() {
-    if (loading || typeof DATA === 'undefined') return;
-    loading = true;
-    try {
-      var result = await fetchQuotes();
-      var n = applyQuotes(result.quotes);
-      paintAll();
-      window.__LIVE_OK__ = n;
-      if (n) {
-        setStatus(true, '✅ 已更新 ' + n + ' 檔｜' + taipeiNow() + ' 台北' + (result.failed ? '｜' + result.failed + ' 批失敗' : ''));
-      } else {
-        setStatus(false, '⚠️ 沒有新報價｜' + taipeiNow() + ' 台北｜保留上一筆');
-      }
-    } catch (e) {
-      setStatus(false, '⚠️ 行情連線失敗｜' + taipeiNow() + ' 台北｜保留上一筆');
-    } finally {
-      loading = false;
+
+  /* ==========================================
+     14. 全頁 LIVE 重畫
+  ========================================== */
+
+  function renderLivePage(){
+
+    try{
+
+      ensureStatus();
+
+      updateHeader();
+
+      updateCards();
+
+      updateIndex();
+
+      updateSummary();
+
+      updateRadar();
+
+      updateEntryPick();
+
+      updateSmart();
+
+      updateMarketLevels();
+
+      updateSync();
+
+      updatePositions();
+
+      updateFooter();
+
     }
+    catch(error){
+
+      console.error(
+        'FINAL LIVE FIX：',
+        error
+      );
+
+    }
+
   }
+
+
+  /* ==========================================
+     15. 關鍵修正
+     接管舊 renderWholePage
+  ========================================== */
+
+  window.__FULL_LIVE_RENDER__ =
+    renderLivePage;
+
+
+  /*
+    舊的 paintPositions()
+    會呼叫 window.renderWholePage()
+
+    原本會把 LIVE 資料重新
+    蓋成舊版內容。
+
+    現在改成：
+    呼叫我們的 LIVE 全頁重畫。
+  */
+
+  window.renderWholePage =
+    renderLivePage;
+
+
+  /* ==========================================
+     16. 啟動
+     不另外抓 API
+     只讀原本 DATA
+  ========================================== */
 
   ensureStatus();
-  tick();
-  setInterval(tick, 10000);
-  document.addEventListener('visibilitychange', function () {
-    if (document.visibilityState === 'visible') tick();
-  });
-})();
-</script>
 
+  renderLivePage();
+
+
+  /*
+    每 2 秒檢查 DATA 並同步畫面。
+
+    注意：
+    這裡沒有 fetch，
+    不會額外增加 Vercel API 次數。
+
+    原本行情程式仍然每 10 秒
+    把最新價格寫入 DATA。
+  */
+
+  setInterval(
+    renderLivePage,
+    2000
+  );
+
+
+  /* 回到網頁立即重畫 */
+
+  document.addEventListener(
+    'visibilitychange',
+    function(){
+
+      if(
+        document.visibilityState ===
+        'visible'
+      ){
+
+        renderLivePage();
+
+      }
+
+    }
+  );
+
+
+  console.log(
+    '✅ FINAL LIVE PAGE FIX 已啟動'
+  );
+
+
+})();
+
+</script>
+<!-- ================= END FINAL FIX ================= -->
 </body> 前面
 ========================================================= -->
 
