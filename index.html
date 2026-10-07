@@ -3852,6 +3852,2064 @@ ${d.note || 'N/A'}
 })();
 </script>
 
+<!-- =========================================================
+     股票報告｜明確進場 / 出場訊號 PRO V1
+     功能：
+     1. 不另外打 API
+     2. 直接讀現有 DATA
+     3. 即時價格 + 完成日K技術資料分開判斷
+     4. 明確顯示：
+        🟢 進場條件成立
+        👀 接近進場
+        ⏳ 等待回檔
+        🔵 續抱
+        🔷 加碼條件成立
+        🟠 減碼提醒
+        ⚠️ 出場警戒
+        🔴 出場條件成立
+     5. 盤中訊號標示「等待收盤確認」
+========================================================= -->
+
+<style id="trade-signal-pro-style">
+
+#trade-signal-pro {
+  margin: 14px 0;
+}
+
+.trade-signal-head {
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:10px;
+  flex-wrap:wrap;
+  margin-bottom:12px;
+}
+
+.trade-signal-summary {
+  font-size:12px;
+  color:var(--muted,#c5d0de);
+}
+
+.trade-signal-grid {
+  display:grid;
+  grid-template-columns:repeat(auto-fill,minmax(285px,1fr));
+  gap:10px;
+}
+
+.trade-signal-card {
+  position:relative;
+  background:rgba(8,32,64,.82);
+  border:1px solid rgba(142,192,255,.28);
+  border-radius:15px;
+  padding:13px;
+  overflow:hidden;
+}
+
+.trade-signal-card.signal-entry {
+  border:2px solid #3dd68c;
+  box-shadow:0 0 18px rgba(61,214,140,.14);
+}
+
+.trade-signal-card.signal-add {
+  border:2px solid #65a7ff;
+  box-shadow:0 0 18px rgba(101,167,255,.14);
+}
+
+.trade-signal-card.signal-reduce {
+  border:2px solid #ffb450;
+}
+
+.trade-signal-card.signal-exit {
+  border:2px solid #ff6b6b;
+  box-shadow:0 0 18px rgba(255,107,107,.14);
+}
+
+.trade-signal-card.signal-near {
+  border:2px solid #ffd166;
+}
+
+.trade-signal-card.signal-hold {
+  border-color:rgba(101,167,255,.7);
+}
+
+.trade-signal-title {
+  display:flex;
+  justify-content:space-between;
+  align-items:flex-start;
+  gap:8px;
+}
+
+.trade-signal-name {
+  font-size:15px;
+  font-weight:800;
+  color:#fff;
+}
+
+.trade-signal-code {
+  margin-top:2px;
+  font-size:11px;
+  color:var(--muted,#c5d0de);
+}
+
+.trade-badge {
+  white-space:nowrap;
+  border-radius:999px;
+  padding:5px 9px;
+  font-size:11px;
+  font-weight:800;
+}
+
+.badge-entry {
+  background:rgba(61,214,140,.15);
+  border:1px solid #3dd68c;
+  color:#3dd68c;
+}
+
+.badge-add {
+  background:rgba(101,167,255,.15);
+  border:1px solid #65a7ff;
+  color:#8ec0ff;
+}
+
+.badge-hold {
+  background:rgba(77,163,255,.13);
+  border:1px solid #4da3ff;
+  color:#8ec0ff;
+}
+
+.badge-near {
+  background:rgba(255,209,102,.12);
+  border:1px solid #ffd166;
+  color:#ffd166;
+}
+
+.badge-wait {
+  background:rgba(190,200,215,.1);
+  border:1px solid #9aa8b8;
+  color:#c5d0de;
+}
+
+.badge-reduce {
+  background:rgba(255,180,80,.12);
+  border:1px solid #ffb450;
+  color:#ffb450;
+}
+
+.badge-warning {
+  background:rgba(255,145,80,.12);
+  border:1px solid #ff9150;
+  color:#ffad73;
+}
+
+.badge-exit {
+  background:rgba(255,107,107,.13);
+  border:1px solid #ff6b6b;
+  color:#ff6b6b;
+}
+
+.trade-big-price {
+  margin:10px 0 5px;
+  font-size:25px;
+  font-weight:900;
+}
+
+.trade-change {
+  font-size:12px;
+  margin-bottom:8px;
+}
+
+.trade-row {
+  display:flex;
+  justify-content:space-between;
+  align-items:flex-start;
+  gap:12px;
+  padding:5px 0;
+  border-bottom:1px solid rgba(255,255,255,.06);
+  font-size:12px;
+}
+
+.trade-row span {
+  color:var(--muted,#c5d0de);
+}
+
+.trade-row b {
+  text-align:right;
+  color:#fff;
+}
+
+.trade-checks {
+  margin-top:9px;
+  display:flex;
+  gap:5px;
+  flex-wrap:wrap;
+}
+
+.trade-check {
+  border-radius:999px;
+  padding:3px 7px;
+  font-size:10px;
+  border:1px solid rgba(255,255,255,.16);
+}
+
+.trade-check.ok {
+  color:#3dd68c;
+  border-color:rgba(61,214,140,.6);
+  background:rgba(61,214,140,.08);
+}
+
+.trade-check.no {
+  color:#ff9a9a;
+  border-color:rgba(255,107,107,.45);
+  background:rgba(255,107,107,.06);
+}
+
+.trade-main-reason {
+  margin-top:9px;
+  padding:8px 9px;
+  border-radius:9px;
+  background:rgba(255,255,255,.045);
+  font-size:11px;
+  color:#e7edf5;
+}
+
+.trade-confirm {
+  margin-top:7px;
+  font-size:10px;
+  color:var(--muted,#c5d0de);
+}
+
+.trade-signal-filter {
+  display:flex;
+  gap:5px;
+  flex-wrap:wrap;
+}
+
+.trade-filter-btn {
+  border:1px solid rgba(255,255,255,.22);
+  background:rgba(255,255,255,.05);
+  color:#fff;
+  border-radius:999px;
+  padding:5px 9px;
+  font-size:11px;
+  cursor:pointer;
+}
+
+.trade-filter-btn.active {
+  background:#fff;
+  color:#07182e;
+}
+
+.trade-top-alert {
+  margin-bottom:10px;
+  border-radius:12px;
+  padding:10px 12px;
+  background:rgba(61,214,140,.09);
+  border:1px solid rgba(61,214,140,.35);
+  font-size:12px;
+}
+
+@media(max-width:600px) {
+  .trade-signal-grid {
+    grid-template-columns:1fr;
+  }
+
+  .trade-big-price {
+    font-size:22px;
+  }
+}
+
+</style>
+
+
+<script id="trade-signal-pro-v1">
+
+(function () {
+
+  'use strict';
+
+
+  /* =========================================================
+     1. 避免重複啟動
+  ========================================================= */
+
+  if (window.__TRADE_SIGNAL_PRO_RUNNING__) {
+    return;
+  }
+
+  window.__TRADE_SIGNAL_PRO_RUNNING__ = true;
+
+
+  /* =========================================================
+     2. 目前持倉
+
+     依你現在網站：
+     台積電 10 股
+     臻鼎-KY 80 股
+
+     以後有新增持倉，直接把代碼加進去。
+  ========================================================= */
+
+  const HELD_CODES = new Set([
+    '2330.TW',
+    '4958.TW'
+  ]);
+
+
+  /* =========================================================
+     3. 參數
+  ========================================================= */
+
+  const CONFIG = {
+
+    /*
+      接近進場區：
+      高於進場區上緣 3% 內
+    */
+
+    nearEntryPct: 3,
+
+
+    /*
+      MA20 正乖離最大值。
+      超過 6% 不算標準進場。
+    */
+
+    maxEntryBias: 6,
+
+
+    /*
+      MA20 乖離超過 10%
+      開始注意過熱。
+    */
+
+    reduceBias: 10,
+
+
+    /*
+      超過 15%
+      強烈減碼提醒。
+    */
+
+    strongReduceBias: 15,
+
+
+    /*
+      距第一壓力不到 2%
+      視為接近壓力。
+    */
+
+    resistanceBufferPct: 2,
+
+
+    /*
+      RSI >= 75 視為偏熱。
+    */
+
+    hotRsi: 75,
+
+
+    /*
+      最低風報比
+    */
+
+    minRR: 1.5,
+
+
+    /*
+      畫面每 2 秒重新判斷。
+      不會額外呼叫股票 API。
+    */
+
+    renderMs: 2000
+
+  };
+
+
+  /* =========================================================
+     4. 工具
+  ========================================================= */
+
+  function num(v) {
+
+    if (
+      v === null ||
+      v === undefined ||
+      v === '' ||
+      v === 'N/A'
+    ) {
+      return null;
+    }
+
+    const n =
+      Number(
+        String(v)
+          .replace(/,/g, '')
+          .replace(/%/g, '')
+      );
+
+    return Number.isFinite(n)
+      ? n
+      : null;
+
+  }
+
+
+  function fmt(v) {
+
+    const n = num(v);
+
+    if (n === null) {
+      return 'N/A';
+    }
+
+    return n.toLocaleString(
+      'en-US',
+      {
+        maximumFractionDigits: 2
+      }
+    );
+
+  }
+
+
+  function pct(v) {
+
+    const n = num(v);
+
+    if (n === null) {
+      return 'N/A';
+    }
+
+    return (
+      (n > 0 ? '+' : '') +
+      n.toFixed(2) +
+      '%'
+    );
+
+  }
+
+
+  function nameOf(code) {
+
+    return (
+      typeof NAMES !== 'undefined' &&
+      NAMES[code]
+    )
+      ? NAMES[code]
+      : code;
+
+  }
+
+
+  function marketOf(code) {
+
+    if (
+      code.endsWith('.TW') ||
+      code.endsWith('.TWO')
+    ) {
+      return 'TW';
+    }
+
+    return 'US';
+
+  }
+
+
+  function marketName(code) {
+
+    return marketOf(code) === 'TW'
+      ? '台股'
+      : '美股';
+
+  }
+
+
+  function groupOf(code) {
+
+    if (
+      typeof STOCK_META === 'undefined'
+    ) {
+      return '';
+    }
+
+    let answer = '';
+
+    Object.entries(STOCK_META)
+      .some(([key, list]) => {
+
+        if (
+          Array.isArray(list) &&
+          list.includes(code)
+        ) {
+
+          answer =
+            key.split('|')[1] ||
+            '';
+
+          return true;
+
+        }
+
+        return false;
+
+      });
+
+    return answer;
+
+  }
+
+
+  function parseRange(value) {
+
+    if (!value) {
+      return {
+        low: null,
+        high: null
+      };
+    }
+
+    const arr =
+      String(value)
+        .replace(/,/g, '')
+        .match(/-?\d+(?:\.\d+)?/g);
+
+    if (!arr || arr.length < 2) {
+      return {
+        low: null,
+        high: null
+      };
+    }
+
+    const a = Number(arr[0]);
+    const b = Number(arr[1]);
+
+    if (
+      !Number.isFinite(a) ||
+      !Number.isFinite(b)
+    ) {
+      return {
+        low: null,
+        high: null
+      };
+    }
+
+    return {
+      low: Math.min(a, b),
+      high: Math.max(a, b)
+    };
+
+  }
+
+
+  function dateInTZ(timeZone) {
+
+    const parts = {};
+
+    new Intl.DateTimeFormat(
+      'en-CA',
+      {
+        timeZone,
+        year: 'numeric',
+        month: '2-digit',
+        day: '2-digit'
+      }
+    )
+      .formatToParts(new Date())
+      .forEach(p => {
+
+        if (p.type !== 'literal') {
+          parts[p.type] = p.value;
+        }
+
+      });
+
+    return (
+      parts.year +
+      '-' +
+      parts.month +
+      '-' +
+      parts.day
+    );
+
+  }
+
+
+  function marketOpen(code) {
+
+    const isTW =
+      marketOf(code) === 'TW';
+
+    const tz =
+      isTW
+        ? 'Asia/Taipei'
+        : 'America/New_York';
+
+    const parts = {};
+
+    new Intl.DateTimeFormat(
+      'en-US',
+      {
+        timeZone: tz,
+        weekday: 'short',
+        hour: '2-digit',
+        minute: '2-digit',
+        hourCycle: 'h23'
+      }
+    )
+      .formatToParts(new Date())
+      .forEach(p => {
+
+        parts[p.type] = p.value;
+
+      });
+
+    if (
+      parts.weekday === 'Sat' ||
+      parts.weekday === 'Sun'
+    ) {
+      return false;
+    }
+
+    const mins =
+      Number(parts.hour) * 60 +
+      Number(parts.minute);
+
+    if (isTW) {
+
+      return (
+        mins >= 9 * 60 &&
+        mins < 13 * 60 + 30
+      );
+
+    }
+
+    return (
+      mins >= 9 * 60 + 30 &&
+      mins < 16 * 60
+    );
+
+  }
+
+
+  function technicalDateIsToday(code, d) {
+
+    if (!d?.date) {
+      return false;
+    }
+
+    const tz =
+      marketOf(code) === 'TW'
+        ? 'Asia/Taipei'
+        : 'America/New_York';
+
+    return (
+      String(d.date) ===
+      dateInTZ(tz)
+    );
+
+  }
+
+
+  /* =========================================================
+     5. 單檔股票判斷
+  ========================================================= */
+
+  function analyze(code) {
+
+    const d =
+      DATA?.[code] ||
+      {};
+
+    const price =
+      num(d.p);
+
+    const sma20 =
+      num(d.s20);
+
+    const sma60 =
+      num(d.s60);
+
+    const rsi =
+      num(d.rsi14);
+
+    const stop =
+      num(d.invalid);
+
+    const resistance =
+      num(d.resist);
+
+    const entry =
+      parseRange(d.entry);
+
+    const held =
+      HELD_CODES.has(code);
+
+
+    /* -----------------------------
+       技術資料不足
+    ----------------------------- */
+
+    const dataReady =
+      price !== null &&
+      sma20 !== null &&
+      entry.low !== null &&
+      entry.high !== null;
+
+
+    /* -----------------------------
+       MA20
+    ----------------------------- */
+
+    const aboveMA20 =
+      price !== null &&
+      sma20 !== null &&
+      price >= sma20;
+
+
+    const bias =
+      (
+        price !== null &&
+        sma20 !== null &&
+        sma20 !== 0
+      )
+        ? (
+            (price - sma20) /
+            sma20 *
+            100
+          )
+        : null;
+
+
+    const entryBiasOK =
+      bias !== null &&
+      bias >= 0 &&
+      bias <= CONFIG.maxEntryBias;
+
+
+    /* -----------------------------
+       進場區
+    ----------------------------- */
+
+    const inEntryZone =
+      price !== null &&
+      entry.low !== null &&
+      entry.high !== null &&
+      price >= entry.low &&
+      price <= entry.high;
+
+
+    const belowEntry =
+      price !== null &&
+      entry.low !== null &&
+      price < entry.low;
+
+
+    const aboveEntry =
+      price !== null &&
+      entry.high !== null &&
+      price > entry.high;
+
+
+    const distAboveEntry =
+      (
+        price !== null &&
+        entry.high !== null &&
+        entry.high !== 0 &&
+        price > entry.high
+      )
+        ? (
+            (price - entry.high) /
+            entry.high *
+            100
+          )
+        : null;
+
+
+    const nearEntry =
+      aboveEntry &&
+      distAboveEntry !== null &&
+      distAboveEntry <= CONFIG.nearEntryPct;
+
+
+    /* -----------------------------
+       趨勢
+    ----------------------------- */
+
+    const dailyTrend =
+      String(
+        d.dailyTrend ||
+        ''
+      );
+
+
+    const marketRegime =
+      String(
+        d.marketRegime ||
+        ''
+      );
+
+
+    const trendBad =
+      dailyTrend.includes('空') ||
+      marketRegime === 'BEAR';
+
+
+    const trendOK =
+      !trendBad;
+
+
+    /* -----------------------------
+       壓力
+    ----------------------------- */
+
+    const resistanceDistance =
+      (
+        resistance !== null &&
+        price !== null &&
+        price !== 0
+      )
+        ? (
+            (resistance - price) /
+            price *
+            100
+          )
+        : null;
+
+
+    const nearResistance =
+      resistanceDistance !== null &&
+      resistanceDistance <=
+        CONFIG.resistanceBufferPct;
+
+
+    /* -----------------------------
+       風報比
+
+       第一目標 = resistance
+       停損 = invalid
+    ----------------------------- */
+
+    let rr = null;
+
+    if (
+      price !== null &&
+      stop !== null &&
+      resistance !== null &&
+      price > stop &&
+      resistance > price
+    ) {
+
+      const risk =
+        price - stop;
+
+      const reward =
+        resistance - price;
+
+      if (risk > 0) {
+
+        rr =
+          reward /
+          risk;
+
+      }
+
+    }
+
+
+    /*
+      如果無法計算 RR，
+      不因資料缺少直接判失敗。
+    */
+
+    const rrOK =
+      rr === null ||
+      rr >= CONFIG.minRR;
+
+
+    /* -----------------------------
+       過熱
+    ----------------------------- */
+
+    const hotByBias =
+      bias !== null &&
+      bias >= CONFIG.reduceBias;
+
+
+    const veryHotByBias =
+      bias !== null &&
+      bias >= CONFIG.strongReduceBias;
+
+
+    const hotByRSI =
+      rsi !== null &&
+      rsi >= CONFIG.hotRsi;
+
+
+    const hot =
+      hotByBias ||
+      hotByRSI;
+
+
+    /* -----------------------------
+       失效
+    ----------------------------- */
+
+    const stopBroken =
+      price !== null &&
+      stop !== null &&
+      price <= stop;
+
+
+    const maBroken =
+      price !== null &&
+      sma20 !== null &&
+      price < sma20;
+
+
+    /* -----------------------------
+       進場必要條件
+    ----------------------------- */
+
+    const entryPass =
+      dataReady &&
+      inEntryZone &&
+      aboveMA20 &&
+      entryBiasOK &&
+      trendOK &&
+      !nearResistance &&
+      rrOK;
+
+
+    /* =======================================================
+       6. 決定狀態
+    ======================================================= */
+
+    let signal = {
+      key: 'WAIT',
+      label: '⏳ 等待進場',
+      className: 'signal-wait',
+      badge: 'badge-wait',
+      reason: '尚未進入完整有效進場條件。'
+    };
+
+
+    /* -----------------------------
+       資料不足
+    ----------------------------- */
+
+    if (!dataReady) {
+
+      signal = {
+        key: 'NO_DATA',
+        label: '⚪ 資料不足',
+        className: 'signal-wait',
+        badge: 'badge-wait',
+        reason:
+          '現價、MA20 或進場區資料不足，暫不產生交易訊號。'
+      };
+
+    }
+
+
+    /* -----------------------------
+       已持有股票
+    ----------------------------- */
+
+    else if (held) {
+
+
+      /*
+        第一優先：
+        正式失效
+      */
+
+      if (stopBroken) {
+
+        signal = {
+          key: 'EXIT',
+          label: '🔴 出場條件成立',
+          className: 'signal-exit',
+          badge: 'badge-exit',
+          reason:
+            '價格已跌破失效價／停損價。'
+        };
+
+      }
+
+
+      /*
+        第二：
+        跌破 MA20 或趨勢轉弱
+      */
+
+      else if (
+        maBroken ||
+        trendBad
+      ) {
+
+        signal = {
+          key: 'EXIT_WARNING',
+          label: '⚠️ 出場警戒',
+          className: 'signal-exit',
+          badge: 'badge-warning',
+          reason:
+            maBroken
+              ? '價格已跌破 MA20，持倉結構轉弱。'
+              : '日線／市場結構轉弱。'
+        };
+
+      }
+
+
+      /*
+        第三：
+        過熱 / 壓力
+      */
+
+      else if (
+        veryHotByBias ||
+        nearResistance ||
+        hotByRSI
+      ) {
+
+        signal = {
+          key: 'REDUCE',
+          label: '🟠 減碼提醒',
+          className: 'signal-reduce',
+          badge: 'badge-reduce',
+          reason:
+            nearResistance
+              ? '價格已接近第一壓力，注意分批落袋。'
+              : (
+                  hotByRSI
+                    ? 'RSI 偏熱，避免追價並注意減碼。'
+                    : '價格距 MA20 過遠，乖離偏高。'
+                )
+        };
+
+      }
+
+
+      /*
+        第四：
+        再次回到理想進場區
+      */
+
+      else if (entryPass) {
+
+        signal = {
+          key: 'ADD',
+          label: '🔷 加碼條件成立',
+          className: 'signal-add',
+          badge: 'badge-add',
+          reason:
+            '已持有，且價格重新進入有效進場區，技術條件仍通過。'
+        };
+
+      }
+
+
+      /*
+        一般持有
+      */
+
+      else {
+
+        signal = {
+          key: 'HOLD',
+          label: '🔵 續抱',
+          className: 'signal-hold',
+          badge: 'badge-hold',
+          reason:
+            '尚未觸發失效、減碼或加碼條件。'
+        };
+
+      }
+
+    }
+
+
+    /* -----------------------------
+       尚未持有
+    ----------------------------- */
+
+    else {
+
+
+      /*
+        結構失效
+      */
+
+      if (
+        stopBroken ||
+        trendBad
+      ) {
+
+        signal = {
+          key: 'WEAK',
+          label: '⚠️ 結構轉弱',
+          className: 'signal-exit',
+          badge: 'badge-warning',
+          reason:
+            stopBroken
+              ? '價格低於設定失效價，暫不考慮進場。'
+              : '目前趨勢偏弱，先等待結構恢復。'
+        };
+
+      }
+
+
+      /*
+        真正完整進場
+      */
+
+      else if (entryPass) {
+
+        signal = {
+          key: 'ENTRY',
+          label: '🟢 進場條件成立',
+          className: 'signal-entry',
+          badge: 'badge-entry',
+          reason:
+            '已進入有效進場區，MA20、乖離、趨勢、壓力條件皆通過。'
+        };
+
+      }
+
+
+      /*
+        距進場區很近
+      */
+
+      else if (
+        nearEntry &&
+        aboveMA20 &&
+        trendOK
+      ) {
+
+        signal = {
+          key: 'NEAR',
+          label: '👀 接近進場',
+          className: 'signal-near',
+          badge: 'badge-near',
+          reason:
+            '距離進場區上緣 3% 以內，等待回到有效價格區。'
+        };
+
+      }
+
+
+      /*
+        已跌破進場區
+      */
+
+      else if (belowEntry) {
+
+        signal = {
+          key: 'BELOW',
+          label: '⚠️ 跌破進場區',
+          className: 'signal-exit',
+          badge: 'badge-warning',
+          reason:
+            '價格低於進場區下緣，不急著接，先等待止跌確認。'
+        };
+
+      }
+
+
+      /*
+        高於進場區
+      */
+
+      else if (aboveEntry) {
+
+        signal = {
+          key: 'WAIT_PULLBACK',
+          label: '⏳ 等待回檔',
+          className: 'signal-wait',
+          badge: 'badge-wait',
+          reason:
+            '價格高於理想進場區，現在不追價。'
+        };
+
+      }
+
+
+      else {
+
+        signal = {
+          key: 'WAIT',
+          label: '⏳ 等待進場',
+          className: 'signal-wait',
+          badge: 'badge-wait',
+          reason:
+            '部分必要條件尚未完成。'
+        };
+
+      }
+
+    }
+
+
+    /* =======================================================
+       7. 盤中 / 收盤確認文字
+    ======================================================= */
+
+    let confirmation =
+      '📊 技術資料以最後完成日 K 為準';
+
+
+    if (
+      signal.key === 'ENTRY' ||
+      signal.key === 'ADD' ||
+      signal.key === 'EXIT'
+    ) {
+
+      if (marketOpen(code)) {
+
+        confirmation =
+          '🟡 盤中觸發｜等待收盤確認';
+
+      }
+
+      else if (
+        technicalDateIsToday(
+          code,
+          d
+        )
+      ) {
+
+        confirmation =
+          '✅ 完成日 K 已確認';
+
+      }
+
+      else {
+
+        confirmation =
+          '🟡 盤後觸發｜等待最新日 K 同步確認';
+
+      }
+
+    }
+
+
+    return {
+
+      code,
+      d,
+      held,
+
+      price,
+      sma20,
+      sma60,
+      rsi,
+      stop,
+      resistance,
+
+      entry,
+
+      bias,
+      rr,
+
+      aboveMA20,
+      entryBiasOK,
+      inEntryZone,
+      nearEntry,
+      nearResistance,
+      trendOK,
+      hot,
+
+      signal,
+      confirmation
+
+    };
+
+  }
+
+
+  /* =========================================================
+     8. 排序權重
+  ========================================================= */
+
+  const PRIORITY = {
+
+    EXIT: 100,
+    ENTRY: 95,
+    ADD: 90,
+    EXIT_WARNING: 85,
+    REDUCE: 80,
+    NEAR: 70,
+    HOLD: 60,
+    WAIT_PULLBACK: 50,
+    BELOW: 40,
+    WEAK: 30,
+    WAIT: 20,
+    NO_DATA: 10
+
+  };
+
+
+  /* =========================================================
+     9. 建立面板
+  ========================================================= */
+
+  function ensurePanel() {
+
+    let panel =
+      document.getElementById(
+        'trade-signal-pro'
+      );
+
+
+    if (panel) {
+      return panel;
+    }
+
+
+    panel =
+      document.createElement(
+        'section'
+      );
+
+
+    panel.id =
+      'trade-signal-pro';
+
+
+    panel.className =
+      'panel';
+
+
+    const entryPanel =
+      document.getElementById(
+        'entry-pick'
+      );
+
+
+    if (entryPanel) {
+
+      entryPanel
+        .insertAdjacentElement(
+          'beforebegin',
+          panel
+        );
+
+    }
+
+    else {
+
+      document
+        .querySelector('.wrap')
+        ?.appendChild(panel);
+
+    }
+
+
+    /*
+      導覽列加按鈕
+    */
+
+    const nav =
+      document.querySelector('nav');
+
+
+    if (
+      nav &&
+      !nav.querySelector(
+        'a[href="#trade-signal-pro"]'
+      )
+    ) {
+
+      const link =
+        document.createElement('a');
+
+      link.href =
+        '#trade-signal-pro';
+
+      link.textContent =
+        '進出場訊號';
+
+      nav.appendChild(link);
+
+    }
+
+
+    return panel;
+
+  }
+
+
+  /* =========================================================
+     10. 卡片
+  ========================================================= */
+
+  function renderCard(x) {
+
+    const d =
+      x.d;
+
+    const chgClass =
+      num(d.pct) === null
+        ? ''
+        : (
+            num(d.pct) >= 0
+              ? 'chg-up'
+              : 'chg-dn'
+          );
+
+
+    const checks = [
+
+      {
+        text: 'MA20',
+        ok: x.aboveMA20
+      },
+
+      {
+        text: '乖離0–6%',
+        ok: x.entryBiasOK
+      },
+
+      {
+        text: '進場區',
+        ok: x.inEntryZone
+      },
+
+      {
+        text: '趨勢',
+        ok: x.trendOK
+      },
+
+      {
+        text: '未貼壓力',
+        ok: !x.nearResistance
+      }
+
+    ];
+
+
+    return `
+
+      <div
+        class="trade-signal-card ${x.signal.className}"
+        data-trade-code="${x.code}"
+        data-trade-signal="${x.signal.key}"
+      >
+
+        <div class="trade-signal-title">
+
+          <div>
+
+            <div class="trade-signal-name">
+
+              ${nameOf(x.code)}
+
+            </div>
+
+            <div class="trade-signal-code">
+
+              ${marketName(x.code)}
+              ${groupOf(x.code)
+                ? '｜' + groupOf(x.code)
+                : ''
+              }
+              ｜${x.code}
+
+              ${x.held
+                ? '｜📌 持倉'
+                : ''
+              }
+
+            </div>
+
+          </div>
+
+
+          <span class="trade-badge ${x.signal.badge}">
+
+            ${x.signal.label}
+
+          </span>
+
+        </div>
+
+
+        <div class="trade-big-price">
+
+          ${fmt(x.price)}
+
+        </div>
+
+
+        <div class="trade-change ${chgClass}">
+
+          今日漲跌：
+          ${pct(d.pct)}
+
+        </div>
+
+
+        <div class="trade-row">
+
+          <span>有效進場區</span>
+
+          <b>
+            ${fmt(x.entry.low)}
+            ～
+            ${fmt(x.entry.high)}
+          </b>
+
+        </div>
+
+
+        <div class="trade-row">
+
+          <span>MA20</span>
+
+          <b>
+            ${fmt(x.sma20)}
+          </b>
+
+        </div>
+
+
+        <div class="trade-row">
+
+          <span>MA20 乖離</span>
+
+          <b>
+            ${pct(x.bias)}
+          </b>
+
+        </div>
+
+
+        <div class="trade-row">
+
+          <span>失效／停損</span>
+
+          <b>
+            ${fmt(x.stop)}
+          </b>
+
+        </div>
+
+
+        <div class="trade-row">
+
+          <span>第一目標／壓力</span>
+
+          <b>
+            ${fmt(x.resistance)}
+          </b>
+
+        </div>
+
+
+        <div class="trade-row">
+
+          <span>RSI14</span>
+
+          <b>
+            ${fmt(x.rsi)}
+          </b>
+
+        </div>
+
+
+        <div class="trade-row">
+
+          <span>風報比</span>
+
+          <b>
+            ${
+              x.rr === null
+                ? 'N/A'
+                : x.rr.toFixed(2)
+            }
+          </b>
+
+        </div>
+
+
+        <div class="trade-row">
+
+          <span>完成日 K</span>
+
+          <b>
+            ${d.date || 'N/A'}
+          </b>
+
+        </div>
+
+
+        <div class="trade-checks">
+
+          ${
+            checks
+              .map(c => `
+
+                <span class="trade-check ${c.ok ? 'ok' : 'no'}">
+
+                  ${c.ok ? '✓' : '×'}
+                  ${c.text}
+
+                </span>
+
+              `)
+              .join('')
+          }
+
+        </div>
+
+
+        <div class="trade-main-reason">
+
+          <b>${x.signal.label}</b>
+
+          <br>
+
+          ${x.signal.reason}
+
+        </div>
+
+
+        <div class="trade-confirm">
+
+          ${x.confirmation}
+
+        </div>
+
+      </div>
+
+    `;
+
+  }
+
+
+  /* =========================================================
+     11. 篩選器
+  ========================================================= */
+
+  let currentFilter =
+    'ALL';
+
+
+  function filterMatch(x) {
+
+    if (currentFilter === 'ALL') {
+      return true;
+    }
+
+    if (currentFilter === 'ACTION') {
+
+      return [
+        'ENTRY',
+        'ADD',
+        'EXIT',
+        'EXIT_WARNING',
+        'REDUCE'
+      ].includes(
+        x.signal.key
+      );
+
+    }
+
+    if (currentFilter === 'ENTRY') {
+
+      return [
+        'ENTRY',
+        'NEAR',
+        'WAIT_PULLBACK'
+      ].includes(
+        x.signal.key
+      );
+
+    }
+
+    if (currentFilter === 'HOLD') {
+      return x.held;
+    }
+
+    return true;
+
+  }
+
+
+  /* =========================================================
+     12. 主畫面
+  ========================================================= */
+
+  function renderTradeSignals() {
+
+    if (
+      typeof DATA === 'undefined'
+    ) {
+      return;
+    }
+
+
+    const panel =
+      ensurePanel();
+
+
+    let rows =
+      Object
+        .keys(DATA)
+
+        /*
+          排除指數
+        */
+
+        .filter(
+          code =>
+            !code.startsWith('^')
+        )
+
+        .map(analyze)
+
+        .sort(
+          (a, b) => {
+
+            return (
+              (PRIORITY[b.signal.key] || 0) -
+              (PRIORITY[a.signal.key] || 0)
+            );
+
+          }
+        );
+
+
+    const entries =
+      rows.filter(
+        x =>
+          x.signal.key === 'ENTRY'
+      );
+
+
+    const adds =
+      rows.filter(
+        x =>
+          x.signal.key === 'ADD'
+      );
+
+
+    const exits =
+      rows.filter(
+        x =>
+          x.signal.key === 'EXIT'
+      );
+
+
+    const reduces =
+      rows.filter(
+        x =>
+          x.signal.key === 'REDUCE'
+      );
+
+
+    const warnings =
+      rows.filter(
+        x =>
+          x.signal.key ===
+          'EXIT_WARNING'
+      );
+
+
+    const near =
+      rows.filter(
+        x =>
+          x.signal.key === 'NEAR'
+      );
+
+
+    const shown =
+      rows.filter(filterMatch);
+
+
+    let alertText = '';
+
+
+    if (entries.length) {
+
+      alertText +=
+        '🟢 進場條件成立：' +
+        entries
+          .map(
+            x => nameOf(x.code)
+          )
+          .join('、');
+
+    }
+
+
+    if (adds.length) {
+
+      alertText +=
+        (alertText ? '<br>' : '') +
+        '🔷 加碼條件成立：' +
+        adds
+          .map(
+            x => nameOf(x.code)
+          )
+          .join('、');
+
+    }
+
+
+    if (
+      exits.length ||
+      warnings.length
+    ) {
+
+      alertText +=
+        (alertText ? '<br>' : '') +
+        '🔴 持倉風險：' +
+        exits
+          .concat(warnings)
+          .map(
+            x =>
+              nameOf(x.code) +
+              ' ' +
+              x.signal.label
+          )
+          .join('、');
+
+    }
+
+
+    const html = `
+
+      <div class="trade-signal-head">
+
+        <div>
+
+          <h2 style="margin-bottom:4px">
+
+            🎯 明確進場／出場訊號
+
+          </h2>
+
+          <div class="trade-signal-summary">
+
+            進場成立 ${entries.length}
+            ｜接近進場 ${near.length}
+            ｜加碼 ${adds.length}
+            ｜減碼 ${reduces.length}
+            ｜出場／警戒 ${
+              exits.length +
+              warnings.length
+            }
+
+          </div>
+
+        </div>
+
+
+        <div class="trade-signal-filter">
+
+          <button
+            class="trade-filter-btn ${
+              currentFilter === 'ALL'
+                ? 'active'
+                : ''
+            }"
+            data-filter="ALL"
+          >
+            全部
+          </button>
+
+          <button
+            class="trade-filter-btn ${
+              currentFilter === 'ACTION'
+                ? 'active'
+                : ''
+            }"
+            data-filter="ACTION"
+          >
+            立即注意
+          </button>
+
+          <button
+            class="trade-filter-btn ${
+              currentFilter === 'ENTRY'
+                ? 'active'
+                : ''
+            }"
+            data-filter="ENTRY"
+          >
+            進場
+          </button>
+
+          <button
+            class="trade-filter-btn ${
+              currentFilter === 'HOLD'
+                ? 'active'
+                : ''
+            }"
+            data-filter="HOLD"
+          >
+            我的持倉
+          </button>
+
+        </div>
+
+      </div>
+
+
+      ${
+        alertText
+          ? `
+            <div class="trade-top-alert">
+              ${alertText}
+            </div>
+          `
+          : ''
+      }
+
+
+      <div class="trade-signal-grid">
+
+        ${
+          shown.length
+            ? shown
+                .map(renderCard)
+                .join('')
+            : `
+                <div class="note">
+                  目前沒有符合此分類的股票。
+                </div>
+              `
+        }
+
+      </div>
+
+
+      <p class="note">
+
+        🟢「進場條件成立」代表系統條件通過，
+        不代表自動下單。
+
+        盤中觸發會顯示
+        「等待收盤確認」；
+        正式技術訊號以完成日 K 為準。
+
+      </p>
+
+    `;
+
+
+    /*
+      沒有變化就不要整區重畫，
+      避免 iPhone 畫面一直閃。
+    */
+
+    if (
+      panel.dataset.tradeHtml !== html
+    ) {
+
+      panel.dataset.tradeHtml =
+        html;
+
+      panel.innerHTML =
+        html;
+
+
+      panel
+        .querySelectorAll(
+          '[data-filter]'
+        )
+        .forEach(
+          btn => {
+
+            btn.addEventListener(
+              'click',
+              function () {
+
+                currentFilter =
+                  this.dataset.filter;
+
+                panel.dataset.tradeHtml =
+                  '';
+
+                renderTradeSignals();
+
+              }
+            );
+
+          }
+        );
+
+    }
+
+  }
+
+
+  /* =========================================================
+     13. 啟動
+  ========================================================= */
+
+  renderTradeSignals();
+
+
+  /*
+    每 2 秒讀 DATA 判斷。
+    注意：
+    這裡沒有 fetch()
+    不會增加 Fugle / Yahoo /
+    Finnhub / Vercel API 次數。
+  */
+
+  setInterval(
+    renderTradeSignals,
+    CONFIG.renderMs
+  );
+
+
+  /*
+    iPhone 切回網頁時
+    馬上重新判斷。
+  */
+
+  document.addEventListener(
+    'visibilitychange',
+    function () {
+
+      if (
+        document.visibilityState ===
+        'visible'
+      ) {
+
+        renderTradeSignals();
+
+      }
+
+    }
+  );
+
+
+  /*
+    方便 Console 測試
+  */
+
+  window.renderTradeSignals =
+    renderTradeSignals;
+
+
+  window.analyzeTradeSignal =
+    analyze;
+
+
+  console.log(
+    '✅ 明確進出場訊號 PRO V1 已啟動'
+  );
+
+
+})();
+
+</script>
+<!-- ================= END TRADE SIGNAL PRO ================= -->
 </body> 前面
 ========================================================= -->
 
