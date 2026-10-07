@@ -113,8 +113,8 @@ th{color:var(--gold);font-weight:600;}
 
   <section id="entry-pick" class="panel">
     <h2>可進場選擇</h2>
-    <p class="note">只列觀察進場、持有觀察。勾選後存在這台手機，重新整理不會消失。勾選只是你的進場清單，不是下單。</p>
-    <div id="entry-picked" class="note">尚未勾選</div>
+    <p class="note">只自動列出決策卡狀態為觀察進場的標的。觀察進場不等於買進，不是下單。</p>
+    <div id="entry-picked" class="note">目前沒有觀察進場</div>
     <div id="entry-pick-list" class="grid"></div>
   </section>
 
@@ -3771,7 +3771,65 @@ ${d.note || 'N/A'}
 <!-- ================= END FINAL FIX ================= -->
 <!-- =========================================================
      股票網站｜全股票自動即時更新
-     放在最後一個 </body> 前面
+     放在最後一個 
+<script id="entry-ready-auto">
+(function () {
+  'use strict';
+  function nameOf(code) {
+    return (typeof NAMES !== 'undefined' && NAMES[code]) || code;
+  }
+  function groupOf(code) {
+    if (typeof STOCK_META === 'undefined') return '';
+    var found = '';
+    Object.keys(STOCK_META).forEach(function (g) {
+      if ((STOCK_META[g] || []).indexOf(code) >= 0) found = g;
+    });
+    return found;
+  }
+  function fmt(v) {
+    var n = Number(v);
+    return Number.isFinite(n) ? n.toLocaleString('en-US', { maximumFractionDigits: 2 }) : 'N/A';
+  }
+  function readyCodes() {
+    if (typeof DATA === 'undefined') return [];
+    return Object.keys(DATA).filter(function (code) {
+      if (code.charAt(0) === '^') return false;
+      var s = String((DATA[code] && DATA[code].status) || '');
+      return s.indexOf('觀察進場') !== -1 && s.indexOf('不宜') === -1;
+    }).sort(function (a, b) {
+      return nameOf(a).localeCompare(nameOf(b), 'zh-Hant');
+    });
+  }
+  function renderEntryReady() {
+    var list = document.getElementById('entry-pick-list');
+    var picked = document.getElementById('entry-picked');
+    if (!list) return;
+    var rows = readyCodes();
+    if (picked) {
+      picked.textContent = rows.length
+        ? ('現在可觀察進場 ' + rows.length + ' 檔：' + rows.map(nameOf).join('、'))
+        : '目前沒有觀察進場';
+    }
+    list.innerHTML = rows.map(function (code) {
+      var d = DATA[code] || {};
+      var title = (groupOf(code) || code) + '｜' + nameOf(code);
+      return '<div class="card" data-code="' + code + '">' +
+        '<div class="title">' + title + '</div>' +
+        '<div class="sub">' + code + ' ｜ 🟢 觀察進場</div>' +
+        '<div class="price">' + fmt(d.p) + (d.live ? '<span class="final-live-tag">LIVE</span>' : '') + '</div>' +
+        '<div class="row"><span>進場區</span><b>' + (d.entry || 'N/A') + '</b></div>' +
+        '<div class="row"><span>失效價</span><b>' + (d.invalid || 'N/A') + '</b></div>' +
+        '<div class="row"><span>壓力</span><b>' + (d.resist || 'N/A') + '</b></div>' +
+        '</div>';
+    }).join('') || '<p class="note">決策卡目前沒有觀察進場。</p>';
+  }
+  window.renderEntryReady = renderEntryReady;
+  renderEntryReady();
+  setInterval(renderEntryReady, 2000);
+})();
+</script>
+
+</body> 前面
 ========================================================= -->
 
 <script id="stock-auto-live-update">
