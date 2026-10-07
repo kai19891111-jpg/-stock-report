@@ -3769,6 +3769,677 @@ ${d.note || 'N/A'}
 
 </script>
 <!-- ================= END FINAL FIX ================= -->
+<!-- =========================================================
+     股票網站｜全股票自動即時更新
+     放在最後一個 </body> 前面
+========================================================= -->
+
+<script id="stock-auto-live-update">
+
+(function () {
+
+  'use strict';
+
+
+  /* ================================
+     1. Vercel 行情 API
+  ================================ */
+
+  const API =
+    'https://stock-report-jp20260318-3497.vercel.app/api/quotes';
+
+
+  /* 每 10 秒更新 */
+
+  const REFRESH_MS = 10000;
+
+
+  let running = false;
+
+
+
+  /* ================================
+     2. 基本檢查
+  ================================ */
+
+  if (
+    typeof DATA === 'undefined'
+  ) {
+
+    console.error(
+      '❌ 找不到 DATA，停止即時行情'
+    );
+
+    return;
+
+  }
+
+
+
+  /* ================================
+     3. 更新狀態顯示
+  ================================ */
+
+  function showStatus(text, ok = true) {
+
+    let panel =
+      document.getElementById(
+        'realtime-status-panel'
+      );
+
+
+    if (!panel) {
+
+      panel =
+        document.createElement('div');
+
+      panel.id =
+        'realtime-status-panel';
+
+
+      panel.style.cssText = `
+
+        display:block !important;
+
+        position:sticky;
+
+        top:55px;
+
+        z-index:999;
+
+        max-width:980px;
+
+        margin:8px auto;
+
+        padding:8px 12px;
+
+        border-radius:10px;
+
+        background:rgba(7,24,46,.96);
+
+        border:1px solid rgba(142,192,255,.35);
+
+        color:white;
+
+        font-size:12px;
+
+      `;
+
+
+      const nav =
+        document.querySelector('nav');
+
+
+      if (nav) {
+
+        nav.insertAdjacentElement(
+          'afterend',
+          panel
+        );
+
+      }
+
+      else {
+
+        document.body.prepend(
+          panel
+        );
+
+      }
+
+    }
+
+
+    panel.style.setProperty(
+      'display',
+      'block',
+      'important'
+    );
+
+
+    panel.innerHTML =
+
+      (
+        ok
+          ? '🟢 '
+          : '🔴 '
+      )
+
+      +
+
+      text;
+
+  }
+
+
+
+  /* ================================
+     4. 時間
+  ================================ */
+
+  function nowTaipei() {
+
+    return new Date()
+      .toLocaleString(
+        'zh-TW',
+        {
+
+          timeZone:
+            'Asia/Taipei',
+
+          hour12:
+            false,
+
+          year:
+            'numeric',
+
+          month:
+            '2-digit',
+
+          day:
+            '2-digit',
+
+          hour:
+            '2-digit',
+
+          minute:
+            '2-digit',
+
+          second:
+            '2-digit'
+
+        }
+      );
+
+  }
+
+
+
+  /* ================================
+     5. 真正自動抓行情
+  ================================ */
+
+  async function autoUpdateQuotes() {
+
+
+    /* 防止上一輪還沒結束
+       下一輪又進來 */
+
+    if (running) {
+
+      return;
+
+    }
+
+
+    running = true;
+
+
+    try {
+
+
+      /* ============================
+         直接抓 DATA 裡全部股票
+         不再使用 openCodes()
+      ============================ */
+
+      const symbols =
+        Object.keys(DATA);
+
+
+      if (!symbols.length) {
+
+        throw new Error(
+          'DATA 沒有股票代碼'
+        );
+
+      }
+
+
+      showStatus(
+        '行情更新中…'
+      );
+
+
+
+      /* ============================
+         建立 API 網址
+      ============================ */
+
+      /* 一次要 36 檔時 Fugle 會把台股整包丢掉，改每批 6 檔。 */
+      const quotes = {};
+      const batchErrors = [];
+      for (let i = 0; i < symbols.length; i += 6) {
+        const chunk = symbols.slice(i, i + 6);
+        const url = API + '?symbols=' + encodeURIComponent(chunk.join(',')) + '&t=' + Date.now();
+        try {
+          const response = await fetch(url, { method: 'GET', cache: 'no-store', headers: { Accept: 'application/json' } });
+          if (!response.ok) { batchErrors.push('HTTP ' + response.status); continue; }
+          const json = await response.json();
+          Object.assign(quotes, json.quotes || json.data || {});
+          if (json.errors) Object.assign(quotes, {});
+          if (json.errors) window.__LIVE_API_ERRORS__ = Object.assign(window.__LIVE_API_ERRORS__ || {}, json.errors);
+        } catch (err) {
+          batchErrors.push(err.message);
+        }
+      }
+      if (!Object.keys(quotes).length && batchErrors.length) {
+        throw new Error(batchErrors[0]);
+      }
+
+
+
+      let updated = 0;
+
+
+      const missing = [];
+
+
+
+      /* ============================
+         寫入 DATA
+      ============================ */
+
+      symbols.forEach(
+        code => {
+
+
+          const q =
+            quotes[code];
+
+
+          /* ------------------------
+             API 沒回這檔
+          ------------------------ */
+
+          if (
+            !q ||
+            q.price === null ||
+            q.price === undefined
+          ) {
+
+            missing.push(
+              code
+            );
+
+            return;
+
+          }
+
+
+
+          /* ------------------------
+             更新即時價格
+          ------------------------ */
+
+          const price =
+            Number(
+              q.price
+            );
+
+
+          if (
+            !Number.isFinite(
+              price
+            )
+          ) {
+
+            missing.push(
+              code
+            );
+
+            return;
+
+          }
+
+
+          DATA[code].p =
+            price;
+
+
+
+          /* ------------------------
+             漲跌
+          ------------------------ */
+
+          if (
+            q.change !== null &&
+            q.change !== undefined &&
+            Number.isFinite(
+              Number(q.change)
+            )
+          ) {
+
+            DATA[code].ch =
+              Number(
+                q.change
+              );
+
+          }
+
+
+
+          /* ------------------------
+             漲跌幅
+          ------------------------ */
+
+          if (
+            q.changePercent !== null &&
+            q.changePercent !== undefined &&
+            Number.isFinite(
+              Number(
+                q.changePercent
+              )
+            )
+          ) {
+
+            DATA[code].pct =
+              Number(
+                q.changePercent
+              );
+
+          }
+
+
+
+          /* ------------------------
+             LIVE 標記
+          ------------------------ */
+
+          DATA[code].live =
+            true;
+
+
+          DATA[code].liveTime =
+
+            q.time
+
+            ||
+
+            nowTaipei();
+
+
+
+          updated++;
+
+        }
+      );
+
+
+
+      /* ============================
+         6. 更新整個頁面
+      ============================ */
+
+      if (
+
+        typeof window
+          .__FULL_LIVE_RENDER__
+
+        ===
+
+        'function'
+
+      ) {
+
+        window
+          .__FULL_LIVE_RENDER__();
+
+      }
+
+
+      else if (
+
+        typeof window
+          .renderWholePage
+
+        ===
+
+        'function'
+
+      ) {
+
+        window
+          .renderWholePage();
+
+      }
+
+
+
+      /* ============================
+         7. 顯示成功結果
+      ============================ */
+
+      showStatus(
+
+        '已更新 '
+
+        +
+
+        updated
+
+        +
+
+        ' 檔'
+
+        +
+
+        '｜'
+
+        +
+
+        nowTaipei()
+
+        +
+
+        (
+          missing.length
+
+            ?
+
+            '｜⚠️ 漏 '
+
+            +
+
+            missing.length
+
+            +
+
+            ' 檔'
+
+            :
+
+            '｜✅ 無漏檔'
+        ),
+
+        true
+
+      );
+
+
+
+      /* ============================
+         8. Console 列出漏檔
+      ============================ */
+
+      console.log(
+        '✅ 已更新：',
+        updated,
+        '檔'
+      );
+
+
+      if (
+        missing.length
+      ) {
+
+        console.warn(
+
+          '⚠️ API 沒有回傳以下股票：',
+
+          missing
+
+        );
+
+      }
+
+
+
+      /* 方便其他程式查看 */
+
+      window.__LIVE_UPDATED__ =
+        updated;
+
+
+      window.__LIVE_MISSING__ =
+        missing;
+
+
+
+    }
+
+    catch (error) {
+
+
+      console.error(
+
+        '❌ 即時行情錯誤：',
+
+        error
+
+      );
+
+
+      showStatus(
+
+        '行情連線失敗'
+
+        +
+
+        '｜'
+
+        +
+
+        error.message
+
+        +
+
+        '｜'
+
+        +
+
+        nowTaipei(),
+
+        false
+
+      );
+
+
+    }
+
+    finally {
+
+
+      running =
+        false;
+
+
+    }
+
+  }
+
+
+
+  /* ================================
+     9. 網頁第一次打開
+     立即執行
+  ================================ */
+
+  autoUpdateQuotes();
+
+
+
+  /* ================================
+     10. 每 10 秒自動執行
+  ================================ */
+
+  setInterval(
+
+    autoUpdateQuotes,
+
+    REFRESH_MS
+
+  );
+
+
+
+  /* ================================
+     11. iPhone 切回網頁
+     立即更新
+  ================================ */
+
+  document.addEventListener(
+
+    'visibilitychange',
+
+    function () {
+
+
+      if (
+
+        document.visibilityState
+
+        ===
+
+        'visible'
+
+      ) {
+
+        autoUpdateQuotes();
+
+      }
+
+
+    }
+
+  );
+
+
+
+  /* ================================
+     12. 網路恢復
+     立即更新
+  ================================ */
+
+  window.addEventListener(
+
+    'online',
+
+    autoUpdateQuotes
+
+  );
+
+
+
+  /* ================================
+     13. 手動測試
+     Console 輸入：
+     autoUpdateQuotes()
+  ================================ */
+
+  window.autoUpdateQuotes =
+    autoUpdateQuotes;
+
+
+
+  console.log(
+    '✅ 全股票自動行情更新已啟動'
+  );
+
+
+})();
+
+</script>
 </body> 前面
 ========================================================= -->
 
