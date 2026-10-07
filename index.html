@@ -2238,6 +2238,339 @@ ${d.note || 'N/A'}
 })();
 </script>
 
+
+<script id="live-section-sync">
+(function () {
+  'use strict';
+  if (typeof DATA === 'undefined') return;
+
+  var API = 'https://stock-report-jp20260318-3497.vercel.app/api/quotes';
+  var LEVELS = { support: 48218, mid: 48380, high: 48601 };
+
+  function taipeiNow() {
+    return new Date().toLocaleString('zh-TW', {
+      timeZone: 'Asia/Taipei',
+      hour12: false,
+      year: 'numeric',
+      month: '2-digit',
+      day: '2-digit',
+      hour: '2-digit',
+      minute: '2-digit',
+      second: '2-digit'
+    });
+  }
+
+  function num(v) {
+    var n = Number(v);
+    return Number.isFinite(n) ? n : null;
+  }
+
+  function fmt(v) {
+    var n = num(v);
+    return n === null ? 'N/A' : n.toLocaleString('en-US', { maximumFractionDigits: 2 });
+  }
+
+  function pct(v) {
+    var n = num(v);
+    return n === null ? 'N/A' : (n > 0 ? '+' : '') + n.toFixed(2) + '%';
+  }
+
+  function chg(v) {
+    var n = num(v);
+    return n === null ? 'N/A' : (n > 0 ? '+' : '') + fmt(n);
+  }
+
+  function cls(v) {
+    var n = num(v);
+    return n > 0 ? 'chg-up' : n < 0 ? 'chg-dn' : 'chg-flat';
+  }
+
+  function ensureStatus() {
+    var panel = document.getElementById('realtime-status-panel');
+    if (!panel) return;
+    panel.hidden = false;
+    panel.style.display = '';
+    panel.removeAttribute('aria-hidden');
+  }
+
+  function setStatus(ok, text) {
+    ensureStatus();
+    var dot = document.getElementById('rt-dot');
+    var status = document.getElementById('rt-status-text');
+    if (dot) {
+      dot.classList.remove('online', 'error');
+      dot.classList.add(ok ? 'online' : 'error');
+    }
+    if (status) status.textContent = text;
+  }
+
+  function codes() {
+    return Object.keys(DATA);
+  }
+
+  async function fetchQuotes() {
+    var list = codes();
+    var quotes = {};
+    var failed = 0;
+    for (var i = 0; i < list.length; i += 8) {
+      var chunk = list.slice(i, i + 8);
+      var url = API + '?symbols=' + encodeURIComponent(chunk.join(',')) + '&t=' + Date.now();
+      try {
+        var res = await fetch(url, { cache: 'no-store', headers: { Accept: 'application/json' } });
+        if (!res.ok) { failed++; continue; }
+        var json = await res.json();
+        Object.assign(quotes, json.quotes || {});
+      } catch (e) {
+        failed++;
+      }
+    }
+    return { quotes: quotes, failed: failed };
+  }
+
+  function applyQuotes(quotes) {
+    var n = 0;
+    Object.keys(quotes).forEach(function (code) {
+      var q = quotes[code];
+      if (!DATA[code] || num(q && q.price) === null) return;
+      DATA[code].p = Number(q.price);
+      if (num(q.change) !== null) DATA[code].ch = Number(q.change);
+      if (num(q.changePercent) !== null) DATA[code].pct = Number(q.changePercent);
+      DATA[code].live = true;
+      DATA[code].liveTime = q.time || taipeiNow();
+      n++;
+    });
+    return n;
+  }
+
+  function paintCards() {
+    document.querySelectorAll('.card').forEach(function (card) {
+      var sub = card.querySelector('.sub');
+      if (!sub) return;
+      var code = codes().find(function (c) { return sub.textContent.indexOf(c) !== -1; });
+      if (!code || !DATA[code] || !DATA[code].live) return;
+      var d = DATA[code];
+      var price = card.querySelector('.price');
+      if (price) {
+        var numEl = price.querySelector('.price-num');
+        if (!numEl) {
+          price.textContent = '';
+          numEl = document.createElement('span');
+          numEl.className = 'price-num';
+          price.appendChild(numEl);
+        }
+        numEl.textContent = fmt(d.p);
+        price.classList.remove('chg-up', 'chg-dn', 'chg-flat');
+        price.classList.add(cls(d.pct));
+        if (!price.querySelector('.live-price-tag')) {
+          var tag = document.createElement('span');
+          tag.className = 'live-price-tag';
+          tag.textContent = 'LIVE';
+          price.appendChild(tag);
+        }
+      }
+      card.querySelectorAll('.row').forEach(function (row) {
+        var label = row.children[0] && row.children[0].textContent || '';
+        if (label.indexOf('漲跌') !== -1 && row.children[1]) {
+          row.children[1].textContent = chg(d.ch) + ' (' + pct(d.pct) + ')';
+          row.children[1].classList.remove('chg-up', 'chg-dn', 'chg-flat');
+          row.children[1].classList.add(cls(d.pct));
+        }
+      });
+    });
+  }
+
+  function line(name, code) {
+    var d = DATA[code] || {};
+    return name + '： ' + fmt(d.p) + ' （' + pct(d.pct) + '）' + (d.live ? ' LIVE' : '');
+  }
+
+  function paintSummary() {
+    var box = document.getElementById('summary');
+    if (!box) return;
+    var html = '<h2>市場摘要｜LIVE</h2>'
+      + '<p>' + line('台股加權', '^TWII') + '</p>'
+      + '<p>' + line('台積電', '2330.TW') + ' ｜ ' + line('聯發科', '2454.TW') + ' ｜ ' + line('台達電', '2308.TW') + '</p>'
+      + '<p>' + line('群創', '3481.TW') + ' ｜ ' + line('力積電', '6770.TW') + ' ｜ ' + line('臻鼎-KY', '4958.TW') + '</p>'
+      + '<p class="note">📡 LIVE：現價、漲跌、漲跌幅 ｜ 📊 完成日 K：SMA20、SMA60、RSI、支撐、壓力、進場區、失效價 ｜ 更新：' + taipeiNow() + ' 台北</p>';
+    if (box.dataset.livePaint !== html) {
+      box.dataset.livePaint = html;
+      box.innerHTML = html;
+    }
+  }
+
+  function paintRadar() {
+    var box = document.getElementById('radar');
+    if (!box) return;
+    var stocks = codes().filter(function (c) {
+      return c.charAt(0) !== '^' && num(DATA[c] && DATA[c].pct) !== null;
+    }).map(function (c) {
+      return { name: (typeof NAMES !== 'undefined' && NAMES[c]) || c, pct: num(DATA[c].pct), live: !!DATA[c].live };
+    });
+    var gain = stocks.slice().sort(function (a, b) { return b.pct - a.pct; }).slice(0, 5);
+    var loss = stocks.slice().sort(function (a, b) { return a.pct - b.pct; }).slice(0, 5);
+    var html = '<h2>今日交易雷達｜LIVE</h2><ul class="radar">'
+      + '<li>' + line('台股加權', '^TWII') + '</li>'
+      + '<li>即時領漲： ' + (gain.map(function (x) { return x.name + ' ' + pct(x.pct); }).join('、') || '等待行情') + '</li>'
+      + '<li>即時弱勢： ' + (loss.map(function (x) { return x.name + ' ' + pct(x.pct); }).join('、') || '等待行情') + '</li>'
+      + '<li>' + line('Nasdaq', '^IXIC') + '</li>'
+      + '<li>' + line('費城半導體', '^SOX') + '</li>'
+      + '<li>美國 10 年債： ' + fmt(DATA['^TNX'] && DATA['^TNX'].p) + (DATA['^TNX'] && DATA['^TNX'].live ? ' LIVE' : '') + '</li>'
+      + '<li>最後刷新： ' + taipeiNow() + ' 台北。進場區與失效價仍用完成日 K，不因盤中價重算。</li>'
+      + '</ul>';
+    if (box.dataset.livePaint !== html) {
+      box.dataset.livePaint = html;
+      box.innerHTML = html;
+    }
+  }
+
+  function paintIndex() {
+    var body = document.getElementById('idx-body');
+    if (!body) return;
+    body.querySelectorAll('tr').forEach(function (row) {
+      var cells = row.querySelectorAll('td');
+      if (cells.length < 5) return;
+      var code = cells[0].textContent.trim();
+      var d = DATA[code];
+      if (!d || !d.live) return;
+      cells[3].textContent = fmt(d.p);
+      cells[4].textContent = chg(d.ch) + ' (' + pct(d.pct) + ') LIVE';
+      cells[4].classList.remove('chg-up', 'chg-dn', 'chg-flat');
+      cells[4].classList.add(cls(d.pct));
+      if (cells[5]) {
+        cells[5].textContent = '盤中報價 ' + taipeiNow() + ' 台北。SMA／進出場仍用最後完成日 K，未把未完成 K 當收盤。';
+      }
+    });
+  }
+
+  function paintLevels() {
+    var box = document.getElementById('u2-market-levels');
+    if (!box) return;
+    var d = DATA['^TWII'];
+    var old = box.querySelector('[data-live-levels]');
+    if (old) old.remove();
+    if (!d || num(d.p) === null) return;
+    var p = num(d.p);
+    var note = document.createElement('p');
+    note.className = 'note';
+    note.setAttribute('data-live-levels', '1');
+    note.textContent = '加權即時 ' + fmt(p) + '（' + pct(d.pct) + '）｜距 48,218 ' + pct((p - LEVELS.support) / LEVELS.support * 100) + '｜距 48,380 ' + pct((p - LEVELS.mid) / LEVELS.mid * 100) + '｜距 48,601 ' + pct((p - LEVELS.high) / LEVELS.high * 100) + '。關卡價不改。';
+    box.appendChild(note);
+  }
+
+  function paintSmart() {
+    var sel = document.getElementById('u2-select');
+    if (sel) sel.dispatchEvent(new Event('change'));
+  }
+
+  function paintPositions() {
+    if (typeof window.renderWholePage === 'function') {
+      try { window.renderWholePage(); } catch (e) {}
+    }
+    var live = document.getElementById('live-position-panel');
+    var holds = [
+      { code: '2330.TW', shares: 10, avg: 2572.10 },
+      { code: '4958.TW', shares: 80, avg: 481.90 }
+    ];
+    if (live) {
+      var cards = holds.map(function (pos) {
+        var price = num(DATA[pos.code] && DATA[pos.code].p);
+        var cost = pos.avg * pos.shares;
+        var mv = price === null ? null : price * pos.shares;
+        var pnl = mv === null ? null : mv - cost;
+        var rate = pnl === null ? null : pnl / cost * 100;
+        var klass = pnl >= 0 ? 'u2-profit' : 'u2-loss';
+        return '<div class="u2-card"><h3>' + ((typeof NAMES !== 'undefined' && NAMES[pos.code]) || pos.code) + ' ｜' + pos.code + ' <span class="live-price-tag">LIVE</span></h3>'
+          + '<div class="u2-row"><span>持有股數</span><b>' + pos.shares + '</b></div>'
+          + '<div class="u2-row"><span>平均成本</span><b>' + fmt(pos.avg) + '</b></div>'
+          + '<div class="u2-row"><span>即時價格</span><b class="u2-big">' + fmt(price) + '</b></div>'
+          + '<div class="u2-row"><span>持倉成本</span><b>' + fmt(cost) + '</b></div>'
+          + '<div class="u2-row"><span>即時市值</span><b>' + fmt(mv) + '</b></div>'
+          + '<div class="u2-row"><span>即時損益</span><b class="' + klass + '">' + (pnl === null ? 'N/A' : (pnl >= 0 ? '+' : '') + fmt(pnl)) + '</b></div>'
+          + '<div class="u2-row"><span>報酬率</span><b class="' + klass + '">' + (rate === null ? 'N/A' : (rate >= 0 ? '+' : '') + rate.toFixed(2) + '%') + '</b></div></div>';
+      }).join('');
+      live.innerHTML = '<h2>💰 即時持倉損益</h2><div class="u2-grid">' + cards + '</div><p class="note">即時價格隨行情更新；平均成本固定。SMA20、SMA60、支撐、壓力及正式交易訊號仍以已完成日 K 為準。更新 ' + taipeiNow() + ' 台北。</p>';
+    }
+    var old = document.getElementById('u2-position');
+    if (old) {
+      old.style.display = '';
+      var stamp = old.querySelector('[data-live-pos]');
+      if (!stamp) {
+        stamp = document.createElement('p');
+        stamp.className = 'note';
+        stamp.setAttribute('data-live-pos', '1');
+        old.appendChild(stamp);
+      }
+      stamp.textContent = holds.map(function (pos) {
+        var price = num(DATA[pos.code] && DATA[pos.code].p);
+        var pnl = price === null ? null : (price - pos.avg) * pos.shares;
+        return ((typeof NAMES !== 'undefined' && NAMES[pos.code]) || pos.code) + ' 即時 ' + fmt(price) + '，試算 ' + (pnl === null ? 'N/A' : (pnl >= 0 ? '+' : '') + fmt(pnl));
+      }).join(' ｜ ') + '。截圖成本不變。' + taipeiNow() + ' 台北。';
+    }
+  }
+
+  function paintSync() {
+    var box = document.getElementById('u2-sync-list') || document.getElementById('u2-sync');
+    if (!box || typeof STOCK_META === 'undefined') return;
+    var list = box.id === 'u2-sync' ? box : box;
+    var html = Object.keys(STOCK_META).map(function (group) {
+      var rows = STOCK_META[group].map(function (code) { return DATA[code]; }).filter(function (d) { return d && num(d.pct) !== null; });
+      if (!rows.length) return '';
+      var up = rows.filter(function (d) { return num(d.pct) > 0; }).length;
+      var down = rows.filter(function (d) { return num(d.pct) < 0; }).length;
+      var flat = rows.length - up - down;
+      var rate = Math.round(Math.max(up, down) / rows.length * 100);
+      var label = rate >= 80 ? (up >= down ? '同步偏強' : '同步偏弱') : rate >= 50 ? '部分同步' : '族群分化';
+      return '<div class="u2-card" style="margin-bottom:8px"><div class="u2-row"><b>' + group + '</b><span>' + rate + '% ｜' + label + '</span></div><div class="u2-muted" style="margin-top:5px">上漲 ' + up + ' ／ 下跌 ' + down + ' ／ 平盤 ' + flat + ' ／ 有效 ' + rows.length + ' ｜LIVE</div></div>';
+    }).join('');
+    var target = document.getElementById('u2-sync-list');
+    if (target) target.innerHTML = html;
+  }
+
+  function paintAll() {
+    paintCards();
+    paintSummary();
+    paintRadar();
+    paintIndex();
+    paintLevels();
+    paintSmart();
+    paintPositions();
+    paintSync();
+    var meta = document.querySelector('.hdr .meta');
+    if (meta) {
+      meta.innerHTML = '📡 畫面最後更新： ' + taipeiNow() + ' 台北<br>台股最後完成日 K： ' + ((DATA['2330.TW'] && DATA['2330.TW'].date) || 'N/A') + ' ｜加權即時： ' + fmt(DATA['^TWII'] && DATA['^TWII'].p) + '<br>LIVE：現價／漲跌／漲跌幅 ｜ 日 K：SMA20／SMA60／支撐／壓力／進出場';
+    }
+  }
+
+  var loading = false;
+  async function tick() {
+    if (loading || typeof DATA === 'undefined') return;
+    loading = true;
+    try {
+      var result = await fetchQuotes();
+      var n = applyQuotes(result.quotes);
+      paintAll();
+      window.__LIVE_OK__ = n;
+      if (n) {
+        setStatus(true, '✅ 已更新 ' + n + ' 檔｜' + taipeiNow() + ' 台北' + (result.failed ? '｜' + result.failed + ' 批失敗' : ''));
+      } else {
+        setStatus(false, '⚠️ 沒有新報價｜' + taipeiNow() + ' 台北｜保留上一筆');
+      }
+    } catch (e) {
+      setStatus(false, '⚠️ 行情連線失敗｜' + taipeiNow() + ' 台北｜保留上一筆');
+    } finally {
+      loading = false;
+    }
+  }
+
+  ensureStatus();
+  tick();
+  setInterval(tick, 10000);
+  document.addEventListener('visibilitychange', function () {
+    if (document.visibilityState === 'visible') tick();
+  });
+})();
+</script>
+
 </body> 前面
 ========================================================= -->
 
