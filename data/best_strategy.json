@@ -1,51 +1,180 @@
 {
-  "selected": null,
-  "reason": "樣本不足，不選最佳策略",
+  "selected": "RSI 40-65｜RR≥1.5｜大盤 BULL_NEUTRAL",
+  "reason": "前段期望值最高的參數；後段期望值仍為正",
   "unstable": false,
   "insample": {
-    "sampleSize": 0,
-    "wins": 0,
-    "losses": 0,
-    "winRate": null,
-    "lossRate": null,
-    "avgWinR": null,
-    "avgLossR": null,
-    "expectancyR": null,
-    "profitFactor": null,
-    "maxDrawdownR": null,
-    "medianR": null,
-    "avgHoldingDays": null,
-    "recent20WinRate": null,
-    "recent50WinRate": null,
-    "ciLow": null,
-    "ciHigh": null
+    "sampleSize": 244,
+    "wins": 113,
+    "losses": 131,
+    "winRate": 0.4631,
+    "lossRate": 0.5369,
+    "avgWinR": 2.0839,
+    "avgLossR": -1.2503,
+    "expectancyR": 0.2938,
+    "profitFactor": 1.4377,
+    "maxDrawdownR": -21.5,
+    "medianR": -1.0175,
+    "avgHoldingDays": 6.2992,
+    "recent20WinRate": 0.3,
+    "recent50WinRate": 0.38,
+    "ciLow": 0.4016,
+    "ciHigh": 0.5258
   },
   "oos": {
-    "sampleSize": 0,
-    "wins": 0,
-    "losses": 0,
-    "winRate": null,
-    "lossRate": null,
-    "avgWinR": null,
-    "avgLossR": null,
-    "expectancyR": null,
-    "profitFactor": null,
-    "maxDrawdownR": null,
-    "medianR": null,
-    "avgHoldingDays": null,
-    "recent20WinRate": null,
-    "recent50WinRate": null,
-    "ciLow": null,
-    "ciHigh": null
+    "sampleSize": 97,
+    "wins": 54,
+    "losses": 43,
+    "winRate": 0.5567,
+    "lossRate": 0.4433,
+    "avgWinR": 1.6018,
+    "avgLossR": -1.1246,
+    "expectancyR": 0.3932,
+    "profitFactor": 1.7888,
+    "maxDrawdownR": -21.1982,
+    "medianR": 0.6356,
+    "avgHoldingDays": 6.1753,
+    "recent20WinRate": 0.85,
+    "recent50WinRate": 0.48,
+    "ciLow": 0.4576,
+    "ciHigh": 0.6515
   },
   "params": {
-    "rsi_lo": 45,
-    "rsi_hi": 60,
-    "min_rr": 1.8,
+    "rsi_lo": 40,
+    "rsi_hi": 65,
+    "min_rr": 1.5,
     "vol_min": null,
     "dist_atr_max": 1.0,
     "macd": "not_weak",
     "weekly": "not_bear",
     "market": "BULL_NEUTRAL"
-  }
+  },
+  "candidates": [
+    {
+      "label": "RSI 45-60｜RR≥1.2｜大盤 BULL_NEUTRAL",
+      "insampleN": 253,
+      "insampleExpectancyR": 0.2733,
+      "oosN": 97,
+      "oosExpectancyR": 0.3916
+    },
+    {
+      "label": "RSI 45-60｜RR≥1.2｜大盤 all",
+      "insampleN": 270,
+      "insampleExpectancyR": 0.1912,
+      "oosN": 99,
+      "oosExpectancyR": 0.617
+    },
+    {
+      "label": "RSI 45-60｜RR≥1.5｜大盤 BULL_NEUTRAL",
+      "insampleN": 243,
+      "insampleExpectancyR": 0.2919,
+      "oosN": 96,
+      "oosExpectancyR": 0.3905
+    },
+    {
+      "label": "RSI 45-60｜RR≥1.5｜大盤 all",
+      "insampleN": 258,
+      "insampleExpectancyR": 0.2292,
+      "oosN": 98,
+      "oosExpectancyR": 0.622
+    },
+    {
+      "label": "RSI 45-60｜RR≥1.8｜大盤 BULL_NEUTRAL",
+      "insampleN": 157,
+      "insampleExpectancyR": 0.0296,
+      "oosN": 56,
+      "oosExpectancyR": 0.2005
+    },
+    {
+      "label": "RSI 45-60｜RR≥1.8｜大盤 all",
+      "insampleN": 168,
+      "insampleExpectancyR": -0.0076,
+      "oosN": 58,
+      "oosExpectancyR": 0.2482
+    },
+    {
+      "label": "RSI 40-65｜RR≥1.2｜大盤 BULL_NEUTRAL",
+      "insampleN": 255,
+      "insampleExpectancyR": 0.2702,
+      "oosN": 98,
+      "oosExpectancyR": 0.3943
+    },
+    {
+      "label": "RSI 40-65｜RR≥1.2｜大盤 all",
+      "insampleN": 272,
+      "insampleExpectancyR": 0.1889,
+      "oosN": 100,
+      "oosExpectancyR": 0.6174
+    },
+    {
+      "label": "RSI 40-65｜RR≥1.5｜大盤 BULL_NEUTRAL",
+      "insampleN": 244,
+      "insampleExpectancyR": 0.2938,
+      "oosN": 97,
+      "oosExpectancyR": 0.3932
+    },
+    {
+      "label": "RSI 40-65｜RR≥1.5｜大盤 all",
+      "insampleN": 259,
+      "insampleExpectancyR": 0.2313,
+      "oosN": 99,
+      "oosExpectancyR": 0.6223
+    },
+    {
+      "label": "RSI 40-65｜RR≥1.8｜大盤 BULL_NEUTRAL",
+      "insampleN": 157,
+      "insampleExpectancyR": 0.0296,
+      "oosN": 56,
+      "oosExpectancyR": 0.2005
+    },
+    {
+      "label": "RSI 40-65｜RR≥1.8｜大盤 all",
+      "insampleN": 168,
+      "insampleExpectancyR": -0.0076,
+      "oosN": 58,
+      "oosExpectancyR": 0.2482
+    },
+    {
+      "label": "RSI 40-70｜RR≥1.2｜大盤 BULL_NEUTRAL",
+      "insampleN": 255,
+      "insampleExpectancyR": 0.2702,
+      "oosN": 98,
+      "oosExpectancyR": 0.3943
+    },
+    {
+      "label": "RSI 40-70｜RR≥1.2｜大盤 all",
+      "insampleN": 272,
+      "insampleExpectancyR": 0.1889,
+      "oosN": 100,
+      "oosExpectancyR": 0.6174
+    },
+    {
+      "label": "RSI 40-70｜RR≥1.5｜大盤 BULL_NEUTRAL",
+      "insampleN": 244,
+      "insampleExpectancyR": 0.2938,
+      "oosN": 97,
+      "oosExpectancyR": 0.3932
+    },
+    {
+      "label": "RSI 40-70｜RR≥1.5｜大盤 all",
+      "insampleN": 259,
+      "insampleExpectancyR": 0.2313,
+      "oosN": 99,
+      "oosExpectancyR": 0.6223
+    },
+    {
+      "label": "RSI 40-70｜RR≥1.8｜大盤 BULL_NEUTRAL",
+      "insampleN": 157,
+      "insampleExpectancyR": 0.0296,
+      "oosN": 56,
+      "oosExpectancyR": 0.2005
+    },
+    {
+      "label": "RSI 40-70｜RR≥1.8｜大盤 all",
+      "insampleN": 168,
+      "insampleExpectancyR": -0.0076,
+      "oosN": 58,
+      "oosExpectancyR": 0.2482
+    }
+  ],
+  "note": "每日訊號仍使用預設參數；這裡只是對照，不會自動切換參數。"
 }

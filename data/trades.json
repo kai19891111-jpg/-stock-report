@@ -1,1 +1,29 @@
-[]
+[
+  {
+    "id": "3406.TW-2026-10-02",
+    "symbol": "3406.TW",
+    "market": "TW",
+    "signalDate": "2026-10-02",
+    "entryDate": "2026-10-05",
+    "entryPrice": 971.0,
+    "stopPrice": 890.2714,
+    "target1": 1112.4857,
+    "target2": 1181.3429,
+    "rsi": 56.5781,
+    "macd": "零軸下",
+    "volumeRatio": 0.8804,
+    "atr": 68.8571,
+    "dailyTrend": "盤整",
+    "weeklyTrend": "多頭",
+    "marketRegime": "BULL",
+    "theme": "光學／CPO",
+    "status": "WIN",
+    "exitDate": "2026-10-07",
+    "exitPrice": 1112.4857,
+    "exitReason": "target",
+    "resultR": 1.6616,
+    "resultPct": 13.8144,
+    "holdingDays": 3,
+    "ambiguousDay": false
+  }
+]
