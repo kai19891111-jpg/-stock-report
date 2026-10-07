@@ -113,7 +113,7 @@ th{color:var(--gold);font-weight:600;}
 
   <section id="entry-pick" class="panel">
     <h2>可進場選擇</h2>
-    <p class="note">只自動列出決策卡狀態為觀察進場的標的。觀察進場不等於買進，不是下單。</p>
+    <p class="note">可進場必須三條都過：收在 SMA20 之上、乖離 0%–6%、現價未碰到壓力。差一條會另外列出。觀察進場不等於買進。</p>
     <div id="entry-picked" class="note">目前沒有觀察進場</div>
     <div id="entry-pick-list" class="grid"></div>
   </section>
@@ -3786,42 +3786,65 @@ ${d.note || 'N/A'}
     });
     return found;
   }
-  function fmt(v) {
-    var n = Number(v);
-    return Number.isFinite(n) ? n.toLocaleString('en-US', { maximumFractionDigits: 2 }) : 'N/A';
+  function num(v) {
+    if (v === null || v === undefined || v === '' || v === 'N/A') return null;
+    var n = Number(String(v).replace(/,/g, ''));
+    return Number.isFinite(n) ? n : null;
   }
-  function readyCodes() {
-    if (typeof DATA === 'undefined') return [];
-    return Object.keys(DATA).filter(function (code) {
-      if (code.charAt(0) === '^') return false;
-      var s = String((DATA[code] && DATA[code].status) || '');
-      return s.indexOf('觀察進場') !== -1 && s.indexOf('不宜') === -1;
-    }).sort(function (a, b) {
-      return nameOf(a).localeCompare(nameOf(b), 'zh-Hant');
-    });
+  function fmt(v) {
+    var n = num(v);
+    return n === null ? 'N/A' : n.toLocaleString('en-US', { maximumFractionDigits: 2 });
+  }
+  function pct(v) {
+    return (v > 0 ? '+' : '') + v.toFixed(1) + '%';
+  }
+  function resistOf(d) {
+    return num(d.resist);
+  }
+  function check(code) {
+    var d = DATA[code] || {};
+    var price = num(d.p);
+    var sma = num(d.s20);
+    var resist = resistOf(d);
+    var rules = [];
+    var above = price !== null && sma !== null && price > sma;
+    rules.push({ ok: above, text: above ? '收在 SMA20 之上' : '未站上 SMA20' });
+    var bias = price !== null && sma ? (price - sma) / sma * 100 : null;
+    var biasOk = bias !== null && bias >= 0 && bias <= 6;
+    rules.push({ ok: biasOk, text: bias === null ? '沒有乖離' : ('乖離 ' + pct(bias) + (biasOk ? '，在 0%–6%' : '，不在 0%–6%')) });
+    var nearHigh = resist !== null && price !== null && price >= resist * 0.98;
+    rules.push({ ok: resist !== null && price !== null && !nearHigh, text: resist === null ? '沒有壓力價' : (nearHigh ? '現價已碰到壓力' : '尚未碰到壓力') });
+    return { code: code, d: d, bias: bias, rules: rules, pass: rules.every(function (r) { return r.ok; }) };
+  }
+  function card(item) {
+    var d = item.d;
+    var title = (groupOf(item.code) || item.code) + '｜' + nameOf(item.code);
+    var lines = item.rules.map(function (r) {
+      return '<div class="row"><span>' + (r.ok ? '過' : '未過') + '</span><b>' + r.text + '</b></div>';
+    }).join('');
+    return '<div class="card" data-code="' + item.code + '">' +
+      '<div class="title">' + title + '</div>' +
+      '<div class="sub">' + item.code + ' ｜ ' + (item.pass ? '三條都過，可觀察進場' : '未達進場') + '</div>' +
+      '<div class="price">' + fmt(d.p) + '</div>' +
+      '<div class="row"><span>SMA20</span><b>' + fmt(d.s20) + '</b></div>' +
+      lines +
+      '<div class="row"><span>原決策卡</span><b>' + (d.status || 'N/A') + '</b></div>' +
+      '</div>';
   }
   function renderEntryReady() {
     var list = document.getElementById('entry-pick-list');
     var picked = document.getElementById('entry-picked');
-    if (!list) return;
-    var rows = readyCodes();
+    if (!list || typeof DATA === 'undefined') return;
+    var items = Object.keys(DATA).filter(function (code) { return code.charAt(0) !== '^'; }).map(check);
+    var ready = items.filter(function (x) { return x.pass; });
+    var close = items.filter(function (x) { return !x.pass && x.rules.filter(function (r) { return r.ok; }).length === 2; });
     if (picked) {
-      picked.textContent = rows.length
-        ? ('現在可觀察進場 ' + rows.length + ' 檔：' + rows.map(nameOf).join('、'))
-        : '目前沒有觀察進場';
+      picked.textContent = ready.length
+        ? ('三條都過 ' + ready.length + ' 檔：' + ready.map(function (x) { return nameOf(x.code); }).join('、'))
+        : '目前沒有三條都過的標的';
     }
-    list.innerHTML = rows.map(function (code) {
-      var d = DATA[code] || {};
-      var title = (groupOf(code) || code) + '｜' + nameOf(code);
-      return '<div class="card" data-code="' + code + '">' +
-        '<div class="title">' + title + '</div>' +
-        '<div class="sub">' + code + ' ｜ 🟢 觀察進場</div>' +
-        '<div class="price">' + fmt(d.p) + (d.live ? '<span class="final-live-tag">LIVE</span>' : '') + '</div>' +
-        '<div class="row"><span>進場區</span><b>' + (d.entry || 'N/A') + '</b></div>' +
-        '<div class="row"><span>失效價</span><b>' + (d.invalid || 'N/A') + '</b></div>' +
-        '<div class="row"><span>壓力</span><b>' + (d.resist || 'N/A') + '</b></div>' +
-        '</div>';
-    }).join('') || '<p class="note">決策卡目前沒有觀察進場。</p>';
+    list.innerHTML = (ready.length ? ready.map(card).join('') : '<p class="note">沒有標的同時站上 SMA20、乖離 0%–6%、且未碰到壓力。</p>') +
+      (close.length ? '<p class="note">差一條：' + close.map(function (x) { return nameOf(x.code); }).join('、') + '</p>' + close.map(card).join('') : '');
   }
   window.renderEntryReady = renderEntryReady;
   renderEntryReady();
