@@ -1,137 +1,126 @@
-"""Fetch Yahoo daily bars. Unique signals. Next-open fill. Final close only."""
+"""Daily update: completed Yahoo bars -> signals for every symbol on the page + live trade log.
+
+Only sessions that have actually closed are used. Signals are rebuilt from the bars on
+every run, so a bad snapshot can never get stuck in signals.json.
+"""
 from __future__ import annotations
-import json, urllib.request
+import json
 from datetime import datetime, timezone
-from pathlib import Path
-from indicators import sma, rsi, atr, macd_hist
-from strategy import zone_state, daily_trend, market_regime, can_open_trade, resolve_trade
+from marketdata import DATA, MARKETS, bars_of, load_universe
+from strategy import (DEFAULT_PARAMS, MIN_HISTORY, RegimeLookup, build_signals,
+                      can_open_trade, open_trade, simulate_exit)
 
-ROOT = Path(__file__).resolve().parents[1]
-DATA = ROOT / "data"
-WATCH = {
-    "NVDA": ("US", "AI晶片"), "AVGO": ("US", "AI晶片"), "TSM": ("US", "AI晶片"),
-    "2330.TW": ("TW", "AI晶片"), "TSLA": ("US", "AI自駖"), "MU": ("US", "AI記憶體"),
-    "3481.TW": ("TW", "面板／光電"), "6770.TW": ("TW", "AI記憶體"), "2221.TWO": ("TW", "半導體廠務"),
-}
-DEFAULT_PARAMS = {"rsi_lo": 45, "rsi_hi": 60, "min_rr": 1.8, "vol_min": None,
-                  "dist_atr_max": 1.0, "macd": "not_weak", "weekly": "not_bear",
-                  "market": "BULL_NEUTRAL"}
+KEEP_SESSIONS = 20      # sessions of signals kept in signals.json
+LIVE_LOOKBACK = 5       # sessions scanned for new live trades (covers a few missed runs)
+MIN_BARS = 80
 
-def load_json(path, default):
-    p = DATA / path
+
+def load_json(name, default):
+    p = DATA / name
     if not p.exists():
         return default
     try:
         return json.loads(p.read_text(encoding="utf-8") or json.dumps(default))
-    except Exception:
+    except Exception:  # noqa: BLE001
         return default
 
-def save_json(path, obj):
-    (DATA / path).write_text(json.dumps(obj, ensure_ascii=False, indent=2), encoding="utf-8")
 
-def bars_of(symbol):
-    url = f"https://query1.finance.yahoo.com/v8/finance/chart/{symbol}?interval=1d&range=2y"
-    req = urllib.request.Request(url, headers={"User-Agent": "Mozilla/5.0 stock-report"})
-    with urllib.request.urlopen(req, timeout=20) as r:
-        raw = json.loads(r.read().decode())
-    res = raw["chart"]["result"][0]
-    ts = res.get("timestamp") or []
-    q = res["indicators"]["quote"][0]
-    rows = []
-    for i, t in enumerate(ts):
-        d = datetime.fromtimestamp(t, tz=timezone.utc).date().isoformat()
-        rows.append({"date": d, "open": q["open"][i], "high": q["high"][i],
-                     "low": q["low"][i], "close": q["close"][i], "volume": q["volume"][i]})
-    return rows
+def rounded(obj, nd=4):
+    if isinstance(obj, float):
+        return round(obj, nd)
+    if isinstance(obj, dict):
+        return {k: rounded(v, nd) for k, v in obj.items()}
+    if isinstance(obj, list):
+        return [rounded(v, nd) for v in obj]
+    return obj
 
-def main():
-    signals = load_json("signals.json", [])
-    trades = load_json("trades.json", [])
-    existing_sig = {(s.get("date"), s.get("symbol")) for s in signals}
-    existing_tr = {(t.get("symbol"), t.get("signalDate")) for t in trades}
-    latest_quotes = {}
-    now = datetime.now(timezone.utc).isoformat()
-    for symbol, (market, theme) in WATCH.items():
+
+def save_json(name, obj):
+    DATA.mkdir(parents=True, exist_ok=True)
+    (DATA / name).write_text(json.dumps(rounded(obj), ensure_ascii=False, indent=2), encoding="utf-8")
+
+
+def load_regimes(now=None):
+    regimes, index_info = {}, {}
+    for market, m in MARKETS.items():
+        rows = []
         try:
-            rows = bars_of(symbol)
-        except Exception as e:
-            print("skip", symbol, e)
-            continue
-        if len(rows) < 80:
-            continue
-        closes = [b["close"] for b in rows]
-        highs = [b["high"] for b in rows]
-        lows = [b["low"] for b in rows]
-        vols = [b["volume"] or 0 for b in rows]
-        ma20, ma60 = sma(closes, 20), sma(closes, 60)
-        rsi14, atr14 = rsi(closes, 14), atr(highs, lows, closes, 14)
-        _l, _s, hist = macd_hist(closes)
-        vol_ma = sma(vols, 20)
-        last, i = rows[-1], len(rows) - 1
-        close, a = last["close"], atr14[i]
-        entry_high = (ma20[i] * 1.01) if ma20[i] else None
-        entry_low = (ma20[i] * 0.985) if ma20[i] else None
-        stop = (ma20[i] - (a or 0) * 1.2) if ma20[i] else None
-        target1 = (close + (a or 0) * 2.2) if a else None
-        rr = None
-        if entry_low and stop and target1 and entry_low > stop:
-            risk = entry_low - stop
-            if risk > 0:
-                rr = (target1 - entry_low) / risk
-        zs = zone_state(close, entry_low, entry_high, stop)
-        dist_atr = ((close - entry_high) / a) if (a and a > 0 and entry_high is not None and close is not None) else None
-        macd_txt = "零軸上" if (hist[i] or 0) >= 0 else "零軸下"
-        if i > 1 and hist[i] is not None and hist[i - 1] is not None and hist[i] < hist[i - 1] < 0:
-            macd_txt = "轉弱"
-        vr = ((last["volume"] or 0) / vol_ma[i]) if vol_ma[i] else None
-        sig = {
-            "date": last["date"], "symbol": symbol, "market": market, "theme": theme,
-            "open": last["open"], "high": last["high"], "low": last["low"], "close": close,
-            "ma20": ma20[i], "ma60": ma60[i], "rsi14": rsi14[i], "macd": macd_txt,
-            "volumeRatio": vr, "atr14": a, "dailyTrend": daily_trend(close, ma20[i], ma60[i]),
-            "weeklyTrend": daily_trend(close, ma60[i], ma60[i]),
-            "entryLow": entry_low, "entryHigh": entry_high, "maxEntry": entry_high,
-            "stop": stop, "target1": target1, "target2": (target1 + (a or 0)) if target1 and a else None,
-            "entryRR": rr, "zoneState": zs, "distanceATR": dist_atr,
-            "conditionScore": None, "marketRegime": market_regime(close, ma20[i], ma60[i]),
-            "themeTrend": None, "signal": "WATCH", "dataTimestamp": now,
-            "isFinalClose": True, "source": "yahoo",
-        }
-        latest_quotes[symbol] = sig
-        key = (sig["date"], sig["symbol"])
-        if key not in existing_sig:
-            signals.append(sig)
-            existing_sig.add(key)
-        if can_open_trade(sig, DEFAULT_PARAMS) and (symbol, sig["date"]) not in existing_tr:
-            nxt = None
-            for j, b in enumerate(rows):
-                if b["date"] == sig["date"] and j + 1 < len(rows):
-                    nxt = rows[j + 1]
-                    break
-            if nxt and nxt.get("open"):
-                trades.append({
-                    "id": f"{symbol}-{sig['date']}", "symbol": symbol,
-                    "signalDate": sig["date"], "entryDate": nxt["date"],
-                    "entryPrice": nxt["open"], "stopPrice": stop, "target1": target1,
-                    "target2": sig["target2"], "rsi": sig["rsi14"], "macd": macd_txt,
-                    "volumeRatio": vr, "atr": a, "dailyTrend": sig["dailyTrend"],
-                    "weeklyTrend": sig["weeklyTrend"], "marketRegime": sig["marketRegime"],
-                    "theme": theme, "status": "OPEN", "exitDate": None, "exitPrice": None,
-                    "resultR": None, "resultPct": None, "holdingDays": None, "ambiguousDay": False,
-                })
-                existing_tr.add((symbol, sig["date"]))
+            rows = bars_of(m["index"], market, now=now)
+        except Exception as e:  # noqa: BLE001
+            print("warn: index", m["index"], "unavailable, regime falls back to NEUTRAL:", e)
+        regimes[market] = RegimeLookup(rows)
+        if rows:
+            index_info[market] = {"symbol": m["index"], "date": rows[-1]["date"], "close": rows[-1]["close"],
+                                  "regime": regimes[market].on(rows[-1]["date"])}
+    return regimes, index_info
+
+
+def update_live_trades(trades, symbol, market, rows, sigs):
+    """Resolve open trades, then open new ones from the most recent signals (one per symbol at a time)."""
+    idx = {b["date"]: i for i, b in enumerate(rows)}
+
+    def resolve():
         for tr in trades:
             if tr.get("symbol") != symbol or tr.get("status") != "OPEN":
                 continue
-            after = [b for b in rows if b["date"] > tr["entryDate"]]
-            resolved = resolve_trade(tr["entryPrice"], tr["stopPrice"], tr["target1"], after)
-            if resolved:
-                tr.update(resolved)
+            start = idx.get(tr.get("entryDate"))
+            if start is None:
+                continue
+            res = simulate_exit(tr["entryPrice"], tr["stopPrice"], tr["target1"], rows[start:], market)
+            if res:
+                tr.update(res)
+
+    resolve()
+    known = {(t.get("symbol"), t.get("signalDate")) for t in trades}
+    for j in range(max(MIN_HISTORY, len(rows) - 1 - LIVE_LOOKBACK), len(rows) - 1):
+        sig = sigs[j]
+        if not sig or (symbol, sig["date"]) in known:
+            continue
+        if any(t.get("symbol") == symbol and t.get("status") == "OPEN" for t in trades):
+            break
+        last_exit = max((t.get("exitDate") or "" for t in trades if t.get("symbol") == symbol), default="")
+        if sig["date"] < last_exit or not can_open_trade(sig, DEFAULT_PARAMS):
+            continue
+        tr = open_trade(sig, rows[j + 1])
+        if tr:
+            trades.append(tr)
+            known.add((symbol, sig["date"]))
+            resolve()
+
+
+def main(now=None):
+    universe = load_universe()
+    stamp = (now or datetime.now(timezone.utc)).isoformat()
+    regimes, index_info = load_regimes(now)
+    trades = load_json("trades.json", [])
+    signals, latest, skipped = [], {}, []
+    for symbol, (market, theme) in universe.items():
+        try:
+            rows = bars_of(symbol, market, now=now)
+        except Exception as e:  # noqa: BLE001
+            print("skip", symbol, e)
+            skipped.append(symbol)
+            continue
+        if len(rows) < MIN_BARS:
+            print("skip", symbol, "only", len(rows), "bars")
+            skipped.append(symbol)
+            continue
+        sigs = build_signals(symbol, market, theme, rows, regimes[market], stamp)
+        if sigs[-1]:
+            latest[symbol] = sigs[-1]
+        signals.extend(s for s in sigs[-KEEP_SESSIONS:] if s)
+        update_live_trades(trades, symbol, market, rows, sigs)
+    if not latest:
+        raise SystemExit("no market data fetched; existing data files left untouched")
+    signals.sort(key=lambda s: (s["date"], s["symbol"]))
+    sessions = {m: max((q["date"] for q in latest.values() if q["market"] == m), default=None) for m in MARKETS}
     save_json("signals.json", signals)
     save_json("trades.json", trades)
-    save_json("latest.json", {"dataTimestamp": now, "marketTimestamp": now, "source": "yahoo",
-                               "isFinalClose": True, "quotes": latest_quotes})
-    print("signals", len(signals), "trades", len(trades))
+    save_json("latest.json", {"dataTimestamp": stamp, "marketTimestamp": stamp, "source": "yahoo",
+                              "isFinalClose": True, "sessions": sessions, "indices": index_info,
+                              "skipped": skipped, "quotes": latest})
+    print("symbols", len(latest), "signals", len(signals), "trades", len(trades), "skipped", skipped)
+
 
 if __name__ == "__main__":
     main()

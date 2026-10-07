@@ -109,6 +109,7 @@ footer{text-align:center;padding:16px 12px 28px;font-size:11px;color:var(--muted
   <a href="#u2-position">我的持倉</a>
   <a href="#decision">個股卡片</a>
   <a href="#entry-pick">可進場選擇</a>
+  <a href="#backtest">回測</a>
   <a href="#index">指數</a>
   <a href="#u2-market-levels">大盤關卡</a>
   <a href="#ai-class">族群</a>
@@ -138,6 +139,11 @@ footer{text-align:center;padding:16px 12px 28px;font-size:11px;color:var(--muted
     <p class="note" id="levels-note"></p>
   </section>
 
+  <section id="backtest" class="panel">
+    <h2>回測統計 <small id="bt-stamp"></small></h2>
+    <div id="bt-body"><p class="note">讀取回測資料中…</p></div>
+  </section>
+
   <section id="index" class="panel">
     <h2>指數／殖利率</h2>
     <div class="scroll"><table>
@@ -164,7 +170,9 @@ footer{text-align:center;padding:16px 12px 28px;font-size:11px;color:var(--muted
       <li>狀態只看三個條件：收在 SMA20 之上、乖離 0–6%、未貼近 20 日高。三條都過才是「觀察進場」，卡片上會寫沒過的是哪一條。</li>
       <li>乖離超過 15%：有持倉顯示「減碼」，沒持倉顯示「過熱不追」。都只是提醒，不是自動賣出。</li>
       <li>壓力被劃掉、標「價位待重算」的卡片，代表收盤已經穿過舊價位，該價位不能再當依據。</li>
-      <li>用上方的篩選按鈕切換：全部／觀察進場／持倉／價位待重算。</li>
+      <li>報酬風險比＝（壓力 − 現價）÷（現價 − 失效價）。低於門檻代表往上的空間比往下的風險小，就算狀態是「觀察進場」也要留意。</li>
+      <li>回測統計的勝率只來自已平倉交易；筆數不到 30 一律顯示「樣本不足」，不看勝率。</li>
+      <li>用上方的篩選按鈕切換：全部／觀察進場／持倉／報酬風險比達標／價位待重算。</li>
     </ol>
     <details>
       <summary>更新紀錄</summary>
@@ -182,6 +190,7 @@ footer{text-align:center;padding:16px 12px 28px;font-size:11px;color:var(--muted
 const REPORT = {
   generatedAt: "2026-10-08T01:20:00+08:00",          // 報告產出時間（台北）
   staleAfterHours: 24,                                // 超過幾小時在頁首提醒資料可能過期
+  minRR: 1.8,                                         // 報酬風險比門檻（和 scripts/strategy.py 的 min_rr 一致）
   levelsNote: "進場區／失效價／壓力沿用舊價位，本次沒有重算。收盤已穿過壓力的卡片會自動標「價位待重算」。",
   notes: [                                            // 手寫的補充說明，會出現在摘要最後
     "加權 20 日高沿用 10/06 的 49,968.92；Yahoo 尚未把 10/07 高低點寫進日 K，所以壓力只用已核對高點。"
@@ -192,6 +201,7 @@ const REPORT = {
     sma20: "含最後完成日收盤的 20 日均線，當作觀察支撐。"
   },
   changelog: [
+    "2026-10-08：卡片加上報酬風險比；新增回測統計（腳本重跑兩年日 K，含成本）。",
     "2026-10-08：三組重複卡片合併成一套＋篩選；持倉加上合計、佔比與換算匯率；價位過期自動標示；狀態改由三條件即時計算。",
     "2026-10-08：頁面不再掛 hotfix、即時重畫、第二套持倉腳本，全站只用同一份 DATA。",
     "2026-10-08：10/02 的 48,218／48,380／48,601 大盤關卡已低於現價約 1,200 點，停用。",
@@ -287,7 +297,13 @@ const DATA = {"2330.TW": {"p": 2585.0, "ch": 0.0, "pct": 0.0, "date": "2026-10-0
     const z = zone(d.entry), inv = level(d.invalid), res = level(d.resist);
     const broke = res !== null && d.p > res;
     const lost = inv !== null && d.p < inv;
-    return { code, d, held, cat, label, why, z, inv, res, broke, lost, stale: broke || lost, gapHigh, noLevels: !z && inv === null && res === null };
+    let rr = null, rrWhy = "";
+    if (res === null || inv === null) rrWhy = "壓力或失效價未設定";
+    else if (broke) rrWhy = "收盤已過壓力";
+    else if (lost) rrWhy = "收盤已破失效價";
+    else rr = (res - d.p) / (d.p - inv);
+    return { code, d, held, cat, label, why, z, inv, res, broke, lost, stale: broke || lost, gapHigh, noLevels: !z && inv === null && res === null,
+             rr, rrWhy, rrOk: rr !== null && rr >= REPORT.minRR };
   }
   const A = {};
   ORDER.forEach((c) => { if (DATA[c]) A[c] = analyse(c); });
@@ -349,6 +365,8 @@ const DATA = {"2330.TW": {"p": 2585.0, "ch": 0.0, "pct": 0.0, "date": "2026-10-0
     else if (a.broke) out.push('<div><span>壓力</span><b><span class="old">' + px(a.res, c) + "</span> 已突破</b><em>" +
       (d.high20 > d.p ? "上方參考：20 日高 " + px(d.high20, c) : "已在 20 日高") + "</em></div>");
     else out.push("<div><span>壓力</span><b>" + px(a.res, c) + "</b><em>距離 " + ((a.res / d.p - 1) * 100).toFixed(1) + "%</em></div>");
+    out.push("<div><span>報酬風險比</span><b" + (a.rrOk ? "" : ' class="warn"') + ">" + (a.rr === null ? "算不出來" : a.rr.toFixed(2)) + "</b><em>" +
+      (a.rr === null ? a.rrWhy : (a.rrOk ? "達到門檻 " : "低於門檻 ") + REPORT.minRR) + "</em></div>");
     return out.join("");
   }
 
@@ -407,6 +425,7 @@ const DATA = {"2330.TW": {"p": 2585.0, "ch": 0.0, "pct": 0.0, "date": "2026-10-0
     ["hold", "觀望／持有觀察", (a) => a.cat === "hold"],
     ["wait", "等待", (a) => a.cat === "wait"],
     ["trim", "過熱／減碼", (a) => a.cat === "trim"],
+    ["rr", "報酬風險比達標", (a) => a.rrOk],
     ["stale", "價位待重算", (a) => a.stale]
   ];
   let current = "all";
@@ -444,6 +463,10 @@ const DATA = {"2330.TW": {"p": 2585.0, "ch": 0.0, "pct": 0.0, "date": "2026-10-0
   if (usIdx.length) sp.push("<b>美股 " + md(DATA[usIdx[0]].date) + " 正式收盤</b>：" + usIdx.map(q).join("、") + "。" + have(["NVDA", "TSM", "AMD", "AVGO", "MU"]).map((c) => c + " " + px(DATA[c].p, c)).join("、") + "。");
   if (rows.length) sp.push("<b>持倉</b>：總市值 " + twd(totalV) + "，未實現 " + signed(totalV - totalC, twd) + "（" + pct((totalV / totalC - 1) * 100) + "）。最大部位 " + esc(name(biggest.p.code)) + " 佔 " + biggest.w.toFixed(1) + "%。");
   sp.push("<b>可進場觀察（" + go.length + " 檔）</b>：" + (go.length ? go.map(name).map(esc).join("、") : "目前沒有") + "。觀察進場不等於買進。");
+  if (go.length) {
+    const okN = go.filter((c) => A[c].rrOk).length, naN = go.filter((c) => A[c].rr === null).length;
+    sp.push("<b>報酬風險比</b>：" + go.length + " 檔觀察進場裡，達到 " + REPORT.minRR + " 的有 " + okN + " 檔" + (naN ? "，" + naN + " 檔算不出來（已過壓力或沒設失效價）" : "") + "。");
+  }
   if (withRes.length) sp.push("<b>價位提醒</b>：" + withRes.length + " 檔有壓力價，其中 " + brokeN + " 檔收盤已經站上壓力，卡片標「價位待重算」。");
   REPORT.notes.forEach((n) => sp.push('<span class="note">' + esc(n) + "</span>"));
   $("summary-body").innerHTML = sp.map((s) => "<p>" + s + "</p>").join("");
@@ -464,6 +487,43 @@ const DATA = {"2330.TW": {"p": 2585.0, "ch": 0.0, "pct": 0.0, "date": "2026-10-0
     radar.push("持倉 " + esc(name(a.code)) + "：" + bits.join("、") + "。");
   });
   $("radar-body").innerHTML = radar.map((s) => "<li>" + s + "</li>").join("");
+
+  /* ---------- 回測統計（讀 data/strategy_stats.json，只顯示統計，不影響卡片） ---------- */
+  function renderBacktest(S) {
+    const m = S.meta;
+    if (!m) { $("bt-body").innerHTML = '<p class="note">回測還沒有用新版腳本跑過，下一次自動更新後這裡會出現統計。</p>'; return; }
+    const minN = m.minSample || 30;
+    const R = (v) => v === null || v === undefined ? "—" : (v > 0 ? "+" : v < 0 ? "−" : "") + Math.abs(v).toFixed(2) + "R";
+    const P = (v) => v === null || v === undefined ? "—" : (v * 100).toFixed(0) + "%";
+    const row = (label, s) => {
+      s = s || { sampleSize: 0 };
+      const few = s.sampleSize < minN;
+      return "<tr><td>" + label + '</td><td class="num">' + s.sampleSize + "</td><td>" +
+        (few ? '<span class="badge wait">樣本不足</span>' : P(s.winRate) + '<br><span class="note">' + P(s.ciLow) + "–" + P(s.ciHigh) + "</span>") +
+        '</td><td class="num">' + (few ? "—" : R(s.expectancyR)) + '</td><td class="num">' + (few || s.profitFactor === null ? "—" : s.profitFactor.toFixed(2)) +
+        '</td><td class="num">' + (few ? "—" : R(s.maxDrawdownR)) + '</td><td class="num">' + (few || !s.avgHoldingDays ? "—" : s.avgHoldingDays.toFixed(1) + " 日") + "</td></tr>";
+    };
+    let h = '<p class="note">進場規則（scripts/strategy.py 的預設參數）在 ' + esc(m.from) + " 到 " + esc(m.to) + " 的 " + m.symbols + " 檔日 K 上逐日重播：收盤出訊號、隔日開盤進場，已扣手續費、證交稅與滑價，跳空跌破停損以開盤價計，最多持有 " + m.maxHoldDays + " 個交易日。</p>";
+    h += '<div class="scroll"><table><thead><tr><th>期間</th><th>筆數</th><th>勝率<br>（95% 區間）</th><th>期望值</th><th>獲利因子</th><th>最大回落</th><th>平均持有</th></tr></thead><tbody>' +
+      row("前段（" + esc(m.splitDate) + " 之前）", S.insample) + row("後段（" + esc(m.splitDate) + " 起）", S.oos) + row("實際逐日紀錄", S.live) + "</tbody></table></div>";
+    h += '<p class="note">期望值是每筆交易平均賺賠幾倍的風險（R）；大於 0 才代表扣掉成本後平均有賺。前段與後段分開看，不混在一起。</p>';
+    const pr = S.pageRule;
+    if (pr && pr.byStatus) {
+      const hs = pr.horizons.map(String);
+      const names = { go: "觀察進場", hold: "觀望／持有觀察", trim: "過熱／減碼", wait: "等待" };
+      const cell = (x) => !x || !x.n ? '<td class="num">—</td>' : '<td class="num">' + (x.n < minN ? "樣本不足" : pct(x.mean) + '<br><span class="note">上漲 ' + P(x.hitRate) + "</span>") + "</td>";
+      h += '<h2 style="margin-top:14px">頁面狀態出現之後的報酬</h2><div class="scroll"><table><thead><tr><th>狀態</th><th>次數</th>' + hs.map((x) => "<th>" + x + " 日後</th>").join("") + "</tr></thead><tbody>" +
+        Object.keys(names).map((k) => { const v = pr.byStatus[k] || {}; return "<tr><td>" + names[k] + '</td><td class="num">' + ((v[hs[0]] || {}).n || 0) + "</td>" + hs.map((x) => cell(v[x])).join("") + "</tr>"; }).join("") +
+        '<tr><td>所有日子（對照）</td><td class="num">' + ((pr.baseline[hs[0]] || {}).n || 0) + "</td>" + hs.map((x) => cell(pr.baseline[x])).join("") + "</tr></tbody></table></div>" +
+        '<p class="note">' + esc(pr.definition) + "。同一段連續的狀態只算一次，未扣成本。要和「所有日子」那一列比，才知道這個狀態有沒有比隨便買更好。</p>";
+    }
+    $("bt-body").innerHTML = h;
+    if (S.updated) $("bt-stamp").textContent = "計算於 " + String(S.updated).slice(0, 10) + "｜資料到 " + m.to;
+  }
+  fetch("./data/strategy_stats.json", { cache: "no-store" })
+    .then((r) => (r.ok ? r.json() : Promise.reject(new Error(r.status))))
+    .then(renderBacktest)
+    .catch(() => { $("bt-body").innerHTML = '<p class="note">讀不到回測資料（data/strategy_stats.json）。放上 GitHub 並等自動更新跑過一次後就會出現。</p>'; });
 
   /* ---------- 指數／大盤關卡／族群 ---------- */
   $("index-body").innerHTML = have(["^TWII", "^IXIC", "^SOX", "^TNX"]).map((c) => {
