@@ -60,6 +60,7 @@ main{max-width:1080px;margin:0 auto;padding:4px 12px 12px;}
 .badge.trim{background:#8a5a12;color:#fff;}
 .badge.wait{background:#5c6570;color:#fff;}
 .badge.own{background:#fff;color:#0b2a52;}
+.badge.sig{background:#fff3c4;color:#5a4300;}
 .badge.stale{background:transparent;border:1px solid var(--amber);color:var(--amber);font-weight:500;}
 
 .chips{display:flex;flex-wrap:wrap;gap:6px;margin:0 0 12px;}
@@ -93,6 +94,7 @@ td.grp{white-space:nowrap;font-weight:600;color:#e6d3a3;}
 details{margin-top:8px;font-size:13px;}
 summary{cursor:pointer;color:var(--muted);}
 footer{text-align:center;padding:16px 12px 28px;font-size:11px;color:var(--muted);}
+#ai-class table td{white-space:normal;min-width:0;}
 @media(max-width:600px){.cards{grid-template-columns:1fr;}header h1{font-size:1.15rem;}.card .px{font-size:24px;}}
 </style>
 </head>
@@ -158,7 +160,6 @@ footer{text-align:center;padding:16px 12px 28px;font-size:11px;color:var(--muted
     <div class="cards" id="mkt-body"></div>
   </section>
 
-
   <section id="u2-smart" class="panel">
     <h2>新增關注 <small>09-27 三檔與既有補丁保留；行情仍讀同一份 DATA</small></h2>
     <div class="u2-toolbar"><select id="u2-select"></select><button id="u2-copy" type="button">複製分析</button></div>
@@ -177,11 +178,12 @@ footer{text-align:center;padding:16px 12px 28px;font-size:11px;color:var(--muted
     <ol>
       <li>先看日期：每張卡片都寫了自己的日 K 日期，台股和美股不是同一天。</li>
       <li>狀態只看三個條件：收在 SMA20 之上、乖離 0–6%、未貼近 20 日高。三條都過才是「觀察進場」，卡片上會寫沒過的是哪一條。</li>
-      <li>乖離超過 15%：有持倉顯示「減碼」，沒持倉顯示「過熱不追」。都只是提醒，不是自動賣出。</li>
-      <li>壓力被劃掉、標「價位待重算」的卡片，代表收盤已經穿過舊價位，該價位不能再當依據。</li>
-      <li>報酬風險比＝（壓力 − 現價）÷（現價 − 失效價）。低於門檻代表往上的空間比往下的風險小，就算狀態是「觀察進場」也要留意。</li>
+      <li>乖離超過 15% 顯示「過熱」（沒持倉是「過熱不追」）。這只是提醒，不是賣出訊號；有持倉時會列出出場參考（收盤跌破 SMA20），實際差多少看回測區塊的「過熱之後」。</li>
+      <li>價格、均線、進場區、失效價、目標價由腳本每個交易日收盤後自動更新。讀不到自動行情時才會退回頁面內建的舊價位，並標「價位待重算」。</li>
+      <li>報酬風險比＝（目標價 − 收盤）÷（收盤 − 失效價）。低於門檻代表往上的空間比往下的風險小，就算狀態是「觀察進場」也要留意。</li>
+      <li>「規則進場訊號」是回測統計裡那條規則今天成立；它的勝率與期望值寫在回測區塊，並且要和「隨機進場對照」比。</li>
       <li>回測統計的勝率只來自已平倉交易；筆數不到 30 一律顯示「樣本不足」，不看勝率。</li>
-      <li>用上方的篩選按鈕切換：全部／觀察進場／持倉／報酬風險比達標／價位待重算。</li>
+      <li>用上方的篩選按鈕切換：全部／觀察進場／規則進場訊號／持倉／報酬風險比達標。</li>
     </ol>
     <details>
       <summary>更新紀錄</summary>
@@ -193,14 +195,17 @@ footer{text-align:center;padding:16px 12px 28px;font-size:11px;color:var(--muted
 
 <script>
 /* =====================================================================
-   ① 每次更新只需要改這一區（REPORT／POSITIONS／FX）和下面的 DATA。
-      頁面上所有卡片、持倉、摘要都從這幾份資料算出來，不要再另外貼 HTML。
+   ① 每次更新只需要改這一區：REPORT（文字說明）、POSITIONS（持倉）、FX（匯率）。
+      價格、均線、價位由 scripts/update_market.py 每個交易日寫進 data/latest.json，頁面會自動讀。
+      下面的 DATA 只是備援（latest.json 讀不到時才用），有空再更新即可。
+      不要另外貼卡片的 HTML。
    ===================================================================== */
 const REPORT = {
   generatedAt: "2026-10-08T08:50:00+08:00",          // 報告產出時間（台北）
-  staleAfterHours: 24,                                // 超過幾小時在頁首提醒資料可能過期
-  minRR: 1.8,                                         // 報酬風險比門檻（和 scripts/strategy.py 的 min_rr 一致）
-  levelsNote: "進場區／失效價／壓力沿用舊價位，本次沒有重算。收盤已穿過壓力的卡片會自動標「價位待重算」。",
+  staleAfterHours: 24,                                // 只用內建 DATA 時，超過幾小時提醒資料可能過期
+  autoStaleAfterHours: 96,                            // 有自動行情時，超過幾小時沒更新才提醒（週末不會誤報）
+  minRR: 1.5,                                         // 報酬風險比門檻的備援值；有 latest.json 時以腳本的 min_rr 為準
+  levelsNote: "目前讀不到自動行情，顯示的是頁面內建的舊價位；收盤已穿過壓力的卡片會標「價位待重算」。",
   notes: [                                            // 手寫的補充說明，會出現在摘要最後
     "台北 10/08 08:50，台股尚未開盤。決策沿用 10/07 完成日K，不把今天當收盤、不重算進出場。",
     "美股個股日K仍停在 10/06。16:00 ET 後已過 30 分鐘，但 Yahoo 日K尚未寫入 10/07，標資料待同步/上一交易日，不重算進出場。",
@@ -212,6 +217,7 @@ const REPORT = {
     sma20: "含最後完成日收盤的 20 日均線，當作觀察支撐。"
   },
   changelog: [
+    "2026-10-08：價格、均線、價位改讀腳本每天產生的 latest.json；門檻改 1.5；回測加上隨機進場對照、參數搜尋與過熱出場比較；移除會蓋掉整個「我的持倉」的舊補丁段落（台積電、SPCX 與合計會消失）。",
     "2026-10-08 08:50：只更新已同步指數收盤與未同步註記；未刪持倉、分類、hotfix。",
     "2026-10-08：卡片加上報酬風險比；新增回測統計（腳本重跑兩年日 K，含成本）。",
     "2026-10-08：三組重複卡片合併成一套＋篩選；持倉加上合計、佔比與換算匯率；價位過期自動標示；狀態改由三條件即時計算。",
@@ -237,12 +243,18 @@ const FX = { USDTWD: 31.84432, source: "由截圖市值 NT$184,004.06 反推" };
    DATA 欄位：p 收盤、ch/pct 漲跌、date 日K日期、s20/s60 均線、bias 乖離%、high20 20日高、
    near 是否貼近20日高、live 盤中註記價、entry 進場區、invalid 失效價、resist 壓力。
    status 欄位頁面已不使用（狀態改由三條件即時計算）。 */
+
+/* 分類、名稱、行情：沿用原本的格式。DATA 現在只是備援，latest.json 讀不到時才用。
+   DATA 欄位：p 收盤、ch/pct 漲跌、date 日K日期、s20/s60 均線、bias 乖離%、high20 20日高、
+   near 是否貼近20日高、live 盤中註記價、entry 進場區、invalid 失效價、resist 壓力。 */
 const STOCK_META = {"TW|AI晶片": ["2330.TW", "2454.TW"], "TW|AI電源": ["2308.TW"], "TW|AI散熱": ["3324.TWO", "3653.TW", "3017.TW"], "TW|ABF": ["3189.TW", "3037.TW", "8046.TW"], "TW|CCL": ["6213.TW", "2383.TW"], "TW|面板／光電": ["3481.TW"], "TW|晶圓代工＋記憶體": ["6770.TW"], "TW|半導體廠務": ["2221.TWO"], "US|AI晶片": ["TSM", "NVDA", "AMD", "AVGO"], "US|AI雲端": ["MSFT", "META"], "US|AI記憶體": ["MU"], "US|AI自駕機器人": ["TSLA"], "US|航太科技": ["SPCX"], "TW|AI伺服器／機櫃": ["8210.TW"], "TW|AI基建／電力": ["2371.TW"], "TW|光學／CPO": ["3406.TW"], "TW|記憶體": ["2408.TW"], "TW|CCL／電子材料": ["1303.TW"], "TW|PCB／銅箔": ["8358.TWO", "4958.TW"], "TW|電池監測IC": ["4919.TW"], "TW|被動元件": ["2327.TW"]};
 const NAMES = {"2330.TW": "台積電", "2454.TW": "聯發科", "2308.TW": "台達電", "3324.TWO": "双鴻", "3653.TW": "健策", "3017.TW": "奇鋐", "3189.TW": "景碩", "3037.TW": "欣興", "8046.TW": "南電", "6213.TW": "聯茂", "2383.TW": "台光電", "3481.TW": "群創", "6770.TW": "力積電", "2221.TWO": "大甲", "TSM": "TSMC ADR", "NVDA": "NVIDIA", "AMD": "AMD", "AVGO": "Broadcom", "MSFT": "Microsoft", "META": "Meta", "MU": "Micron", "TSLA": "Tesla", "SPCX": "SPCX", "^TNX": "美10年債殖利率", "^TWII": "加權指數", "^IXIC": "Nasdaq", "^SOX": "費城半導體", "2371.TW": "大同", "8210.TW": "勤誠", "3406.TW": "玉晶光", "2408.TW": "南亞科", "1303.TW": "南亞", "8358.TWO": "金居", "4958.TW": "臻鼎-KY", "4919.TW": "新唐", "2327.TW": "國巨"};
 const DATA = {"2330.TW": {"p": 2585.0, "ch": 0.0, "pct": 0.0, "date": "2026-10-07", "status": "持有觀察", "entry": "2470.00-2442.50", "invalid": "2375.00", "resist": "2510.00", "s20": 2472.5, "s60": 2411.5, "bias": 4.55, "high20": 2590.0, "near": true, "live": null, "session": "完成日K", "live_note": "10/08 尚未開盤，沿用 10/07 完成日K，不重算進出場"}, "2454.TW": {"p": 4835.0, "ch": -85.0, "pct": -1.73, "date": "2026-10-07", "status": "等待", "entry": "4875.00-4731.50", "invalid": "4230.00", "resist": "5480.00", "s20": 4835.5, "s60": 4187.0, "bias": -0.01, "high20": 5480.0, "near": false, "live": null, "session": "完成日K", "live_note": "10/08 尚未開盤，沿用 10/07 完成日K，不重算進出場"}, "2308.TW": {"p": 1990.0, "ch": -60.0, "pct": -2.93, "date": "2026-10-07", "status": "持有觀察", "entry": "1810.00-1784.75", "invalid": "1560.00", "resist": "1965.00", "s20": 1823.0, "s60": 1782.08, "bias": 9.16, "high20": 2115.0, "near": false, "live": null, "session": "完成日K", "live_note": "10/08 尚未開盤，沿用 10/07 完成日K，不重算進出場"}, "3324.TWO": {"p": 1525.0, "ch": -5.0, "pct": -0.33, "date": "2026-10-07", "status": "觀察進場", "entry": "1480.00-1456.75", "invalid": "1240.00", "resist": "1750.00", "s20": 1476.75, "s60": 1179.12, "bias": 3.27, "high20": 1750.0, "near": false, "live": null, "session": "完成日K", "live_note": "10/08 尚未開盤，沿用 10/07 完成日K，不重算進出場"}, "3653.TW": {"p": 6805.0, "ch": -275.0, "pct": -3.88, "date": "2026-10-07", "status": "持有觀察", "entry": "5930.00-5927.50", "invalid": "5210.00", "resist": "7160.00", "s20": 6176.25, "s60": 5052.0, "bias": 10.18, "high20": 7440.0, "near": false, "live": null, "session": "完成日K", "live_note": "10/08 尚未開盤，沿用 10/07 完成日K，不重算進出場"}, "3017.TW": {"p": 3545.0, "ch": -140.0, "pct": -3.8, "date": "2026-10-07", "status": "觀察進場", "entry": "3285.00-3374.25", "invalid": "3100.00", "resist": "3600.00", "s20": 3407.0, "s60": 2987.58, "bias": 4.05, "high20": 3700.0, "near": false, "live": null, "session": "完成日K", "live_note": "10/08 尚未開盤，沿用 10/07 完成日K，不重算進出場"}, "3189.TW": {"p": 1100.0, "ch": 30.0, "pct": 2.8, "date": "2026-10-07", "status": "減碼", "entry": "881.00-855.20", "invalid": "766.00", "resist": "1020.00", "s20": 908.25, "s60": 831.7, "bias": 21.11, "high20": 1150.0, "near": false, "live": null, "session": "完成日K", "live_note": "10/08 尚未開盤，沿用 10/07 完成日K，不重算進出場"}, "3037.TW": {"p": 1305.0, "ch": -5.0, "pct": -0.38, "date": "2026-10-07", "status": "減碼", "entry": "1115.00-1025.40", "invalid": "873.00", "resist": "1230.00", "s20": 1100.3, "s60": 1002.65, "bias": 18.6, "high20": 1420.0, "near": false, "live": null, "session": "完成日K", "live_note": "10/08 尚未開盤，沿用 10/07 完成日K，不重算進出場"}, "8046.TW": {"p": 1480.0, "ch": -25.0, "pct": -1.66, "date": "2026-10-07", "status": "減碼", "entry": "1150.00-1139.25", "invalid": "1010.00", "resist": "1450.00", "s20": 1217.0, "s60": 1171.75, "bias": 21.61, "high20": 1550.0, "near": false, "live": null, "session": "完成日K", "live_note": "10/08 尚未開盤，沿用 10/07 完成日K，不重算進出場"}, "6213.TW": {"p": 796.0, "ch": 9.0, "pct": 1.14, "date": "2026-10-07", "status": "減碼", "entry": "525.00-541.45", "invalid": "482.00", "resist": "649.00", "s20": 588.4, "s60": 475.27, "bias": 35.28, "high20": 818.0, "near": false, "live": null, "session": "完成日K", "live_note": "10/08 尚未開盤，沿用 10/07 完成日K，不重算進出場"}, "2383.TW": {"p": 5950.0, "ch": -45.0, "pct": -0.75, "date": "2026-10-07", "status": "持有觀察", "entry": "4855.00-5144.25", "invalid": "4635.00", "resist": "5670.00", "s20": 5203.5, "s60": 5254.83, "bias": 14.35, "high20": 6115.0, "near": false, "live": null, "session": "完成日K", "live_note": "10/08 尚未開盤，沿用 10/07 完成日K，不重算進出場"}, "3481.TW": {"p": 52.5, "ch": 1.4, "pct": 2.74, "date": "2026-10-07", "status": "觀察進場", "entry": "48.55-49.41", "invalid": "46.25", "resist": "55.50", "s20": 50.07, "s60": 49.37, "bias": 4.86, "high20": 56.2, "near": false, "live": null, "session": "完成日K", "live_note": "10/08 尚未開盤，沿用 10/07 完成日K，不重算進出場"}, "6770.TW": {"p": 72.6, "ch": -1.7, "pct": -2.29, "date": "2026-10-07", "status": "等待", "entry": "70.50-71.65", "invalid": "66.70", "resist": "75.40", "s20": 72.63, "s60": 68.89, "bias": -0.04, "high20": 78.1, "near": false, "live": null, "session": "完成日K", "live_note": "10/08 尚未開盤，沿用 10/07 完成日K，不重算進出場"}, "2221.TWO": {"p": 189.5, "ch": 3.5, "pct": 1.88, "date": "2026-10-07", "status": "減碼", "entry": "149.50-121.29", "invalid": "78.10", "resist": "198.00", "s20": 141.15, "s60": 85.49, "bias": 34.25, "high20": 198.0, "near": false, "live": null, "session": "完成日K", "live_note": "10/08 尚未開盤，沿用 10/07 完成日K，不重算進出場"}, "TSM": {"p": 482.3, "ch": -3.5, "pct": -0.72, "date": "2026-10-06", "status": "持有觀察", "entry": "443.11-438.33", "invalid": "407.82", "resist": "461.87", "s20": 446.13, "s60": 425.41, "bias": 8.11, "high20": 487.47, "near": false, "live": 472.2, "session": "資料待同步/上一交易日", "live_note": "10/07 收盤列印尚未寫入日K，資料待同步/上一交易日，不重算進出場"}, "NVDA": {"p": 239.24, "ch": 0.34, "pct": 0.14, "date": "2026-10-06", "status": "持有觀察", "entry": "223.13-223.51", "invalid": "208.93", "resist": "234.76", "s20": 224.89, "s60": 217.63, "bias": 6.38, "high20": 243.37, "near": false, "live": 237.47, "session": "資料待同步/上一交易日", "live_note": "10/07 收盤列印尚未寫入日K，資料待同步/上一交易日，不重算進出場"}, "AMD": {"p": 649.42, "ch": 17.67, "pct": 2.8, "date": "2026-10-06", "status": "持有觀察", "entry": "596.07-557.60", "invalid": "440.50", "resist": "639.00", "s20": 581.38, "s60": 519.53, "bias": 11.7, "high20": 658.52, "near": false, "live": 645.86, "session": "資料待同步/上一交易日", "live_note": "10/07 收盤列印尚未寫入日K，資料待同步/上一交易日，不重算進出場"}, "AVGO": {"p": 375.81, "ch": 13.3, "pct": 3.67, "date": "2026-10-06", "status": "觀察進場", "entry": "343.29-354.20", "invalid": "335.81", "resist": "372.70", "s20": 354.7, "s60": 374.7, "bias": 5.95, "high20": 380.84, "near": false, "live": 376.51, "session": "資料待同步/上一交易日", "live_note": "10/07 收盤列印尚未寫入日K，資料待同步/上一交易日，不重算進出場"}, "MSFT": {"p": 529.3, "ch": 4.12, "pct": 0.78, "date": "2026-10-06", "status": "觀察進場", "entry": "497.25-501.30", "invalid": "486.00", "resist": "522.85", "s20": 504.71, "s60": 476.47, "bias": 4.87, "high20": 535.69, "near": false, "live": 529.76, "session": "資料待同步/上一交易日", "live_note": "10/07 收盤列印尚未寫入日K，資料待同步/上一交易日，不重算進出場"}, "META": {"p": 738.88, "ch": -3.02, "pct": -0.41, "date": "2026-10-06", "status": "觀察進場", "entry": "713.19-690.05", "invalid": "604.35", "resist": "779.82", "s20": 708.44, "s60": 631.81, "bias": 4.3, "high20": 779.82, "near": false, "live": 721.31, "session": "資料待同步/上一交易日", "live_note": "10/07 收盤列印尚未寫入日K，資料待同步/上一交易日，不重算進出場"}, "MU": {"p": 1045.5601, "ch": -18.3999, "pct": -1.73, "date": "2026-10-06", "status": "觀察進場", "entry": "1022.90-1019.16", "invalid": "902.60", "resist": "1108.72", "s20": 1029.64, "s60": 954.79, "bias": 1.55, "high20": 1108.72, "near": false, "live": 1088.0, "session": "資料待同步/上一交易日", "live_note": "10/07 收盤列印尚未寫入日K，資料待同步/上一交易日，不重算進出場"}, "TSLA": {"p": 380.68, "ch": 1.95, "pct": 0.51, "date": "2026-10-06", "status": "觀察進場", "entry": "345.88-365.15", "invalid": "345.88", "resist": "386.83", "s20": 366.72, "s60": 352.39, "bias": 3.81, "high20": 386.83, "near": false, "live": 377.81, "session": "資料待同步/上一交易日", "live_note": "10/07 收盤列印尚未寫入日K，資料待同步/上一交易日，不重算進出場"}, "SPCX": {"p": 171.92, "ch": 0.83, "pct": 0.49, "date": "2026-10-06", "status": "持有觀察", "entry": "145.36-149.67", "invalid": "141.05", "resist": "158.13", "s20": 152.21, "s60": 138.24, "bias": 12.95, "high20": 176.42, "near": false, "live": 167.6, "session": "資料待同步/上一交易日", "live_note": "10/07 收盤列印尚未寫入日K，資料待同步/上一交易日，不重算進出場"}, "^TNX": {"p": 5.277, "ch": 0.008, "pct": 0.15, "date": "2026-10-07", "status": "N/A", "entry": "N/A", "invalid": "N/A", "resist": "5.34", "s20": 5.119, "s60": 4.82, "bias": 3.09, "high20": 5.364, "near": false, "live": null, "session": "完成日K", "live_note": "10/07 正式收盤（日K已同步）"}, "^TWII": {"p": 49806.37, "ch": -16.1808, "pct": -0.03, "date": "2026-10-07", "status": "持有觀察", "entry": "N/A", "invalid": "N/A", "resist": "N/A", "s20": 47577.47, "s60": 45650.53, "bias": 4.68, "high20": 49968.92, "near": true, "live": null, "session": "完成日K", "live_note": "10/07 正式收盤 49,806.37；Yahoo 日K尚未併入 10/07 高低，均線／進出場不重算"}, "^IXIC": {"p": 27538.6914, "ch": -61.0977, "pct": -0.22, "date": "2026-10-07", "status": "持有觀察", "entry": "N/A", "invalid": "N/A", "resist": "27288.79", "s20": 26798.49, "s60": 26272.55, "bias": 2.76, "high20": 27722.75, "near": true, "live": null, "session": "完成日K", "live_note": "10/07 正式收盤（日K已同步）"}, "^SOX": {"p": 13066.1494, "ch": -151.6709, "pct": -1.15, "date": "2026-10-07", "status": "持有觀察", "entry": "N/A", "invalid": "11056.38", "resist": "12913.40", "s20": 12323.82, "s60": 11977.71, "bias": 6.02, "high20": 13349.96, "near": false, "live": null, "session": "完成日K", "live_note": "10/07 正式收盤（日K已同步）"}, "2371.TW": {"p": 30.6, "ch": -0.0, "pct": -0.0, "date": "2026-10-07", "status": "觀察進場", "entry": "29.90-30.45", "invalid": "N/A", "resist": "30.90", "s20": 29.21, "s60": 27.5, "bias": 4.78, "high20": 31.6, "near": false, "live": null, "session": "完成日K", "live_note": "10/08 尚未開盤，沿用 10/07 完成日K，不重算進出場"}, "8210.TW": {"p": 872.0, "ch": -13.0, "pct": -1.47, "date": "2026-10-07", "status": "等待", "entry": "826.00-842.00", "invalid": "N/A", "resist": "858.00", "s20": 885.1, "s60": 990.77, "bias": -1.48, "high20": 938.0, "near": false, "live": null, "session": "完成日K", "live_note": "10/08 尚未開盤，沿用 10/07 完成日K，不重算進出場"}, "3406.TW": {"p": 1085.0, "ch": 40.0, "pct": 3.83, "date": "2026-10-07", "status": "持有觀察", "entry": "917.00-947.00", "invalid": "N/A", "resist": "970.00", "s20": 980.5, "s60": 760.21, "bias": 10.66, "high20": 1140.0, "near": false, "live": null, "session": "完成日K", "live_note": "10/08 尚未開盤，沿用 10/07 完成日K，不重算進出場"}, "2408.TW": {"p": 514.0, "ch": -11.0, "pct": -2.1, "date": "2026-10-07", "status": "觀察進場", "entry": "N/A", "invalid": "N/A", "resist": "N/A", "s20": 508.8, "s60": 480.08, "bias": 1.02, "high20": 540.0, "near": false, "live": null, "session": "完成日K", "live_note": "10/08 尚未開盤，沿用 10/07 完成日K，不重算進出場"}, "1303.TW": {"p": 314.0, "ch": 21.0, "pct": 7.17, "date": "2026-10-07", "status": "減碼", "entry": "N/A", "invalid": "N/A", "resist": "N/A", "s20": 247.47, "s60": 212.82, "bias": 26.88, "high20": 314.0, "near": true, "live": null, "session": "完成日K", "live_note": "10/08 尚未開盤，沿用 10/07 完成日K，不重算進出場"}, "8358.TWO": {"p": 549.0, "ch": -2.0, "pct": -0.36, "date": "2026-10-07", "status": "持有觀察", "entry": "484.50-502.00", "invalid": "N/A", "resist": "524.00", "s20": 510.9, "s60": 445.58, "bias": 7.46, "high20": 578.0, "near": false, "live": null, "session": "完成日K", "live_note": "10/08 尚未開盤，沿用 10/07 完成日K，不重算進出場"}, "4958.TW": {"p": 595.0, "ch": 21.0, "pct": 3.66, "date": "2026-10-07", "status": "減碼", "entry": "N/A", "invalid": "N/A", "resist": "N/A", "s20": 506.75, "s60": 490.22, "bias": 17.41, "high20": 604.0, "near": false, "live": null, "session": "完成日K", "live_note": "10/08 尚未開盤，沿用 10/07 完成日K，不重算進出場"}, "4919.TW": {"p": 159.5, "ch": 9.0, "pct": 5.98, "date": "2026-10-07", "status": "減碼", "entry": "N/A", "invalid": "N/A", "resist": "N/A", "s20": 131.55, "s60": 128.45, "bias": 21.25, "high20": 167.0, "near": false, "live": null, "session": "完成日K", "live_note": "10/08 尚未開盤，沿用 10/07 完成日K，不重算進出場"}, "2327.TW": {"p": 647.0, "ch": 22.0, "pct": 3.52, "date": "2026-10-07", "status": "持有觀察", "entry": "602.00-560.60", "invalid": "548.00", "resist": "647.00", "s20": 572.4, "s60": 589.17, "bias": 13.03, "high20": 658.0, "near": false, "live": null, "session": "完成日K", "live_note": "10/08 尚未開盤，沿用 10/07 完成日K，不重算進出場"}};
 
 /* =====================================================================
    ② 以下是畫面邏輯，平常不用動。
+   行情來源：先用上面內建的 DATA 畫出頁面，再讀腳本每天產生的 data/latest.json，
+   讀到就用它覆蓋價格、均線與價位（同一檔只會用日期較新的那一份）。
    ===================================================================== */
 (function () {
   "use strict";
@@ -259,16 +271,23 @@ const DATA = {"2330.TW": {"p": 2585.0, "ch": 0.0, "pct": 0.0, "date": "2026-10-0
   const HELD = {};
   POSITIONS.forEach((p) => { HELD[p.code] = p; });
   const MKT_NAME = { TW: "台股", US: "美股" };
+  const INDEX_CODES = ["^TWII", "^IXIC", "^SOX", "^TNX"];
+  const name = (c) => NAMES[c] || c;
+  const GEN = REPORT.generatedAt;
+  let AUTO = null;                       // data/latest.json，讀到之後才有值
 
   /* ---------- 數字格式 ---------- */
   const num = (v, min, max) => Number(v).toLocaleString("en-US", { minimumFractionDigits: min, maximumFractionDigits: max });
   function px(v, code) {                 // 價格：台股最多 2 位小數，美股固定 2 位
+    if (v === null || v === undefined || isNaN(v)) return "—";
     if (code === "^TNX") return num(v, 3, 3);
     if (code && code.charAt(0) === "^") return num(v, 2, 2);
     return (META[code] && META[code].mkt === "US") ? num(v, 2, 2) : num(v, 0, 2);
   }
-  const pct = (v) => { const r = Math.round(v * 100) / 100; return (r > 0 ? "+" : r < 0 ? "−" : "") + Math.abs(r).toFixed(2) + "%"; };
-  function chg(d, code) {                // 漲跌：0 不再顯示成 -0
+  const has = (v) => v !== null && v !== undefined && !isNaN(v);
+  const pct = (v) => { if (!has(v)) return "—"; const r = Math.round(v * 100) / 100; return (r > 0 ? "+" : r < 0 ? "−" : "") + Math.abs(r).toFixed(2) + "%"; };
+  function chg(d, code) {                // 漲跌：0 不再顯示成 -0；沒有前一日收盤就顯示「—」
+    if (!has(d.pct) || !has(d.ch)) return "—";
     const up = d.pct > 0.004, dn = d.pct < -0.004;
     const dec = code === "^TNX" ? 3 : (code.charAt(0) === "^" || (META[code] && META[code].mkt === "US")) ? 2 : null;
     const a = Math.abs(d.ch);
@@ -279,6 +298,7 @@ const DATA = {"2330.TW": {"p": 2585.0, "ch": 0.0, "pct": 0.0, "date": "2026-10-0
   const signed = (v, f) => (v > 0 ? "+" : v < 0 ? "−" : "") + f(Math.abs(v));
   const md = (iso) => iso.slice(5, 7) + "/" + iso.slice(8, 10);
   const hm = (iso) => iso.slice(11, 16);
+  const taipei = (iso) => { try { return new Date(iso).toLocaleString("sv-SE", { timeZone: "Asia/Taipei" }).slice(0, 16); } catch (e) { return String(iso).slice(0, 16).replace("T", " "); } };
   const level = (s) => (s === undefined || s === null || s === "N/A" || s === "") ? null : parseFloat(s);
   function zone(s) {                     // 進場區一律整理成「低–高」
     if (!s || s === "N/A") return null;
@@ -287,277 +307,373 @@ const DATA = {"2330.TW": {"p": 2585.0, "ch": 0.0, "pct": 0.0, "date": "2026-10-0
     return { lo: Math.min(p[0], p[1]), hi: Math.max(p[0], p[1]) };
   }
 
-  /* ---------- 狀態：全站同一套三條件 ---------- */
-  function analyse(code) {
-    const d = DATA[code];
-    const held = !!HELD[code];
-    const gapHigh = d.high20 ? (d.high20 - d.p) / d.high20 * 100 : null;
-    const near = typeof d.near === "boolean" ? d.near : (gapHigh !== null && gapHigh < 1);
-    const above = d.bias >= 0;
-    let cat, why;
-    if (d.bias > 15) { cat = "trim"; why = "乖離 " + pct(d.bias) + "，超過 15%"; }
-    else if (!above) { cat = "wait"; why = "收在 SMA20 之下（乖離 " + pct(d.bias) + "）"; }
-    else if (d.bias <= 6 && !near) { cat = "go"; why = "三條件都過：SMA20 之上、乖離 0–6%、未貼近 20 日高"; }
-    else {
-      cat = "hold";
-      const miss = [];
-      if (d.bias > 6) miss.push("乖離 " + pct(d.bias) + "（需 0–6%）");
-      if (near) miss.push("貼近 20 日高" + (gapHigh !== null ? "（差 " + Math.max(gapHigh, 0).toFixed(2) + "%）" : ""));
-      why = "沒過：" + miss.join("、");
+  /* ---------- 把 data/latest.json 併進 DATA（同一檔只接受日期不比內建舊的資料） ---------- */
+  function applyLatest(L) {
+    if (!L || !L.quotes) return false;
+    let n = 0;
+    const move = (q, old) => {
+      const same = old && old.date === q.date;
+      return { ch: has(q.prevClose) ? q.close - q.prevClose : (same ? old.ch : null),
+               pct: has(q.prevClose) && q.prevClose ? (q.close / q.prevClose - 1) * 100 : (same ? old.pct : null) };
+    };
+    Object.keys(L.quotes).forEach((c) => {
+      const q = L.quotes[c], old = DATA[c];
+      if (!META[c] || !q || !q.date || !has(q.close) || !has(q.ma20) || (old && old.date > q.date)) return;
+      const mv = move(q, old);
+      DATA[c] = {
+        p: q.close, ch: mv.ch, pct: mv.pct, date: q.date, s20: q.ma20, s60: q.ma60,
+        bias: has(q.bias) ? q.bias : (q.close / q.ma20 - 1) * 100, high20: has(q.high20) ? q.high20 : (old ? old.high20 : null), live: null,
+        entry: q.entryLow + "-" + q.entryHigh, invalid: String(q.stop), resist: String(q.target1),
+        auto: true, rr: has(q.entryRR) ? q.entryRR : null, rsi: q.rsi14, volRatio: q.volumeRatio,
+        weekly: q.weeklyTrend, regime: q.marketRegime, hasSignal: typeof q.entrySignal === "boolean", signal: q.entrySignal === true
+      };
+      n++;
+    });
+    Object.keys(L.indexQuotes || {}).forEach((c) => {
+      const q = L.indexQuotes[c], old = DATA[c];
+      if (!q || !q.date || !has(q.close) || !has(q.ma20) || (old && old.date > q.date)) return;
+      const mv = move(q, old);
+      DATA[c] = { p: q.close, ch: mv.ch, pct: mv.pct, date: q.date, s20: q.ma20, s60: q.ma60, bias: q.bias, high20: q.high20,
+                  live: null, entry: "N/A", invalid: "N/A", resist: "N/A", auto: true };
+    });
+    if (n) AUTO = L;
+    return n > 0;
+  }
+
+  let api = {};                          // 目前這一次 render 的 setFilter／fromHash
+
+  function renderAll() {
+    const MIN_RR = (AUTO && AUTO.params && has(AUTO.params.min_rr)) ? AUTO.params.min_rr : REPORT.minRR;
+
+    /* ---------- 狀態：全站同一套三條件 ---------- */
+    function analyse(code) {
+      const d = DATA[code];
+      const held = !!HELD[code], auto = !!d.auto;
+      const gapHigh = d.high20 ? (d.high20 - d.p) / d.high20 * 100 : null;
+      const near = typeof d.near === "boolean" ? d.near : (gapHigh !== null && gapHigh < 1);
+      const above = d.bias >= 0;
+      let cat, why;
+      if (d.bias > 15) { cat = "trim"; why = "乖離 " + pct(d.bias) + "，超過 15%" + (held ? "。出場參考：收盤跌破 SMA20（" + px(d.s20, code) + "）" : ""); }
+      else if (!above) { cat = "wait"; why = "收在 SMA20 之下（乖離 " + pct(d.bias) + "）"; }
+      else if (d.bias <= 6 && !near) { cat = "go"; why = "三條件都過：SMA20 之上、乖離 0–6%、未貼近 20 日高"; }
+      else {
+        cat = "hold";
+        const miss = [];
+        if (d.bias > 6) miss.push("乖離 " + pct(d.bias) + "（需 0–6%）");
+        if (near) miss.push("貼近 20 日高" + (gapHigh !== null ? "（差 " + Math.max(gapHigh, 0).toFixed(2) + "%）" : ""));
+        why = "沒過：" + miss.join("、");
+      }
+      const label = { go: "觀察進場", wait: "等待", hold: held ? "持有觀察" : "觀望", trim: held ? "過熱" : "過熱不追" }[cat];
+      const z = zone(d.entry), inv = level(d.invalid), res = level(d.resist);
+      const broke = !auto && res !== null && d.p > res;
+      const lost = inv !== null && d.p < inv;
+      let rr = null, rrWhy = "";
+      if (auto) { rr = d.rr; if (rr === null) rrWhy = lost ? "收盤已破失效價" : "停損距離太近"; }
+      else if (res === null || inv === null) rrWhy = "壓力或失效價未設定";
+      else if (broke) rrWhy = "收盤已過壓力";
+      else if (lost) rrWhy = "收盤已破失效價";
+      else rr = (res - d.p) / (d.p - inv);
+      return { code, d, held, auto, cat, label, why, z, inv, res, broke, lost, stale: !auto && (broke || lost), gapHigh,
+               noLevels: !z && inv === null && res === null, rr, rrWhy, rrOk: rr !== null && rr >= MIN_RR };
     }
-    const label = { go: "觀察進場", wait: "等待", hold: held ? "持有觀察" : "觀望", trim: held ? "減碼" : "過熱不追" }[cat];
-    const z = zone(d.entry), inv = level(d.invalid), res = level(d.resist);
-    const broke = res !== null && d.p > res;
-    const lost = inv !== null && d.p < inv;
-    let rr = null, rrWhy = "";
-    if (res === null || inv === null) rrWhy = "壓力或失效價未設定";
-    else if (broke) rrWhy = "收盤已過壓力";
-    else if (lost) rrWhy = "收盤已破失效價";
-    else rr = (res - d.p) / (d.p - inv);
-    return { code, d, held, cat, label, why, z, inv, res, broke, lost, stale: broke || lost, gapHigh, noLevels: !z && inv === null && res === null,
-             rr, rrWhy, rrOk: rr !== null && rr >= REPORT.minRR };
-  }
-  const A = {};
-  ORDER.forEach((c) => { if (DATA[c]) A[c] = analyse(c); });
-  const CODES = ORDER.filter((c) => A[c]);
-  const name = (c) => NAMES[c] || c;
-  const lastDate = (mkt) => CODES.filter((c) => META[c].mkt === mkt).map((c) => DATA[c].date).sort().pop();
-  const TW_DATE = lastDate("TW"), US_DATE = lastDate("US");
-  const GEN = REPORT.generatedAt;
+    const A = {};
+    ORDER.forEach((c) => { if (DATA[c]) A[c] = analyse(c); });
+    const CODES = ORDER.filter((c) => A[c]);
+    const autoN = CODES.filter((c) => A[c].auto).length;
+    const hasSignals = CODES.some((c) => DATA[c].hasSignal);
+    const lastDate = (mkt) => CODES.filter((c) => META[c].mkt === mkt).map((c) => DATA[c].date).sort().pop();
+    const TW_DATE = lastDate("TW"), US_DATE = lastDate("US");
 
-  /* ---------- 頁首時間戳 ---------- */
-  const quoted = POSITIONS.filter((p) => p.quoteAt);
-  const stamps = [
-    ["產出", GEN.slice(0, 10) + " " + hm(GEN) + " 台北"],
-    ["台股日 K", TW_DATE + " 收盤"],
-    ["美股日 K", US_DATE + " 正式收盤"]
-  ];
-  quoted.forEach((p) => stamps.push([name(p.code) + " 報價", "截圖 " + md(p.quoteAt) + " " + hm(p.quoteAt)]));
-  $("stamps").innerHTML = stamps.map((s) => '<span class="stamp">' + esc(s[0]) + " <b>" + esc(s[1]) + "</b></span>").join("");
-  document.title = "技術與基本面報告｜" + GEN.slice(0, 10) + " 台北";
-  const ageH = (Date.now() - new Date(GEN).getTime()) / 36e5;
-  if (ageH > REPORT.staleAfterHours) {
-    const b = $("stale-banner");
-    b.hidden = false;
-    b.textContent = "這份報告是 " + Math.floor(ageH) + " 小時前產出的，之後的收盤還沒寫進來，狀態與持倉損益可能已經不同。";
-  }
+    /* ---------- 頁首時間戳 ---------- */
+    const quoted = POSITIONS.filter((p) => p.quoteAt);
+    const stamps = [];
+    if (AUTO && AUTO.dataTimestamp) stamps.push(["行情自動更新", taipei(AUTO.dataTimestamp) + " 台北"]);
+    stamps.push([AUTO ? "報告文字" : "產出", GEN.slice(0, 10) + " " + hm(GEN) + " 台北"]);
+    stamps.push(["台股日 K", TW_DATE + " 收盤"], ["美股日 K", US_DATE + " 正式收盤"]);
+    quoted.forEach((p) => stamps.push([name(p.code) + " 報價", "截圖 " + md(p.quoteAt) + " " + hm(p.quoteAt)]));
+    $("stamps").innerHTML = stamps.map((s) => '<span class="stamp">' + esc(s[0]) + " <b>" + esc(s[1]) + "</b></span>").join("");
+    document.title = "技術與基本面報告｜台股 " + TW_DATE + "｜美股 " + US_DATE;
+    const banner = $("stale-banner");
+    const base = AUTO && AUTO.dataTimestamp ? AUTO.dataTimestamp : GEN;
+    const ageH = (Date.now() - new Date(base).getTime()) / 36e5;
+    const limit = AUTO ? (REPORT.autoStaleAfterHours || 96) : REPORT.staleAfterHours;
+    banner.hidden = !(ageH > limit);
+    if (!banner.hidden) banner.textContent = AUTO
+      ? "行情最後一次自動更新是 " + Math.floor(ageH) + " 小時前，自動更新可能沒有執行，狀態與持倉損益可能已經不同。"
+      : "這份報告是 " + Math.floor(ageH) + " 小時前產出的，之後的收盤還沒寫進來，狀態與持倉損益可能已經不同。";
 
-  /* ---------- 持倉計算 ---------- */
-  const rows = POSITIONS.filter((p) => DATA[p.code] || p.quote).map((p) => {
-    const d = DATA[p.code];
-    const fx = p.ccy === "TWD" ? 1 : FX.USDTWD;
-    const price = p.quote || d.p;
-    const value = p.qty * price, cost = p.qty * p.cost;
-    return { p, d, a: A[p.code], fx, price, value, cost, pl: value - cost, plPct: (value / cost - 1) * 100,
-             valueT: value * fx, costT: cost * fx };
-  });
-  const sum = (arr, k) => arr.reduce((s, r) => s + r[k], 0);
-  const totalV = sum(rows, "valueT"), totalC = sum(rows, "costT");
-  rows.forEach((r) => { r.w = r.valueT / totalV * 100; });
-  const biggest = rows.slice().sort((x, y) => y.w - x.w)[0];
-  const SEG = ["#8ec0ff", "#f0c36a", "#6fd3c0", "#d9a6ff", "#ff9e8a"];
+    /* ---------- 持倉計算 ---------- */
+    const rows = POSITIONS.filter((p) => DATA[p.code] || p.quote).map((p) => {
+      const d = DATA[p.code];
+      const fx = p.ccy === "TWD" ? 1 : FX.USDTWD;
+      const price = p.quote || d.p;
+      const value = p.qty * price, cost = p.qty * p.cost;
+      return { p, d, a: A[p.code], fx, price, value, cost, pl: value - cost, plPct: (value / cost - 1) * 100,
+               valueT: value * fx, costT: cost * fx };
+    });
+    const sum = (arr, k) => arr.reduce((s, r) => s + r[k], 0);
+    const totalV = sum(rows, "valueT"), totalC = sum(rows, "costT");
+    rows.forEach((r) => { r.w = r.valueT / totalV * 100; });
+    const biggest = rows.slice().sort((x, y) => y.w - x.w)[0];
+    const SEG = ["#8ec0ff", "#f0c36a", "#6fd3c0", "#d9a6ff", "#ff9e8a"];
 
-  function levelCells(a) {               // 卡片與持倉共用：進場區／失效價／壓力
-    const d = a.d, c = a.code, out = [];
-    if (a.noLevels) {
-      out.push('<div class="wide"><span>進場區／失效價／壓力</span><b class="' + (a.held ? "warn" : "") + '">' +
-        (a.held ? "持倉尚未設定失效價" : "尚未設定") + "</b><em>均線參考：SMA20 " + px(d.s20, c) + "｜SMA60 " + px(d.s60, c) + "｜20 日高 " + px(d.high20, c) + "</em></div>");
+    function levelCells(a) {               // 卡片與持倉共用：進場區／失效價／目標或壓力／報酬風險比
+      const d = a.d, c = a.code, out = [], top = a.auto ? "目標價" : "壓力";
+      if (a.noLevels) {
+        out.push('<div class="wide"><span>進場區／失效價／壓力</span><b class="' + (a.held ? "warn" : "") + '">' +
+          (a.held ? "持倉尚未設定失效價" : "尚未設定") + "</b><em>均線參考：SMA20 " + px(d.s20, c) + "｜SMA60 " + px(d.s60, c) + "｜20 日高 " + px(d.high20, c) + "</em></div>");
+        return out.join("");
+      }
+      let zt = "未設定", zn = "";
+      if (a.z) {
+        zt = px(a.z.lo, c) + "–" + px(a.z.hi, c);
+        zn = d.p > a.z.hi ? "現價高於進場區 " + ((d.p / a.z.hi - 1) * 100).toFixed(1) + "%"
+           : d.p < a.z.lo ? "現價低於進場區 " + ((1 - d.p / a.z.lo) * 100).toFixed(1) + "%" : "現價在進場區內";
+      }
+      out.push("<div><span>進場區</span><b>" + zt + "</b>" + (zn ? "<em>" + zn + "</em>" : "") + "</div>");
+      out.push("<div><span>失效價</span><b" + (a.inv === null && a.held ? ' class="warn"' : "") + ">" +
+        (a.inv === null ? "未設定" : px(a.inv, c)) + "</b>" + (a.lost ? '<em class="warn">收盤已跌破</em>' : a.inv !== null ? "<em>距離 " + ((1 - a.inv / d.p) * 100).toFixed(1) + "%</em>" : "") + "</div>");
+      if (a.res === null) out.push("<div><span>" + top + "</span><b>未設定</b><em>20 日高 " + px(d.high20, c) + "</em></div>");
+      else if (a.broke) out.push('<div><span>壓力</span><b><span class="old">' + px(a.res, c) + "</span> 已突破</b><em>" +
+        (d.high20 > d.p ? "上方參考：20 日高 " + px(d.high20, c) : "已在 20 日高") + "</em></div>");
+      else out.push("<div><span>" + top + "</span><b>" + px(a.res, c) + "</b><em>距離 " + ((a.res / d.p - 1) * 100).toFixed(1) + "%</em></div>");
+      out.push("<div><span>報酬風險比</span><b" + (a.rrOk ? "" : ' class="warn"') + ">" + (a.rr === null ? "算不出來" : a.rr.toFixed(2)) + "</b><em>" +
+        (a.rr === null ? a.rrWhy : (a.rrOk ? "達到門檻 " : "低於門檻 ") + MIN_RR) + "</em></div>");
       return out.join("");
     }
-    let zt = "未設定", zn = "";
-    if (a.z) {
-      zt = px(a.z.lo, c) + "–" + px(a.z.hi, c);
-      zn = d.p > a.z.hi ? "現價高於進場區 " + ((d.p / a.z.hi - 1) * 100).toFixed(1) + "%"
-         : d.p < a.z.lo ? "現價低於進場區 " + ((1 - d.p / a.z.lo) * 100).toFixed(1) + "%" : "現價在進場區內";
+    const badges = (a) => '<span class="badge ' + a.cat + '">' + a.label + "</span>" +
+      (a.d.signal ? '<span class="badge sig">規則進場訊號</span>' : "") + (a.stale ? '<span class="badge stale">價位待重算</span>' : "");
+    function techLine(d) {                 // 腳本算出的輔助指標（只有自動更新的資料才有）
+      if (!d.auto) return "";
+      const bits = [];
+      if (has(d.rsi)) bits.push("RSI " + d.rsi.toFixed(0));
+      if (has(d.volRatio)) bits.push("量比 " + d.volRatio.toFixed(2));
+      if (d.weekly) bits.push("週線" + d.weekly);
+      if (d.regime) bits.push("大盤" + ({ BULL: "多頭", NEUTRAL: "盤整", BEAR: "空頭" }[d.regime] || d.regime));
+      return bits.length ? '<div class="note" style="margin-top:8px">' + esc(bits.join("｜")) + "</div>" : "";
     }
-    out.push("<div><span>進場區</span><b>" + zt + "</b>" + (zn ? "<em>" + zn + "</em>" : "") + "</div>");
-    out.push("<div><span>失效價</span><b" + (a.inv === null && a.held ? ' class="warn"' : "") + ">" +
-      (a.inv === null ? "未設定" : px(a.inv, c)) + "</b>" + (a.lost ? '<em class="warn">收盤已跌破</em>' : "") + "</div>");
-    if (a.res === null) out.push("<div><span>壓力</span><b>未設定</b><em>20 日高 " + px(d.high20, c) + "</em></div>");
-    else if (a.broke) out.push('<div><span>壓力</span><b><span class="old">' + px(a.res, c) + "</span> 已突破</b><em>" +
-      (d.high20 > d.p ? "上方參考：20 日高 " + px(d.high20, c) : "已在 20 日高") + "</em></div>");
-    else out.push("<div><span>壓力</span><b>" + px(a.res, c) + "</b><em>距離 " + ((a.res / d.p - 1) * 100).toFixed(1) + "%</em></div>");
-    out.push("<div><span>報酬風險比</span><b" + (a.rrOk ? "" : ' class="warn"') + ">" + (a.rr === null ? "算不出來" : a.rr.toFixed(2)) + "</b><em>" +
-      (a.rr === null ? a.rrWhy : (a.rrOk ? "達到門檻 " : "低於門檻 ") + REPORT.minRR) + "</em></div>");
-    return out.join("");
+
+    (function renderPositions() {
+      if (!rows.length) { $("pos-body").innerHTML = '<p class="note">目前沒有持倉。</p>'; return; }
+      const tPl = totalV - totalC;
+      let h = '<div class="totals">' +
+        '<div class="tot"><span>總市值（台幣）</span><b>' + twd(totalV) + "</b><em>" + rows.length + " 個部位</em></div>" +
+        '<div class="tot"><span>未實現損益</span><b>' + signed(tPl, twd) + "</b><em>" + pct(tPl / totalC * 100) + "｜成本 " + twd(totalC) + "</em></div>" +
+        '<div class="tot"><span>最大部位</span><b>' + esc(name(biggest.p.code)) + " " + biggest.w.toFixed(1) + "%</b><em>佔總市值</em></div></div>";
+      h += '<div class="wbar" role="img" aria-label="部位佔比">' + rows.map((r, i) => '<i style="flex:' + r.w.toFixed(2) + " 0 0;background:" + SEG[i % SEG.length] + '"></i>').join("") + "</div>";
+      h += '<div class="wlegend">' + rows.map((r, i) => '<span><i style="background:' + SEG[i % SEG.length] + '"></i>' + esc(name(r.p.code)) + " " + r.w.toFixed(1) + "%</span>").join("") + "</div>";
+      h += '<div class="cards">' + rows.map((r) => {
+        const p = r.p, c = p.code, m = META[c], a = r.a, isT = p.ccy === "TWD";
+        const money = (v) => isT ? num(Math.round(v), 0, 0) : num(v, 2, 2) + " " + p.ccy;
+        const when = p.quoteAt ? "截圖 " + md(p.quoteAt) + " " + hm(p.quoteAt) : "日K " + r.d.date;
+        let cmp = "";
+        if (p.quote && r.d) cmp = '<div class="live-note">較 ' + md(r.d.date) + " 正式收盤 " + px(r.d.p, c) + "：" + pct((p.quote / r.d.p - 1) * 100) + "</div>";
+        return '<article class="card held"><div class="title">' + esc((m ? MKT_NAME[m.mkt] + "｜" + m.grp + "｜" : "") + name(c)) + "</div>" +
+          '<div class="sub">' + esc(c) + "｜" + num(p.qty, 0, 9) + " 股｜均價 " + num(p.cost, 2, 2) + (isT ? "" : " " + p.ccy) + "｜" + when + "</div>" +
+          '<div class="px">' + (p.quote ? num(r.price, 2, 3) : px(r.price, c)) + '<span class="chg">' + signed(r.pl, money) + "（" + pct(r.plPct) + "）</span></div>" + cmp +
+          (a ? '<div class="status">' + badges(a) + '</div><div class="why">' + esc(a.why) + "</div>" : "") +
+          '<div class="kv"><div><span>市值</span><b>' + (isT ? twd(r.valueT) : money(r.value)) + "</b>" + (isT ? "" : "<em>≈ " + twd(r.valueT) + "</em>") + "</div>" +
+          "<div><span>佔總市值</span><b>" + r.w.toFixed(1) + "%</b></div>" + (a ? levelCells(a) : "") + "</div>" +
+          (p.note ? '<div class="note" style="margin-top:8px">' + esc(p.note) + "</div>" : "") + "</article>";
+      }).join("") + "</div>";
+      const groups = [];
+      rows.forEach((r) => { const g = r.p.group || "其他"; if (groups.indexOf(g) < 0) groups.push(g); });
+      const line = (label, rs, cls) => {
+        const v = sum(rs, "valueT"), c0 = sum(rs, "costT");
+        return '<div class="' + (cls || "") + '"><span>' + esc(label) + "</span><span>市值 " + twd(v) + "｜成本 " + twd(c0) + "｜損益 " + signed(v - c0, twd) + "（" + pct((v / c0 - 1) * 100) + "）</span></div>";
+      };
+      h += '<div class="subtotal">' + groups.map((g) => line(g + "小計", rows.filter((r) => (r.p.group || "其他") === g))).join("") + line("合計", rows, "sum") + "</div>";
+      if (rows.some((r) => r.p.ccy !== "TWD")) h += '<p class="note">換算匯率：1 USDC ≈ NT$' + FX.USDTWD.toFixed(2) + "（" + esc(FX.source) + "）。成本與市值用同一匯率換算，沒有另計匯差。</p>";
+      $("pos-body").innerHTML = h;
+      $("pos-stamp").textContent = "台股 " + TW_DATE + " 收盤" + quoted.map((p) => "｜" + name(p.code) + " 截圖 " + md(p.quoteAt) + " " + hm(p.quoteAt)).join("");
+    })();
+
+    /* ---------- 個股卡片（只有一套） ---------- */
+    function cardHTML(a) {
+      const d = a.d, c = a.code, m = META[c];
+      return '<article class="card' + (a.held ? " held" : "") + '" data-code="' + esc(c) + '" data-status="' + a.label + '" data-src="' + (a.auto ? "auto" : "embedded") + '">' +
+        '<div class="title">' + esc(MKT_NAME[m.mkt] + "｜" + m.grp + "｜" + name(c)) + (a.held ? '<span class="badge own">持倉</span>' : "") + "</div>" +
+        '<div class="sub">' + esc(c) + "｜日K " + d.date + "</div>" +
+        '<div class="px">' + px(d.p, c) + '<span class="chg">' + chg(d, c) + "</span></div>" +
+        (has(d.live) ? '<div class="live-note">盤中 ' + px(d.live, c) + "（" + md(GEN) + " " + hm(GEN) + " 擷取，不當作收盤）</div>" : "") +
+        '<div class="status">' + badges(a) + "</div>" +
+        '<div class="why">' + esc(a.why) + "</div>" +
+        '<div class="kv"><div><span>SMA20／SMA60</span><b>' + px(d.s20, c) + "／" + px(d.s60, c) + "</b></div>" +
+        "<div><span>乖離</span><b>" + pct(d.bias) + "</b></div>" + levelCells(a) + "</div>" + techLine(d) + "</article>";
+    }
+    const FILTERS = [
+      ["all", "全部", () => true],
+      ["go", "觀察進場", (a) => a.cat === "go"],
+      ["signal", "規則進場訊號", (a) => a.d.signal === true, !hasSignals],
+      ["held", "持倉", (a) => a.held],
+      ["hold", "觀望／持有觀察", (a) => a.cat === "hold"],
+      ["wait", "等待", (a) => a.cat === "wait"],
+      ["trim", "過熱", (a) => a.cat === "trim"],
+      ["rr", "報酬風險比達標", (a) => a.rrOk],
+      ["stale", "價位待重算", (a) => a.stale, autoN === CODES.length]
+    ].filter((f) => !f[3]);
+    let current = "all";
+    function setFilter(key) {
+      const f = FILTERS.filter((x) => x[0] === key)[0] || FILTERS[0];
+      current = f[0];
+      const list = CODES.map((c) => A[c]).filter(f[2]);
+      $("cards").innerHTML = list.length ? list.map(cardHTML).join("") : '<p class="note">這個分類目前沒有股票。</p>';
+      Array.prototype.forEach.call($("chips").children, (b) => b.setAttribute("aria-pressed", String(b.dataset.f === current)));
+      try { sessionStorage.setItem("cardFilter", current); } catch (e) {}
+    }
+    $("chips").innerHTML = FILTERS.map((f) => '<button type="button" class="chip" data-f="' + f[0] + '" aria-pressed="false">' + f[1] + "<b>" + CODES.filter((c) => f[2](A[c])).length + "</b></button>").join("");
+    $("card-stamp").textContent = "台股 " + TW_DATE + "｜美股 " + US_DATE + "｜共 " + CODES.length + " 檔";
+    $("levels-note").textContent = autoN
+      ? "價格、均線與價位由腳本每個交易日收盤後重算（" + autoN + "／" + CODES.length + " 檔）。進場區＝SMA20 的 −1.5% 到 +1%；失效價＝SMA20 − 1.2 倍 ATR；目標價＝收盤 + 2.2 倍 ATR；報酬風險比＝（目標價 − 收盤）÷（收盤 − 失效價）。「規則進場訊號」是回測統計裡那條規則今天成立。"
+      : REPORT.levelsNote;
+    function fromHash() {                  // 舊連結照樣能用：#entry-pick 直接切到「觀察進場」
+      const h = location.hash;
+      if (h === "#entry-pick") setFilter("go");
+      else if (h === "#watch" || h === "#trade-alert") setFilter("all");
+    }
+    let saved = api.current || null;
+    if (!saved) { try { saved = sessionStorage.getItem("cardFilter"); } catch (e) {} }
+    setFilter(saved || "all");
+    if (!api.current) fromHash();
+    api = { setFilter, fromHash, get current() { return current; } };
+
+    /* ---------- 摘要與雷達（由 DATA 產生） ---------- */
+    const q = (c) => name(c) + " " + px(DATA[c].p, c) + (has(DATA[c].pct) ? "（" + pct(DATA[c].pct) + "）" : "");
+    const have = (list) => list.filter((c) => DATA[c]);
+    const go = CODES.filter((c) => A[c].cat === "go");
+    const withRes = CODES.filter((c) => !A[c].auto && A[c].res !== null), brokeN = CODES.filter((c) => A[c].broke).length;
+    const sp = [];
+    if (DATA["^TWII"]) sp.push("<b>台股 " + md(TW_DATE) + " 收盤</b>：" + (DATA["^TWII"].date === TW_DATE ? "" : md(DATA["^TWII"].date) + " ") + q("^TWII") + "。" + have(["2330.TW", "2454.TW", "2308.TW"]).map(q).join("、") + "。");
+    const usIdx = have(["^IXIC", "^SOX", "^TNX"]);
+    if (usIdx.length) sp.push("<b>美股 " + md(US_DATE) + " 正式收盤</b>：" + usIdx.map((c) => (DATA[c].date === US_DATE ? "" : md(DATA[c].date) + " ") + q(c)).join("、") + "。" + have(["NVDA", "TSM", "AMD", "AVGO", "MU"]).map((c) => c + " " + px(DATA[c].p, c)).join("、") + "。");
+    if (rows.length) sp.push("<b>持倉</b>：總市值 " + twd(totalV) + "，未實現 " + signed(totalV - totalC, twd) + "（" + pct((totalV / totalC - 1) * 100) + "）。最大部位 " + esc(name(biggest.p.code)) + " 佔 " + biggest.w.toFixed(1) + "%。");
+    sp.push("<b>可進場觀察（" + go.length + " 檔）</b>：" + (go.length ? go.map(name).map(esc).join("、") : "目前沒有") + "。觀察進場不等於買進。");
+    if (go.length) {
+      const okN = go.filter((c) => A[c].rrOk).length, naN = go.filter((c) => A[c].rr === null).length;
+      sp.push("<b>報酬風險比</b>：" + go.length + " 檔觀察進場裡，達到 " + MIN_RR + " 的有 " + okN + " 檔" + (naN ? "，" + naN + " 檔算不出來" : "") + "。");
+    }
+    if (hasSignals) {
+      const sg = CODES.filter((c) => DATA[c].signal);
+      sp.push("<b>規則進場訊號（" + sg.length + " 檔）</b>：" + (sg.length ? sg.map(name).map(esc).join("、") : "今天沒有") + "。這是回測統計裡那條規則，成效請看回測區塊。");
+    }
+    if (withRes.length) sp.push("<b>價位提醒</b>：" + withRes.length + " 檔還在用頁面內建的舊價位，其中 " + brokeN + " 檔收盤已經站上壓力，卡片標「價位待重算」。");
+    REPORT.notes.forEach((n) => sp.push('<span class="note">' + esc(n) + "</span>"));
+    $("summary-body").innerHTML = sp.map((s) => "<p>" + s + "</p>").join("");
+
+    const moved = CODES.filter((c) => has(DATA[c].pct));
+    const byPct = moved.slice().sort((x, y) => DATA[y].pct - DATA[x].pct);
+    const top = byPct.filter((c) => DATA[c].pct > 0).slice(0, 5), weak = byPct.filter((c) => DATA[c].pct < 0).slice(-3).reverse();
+    const heldAlert = rows.filter((r) => r.a && (r.a.cat === "trim" || r.a.noLevels || r.a.inv === null || r.a.stale || r.a.lost));
+    const radar = [];
+    radar.push(TW_DATE === US_DATE
+      ? "台股和美股都是 " + md(TW_DATE) + " 的收盤；美股那一場比台股晚大約半天收。"
+      : "台股用 " + md(TW_DATE) + " 收盤，美股用 " + md(US_DATE) + " 正式收盤，兩邊不是同一個「今天」。");
+    if (DATA["^TWII"]) { const t = DATA["^TWII"]; radar.push("加權" + (t.date === TW_DATE ? "" : "（" + md(t.date) + "）") + "收 " + px(t.p, "^TWII") + (has(t.pct) ? "（" + pct(t.pct) + "）" : "") + "，SMA20 " + px(t.s20, "^TWII") + "，20 日高 " + px(t.high20, "^TWII") + "。"); }
+    if (top.length) radar.push("漲幅居前：" + top.map((c) => esc(name(c)) + " " + pct(DATA[c].pct)).join("、") + "。");
+    if (weak.length) radar.push("偏弱：" + weak.map((c) => esc(name(c)) + " " + pct(DATA[c].pct)).join("、") + "。");
+    heldAlert.forEach((r) => {
+      const a = r.a, bits = [];
+      if (a.cat === "trim") bits.push("乖離 " + pct(a.d.bias) + "，狀態「過熱」，出場參考是收盤跌破 SMA20（" + px(a.d.s20, a.code) + "）");
+      if (a.lost) bits.push("收盤已跌破失效價 " + px(a.inv, a.code));
+      else if (a.noLevels || a.inv === null) bits.push("還沒設定失效價");
+      if (a.stale && !a.lost) bits.push("舊價位已被穿過");
+      radar.push("持倉 " + esc(name(a.code)) + "：" + bits.join("、") + "。");
+    });
+    $("radar-body").innerHTML = radar.map((s) => "<li>" + s + "</li>").join("");
+
+    /* ---------- 指數／大盤關卡／族群 ---------- */
+    $("index-body").innerHTML = have(INDEX_CODES).map((c) => {
+      const d = DATA[c];
+      return "<tr><td>" + esc(name(c)) + '<br><span class="note">' + esc(c) + "</span></td><td>" + d.date + '</td><td class="num">' + px(d.p, c) +
+        '</td><td class="num">' + chg(d, c) + "</td><td>" + (has(d.live) ? "盤中 " + px(d.live, c) + "（" + md(GEN) + " " + hm(GEN) + " 擷取）" : "已收盤") + "</td></tr>";
+    }).join("");
+    if (DATA["^TWII"]) {
+      const t = DATA["^TWII"], k = "^TWII", n = REPORT.marketNotes;
+      const nearHigh = typeof t.near === "boolean" ? t.near : (t.high20 - t.p) / t.high20 < 0.01;
+      $("mkt-stamp").textContent = "日K " + t.date;
+      $("mkt-body").innerHTML = [
+        ["20 日高（壓力）", t.high20, "距離收盤 " + Math.max((t.high20 / t.p - 1) * 100, 0).toFixed(2) + "%。" + n.high],
+        [md(t.date) + " 收盤", t.p, n.close + (nearHigh ? "貼近 20 日高，指數本身不標觀察進場。" : "")],
+        ["SMA20（觀察支撐）", t.s20, "在收盤下方 " + ((1 - t.s20 / t.p) * 100).toFixed(2) + "%。" + n.sma20]
+      ].map((x) => '<article class="card"><div class="title">' + x[0] + '</div><div class="px">' + px(x[1], k) + '</div><div class="note" style="margin-top:6px">' + esc(x[2]) + "</div></article>").join("");
+    }
+    $("group-body").innerHTML = Object.keys(STOCK_META).map((key) => {
+      const mem = STOCK_META[key].filter((c) => DATA[c]);
+      return '<tr><td class="grp">' + esc(key) + "</td><td>" + mem.map((c) => '<span class="mem">' + esc(name(c)) + " <small>" + esc(c) + "</small> " + (has(DATA[c].pct) ? pct(DATA[c].pct) : "") + "</span>").join("") + "</td></tr>";
+    }).join("");
+    $("changelog").innerHTML = REPORT.changelog.map((s) => "<li>" + esc(s) + "</li>").join("");
   }
 
-  (function renderPositions() {
-    if (!rows.length) { $("pos-body").innerHTML = '<p class="note">目前沒有持倉。</p>'; return; }
-    const tPl = totalV - totalC;
-    let h = '<div class="totals">' +
-      '<div class="tot"><span>總市值（台幣）</span><b>' + twd(totalV) + "</b><em>" + rows.length + " 個部位</em></div>" +
-      '<div class="tot"><span>未實現損益</span><b>' + signed(tPl, twd) + "</b><em>" + pct(tPl / totalC * 100) + "｜成本 " + twd(totalC) + "</em></div>" +
-      '<div class="tot"><span>最大部位</span><b>' + esc(name(biggest.p.code)) + " " + biggest.w.toFixed(1) + "%</b><em>佔總市值</em></div></div>";
-    h += '<div class="wbar" role="img" aria-label="部位佔比">' + rows.map((r, i) => '<i style="flex:' + r.w.toFixed(2) + " 0 0;background:" + SEG[i % SEG.length] + '"></i>').join("") + "</div>";
-    h += '<div class="wlegend">' + rows.map((r, i) => '<span><i style="background:' + SEG[i % SEG.length] + '"></i>' + esc(name(r.p.code)) + " " + r.w.toFixed(1) + "%</span>").join("") + "</div>";
-    h += '<div class="cards">' + rows.map((r) => {
-      const p = r.p, c = p.code, m = META[c], a = r.a, isT = p.ccy === "TWD";
-      const money = (v) => isT ? num(Math.round(v), 0, 0) : num(v, 2, 2) + " " + p.ccy;
-      const when = p.quoteAt ? "截圖 " + md(p.quoteAt) + " " + hm(p.quoteAt) : "日K " + r.d.date;
-      let cmp = "";
-      if (p.quote && r.d) cmp = '<div class="live-note">較 ' + md(r.d.date) + " 正式收盤 " + px(r.d.p, c) + "：" + pct((p.quote / r.d.p - 1) * 100) + "</div>";
-      return '<article class="card held"><div class="title">' + esc((m ? MKT_NAME[m.mkt] + "｜" + m.grp + "｜" : "") + name(c)) + "</div>" +
-        '<div class="sub">' + esc(c) + "｜" + num(p.qty, 0, 9) + " 股｜均價 " + num(p.cost, 2, 2) + (isT ? "" : " " + p.ccy) + "｜" + when + "</div>" +
-        '<div class="px">' + (p.quote ? num(r.price, 2, 3) : px(r.price, c)) + '<span class="chg">' + signed(r.pl, money) + "（" + pct(r.plPct) + "）</span></div>" + cmp +
-        (a ? '<div class="status"><span class="badge ' + a.cat + '">' + a.label + "</span>" + (a.stale ? '<span class="badge stale">價位待重算</span>' : "") + '</div><div class="why">' + esc(a.why) + "</div>" : "") +
-        '<div class="kv"><div><span>市值</span><b>' + (isT ? twd(r.valueT) : money(r.value)) + "</b>" + (isT ? "" : "<em>≈ " + twd(r.valueT) + "</em>") + "</div>" +
-        "<div><span>佔總市值</span><b>" + r.w.toFixed(1) + "%</b></div>" + (a ? levelCells(a) : "") + "</div>" +
-        (p.note ? '<div class="note" style="margin-top:8px">' + esc(p.note) + "</div>" : "") + "</article>";
-    }).join("") + "</div>";
-    const groups = [];
-    rows.forEach((r) => { const g = r.p.group || "其他"; if (groups.indexOf(g) < 0) groups.push(g); });
-    const line = (label, rs, cls) => {
-      const v = sum(rs, "valueT"), c0 = sum(rs, "costT");
-      return '<div class="' + (cls || "") + '"><span>' + esc(label) + "</span><span>市值 " + twd(v) + "｜成本 " + twd(c0) + "｜損益 " + signed(v - c0, twd) + "（" + pct((v / c0 - 1) * 100) + "）</span></div>";
-    };
-    h += '<div class="subtotal">' + groups.map((g) => line(g + "小計", rows.filter((r) => (r.p.group || "其他") === g))).join("") + line("合計", rows, "sum") + "</div>";
-    if (rows.some((r) => r.p.ccy !== "TWD")) h += '<p class="note">換算匯率：1 USDC ≈ NT$' + FX.USDTWD.toFixed(2) + "（" + esc(FX.source) + "）。成本與市值用同一匯率換算，沒有另計匯差。</p>";
-    $("pos-body").innerHTML = h;
-    $("pos-stamp").textContent = "台股 " + TW_DATE + " 收盤" + quoted.map((p) => "｜" + name(p.code) + " 截圖 " + md(p.quoteAt) + " " + hm(p.quoteAt)).join("");
-  })();
-
-  /* ---------- 個股卡片（只有一套） ---------- */
-  function cardHTML(a) {
-    const d = a.d, c = a.code, m = META[c];
-    return '<article class="card' + (a.held ? " held" : "") + '" data-code="' + esc(c) + '" data-status="' + a.label + '">' +
-      '<div class="title">' + esc(MKT_NAME[m.mkt] + "｜" + m.grp + "｜" + name(c)) + (a.held ? '<span class="badge own">持倉</span>' : "") + "</div>" +
-      '<div class="sub">' + esc(c) + "｜日K " + d.date + "</div>" +
-      '<div class="px">' + px(d.p, c) + '<span class="chg">' + chg(d, c) + "</span></div>" +
-      (d.live !== null && d.live !== undefined ? '<div class="live-note">盤中 ' + px(d.live, c) + "（" + md(GEN) + " " + hm(GEN) + " 擷取，不當作收盤）</div>" : "") +
-      '<div class="status"><span class="badge ' + a.cat + '">' + a.label + "</span>" + (a.stale ? '<span class="badge stale">價位待重算</span>' : "") + "</div>" +
-      '<div class="why">' + esc(a.why) + "</div>" +
-      '<div class="kv"><div><span>SMA20／SMA60</span><b>' + px(d.s20, c) + "／" + px(d.s60, c) + "</b></div>" +
-      "<div><span>乖離</span><b>" + pct(d.bias) + "</b></div>" + levelCells(a) + "</div></article>";
-  }
-  const FILTERS = [
-    ["all", "全部", () => true],
-    ["go", "觀察進場", (a) => a.cat === "go"],
-    ["held", "持倉", (a) => a.held],
-    ["hold", "觀望／持有觀察", (a) => a.cat === "hold"],
-    ["wait", "等待", (a) => a.cat === "wait"],
-    ["trim", "過熱／減碼", (a) => a.cat === "trim"],
-    ["rr", "報酬風險比達標", (a) => a.rrOk],
-    ["stale", "價位待重算", (a) => a.stale]
-  ];
-  let current = "all";
-  function setFilter(key) {
-    const f = FILTERS.filter((x) => x[0] === key)[0] || FILTERS[0];
-    current = f[0];
-    const list = CODES.map((c) => A[c]).filter(f[2]);
-    $("cards").innerHTML = list.length ? list.map(cardHTML).join("") : '<p class="note">這個分類目前沒有股票。</p>';
-    Array.prototype.forEach.call($("chips").children, (b) => b.setAttribute("aria-pressed", String(b.dataset.f === current)));
-    try { sessionStorage.setItem("cardFilter", current); } catch (e) {}
-  }
-  $("chips").innerHTML = FILTERS.map((f) => '<button type="button" class="chip" data-f="' + f[0] + '" aria-pressed="false">' + f[1] + "<b>" + CODES.filter((c) => f[2](A[c])).length + "</b></button>").join("");
-  $("chips").addEventListener("click", (e) => { const b = e.target.closest(".chip"); if (b) setFilter(b.dataset.f); });
-  $("card-stamp").textContent = "台股 " + TW_DATE + "｜美股 " + US_DATE + "｜共 " + CODES.length + " 檔";
-  $("levels-note").textContent = REPORT.levelsNote;
-  function fromHash() {                  // 舊連結照樣能用：#entry-pick 直接切到「觀察進場」
-    const h = location.hash;
-    if (h === "#entry-pick") setFilter("go");
-    else if (h === "#watch" || h === "#trade-alert") setFilter("all");
-  }
-  let saved = null;
-  try { saved = sessionStorage.getItem("cardFilter"); } catch (e) {}
-  setFilter(saved || "all");
-  fromHash();
-  window.addEventListener("hashchange", fromHash);
-
-  /* ---------- 摘要與雷達（由 DATA 產生） ---------- */
-  const q = (c) => name(c) + " " + px(DATA[c].p, c) + "（" + pct(DATA[c].pct) + "）";
-  const have = (list) => list.filter((c) => DATA[c]);
-  const go = CODES.filter((c) => A[c].cat === "go"), staleN = CODES.filter((c) => A[c].stale).length;
-  const withRes = CODES.filter((c) => A[c].res !== null), brokeN = CODES.filter((c) => A[c].broke).length;
-  const sp = [];
-  if (DATA["^TWII"]) sp.push("<b>台股 " + md(DATA["^TWII"].date) + " 收盤</b>：" + q("^TWII") + "。" + have(["2330.TW", "2454.TW", "2308.TW"]).map(q).join("、") + "。");
-  const usIdx = have(["^IXIC", "^SOX", "^TNX"]);
-  if (usIdx.length) sp.push("<b>美股 " + md(DATA[usIdx[0]].date) + " 正式收盤</b>：" + usIdx.map(q).join("、") + "。" + have(["NVDA", "TSM", "AMD", "AVGO", "MU"]).map((c) => c + " " + px(DATA[c].p, c)).join("、") + "。");
-  if (rows.length) sp.push("<b>持倉</b>：總市值 " + twd(totalV) + "，未實現 " + signed(totalV - totalC, twd) + "（" + pct((totalV / totalC - 1) * 100) + "）。最大部位 " + esc(name(biggest.p.code)) + " 佔 " + biggest.w.toFixed(1) + "%。");
-  sp.push("<b>可進場觀察（" + go.length + " 檔）</b>：" + (go.length ? go.map(name).map(esc).join("、") : "目前沒有") + "。觀察進場不等於買進。");
-  if (go.length) {
-    const okN = go.filter((c) => A[c].rrOk).length, naN = go.filter((c) => A[c].rr === null).length;
-    sp.push("<b>報酬風險比</b>：" + go.length + " 檔觀察進場裡，達到 " + REPORT.minRR + " 的有 " + okN + " 檔" + (naN ? "，" + naN + " 檔算不出來（已過壓力或沒設失效價）" : "") + "。");
-  }
-  if (withRes.length) sp.push("<b>價位提醒</b>：" + withRes.length + " 檔有壓力價，其中 " + brokeN + " 檔收盤已經站上壓力，卡片標「價位待重算」。");
-  REPORT.notes.forEach((n) => sp.push('<span class="note">' + esc(n) + "</span>"));
-  $("summary-body").innerHTML = sp.map((s) => "<p>" + s + "</p>").join("");
-
-  const byPct = CODES.slice().sort((x, y) => DATA[y].pct - DATA[x].pct);
-  const top = byPct.filter((c) => DATA[c].pct > 0).slice(0, 5), weak = byPct.filter((c) => DATA[c].pct < 0).slice(-3).reverse();
-  const heldAlert = rows.filter((r) => r.a && (r.a.cat === "trim" || r.a.noLevels || r.a.inv === null || r.a.stale));
-  const radar = [];
-  radar.push("台股用 " + md(TW_DATE) + " 收盤，美股用 " + md(US_DATE) + " 正式收盤，兩邊不是同一個「今天」。");
-  if (DATA["^TWII"]) { const t = DATA["^TWII"]; radar.push("加權收 " + px(t.p, "^TWII") + "（" + pct(t.pct) + "），SMA20 " + px(t.s20, "^TWII") + "，20 日高 " + px(t.high20, "^TWII") + "。"); }
-  if (top.length) radar.push("漲幅居前：" + top.map((c) => esc(name(c)) + " " + pct(DATA[c].pct)).join("、") + "。");
-  if (weak.length) radar.push("偏弱：" + weak.map((c) => esc(name(c)) + " " + pct(DATA[c].pct)).join("、") + "。");
-  heldAlert.forEach((r) => {
-    const a = r.a, bits = [];
-    if (a.cat === "trim") bits.push("乖離 " + pct(a.d.bias) + "，狀態「減碼」");
-    if (a.noLevels || a.inv === null) bits.push("還沒設定失效價");
-    if (a.stale) bits.push("舊價位已被穿過");
-    radar.push("持倉 " + esc(name(a.code)) + "：" + bits.join("、") + "。");
-  });
-  $("radar-body").innerHTML = radar.map((s) => "<li>" + s + "</li>").join("");
+  /* ---------- 先用內建資料畫一次，讀到 latest.json 再畫一次 ---------- */
+  let userMoved = false;
+  ["wheel", "touchstart", "keydown", "mousedown"].forEach((ev) => window.addEventListener(ev, () => { userMoved = true; }, { passive: true, once: true }));
+  renderAll();
+  $("chips").addEventListener("click", (e) => { const b = e.target.closest(".chip"); if (b) api.setFilter(b.dataset.f); });
+  window.addEventListener("hashchange", () => api.fromHash());
+  fetch("./data/latest.json", { cache: "no-store" })
+    .then((r) => (r.ok ? r.json() : Promise.reject(new Error(r.status))))
+    .then((L) => {
+      if (!applyLatest(L)) return;
+      renderAll();
+      if (location.hash && !userMoved) { const el = document.getElementById(location.hash.slice(1)); if (el) el.scrollIntoView({ behavior: "auto", block: "start" }); }
+    })
+    .catch(() => {});
 
   /* ---------- 回測統計（讀 data/strategy_stats.json，只顯示統計，不影響卡片） ---------- */
   function renderBacktest(S) {
     const m = S.meta;
     if (!m) { $("bt-body").innerHTML = '<p class="note">回測還沒有用新版腳本跑過，下一次自動更新後這裡會出現統計。</p>'; return; }
     const minN = m.minSample || 30;
-    const R = (v) => v === null || v === undefined ? "—" : (v > 0 ? "+" : v < 0 ? "−" : "") + Math.abs(v).toFixed(2) + "R";
-    const P = (v) => v === null || v === undefined ? "—" : (v * 100).toFixed(0) + "%";
+    const R = (v) => !has(v) ? "—" : (v > 0 ? "+" : v < 0 ? "−" : "") + Math.abs(v).toFixed(2) + "R";
+    const P = (v) => !has(v) ? "—" : (v * 100).toFixed(0) + "%";
     const row = (label, s) => {
       s = s || { sampleSize: 0 };
       const few = s.sampleSize < minN;
       return "<tr><td>" + label + '</td><td class="num">' + s.sampleSize + "</td><td>" +
         (few ? '<span class="badge wait">樣本不足</span>' : P(s.winRate) + '<br><span class="note">' + P(s.ciLow) + "–" + P(s.ciHigh) + "</span>") +
-        '</td><td class="num">' + (few ? "—" : R(s.expectancyR)) + '</td><td class="num">' + (few || s.profitFactor === null ? "—" : s.profitFactor.toFixed(2)) +
+        '</td><td class="num">' + (few ? "—" : R(s.expectancyR) + (has(s.expLow) ? '<br><span class="note">' + R(s.expLow) + " ~ " + R(s.expHigh) + "</span>" : "")) +
+        '</td><td class="num">' + (few || !has(s.profitFactor) ? "—" : s.profitFactor.toFixed(2)) +
         '</td><td class="num">' + (few ? "—" : R(s.maxDrawdownR)) + '</td><td class="num">' + (few || !s.avgHoldingDays ? "—" : s.avgHoldingDays.toFixed(1) + " 日") + "</td></tr>";
     };
-    let h = '<p class="note">進場規則（scripts/strategy.py 的預設參數）在 ' + esc(m.from) + " 到 " + esc(m.to) + " 的 " + m.symbols + " 檔日 K 上逐日重播：收盤出訊號、隔日開盤進場，已扣手續費、證交稅與滑價，跳空跌破停損以開盤價計，最多持有 " + m.maxHoldDays + " 個交易日。</p>";
-    h += '<div class="scroll"><table><thead><tr><th>期間</th><th>筆數</th><th>勝率<br>（95% 區間）</th><th>期望值</th><th>獲利因子</th><th>最大回落</th><th>平均持有</th></tr></thead><tbody>' +
+    let h = '<p class="note">進場規則' + (m.paramsLabel ? "（" + esc(m.paramsLabel) + "）" : "") + "在 " + esc(m.from) + " 到 " + esc(m.to) + " 的 " + m.symbols + " 檔日 K 上逐日重播：收盤出訊號、隔日開盤進場，已扣手續費、證交稅與滑價，跳空跌破停損以開盤價計，最多持有 " + m.maxHoldDays + " 個交易日。</p>";
+    h += '<div class="scroll"><table><thead><tr><th>期間</th><th>筆數</th><th>勝率<br>（95% 區間）</th><th>期望值<br>（95% 區間）</th><th>獲利因子</th><th>最大回落</th><th>平均持有</th></tr></thead><tbody>' +
       row("前段（" + esc(m.splitDate) + " 之前）", S.insample) + row("後段（" + esc(m.splitDate) + " 起）", S.oos) + row("實際逐日紀錄", S.live) + "</tbody></table></div>";
-    h += '<p class="note">期望值是每筆交易平均賺賠幾倍的風險（R）；大於 0 才代表扣掉成本後平均有賺。前段與後段分開看，不混在一起。</p>';
+    const notes = ["期望值是每筆交易平均賺賠幾倍的風險（R）；區間整段都大於 0，才算扣掉成本後確定有賺。前段與後段分開看，不混在一起。"];
+    const b = S.benchmark;
+    if (b && has(b.meanR)) notes.push("<b>隨機進場對照</b>：" + esc(b.definition) + "，試 " + b.draws + " 組，平均 " + R(b.meanR) + "（九成落在 " + R(b.p05) + " 到 " + R(b.p95) + "）。這條規則是 " + R(b.actualR) + "，勝過 " + P(b.beats) + " 的隨機組合" + (b.beats >= 0.95 ? "。" : b.beats <= 0.05 ? "，比隨機進場還差。" : "，還不能說進場時機有幫助。"));
+    const bs = S.bySymbol;
+    if (bs && bs.top && bs.top.length) notes.push("<b>集中度</b>：全部合計 " + R(bs.totalR) + "，貢獻最多的是 " + bs.top.map((x) => esc(name(x.symbol)) + " " + R(x.totalR)).join("、") + "；拖累最多的是 " + bs.bottom.map((x) => esc(name(x.symbol)) + " " + R(x.totalR)).join("、") + "。");
+    const sr = S.search;
+    if (sr) notes.push("<b>參數搜尋</b>：試了 " + sr.candidates + " 組，" + (sr.selected
+      ? "前段最好的是「" + esc(sr.selected) + "」（前段 " + R(sr.insampleExpectancyR) + "／" + sr.insampleN + " 筆，後段 " + R(sr.oosExpectancyR) + "／" + sr.oosN + " 筆）。" + esc(sr.reason) + "。" + (sr.sameAsDefault ? "和目前的預設相同。" : "每日訊號仍用預設參數，不會自動切換。")
+      : esc(sr.reason) + "。"));
+    h += notes.map((x) => '<p class="note">' + x + "</p>").join("");
     const pr = S.pageRule;
     if (pr && pr.byStatus) {
       const hs = pr.horizons.map(String);
-      const names = { go: "觀察進場", hold: "觀望／持有觀察", trim: "過熱／減碼", wait: "等待" };
+      const names = { go: "觀察進場", hold: "觀望／持有觀察", trim: "過熱", wait: "等待" };
       const cell = (x) => !x || !x.n ? '<td class="num">—</td>' : '<td class="num">' + (x.n < minN ? "樣本不足" : pct(x.mean) + '<br><span class="note">上漲 ' + P(x.hitRate) + "</span>") + "</td>";
       h += '<h2 style="margin-top:14px">頁面狀態出現之後的報酬</h2><div class="scroll"><table><thead><tr><th>狀態</th><th>次數</th>' + hs.map((x) => "<th>" + x + " 日後</th>").join("") + "</tr></thead><tbody>" +
         Object.keys(names).map((k) => { const v = pr.byStatus[k] || {}; return "<tr><td>" + names[k] + '</td><td class="num">' + ((v[hs[0]] || {}).n || 0) + "</td>" + hs.map((x) => cell(v[x])).join("") + "</tr>"; }).join("") +
         '<tr><td>所有日子（對照）</td><td class="num">' + ((pr.baseline[hs[0]] || {}).n || 0) + "</td>" + hs.map((x) => cell(pr.baseline[x])).join("") + "</tr></tbody></table></div>" +
         '<p class="note">' + esc(pr.definition) + "。同一段連續的狀態只算一次，未扣成本。要和「所有日子」那一列比，才知道這個狀態有沒有比隨便買更好。</p>";
     }
+    const ex = S.exitStudy;
+    if (ex && ex.n) {
+      h += '<h2 style="margin-top:14px">過熱之後：馬上賣，還是抱到跌破 SMA20</h2>';
+      if (ex.n < minN) h += '<p class="note">樣本不足（' + ex.n + " 次），先不下結論。</p>";
+      else h += '<div class="scroll"><table><thead><tr><th>次數</th><th>續抱平均多賺</th><th>中位數</th><th>續抱較好的比例</th><th>平均多抱</th><th>期間最深回落（平均）</th><th>最差一次</th></tr></thead><tbody><tr><td class="num">' + ex.n +
+        '</td><td class="num">' + pct(ex.meanExtra) + '</td><td class="num">' + pct(ex.medianExtra) + '</td><td class="num">' + P(ex.betterRate) + '</td><td class="num">' + (has(ex.avgExtraDays) ? ex.avgExtraDays.toFixed(0) + " 日" : "—") +
+        '</td><td class="num">' + pct(ex.avgDeepestDip) + '</td><td class="num">' + pct(ex.worstExtra) + "</td></tr></tbody></table></div>";
+      h += '<p class="note">' + esc(ex.definition) + "。" + (ex.stillOpen ? "另有 " + ex.stillOpen + " 次到資料結束都還沒跌破，沒有計入。" : "") + "</p>";
+    }
     $("bt-body").innerHTML = h;
-    if (S.updated) $("bt-stamp").textContent = "計算於 " + String(S.updated).slice(0, 10) + "｜資料到 " + m.to;
+    if (S.updated) $("bt-stamp").textContent = "計算於 " + taipei(S.updated).slice(0, 10) + "｜資料到 " + m.to;
   }
   fetch("./data/strategy_stats.json", { cache: "no-store" })
     .then((r) => (r.ok ? r.json() : Promise.reject(new Error(r.status))))
     .then(renderBacktest)
     .catch(() => { $("bt-body").innerHTML = '<p class="note">讀不到回測資料（data/strategy_stats.json）。放上 GitHub 並等自動更新跑過一次後就會出現。</p>'; });
-
-  /* ---------- 指數／大盤關卡／族群 ---------- */
-  $("index-body").innerHTML = have(["^TWII", "^IXIC", "^SOX", "^TNX"]).map((c) => {
-    const d = DATA[c];
-    return "<tr><td>" + esc(name(c)) + '<br><span class="note">' + esc(c) + "</span></td><td>" + d.date + '</td><td class="num">' + px(d.p, c) +
-      '</td><td class="num">' + chg(d, c) + "</td><td>" + (d.live !== null && d.live !== undefined ? "盤中 " + px(d.live, c) + "（" + md(GEN) + " " + hm(GEN) + " 擷取）" : "已收盤") + "</td></tr>";
-  }).join("");
-  if (DATA["^TWII"]) {
-    const t = DATA["^TWII"], k = "^TWII", n = REPORT.marketNotes;
-    $("mkt-stamp").textContent = "日K " + t.date;
-    $("mkt-body").innerHTML = [
-      ["20 日高（壓力）", t.high20, "距離收盤 " + Math.max((t.high20 / t.p - 1) * 100, 0).toFixed(2) + "%。" + n.high],
-      [md(t.date) + " 收盤", t.p, n.close + (A_index(t) ? "貼近 20 日高，指數本身不標觀察進場。" : "")],
-      ["SMA20（觀察支撐）", t.s20, "在收盤下方 " + ((1 - t.s20 / t.p) * 100).toFixed(2) + "%。" + n.sma20]
-    ].map((x) => '<article class="card"><div class="title">' + x[0] + '</div><div class="px">' + px(x[1], k) + '</div><div class="note" style="margin-top:6px">' + esc(x[2]) + "</div></article>").join("");
-  }
-  function A_index(t) { return typeof t.near === "boolean" ? t.near : (t.high20 - t.p) / t.high20 < 0.01; }
-  $("group-body").innerHTML = Object.keys(STOCK_META).map((key) => {
-    const mem = STOCK_META[key].filter((c) => DATA[c]);
-    return '<tr><td class="grp">' + esc(key) + "</td><td>" + mem.map((c) => '<span class="mem">' + esc(name(c)) + " <small>" + esc(c) + "</small> " + pct(DATA[c].pct) + "</span>").join("") + "</td></tr>";
-  }).join("");
-  $("changelog").innerHTML = REPORT.changelog.map((s) => "<li>" + esc(s) + "</li>").join("");
 })();
 </script>
 
@@ -1991,257 +2107,8 @@ ${d.note || 'N/A'}
 
 
 
-  /* =========================================================
-     12. 修正臻鼎-KY 持倉損益
-
-     原設定：
-     80 股
-     均價 481.90
-     市價 561
-
-     依價格自行計算：
-     成本 = 38,552
-     市值 = 44,880
-     試算損益 = 6,328
-     試算報酬率 ≈ 16.41%
-
-     同時保留券商截圖：
-     6,131 / 15.90%
-  ========================================================= */
-
-  const positionBox =
-    document.getElementById(
-      'u2-position'
-    );
-
-
-  if (positionBox) {
-
-    const HOLDING = {
-
-      code:
-        '4958.TW',
-
-      shares:
-        80,
-
-      avg:
-        481.90,
-
-      brokerPnl:
-        6131,
-
-      brokerPnlPct:
-        15.90
-
-    };
-
-
-    const stock =
-      DATA[
-        HOLDING.code
-      ] || {};
-
-
-    const market =
-      toNum(
-        stock.p
-      ) ??
-      561;
-
-
-    const cost =
-      HOLDING.avg *
-      HOLDING.shares;
-
-
-    const marketValue =
-      market *
-      HOLDING.shares;
-
-
-    const calcPnl =
-      marketValue -
-      cost;
-
-
-    const calcPct =
-      cost !== 0
-
-        ? (
-          calcPnl /
-          cost
-        ) * 100
-
-        : 0;
-
-
-    const profitClass =
-      calcPnl >= 0
-
-        ? 'u2-profit'
-
-        : 'u2-loss';
-
-
-
-    positionBox.innerHTML = `
-
-      <h2>
-        💼 我的持倉
-      </h2>
-
-
-      <div
-        class="u2-card u2-pos"
-      >
-
-        <h3>
-
-          ${
-            NAMES[
-              HOLDING.code
-            ] ||
-            HOLDING.code
-          }
-
-          ｜${HOLDING.code}
-
-        </h3>
-
-
-        <div class="u2-row">
-
-          <span>
-            股數
-          </span>
-
-          <b>
-            ${HOLDING.shares}
-          </b>
-
-        </div>
-
-
-        <div class="u2-row">
-
-          <span>
-            平均成本
-          </span>
-
-          <b>
-            ${HOLDING.avg.toFixed(2)}
-          </b>
-
-        </div>
-
-
-        <div class="u2-row">
-
-          <span>
-            DATA 市價
-          </span>
-
-          <b>
-            ${fmt2(market)}
-          </b>
-
-        </div>
-
-
-        <div class="u2-row">
-
-          <span>
-            成本金額
-          </span>
-
-          <b>
-            ${fmt2(cost)}
-          </b>
-
-        </div>
-
-
-        <div class="u2-row">
-
-          <span>
-            目前市值
-          </span>
-
-          <b>
-            ${fmt2(marketValue)}
-          </b>
-
-        </div>
-
-
-        <div class="u2-row">
-
-          <span>
-            依市價試算損益
-          </span>
-
-          <b class="${profitClass}">
-
-            ${calcPnl >= 0 ? '+' : ''}
-            ${fmt2(calcPnl)}
-
-            （
-            ${calcPct >= 0 ? '+' : ''}
-            ${calcPct.toFixed(2)}%
-            ）
-
-          </b>
-
-        </div>
-
-
-        <hr
-          style="
-            border:0;
-            border-top:
-            1px solid rgba(201,169,106,.15);
-            margin:10px 0;
-          "
-        >
-
-
-        <div class="u2-row">
-
-          <span>
-            券商截圖損益
-          </span>
-
-          <b>
-
-            ${fmt2(
-              HOLDING.brokerPnl
-            )}
-
-            （
-            ${HOLDING.brokerPnlPct.toFixed(2)}%
-            ）
-
-          </b>
-
-        </div>
-
-
-        <p class="note">
-
-          「依市價試算」直接使用股數 × 平均成本與 DATA 市價計算；
-          「券商截圖損益」保留原截圖數字。
-          因券商可能計入手續費、稅費或不同成本口徑，
-          兩者分開顯示，避免數字互相矛盾。
-
-        </p>
-
-      </div>
-
-    `;
-
-  }
-
+  /* 12.（已移除）舊版會用 innerHTML 蓋掉整個「我的持倉」區塊，只剩臻鼎-KY，
+     台積電、SPCX 與合計都會消失。持倉現在由主程式依 POSITIONS 計算，這裡不再處理。 */
 
 
   /* =========================================================
@@ -2590,6 +2457,5 @@ ${d.note || 'N/A'}
 
 })();
 </script>
-
 </body>
 </html>

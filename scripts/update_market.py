@@ -6,9 +6,9 @@ every run, so a bad snapshot can never get stuck in signals.json.
 from __future__ import annotations
 import json
 from datetime import datetime, timezone
-from marketdata import DATA, MARKETS, bars_of, load_universe
+from marketdata import DATA, EXTRA_INDICES, MARKETS, bars_of, load_universe
 from strategy import (DEFAULT_PARAMS, MIN_HISTORY, RegimeLookup, build_signals,
-                      can_open_trade, open_trade, simulate_exit)
+                      can_open_trade, index_quote, open_trade, simulate_exit)
 
 KEEP_SESSIONS = 20      # sessions of signals kept in signals.json
 LIVE_LOOKBACK = 5       # sessions scanned for new live trades (covers a few missed runs)
@@ -41,7 +41,7 @@ def save_json(name, obj):
 
 
 def load_regimes(now=None):
-    regimes, index_info = {}, {}
+    regimes, index_info, index_quotes = {}, {}, {}
     for market, m in MARKETS.items():
         rows = []
         try:
@@ -52,7 +52,15 @@ def load_regimes(now=None):
         if rows:
             index_info[market] = {"symbol": m["index"], "date": rows[-1]["date"], "close": rows[-1]["close"],
                                   "regime": regimes[market].on(rows[-1]["date"])}
-    return regimes, index_info
+            index_quotes[m["index"]] = index_quote(rows)
+    for symbol, market in EXTRA_INDICES.items():      # display only
+        try:
+            q = index_quote(bars_of(symbol, market, now=now))
+            if q:
+                index_quotes[symbol] = q
+        except Exception as e:  # noqa: BLE001
+            print("warn: index", symbol, "unavailable:", e)
+    return regimes, index_info, index_quotes
 
 
 def update_live_trades(trades, symbol, market, rows, sigs):
@@ -91,7 +99,7 @@ def update_live_trades(trades, symbol, market, rows, sigs):
 def main(now=None):
     universe = load_universe()
     stamp = (now or datetime.now(timezone.utc)).isoformat()
-    regimes, index_info = load_regimes(now)
+    regimes, index_info, index_quotes = load_regimes(now)
     trades = load_json("trades.json", [])
     signals, latest, skipped = [], {}, []
     for symbol, (market, theme) in universe.items():
@@ -107,7 +115,8 @@ def main(now=None):
             continue
         sigs = build_signals(symbol, market, theme, rows, regimes[market], stamp)
         if sigs[-1]:
-            latest[symbol] = sigs[-1]
+            # entrySignal: does the back-tested entry rule fire on this close?
+            latest[symbol] = dict(sigs[-1], entrySignal=can_open_trade(sigs[-1], DEFAULT_PARAMS))
         signals.extend(s for s in sigs[-KEEP_SESSIONS:] if s)
         update_live_trades(trades, symbol, market, rows, sigs)
     if not latest:
@@ -118,6 +127,7 @@ def main(now=None):
     save_json("trades.json", trades)
     save_json("latest.json", {"dataTimestamp": stamp, "marketTimestamp": stamp, "source": "yahoo",
                               "isFinalClose": True, "sessions": sessions, "indices": index_info,
+                              "indexQuotes": index_quotes, "params": DEFAULT_PARAMS,
                               "skipped": skipped, "quotes": latest})
     print("symbols", len(latest), "signals", len(signals), "trades", len(trades), "skipped", skipped)
 

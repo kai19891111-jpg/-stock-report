@@ -25,6 +25,8 @@ MARKETS = {
     "TW": {"tz": ZoneInfo("Asia/Taipei"), "close": (13, 30), "index": "^TWII"},
     "US": {"tz": ZoneInfo("America/New_York"), "close": (16, 0), "index": "^IXIC"},
 }
+# Shown in the page's index table only; not used by the entry rule.
+EXTRA_INDICES = {"^SOX": "US", "^TNX": "US"}
 # A daily bar counts as final this long after the closing bell (closing auction, vendor lag).
 SETTLE_MINUTES = 20
 

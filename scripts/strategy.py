@@ -8,9 +8,12 @@ from bisect import bisect_right
 from datetime import date
 from indicators import sma, rsi, atr, macd_hist
 
-DEFAULT_PARAMS = {"rsi_lo": 45, "rsi_hi": 60, "min_rr": 1.8, "vol_min": None,
-                  "dist_atr_max": 1.0, "macd": "not_weak", "weekly": "not_bear",
-                  "market": "BULL_NEUTRAL"}
+# min_rr 1.5: chosen on the in-sample period and confirmed out-of-sample (1.8 only allowed
+# closes at or below SMA20 and was the weakest setting tested). vol_max / min_risk_pct are
+# off by default; backtest.py searches over them and reports whether they help.
+DEFAULT_PARAMS = {"rsi_lo": 45, "rsi_hi": 60, "min_rr": 1.5, "vol_min": None, "vol_max": None,
+                  "min_risk_pct": None, "dist_atr_max": 1.0, "macd": "not_weak",
+                  "weekly": "not_bear", "market": "BULL_NEUTRAL"}
 
 MAX_HOLD_DAYS = 20          # time stop: close the trade at this session's close
 MIN_HISTORY = 60            # bars needed before a signal is produced (SMA60)
@@ -87,6 +90,19 @@ class RegimeLookup:
         return self.values[i] if i >= 0 else "NEUTRAL"
 
 
+def index_quote(rows):
+    """Latest completed bar of an index with the averages the page shows."""
+    if not rows:
+        return None
+    closes = [b["close"] for b in rows]
+    m20, m60 = sma(closes, 20)[-1], sma(closes, 60)[-1]
+    last = rows[-1]
+    return {"date": last["date"], "close": last["close"],
+            "prevClose": rows[-2]["close"] if len(rows) > 1 else None,
+            "ma20": m20, "ma60": m60, "high20": max(b["high"] for b in rows[-20:]),
+            "bias": (last["close"] / m20 - 1) * 100 if m20 else None}
+
+
 def page_status(close, ma20, high20):
     """The report page's three-condition status: go / hold / trim / wait."""
     if close is None or ma20 is None or ma20 <= 0:
@@ -130,6 +146,7 @@ def build_signals(symbol, market, theme, rows, regime, stamp=None):
         out.append({
             "date": b["date"], "symbol": symbol, "market": market, "theme": theme,
             "open": b["open"], "high": b["high"], "low": b["low"], "close": close,
+            "prevClose": rows[i - 1]["close"], "riskPct": (close - stop) / close * 100,
             "ma20": m20, "ma60": m60, "rsi14": rsi14[i], "macd": macd_txt,
             "volumeRatio": (vols[i] / vol_ma[i]) if vol_ma[i] else None, "atr14": a,
             "dailyTrend": daily_trend(close, m20, m60), "weeklyTrend": weekly[i],
@@ -175,6 +192,12 @@ def can_open_trade(sig, params):
         return False
     vmin = params.get("vol_min")
     if vmin is not None and (sig.get("volumeRatio") is None or sig["volumeRatio"] < vmin):
+        return False
+    vmax = params.get("vol_max")            # pullback on shrinking volume
+    if vmax is not None and (sig.get("volumeRatio") is None or sig["volumeRatio"] > vmax):
+        return False
+    min_risk = params.get("min_risk_pct")   # stop must be at least this % of price away
+    if min_risk is not None and (entry_ref - stop) / entry_ref * 100 < min_risk:
         return False
     macd_rule = params.get("macd", "any")
     if macd_rule == "not_weak" and (sig.get("macd") or "").find("轉弱") >= 0:
