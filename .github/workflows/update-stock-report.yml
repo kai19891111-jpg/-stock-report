@@ -20,6 +20,12 @@ jobs:
         run: |
           python scripts/update_market.py
           python scripts/backtest.py
+      - name: Risk score
+        continue-on-error: true
+        env:
+          FINMIND_TOKEN: ${{ secrets.FINMIND_TOKEN }}
+          SEC_UA: ${{ secrets.SEC_UA }}
+        run: python scripts/risk.py
       - name: Commit data
         run: |
           git config user.name "stock-report-bot"

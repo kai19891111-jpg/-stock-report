@@ -1,0 +1,25 @@
+{
+  "updatedAt": "2026-10-09",
+  "earnings": {
+    "2330.TW": { "date": "2026-10-15", "source": "https://investor.tsmc.com/english/quarterly-results" },
+    "TSM": { "date": "2026-10-15", "source": "https://investor.tsmc.com/english/quarterly-results" }
+  },
+  "events": [
+    {
+      "id": "fomc-2026-10",
+      "type": "scheduled",
+      "date": "2026-10-28",
+      "title": "FOMC 利率決議（10/27–28 會議）",
+      "targets": ["*"],
+      "source": "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm"
+    },
+    {
+      "id": "fomc-2026-12",
+      "type": "scheduled",
+      "date": "2026-12-09",
+      "title": "FOMC 利率決議（12/8–9 會議，附經濟預測）",
+      "targets": ["*"],
+      "source": "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm"
+    }
+  ]
+}
