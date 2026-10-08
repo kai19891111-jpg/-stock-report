@@ -1,0 +1,1370 @@
+{
+  "generatedAt": "2026-10-08T19:24:58.166200+00:00",
+  "today": {
+    "TW": "2026-10-09",
+    "US": "2026-10-08"
+  },
+  "thresholds": {
+    "bias_mid": 6.0,
+    "bias_high": 15.0,
+    "earn_near": 3,
+    "earn_mid": 10,
+    "margin_drop_pt": 1.0,
+    "flow_days": 5,
+    "event_ahead_days": 14,
+    "announced_default_days": 30,
+    "events_stale_days": 14,
+    "min_scored": 3,
+    "low_max": 3.5,
+    "mid_max": 6.5
+  },
+  "labels": {
+    "tech": "過熱",
+    "earnings": "財報",
+    "fundamentals": "基本面",
+    "chips": "籌碼",
+    "policy": "政策"
+  },
+  "order": [
+    "tech",
+    "earnings",
+    "fundamentals",
+    "chips",
+    "policy"
+  ],
+  "sources": {
+    "twse_punish": {
+      "ok": 1,
+      "fail": 0
+    },
+    "twse_notice": {
+      "ok": 1,
+      "fail": 0
+    },
+    "tpex_disposal": {
+      "ok": 1,
+      "fail": 0
+    },
+    "tpex_warning": {
+      "ok": 1,
+      "fail": 0
+    },
+    "sec": {
+      "ok": 0,
+      "fail": 0,
+      "skipped": "沒有設定 SEC_UA，美股基本面寫 N/A"
+    },
+    "finmind": {
+      "ok": 92,
+      "fail": 0
+    }
+  },
+  "events": {
+    "updatedAt": "2026-10-09",
+    "fresh": true,
+    "used": 2,
+    "earnings": 2,
+    "rejected": []
+  },
+  "symbols": {
+    "2330.TW": {
+      "total": 2,
+      "max": 10,
+      "scored": 5,
+      "score10": 2.0,
+      "level": "low",
+      "flags": [],
+      "gate": {
+        "block": false,
+        "reasons": []
+      },
+      "items": {
+        "tech": {
+          "score": 0,
+          "why": "乖離 +2.97%",
+          "date": "2026-10-08"
+        },
+        "earnings": {
+          "score": 1,
+          "why": "財報 2026-10-15，還有 4 個交易日",
+          "date": "2026-10-15",
+          "source": "https://investor.tsmc.com/english/quarterly-results",
+          "days": 4
+        },
+        "fundamentals": {
+          "score": 0,
+          "why": "營收年增 +54.6%（2026-09）、毛利率 67.7%，年變動 +9.1 個百分點（2026-06-30）",
+          "date": "2026-09"
+        },
+        "chips": {
+          "score": 1,
+          "why": "近 5 日法人 -7263 張、融資 +928 張",
+          "date": "2026-10-08"
+        },
+        "policy": {
+          "score": 0,
+          "why": "14 天內沒有排定事件，也沒有生效中的不利政策",
+          "date": "2026-10-09"
+        }
+      },
+      "market": "TW",
+      "group": "TW|AI晶片"
+    },
+    "2454.TW": {
+      "total": 2,
+      "max": 8,
+      "scored": 4,
+      "score10": 2.5,
+      "level": "low",
+      "flags": [],
+      "gate": {
+        "block": false,
+        "reasons": []
+      },
+      "items": {
+        "tech": {
+          "score": 0,
+          "why": "乖離 -2.99%",
+          "date": "2026-10-08"
+        },
+        "earnings": {
+          "score": null,
+          "why": "events.json 沒有這檔的財報日"
+        },
+        "fundamentals": {
+          "score": 1,
+          "why": "營收年增 +2.0%（2026-09）、毛利率 46.2%，年變動 -2.9 個百分點（2026-06-30）",
+          "date": "2026-09"
+        },
+        "chips": {
+          "score": 1,
+          "why": "近 5 日法人 -11091 張、融資 +402 張",
+          "date": "2026-10-08"
+        },
+        "policy": {
+          "score": 0,
+          "why": "14 天內沒有排定事件，也沒有生效中的不利政策",
+          "date": "2026-10-09"
+        }
+      },
+      "market": "TW",
+      "group": "TW|AI晶片"
+    },
+    "2308.TW": {
+      "total": 1,
+      "max": 8,
+      "scored": 4,
+      "score10": 1.2,
+      "level": "low",
+      "flags": [],
+      "gate": {
+        "block": false,
+        "reasons": []
+      },
+      "items": {
+        "tech": {
+          "score": 1,
+          "why": "乖離 +7.32%",
+          "date": "2026-10-08"
+        },
+        "earnings": {
+          "score": null,
+          "why": "events.json 沒有這檔的財報日"
+        },
+        "fundamentals": {
+          "score": 0,
+          "why": "營收年增 +34.9%（2026-08）、毛利率 35.6%，年變動 +0.1 個百分點（2026-06-30）",
+          "date": "2026-08"
+        },
+        "chips": {
+          "score": 0,
+          "why": "近 5 日法人 +5311 張、融資 -570 張",
+          "date": "2026-10-08"
+        },
+        "policy": {
+          "score": 0,
+          "why": "14 天內沒有排定事件，也沒有生效中的不利政策",
+          "date": "2026-10-09"
+        }
+      },
+      "market": "TW",
+      "group": "TW|AI電源"
+    },
+    "3324.TWO": {
+      "total": 1,
+      "max": 8,
+      "scored": 4,
+      "score10": 1.2,
+      "level": "low",
+      "flags": [],
+      "gate": {
+        "block": false,
+        "reasons": []
+      },
+      "items": {
+        "tech": {
+          "score": 0,
+          "why": "乖離 +2.31%",
+          "date": "2026-10-08"
+        },
+        "earnings": {
+          "score": null,
+          "why": "events.json 沒有這檔的財報日"
+        },
+        "fundamentals": {
+          "score": 0,
+          "why": "營收年增 +23.2%（2026-09）、毛利率 28.4%，年變動 +2.3 個百分點（2026-06-30）",
+          "date": "2026-09"
+        },
+        "chips": {
+          "score": 1,
+          "why": "近 5 日法人 -1483 張、融資 +274 張",
+          "date": "2026-10-08"
+        },
+        "policy": {
+          "score": 0,
+          "why": "14 天內沒有排定事件，也沒有生效中的不利政策",
+          "date": "2026-10-09"
+        }
+      },
+      "market": "TW",
+      "group": "TW|AI散熱"
+    },
+    "3653.TW": {
+      "total": 1,
+      "max": 8,
+      "scored": 4,
+      "score10": 1.2,
+      "level": "low",
+      "flags": [],
+      "gate": {
+        "block": false,
+        "reasons": []
+      },
+      "items": {
+        "tech": {
+          "score": 1,
+          "why": "乖離 +14.51%",
+          "date": "2026-10-08"
+        },
+        "earnings": {
+          "score": null,
+          "why": "events.json 沒有這檔的財報日"
+        },
+        "fundamentals": {
+          "score": 0,
+          "why": "營收年增 +80.0%（2026-09）、毛利率 46.8%，年變動 +5.3 個百分點（2026-06-30）",
+          "date": "2026-09"
+        },
+        "chips": {
+          "score": 0,
+          "why": "近 5 日法人 -129 張、融資 -86 張",
+          "date": "2026-10-08"
+        },
+        "policy": {
+          "score": 0,
+          "why": "14 天內沒有排定事件，也沒有生效中的不利政策",
+          "date": "2026-10-09"
+        }
+      },
+      "market": "TW",
+      "group": "TW|AI散熱"
+    },
+    "3017.TW": {
+      "total": 0,
+      "max": 8,
+      "scored": 4,
+      "score10": 0.0,
+      "level": "low",
+      "flags": [],
+      "gate": {
+        "block": false,
+        "reasons": []
+      },
+      "items": {
+        "tech": {
+          "score": 0,
+          "why": "乖離 +0.74%",
+          "date": "2026-10-08"
+        },
+        "earnings": {
+          "score": null,
+          "why": "events.json 沒有這檔的財報日"
+        },
+        "fundamentals": {
+          "score": 0,
+          "why": "營收年增 +44.9%（2026-09）、毛利率 32.6%，年變動 +8.2 個百分點（2026-06-30）",
+          "date": "2026-09"
+        },
+        "chips": {
+          "score": 0,
+          "why": "近 5 日法人 -848 張、融資 -121 張",
+          "date": "2026-10-08"
+        },
+        "policy": {
+          "score": 0,
+          "why": "14 天內沒有排定事件，也沒有生效中的不利政策",
+          "date": "2026-10-09"
+        }
+      },
+      "market": "TW",
+      "group": "TW|AI散熱"
+    },
+    "3189.TW": {
+      "total": 2,
+      "max": 8,
+      "scored": 4,
+      "score10": 2.5,
+      "level": "low",
+      "flags": [
+        "overheated"
+      ],
+      "gate": {
+        "block": false,
+        "reasons": []
+      },
+      "items": {
+        "tech": {
+          "score": 2,
+          "why": "乖離 +16.59%",
+          "date": "2026-10-08"
+        },
+        "earnings": {
+          "score": null,
+          "why": "events.json 沒有這檔的財報日"
+        },
+        "fundamentals": {
+          "score": 0,
+          "why": "營收年增 +44.5%（2026-09）、毛利率 26.1%，年變動 +5.0 個百分點（2026-06-30）",
+          "date": "2026-09"
+        },
+        "chips": {
+          "score": 0,
+          "why": "近 5 日法人 +4672 張、融資 -3609 張",
+          "date": "2026-10-08"
+        },
+        "policy": {
+          "score": 0,
+          "why": "14 天內沒有排定事件，也沒有生效中的不利政策",
+          "date": "2026-10-09"
+        }
+      },
+      "market": "TW",
+      "group": "TW|ABF"
+    },
+    "3037.TW": {
+      "total": 1,
+      "max": 8,
+      "scored": 4,
+      "score10": 1.2,
+      "level": "low",
+      "flags": [],
+      "gate": {
+        "block": false,
+        "reasons": []
+      },
+      "items": {
+        "tech": {
+          "score": 1,
+          "why": "乖離 +13.79%",
+          "date": "2026-10-08"
+        },
+        "earnings": {
+          "score": null,
+          "why": "events.json 沒有這檔的財報日"
+        },
+        "fundamentals": {
+          "score": 0,
+          "why": "營收年增 +64.7%（2026-09）、毛利率 24.8%，年變動 +11.7 個百分點（2026-06-30）",
+          "date": "2026-09"
+        },
+        "chips": {
+          "score": 0,
+          "why": "近 5 日法人 +11574 張、融資 -223 張",
+          "date": "2026-10-08"
+        },
+        "policy": {
+          "score": 0,
+          "why": "14 天內沒有排定事件，也沒有生效中的不利政策",
+          "date": "2026-10-09"
+        }
+      },
+      "market": "TW",
+      "group": "TW|ABF"
+    },
+    "8046.TW": {
+      "total": 2,
+      "max": 8,
+      "scored": 4,
+      "score10": 2.5,
+      "level": "low",
+      "flags": [
+        "overheated"
+      ],
+      "gate": {
+        "block": false,
+        "reasons": []
+      },
+      "items": {
+        "tech": {
+          "score": 2,
+          "why": "乖離 +19.00%",
+          "date": "2026-10-08"
+        },
+        "earnings": {
+          "score": null,
+          "why": "events.json 沒有這檔的財報日"
+        },
+        "fundamentals": {
+          "score": 0,
+          "why": "營收年增 +57.8%（2026-09）、毛利率 24.7%，年變動 +16.7 個百分點（2026-06-30）",
+          "date": "2026-09"
+        },
+        "chips": {
+          "score": 0,
+          "why": "近 5 日法人 +4334 張、融資 -2350 張",
+          "date": "2026-10-08"
+        },
+        "policy": {
+          "score": 0,
+          "why": "14 天內沒有排定事件，也沒有生效中的不利政策",
+          "date": "2026-10-09"
+        }
+      },
+      "market": "TW",
+      "group": "TW|ABF"
+    },
+    "6213.TW": {
+      "total": 4,
+      "max": 8,
+      "scored": 4,
+      "score10": 5.0,
+      "level": "mid",
+      "flags": [
+        "disposition",
+        "overheated"
+      ],
+      "gate": {
+        "block": true,
+        "reasons": [
+          "處置股",
+          "風險中"
+        ]
+      },
+      "items": {
+        "tech": {
+          "score": 2,
+          "why": "乖離 +33.62%",
+          "date": "2026-10-08"
+        },
+        "earnings": {
+          "score": null,
+          "why": "events.json 沒有這檔的財報日"
+        },
+        "fundamentals": {
+          "score": 0,
+          "why": "營收年增 +110.7%（2026-09）、毛利率 22.0%，年變動 +6.4 個百分點（2026-06-30）",
+          "date": "2026-09"
+        },
+        "chips": {
+          "score": 2,
+          "why": "處置股 2026-10-08～2026-10-19",
+          "date": "2026-10-08",
+          "flag": "disposition"
+        },
+        "policy": {
+          "score": 0,
+          "why": "14 天內沒有排定事件，也沒有生效中的不利政策",
+          "date": "2026-10-09"
+        }
+      },
+      "market": "TW",
+      "group": "TW|CCL"
+    },
+    "2383.TW": {
+      "total": 1,
+      "max": 8,
+      "scored": 4,
+      "score10": 1.2,
+      "level": "low",
+      "flags": [],
+      "gate": {
+        "block": false,
+        "reasons": []
+      },
+      "items": {
+        "tech": {
+          "score": 1,
+          "why": "乖離 +14.58%",
+          "date": "2026-10-08"
+        },
+        "earnings": {
+          "score": null,
+          "why": "events.json 沒有這檔的財報日"
+        },
+        "fundamentals": {
+          "score": 0,
+          "why": "營收年增 +168.9%（2026-09）、毛利率 33.9%，年變動 +3.5 個百分點（2026-06-30）",
+          "date": "2026-09"
+        },
+        "chips": {
+          "score": 0,
+          "why": "近 5 日法人 +1875 張、融資 -93 張",
+          "date": "2026-10-08"
+        },
+        "policy": {
+          "score": 0,
+          "why": "14 天內沒有排定事件，也沒有生效中的不利政策",
+          "date": "2026-10-09"
+        }
+      },
+      "market": "TW",
+      "group": "TW|CCL"
+    },
+    "3481.TW": {
+      "total": 0,
+      "max": 8,
+      "scored": 4,
+      "score10": 0.0,
+      "level": "low",
+      "flags": [],
+      "gate": {
+        "block": false,
+        "reasons": []
+      },
+      "items": {
+        "tech": {
+          "score": 0,
+          "why": "乖離 +1.64%",
+          "date": "2026-10-08"
+        },
+        "earnings": {
+          "score": null,
+          "why": "events.json 沒有這檔的財報日"
+        },
+        "fundamentals": {
+          "score": 0,
+          "why": "營收年增 +0.0%（2026-08）、毛利率 14.6%，年變動 +6.2 個百分點（2026-06-30）",
+          "date": "2026-08"
+        },
+        "chips": {
+          "score": 0,
+          "why": "近 5 日法人 -22479 張、融資 -5698 張",
+          "date": "2026-10-08"
+        },
+        "policy": {
+          "score": 0,
+          "why": "14 天內沒有排定事件，也沒有生效中的不利政策",
+          "date": "2026-10-09"
+        }
+      },
+      "market": "TW",
+      "group": "TW|面板／光電"
+    },
+    "6770.TW": {
+      "total": 1,
+      "max": 8,
+      "scored": 4,
+      "score10": 1.2,
+      "level": "low",
+      "flags": [],
+      "gate": {
+        "block": false,
+        "reasons": []
+      },
+      "items": {
+        "tech": {
+          "score": 0,
+          "why": "乖離 -0.58%",
+          "date": "2026-10-08"
+        },
+        "earnings": {
+          "score": null,
+          "why": "events.json 沒有這檔的財報日"
+        },
+        "fundamentals": {
+          "score": 0,
+          "why": "營收年增 +94.0%（2026-09）、毛利率 28.3%，年變動 +37.3 個百分點（2026-06-30）",
+          "date": "2026-09"
+        },
+        "chips": {
+          "score": 1,
+          "why": "近 5 日法人 -46956 張、融資 +2045 張",
+          "date": "2026-10-08"
+        },
+        "policy": {
+          "score": 0,
+          "why": "14 天內沒有排定事件，也沒有生效中的不利政策",
+          "date": "2026-10-09"
+        }
+      },
+      "market": "TW",
+      "group": "TW|晶圓代工＋記憶體"
+    },
+    "2221.TWO": {
+      "total": 4,
+      "max": 8,
+      "scored": 4,
+      "score10": 5.0,
+      "level": "mid",
+      "flags": [
+        "disposition",
+        "overheated"
+      ],
+      "gate": {
+        "block": true,
+        "reasons": [
+          "處置股",
+          "風險中"
+        ]
+      },
+      "items": {
+        "tech": {
+          "score": 2,
+          "why": "乖離 +31.09%",
+          "date": "2026-10-08"
+        },
+        "earnings": {
+          "score": null,
+          "why": "events.json 沒有這檔的財報日"
+        },
+        "fundamentals": {
+          "score": 0,
+          "why": "營收年增 +44.5%（2026-09）、毛利率 23.8%，年變動 +1.7 個百分點（2026-06-30）",
+          "date": "2026-09"
+        },
+        "chips": {
+          "score": 2,
+          "why": "處置股 2026-10-01～2026-10-12",
+          "date": "2026-10-01",
+          "flag": "disposition"
+        },
+        "policy": {
+          "score": 0,
+          "why": "14 天內沒有排定事件，也沒有生效中的不利政策",
+          "date": "2026-10-09"
+        }
+      },
+      "market": "TW",
+      "group": "TW|半導體廠務"
+    },
+    "TSM": {
+      "total": 1,
+      "max": 6,
+      "scored": 3,
+      "score10": 1.7,
+      "level": "low",
+      "flags": [],
+      "gate": {
+        "block": false,
+        "reasons": []
+      },
+      "items": {
+        "tech": {
+          "score": 0,
+          "why": "乖離 +5.41%",
+          "date": "2026-10-07"
+        },
+        "earnings": {
+          "score": 1,
+          "why": "財報 2026-10-15，還有 5 個交易日",
+          "date": "2026-10-15",
+          "source": "https://investor.tsmc.com/english/quarterly-results",
+          "days": 5
+        },
+        "fundamentals": {
+          "score": null,
+          "why": "營收與毛利率都抓不到"
+        },
+        "chips": {
+          "score": null,
+          "why": "美股沒有對應的法人／融資／處置資料"
+        },
+        "policy": {
+          "score": 0,
+          "why": "14 天內沒有排定事件，也沒有生效中的不利政策",
+          "date": "2026-10-09"
+        }
+      },
+      "market": "US",
+      "group": "US|AI晶片"
+    },
+    "NVDA": {
+      "total": 0,
+      "max": 4,
+      "scored": 2,
+      "score10": 0.0,
+      "level": "insufficient",
+      "flags": [],
+      "gate": {
+        "block": false,
+        "reasons": []
+      },
+      "items": {
+        "tech": {
+          "score": 0,
+          "why": "乖離 +5.27%",
+          "date": "2026-10-07"
+        },
+        "earnings": {
+          "score": null,
+          "why": "events.json 沒有這檔的財報日"
+        },
+        "fundamentals": {
+          "score": null,
+          "why": "營收與毛利率都抓不到"
+        },
+        "chips": {
+          "score": null,
+          "why": "美股沒有對應的法人／融資／處置資料"
+        },
+        "policy": {
+          "score": 0,
+          "why": "14 天內沒有排定事件，也沒有生效中的不利政策",
+          "date": "2026-10-09"
+        }
+      },
+      "market": "US",
+      "group": "US|AI晶片"
+    },
+    "AMD": {
+      "total": 1,
+      "max": 4,
+      "scored": 2,
+      "score10": 2.5,
+      "level": "insufficient",
+      "flags": [],
+      "gate": {
+        "block": false,
+        "reasons": []
+      },
+      "items": {
+        "tech": {
+          "score": 1,
+          "why": "乖離 +9.91%",
+          "date": "2026-10-07"
+        },
+        "earnings": {
+          "score": null,
+          "why": "events.json 沒有這檔的財報日"
+        },
+        "fundamentals": {
+          "score": null,
+          "why": "營收與毛利率都抓不到"
+        },
+        "chips": {
+          "score": null,
+          "why": "美股沒有對應的法人／融資／處置資料"
+        },
+        "policy": {
+          "score": 0,
+          "why": "14 天內沒有排定事件，也沒有生效中的不利政策",
+          "date": "2026-10-09"
+        }
+      },
+      "market": "US",
+      "group": "US|AI晶片"
+    },
+    "AVGO": {
+      "total": 0,
+      "max": 4,
+      "scored": 2,
+      "score10": 0.0,
+      "level": "insufficient",
+      "flags": [],
+      "gate": {
+        "block": false,
+        "reasons": []
+      },
+      "items": {
+        "tech": {
+          "score": 0,
+          "why": "乖離 +5.97%",
+          "date": "2026-10-07"
+        },
+        "earnings": {
+          "score": null,
+          "why": "events.json 沒有這檔的財報日"
+        },
+        "fundamentals": {
+          "score": null,
+          "why": "營收與毛利率都抓不到"
+        },
+        "chips": {
+          "score": null,
+          "why": "美股沒有對應的法人／融資／處置資料"
+        },
+        "policy": {
+          "score": 0,
+          "why": "14 天內沒有排定事件，也沒有生效中的不利政策",
+          "date": "2026-10-09"
+        }
+      },
+      "market": "US",
+      "group": "US|AI晶片"
+    },
+    "MSFT": {
+      "total": 0,
+      "max": 4,
+      "scored": 2,
+      "score10": 0.0,
+      "level": "insufficient",
+      "flags": [],
+      "gate": {
+        "block": false,
+        "reasons": []
+      },
+      "items": {
+        "tech": {
+          "score": 0,
+          "why": "乖離 +4.57%",
+          "date": "2026-10-07"
+        },
+        "earnings": {
+          "score": null,
+          "why": "events.json 沒有這檔的財報日"
+        },
+        "fundamentals": {
+          "score": null,
+          "why": "營收與毛利率都抓不到"
+        },
+        "chips": {
+          "score": null,
+          "why": "美股沒有對應的法人／融資／處置資料"
+        },
+        "policy": {
+          "score": 0,
+          "why": "14 天內沒有排定事件，也沒有生效中的不利政策",
+          "date": "2026-10-09"
+        }
+      },
+      "market": "US",
+      "group": "US|AI雲端"
+    },
+    "META": {
+      "total": 0,
+      "max": 4,
+      "scored": 2,
+      "score10": 0.0,
+      "level": "insufficient",
+      "flags": [],
+      "gate": {
+        "block": false,
+        "reasons": []
+      },
+      "items": {
+        "tech": {
+          "score": 0,
+          "why": "乖離 +1.33%",
+          "date": "2026-10-07"
+        },
+        "earnings": {
+          "score": null,
+          "why": "events.json 沒有這檔的財報日"
+        },
+        "fundamentals": {
+          "score": null,
+          "why": "營收與毛利率都抓不到"
+        },
+        "chips": {
+          "score": null,
+          "why": "美股沒有對應的法人／融資／處置資料"
+        },
+        "policy": {
+          "score": 0,
+          "why": "14 天內沒有排定事件，也沒有生效中的不利政策",
+          "date": "2026-10-09"
+        }
+      },
+      "market": "US",
+      "group": "US|AI雲端"
+    },
+    "MU": {
+      "total": 0,
+      "max": 4,
+      "scored": 2,
+      "score10": 0.0,
+      "level": "insufficient",
+      "flags": [],
+      "gate": {
+        "block": false,
+        "reasons": []
+      },
+      "items": {
+        "tech": {
+          "score": 0,
+          "why": "乖離 +5.36%",
+          "date": "2026-10-07"
+        },
+        "earnings": {
+          "score": null,
+          "why": "events.json 沒有這檔的財報日"
+        },
+        "fundamentals": {
+          "score": null,
+          "why": "營收與毛利率都抓不到"
+        },
+        "chips": {
+          "score": null,
+          "why": "美股沒有對應的法人／融資／處置資料"
+        },
+        "policy": {
+          "score": 0,
+          "why": "14 天內沒有排定事件，也沒有生效中的不利政策",
+          "date": "2026-10-09"
+        }
+      },
+      "market": "US",
+      "group": "US|AI記憶體"
+    },
+    "TSLA": {
+      "total": 0,
+      "max": 4,
+      "scored": 2,
+      "score10": 0.0,
+      "level": "insufficient",
+      "flags": [],
+      "gate": {
+        "block": false,
+        "reasons": []
+      },
+      "items": {
+        "tech": {
+          "score": 0,
+          "why": "乖離 +2.88%",
+          "date": "2026-10-07"
+        },
+        "earnings": {
+          "score": null,
+          "why": "events.json 沒有這檔的財報日"
+        },
+        "fundamentals": {
+          "score": null,
+          "why": "營收與毛利率都抓不到"
+        },
+        "chips": {
+          "score": null,
+          "why": "美股沒有對應的法人／融資／處置資料"
+        },
+        "policy": {
+          "score": 0,
+          "why": "14 天內沒有排定事件，也沒有生效中的不利政策",
+          "date": "2026-10-09"
+        }
+      },
+      "market": "US",
+      "group": "US|AI自駕機器人"
+    },
+    "SPCX": {
+      "total": 1,
+      "max": 4,
+      "scored": 2,
+      "score10": 2.5,
+      "level": "insufficient",
+      "flags": [],
+      "gate": {
+        "block": false,
+        "reasons": []
+      },
+      "items": {
+        "tech": {
+          "score": 1,
+          "why": "乖離 +9.39%",
+          "date": "2026-10-07"
+        },
+        "earnings": {
+          "score": null,
+          "why": "events.json 沒有這檔的財報日"
+        },
+        "fundamentals": {
+          "score": null,
+          "why": "營收與毛利率都抓不到"
+        },
+        "chips": {
+          "score": null,
+          "why": "美股沒有對應的法人／融資／處置資料"
+        },
+        "policy": {
+          "score": 0,
+          "why": "14 天內沒有排定事件，也沒有生效中的不利政策",
+          "date": "2026-10-09"
+        }
+      },
+      "market": "US",
+      "group": "US|航太科技"
+    },
+    "8210.TW": {
+      "total": 1,
+      "max": 8,
+      "scored": 4,
+      "score10": 1.2,
+      "level": "low",
+      "flags": [],
+      "gate": {
+        "block": false,
+        "reasons": []
+      },
+      "items": {
+        "tech": {
+          "score": 0,
+          "why": "乖離 -1.07%",
+          "date": "2026-10-08"
+        },
+        "earnings": {
+          "score": null,
+          "why": "events.json 沒有這檔的財報日"
+        },
+        "fundamentals": {
+          "score": 0,
+          "why": "營收年增 +13.8%（2026-09）、毛利率 32.6%，年變動 +2.7 個百分點（2026-06-30）",
+          "date": "2026-09"
+        },
+        "chips": {
+          "score": 1,
+          "why": "近 5 日法人 -2750 張、融資 +459 張",
+          "date": "2026-10-08"
+        },
+        "policy": {
+          "score": 0,
+          "why": "14 天內沒有排定事件，也沒有生效中的不利政策",
+          "date": "2026-10-09"
+        }
+      },
+      "market": "TW",
+      "group": "TW|AI伺服器／機櫃"
+    },
+    "2371.TW": {
+      "total": 1,
+      "max": 8,
+      "scored": 4,
+      "score10": 1.2,
+      "level": "low",
+      "flags": [],
+      "gate": {
+        "block": false,
+        "reasons": []
+      },
+      "items": {
+        "tech": {
+          "score": 0,
+          "why": "乖離 +3.63%",
+          "date": "2026-10-08"
+        },
+        "earnings": {
+          "score": null,
+          "why": "events.json 沒有這檔的財報日"
+        },
+        "fundamentals": {
+          "score": 1,
+          "why": "營收年增 -11.5%（2026-08）、毛利率 17.4%，年變動 -0.1 個百分點（2026-06-30）",
+          "date": "2026-08"
+        },
+        "chips": {
+          "score": 0,
+          "why": "近 5 日法人 -3171 張、融資 -1727 張",
+          "date": "2026-10-08"
+        },
+        "policy": {
+          "score": 0,
+          "why": "14 天內沒有排定事件，也沒有生效中的不利政策",
+          "date": "2026-10-09"
+        }
+      },
+      "market": "TW",
+      "group": "TW|AI基建／電力"
+    },
+    "3406.TW": {
+      "total": 2,
+      "max": 8,
+      "scored": 4,
+      "score10": 2.5,
+      "level": "low",
+      "flags": [],
+      "gate": {
+        "block": false,
+        "reasons": []
+      },
+      "items": {
+        "tech": {
+          "score": 1,
+          "why": "乖離 +7.83%",
+          "date": "2026-10-08"
+        },
+        "earnings": {
+          "score": null,
+          "why": "events.json 沒有這檔的財報日"
+        },
+        "fundamentals": {
+          "score": 0,
+          "why": "營收年增 +0.5%（2026-09）、毛利率 33.2%，年變動 +4.1 個百分點（2026-06-30）",
+          "date": "2026-09"
+        },
+        "chips": {
+          "score": 1,
+          "why": "近 5 日法人 -112 張、融資 +632 張",
+          "date": "2026-10-08"
+        },
+        "policy": {
+          "score": 0,
+          "why": "14 天內沒有排定事件，也沒有生效中的不利政策",
+          "date": "2026-10-09"
+        }
+      },
+      "market": "TW",
+      "group": "TW|光學／CPO"
+    },
+    "2408.TW": {
+      "total": 0,
+      "max": 8,
+      "scored": 4,
+      "score10": 0.0,
+      "level": "low",
+      "flags": [],
+      "gate": {
+        "block": false,
+        "reasons": []
+      },
+      "items": {
+        "tech": {
+          "score": 0,
+          "why": "乖離 +4.55%",
+          "date": "2026-10-08"
+        },
+        "earnings": {
+          "score": null,
+          "why": "events.json 沒有這檔的財報日"
+        },
+        "fundamentals": {
+          "score": 0,
+          "why": "營收年增 +576.6%（2026-09）、毛利率 79.5%，年變動 +100.0 個百分點（2026-06-30）",
+          "date": "2026-09"
+        },
+        "chips": {
+          "score": 0,
+          "why": "近 5 日法人 +23879 張、融資 -4755 張",
+          "date": "2026-10-08"
+        },
+        "policy": {
+          "score": 0,
+          "why": "14 天內沒有排定事件，也沒有生效中的不利政策",
+          "date": "2026-10-09"
+        }
+      },
+      "market": "TW",
+      "group": "TW|記憶體"
+    },
+    "1303.TW": {
+      "total": 2,
+      "max": 8,
+      "scored": 4,
+      "score10": 2.5,
+      "level": "low",
+      "flags": [
+        "overheated"
+      ],
+      "gate": {
+        "block": false,
+        "reasons": []
+      },
+      "items": {
+        "tech": {
+          "score": 2,
+          "why": "乖離 +23.40%",
+          "date": "2026-10-08"
+        },
+        "earnings": {
+          "score": null,
+          "why": "events.json 沒有這檔的財報日"
+        },
+        "fundamentals": {
+          "score": 0,
+          "why": "營收年增 +46.7%（2026-08）、毛利率 18.9%，年變動 +10.3 個百分點（2026-06-30）",
+          "date": "2026-08"
+        },
+        "chips": {
+          "score": 0,
+          "why": "近 5 日法人 +26604 張、融資 -993 張",
+          "date": "2026-10-08"
+        },
+        "policy": {
+          "score": 0,
+          "why": "14 天內沒有排定事件，也沒有生效中的不利政策",
+          "date": "2026-10-09"
+        }
+      },
+      "market": "TW",
+      "group": "TW|CCL／電子材料"
+    },
+    "8358.TWO": {
+      "total": 2,
+      "max": 8,
+      "scored": 4,
+      "score10": 2.5,
+      "level": "low",
+      "flags": [
+        "disposition"
+      ],
+      "gate": {
+        "block": true,
+        "reasons": [
+          "處置股"
+        ]
+      },
+      "items": {
+        "tech": {
+          "score": 0,
+          "why": "乖離 +4.56%",
+          "date": "2026-10-08"
+        },
+        "earnings": {
+          "score": null,
+          "why": "events.json 沒有這檔的財報日"
+        },
+        "fundamentals": {
+          "score": 0,
+          "why": "營收年增 +64.6%（2026-09）、毛利率 27.4%，年變動 +8.5 個百分點（2026-06-30）",
+          "date": "2026-09"
+        },
+        "chips": {
+          "score": 2,
+          "why": "處置股 2026-10-08～2026-10-15",
+          "date": "2026-10-08",
+          "flag": "disposition"
+        },
+        "policy": {
+          "score": 0,
+          "why": "14 天內沒有排定事件，也沒有生效中的不利政策",
+          "date": "2026-10-09"
+        }
+      },
+      "market": "TW",
+      "group": "TW|PCB／銅箔"
+    },
+    "4958.TW": {
+      "total": 2,
+      "max": 8,
+      "scored": 4,
+      "score10": 2.5,
+      "level": "low",
+      "flags": [
+        "overheated"
+      ],
+      "gate": {
+        "block": false,
+        "reasons": []
+      },
+      "items": {
+        "tech": {
+          "score": 2,
+          "why": "乖離 +15.83%",
+          "date": "2026-10-08"
+        },
+        "earnings": {
+          "score": null,
+          "why": "events.json 沒有這檔的財報日"
+        },
+        "fundamentals": {
+          "score": 0,
+          "why": "營收年增 +36.1%（2026-09）、毛利率 23.1%，年變動 +4.7 個百分點（2026-06-30）",
+          "date": "2026-09"
+        },
+        "chips": {
+          "score": 0,
+          "why": "近 5 日法人 +35888 張、融資 -634 張",
+          "date": "2026-10-08"
+        },
+        "policy": {
+          "score": 0,
+          "why": "14 天內沒有排定事件，也沒有生效中的不利政策",
+          "date": "2026-10-09"
+        }
+      },
+      "market": "TW",
+      "group": "TW|PCB／銅箔"
+    },
+    "4919.TW": {
+      "total": 3,
+      "max": 8,
+      "scored": 4,
+      "score10": 3.8,
+      "level": "mid",
+      "flags": [
+        "overheated"
+      ],
+      "gate": {
+        "block": true,
+        "reasons": [
+          "風險中"
+        ]
+      },
+      "items": {
+        "tech": {
+          "score": 2,
+          "why": "乖離 +16.54%",
+          "date": "2026-10-08"
+        },
+        "earnings": {
+          "score": null,
+          "why": "events.json 沒有這檔的財報日"
+        },
+        "fundamentals": {
+          "score": 0,
+          "why": "營收年增 +4.7%（2026-09）、毛利率 38.0%，年變動 +3.1 個百分點（2026-06-30）",
+          "date": "2026-09"
+        },
+        "chips": {
+          "score": 1,
+          "why": "近 5 日法人 -5478 張、融資 +3387 張",
+          "date": "2026-10-08"
+        },
+        "policy": {
+          "score": 0,
+          "why": "14 天內沒有排定事件，也沒有生效中的不利政策",
+          "date": "2026-10-09"
+        }
+      },
+      "market": "TW",
+      "group": "TW|電池監測IC"
+    },
+    "2327.TW": {
+      "total": 2,
+      "max": 8,
+      "scored": 4,
+      "score10": 2.5,
+      "level": "low",
+      "flags": [],
+      "gate": {
+        "block": false,
+        "reasons": []
+      },
+      "items": {
+        "tech": {
+          "score": 1,
+          "why": "乖離 +10.28%",
+          "date": "2026-10-08"
+        },
+        "earnings": {
+          "score": null,
+          "why": "events.json 沒有這檔的財報日"
+        },
+        "fundamentals": {
+          "score": 0,
+          "why": "營收年增 +46.1%（2026-09）、毛利率 38.5%，年變動 +2.9 個百分點（2026-06-30）",
+          "date": "2026-09"
+        },
+        "chips": {
+          "score": 1,
+          "why": "近 5 日法人 -10768 張、融資 +219 張",
+          "date": "2026-10-08"
+        },
+        "policy": {
+          "score": 0,
+          "why": "14 天內沒有排定事件，也沒有生效中的不利政策",
+          "date": "2026-10-09"
+        }
+      },
+      "market": "TW",
+      "group": "TW|被動元件"
+    }
+  }
+}
