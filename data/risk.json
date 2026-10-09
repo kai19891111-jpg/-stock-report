@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-09T07:44:23.136651+00:00",
+  "generatedAt": "2026-10-09T07:48:34.742564+00:00",
   "today": {
     "TW": "2026-10-09",
     "US": "2026-10-09"
@@ -64,7 +64,7 @@
     "updatedAt": "2026-10-09",
     "fresh": true,
     "used": 2,
-    "earnings": 2,
+    "earnings": 5,
     "rejected": []
   },
   "symbols": {
@@ -728,10 +728,10 @@
     },
     "AMD": {
       "total": 0,
-      "max": 4,
-      "scored": 2,
+      "max": 6,
+      "scored": 3,
       "score10": 0.0,
-      "level": "insufficient",
+      "level": "low",
       "flags": [],
       "gate": {
         "block": false,
@@ -744,8 +744,11 @@
           "date": "2026-10-08"
         },
         "earnings": {
-          "score": null,
-          "why": "events.json 沒有這檔的財報日"
+          "score": 0,
+          "why": "財報 2026-11-03，還有 17 個交易日",
+          "date": "2026-11-03",
+          "source": "https://ir.amd.com/news-events/press-releases/detail/1300/amd-to-report-fiscal-third-quarter-2026-financial-results",
+          "days": 17
         },
         "fundamentals": {
           "score": null,
@@ -804,10 +807,10 @@
     },
     "MSFT": {
       "total": 0,
-      "max": 4,
-      "scored": 2,
+      "max": 6,
+      "scored": 3,
       "score10": 0.0,
-      "level": "insufficient",
+      "level": "low",
       "flags": [],
       "gate": {
         "block": false,
@@ -820,8 +823,11 @@
           "date": "2026-10-08"
         },
         "earnings": {
-          "score": null,
-          "why": "events.json 沒有這檔的財報日"
+          "score": 0,
+          "why": "財報 2026-10-28，還有 13 個交易日",
+          "date": "2026-10-28",
+          "source": "https://news.microsoft.com/source/2026/10/07/microsoft-announces-quarterly-earnings-release-date-69/",
+          "days": 13
         },
         "fundamentals": {
           "score": null,
@@ -917,11 +923,11 @@
       "group": "US|AI記憶體"
     },
     "TSLA": {
-      "total": 0,
-      "max": 4,
-      "scored": 2,
-      "score10": 0.0,
-      "level": "insufficient",
+      "total": 1,
+      "max": 6,
+      "scored": 3,
+      "score10": 1.7,
+      "level": "low",
       "flags": [],
       "gate": {
         "block": false,
@@ -934,8 +940,11 @@
           "date": "2026-10-08"
         },
         "earnings": {
-          "score": null,
-          "why": "events.json 沒有這檔的財報日"
+          "score": 1,
+          "why": "財報 2026-10-21，還有 8 個交易日",
+          "date": "2026-10-21",
+          "source": "https://www.sec.gov/Archives/edgar/data/1318605/000162828026064366/0001628280-26-064366.txt",
+          "days": 8
         },
         "fundamentals": {
           "score": null,
