@@ -1,0 +1,1687 @@
+{
+  "generatedAt": "2026-10-09T07:45:53.222762+00:00",
+  "dataTimestamp": "2026-10-09T07:44:08.306854+00:00",
+  "sessions": {
+    "TW": "2026-10-08",
+    "US": "2026-10-08"
+  },
+  "params": {
+    "rsi_lo": 45,
+    "rsi_hi": 60,
+    "min_rr": 1.5,
+    "vol_min": null,
+    "vol_max": null,
+    "min_risk_pct": null,
+    "dist_atr_max": 1.0,
+    "macd": "not_weak",
+    "weekly": "not_bear",
+    "market": "BULL_NEUTRAL"
+  },
+  "minRR": 1.5,
+  "maxHoldDays": 20,
+  "thresholds": {
+    "beats_min": 0.95,
+    "near_bias_max": 6.0,
+    "hot_bias": 15.0,
+    "room_warn": 1.0
+  },
+  "labels": {
+    "go": "可進場",
+    "signal_unproven": "有訊號，回測未達標",
+    "signal_blocked": "有訊號，風險沒過",
+    "conditions": "在進場區，等條件",
+    "pullback": "等回檔",
+    "no_chase": "不追",
+    "below": "均線之下，等站回",
+    "trend": "趨勢不對，不進場",
+    "avoid": "不碰",
+    "nodata": "資料不足"
+  },
+  "icons": {
+    "go": "🟢",
+    "signal_unproven": "🟡",
+    "signal_blocked": "🔴",
+    "conditions": "🔎",
+    "pullback": "⏳",
+    "no_chase": "✋",
+    "below": "⬇",
+    "trend": "⬇",
+    "avoid": "⛔",
+    "nodata": "⚪"
+  },
+  "order": [
+    "go",
+    "signal_unproven",
+    "signal_blocked",
+    "conditions",
+    "pullback",
+    "no_chase",
+    "below",
+    "trend",
+    "avoid",
+    "nodata"
+  ],
+  "regime": {
+    "TW": "BULL",
+    "US": "BULL"
+  },
+  "evidence": {
+    "TW": {
+      "ok": false,
+      "scope": "台股",
+      "n": 70,
+      "expectancyR": 0.415,
+      "expLow": 0.0966,
+      "expHigh": 0.7901,
+      "winRate": 0.5571,
+      "beats": 0.9267,
+      "why": "台股回測：只勝過 92.7% 的隨機進場（要 95%）"
+    },
+    "US": {
+      "ok": false,
+      "scope": "美股",
+      "n": 25,
+      "expectancyR": 0.3671,
+      "expLow": -0.1461,
+      "expHigh": 0.876,
+      "winRate": 0.56,
+      "beats": 0.56,
+      "why": "美股回測：後段只有 25 筆（要 30 筆）、期望值區間下緣 −0.15R，沒有大於 0、只勝過 56.0% 的隨機進場（要 95%）"
+    }
+  },
+  "regimeNotes": {
+    "TW": {
+      "regime": "BULL",
+      "n": 164,
+      "expectancyR": -0.0005,
+      "expLow": -0.2459,
+      "text": "大盤多頭時，這條規則在台股的期望值是 −0.00R（164 筆）"
+    },
+    "US": {
+      "regime": "BULL",
+      "n": 65,
+      "expectancyR": 0.1951,
+      "expLow": -0.1857,
+      "text": "大盤多頭時，這條規則在美股的期望值是 +0.20R（65 筆）"
+    }
+  },
+  "counts": {
+    "go": 0,
+    "signal_unproven": 2,
+    "signal_blocked": 0,
+    "conditions": 2,
+    "pullback": 11,
+    "no_chase": 11,
+    "below": 1,
+    "trend": 2,
+    "avoid": 3,
+    "nodata": 0
+  },
+  "groups": {
+    "go": [],
+    "signal_unproven": [
+      "6770.TW",
+      "3017.TW"
+    ],
+    "signal_blocked": [],
+    "conditions": [
+      "META",
+      "MU"
+    ],
+    "pullback": [
+      "3481.TW",
+      "TSLA",
+      "TSM",
+      "NVDA",
+      "3324.TWO",
+      "MSFT",
+      "2330.TW",
+      "2371.TW",
+      "SPCX",
+      "2408.TW",
+      "AMD"
+    ],
+    "no_chase": [
+      "2308.TW",
+      "3406.TW",
+      "2327.TW",
+      "3037.TW",
+      "3653.TW",
+      "2383.TW",
+      "4958.TW",
+      "4919.TW",
+      "3189.TW",
+      "8046.TW",
+      "1303.TW"
+    ],
+    "below": [
+      "2454.TW"
+    ],
+    "trend": [
+      "AVGO",
+      "8210.TW"
+    ],
+    "avoid": [
+      "6213.TW",
+      "2221.TWO",
+      "8358.TWO"
+    ],
+    "nodata": []
+  },
+  "checks": [
+    {
+      "level": "info",
+      "text": "財報日只填了 2／32 檔，其餘沒辦法提醒財報前風險。"
+    },
+    {
+      "level": "info",
+      "text": "沒有設定 SEC_UA，美股基本面寫 N/A"
+    },
+    {
+      "level": "info",
+      "text": "8 檔的風險分數資料不足（有分數的項目少於 3 項）。"
+    }
+  ],
+  "selfCheck": {
+    "checked": 672,
+    "mismatch": []
+  },
+  "symbols": {
+    "2330.TW": {
+      "market": "TW",
+      "date": "2026-10-08",
+      "close": 2550.0,
+      "ma20": 2476.5,
+      "stop": 2430.6429,
+      "target": 2634.0714,
+      "entryLow": 2439.3525,
+      "entryHigh": 2501.265,
+      "bias": 2.9679,
+      "high20": 2590.0,
+      "rr": 0.7044,
+      "code": "pullback",
+      "signal": false,
+      "blockers": [
+        {
+          "key": "zone",
+          "text": "價格高於進場區"
+        },
+        {
+          "key": "rr",
+          "text": "報酬風險比 0.70（要 ≥1.5）"
+        },
+        {
+          "key": "rsi",
+          "text": "RSI 62（要 45–60）"
+        },
+        {
+          "key": "distance",
+          "text": "離進場區 1.3 倍 ATR（上限 1.0）"
+        }
+      ],
+      "buyBelow": 2486.6904999999997,
+      "gapPct": -2.4827254901960916,
+      "roomRR": 0.3351287858032739,
+      "plan": null,
+      "text": "等收盤回到 2,486.69 以下（還差 −2.5%）再看訊號。目前另外還卡：RSI 62（要 45–60）。",
+      "notes": [
+        "財報 2026-10-15，還有 4 個交易日"
+      ],
+      "mismatch": null,
+      "risk": {
+        "level": "low",
+        "total": 2,
+        "max": 10,
+        "reasons": []
+      },
+      "hold": {
+        "code": "keep",
+        "text": "續抱。失效價 2,430.64（距離 4.7%），收盤跌破就是出場優先。要加碼的話，條件和新進場一樣。財報 2026-10-15，還有 4 個交易日。"
+      }
+    },
+    "2454.TW": {
+      "market": "TW",
+      "date": "2026-10-08",
+      "close": 4690.0,
+      "ma20": 4834.5,
+      "stop": 4566.2143,
+      "target": 5181.8571,
+      "entryLow": 4761.9825,
+      "entryHigh": 4882.845,
+      "bias": -2.9889,
+      "high20": 5480.0,
+      "rr": 3.9735,
+      "code": "below",
+      "signal": false,
+      "blockers": [
+        {
+          "key": "zone",
+          "text": "價格低於進場區"
+        },
+        {
+          "key": "macd",
+          "text": "MACD 轉弱"
+        }
+      ],
+      "buyBelow": 4882.845,
+      "gapPct": 4.111833688699362,
+      "roomRR": 6.381997274321652,
+      "plan": null,
+      "text": "收盤 4,690 低於進場區下緣 4,761.98，等收盤站回 4,761.98 以上再看訊號。目前另外還卡：MACD 轉弱。",
+      "notes": [],
+      "mismatch": null,
+      "risk": {
+        "level": "low",
+        "total": 2,
+        "max": 8,
+        "reasons": []
+      },
+      "hold": {
+        "code": "watch",
+        "text": "收盤在 SMA20（4,834.5）之下，還沒破失效價 4,566.21（距離 2.6%）。收盤跌破失效價就是出場優先。"
+      }
+    },
+    "2308.TW": {
+      "market": "TW",
+      "date": "2026-10-08",
+      "close": 1965.0,
+      "ma20": 1831.0,
+      "stop": 1732.4286,
+      "target": 2145.7143,
+      "entryLow": 1803.535,
+      "entryHigh": 1849.31,
+      "bias": 7.3184,
+      "high20": 2115.0,
+      "rr": 0.777,
+      "code": "no_chase",
+      "signal": false,
+      "blockers": [
+        {
+          "key": "zone",
+          "text": "價格高於進場區"
+        },
+        {
+          "key": "rr",
+          "text": "報酬風險比 0.78（要 ≥1.5）"
+        },
+        {
+          "key": "distance",
+          "text": "離進場區 1.4 倍 ATR（上限 1.0）"
+        }
+      ],
+      "buyBelow": 1849.31,
+      "gapPct": -5.887531806615776,
+      "roomRR": 0.6449632241969562,
+      "plan": null,
+      "text": "乖離 +7.3%，不追。收盤回到 1,849.31 以下（還差 −5.9%）才會進入進場區。",
+      "notes": [],
+      "mismatch": null,
+      "risk": {
+        "level": "low",
+        "total": 2,
+        "max": 8,
+        "reasons": []
+      },
+      "hold": {
+        "code": "keep",
+        "text": "續抱。失效價 1,732.43（距離 11.8%），收盤跌破就是出場優先。要加碼的話，條件和新進場一樣。"
+      }
+    },
+    "3324.TWO": {
+      "market": "TW",
+      "date": "2026-10-08",
+      "close": 1520.0,
+      "ma20": 1485.75,
+      "stop": 1365.75,
+      "target": 1740.0,
+      "entryLow": 1463.4637,
+      "entryHigh": 1500.6075,
+      "bias": 2.3052,
+      "high20": 1750.0,
+      "rr": 1.4263,
+      "code": "pullback",
+      "signal": false,
+      "blockers": [
+        {
+          "key": "zone",
+          "text": "價格高於進場區"
+        },
+        {
+          "key": "rr",
+          "text": "報酬風險比 1.43（要 ≥1.5）"
+        },
+        {
+          "key": "macd",
+          "text": "MACD 轉弱"
+        }
+      ],
+      "buyBelow": 1500.6075,
+      "gapPct": -1.2758223684210424,
+      "roomRR": 1.4910858995137763,
+      "plan": null,
+      "text": "等收盤回到 1,500.61 以下（還差 −1.3%）再看訊號。目前另外還卡：MACD 轉弱。",
+      "notes": [],
+      "mismatch": null,
+      "risk": {
+        "level": "low",
+        "total": 2,
+        "max": 8,
+        "reasons": []
+      },
+      "hold": {
+        "code": "keep",
+        "text": "續抱。失效價 1,365.75（距離 10.1%），收盤跌破就是出場優先。要加碼的話，條件和新進場一樣。"
+      }
+    },
+    "3653.TW": {
+      "market": "TW",
+      "date": "2026-10-08",
+      "close": 7165.0,
+      "ma20": 6257.0,
+      "stop": 5786.8571,
+      "target": 8026.9286,
+      "entryLow": 6163.145,
+      "entryHigh": 6319.57,
+      "bias": 14.5117,
+      "high20": 7440.0,
+      "rr": 0.6254,
+      "code": "no_chase",
+      "signal": false,
+      "blockers": [
+        {
+          "key": "zone",
+          "text": "價格高於進場區"
+        },
+        {
+          "key": "rr",
+          "text": "報酬風險比 0.63（要 ≥1.5）"
+        },
+        {
+          "key": "rsi",
+          "text": "RSI 68（要 45–60）"
+        },
+        {
+          "key": "distance",
+          "text": "離進場區 2.2 倍 ATR（上限 1.0）"
+        }
+      ],
+      "buyBelow": 6319.57,
+      "gapPct": -11.79944173063504,
+      "roomRR": 0.19954389345255855,
+      "plan": null,
+      "text": "乖離 +14.5%，不追。收盤回到 6,319.57 以下（還差 −11.8%）才會進入進場區。",
+      "notes": [],
+      "mismatch": null,
+      "risk": {
+        "level": "low",
+        "total": 2,
+        "max": 8,
+        "reasons": []
+      },
+      "hold": {
+        "code": "keep",
+        "text": "續抱。失效價 5,786.86（距離 19.2%），收盤跌破就是出場優先。要加碼的話，條件和新進場一樣。"
+      }
+    },
+    "3017.TW": {
+      "market": "TW",
+      "date": "2026-10-08",
+      "close": 3440.0,
+      "ma20": 3414.75,
+      "stop": 3187.1786,
+      "target": 3857.2143,
+      "entryLow": 3363.5287,
+      "entryHigh": 3448.8975,
+      "bias": 0.7394,
+      "high20": 3700.0,
+      "rr": 1.6502,
+      "code": "signal_unproven",
+      "signal": true,
+      "blockers": [],
+      "buyBelow": 3448.8975,
+      "gapPct": 0.25864825581396467,
+      "roomRR": 1.0283939571571086,
+      "plan": {
+        "entry": "下一個交易日開盤",
+        "openLow": 3187.1786,
+        "openHigh": 3857.2143,
+        "stop": 3187.1786,
+        "target": 3857.2143,
+        "maxHoldDays": 20,
+        "riskPerShare": 252.8213999999998
+      },
+      "text": "規則訊號成立，但回測證據沒過。照規則的做法是：下一個交易日開盤買；開盤價要在 3,187.18～3,857.21 之間，否則不買。停損 3,187.18、目標 3,857.21，最多抱 20 個交易日。",
+      "notes": [
+        "台股回測：只勝過 92.7% 的隨機進場（要 95%）",
+        "大盤多頭時，這條規則在台股的期望值是 −0.00R（164 筆）"
+      ],
+      "mismatch": null,
+      "risk": {
+        "level": "low",
+        "total": 1,
+        "max": 8,
+        "reasons": []
+      },
+      "hold": {
+        "code": "keep",
+        "text": "續抱。失效價 3,187.18（距離 7.3%），收盤跌破就是出場優先。要加碼的話，條件和新進場一樣。"
+      }
+    },
+    "3189.TW": {
+      "market": "TW",
+      "date": "2026-10-08",
+      "close": 1075.0,
+      "ma20": 922.0,
+      "stop": 848.8857,
+      "target": 1209.0429,
+      "entryLow": 908.17,
+      "entryHigh": 931.22,
+      "bias": 16.5944,
+      "high20": 1150.0,
+      "rr": 0.5928,
+      "code": "no_chase",
+      "signal": false,
+      "blockers": [
+        {
+          "key": "zone",
+          "text": "價格高於進場區"
+        },
+        {
+          "key": "rr",
+          "text": "報酬風險比 0.59（要 ≥1.5）"
+        },
+        {
+          "key": "rsi",
+          "text": "RSI 69（要 45–60）"
+        },
+        {
+          "key": "distance",
+          "text": "離進場區 2.4 倍 ATR（上限 1.0）"
+        }
+      ],
+      "buyBelow": 931.22,
+      "gapPct": -13.374883720930232,
+      "roomRR": 0.33169065379765905,
+      "plan": null,
+      "text": "過熱，乖離 +16.6%，不追。收盤回到 931.22 以下（還差 −13.4%）才會進入進場區。",
+      "notes": [],
+      "mismatch": null,
+      "risk": {
+        "level": "low",
+        "total": 2,
+        "max": 8,
+        "reasons": []
+      },
+      "hold": {
+        "code": "hot",
+        "text": "過熱（乖離 +16.6%），不加碼。出場參考：收盤跌破 SMA20（922），目前在它上方 16.6%。失效價 848.89。"
+      }
+    },
+    "3037.TW": {
+      "market": "TW",
+      "date": "2026-10-08",
+      "close": 1270.0,
+      "ma20": 1116.1,
+      "stop": 1037.9286,
+      "target": 1413.3143,
+      "entryLow": 1099.3585,
+      "entryHigh": 1127.261,
+      "bias": 13.7891,
+      "high20": 1420.0,
+      "rr": 0.6175,
+      "code": "no_chase",
+      "signal": false,
+      "blockers": [
+        {
+          "key": "zone",
+          "text": "價格高於進場區"
+        },
+        {
+          "key": "rr",
+          "text": "報酬風險比 0.62（要 ≥1.5）"
+        },
+        {
+          "key": "rsi",
+          "text": "RSI 67（要 45–60）"
+        },
+        {
+          "key": "distance",
+          "text": "離進場區 2.2 倍 ATR（上限 1.0）"
+        }
+      ],
+      "buyBelow": 1127.261,
+      "gapPct": -11.23929133858268,
+      "roomRR": 0.6463528034906497,
+      "plan": null,
+      "text": "乖離 +13.8%，不追。收盤回到 1,127.26 以下（還差 −11.2%）才會進入進場區。",
+      "notes": [],
+      "mismatch": null,
+      "risk": {
+        "level": "low",
+        "total": 1,
+        "max": 8,
+        "reasons": []
+      },
+      "hold": {
+        "code": "keep",
+        "text": "續抱。失效價 1,037.93（距離 18.3%），收盤跌破就是出場優先。要加碼的話，條件和新進場一樣。"
+      }
+    },
+    "8046.TW": {
+      "market": "TW",
+      "date": "2026-10-08",
+      "close": 1475.0,
+      "ma20": 1239.5,
+      "stop": 1142.2143,
+      "target": 1653.3571,
+      "entryLow": 1220.9075,
+      "entryHigh": 1251.895,
+      "bias": 18.9996,
+      "high20": 1560.0,
+      "rr": 0.536,
+      "code": "no_chase",
+      "signal": false,
+      "blockers": [
+        {
+          "key": "zone",
+          "text": "價格高於進場區"
+        },
+        {
+          "key": "rr",
+          "text": "報酬風險比 0.54（要 ≥1.5）"
+        },
+        {
+          "key": "rsi",
+          "text": "RSI 70（要 45–60）"
+        },
+        {
+          "key": "distance",
+          "text": "離進場區 2.8 倍 ATR（上限 1.0）"
+        }
+      ],
+      "buyBelow": 1251.895,
+      "gapPct": -15.125762711864411,
+      "roomRR": 0.2554196289083336,
+      "plan": null,
+      "text": "過熱，乖離 +19.0%，不追。收盤回到 1,251.89 以下（還差 −15.1%）才會進入進場區。",
+      "notes": [],
+      "mismatch": null,
+      "risk": {
+        "level": "low",
+        "total": 2,
+        "max": 8,
+        "reasons": []
+      },
+      "hold": {
+        "code": "hot",
+        "text": "過熱（乖離 +19.0%），不加碼。出場參考：收盤跌破 SMA20（1,239.5），目前在它上方 19.0%。失效價 1,142.21。"
+      }
+    },
+    "6213.TW": {
+      "market": "TW",
+      "date": "2026-10-08",
+      "close": 806.0,
+      "ma20": 603.2,
+      "stop": 551.1714,
+      "target": 901.3857,
+      "entryLow": 594.152,
+      "entryHigh": 609.232,
+      "bias": 33.6207,
+      "high20": 818.0,
+      "rr": 0.3743,
+      "code": "avoid",
+      "signal": false,
+      "blockers": [
+        {
+          "key": "zone",
+          "text": "價格高於進場區"
+        },
+        {
+          "key": "rr",
+          "text": "報酬風險比 0.37（要 ≥1.5）"
+        },
+        {
+          "key": "rsi",
+          "text": "RSI 84（要 45–60）"
+        },
+        {
+          "key": "distance",
+          "text": "離進場區 4.5 倍 ATR（上限 1.0）"
+        }
+      ],
+      "buyBelow": 609.232,
+      "gapPct": -24.41290322580646,
+      "roomRR": 0.047090475715834086,
+      "plan": null,
+      "text": "處置股 2026-10-08～2026-10-19，不碰。",
+      "notes": [],
+      "mismatch": null,
+      "risk": {
+        "level": "high",
+        "total": 4,
+        "max": 8,
+        "reasons": [
+          "處置股"
+        ]
+      },
+      "hold": {
+        "code": "hot",
+        "text": "過熱（乖離 +33.6%），不加碼。出場參考：收盤跌破 SMA20（603.2），目前在它上方 33.6%。失效價 551.17。"
+      }
+    },
+    "2383.TW": {
+      "market": "TW",
+      "date": "2026-10-08",
+      "close": 6000.0,
+      "ma20": 5236.5,
+      "stop": 4892.3571,
+      "target": 6630.9286,
+      "entryLow": 5157.9525,
+      "entryHigh": 5288.865,
+      "bias": 14.5803,
+      "high20": 6325.0,
+      "rr": 0.5696,
+      "code": "no_chase",
+      "signal": false,
+      "blockers": [
+        {
+          "key": "zone",
+          "text": "價格高於進場區"
+        },
+        {
+          "key": "rr",
+          "text": "報酬風險比 0.57（要 ≥1.5）"
+        },
+        {
+          "key": "rsi",
+          "text": "RSI 67（要 45–60）"
+        },
+        {
+          "key": "distance",
+          "text": "離進場區 2.5 倍 ATR（上限 1.0）"
+        }
+      ],
+      "buyBelow": 5288.865,
+      "gapPct": -11.852250000000009,
+      "roomRR": 0.29341586534793845,
+      "plan": null,
+      "text": "乖離 +14.6%，不追。收盤回到 5,288.86 以下（還差 −11.9%）才會進入進場區。",
+      "notes": [],
+      "mismatch": null,
+      "risk": {
+        "level": "low",
+        "total": 1,
+        "max": 8,
+        "reasons": []
+      },
+      "hold": {
+        "code": "keep",
+        "text": "續抱。失效價 4,892.36（距離 18.5%），收盤跌破就是出場優先。要加碼的話，條件和新進場一樣。"
+      }
+    },
+    "3481.TW": {
+      "market": "TW",
+      "date": "2026-10-08",
+      "close": 51.0,
+      "ma20": 50.1775,
+      "stop": 47.3704,
+      "target": 56.1464,
+      "entryLow": 49.4248,
+      "entryHigh": 50.6793,
+      "bias": 1.6392,
+      "high20": 56.2,
+      "rr": 1.4179,
+      "code": "pullback",
+      "signal": false,
+      "blockers": [
+        {
+          "key": "zone",
+          "text": "價格高於進場區"
+        },
+        {
+          "key": "rr",
+          "text": "報酬風險比 1.42（要 ≥1.5）"
+        }
+      ],
+      "buyBelow": 50.6793,
+      "gapPct": -0.6288235294117706,
+      "roomRR": 1.4326647564469908,
+      "plan": null,
+      "text": "等收盤回到 50.68 以下（還差 −0.6%）再看訊號。",
+      "notes": [],
+      "mismatch": null,
+      "risk": {
+        "level": "low",
+        "total": 0,
+        "max": 8,
+        "reasons": []
+      },
+      "hold": {
+        "code": "keep",
+        "text": "續抱。失效價 47.37（距離 7.1%），收盤跌破就是出場優先。要加碼的話，條件和新進場一樣。"
+      }
+    },
+    "6770.TW": {
+      "market": "TW",
+      "date": "2026-10-08",
+      "close": 72.2,
+      "ma20": 72.62,
+      "stop": 69.5171,
+      "target": 77.8886,
+      "entryLow": 71.5307,
+      "entryHigh": 73.3462,
+      "bias": -0.5784,
+      "high20": 78.1,
+      "rr": 2.1203,
+      "code": "signal_unproven",
+      "signal": true,
+      "blockers": [],
+      "buyBelow": 73.3095,
+      "gapPct": 1.5367036011080248,
+      "roomRR": 2.1991129002199052,
+      "plan": {
+        "entry": "下一個交易日開盤",
+        "openLow": 69.5171,
+        "openHigh": 77.8886,
+        "stop": 69.5171,
+        "target": 77.8886,
+        "maxHoldDays": 20,
+        "riskPerShare": 2.6829000000000036
+      },
+      "text": "規則訊號成立，但回測證據沒過。照規則的做法是：下一個交易日開盤買；開盤價要在 69.52～77.89 之間，否則不買。停損 69.52、目標 77.89，最多抱 20 個交易日。",
+      "notes": [
+        "台股回測：只勝過 92.7% 的隨機進場（要 95%）",
+        "大盤多頭時，這條規則在台股的期望值是 −0.00R（164 筆）"
+      ],
+      "mismatch": null,
+      "risk": {
+        "level": "low",
+        "total": 1,
+        "max": 8,
+        "reasons": []
+      },
+      "hold": {
+        "code": "watch",
+        "text": "收盤在 SMA20（72.62）之下，還沒破失效價 69.52（距離 3.7%）。收盤跌破失效價就是出場優先。"
+      }
+    },
+    "2221.TWO": {
+      "market": "TW",
+      "date": "2026-10-08",
+      "close": 192.0,
+      "ma20": 146.46,
+      "stop": 130.8171,
+      "target": 220.6786,
+      "entryLow": 144.2631,
+      "entryHigh": 147.9246,
+      "bias": 31.0938,
+      "high20": 198.0,
+      "rr": 0.4687,
+      "code": "avoid",
+      "signal": false,
+      "blockers": [
+        {
+          "key": "zone",
+          "text": "價格高於進場區"
+        },
+        {
+          "key": "rr",
+          "text": "報酬風險比 0.47（要 ≥1.5）"
+        },
+        {
+          "key": "rsi",
+          "text": "RSI 80（要 45–60）"
+        },
+        {
+          "key": "distance",
+          "text": "離進場區 3.4 倍 ATR（上限 1.0）"
+        }
+      ],
+      "buyBelow": 147.9246,
+      "gapPct": -22.9559375,
+      "roomRR": 0.09806661665269219,
+      "plan": null,
+      "text": "處置股 2026-10-01～2026-10-12，不碰。",
+      "notes": [],
+      "mismatch": null,
+      "risk": {
+        "level": "high",
+        "total": 4,
+        "max": 8,
+        "reasons": [
+          "處置股"
+        ]
+      },
+      "hold": {
+        "code": "hot",
+        "text": "過熱（乖離 +31.1%），不加碼。出場參考：收盤跌破 SMA20（146.46），目前在它上方 31.1%。失效價 130.82。"
+      }
+    },
+    "TSM": {
+      "market": "US",
+      "date": "2026-10-08",
+      "close": 457.99,
+      "ma20": 449.47,
+      "stop": 436.3206,
+      "target": 482.0973,
+      "entryLow": 442.728,
+      "entryHigh": 453.9647,
+      "bias": 1.8956,
+      "high20": 487.47,
+      "rr": 1.1125,
+      "code": "pullback",
+      "signal": false,
+      "blockers": [
+        {
+          "key": "zone",
+          "text": "價格高於進場區"
+        },
+        {
+          "key": "rr",
+          "text": "報酬風險比 1.11（要 ≥1.5）"
+        }
+      ],
+      "buyBelow": 452.39213333333333,
+      "gapPct": -1.2222683173577331,
+      "roomRR": 1.360443759402661,
+      "plan": null,
+      "text": "等收盤回到 452.39 以下（還差 −1.2%）再看訊號。",
+      "notes": [
+        "財報 2026-10-15，還有 4 個交易日"
+      ],
+      "mismatch": null,
+      "risk": {
+        "level": "low",
+        "total": 1,
+        "max": 6,
+        "reasons": []
+      },
+      "hold": {
+        "code": "keep",
+        "text": "續抱。失效價 436.32（距離 4.7%），收盤跌破就是出場優先。要加碼的話，條件和新進場一樣。財報 2026-10-15，還有 4 個交易日。"
+      }
+    },
+    "NVDA": {
+      "market": "US",
+      "date": "2026-10-08",
+      "close": 230.48,
+      "ma20": 226.1845,
+      "stop": 219.7628,
+      "target": 242.2531,
+      "entryLow": 222.7917,
+      "entryHigh": 228.4463,
+      "bias": 1.8991,
+      "high20": 243.37,
+      "rr": 1.0985,
+      "code": "pullback",
+      "signal": false,
+      "blockers": [
+        {
+          "key": "zone",
+          "text": "價格高於進場區"
+        },
+        {
+          "key": "rr",
+          "text": "報酬風險比 1.10（要 ≥1.5）"
+        }
+      ],
+      "buyBelow": 227.61153333333334,
+      "gapPct": -1.2445620733541496,
+      "roomRR": 1.2027395215168164,
+      "plan": null,
+      "text": "等收盤回到 227.61 以下（還差 −1.2%）再看訊號。",
+      "notes": [
+        "風險分數資料不足（只評了 2 項）"
+      ],
+      "mismatch": null,
+      "risk": {
+        "level": "insufficient",
+        "total": 0,
+        "max": 4,
+        "reasons": []
+      },
+      "hold": {
+        "code": "keep",
+        "text": "續抱。失效價 219.76（距離 4.6%），收盤跌破就是出場優先。要加碼的話，條件和新進場一樣。"
+      }
+    },
+    "AMD": {
+      "market": "US",
+      "date": "2026-10-08",
+      "close": 620.68,
+      "ma20": 593.4745,
+      "stop": 563.8182,
+      "target": 675.0498,
+      "entryLow": 584.5724,
+      "entryHigh": 599.4092,
+      "bias": 4.5841,
+      "high20": 658.52,
+      "rr": 0.9562,
+      "code": "pullback",
+      "signal": false,
+      "blockers": [
+        {
+          "key": "zone",
+          "text": "價格高於進場區"
+        },
+        {
+          "key": "rr",
+          "text": "報酬風險比 0.96（要 ≥1.5）"
+        },
+        {
+          "key": "rsi",
+          "text": "RSI 61（要 45–60）"
+        }
+      ],
+      "buyBelow": 599.4092,
+      "gapPct": -3.427015531352695,
+      "roomRR": 0.6654731295878796,
+      "plan": null,
+      "text": "等收盤回到 599.41 以下（還差 −3.4%）再看訊號。目前另外還卡：RSI 61（要 45–60）。",
+      "notes": [
+        "風險分數資料不足（只評了 2 項）"
+      ],
+      "mismatch": null,
+      "risk": {
+        "level": "insufficient",
+        "total": 0,
+        "max": 4,
+        "reasons": []
+      },
+      "hold": {
+        "code": "keep",
+        "text": "續抱。失效價 563.82（距離 9.2%），收盤跌破就是出場優先。要加碼的話，條件和新進場一樣。"
+      }
+    },
+    "AVGO": {
+      "market": "US",
+      "date": "2026-10-08",
+      "close": 360.14,
+      "ma20": 355.2685,
+      "stop": 342.5588,
+      "target": 383.4411,
+      "entryLow": 349.9395,
+      "entryHigh": 358.8212,
+      "bias": 1.3712,
+      "high20": 380.84,
+      "rr": 1.3253,
+      "code": "trend",
+      "signal": false,
+      "blockers": [
+        {
+          "key": "zone",
+          "text": "價格高於進場區"
+        },
+        {
+          "key": "weekly",
+          "text": "週線空頭"
+        },
+        {
+          "key": "rr",
+          "text": "報酬風險比 1.33（要 ≥1.5）"
+        }
+      ],
+      "buyBelow": 358.0928666666667,
+      "gapPct": -0.5684270931674673,
+      "roomRR": 1.1773940345368932,
+      "plan": null,
+      "text": "週線空頭，不進場。",
+      "notes": [
+        "風險分數資料不足（只評了 2 項）"
+      ],
+      "mismatch": null,
+      "risk": {
+        "level": "insufficient",
+        "total": 0,
+        "max": 4,
+        "reasons": []
+      },
+      "hold": {
+        "code": "keep",
+        "text": "續抱。失效價 342.56（距離 4.9%），收盤跌破就是出場優先。要加碼的話，條件和新進場一樣。"
+      }
+    },
+    "MSFT": {
+      "market": "US",
+      "date": "2026-10-08",
+      "close": 522.61,
+      "ma20": 508.1275,
+      "stop": 493.2132,
+      "target": 549.9528,
+      "entryLow": 500.5056,
+      "entryHigh": 513.2088,
+      "bias": 2.8502,
+      "high20": 535.69,
+      "rr": 0.9301,
+      "code": "pullback",
+      "signal": false,
+      "blockers": [
+        {
+          "key": "zone",
+          "text": "價格高於進場區"
+        },
+        {
+          "key": "rr",
+          "text": "報酬風險比 0.93（要 ≥1.5）"
+        },
+        {
+          "key": "rsi",
+          "text": "RSI 62（要 45–60）"
+        }
+      ],
+      "buyBelow": 511.44173333333333,
+      "gapPct": -2.1370174062238956,
+      "roomRR": 0.4449463887225828,
+      "plan": null,
+      "text": "等收盤回到 511.44 以下（還差 −2.1%）再看訊號。目前另外還卡：RSI 62（要 45–60）。",
+      "notes": [
+        "風險分數資料不足（只評了 2 項）"
+      ],
+      "mismatch": null,
+      "risk": {
+        "level": "insufficient",
+        "total": 0,
+        "max": 4,
+        "reasons": []
+      },
+      "hold": {
+        "code": "keep",
+        "text": "續抱。失效價 493.21（距離 5.6%），收盤跌破就是出場優先。要加碼的話，條件和新進場一樣。"
+      }
+    },
+    "META": {
+      "market": "US",
+      "date": "2026-10-08",
+      "close": 720.89,
+      "ma20": 715.651,
+      "stop": 682.7796,
+      "target": 781.1543,
+      "entryLow": 704.9162,
+      "entryHigh": 722.8075,
+      "bias": 0.7321,
+      "high20": 779.82,
+      "rr": 1.5813,
+      "code": "conditions",
+      "signal": false,
+      "blockers": [
+        {
+          "key": "macd",
+          "text": "MACD 轉弱"
+        }
+      ],
+      "buyBelow": 722.8075,
+      "gapPct": 0.2659906504459686,
+      "roomRR": 1.5462970737646422,
+      "plan": null,
+      "text": "價格已在進場區，還卡：MACD 轉弱。",
+      "notes": [
+        "風險分數資料不足（只評了 2 項）"
+      ],
+      "mismatch": null,
+      "risk": {
+        "level": "insufficient",
+        "total": 0,
+        "max": 4,
+        "reasons": []
+      },
+      "hold": {
+        "code": "keep",
+        "text": "續抱。失效價 682.78（距離 5.3%），收盤跌破就是出場優先。要加碼的話，條件和新進場一樣。"
+      }
+    },
+    "MU": {
+      "market": "US",
+      "date": "2026-10-08",
+      "close": 1035.84,
+      "ma20": 1035.568,
+      "stop": 981.814,
+      "target": 1134.389,
+      "entryLow": 1020.0345,
+      "entryHigh": 1045.9237,
+      "bias": 0.0263,
+      "high20": 1108.72,
+      "rr": 1.8241,
+      "code": "conditions",
+      "signal": false,
+      "blockers": [
+        {
+          "key": "macd",
+          "text": "MACD 轉弱"
+        }
+      ],
+      "buyBelow": 1045.9237,
+      "gapPct": 0.9734804603027669,
+      "roomRR": 1.3489801206826375,
+      "plan": null,
+      "text": "價格已在進場區，還卡：MACD 轉弱。",
+      "notes": [
+        "風險分數資料不足（只評了 2 項）"
+      ],
+      "mismatch": null,
+      "risk": {
+        "level": "insufficient",
+        "total": 0,
+        "max": 4,
+        "reasons": []
+      },
+      "hold": {
+        "code": "keep",
+        "text": "續抱。失效價 981.81（距離 5.2%），收盤跌破就是出場優先。要加碼的話，條件和新進場一樣。"
+      }
+    },
+    "TSLA": {
+      "market": "US",
+      "date": "2026-10-08",
+      "close": 375.0,
+      "ma20": 367.7965,
+      "stop": 354.5168,
+      "target": 399.3461,
+      "entryLow": 362.2795,
+      "entryHigh": 371.4745,
+      "bias": 1.9586,
+      "high20": 386.83,
+      "rr": 1.1886,
+      "code": "pullback",
+      "signal": false,
+      "blockers": [
+        {
+          "key": "zone",
+          "text": "價格高於進場區"
+        },
+        {
+          "key": "rr",
+          "text": "報酬風險比 1.19（要 ≥1.5）"
+        }
+      ],
+      "buyBelow": 370.7475333333333,
+      "gapPct": -1.1339911111111212,
+      "roomRR": 0.57754647711295,
+      "plan": null,
+      "text": "等收盤回到 370.75 以下（還差 −1.1%）再看訊號。",
+      "notes": [
+        "風險分數資料不足（只評了 2 項）"
+      ],
+      "mismatch": null,
+      "risk": {
+        "level": "insufficient",
+        "total": 0,
+        "max": 4,
+        "reasons": []
+      },
+      "hold": {
+        "code": "keep",
+        "text": "續抱。失效價 354.52（距離 5.5%），收盤跌破就是出場優先。要加碼的話，條件和新進場一樣。"
+      }
+    },
+    "SPCX": {
+      "market": "US",
+      "date": "2026-10-08",
+      "close": 160.57,
+      "ma20": 153.8335,
+      "stop": 145.9504,
+      "target": 175.0224,
+      "entryLow": 151.526,
+      "entryHigh": 155.3718,
+      "bias": 4.3791,
+      "high20": 176.42,
+      "rr": 0.9886,
+      "code": "pullback",
+      "signal": false,
+      "blockers": [
+        {
+          "key": "zone",
+          "text": "價格高於進場區"
+        },
+        {
+          "key": "rr",
+          "text": "報酬風險比 0.99（要 ≥1.5）"
+        }
+      ],
+      "buyBelow": 155.3718,
+      "gapPct": -3.2373419692345973,
+      "roomRR": 1.0841609893567543,
+      "plan": null,
+      "text": "等收盤回到 155.37 以下（還差 −3.2%）再看訊號。",
+      "notes": [
+        "風險分數資料不足（只評了 2 項）"
+      ],
+      "mismatch": null,
+      "risk": {
+        "level": "insufficient",
+        "total": 0,
+        "max": 4,
+        "reasons": []
+      },
+      "hold": {
+        "code": "keep",
+        "text": "續抱。失效價 145.95（距離 9.1%），收盤跌破就是出場優先。要加碼的話，條件和新進場一樣。"
+      }
+    },
+    "8210.TW": {
+      "market": "TW",
+      "date": "2026-10-08",
+      "close": 874.0,
+      "ma20": 883.45,
+      "stop": 854.9071,
+      "target": 926.3286,
+      "entryLow": 870.1983,
+      "entryHigh": 892.2845,
+      "bias": -1.0697,
+      "high20": 931.0,
+      "rr": 2.7407,
+      "code": "trend",
+      "signal": false,
+      "blockers": [
+        {
+          "key": "daily",
+          "text": "日線空頭"
+        },
+        {
+          "key": "weekly",
+          "text": "週線空頭"
+        },
+        {
+          "key": "rsi",
+          "text": "RSI 42（要 45–60）"
+        }
+      ],
+      "buyBelow": 889.7928333333334,
+      "gapPct": 1.8069603356216657,
+      "roomRR": 2.9854029508351294,
+      "plan": null,
+      "text": "日線空頭、週線空頭，不進場。",
+      "notes": [],
+      "mismatch": null,
+      "risk": {
+        "level": "low",
+        "total": 2,
+        "max": 8,
+        "reasons": []
+      },
+      "hold": {
+        "code": "watch",
+        "text": "收盤在 SMA20（883.45）之下，還沒破失效價 854.91（距離 2.2%）。收盤跌破失效價就是出場優先。"
+      }
+    },
+    "2371.TW": {
+      "market": "TW",
+      "date": "2026-10-08",
+      "close": 30.4,
+      "ma20": 29.335,
+      "stop": 28.0964,
+      "target": 32.6707,
+      "entryLow": 28.895,
+      "entryHigh": 29.6284,
+      "bias": 3.6305,
+      "high20": 31.6,
+      "rr": 0.9857,
+      "code": "pullback",
+      "signal": false,
+      "blockers": [
+        {
+          "key": "zone",
+          "text": "價格高於進場區"
+        },
+        {
+          "key": "rr",
+          "text": "報酬風險比 0.99（要 ≥1.5）"
+        }
+      ],
+      "buyBelow": 29.6102,
+      "gapPct": -2.59802631578947,
+      "roomRR": 0.520923771488107,
+      "plan": null,
+      "text": "等收盤回到 29.61 以下（還差 −2.6%）再看訊號。",
+      "notes": [],
+      "mismatch": null,
+      "risk": {
+        "level": "low",
+        "total": 1,
+        "max": 8,
+        "reasons": []
+      },
+      "hold": {
+        "code": "keep",
+        "text": "續抱。失效價 28.1（距離 7.6%），收盤跌破就是出場優先。要加碼的話，條件和新進場一樣。"
+      }
+    },
+    "3406.TW": {
+      "market": "TW",
+      "date": "2026-10-08",
+      "close": 1060.0,
+      "ma20": 983.0,
+      "stop": 909.2857,
+      "target": 1195.1429,
+      "entryLow": 968.255,
+      "entryHigh": 992.83,
+      "bias": 7.8332,
+      "high20": 1140.0,
+      "rr": 0.8967,
+      "code": "no_chase",
+      "signal": false,
+      "blockers": [
+        {
+          "key": "zone",
+          "text": "價格高於進場區"
+        },
+        {
+          "key": "rr",
+          "text": "報酬風險比 0.90（要 ≥1.5）"
+        },
+        {
+          "key": "rsi",
+          "text": "RSI 63（要 45–60）"
+        },
+        {
+          "key": "distance",
+          "text": "離進場區 1.1 倍 ATR（上限 1.0）"
+        }
+      ],
+      "buyBelow": 992.83,
+      "gapPct": -6.336792452830187,
+      "roomRR": 0.530805636890461,
+      "plan": null,
+      "text": "乖離 +7.8%，不追。收盤回到 992.83 以下（還差 −6.3%）才會進入進場區。",
+      "notes": [],
+      "mismatch": null,
+      "risk": {
+        "level": "low",
+        "total": 2,
+        "max": 8,
+        "reasons": []
+      },
+      "hold": {
+        "code": "keep",
+        "text": "續抱。失效價 909.29（距離 14.2%），收盤跌破就是出場優先。要加碼的話，條件和新進場一樣。"
+      }
+    },
+    "2408.TW": {
+      "market": "TW",
+      "date": "2026-10-08",
+      "close": 532.0,
+      "ma20": 508.85,
+      "stop": 484.4214,
+      "target": 576.7857,
+      "entryLow": 501.2173,
+      "entryHigh": 513.9385,
+      "bias": 4.5495,
+      "high20": 537.0,
+      "rr": 0.9413,
+      "code": "pullback",
+      "signal": false,
+      "blockers": [
+        {
+          "key": "zone",
+          "text": "價格高於進場區"
+        },
+        {
+          "key": "rr",
+          "text": "報酬風險比 0.94（要 ≥1.5）"
+        }
+      ],
+      "buyBelow": 513.9385,
+      "gapPct": -3.3950187969924883,
+      "roomRR": 0.10508926281983919,
+      "plan": null,
+      "text": "等收盤回到 513.94 以下（還差 −3.4%）再看訊號。",
+      "notes": [],
+      "mismatch": null,
+      "risk": {
+        "level": "low",
+        "total": 0,
+        "max": 8,
+        "reasons": []
+      },
+      "hold": {
+        "code": "keep",
+        "text": "續抱。失效價 484.42（距離 8.9%），收盤跌破就是出場優先。要加碼的話，條件和新進場一樣。"
+      }
+    },
+    "1303.TW": {
+      "market": "TW",
+      "date": "2026-10-08",
+      "close": 310.0,
+      "ma20": 251.225,
+      "stop": 231.5107,
+      "target": 346.1429,
+      "entryLow": 247.4566,
+      "entryHigh": 253.7372,
+      "bias": 23.3954,
+      "high20": 322.0,
+      "rr": 0.4605,
+      "code": "no_chase",
+      "signal": false,
+      "blockers": [
+        {
+          "key": "zone",
+          "text": "價格高於進場區"
+        },
+        {
+          "key": "rr",
+          "text": "報酬風險比 0.46（要 ≥1.5）"
+        },
+        {
+          "key": "rsi",
+          "text": "RSI 77（要 45–60）"
+        },
+        {
+          "key": "distance",
+          "text": "離進場區 3.4 倍 ATR（上限 1.0）"
+        }
+      ],
+      "buyBelow": 253.7372,
+      "gapPct": -18.149290322580647,
+      "roomRR": 0.15288708142383742,
+      "plan": null,
+      "text": "過熱，乖離 +23.4%，不追。收盤回到 253.74 以下（還差 −18.1%）才會進入進場區。",
+      "notes": [],
+      "mismatch": null,
+      "risk": {
+        "level": "low",
+        "total": 2,
+        "max": 8,
+        "reasons": []
+      },
+      "hold": {
+        "code": "hot",
+        "text": "過熱（乖離 +23.4%），不加碼。出場參考：收盤跌破 SMA20（251.22），目前在它上方 23.4%。失效價 231.51。"
+      }
+    },
+    "8358.TWO": {
+      "market": "TW",
+      "date": "2026-10-08",
+      "close": 535.0,
+      "ma20": 511.65,
+      "stop": 482.9357,
+      "target": 587.6429,
+      "entryLow": 503.9752,
+      "entryHigh": 516.7665,
+      "bias": 4.5637,
+      "high20": 578.0,
+      "rr": 1.0111,
+      "code": "avoid",
+      "signal": false,
+      "blockers": [
+        {
+          "key": "zone",
+          "text": "價格高於進場區"
+        },
+        {
+          "key": "rr",
+          "text": "報酬風險比 1.01（要 ≥1.5）"
+        }
+      ],
+      "buyBelow": 516.7665,
+      "gapPct": -3.408130841121504,
+      "roomRR": 0.8259018175602092,
+      "plan": null,
+      "text": "處置股 2026-10-08～2026-10-15，不碰。",
+      "notes": [],
+      "mismatch": null,
+      "risk": {
+        "level": "high",
+        "total": 2,
+        "max": 8,
+        "reasons": [
+          "處置股"
+        ]
+      },
+      "hold": {
+        "code": "keep",
+        "text": "續抱。失效價 482.94（距離 9.7%），收盤跌破就是出場優先。要加碼的話，條件和新進場一樣。"
+      }
+    },
+    "4958.TW": {
+      "market": "TW",
+      "date": "2026-10-08",
+      "close": 592.0,
+      "ma20": 511.1,
+      "stop": 480.2,
+      "target": 648.65,
+      "entryLow": 503.4335,
+      "entryHigh": 516.211,
+      "bias": 15.8286,
+      "high20": 613.0,
+      "rr": 0.5067,
+      "code": "no_chase",
+      "signal": false,
+      "blockers": [
+        {
+          "key": "zone",
+          "text": "價格高於進場區"
+        },
+        {
+          "key": "rr",
+          "text": "報酬風險比 0.51（要 ≥1.5）"
+        },
+        {
+          "key": "rsi",
+          "text": "RSI 70（要 45–60）"
+        },
+        {
+          "key": "distance",
+          "text": "離進場區 2.9 倍 ATR（上限 1.0）"
+        }
+      ],
+      "buyBelow": 516.211,
+      "gapPct": -12.802195945945948,
+      "roomRR": 0.1878354203935599,
+      "plan": null,
+      "text": "過熱，乖離 +15.8%，不追。收盤回到 516.21 以下（還差 −12.8%）才會進入進場區。",
+      "notes": [],
+      "mismatch": null,
+      "risk": {
+        "level": "low",
+        "total": 2,
+        "max": 8,
+        "reasons": []
+      },
+      "hold": {
+        "code": "hot",
+        "text": "過熱（乖離 +15.8%），不加碼。出場參考：收盤跌破 SMA20（511.1），目前在它上方 15.8%。失效價 480.2。"
+      }
+    },
+    "4919.TW": {
+      "market": "TW",
+      "date": "2026-10-08",
+      "close": 155.5,
+      "ma20": 133.425,
+      "stop": 120.6536,
+      "target": 178.9143,
+      "entryLow": 131.4236,
+      "entryHigh": 134.7593,
+      "bias": 16.5449,
+      "high20": 167.0,
+      "rr": 0.6719,
+      "code": "no_chase",
+      "signal": false,
+      "blockers": [
+        {
+          "key": "zone",
+          "text": "價格高於進場區"
+        },
+        {
+          "key": "rr",
+          "text": "報酬風險比 0.67（要 ≥1.5）"
+        },
+        {
+          "key": "rsi",
+          "text": "RSI 65（要 45–60）"
+        },
+        {
+          "key": "distance",
+          "text": "離進場區 1.9 倍 ATR（上限 1.0）"
+        }
+      ],
+      "buyBelow": 134.7593,
+      "gapPct": -13.338070739549845,
+      "roomRR": 0.3300197437898893,
+      "plan": null,
+      "text": "過熱，乖離 +16.5%，不追。收盤回到 134.76 以下（還差 −13.3%）才會進入進場區。",
+      "notes": [],
+      "mismatch": null,
+      "risk": {
+        "level": "mid",
+        "total": 3,
+        "max": 8,
+        "reasons": [
+          "風險中"
+        ]
+      },
+      "hold": {
+        "code": "hot",
+        "text": "過熱（乖離 +16.5%），不加碼。出場參考：收盤跌破 SMA20（133.43），目前在它上方 16.5%。失效價 120.65。"
+      }
+    },
+    "2327.TW": {
+      "market": "TW",
+      "date": "2026-10-08",
+      "close": 635.0,
+      "ma20": 575.8,
+      "stop": 536.6286,
+      "target": 706.8143,
+      "entryLow": 567.163,
+      "entryHigh": 581.558,
+      "bias": 10.2813,
+      "high20": 686.0,
+      "rr": 0.73,
+      "code": "no_chase",
+      "signal": false,
+      "blockers": [
+        {
+          "key": "zone",
+          "text": "價格高於進場區"
+        },
+        {
+          "key": "rr",
+          "text": "報酬風險比 0.73（要 ≥1.5）"
+        },
+        {
+          "key": "rsi",
+          "text": "RSI 61（要 45–60）"
+        },
+        {
+          "key": "distance",
+          "text": "離進場區 1.6 倍 ATR（上限 1.0）"
+        }
+      ],
+      "buyBelow": 581.558,
+      "gapPct": -8.416062992125983,
+      "roomRR": 0.518443368702692,
+      "plan": null,
+      "text": "乖離 +10.3%，不追。收盤回到 581.56 以下（還差 −8.4%）才會進入進場區。",
+      "notes": [],
+      "mismatch": null,
+      "risk": {
+        "level": "low",
+        "total": 2,
+        "max": 8,
+        "reasons": []
+      },
+      "hold": {
+        "code": "keep",
+        "text": "續抱。失效價 536.63（距離 15.5%），收盤跌破就是出場優先。要加碼的話，條件和新進場一樣。"
+      }
+    }
+  }
+}
