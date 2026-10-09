@@ -12,8 +12,7 @@ html{scroll-behavior:smooth;scroll-padding-top:64px;}
 body{margin:0;color:var(--text);font-family:"Noto Sans TC","PingFang TC","Microsoft JhengHei",sans-serif;line-height:1.55;font-size:15px;background:var(--bg);}
 body:before{content:"";position:fixed;inset:0;z-index:0;pointer-events:none;background:
 linear-gradient(180deg, rgba(5,16,32,.28), rgba(5,16,32,.12) 40%, rgba(5,16,32,.4)),
-url("./assets/ohtani-cartoon.jpg") center 18px / 86% auto no-repeat;background-color:var(--bg);}
-#ohtani-name{position:fixed;z-index:2;left:50%;top:28px;transform:translateX(-50%);width:min(86vw,420px);padding:10px 14px 0;font-weight:800;letter-spacing:.18em;font-size:22px;color:#f7f4ee;text-shadow:0 2px 8px rgba(0,0,0,.65);pointer-events:none;}
+url("./assets/ohtani-cartoon.jpg") center 8px / min(94vw, calc((100dvh - 168px) * 0.671)) auto no-repeat;background-color:var(--bg);}
 header,nav,main,footer{position:relative;z-index:1;}
 a{color:var(--blue);text-decoration:none;}
 header{text-align:center;padding:18px 12px 12px;background:linear-gradient(180deg,rgba(5,16,32,.72),rgba(5,16,32,.5));}
@@ -101,7 +100,6 @@ footer{text-align:center;padding:16px 12px 28px;font-size:11px;color:var(--muted
 </style>
 </head>
 <body>
-<div id="ohtani-name">大谷翔平</div>
 <header>
   <div class="brand">OHTANI SERIES · TECHNICAL REPORT</div>
   <h1>技術與基本面報告</h1>
