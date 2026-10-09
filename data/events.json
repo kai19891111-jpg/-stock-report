@@ -2,7 +2,10 @@
   "updatedAt": "2026-10-09",
   "earnings": {
     "2330.TW": { "date": "2026-10-15", "source": "https://investor.tsmc.com/english/quarterly-results" },
-    "TSM": { "date": "2026-10-15", "source": "https://investor.tsmc.com/english/quarterly-results" }
+    "TSM": { "date": "2026-10-15", "source": "https://investor.tsmc.com/english/quarterly-results" },
+    "TSLA": { "date": "2026-10-21", "source": "https://www.sec.gov/Archives/edgar/data/1318605/000162828026064366/0001628280-26-064366.txt" },
+    "MSFT": { "date": "2026-10-28", "source": "https://news.microsoft.com/source/2026/10/07/microsoft-announces-quarterly-earnings-release-date-69/" },
+    "AMD": { "date": "2026-11-03", "source": "https://ir.amd.com/news-events/press-releases/detail/1300/amd-to-report-fiscal-third-quarter-2026-financial-results" }
   },
   "events": [
     {
