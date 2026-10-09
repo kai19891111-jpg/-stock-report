@@ -31,11 +31,12 @@
   var s = document.createElement("style");
   s.id = "wallpaper-style";
   s.textContent =
-    "html.wall-on body>*:not(#wall-btn):not(#music-box){display:none!important}" +
+    "html.wall-on body>*:not(#wall-btn):not(#music-box):not(#ohtani-name){display:none!important}" +
     "html.wall-on,html.wall-on body{height:100%;overflow:hidden}" +
-    "html.wall-on body:before{background:var(--bg,#07182e) url('" + IMAGE + "') center top / cover no-repeat}" +
+    "html.wall-on body:before{background:var(--bg,#07182e) url('" + IMAGE + "') center 8% / 82% auto no-repeat}" +
     /* 螢幕比圖片寬（電腦、橫放的平板）時改成整張都看得到，兩側留底色 */
-    "@media (min-aspect-ratio: 784/1168){html.wall-on body:before{background-size:contain;background-position:center}}" +
+    "@media (min-aspect-ratio: 784/1168){html.wall-on body:before{background-size:auto 90%;background-position:center}}" +
+    "html.wall-on #ohtani-name{top:6%;font-size:28px}" +
     "#wall-btn{position:fixed;z-index:200;right:calc(12px + env(safe-area-inset-right,0px));bottom:calc(12px + env(safe-area-inset-bottom,0px));" +
     "min-height:44px;padding:0 16px;border-radius:999px;font:inherit;font-size:13px;font-weight:600;color:#fff;cursor:pointer;" +
     "background:rgba(7,24,46,.86);border:1px solid rgba(255,255,255,.4);box-shadow:0 6px 18px rgba(0,0,0,.35);" +
