@@ -320,7 +320,7 @@ const DATA = {"2330.TW": {"p": 2550.0, "ch": -35.0, "pct": -1.35, "date": "2026-
     };
     Object.keys(L.quotes).forEach((c) => {
       const q = L.quotes[c], old = DATA[c];
-      if (!META[c] || !q || !q.date || !has(q.close) || !has(q.ma20) || (old && old.date > q.date)) return;
+      if (!META[c] || !q || !q.date || !has(q.close) || !has(q.ma20) || (old && old.date >= q.date)) return;
       const mv = move(q, old);
       DATA[c] = {
         p: q.close, ch: mv.ch, pct: mv.pct, date: q.date, s20: q.ma20, s60: q.ma60,
@@ -333,7 +333,7 @@ const DATA = {"2330.TW": {"p": 2550.0, "ch": -35.0, "pct": -1.35, "date": "2026-
     });
     Object.keys(L.indexQuotes || {}).forEach((c) => {
       const q = L.indexQuotes[c], old = DATA[c];
-      if (!q || !q.date || !has(q.close) || !has(q.ma20) || (old && old.date > q.date)) return;
+      if (!q || !q.date || !has(q.close) || !has(q.ma20) || (old && old.date >= q.date)) return;
       const mv = move(q, old);
       DATA[c] = { p: q.close, ch: mv.ch, pct: mv.pct, date: q.date, s20: q.ma20, s60: q.ma60, bias: q.bias, high20: q.high20,
                   live: null, entry: "N/A", invalid: "N/A", resist: "N/A", auto: true };
