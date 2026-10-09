@@ -2,9 +2,15 @@ name: update-stock-report
 
 on:
   schedule:
-    - cron: "20 6 * * 1-5"
-    - cron: "10 21 * * 1-5"
+    - cron: "20 6 * * 1-5"     # 台北 14:20，台股收盤後
+    - cron: "10 21 * * 1-5"    # 美東夏令 17:10，美股收盤後
+    - cron: "40 22 * * 1-5"    # 美東夏令 18:40／冬令 17:40：冬令時間 21:10 那次還沒過收盤緩衝，這次補上
+    - cron: "30 0 * * 2-6"     # 台北 08:30：Yahoo 日 K 晚寫入時最後補一次，台股開盤前美股一定是最新收盤
   workflow_dispatch:
+
+concurrency:
+  group: update-stock-report
+  cancel-in-progress: false
 
 jobs:
   update:
@@ -24,7 +30,8 @@ jobs:
         continue-on-error: true
         env:
           FINMIND_TOKEN: ${{ secrets.FINMIND_TOKEN }}
-          SEC_UA: ${{ secrets.SEC_UA }}
+          SEC_UA: ${{ secrets.SEC_UA }}                     # 選填；沒設定時腳本自動用 repo 擁有者的 GitHub noreply 信箱
+          FINNHUB_API_KEY: ${{ secrets.FINNHUB_API_KEY }}   # 選填；只當財報日的第三備援
         run: python scripts/risk.py
       - name: Final verdict
         continue-on-error: true
@@ -34,5 +41,7 @@ jobs:
           git config user.name "stock-report-bot"
           git config user.email "bot@users.noreply.github.com"
           git add data/*.json
-          git diff --cached --quiet || git commit -m "chore: refresh signals/trades/stats"
+          git diff --cached --quiet && exit 0
+          git commit -m "chore: refresh signals/trades/stats"
+          git pull --rebase -q || true      # 跑的這幾分鐘內有人推了別的修改，就接在後面
           git push

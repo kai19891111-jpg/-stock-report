@@ -1,0 +1,43 @@
+name: intraday-quotes
+
+# 盤中每 5 分鐘抓一次報價，寫到 live 分支的 intraday.json，頁面的 live.js 會讀。
+# 只給「盤中註記」用，不改 main、不改日 K、不影響訊號。GitHub 的排程常常會晚幾分鐘，這是延遲快照，不是逐筆即時。
+# 不想要的話，把這個檔案刪掉就好，頁面其他功能不受影響。
+
+on:
+  schedule:
+    - cron: "*/5 1-5 * * 1-5"      # 台股盤中（台北 09:00–13:30）
+    - cron: "*/5 13-21 * * 1-5"    # 美股盤中（夏令 UTC 13:30–20:00、冬令 UTC 14:30–21:00）
+  workflow_dispatch:
+
+concurrency:
+  group: intraday-quotes
+  cancel-in-progress: true
+
+jobs:
+  snapshot:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+      - name: Fetch quotes
+        run: |
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
+            python3 scripts/intraday.py --force --out live-out/intraday.json
+          else
+            python3 scripts/intraday.py --out live-out/intraday.json
+          fi
+      - name: Publish to the live branch
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          [ -f live-out/intraday.json ] || { echo "no snapshot this run"; exit 0; }
+          cd live-out
+          git init -q -b live
+          git config user.name "stock-report-bot"
+          git config user.email "bot@users.noreply.github.com"
+          git add intraday.json
+          git commit -q -m "live quotes"
+          git push -q -f "https://x-access-token:${GH_TOKEN}@github.com/${GITHUB_REPOSITORY}.git" live

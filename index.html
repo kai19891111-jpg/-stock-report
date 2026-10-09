@@ -4,6 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>技術與基本面報告</title>
+<script src="./wallpaper.js"></script>
 <style>
 :root{--bg:#07182e;--card:rgba(8,32,64,.82);--accent:#ef3e42;--text:#f7f4ee;--muted:#c5d0de;--green:#3dd68c;--red:#ff6b6b;--blue:#8ec0ff;--amber:#ffb450;--line:rgba(255,255,255,.14);}
 *{box-sizing:border-box;}
@@ -183,6 +184,8 @@ footer{text-align:center;padding:16px 12px 28px;font-size:11px;color:var(--muted
       <li>「規則進場訊號」是回測統計裡那條規則今天成立；它的勝率與期望值寫在回測區塊，並且要和「隨機進場對照」比。</li>
       <li>回測統計的勝率只來自已平倉交易；筆數不到 30 一律顯示「樣本不足」，不看勝率。</li>
       <li>用上方的篩選按鈕切換：全部／均線附近／規則進場訊號／持倉／報酬風險比達標。</li>
+      <li>導覽列下方的「盤中報價」會自己更新，卡片上多一行盤中價與漲跌。沒有設定時用每 5 分鐘的延遲快照；按「設定」貼上 Finnhub 金鑰後，美股個股每 15 秒更新。盤中價只是註記，位置標籤、風險分數與最終指示仍然只看收盤。</li>
+      <li>美股的風險分數：財報日沒手填時自動抓（公司還沒確認的會寫「預估」）；基本面用 SEC 申報的單季營收與毛利率；籌碼看放空餘額與交易所的 Reg SHO 門檻名單。抓不到的項目一樣寫 N/A，不計分。</li>
     </ol>
     <details>
       <summary>更新紀錄</summary>
@@ -217,6 +220,8 @@ const REPORT = {
     sma20: "含最後完成日收盤的 20 日均線，當作觀察支撐。"
   },
   changelog: [
+    "2026-10-10：右下角新增「看背景」按鈕，收起整份報告只看背景圖；再按「回報告」或 Esc 回來。選擇記在這台裝置。新增「♪ 音樂」按鈕，播放 assets/ 裡的背景音樂（要自己按一下才會播）。",
+    "2026-10-09：美股補資料——財報日自動抓（Yahoo→Nasdaq→Finnhub→SEC 歷年發布日推估，未確認的標「預估」）、基本面改成不用另外設定就能讀 SEC（第四季＝全年−前三季；TSM 直接用 2330 的數字）、籌碼改看放空餘額與 Reg SHO 門檻名單。新增盤中報價（live.js）：每 5 分鐘快照，貼 Finnhub 金鑰後美股每 15 秒更新；只當註記。收盤後多跑兩次自動更新，避免美股日 K 晚同步。",
     "2026-10-09：新增「今日入場指示」，每一檔只給一個結論；狀態改名成位置標籤（均線附近／偏高／過熱／均線之下）；回測加上分市場統計；處置股直接判高風險；移除 10/02 的 FINAL HOTFIX、寫死價位的持倉判斷與「新增關注」區塊。",
     "2026-10-09 08:46：只更新已同步收盤與未同步註記；台股休市不重算進出場；未刪持倉、分類、hotfix。",
     "2026-10-08：價格、均線、價位改讀腳本每天產生的 latest.json；門檻改 1.5；回測加上隨機進場對照、參數搜尋與過熱出場比較；移除會蓋掉整個「我的持倉」的舊補丁段落（台積電、SPCX 與合計會消失）。",
@@ -682,5 +687,7 @@ const DATA = {"2330.TW": {"p": 2550.0, "ch": -35.0, "pct": -1.35, "date": "2026-
 <script src="./entry-gate.js"></script>
 <script src="./risk-score.js"></script>
 <script src="./verdict.js"></script>
+<script src="./live.js"></script>
+<script src="./music.js"></script>
 </body>
 </html>
