@@ -1,0 +1,27 @@
+name: apply-v2 (run once)
+
+# 手動執行一次：整理 index.html（移除舊補丁、加上「今日入場指示」區塊、狀態改名）。
+# 可以重複執行，第二次之後不會再改任何東西。跑完確認沒問題後，這個檔案可以刪掉。
+
+on:
+  workflow_dispatch:
+
+jobs:
+  apply:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Patch index.html
+        run: python scripts/apply_v2.py
+      - name: Commit
+        run: |
+          git config user.name "stock-report-bot"
+          git config user.email "bot@users.noreply.github.com"
+          git add index.html
+          git diff --cached --quiet || git commit -m "feat: page v2 (today's entry panel, position labels, remove legacy hotfix)"
+          git push

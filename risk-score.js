@@ -13,8 +13,8 @@
 
      五個項目各 0-2 分：過熱、財報、基本面、籌碼、政策。
      抓不到資料的項目顯示 N/A，不計分；有分數的項目少於 3 項標「資料不足」。
-     狀態是「觀察進場」但風險沒過（財報 3 日內、處置／注意股、風險中或高）時，
-     卡片會多一行提醒。原本的狀態徽章不會被改掉。
+     風險沒過（財報 3 日內、處置／注意股、風險中或高）時，卡片會多一行提醒。
+     處置股不看總分，直接是「高」。最終要不要進場看 verdict.js 的那一行。
 
    這是條件核對，不是買賣建議，不自動下單。
    ===================================================================== */
@@ -51,16 +51,14 @@
   function ageHours() { return R && R.generatedAt ? (Date.now() - new Date(R.generatedAt).getTime()) / 36e5 : null; }
 
   /* ---------- 畫在卡片上 ---------- */
-  function riskHTML(v, status) {
+  function riskHTML(v) {
     var lv = LEVEL[v.level] || LEVEL.insufficient;
     var total = order().length;
     var h = '<div class="risk risk-' + lv.cls + '">' +
       "<b>風險 " + (v.max ? v.total + "／" + v.max : "—") + "<span>" + lv.text + "</span></b>" +
       '<span class="risk-sub">有分數 ' + v.scored + "／" + total + " 項" + (v.scored < total ? "，其餘 N/A 不計分" : "") + "</span>";
-    if (status === "觀察進場" && v.gate && v.gate.block) {
-      h += '<p class="risk-warn">⚠ 狀態是觀察進場，但風險沒過：' + v.gate.reasons.map(esc).join("、") + "。先不新增部位。</p>";
-    } else if (v.flags && v.flags.indexOf("earnings_soon") >= 0) {
-      h += '<p class="risk-warn">⚠ 財報 3 個交易日內。</p>';
+    if (v.gate && v.gate.block) {
+      h += '<p class="risk-warn">⚠ 風險沒過：' + v.gate.reasons.map(esc).join("、") + "。不新增部位。</p>";
     }
     h += '<div class="risk-pips">' + order().map(function (k) {
       var it = v.items[k] || {};
@@ -86,7 +84,7 @@
       var v = R && R.symbols && R.symbols[card.getAttribute("data-code")];
       if (!v) return;
       var anchor = card.querySelector(".gate") || card.querySelector(".why") || card.querySelector(".status");
-      if (anchor) anchor.insertAdjacentHTML("afterend", riskHTML(v, card.getAttribute("data-status")));
+      if (anchor) anchor.insertAdjacentHTML("afterend", riskHTML(v));
       card.setAttribute("data-risk", v.level);
     });
     summary(box);

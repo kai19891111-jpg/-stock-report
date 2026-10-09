@@ -10,6 +10,10 @@
 4. Forward returns after each of the page's statuses (觀察進場 / 觀望 / 過熱 / 等待),
    compared with the average of all days.
 5. Exit study for 過熱 (bias > 15%): sell at once vs hold until a close below SMA20.
+6. The same trades per market (台股 / 美股 each with its own out-of-sample numbers and its own
+   random-entry benchmark) and per market regime, so a signal is checked against its own market.
+7. Room study: the target is close + 2.2 ATR, which can sit above the 20-day high. Trades are
+   split by how much room there was up to that high, to see whether that matters.
 """
 from __future__ import annotations
 import json
@@ -278,6 +282,45 @@ def overheat_exit_study(data):
     }
 
 
+def market_detail(data, done, split):
+    """The rule's record inside each market. Costs differ (台股 has the transaction tax) and so
+    does behaviour, so the page checks a 台股 signal against 台股 trades and a 美股 signal against 美股."""
+    out = {}
+    for m in MARKETS:
+        mt = [t for t in done if t.get("market") == m]
+        out[m] = {
+            "all": stats_of(mt, ci=True),
+            "insample": stats_of([t for t in mt if t["signalDate"] < split], ci=True),
+            "oos": stats_of([t for t in mt if t["signalDate"] >= split], ci=True),
+            "benchmark": random_entry_benchmark({s: d for s, d in data.items() if d["market"] == m}, mt),
+            "byRegime": {r: stats_of([t for t in mt if t.get("marketRegime") == r], ci=True)
+                         for r in ("BULL", "NEUTRAL", "BEAR")},
+        }
+    return out
+
+
+ROOM_BUCKETS = (("lt1", "不到 1 倍風險", None, 1.0), ("1to1.5", "1 到 1.5 倍", 1.0, 1.5), ("ge1.5", "1.5 倍以上", 1.5, None))
+
+
+def room_study(data, done):
+    """Room to the 20-day high at the signal close, in units of the trade's risk:
+    (20 日高 − 收盤) ÷ (收盤 − 失效價). Below 1 means the prior high is closer than the stop."""
+    sig_at = {(sym, s["date"]): s for sym, d in data.items() for s in d["sigs"] if s}
+    groups = {k: [] for k, _l, _a, _b in ROOM_BUCKETS}
+    for t in done:
+        s = sig_at.get((t["symbol"], t["signalDate"]))
+        if not s or s.get("high20") is None or s["close"] <= s["stop"]:
+            continue
+        room = (s["high20"] - s["close"]) / (s["close"] - s["stop"])
+        for k, _l, lo, hi in ROOM_BUCKETS:
+            if (lo is None or room >= lo) and (hi is None or room < hi):
+                groups[k].append(t)
+    return {
+        "definition": "訊號當天收盤到 20 日高的距離 ÷ 收盤到失效價的距離。小於 1 代表前高比停損還近。",
+        "buckets": [dict(stats_of(groups[k], ci=True), key=k, label=l) for k, l, _a, _b in ROOM_BUCKETS],
+    }
+
+
 def by_symbol(trades):
     tot = {}
     for t in trades:
@@ -337,6 +380,8 @@ def main():
         "bySymbol": by_symbol(done),
         "byRegime": {r: stats_of([t for t in done if t.get("marketRegime") == r]) for r in ("BULL", "NEUTRAL", "BEAR")},
         "byMarket": {m: stats_of([t for t in done if t.get("market") == m]) for m in MARKETS},
+        "byMarketDetail": market_detail(data, done, split),
+        "roomStudy": room_study(data, done),
         "byTheme": {th: {"n": st["sampleSize"], "winRate": st["winRate"], "expectancyR": st["expectancyR"],
                          "profitFactor": st["profitFactor"]}
                     for th, st in ((th, stats_of(sl)) for th, sl in by_theme.items())},

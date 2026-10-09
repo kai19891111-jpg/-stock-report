@@ -19,6 +19,7 @@
    五項核對：
      1 訊號日期    日 K 是該市場最後完成的交易日，且行情沒有過期
      2 回測優勢    後段（樣本外）期望值區間下緣 > 0，且勝過隨機進場 ≥ 95%
+                   （回測有分市場統計時，台股看台股、美股看美股）
      3 樣本數      後段已平倉筆數 ≥ minSample（預設 30）
      4 報酬風險比  entryRR ≥ min_rr
      5 價位        使用腳本當日重算的價位，不是頁面內建的舊價位
@@ -69,8 +70,12 @@
   function check(code) {
     if (!L || !L.quotes || !L.quotes[code]) return null;
     var q = L.quotes[code];
-    var st = S ? (S[CFG.period] || S.all || null) : null;
-    var b = S ? (S.benchmark || null) : null;
+    // 有分市場統計（byMarketDetail）就用這檔股票自己市場的數字；沒有就退回全部市場
+    var mkt = (S && S.byMarketDetail && S.byMarketDetail[q.market]) || null;
+    var src = mkt || S;
+    var st = src ? (src[CFG.period] || src.all || null) : null;
+    var b = src ? (src.benchmark || null) : null;
+    var scope = mkt ? ({ TW: "台股", US: "美股" }[q.market] || q.market) : "全部市場";
     var meta = (S && S.meta) || {};
     var minN = has(meta.minSample) ? meta.minSample : 30;
     var minRR = (L.params && has(L.params.min_rr)) ? L.params.min_rr : 1.5;
@@ -92,13 +97,13 @@
     var beatsOk = !!b && has(b.beats) && b.beats >= CFG.beatsMin;
     items.push({ label: "回測優勢", ok: expOk && beatsOk,
       text: !st ? "讀不到回測資料"
-          : periodName + "期望值 " + R(st.expectancyR) + (has(st.expLow) ? "（區間 " + R(st.expLow) + " ~ " + R(st.expHigh) + "）" : "") +
+          : scope + periodName + "期望值 " + R(st.expectancyR) + (has(st.expLow) ? "（區間 " + R(st.expLow) + " ~ " + R(st.expHigh) + "）" : "") +
             "；勝過 " + (b ? P(b.beats) : "—") + " 的隨機進場（門檻 " + P(CFG.beatsMin) + "）" });
 
     // 3 樣本數（沒過直接紅燈）
     var n = st && has(st.sampleSize) ? st.sampleSize : 0;
     items.push({ label: "樣本數", ok: n >= minN, hard: true,
-      text: periodName + "已平倉 " + n + " 筆（門檻 " + minN + "）" });
+      text: scope + periodName + "已平倉 " + n + " 筆（門檻 " + minN + "）" });
 
     // 4 報酬風險比
     items.push({ label: "報酬風險比", ok: has(q.entryRR) && q.entryRR >= minRR,

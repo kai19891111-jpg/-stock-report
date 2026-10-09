@@ -4,9 +4,12 @@
 
   tech          技術過熱    乖離 <6% = 0｜6-15% = 1｜>15% = 2            來源 data/latest.json
   earnings      財報事件    >10 個交易日 = 0｜4-10 = 1｜3 日內 = 2        來源 data/events.json 的 earnings
-  fundamentals  基本面      營收年增<0、毛利率年減>1pt，中幾項就幾分      台股 FinMind｜美股 SEC EDGAR
+  fundamentals  基本面      營收年增<0、年增率連兩個月放緩、毛利率年減>1pt，
+                            中一項 1 分、兩項以上 2 分                    台股 FinMind｜美股 SEC EDGAR
   chips         籌碼        法人賣且融資增 = 1｜注意股／處置股 = 2        台股 FinMind＋證交所＋櫃買｜美股 N/A
   policy        政策政治    兩週內有排定事件 = 1｜不利政策已公告 = 2      來源 data/events.json 的 events
+
+處置股不看總分，直接判「高」。
 
 只用標準函式庫。任何一個來源失敗都不會中斷，該項目寫 N/A，失敗原因記在 risk.json 的 sources。
 這是條件核對，不是買賣建議，不自動下單。
@@ -36,6 +39,7 @@ T = {
     "bias_mid": 6.0, "bias_high": 15.0,          # 乖離 %
     "earn_near": 3, "earn_mid": 10,              # 距財報日的交易日數
     "margin_drop_pt": 1.0,                       # 毛利率年減超過幾個百分點算轉弱
+    "slow_min_pt": 10.0,                         # 營收年增率連兩個月走低，而且合計少掉幾個百分點以上才算放緩
     "flow_days": 5,                              # 法人、融資看最近幾個交易日
     "event_ahead_days": 14,                      # 排定事件提前幾天開始計分（日曆日）
     "announced_default_days": 30,                # 已公告事件沒寫 expires 時，計分幾天
@@ -202,15 +206,28 @@ def build_lists(punish, notice, tpex_disposal, tpex_warning):
 
 
 def revenue_yoy(rows):
-    """FinMind TaiwanStockMonthRevenue -> 最新月營收年增率"""
+    """FinMind TaiwanStockMonthRevenue -> 最新月營收年增率，以及年增率是不是連兩個月放緩"""
     by = {(r["revenue_year"], r["revenue_month"]): r["revenue"] for r in rows or [] if r.get("revenue")}
     if not by:
         return None
-    y, m = max(by)
-    prev = by.get((y - 1, m))
-    if not prev:
+
+    def yoy(k):
+        prev = by.get((k[0] - 1, k[1]))
+        return (by[k] / prev - 1) * 100 if (k in by and prev) else None
+
+    def back(k, n):                       # n 個月前
+        idx = k[0] * 12 + (k[1] - 1) - n
+        return (idx // 12, idx % 12 + 1)
+
+    last = max(by)
+    now = yoy(last)
+    if now is None:
         return None
-    return {"yoy": (by[(y, m)] / prev - 1) * 100, "period": f"{y}-{m:02d}"}
+    trail = [yoy(back(last, 2)), yoy(back(last, 1)), now]
+    slowing = (all(v is not None for v in trail) and trail[0] > trail[1] > trail[2]
+               and trail[0] - trail[2] >= T["slow_min_pt"])
+    return {"yoy": now, "period": f"{last[0]}-{last[1]:02d}", "slowing": slowing,
+            "trail": trail if all(v is not None for v in trail) else None}
 
 
 def margin_change(rows):
@@ -386,6 +403,9 @@ def score_fundamentals(rev, mar, cuts):
     if rev is not None:
         weak += rev["yoy"] < 0
         bits.append(f"營收年增 {signed(rev['yoy'], 1)}%（{rev['period']}）")
+        if rev.get("slowing"):
+            weak += 1
+            bits.append("年增率連兩個月放緩（" + "→".join(signed(v, 0) + "%" for v in rev["trail"]) + "）")
         period = rev["period"]
     else:
         bits.append("營收 N/A")
@@ -395,7 +415,7 @@ def score_fundamentals(rev, mar, cuts):
         period = period or mar["period"]
     else:
         bits.append("毛利率 N/A")
-    return item(int(weak), "、".join(bits), date=period, partial=(rev is None or mar is None) or None)
+    return item(min(2, int(weak)), "、".join(bits), date=period, partial=(rev is None or mar is None) or None)
 
 
 def score_chips(code, today, lists, fl):
@@ -440,6 +460,8 @@ def summarise(items):
         "earnings_soon" if items["earnings"]["score"] == 2 else None,
         items["chips"].get("flag"),
         "overheated" if items["tech"]["score"] == 2 else None) if f]
+    if "disposition" in flags:            # 處置股：分盤交易、要預收款券，流動性風險不看總分
+        level = "high"
     reasons = []
     if "earnings_soon" in flags:
         reasons.append("財報前觀察")
@@ -447,7 +469,7 @@ def summarise(items):
         reasons.append("處置股")
     if "attention" in flags:
         reasons.append("注意股")
-    if level in ("mid", "high"):
+    if level in ("mid", "high") and "disposition" not in flags:
         reasons.append("風險" + ("高" if level == "high" else "中"))
     return {"total": total, "max": mx, "scored": len(scored), "score10": score10, "level": level,
             "flags": flags, "gate": {"block": bool(reasons), "reasons": reasons}, "items": items}
@@ -496,7 +518,7 @@ def main(now=None):
         pol = [(s, e) for s, e in hits if e.get("item", "policy") == "policy"]
         if market == "TW":
             code = sym.split(".")[0]
-            rev = revenue_yoy(fm("TaiwanStockMonthRevenue", code, 460, t))
+            rev = revenue_yoy(fm("TaiwanStockMonthRevenue", code, 520, t))
             mar = margin_change(fm("TaiwanStockFinancialStatements", code, 560, t))
             fl = flows(fm("TaiwanStockInstitutionalInvestorsBuySell", code, 20, t),
                        fm("TaiwanStockMarginPurchaseShortSale", code, 20, t), T["flow_days"])

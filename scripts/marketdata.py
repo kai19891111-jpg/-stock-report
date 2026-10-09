@@ -29,6 +29,10 @@ MARKETS = {
 EXTRA_INDICES = {"^SOX": "US", "^TNX": "US"}
 # A daily bar counts as final this long after the closing bell (closing auction, vendor lag).
 SETTLE_MINUTES = 20
+# 加權指數：證交所官方的開高低收。Yahoo 的 ^TWII 常常晚一天才補上高低點，甚至整根日K不見。
+TWSE_INDEX_URL = "https://openapi.twse.com.tw/v1/indicesReport/MI_5MINS_HIST"
+OFFICIAL_INDEX = {"^TWII"}
+MAX_INDEX_MOVE = 0.15       # an official bar this far from the previous close is treated as bad data
 
 # Used only if STOCK_META cannot be read from index.html.
 FALLBACK_META = {
@@ -113,6 +117,49 @@ def _download(symbol, rng):
     raise last
 
 
+def parse_twse_index(raw):
+    """證交所「發行量加權股價指數歷史資料」-> bars. Dates are ROC (1151007 = 2026-10-07); no volume."""
+    out = {}
+    for r in raw or []:
+        m = re.fullmatch(r"(\d{3})(\d{2})(\d{2})", str(r.get("Date") or "").strip())
+        try:
+            o, h, l, c = (float(str(r[k]).replace(",", "")) for k in
+                          ("OpeningIndex", "HighestIndex", "LowestIndex", "ClosingIndex"))
+        except (KeyError, TypeError, ValueError):
+            continue
+        if not m or c <= 0 or not (l <= c <= h and l <= o <= h):
+            continue
+        d = f"{int(m.group(1)) + 1911:04d}-{m.group(2)}-{m.group(3)}"
+        out[d] = {"date": d, "open": o, "high": h, "low": l, "close": c, "volume": 0}
+    return [out[d] for d in sorted(out)]
+
+
+def merge_official(rows, official):
+    """Official bars replace Yahoo's for the same day and add days Yahoo has not published yet.
+
+    Yahoo's volume is kept. An official bar more than MAX_INDEX_MOVE away from the bar before it
+    is ignored, so one bad row from the exchange feed cannot move the averages.
+    """
+    by = {b["date"]: b for b in rows}
+    used = 0
+    for b in official:
+        earlier = [d for d in by if d < b["date"]]
+        prev = by[max(earlier)]["close"] if earlier else None
+        if prev and abs(b["close"] / prev - 1) > MAX_INDEX_MOVE:
+            print("warn: official index bar ignored (too far from previous close):", b["date"], b["close"])
+            continue
+        by[b["date"]] = dict(b, volume=(by.get(b["date"]) or {}).get("volume") or 0)
+        used += 1
+    return [by[d] for d in sorted(by)], used
+
+
+def _official_index():
+    req = urllib.request.Request(TWSE_INDEX_URL, headers={"User-Agent": "Mozilla/5.0 stock-report",
+                                                           "Accept": "application/json"})
+    with urllib.request.urlopen(req, timeout=20) as r:
+        return parse_twse_index(json.loads(r.read().decode("utf-8-sig")))
+
+
 def bars_of(symbol, market, rng="2y", now=None, use_cache=False):
     """Completed daily bars for `symbol`. With use_cache, reuse bars fetched earlier in this run."""
     CACHE.mkdir(parents=True, exist_ok=True)
@@ -124,6 +171,12 @@ def bars_of(symbol, market, rng="2y", now=None, use_cache=False):
         rows = json.loads(path.read_text(encoding="utf-8"))
     else:
         rows = parse_chart(_download(symbol, rng), market)
+        if symbol in OFFICIAL_INDEX:
+            try:
+                rows, used = merge_official(rows, _official_index())
+                print("index", symbol, "official bars merged:", used, "last", rows[-1]["date"] if rows else None)
+            except Exception as e:  # noqa: BLE001
+                print("warn: official index unavailable, using Yahoo only:", e)
         path.write_text(json.dumps(rows), encoding="utf-8")
         time.sleep(0.25)   # be polite to the data source
     return completed(rows, market, now)
