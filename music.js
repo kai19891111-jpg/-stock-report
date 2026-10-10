@@ -20,7 +20,7 @@
   if (window.__bgm) return;
   window.__bgm = true;
 
-  var SRC = (window.MUSIC_CONFIG && window.MUSIC_CONFIG.src) || "./assets/hokkien-blues.m4a";   // 要換歌只改這裡
+  var SRC = (window.MUSIC_CONFIG && window.MUSIC_CONFIG.src) || "./assets/bgm.mp3";   // 要換歌只改這裡
   var audio = null, btn, msg;
 
   function say(text) { msg.textContent = text || ""; msg.hidden = !text; }
