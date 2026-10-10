@@ -9,8 +9,8 @@
    不需要改 index.html 其他程式。
 
    做什麼：
-   右下角多一顆「看背景」按鈕。按下去整份報告收起來，只剩大谷翔平的背景圖（去掉暗色遮罩）；
-   再按「回報告」或按 Esc 回來，捲動位置不變。
+   右下角多一顆圓形「🖼」按鈕。按下去整份報告收起來，只剩大谷翔平的背景圖（去掉暗色遮罩）；
+   再按「✕」或按 Esc 回來，捲動位置不變。手機直放時圖片寬度撐滿、上下置中，電腦／橫放整張顯示。
    選擇會記在這台裝置的瀏覽器：上次停在背景，下次開頁面就直接是背景。
    只看背景時，盤中報價（live.js）會暫停更新，回報告時立刻補抓一次；背景音樂（music.js）的按鈕會留著。
    ===================================================================== */
@@ -33,11 +33,12 @@
   s.textContent =
     "html.wall-on body>*:not(#wall-btn):not(#music-box){display:none!important}" +
     "html.wall-on,html.wall-on body{height:100%;overflow:hidden}" +
-    "html.wall-on body:before{background:var(--bg,#07182e) url('" + IMAGE + "') center 10px / min(94vw, calc((100dvh - 132px) * 0.671)) auto no-repeat}" +
+    /* 手機直放：圖片寬度撐滿、上下置中，底下只留按鈕那一排 */
+    "html.wall-on body:before{background:var(--bg,#07182e) url('" + IMAGE + "') center calc(50% - 28px) / min(100vw, calc((100dvh - 72px) * 0.671)) auto no-repeat}" +
     /* 螢幕比圖片寬（電腦、橫放的平板）時改成整張都看得到，兩側留底色 */
     "@media (min-aspect-ratio: 784/1168){html.wall-on body:before{background-size:auto min(92vh, 920px);background-position:center}}" +
     "#wall-btn{position:fixed;z-index:200;right:calc(12px + env(safe-area-inset-right,0px));bottom:calc(12px + env(safe-area-inset-bottom,0px));" +
-    "min-height:44px;padding:0 16px;border-radius:999px;font:inherit;font-size:13px;font-weight:600;color:#fff;cursor:pointer;" +
+    "width:44px;height:44px;padding:0;border-radius:50%;font:inherit;font-size:18px;line-height:1;color:#fff;cursor:pointer;" +
     "background:rgba(7,24,46,.86);border:1px solid rgba(255,255,255,.4);box-shadow:0 6px 18px rgba(0,0,0,.35);" +
     "-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px)}" +
     "#wall-btn:hover{border-color:#fff}" +
@@ -51,9 +52,10 @@
   function label() {
     if (!btn) return;
     var on = isOn();
-    btn.textContent = on ? "回報告" : "看背景";
+    btn.textContent = on ? "✕" : "🖼";
     btn.setAttribute("aria-pressed", String(on));
-    btn.title = on ? "顯示報告（Esc）" : "收起報告，只看背景";
+    btn.title = on ? "回報告（Esc）" : "收起報告，只看背景";
+    btn.setAttribute("aria-label", btn.title);
   }
   function set(on) {
     if (on === isOn()) return;
