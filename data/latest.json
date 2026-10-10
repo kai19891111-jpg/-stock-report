@@ -1,6 +1,6 @@
 {
-  "dataTimestamp": "2026-10-09T13:25:41.590923+00:00",
-  "marketTimestamp": "2026-10-09T13:25:41.590923+00:00",
+  "dataTimestamp": "2026-10-10T00:47:05.638101+00:00",
+  "marketTimestamp": "2026-10-10T00:47:05.638101+00:00",
   "source": "yahoo",
   "isFinalClose": true,
   "sessions": {
@@ -16,8 +16,8 @@
     },
     "US": {
       "symbol": "^IXIC",
-      "date": "2026-10-08",
-      "close": 27193.3398,
+      "date": "2026-10-09",
+      "close": 27366.1699,
       "regime": "BULL"
     }
   },
@@ -32,31 +32,31 @@
       "bias": 3.4088
     },
     "^IXIC": {
-      "date": "2026-10-08",
-      "close": 27193.3398,
-      "prevClose": 27538.6895,
-      "ma20": 26854.0678,
-      "ma60": 26311.8132,
+      "date": "2026-10-09",
+      "close": 27366.1699,
+      "prevClose": 27193.3398,
+      "ma20": 26905.7243,
+      "ma60": 26336.5503,
       "high20": 27722.75,
-      "bias": 1.2634
+      "bias": 1.7113
     },
     "^SOX": {
-      "date": "2026-10-08",
-      "close": 12623.71,
-      "prevClose": 13066.1504,
-      "ma20": 12374.2986,
-      "ma60": 11988.1939,
+      "date": "2026-10-09",
+      "close": 12572.4199,
+      "prevClose": 12623.71,
+      "ma20": 12411.7196,
+      "ma60": 11999.9425,
       "high20": 13349.96,
-      "bias": 2.0156
+      "bias": 1.2947
     },
     "^TNX": {
-      "date": "2026-10-08",
-      "close": 5.231,
-      "prevClose": 5.277,
-      "ma20": 5.1332,
-      "ma60": 4.8396,
+      "date": "2026-10-09",
+      "close": 5.244,
+      "prevClose": 5.231,
+      "ma20": 5.1466,
+      "ma60": 4.8508,
       "high20": 5.364,
-      "bias": 1.9052
+      "bias": 1.8915
     }
   },
   "params": {
@@ -108,7 +108,7 @@
       "marketRegime": "BULL",
       "themeTrend": null,
       "signal": "WATCH",
-      "dataTimestamp": "2026-10-09T13:25:41.590923+00:00",
+      "dataTimestamp": "2026-10-10T00:47:05.638101+00:00",
       "isFinalClose": true,
       "source": "yahoo",
       "entrySignal": false
@@ -148,7 +148,7 @@
       "marketRegime": "BULL",
       "themeTrend": null,
       "signal": "WATCH",
-      "dataTimestamp": "2026-10-09T13:25:41.590923+00:00",
+      "dataTimestamp": "2026-10-10T00:47:05.638101+00:00",
       "isFinalClose": true,
       "source": "yahoo",
       "entrySignal": false
@@ -188,7 +188,7 @@
       "marketRegime": "BULL",
       "themeTrend": null,
       "signal": "WATCH",
-      "dataTimestamp": "2026-10-09T13:25:41.590923+00:00",
+      "dataTimestamp": "2026-10-10T00:47:05.638101+00:00",
       "isFinalClose": true,
       "source": "yahoo",
       "entrySignal": false
@@ -228,7 +228,7 @@
       "marketRegime": "BULL",
       "themeTrend": null,
       "signal": "WATCH",
-      "dataTimestamp": "2026-10-09T13:25:41.590923+00:00",
+      "dataTimestamp": "2026-10-10T00:47:05.638101+00:00",
       "isFinalClose": true,
       "source": "yahoo",
       "entrySignal": false
@@ -268,7 +268,7 @@
       "marketRegime": "BULL",
       "themeTrend": null,
       "signal": "WATCH",
-      "dataTimestamp": "2026-10-09T13:25:41.590923+00:00",
+      "dataTimestamp": "2026-10-10T00:47:05.638101+00:00",
       "isFinalClose": true,
       "source": "yahoo",
       "entrySignal": false
@@ -308,7 +308,7 @@
       "marketRegime": "BULL",
       "themeTrend": null,
       "signal": "WATCH",
-      "dataTimestamp": "2026-10-09T13:25:41.590923+00:00",
+      "dataTimestamp": "2026-10-10T00:47:05.638101+00:00",
       "isFinalClose": true,
       "source": "yahoo",
       "entrySignal": true
@@ -348,7 +348,7 @@
       "marketRegime": "BULL",
       "themeTrend": null,
       "signal": "WATCH",
-      "dataTimestamp": "2026-10-09T13:25:41.590923+00:00",
+      "dataTimestamp": "2026-10-10T00:47:05.638101+00:00",
       "isFinalClose": true,
       "source": "yahoo",
       "entrySignal": false
@@ -388,7 +388,7 @@
       "marketRegime": "BULL",
       "themeTrend": null,
       "signal": "WATCH",
-      "dataTimestamp": "2026-10-09T13:25:41.590923+00:00",
+      "dataTimestamp": "2026-10-10T00:47:05.638101+00:00",
       "isFinalClose": true,
       "source": "yahoo",
       "entrySignal": false
@@ -428,7 +428,7 @@
       "marketRegime": "BULL",
       "themeTrend": null,
       "signal": "WATCH",
-      "dataTimestamp": "2026-10-09T13:25:41.590923+00:00",
+      "dataTimestamp": "2026-10-10T00:47:05.638101+00:00",
       "isFinalClose": true,
       "source": "yahoo",
       "entrySignal": false
@@ -468,7 +468,7 @@
       "marketRegime": "BULL",
       "themeTrend": null,
       "signal": "WATCH",
-      "dataTimestamp": "2026-10-09T13:25:41.590923+00:00",
+      "dataTimestamp": "2026-10-10T00:47:05.638101+00:00",
       "isFinalClose": true,
       "source": "yahoo",
       "entrySignal": false
@@ -508,7 +508,7 @@
       "marketRegime": "BULL",
       "themeTrend": null,
       "signal": "WATCH",
-      "dataTimestamp": "2026-10-09T13:25:41.590923+00:00",
+      "dataTimestamp": "2026-10-10T00:47:05.638101+00:00",
       "isFinalClose": true,
       "source": "yahoo",
       "entrySignal": false
@@ -548,7 +548,7 @@
       "marketRegime": "BULL",
       "themeTrend": null,
       "signal": "WATCH",
-      "dataTimestamp": "2026-10-09T13:25:41.590923+00:00",
+      "dataTimestamp": "2026-10-10T00:47:05.638101+00:00",
       "isFinalClose": true,
       "source": "yahoo",
       "entrySignal": false
@@ -588,7 +588,7 @@
       "marketRegime": "BULL",
       "themeTrend": null,
       "signal": "WATCH",
-      "dataTimestamp": "2026-10-09T13:25:41.590923+00:00",
+      "dataTimestamp": "2026-10-10T00:47:05.638101+00:00",
       "isFinalClose": true,
       "source": "yahoo",
       "entrySignal": true
@@ -628,7 +628,7 @@
       "marketRegime": "BULL",
       "themeTrend": null,
       "signal": "WATCH",
-      "dataTimestamp": "2026-10-09T13:25:41.590923+00:00",
+      "dataTimestamp": "2026-10-10T00:47:05.638101+00:00",
       "isFinalClose": true,
       "source": "yahoo",
       "entrySignal": false
@@ -648,7 +648,7 @@
       "ma60": 426.9147,
       "rsi14": 55.1298,
       "macd": "零軸上",
-      "volumeRatio": 1.3269,
+      "volumeRatio": 1.3289,
       "atr14": 10.9579,
       "dailyTrend": "多頭",
       "weeklyTrend": "多頭",
@@ -668,7 +668,7 @@
       "marketRegime": "BULL",
       "themeTrend": null,
       "signal": "WATCH",
-      "dataTimestamp": "2026-10-09T13:25:41.590923+00:00",
+      "dataTimestamp": "2026-10-10T00:47:05.638101+00:00",
       "isFinalClose": true,
       "source": "yahoo",
       "entrySignal": false
@@ -688,7 +688,7 @@
       "ma60": 218.36,
       "rsi14": 54.4624,
       "macd": "零軸上",
-      "volumeRatio": 1.0848,
+      "volumeRatio": 1.0882,
       "atr14": 5.3514,
       "dailyTrend": "多頭",
       "weeklyTrend": "多頭",
@@ -708,7 +708,7 @@
       "marketRegime": "BULL",
       "themeTrend": null,
       "signal": "WATCH",
-      "dataTimestamp": "2026-10-09T13:25:41.590923+00:00",
+      "dataTimestamp": "2026-10-10T00:47:05.638101+00:00",
       "isFinalClose": true,
       "source": "yahoo",
       "entrySignal": false
@@ -728,7 +728,7 @@
       "ma60": 522.6857,
       "rsi14": 61.2853,
       "macd": "零軸上",
-      "volumeRatio": 1.0457,
+      "volumeRatio": 1.0484,
       "atr14": 24.7136,
       "dailyTrend": "多頭",
       "weeklyTrend": "多頭",
@@ -748,7 +748,7 @@
       "marketRegime": "BULL",
       "themeTrend": null,
       "signal": "WATCH",
-      "dataTimestamp": "2026-10-09T13:25:41.590923+00:00",
+      "dataTimestamp": "2026-10-10T00:47:05.638101+00:00",
       "isFinalClose": true,
       "source": "yahoo",
       "entrySignal": false
@@ -768,7 +768,7 @@
       "ma60": 373.922,
       "rsi14": 49.3066,
       "macd": "零軸上",
-      "volumeRatio": 1.1153,
+      "volumeRatio": 1.1193,
       "atr14": 10.5914,
       "dailyTrend": "盤整",
       "weeklyTrend": "空頭",
@@ -788,7 +788,7 @@
       "marketRegime": "BULL",
       "themeTrend": null,
       "signal": "WATCH",
-      "dataTimestamp": "2026-10-09T13:25:41.590923+00:00",
+      "dataTimestamp": "2026-10-10T00:47:05.638101+00:00",
       "isFinalClose": true,
       "source": "yahoo",
       "entrySignal": false
@@ -808,7 +808,7 @@
       "ma60": 480.999,
       "rsi14": 61.6951,
       "macd": "零軸上",
-      "volumeRatio": 0.9102,
+      "volumeRatio": 0.9114,
       "atr14": 12.4286,
       "dailyTrend": "多頭",
       "weeklyTrend": "多頭",
@@ -828,7 +828,7 @@
       "marketRegime": "BULL",
       "themeTrend": null,
       "signal": "WATCH",
-      "dataTimestamp": "2026-10-09T13:25:41.590923+00:00",
+      "dataTimestamp": "2026-10-10T00:47:05.638101+00:00",
       "isFinalClose": true,
       "source": "yahoo",
       "entrySignal": false
@@ -848,7 +848,7 @@
       "ma60": 633.474,
       "rsi14": 57.5102,
       "macd": "轉弱",
-      "volumeRatio": 0.7309,
+      "volumeRatio": 0.7324,
       "atr14": 27.3929,
       "dailyTrend": "多頭",
       "weeklyTrend": "多頭",
@@ -868,7 +868,7 @@
       "marketRegime": "BULL",
       "themeTrend": null,
       "signal": "WATCH",
-      "dataTimestamp": "2026-10-09T13:25:41.590923+00:00",
+      "dataTimestamp": "2026-10-10T00:47:05.638101+00:00",
       "isFinalClose": true,
       "source": "yahoo",
       "entrySignal": false
@@ -888,7 +888,7 @@
       "ma60": 958.7295,
       "rsi14": 51.2135,
       "macd": "轉弱",
-      "volumeRatio": 1.1541,
+      "volumeRatio": 1.1586,
       "atr14": 44.795,
       "dailyTrend": "多頭",
       "weeklyTrend": "多頭",
@@ -908,7 +908,7 @@
       "marketRegime": "BULL",
       "themeTrend": null,
       "signal": "WATCH",
-      "dataTimestamp": "2026-10-09T13:25:41.590923+00:00",
+      "dataTimestamp": "2026-10-10T00:47:05.638101+00:00",
       "isFinalClose": true,
       "source": "yahoo",
       "entrySignal": false
@@ -928,7 +928,7 @@
       "ma60": 351.7585,
       "rsi14": 55.793,
       "macd": "零軸上",
-      "volumeRatio": 0.7999,
+      "volumeRatio": 0.8021,
       "atr14": 11.0664,
       "dailyTrend": "多頭",
       "weeklyTrend": "盤整",
@@ -948,7 +948,7 @@
       "marketRegime": "BULL",
       "themeTrend": null,
       "signal": "WATCH",
-      "dataTimestamp": "2026-10-09T13:25:41.590923+00:00",
+      "dataTimestamp": "2026-10-10T00:47:05.638101+00:00",
       "isFinalClose": true,
       "source": "yahoo",
       "entrySignal": false
@@ -968,7 +968,7 @@
       "ma60": 139.1842,
       "rsi14": 56.9315,
       "macd": "零軸上",
-      "volumeRatio": 0.7407,
+      "volumeRatio": 0.7561,
       "atr14": 6.5693,
       "dailyTrend": "多頭",
       "weeklyTrend": "多頭",
@@ -988,7 +988,7 @@
       "marketRegime": "BULL",
       "themeTrend": null,
       "signal": "WATCH",
-      "dataTimestamp": "2026-10-09T13:25:41.590923+00:00",
+      "dataTimestamp": "2026-10-10T00:47:05.638101+00:00",
       "isFinalClose": true,
       "source": "yahoo",
       "entrySignal": false
@@ -1028,7 +1028,7 @@
       "marketRegime": "BULL",
       "themeTrend": null,
       "signal": "WATCH",
-      "dataTimestamp": "2026-10-09T13:25:41.590923+00:00",
+      "dataTimestamp": "2026-10-10T00:47:05.638101+00:00",
       "isFinalClose": true,
       "source": "yahoo",
       "entrySignal": false
@@ -1068,7 +1068,7 @@
       "marketRegime": "BULL",
       "themeTrend": null,
       "signal": "WATCH",
-      "dataTimestamp": "2026-10-09T13:25:41.590923+00:00",
+      "dataTimestamp": "2026-10-10T00:47:05.638101+00:00",
       "isFinalClose": true,
       "source": "yahoo",
       "entrySignal": false
@@ -1108,7 +1108,7 @@
       "marketRegime": "BULL",
       "themeTrend": null,
       "signal": "WATCH",
-      "dataTimestamp": "2026-10-09T13:25:41.590923+00:00",
+      "dataTimestamp": "2026-10-10T00:47:05.638101+00:00",
       "isFinalClose": true,
       "source": "yahoo",
       "entrySignal": false
@@ -1148,7 +1148,7 @@
       "marketRegime": "BULL",
       "themeTrend": null,
       "signal": "WATCH",
-      "dataTimestamp": "2026-10-09T13:25:41.590923+00:00",
+      "dataTimestamp": "2026-10-10T00:47:05.638101+00:00",
       "isFinalClose": true,
       "source": "yahoo",
       "entrySignal": false
@@ -1188,7 +1188,7 @@
       "marketRegime": "BULL",
       "themeTrend": null,
       "signal": "WATCH",
-      "dataTimestamp": "2026-10-09T13:25:41.590923+00:00",
+      "dataTimestamp": "2026-10-10T00:47:05.638101+00:00",
       "isFinalClose": true,
       "source": "yahoo",
       "entrySignal": false
@@ -1228,7 +1228,7 @@
       "marketRegime": "BULL",
       "themeTrend": null,
       "signal": "WATCH",
-      "dataTimestamp": "2026-10-09T13:25:41.590923+00:00",
+      "dataTimestamp": "2026-10-10T00:47:05.638101+00:00",
       "isFinalClose": true,
       "source": "yahoo",
       "entrySignal": false
@@ -1268,7 +1268,7 @@
       "marketRegime": "BULL",
       "themeTrend": null,
       "signal": "WATCH",
-      "dataTimestamp": "2026-10-09T13:25:41.590923+00:00",
+      "dataTimestamp": "2026-10-10T00:47:05.638101+00:00",
       "isFinalClose": true,
       "source": "yahoo",
       "entrySignal": false
@@ -1308,7 +1308,7 @@
       "marketRegime": "BULL",
       "themeTrend": null,
       "signal": "WATCH",
-      "dataTimestamp": "2026-10-09T13:25:41.590923+00:00",
+      "dataTimestamp": "2026-10-10T00:47:05.638101+00:00",
       "isFinalClose": true,
       "source": "yahoo",
       "entrySignal": false
@@ -1348,7 +1348,7 @@
       "marketRegime": "BULL",
       "themeTrend": null,
       "signal": "WATCH",
-      "dataTimestamp": "2026-10-09T13:25:41.590923+00:00",
+      "dataTimestamp": "2026-10-10T00:47:05.638101+00:00",
       "isFinalClose": true,
       "source": "yahoo",
       "entrySignal": false

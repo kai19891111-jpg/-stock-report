@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-10-09T13:27:15.895536+00:00",
-  "dataTimestamp": "2026-10-09T13:25:41.590923+00:00",
+  "generatedAt": "2026-10-10T00:48:47.072495+00:00",
+  "dataTimestamp": "2026-10-10T00:47:05.638101+00:00",
   "sessions": {
     "TW": "2026-10-08",
     "US": "2026-10-08"
@@ -85,8 +85,8 @@
       "expLow": -0.1461,
       "expHigh": 0.876,
       "winRate": 0.56,
-      "beats": 0.56,
-      "why": "美股回測：後段只有 25 筆（要 30 筆）、期望值區間下緣 −0.15R，沒有大於 0、只勝過 56.0% 的隨機進場（要 95%）"
+      "beats": 0.6133,
+      "why": "美股回測：後段只有 25 筆（要 30 筆）、期望值區間下緣 −0.15R，沒有大於 0、只勝過 61.3% 的隨機進場（要 95%）"
     }
   },
   "regimeNotes": {
@@ -171,15 +171,15 @@
   "checks": [
     {
       "level": "info",
-      "text": "財報日只填了 5／32 檔，其餘沒辦法提醒財報前風險。"
+      "text": "財報日只填了 10／32 檔，其餘沒辦法提醒財報前風險。"
     },
     {
-      "level": "info",
-      "text": "沒有設定 SEC_UA，美股基本面寫 N/A"
+      "level": "warn",
+      "text": "資料來源 sec_tickers 這次完全沒抓到。"
     },
     {
-      "level": "info",
-      "text": "5 檔的風險分數資料不足（有分數的項目少於 3 項）。"
+      "level": "warn",
+      "text": "資料來源 regsho_nyse 這次完全沒抓到。"
     }
   ],
   "selfCheck": {
@@ -893,7 +893,7 @@
       "risk": {
         "level": "low",
         "total": 1,
-        "max": 6,
+        "max": 10,
         "reasons": []
       },
       "hold": {
@@ -930,14 +930,12 @@
       "roomRR": 1.2027395215168164,
       "plan": null,
       "text": "等收盤回到 227.61 以下（還差 −1.2%）再看訊號。",
-      "notes": [
-        "風險分數資料不足（只評了 2 項）"
-      ],
+      "notes": [],
       "mismatch": null,
       "risk": {
-        "level": "insufficient",
+        "level": "low",
         "total": 0,
-        "max": 4,
+        "max": 10,
         "reasons": []
       },
       "hold": {
@@ -983,7 +981,7 @@
       "risk": {
         "level": "low",
         "total": 0,
-        "max": 6,
+        "max": 10,
         "reasons": []
       },
       "hold": {
@@ -1024,14 +1022,12 @@
       "roomRR": 1.1773940345368932,
       "plan": null,
       "text": "週線空頭，不進場。",
-      "notes": [
-        "風險分數資料不足（只評了 2 項）"
-      ],
+      "notes": [],
       "mismatch": null,
       "risk": {
-        "level": "insufficient",
+        "level": "low",
         "total": 0,
-        "max": 4,
+        "max": 10,
         "reasons": []
       },
       "hold": {
@@ -1076,8 +1072,8 @@
       "mismatch": null,
       "risk": {
         "level": "low",
-        "total": 0,
-        "max": 6,
+        "total": 1,
+        "max": 10,
         "reasons": []
       },
       "hold": {
@@ -1110,14 +1106,12 @@
       "roomRR": 1.5462970737646422,
       "plan": null,
       "text": "價格已在進場區，還卡：MACD 轉弱。",
-      "notes": [
-        "風險分數資料不足（只評了 2 項）"
-      ],
+      "notes": [],
       "mismatch": null,
       "risk": {
-        "level": "insufficient",
+        "level": "low",
         "total": 0,
-        "max": 4,
+        "max": 10,
         "reasons": []
       },
       "hold": {
@@ -1150,14 +1144,12 @@
       "roomRR": 1.3489801206826375,
       "plan": null,
       "text": "價格已在進場區，還卡：MACD 轉弱。",
-      "notes": [
-        "風險分數資料不足（只評了 2 項）"
-      ],
+      "notes": [],
       "mismatch": null,
       "risk": {
-        "level": "insufficient",
+        "level": "low",
         "total": 0,
-        "max": 4,
+        "max": 10,
         "reasons": []
       },
       "hold": {
@@ -1201,7 +1193,7 @@
       "risk": {
         "level": "low",
         "total": 1,
-        "max": 6,
+        "max": 10,
         "reasons": []
       },
       "hold": {
@@ -1238,14 +1230,12 @@
       "roomRR": 1.0841609893567543,
       "plan": null,
       "text": "等收盤回到 155.37 以下（還差 −3.2%）再看訊號。",
-      "notes": [
-        "風險分數資料不足（只評了 2 項）"
-      ],
+      "notes": [],
       "mismatch": null,
       "risk": {
-        "level": "insufficient",
+        "level": "low",
         "total": 0,
-        "max": 4,
+        "max": 10,
         "reasons": []
       },
       "hold": {

@@ -1,0 +1,46 @@
+{
+  "updatedAt": "2026-10-10T00:47:24.057656+00:00",
+  "note": "scripts/risk.py 自動抓到的美股財報日。要指定日期請改 data/events.json 的 earnings，那邊永遠優先。",
+  "symbols": {
+    "AVGO": {
+      "date": "2026-12-09",
+      "dateEnd": null,
+      "estimated": false,
+      "provider": "Yahoo",
+      "source": "https://finance.yahoo.com/quote/AVGO/",
+      "fetchedAt": "2026-10-09"
+    },
+    "META": {
+      "date": "2026-10-28",
+      "dateEnd": null,
+      "estimated": true,
+      "provider": "Yahoo",
+      "source": "https://finance.yahoo.com/quote/META/",
+      "fetchedAt": "2026-10-09"
+    },
+    "MU": {
+      "date": "2026-12-23",
+      "dateEnd": null,
+      "estimated": true,
+      "provider": "Yahoo",
+      "source": "https://finance.yahoo.com/quote/MU/",
+      "fetchedAt": "2026-10-09"
+    },
+    "NVDA": {
+      "date": "2026-11-17",
+      "dateEnd": null,
+      "estimated": false,
+      "provider": "Yahoo",
+      "source": "https://finance.yahoo.com/quote/NVDA/",
+      "fetchedAt": "2026-10-09"
+    },
+    "SPCX": {
+      "date": "2026-11-03",
+      "dateEnd": null,
+      "estimated": true,
+      "provider": "Yahoo",
+      "source": "https://finance.yahoo.com/quote/SPCX/",
+      "fetchedAt": "2026-10-09"
+    }
+  }
+}
