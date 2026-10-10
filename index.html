@@ -1,1 +1,270 @@
-$(cat /workspace/artifacts/index.html)
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>技術與基本面報告</title>
+<script src="./wallpaper.js"></script>
+<style>
+:root{--bg:#07182e;--card:rgba(8,32,64,.82);--accent:#ef3e42;--text:#f7f4ee;--muted:#c5d0de;--green:#3dd68c;--red:#ff6b6b;--blue:#8ec0ff;--amber:#ffb450;--line:rgba(255,255,255,.14);}
+*{box-sizing:border-box;}
+html{scroll-behavior:smooth;scroll-padding-top:64px;}
+body{margin:0;color:var(--text);font-family:"Noto Sans TC","PingFang TC","Microsoft JhengHei",sans-serif;line-height:1.55;font-size:15px;background:var(--bg);}
+body:before{content:"";position:fixed;inset:0;z-index:0;pointer-events:none;background:
+linear-gradient(180deg, rgba(5,16,32,.28), rgba(5,16,32,.12) 40%, rgba(5,16,32,.4)),
+url("./assets/ohtani-cartoon.jpg") center 8px / min(94vw, calc((100dvh - 168px) * 0.671)) auto no-repeat;background-color:var(--bg);}
+header,nav,main,footer{position:relative;z-index:1;}
+a{color:var(--blue);text-decoration:none;}
+header{text-align:center;padding:18px 12px 12px;background:linear-gradient(180deg,rgba(5,16,32,.72),rgba(5,16,32,.5));}
+header .brand{color:var(--accent);letter-spacing:.18em;font-size:11px;font-weight:700;}
+header h1{margin:6px 0;font-size:1.35rem;}
+.stamps{display:flex;flex-wrap:wrap;justify-content:center;gap:6px;margin-top:8px;}
+.stamp{font-size:12px;padding:3px 10px;border-radius:999px;background:rgba(8,28,58,.8);border:1px solid var(--line);color:var(--muted);}
+.stamp b{color:var(--text);font-weight:600;}
+.banner{max-width:1080px;margin:10px auto 0;padding:8px 12px;border-radius:10px;background:rgba(255,180,80,.16);border:1px solid var(--amber);color:#ffd9a3;font-size:13px;}
+nav{position:sticky;top:0;z-index:99;background:linear-gradient(90deg, rgba(7,24,46,.96), rgba(0,70,150,.94) 58%, rgba(130,20,32,.92));border-bottom:3px solid var(--accent);padding:8px 12px;display:flex;gap:8px;overflow-x:auto;-webkit-overflow-scrolling:touch;box-shadow:0 8px 22px rgba(0,0,0,.28);}
+nav a{flex:0 0 auto;padding:6px 12px;border-radius:999px;font-size:13px;color:#fff;background:linear-gradient(180deg,#2b78d6,#0b4f9c);border:1px solid rgba(255,255,255,.4);}
+nav a:hover{background:linear-gradient(180deg,#ff5a5e,#c81e2b);}
+@media(min-width:700px){nav{justify-content:center;}}
+main{max-width:1080px;margin:0 auto;padding:4px 12px 12px;}
+.panel{background:rgba(8,28,58,.76);border:1px solid var(--line);border-top:3px solid var(--accent);border-radius:16px;padding:14px;margin:12px 0;backdrop-filter:blur(8px);}
+.panel h2{margin:0 0 10px;font-size:1.05rem;border-left:4px solid var(--accent);padding-left:8px;letter-spacing:.04em;display:flex;flex-wrap:wrap;align-items:baseline;gap:8px;}
+.panel h2 small{font-size:11px;font-weight:400;color:var(--muted);letter-spacing:0;}
+.panel p{margin:6px 0;}
+.panel ul,.panel ol{margin:6px 0;padding-left:20px;}
+.panel li{margin:5px 0;}
+.note{font-size:12px;color:var(--muted);}
+.anchor{display:block;height:0;}
+
+.cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(270px,1fr));gap:10px;}
+.card{background:var(--card);border:1px solid rgba(142,192,255,.3);border-radius:14px;padding:12px;min-width:0;}
+.card.held{border-color:rgba(255,255,255,.75);}
+.card .title{font-weight:700;font-size:14px;display:flex;flex-wrap:wrap;gap:6px;align-items:center;}
+.card .sub{font-size:11px;color:var(--muted);margin:2px 0 6px;}
+.card .px{font-size:26px;font-weight:700;line-height:1.2;}
+.card .px .chg{font-size:14px;font-weight:600;margin-left:6px;white-space:nowrap;}
+.live-note{color:#e6d3a3;font-size:12px;margin-top:2px;}
+.status{display:flex;flex-wrap:wrap;gap:6px;align-items:center;margin:8px 0 2px;}
+.why{font-size:12px;color:var(--muted);}
+.kv{display:grid;grid-template-columns:1fr 1fr;gap:6px 12px;margin-top:8px;}
+.kv>div{min-width:0;}
+.kv>div>span{display:block;color:#9fb3c8;font-size:11px;}
+.kv b{font-size:13px;font-weight:600;overflow-wrap:anywhere;}
+.kv em{display:block;font-style:normal;font-size:11px;color:var(--muted);font-weight:400;}
+.kv .wide{grid-column:1 / -1;}
+.old{text-decoration:line-through;opacity:.55;font-weight:400;}
+.warn{color:#ffd08a;}
+
+.badge{display:inline-block;padding:2px 8px;border-radius:999px;font-size:12px;font-weight:600;white-space:nowrap;}
+.badge.go{background:#1f7a4d;color:#fff;}
+.badge.hold{background:#1d4e89;color:#fff;}
+.badge.trim{background:#8a5a12;color:#fff;}
+.badge.wait{background:#5c6570;color:#fff;}
+.badge.own{background:#fff;color:#0b2a52;}
+.badge.sig{background:#fff3c4;color:#5a4300;}
+.badge.stale{background:transparent;border:1px solid var(--amber);color:var(--amber);font-weight:500;}
+
+.chips{display:flex;flex-wrap:wrap;gap:6px;margin:0 0 12px;}
+.chip{font:inherit;font-size:13px;padding:5px 12px;border-radius:999px;border:1px solid rgba(255,255,255,.35);background:rgba(8,28,58,.7);color:var(--text);cursor:pointer;}
+.chip b{font-weight:600;color:var(--muted);margin-left:4px;}
+.chip[aria-pressed="true"]{background:#fff;color:#0b2a52;border-color:#fff;}
+.chip[aria-pressed="true"] b{color:#0b2a52;}
+.chip:focus-visible{outline:2px solid var(--blue);outline-offset:2px;}
+
+.totals{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:10px;margin-bottom:10px;}
+.tot{background:var(--card);border:1px solid rgba(142,192,255,.3);border-radius:14px;padding:10px 12px;}
+.tot span{display:block;font-size:11px;color:#9fb3c8;}
+.tot b{font-size:20px;}
+.tot em{display:block;font-style:normal;font-size:12px;color:var(--muted);}
+.wbar{display:flex;height:14px;border-radius:999px;overflow:hidden;gap:2px;margin:4px 0 6px;}
+.wbar i{display:block;height:100%;}
+.wlegend{display:flex;flex-wrap:wrap;gap:4px 14px;font-size:12px;color:var(--muted);margin-bottom:12px;}
+.wlegend i{display:inline-block;width:10px;height:10px;border-radius:2px;margin-right:5px;}
+.subtotal{font-size:13px;margin-top:10px;border-top:1px solid var(--line);padding-top:8px;}
+.subtotal div{display:flex;flex-wrap:wrap;justify-content:space-between;gap:4px 12px;padding:3px 0;}
+.subtotal div.sum{font-weight:700;border-top:1px solid var(--line);margin-top:4px;padding-top:6px;}
+
+.scroll{overflow-x:auto;}
+table{width:100%;border-collapse:collapse;font-size:13px;}
+th,td{padding:6px 6px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top;}
+th{color:var(--muted);font-weight:600;font-size:12px;white-space:nowrap;}
+td.num{text-align:right;white-space:nowrap;font-variant-numeric:tabular-nums;}
+td.grp{white-space:nowrap;font-weight:600;color:#e6d3a3;}
+.mem{display:inline-block;margin:0 10px 2px 0;white-space:nowrap;}
+.mem small{color:var(--muted);}
+details{margin-top:8px;font-size:13px;}
+summary{cursor:pointer;color:var(--muted);}
+footer{text-align:center;padding:16px 12px 28px;font-size:11px;color:var(--muted);}
+#ai-class table td{white-space:normal;min-width:0;}
+@media(max-width:600px){.cards{grid-template-columns:1fr;}header h1{font-size:1.15rem;}.card .px{font-size:24px;}}
+</style>
+</head>
+<body>
+<header>
+  <div class="brand">OHTANI SERIES · TECHNICAL REPORT</div>
+  <h1>技術與基本面報告</h1>
+  <div class="stamps" id="stamps"></div>
+  <div class="note" style="margin-top:8px">盤中價只當註記，不寫進日 K 與狀態。位置標籤不是進場訊號。</div>
+</header>
+<div id="stale-banner" class="banner" hidden></div>
+<nav>
+  <a href="#verdict">入場指示</a>
+  <a href="#summary">摘要</a>
+  <a href="#u2-position">我的持倉</a>
+  <a href="#decision">個股卡片</a>
+  <a href="#backtest">回測</a>
+  <a href="#index">指數</a>
+  <a href="#u2-market-levels">大盤關卡</a>
+  <a href="#ai-class">族群</a>
+  <a href="#guide">使用方法</a>
+</nav>
+<main>
+  <noscript><div class="banner">這個頁面需要開啟 JavaScript 才能顯示報告內容。</div></noscript>
+
+  <section id="verdict" class="panel">
+    <h2>今日入場指示 <small id="verdict-stamp"></small></h2>
+    <div id="verdict-body"><p class="note">讀取最終指示中…</p></div>
+  </section>
+
+  <section id="summary" class="panel">
+    <h2>市場摘要</h2>
+    <div id="summary-body"></div>
+    <span id="radar" class="anchor"></span>
+    <h2 style="margin-top:14px">今日交易雷達</h2>
+    <ul id="radar-body"></ul>
+  </section>
+
+  <section id="u2-position" class="panel">
+    <h2>我的持倉 <small id="pos-stamp"></small></h2>
+    <div id="pos-body"></div>
+  </section>
+
+  <section id="decision" class="panel">
+    <span id="watch" class="anchor"></span><span id="entry-pick" class="anchor"></span><span id="trade-alert" class="anchor"></span>
+    <h2>個股卡片 <small id="card-stamp"></small></h2>
+    <div class="chips" id="chips" role="group" aria-label="篩選卡片"></div>
+    <div class="cards" id="cards"></div>
+    <p class="note" id="levels-note"></p>
+  </section>
+
+  <section id="backtest" class="panel">
+    <h2>回測統計 <small id="bt-stamp"></small></h2>
+    <div id="bt-body"><p class="note">讀取回測資料中…</p></div>
+  </section>
+
+  <section id="index" class="panel">
+    <h2>指數／殖利率</h2>
+    <div class="scroll"><table>
+      <thead><tr><th>名稱</th><th>最後完成</th><th>收盤</th><th>漲跌</th><th>盤中註記</th></tr></thead>
+      <tbody id="index-body"></tbody>
+    </table></div>
+  </section>
+
+  <section id="u2-market-levels" class="panel">
+    <h2>台股大盤關卡 <small id="mkt-stamp"></small></h2>
+    <div class="cards" id="mkt-body"></div>
+  </section>
+
+
+  <section id="ai-class" class="panel">
+    <span id="u2-sync" class="anchor"></span>
+    <h2>AI 分類面板｜族群同步 <small>STOCK_META，漲跌為各自最後完成日</small></h2>
+    <div class="scroll"><table><tbody id="group-body"></tbody></table></div>
+  </section>
+
+  <section id="guide" class="panel">
+    <h2>使用方法</h2>
+    <ol>
+      <li>先看最上面的「今日入場指示」：每一檔只有一個結論（可進場／有訊號但沒全過／等回檔／不買）。卡片上的位置標籤、進場條件核對、風險分數都是它的明細。</li>
+      <li>先看日期：每張卡片都寫了自己的日 K 日期，台股和美股不是同一天。</li>
+      <li>狀態只看三個條件：收在 SMA20 之上、乖離 0–6%、未貼近 20 日高。三條都過標「均線附近」，卡片上會寫沒過的是哪一條。這是位置，不是進場訊號。</li>
+      <li>乖離超過 15% 顯示「過熱」。這只是提醒，不是賣出訊號；有持倉時會列出出場參考（收盤跌破 SMA20），實際差多少看回測區塊的「過熱之後」。</li>
+      <li>價格、均線、進場區、失效價、目標價由腳本每個交易日收盤後自動更新。讀不到自動行情時才會退回頁面內建的舊價位，並標「價位待重算」。</li>
+      <li>報酬風險比＝（目標價 − 收盤）÷（收盤 − 失效價）。低於門檻代表往上的空間比往下的風險小，就算位置是「均線附近」也不進場。</li>
+      <li>「規則進場訊號」是回測統計裡那條規則今天成立；它的勝率與期望值寫在回測區塊，並且要和「隨機進場對照」比。</li>
+      <li>回測統計的勝率只來自已平倉交易；筆數不到 30 一律顯示「樣本不足」，不看勝率。</li>
+      <li>用上方的篩選按鈕切換：全部／均線附近／規則進場訊號／持倉／報酬風險比達標。</li>
+      <li>導覽列下方的「盤中報價」會自己更新，卡片上多一行盤中價與漲跌。沒有設定時用每 5 分鐘的延遲快照；按「設定」貼上 Finnhub 金鑰後，美股個股每 15 秒更新。盤中價只是註記，位置標籤、風險分數與最終指示仍然只看收盤。</li>
+      <li>美股的風險分數：財報日沒手填時自動抓（公司還沒確認的會寫「預估」）；基本面用 SEC 申報的單季營收與毛利率；籌碼看放空餘額與交易所的 Reg SHO 門檻名單。抓不到的項目一樣寫 N/A，不計分。</li>
+    </ol>
+    <details>
+      <summary>更新紀錄</summary>
+      <ul id="changelog"></ul>
+    </details>
+  </section>
+</main>
+<footer>歷史數據與技術條件的決策輔助，不是保證預測，不自動下單。</footer>
+
+<script>
+/* =====================================================================
+   ① 每次更新只需要改這一區：REPORT（文字說明）、POSITIONS（持倉）、FX（匯率）。
+      價格、均線、價位由 scripts/update_market.py 每個交易日寫進 data/latest.json，頁面會自動讀。
+      下面的 DATA 只是備援（latest.json 讀不到時才用），有空再更新即可。
+      不要另外貼卡片的 HTML。
+   ===================================================================== */
+const REPORT = {
+  generatedAt: "2026-10-09T08:46:00+08:00",          // 報告產出時間（台北）
+  staleAfterHours: 24,                                // 只用內建 DATA 時，超過幾小時提醒資料可能過期
+  autoStaleAfterHours: 96,                            // 有自動行情時，超過幾小時沒更新才提醒（週末不會誤報）
+  minRR: 1.5,                                         // 報酬風險比門檻的備援值；有 latest.json 時以腳本的 min_rr 為準
+  levelsNote: "目前讀不到自動行情，顯示的是頁面內建的舊價位；收盤已穿過壓力的卡片會標「價位待重算」。",
+  notes: [                                            // 手寫的補充說明，會出現在摘要最後
+    "台北 10/09 08:46，台股國慶休市。不把今天當收盤、不重算進出場。",
+    "台股個股用 10/08 完成日K。加權收 49,313.44（-0.99%）；Yahoo 日K高低未回補，20 日高與 SMA20 沿用，不重算大盤關卡。",
+    "美股個股日K仍停在 10/07。16:00 ET 後已過 30 分鐘，但 Yahoo 日K尚未寫入 10/08，標資料待同步/上一交易日，不重算進出場。",
+    "已同步日K：Nasdaq 27,193.34、費半 12,623.71、美10年債 5.231% 用 10/08 正式收盤。"
+  ],
+  marketNotes: {                                      // 大盤關卡三張卡的說明
+    high: "已核對的 20 日高。高低點還沒回補的當天，不用盤中高充當壓力。",
+    close: "最後完成日 K。",
+    sma20: "含最後完成日收盤的 20 日均線，當作觀察支撐。"
+  },
+  changelog: [
+    "2026-10-10：同一天的行情改回以腳本重算的 latest.json 為準（修正同一張卡片出現兩套價位）；截圖報價比日 K 舊時改用收盤價；過期的手寫說明收進摺疊；新增 position-risk.js（碰到失效價會賠多少、日 K 日期檢查、保守股數）。",
+    "2026-10-10：右下角新增「看背景」按鈕，收起整份報告只看背景圖；再按「回報告」或 Esc 回來。選擇記在這台裝置。新增「♪ 音樂」按鈕，播放 assets/ 裡的背景音樂（要自己按一下才會播）。",
+    "2026-10-09：美股補資料——財報日自動抓（Yahoo→Nasdaq→Finnhub→SEC 歷年發布日推估，未確認的標「預估」）、基本面改成不用另外設定就能讀 SEC（第四季＝全年−前三季；TSM 直接用 2330 的數字）、籌碼改看放空餘額與 Reg SHO 門檻名單。新增盤中報價（live.js）：每 5 分鐘快照，貼 Finnhub 金鑰後美股每 15 秒更新；只當註記。收盤後多跑兩次自動更新，避免美股日 K 晚同步。",
+    "2026-10-09：新增「今日入場指示」，每一檔只給一個結論；狀態改名成位置標籤（均線附近／偏高／過熱／均線之下）；回測加上分市場統計；處置股直接判高風險；移除 10/02 的 FINAL HOTFIX、寫死價位的持倉判斷與「新增關注」區塊。",
+    "2026-10-09 08:46：只更新已同步收盤與未同步註記；台股休市不重算進出場；未刪持倉、分類、hotfix。",
+    "2026-10-08：價格、均線、價位改讀腳本每天產生的 latest.json；門檻改 1.5；回測加上隨機進場對照、參數搜尋與過熱出場比較；移除會蓋掉整個「我的持倉」的舊補丁段落（台積電、SPCX 與合計會消失）。",
+    "2026-10-08 08:50：只更新已同步指數收盤與未同步註記；未刪持倉、分類、hotfix。",
+    "2026-10-08：卡片加上報酬風險比；新增回測統計（腳本重跑兩年日 K，含成本）。",
+    "2026-10-08：三組重複卡片合併成一套＋篩選；持倉加上合計、佔比與換算匯率；價位過期自動標示；狀態改由三條件即時計算。",
+    "2026-10-08：頁面不再掛 hotfix、即時重畫、第二套持倉腳本，全站只用同一份 DATA。",
+    "2026-10-08：10/02 的 48,218／48,380／48,601 大盤關卡已低於現價約 1,200 點，停用。",
+    "分類基線：2026-09-25 分類＋09-27 三檔＋10-02 八檔＋10-03 國巨。"
+  ]
+};
+
+/* 持倉：ccy 是計價幣別。台股用 DATA 的收盤價；
+   有 quote 的部位（例如代幣）用 quote 當現價，並顯示 quoteAt 的截圖時間。 */
+const POSITIONS = [
+  { code: "2330.TW", qty: 10, cost: 2572.10, ccy: "TWD", group: "台股券商", note: "可下單股數 0（沿用截圖）" },
+  { code: "4958.TW", qty: 80, cost: 481.90,  ccy: "TWD", group: "台股券商" },
+  { code: "SPCX",    qty: 34.488502296, cost: 152.12, ccy: "USDC", group: "代幣",
+    quote: 167.541, quoteAt: "2026-10-08T02:57:00+08:00", note: "可賣 34.488502296" }
+];
+
+/* 匯率：USDC 部位換算成台幣用。 */
+const FX = { USDTWD: 31.84432, source: "由截圖市值 NT$184,004.06 反推" };
+
+/* 分類、名稱、行情：沿用原本的格式。更新報告時整段換掉 DATA 即可。
+   DATA 欄位：p 收盤、ch/pct 漲跌、date 日K日期、s20/s60 均線、bias 乖離%、high20 20日高、
+   near 是否貼近20日高、live 盤中註記價、entry 進場區、invalid 失效價、resist 壓力。
+   status 欄位頁面已不使用（狀態改由三條件即時計算）。 */
+
+/* 分類、名稱、行情：沿用原本的格式。DATA 現在只是備援，latest.json 讀不到時才用。
+   DATA 欄位：p 收盤、ch/pct 漲跌、date 日K日期、s20/s60 均線、bias 乖離%、high20 20日高、
+   near 是否貼近20日高、live 盤中註記價、entry 進場區、invalid 失效價、resist 壓力。 */
+const STOCK_META = {"TW|AI晶片": ["2330.TW", "2454.TW"], "TW|AI電源": ["2308.TW"], "TW|AI散熱": ["3324.TWO", "3653.TW", "3017.TW"], "TW|ABF": ["3189.TW", "3037.TW", "8046.TW"], "TW|CCL": ["6213.TW", "2383.TW"], "TW|面板／光電": ["3481.TW"], "TW|晶圓代工＋記憶體": ["6770.TW"], "TW|半導體廠務": ["2221.TWO"], "US|AI晶片": ["TSM", "NVDA", "AMD", "AVGO"], "US|AI雲端": ["MSFT", "META"], "US|AI記憶體": ["MU"], "US|AI自駕機器人": ["TSLA"], "US|航太科技": ["SPCX"], "TW|AI伺服器／機櫃": ["8210.TW"], "TW|AI基建／電力": ["2371.TW"], "TW|光學／CPO": ["3406.TW"], "TW|記憶體": ["2408.TW"], "TW|CCL／電子材料": ["1303.TW"], "TW|PCB／銅箔": ["8358.TWO", "4958.TW"], "TW|電池監測IC": ["4919.TW"], "TW|被動元件": ["2327.TW"]};
+const NAMES = {"2330.TW": "台積電", "2454.TW": "聯發科", "2308.TW": "台達電", "3324.TWO": "双鴻", "3653.TW": "健策", "3017.TW": "奇鈧", "3189.TW": "景碩", "3037.TW": "欣興", "8046.TW": "南電", "6213.TW": "聯茂", "2383.TW": "台光電", "3481.TW": "群創", "6770.TW": "力積電", "2221.TWO": "大甲", "TSM": "TSMC ADR", "NVDA": "NVIDIA", "AMD": "AMD", "AVGO": "Broadcom", "MSFT": "Microsoft", "META": "Meta", "MU": "Micron", "TSLA": "Tesla", "SPCX": "SPCX", "^TNX": "美10年債殖利率", "^TWII": "加權指數", "^IXIC": "Nasdaq", "^SOX": "費城半導體", "2371.TW": "大同", "8210.TW": "勤誠", "3406.TW": "玉晶光", "2408.TW": "南亞科", "1303.TW": "南亞", "8358.TWO": "金居", "4958.TW": "臻鼎-KY", "4919.TW": "新唐", "2327.TW": "國巨"};
+const DATA = {"2330.TW": {"p": 2550.0, "ch": -35.0, "pct": -1.35, "date": "2026-10-08", "status": "持有觀察", "entry": "2470.00-2442.50", "invalid": "2375.00", "resist": "2510.00", "s20": 2472.5, "s60": 2411.5, "bias": 4.55, "high20": 2590.0, "near": true, "live": null, "session": "完成日K", "live_note": "10/09 國慶休市，沿用 10/08 完成日K，不重算進出場"}, "2454.TW": {"p": 4690.0, "ch": -145.0, "pct": -3.0, "date": "2026-10-08", "status": "等待", "entry": "4875.00-4731.50", "invalid": "4230.00", "resist": "5480.00", "s20": 4835.5, "s60": 4187.0, "bias": -0.01, "high20": 5480.0, "near": false, "live": null, "session": "完成日K", "live_note": "10/09 國慶休市，沿用 10/08 完成日K，不重算進出場"}, "2308.TW": {"p": 1965.0, "ch": -25.0, "pct": -1.26, "date": "2026-10-08", "status": "持有觀察", "entry": "1810.00-1784.75", "invalid": "1560.00", "resist": "1965.00", "s20": 1823.0, "s60": 1782.08, "bias": 9.16, "high20": 2115.0, "near": false, "live": null, "session": "完成日K", "live_note": "10/09 國慶休市，沿用 10/08 完成日K，不重算進出場"}, "3324.TWO": {"p": 1520.0, "ch": -5.0, "pct": -0.33, "date": "2026-10-08", "status": "觀察進場", "entry": "1480.00-1456.75", "invalid": "1240.00", "resist": "1750.00", "s20": 1476.75, "s60": 1179.12, "bias": 3.27, "high20": 1750.0, "near": false, "live": null, "session": "完成日K", "live_note": "10/09 國慶休市，沿用 10/08 完成日K，不重算進出場"}, "3653.TW": {"p": 7165.0, "ch": 360.0, "pct": 5.29, "date": "2026-10-08", "status": "持有觀察", "entry": "5930.00-5927.50", "invalid": "5210.00", "resist": "7160.00", "s20": 6176.25, "s60": 5052.0, "bias": 10.18, "high20": 7440.0, "near": false, "live": null, "session": "完成日K", "live_note": "10/09 國慶休市，沿用 10/08 完成日K，不重算進出場"}, "3017.TW": {"p": 3440.0, "ch": -105.0, "pct": -2.96, "date": "2026-10-08", "status": "觀察進場", "entry": "3285.00-3374.25", "invalid": "3100.00", "resist": "3600.00", "s20": 3407.0, "s60": 2987.58, "bias": 4.05, "high20": 3700.0, "near": false, "live": null, "session": "完成日K", "live_note": "10/09 國慶休市，沿用 10/08 完成日K，不重算進出場"}, "3189.TW": {"p": 1075.0, "ch": -25.0, "pct": -2.27, "date": "2026-10-08", "status": "減碼", "entry": "881.00-855.20", "invalid": "766.00", "resist": "1020.00", "s20": 908.25, "s60": 831.7, "bias": 21.11, "high20": 1150.0, "near": false, "live": null, "session": "完成日K", "live_note": "10/09 國慶休市，沿用 10/08 完成日K，不重算進出場"}, "3037.TW": {"p": 1270.0, "ch": -35.0, "pct": -2.68, "date": "2026-10-08", "status": "減碼", "entry": "1115.00-1025.40", "invalid": "873.00", "resist": "1230.00", "s20": 1100.3, "s60": 1002.65, "bias": 18.6, "high20": 1420.0, "near": false, "live": null, "session": "完成日K", "live_note": "10/09 國慶休市，沿用 10/08 完成日K，不重算進出場"}, "8046.TW": {"p": 1475.0, "ch": -5.0, "pct": -0.34, "date": "2026-10-08", "status": "減碼", "entry": "1150.00-1139.25", "invalid": "1010.00", "resist": "1450.00", "s20": 1217.0, "s60": 1171.75, "bias": 21.61, "high20": 1550.0, "near": false, "live": null, "session": "完成日K", "live_note": "10/09 國慶休市，沿用 10/08 完成日K，不重算進出場"}, "6213.TW": {"p": 806.0, "ch": 10.0, "pct": 1.26, "date": "2026-10-08", "status": "減碼", "entry": "525.00-541.45", "invalid": "482.00", "resist": "649.00", "s20": 588.4, "s60": 475.27, "bias": 35.28, "high20": 818.0, "near": false, "live": null, "session": "完成日K", "live_note": "10/09 國慶休市，沿用 10/08 完成日K，不重算進出場"}, "2383.TW": {"p": 6000.0, "ch": 50.0, "pct": 0.84, "date": "2026-10-08", "status": "持有觀察", "entry": "4855.00-5144.25", "invalid": "4635.00", "resist": "5670.00", "s20": 5203.5, "s60": 5254.83, "bias": 14.35, "high20": 6115.0, "near": false, "live": null, "session": "完成日K", "live_note": "10/09 國慶休市，沿用 10/08 完成日K，不重算進出場"}, "3481.TW": {"p": 51.0, "ch": -1.5, "pct": -2.86, "date": "2026-10-08", "status": "觀察進場", "entry": "48.55-49.41", "invalid": "46.25", "resist": "55.50", "s20": 50.07, "s60": 49.37, "bias": 4.86, "high20": 56.2, "near": false, "live": null, "session": "完成日K", "live_note": "10/09 國慶休市，沿用 10/08 完成日K，不重算進出場"}, "6770.TW": {"p": 72.2, "ch": -0.4, "pct": -0.55, "date": "2026-10-08", "status": "等待", "entry": "70.50-71.65", "invalid": "66.70", "resist": "75.40", "s20": 72.63, "s60": 68.89, "bias": -0.04, "high20": 78.1, "near": false, "live": null, "session": "完成日K", "live_note": "10/09 國慶休市，沿用 10/08 完成日K，不重算進出場"}, "2221.TWO": {"p": 192.0, "ch": 2.5, "pct": 1.32, "date": "2026-10-08", "status": "減碼", "entry": "149.50-121.29", "invalid": "78.10", "resist": "198.00", "s20": 141.15, "s60": 85.49, "bias": 34.25, "high20": 198.0, "near": false, "live": null, "session": "完成日K", "live_note": "10/09 國慶休市，沿用 10/08 完成日K，不重算進出場"}, "TSM": {"p": 472.2, "ch": -10.1, "pct": -2.09, "date": "2026-10-07", "status": "持有觀察", "entry": "443.11-438.33", "invalid": "407.82", "resist": "461.87", "s20": 446.13, "s60": 425.41, "bias": 8.11, "high20": 487.47, "near": false, "live": null, "session": "資料待同步/上一交易日", "live_note": "10/08 收盤尚未寫入日K，沿用 10/07 完成日K，資料待同步/上一交易日，不重算進出場"}, "NVDA": {"p": 237.47, "ch": -1.77, "pct": -0.74, "date": "2026-10-07", "status": "持有觀察", "entry": "223.13-223.51", "invalid": "208.93", "resist": "234.76", "s20": 224.89, "s60": 217.63, "bias": 6.38, "high20": 243.0, "near": false, "live": null, "session": "資料待同步/上一交易日", "live_note": "10/08 收盤尚未寫入日K，沿用 10/07 完成日K，資料待同步/上一交易日，不重算進出場"}};
+</script>
+
+<script src="./entry-gate.js"></script>
+<script src="./risk-score.js"></script>
+<script src="./verdict.js"></script>
+<script src="./live.js"></script>
+<script src="./position-risk.js"></script>
+<script src="./music.js"></script>
+</body>
+</html>
