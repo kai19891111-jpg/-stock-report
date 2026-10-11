@@ -1,8 +1,8 @@
 {
-  "generatedAt": "2026-10-10T06:14:03.421374+00:00",
+  "generatedAt": "2026-10-11T12:16:13.673771+00:00",
   "today": {
-    "TW": "2026-10-10",
-    "US": "2026-10-10"
+    "TW": "2026-10-11",
+    "US": "2026-10-11"
   },
   "thresholds": {
     "bias_mid": 6.0,
@@ -69,7 +69,7 @@
       "lastError": "HTTPError: HTTP Error 406: Not Acceptable"
     },
     "finmind": {
-      "ok": 92,
+      "ok": 96,
       "fail": 0
     },
     "yahoo_login": {
@@ -1448,6 +1448,50 @@
       },
       "market": "TW",
       "group": "TW|被動元件"
+    },
+    "1569.TWO": {
+      "total": 5,
+      "max": 8,
+      "scored": 4,
+      "score10": 6.2,
+      "level": "mid",
+      "flags": [
+        "overheated"
+      ],
+      "gate": {
+        "block": true,
+        "reasons": [
+          "風險中"
+        ]
+      },
+      "items": {
+        "tech": {
+          "score": 2,
+          "why": "乖離 +16.94%",
+          "date": "2026-10-08"
+        },
+        "earnings": {
+          "score": null,
+          "why": "events.json 沒有這檔的財報日"
+        },
+        "fundamentals": {
+          "score": 2,
+          "why": "營收年增 -25.3%（2026-08）、年增率連兩個月放緩（-6%→-14%→-25%）、毛利率 6.5%，年變動 +6.2 個百分點（2026-06-30）",
+          "date": "2026-08"
+        },
+        "chips": {
+          "score": 1,
+          "why": "近 5 日法人 -1680 張、融資 +1061 張",
+          "date": "2026-10-08"
+        },
+        "policy": {
+          "score": 0,
+          "why": "14 天內沒有排定事件，也沒有生效中的不利政策",
+          "date": "2026-10-09"
+        }
+      },
+      "market": "TW",
+      "group": "TW|NB機構件"
     }
   }
 }
