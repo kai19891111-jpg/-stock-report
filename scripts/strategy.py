@@ -1,1 +1,1 @@
-$(cat /tmp/strategy_new.py)
+PLACEHOLDER_STRATEGY

@@ -1,1 +1,1 @@
-$(cat /tmp/backtest_new.py)
+PLACEHOLDER_BACKTEST
