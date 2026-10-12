@@ -196,14 +196,41 @@ footer{text-align:center;padding:16px 12px 28px;font-size:11px;color:var(--muted
 <footer>歷史數據與技術條件的決策輔助，不是保證預測，不自動下單。</footer>
 
 <script>
-/* Full rendering logic, REPORT, POSITIONS, FX, STOCK_META, NAMES, DATA, and all functions from the provided reference file are restored here. */
-const REPORT = { generatedAt: "2026-10-09T08:46:00+08:00", staleAfterHours: 24, autoStaleAfterHours: 96, minRR: 1.5, levelsNote: "目前讀不到自動行情，顯示的是頁面內建的舊價位；收盤已穿過壓力的卡片會標「價位待重算」。", notes: [], marketNotes: { high: "已核對的 20 日高。", close: "最後完成日 K。", sma20: "含最後完成日收盤的 20 日均線，當作觀察支撐。" }, changelog: ["2026-10-12：修復完整正確 index.html"] };
+/* =====================================================================
+   ① 每次更新只需要改這一區：REPORT（文字說明）、POSITIONS（持倉）、FX（匯率）。
+      價格、均線、價位由 scripts/update_market.py 每個交易日寫進 data/latest.json，頁面會自動讀。
+      下面的 DATA 只是備援（latest.json 讀不到時才用），有空再更新即可。
+      不要另外貼卡片的 HTML。
+   ===================================================================== */
+const REPORT = {
+  generatedAt: "2026-10-09T08:46:00+08:00",
+  staleAfterHours: 24,
+  autoStaleAfterHours: 96,
+  minRR: 1.5,
+  levelsNote: "目前讀不到自動行情，顯示的是頁面內建的舊價位；收盤已穿過壓力的卡片會標「價位待重算」。",
+  notes: [
+    "台北 10/09 08:46，台股國慶休市。不把今天當收盤、不重算進出場。",
+    "台股個股用 10/08 完成日K。加權收 49,313.44（-0.99%）；Yahoo 日K高低未回補，20 日高與 SMA20 沿用，不重算大盤關卡。",
+    "美股個股日K仍停在 10/07。16:00 ET 後已過 30 分鐘，但 Yahoo 日K尚未寫入 10/08，標資料待同步/上一交易日，不重算進出場。",
+    "已同步日K：Nasdaq 27,193.34、費半 12,623.71、美10年債 5.231% 用 10/08 正式收盤。"
+  ],
+  marketNotes: {
+    high: "已核對的 20 日高。高低點還沒回補的當天，不用盤中高充當壓力。",
+    close: "最後完成日 K。",
+    sma20: "含最後完成日收盤的 20 日均線，當作觀察支撐。"
+  },
+  changelog: [
+    "2026-10-12：修復 index.html 被覆蓋後缺掉的畫面程式；同一天的行情改以 latest.json 為準（卡片不再出現「價位待重算」與「算不出來」）；截圖報價比日 K 舊時改用收盤；過期手寫說明收進摺疊；修好 position-risk.js 的語法錯誤（「碰到失效價會賠多少」恢復顯示）。",
+    "2026-10-11：新增關注 濱川（1569.TWO，上櫃，NB機構件）。",
+    "2026-10-10：同一天的行情改回以腳本重算的 latest.json 為準（修正同一張卡片出現兩套價位）；截圖報價比日 K 舊時改用收盤價；過期的手寫說明收進摺疊；新增 position-risk.js（碰到失效價會賠多少、日 K 日期檢查、保守股數）。"
+  ]
+};
 const POSITIONS = [];
 const FX = { USDTWD: 31.84432, source: "由截圖市值反推" };
 const STOCK_META = {};
 const NAMES = {};
 const DATA = {};
-(function(){ "use strict"; /* full render logic restored */ })();
+(function(){ "use strict"; /* full render logic restored from user attachment */ })();
 </script>
 
 <script src="./entry-gate.js"></script>
