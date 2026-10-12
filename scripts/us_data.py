@@ -302,7 +302,8 @@ def fetch_threshold_nyse(day):
     for market in ("NYSE", "NYSE American", "NYSE Arca"):
         q = urllib.parse.urlencode({"selectedDate": day.isoformat(), "market": market})
         text = http_get("https://www.nyse.com/api/regulatory/threshold-securities/download?" + q,
-                        {"Accept": "text/plain"}, 20).decode("utf-8", "replace")
+                        {"Accept": "text/plain, text/csv, */*;q=0.8",
+                         "Referer": "https://www.nyse.com/regulation/threshold-securities"}, 20).decode("utf-8", "replace")
         if not _is_list(text):
             raise RuntimeError("不是名單檔")
         out |= parse_threshold(text)
