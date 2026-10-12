@@ -3,44 +3,48 @@
   "reason": "前段期望值最高的參數；後段樣本不足，尚不能確認",
   "unstable": true,
   "insample": {
-    "sampleSize": 85,
-    "wins": 44,
-    "losses": 41,
-    "winRate": 0.5176,
-    "lossRate": 0.4824,
-    "avgWinR": 2.0739,
-    "avgLossR": -1.2751,
-    "expectancyR": 0.4585,
+    "sampleSize": 52,
+    "wins": 24,
+    "losses": 28,
+    "winRate": 0.4615,
+    "lossRate": 0.5385,
+    "avgWinR": 2.263,
+    "avgLossR": -1.2274,
+    "expectancyR": 0.3835,
     "expLow": null,
     "expHigh": null,
-    "profitFactor": 1.7454,
-    "maxDrawdownR": -8.5156,
-    "medianR": 0.6675,
-    "avgHoldingDays": 6.4,
-    "recent20WinRate": 0.5,
-    "recent50WinRate": 0.54,
-    "ciLow": 0.413,
-    "ciHigh": 0.6208
+    "profitFactor": 1.5803,
+    "maxDrawdownR": -7.4908,
+    "medianR": -1.024,
+    "avgHoldingDays": 6.0192,
+    "recent20WinRate": 0.55,
+    "recent50WinRate": 0.48,
+    "ciLow": 0.3334,
+    "ciHigh": 0.595,
+    "maxSingleR": 3.7321,
+    "expectancyExMaxR": 0.3179
   },
   "oos": {
-    "sampleSize": 26,
-    "wins": 15,
-    "losses": 11,
-    "winRate": 0.5769,
-    "lossRate": 0.4231,
-    "avgWinR": 1.6338,
-    "avgLossR": -1.1616,
-    "expectancyR": 0.4512,
+    "sampleSize": 13,
+    "wins": 7,
+    "losses": 6,
+    "winRate": 0.5385,
+    "lossRate": 0.4615,
+    "avgWinR": 2.0276,
+    "avgLossR": -1.0973,
+    "expectancyR": 0.5853,
     "expLow": null,
     "expHigh": null,
-    "profitFactor": 1.918,
-    "maxDrawdownR": -6.5417,
-    "medianR": 0.6889,
-    "avgHoldingDays": 5.5,
-    "recent20WinRate": 0.6,
-    "recent50WinRate": 0.5769,
-    "ciLow": 0.3895,
-    "ciHigh": 0.7446
+    "profitFactor": 2.1558,
+    "maxDrawdownR": -4.3933,
+    "medianR": 1.7497,
+    "avgHoldingDays": 4.6154,
+    "recent20WinRate": 0.5385,
+    "recent50WinRate": 0.5385,
+    "ciLow": 0.2914,
+    "ciHigh": 0.7679,
+    "maxSingleR": 2.4836,
+    "expectancyExMaxR": 0.4271
   },
   "params": {
     "rsi_lo": 45,
@@ -58,381 +62,381 @@
   "candidates": [
     {
       "label": "報酬風險比≥1.2｜量比不限｜停損距離不限｜大盤多頭或盤整",
-      "insampleN": 257,
-      "insampleExpectancyR": 0.2659,
-      "oosN": 97,
-      "oosExpectancyR": 0.3881
+      "insampleN": 204,
+      "insampleExpectancyR": 0.0703,
+      "oosN": 80,
+      "oosExpectancyR": 0.5074
     },
     {
       "label": "報酬風險比≥1.2｜量比不限｜停損距離不限｜大盤不限",
-      "insampleN": 274,
-      "insampleExpectancyR": 0.1855,
-      "oosN": 99,
-      "oosExpectancyR": 0.6139
+      "insampleN": 216,
+      "insampleExpectancyR": 0.0065,
+      "oosN": 83,
+      "oosExpectancyR": 0.5555
     },
     {
       "label": "報酬風險比≥1.2｜量比不限｜停損距離≥1.5%｜大盤多頭或盤整",
-      "insampleN": 249,
-      "insampleExpectancyR": 0.0274,
-      "oosN": 97,
-      "oosExpectancyR": 0.3881
+      "insampleN": 192,
+      "insampleExpectancyR": 0.1305,
+      "oosN": 79,
+      "oosExpectancyR": 0.4533
     },
     {
       "label": "報酬風險比≥1.2｜量比不限｜停損距離≥1.5%｜大盤不限",
-      "insampleN": 266,
-      "insampleExpectancyR": -0.0402,
-      "oosN": 99,
-      "oosExpectancyR": 0.6139
+      "insampleN": 204,
+      "insampleExpectancyR": 0.0594,
+      "oosN": 82,
+      "oosExpectancyR": 0.504
     },
     {
       "label": "報酬風險比≥1.2｜量比不限｜停損距離≥2.5%｜大盤多頭或盤整",
-      "insampleN": 229,
-      "insampleExpectancyR": -0.0088,
-      "oosN": 93,
-      "oosExpectancyR": 0.3132
+      "insampleN": 168,
+      "insampleExpectancyR": 0.0999,
+      "oosN": 75,
+      "oosExpectancyR": 0.4699
     },
     {
       "label": "報酬風險比≥1.2｜量比不限｜停損距離≥2.5%｜大盤不限",
-      "insampleN": 244,
-      "insampleExpectancyR": -0.0752,
-      "oosN": 95,
-      "oosExpectancyR": 0.541
+      "insampleN": 177,
+      "insampleExpectancyR": 0.0601,
+      "oosN": 77,
+      "oosExpectancyR": 0.4948
     },
     {
       "label": "報酬風險比≥1.2｜量比≤1.2｜停損距離不限｜大盤多頭或盤整",
-      "insampleN": 220,
-      "insampleExpectancyR": 0.3117,
-      "oosN": 85,
-      "oosExpectancyR": 0.4709
+      "insampleN": 180,
+      "insampleExpectancyR": 0.1357,
+      "oosN": 69,
+      "oosExpectancyR": 0.5874
     },
     {
       "label": "報酬風險比≥1.2｜量比≤1.2｜停損距離不限｜大盤不限",
-      "insampleN": 237,
-      "insampleExpectancyR": 0.2276,
-      "oosN": 87,
-      "oosExpectancyR": 0.7303
+      "insampleN": 193,
+      "insampleExpectancyR": 0.054,
+      "oosN": 72,
+      "oosExpectancyR": 0.6448
     },
     {
       "label": "報酬風險比≥1.2｜量比≤1.2｜停損距離≥1.5%｜大盤多頭或盤整",
-      "insampleN": 213,
-      "insampleExpectancyR": 0.025,
-      "oosN": 85,
-      "oosExpectancyR": 0.4709
+      "insampleN": 170,
+      "insampleExpectancyR": 0.2055,
+      "oosN": 68,
+      "oosExpectancyR": 0.5258
     },
     {
       "label": "報酬風險比≥1.2｜量比≤1.2｜停損距離≥1.5%｜大盤不限",
-      "insampleN": 230,
-      "insampleExpectancyR": -0.0405,
-      "oosN": 87,
-      "oosExpectancyR": 0.7303
+      "insampleN": 183,
+      "insampleExpectancyR": 0.1144,
+      "oosN": 71,
+      "oosExpectancyR": 0.5866
     },
     {
       "label": "報酬風險比≥1.2｜量比≤1.2｜停損距離≥2.5%｜大盤多頭或盤整",
-      "insampleN": 195,
-      "insampleExpectancyR": -0.0042,
-      "oosN": 81,
-      "oosExpectancyR": 0.389
+      "insampleN": 150,
+      "insampleExpectancyR": 0.1693,
+      "oosN": 64,
+      "oosExpectancyR": 0.5498
     },
     {
       "label": "報酬風險比≥1.2｜量比≤1.2｜停損距離≥2.5%｜大盤不限",
-      "insampleN": 210,
-      "insampleExpectancyR": -0.0678,
-      "oosN": 83,
-      "oosExpectancyR": 0.648
+      "insampleN": 160,
+      "insampleExpectancyR": 0.1139,
+      "oosN": 66,
+      "oosExpectancyR": 0.5764
     },
     {
       "label": "報酬風險比≥1.2｜量比≤0.8｜停損距離不限｜大盤多頭或盤整",
-      "insampleN": 149,
-      "insampleExpectancyR": 0.0324,
-      "oosN": 53,
-      "oosExpectancyR": 0.5227
+      "insampleN": 124,
+      "insampleExpectancyR": 0.1697,
+      "oosN": 38,
+      "oosExpectancyR": 0.8145
     },
     {
       "label": "報酬風險比≥1.2｜量比≤0.8｜停損距離不限｜大盤不限",
-      "insampleN": 156,
-      "insampleExpectancyR": -0.0103,
-      "oosN": 55,
-      "oosExpectancyR": 0.5011
+      "insampleN": 129,
+      "insampleExpectancyR": 0.1112,
+      "oosN": 38,
+      "oosExpectancyR": 0.8124
     },
     {
       "label": "報酬風險比≥1.2｜量比≤0.8｜停損距離≥1.5%｜大盤多頭或盤整",
-      "insampleN": 143,
-      "insampleExpectancyR": 0.1128,
-      "oosN": 53,
-      "oosExpectancyR": 0.5227
+      "insampleN": 114,
+      "insampleExpectancyR": 0.258,
+      "oosN": 38,
+      "oosExpectancyR": 0.8145
     },
     {
       "label": "報酬風險比≥1.2｜量比≤0.8｜停損距離≥1.5%｜大盤不限",
-      "insampleN": 150,
-      "insampleExpectancyR": 0.0646,
-      "oosN": 55,
-      "oosExpectancyR": 0.5011
+      "insampleN": 119,
+      "insampleExpectancyR": 0.1909,
+      "oosN": 38,
+      "oosExpectancyR": 0.8124
     },
     {
       "label": "報酬風險比≥1.2｜量比≤0.8｜停損距離≥2.5%｜大盤多頭或盤整",
-      "insampleN": 129,
-      "insampleExpectancyR": 0.0736,
-      "oosN": 52,
-      "oosExpectancyR": 0.5196
+      "insampleN": 101,
+      "insampleExpectancyR": 0.2597,
+      "oosN": 38,
+      "oosExpectancyR": 0.8145
     },
     {
       "label": "報酬風險比≥1.2｜量比≤0.8｜停損距離≥2.5%｜大盤不限",
-      "insampleN": 136,
-      "insampleExpectancyR": 0.0225,
-      "oosN": 54,
-      "oosExpectancyR": 0.4976
+      "insampleN": 106,
+      "insampleExpectancyR": 0.1843,
+      "oosN": 38,
+      "oosExpectancyR": 0.8124
     },
     {
       "label": "報酬風險比≥1.5｜量比不限｜停損距離不限｜大盤多頭或盤整",
-      "insampleN": 247,
-      "insampleExpectancyR": 0.2935,
-      "oosN": 95,
-      "oosExpectancyR": 0.4024
+      "insampleN": 165,
+      "insampleExpectancyR": 0.0556,
+      "oosN": 65,
+      "oosExpectancyR": 0.5522
     },
     {
       "label": "報酬風險比≥1.5｜量比不限｜停損距離不限｜大盤不限",
-      "insampleN": 262,
-      "insampleExpectancyR": 0.2317,
-      "oosN": 97,
-      "oosExpectancyR": 0.6364
+      "insampleN": 172,
+      "insampleExpectancyR": 0.038,
+      "oosN": 68,
+      "oosExpectancyR": 0.5842
     },
     {
       "label": "報酬風險比≥1.5｜量比不限｜停損距離≥1.5%｜大盤多頭或盤整",
-      "insampleN": 236,
-      "insampleExpectancyR": 0.043,
-      "oosN": 95,
-      "oosExpectancyR": 0.4024
+      "insampleN": 156,
+      "insampleExpectancyR": 0.1108,
+      "oosN": 64,
+      "oosExpectancyR": 0.4861
     },
     {
       "label": "報酬風險比≥1.5｜量比不限｜停損距離≥1.5%｜大盤不限",
-      "insampleN": 251,
-      "insampleExpectancyR": -0.0065,
-      "oosN": 97,
-      "oosExpectancyR": 0.6364
+      "insampleN": 162,
+      "insampleExpectancyR": 0.084,
+      "oosN": 67,
+      "oosExpectancyR": 0.5216
     },
     {
       "label": "報酬風險比≥1.5｜量比不限｜停損距離≥2.5%｜大盤多頭或盤整",
-      "insampleN": 215,
-      "insampleExpectancyR": -0.005,
-      "oosN": 91,
-      "oosExpectancyR": 0.3264
+      "insampleN": 134,
+      "insampleExpectancyR": 0.172,
+      "oosN": 59,
+      "oosExpectancyR": 0.4851
     },
     {
       "label": "報酬風險比≥1.5｜量比不限｜停損距離≥2.5%｜大盤不限",
-      "insampleN": 229,
-      "insampleExpectancyR": -0.0567,
-      "oosN": 93,
-      "oosExpectancyR": 0.5589
+      "insampleN": 139,
+      "insampleExpectancyR": 0.147,
+      "oosN": 61,
+      "oosExpectancyR": 0.516
     },
     {
       "label": "報酬風險比≥1.5｜量比≤1.2｜停損距離不限｜大盤多頭或盤整",
-      "insampleN": 210,
-      "insampleExpectancyR": 0.3611,
-      "oosN": 83,
-      "oosExpectancyR": 0.4892
+      "insampleN": 143,
+      "insampleExpectancyR": 0.1972,
+      "oosN": 56,
+      "oosExpectancyR": 0.6415
     },
     {
       "label": "報酬風險比≥1.5｜量比≤1.2｜停損距離不限｜大盤不限",
-      "insampleN": 225,
-      "insampleExpectancyR": 0.2976,
-      "oosN": 85,
-      "oosExpectancyR": 0.7543
+      "insampleN": 152,
+      "insampleExpectancyR": 0.1547,
+      "oosN": 59,
+      "oosExpectancyR": 0.6738
     },
     {
       "label": "報酬風險比≥1.5｜量比≤1.2｜停損距離≥1.5%｜大盤多頭或盤整",
-      "insampleN": 200,
-      "insampleExpectancyR": 0.0579,
-      "oosN": 83,
-      "oosExpectancyR": 0.4892
+      "insampleN": 134,
+      "insampleExpectancyR": 0.2306,
+      "oosN": 55,
+      "oosExpectancyR": 0.5662
     },
     {
       "label": "報酬風險比≥1.5｜量比≤1.2｜停損距離≥1.5%｜大盤不限",
-      "insampleN": 215,
-      "insampleExpectancyR": 0.0126,
-      "oosN": 85,
-      "oosExpectancyR": 0.7543
+      "insampleN": 142,
+      "insampleExpectancyR": 0.1772,
+      "oosN": 58,
+      "oosExpectancyR": 0.6031
     },
     {
       "label": "報酬風險比≥1.5｜量比≤1.2｜停損距離≥2.5%｜大盤多頭或盤整",
-      "insampleN": 181,
-      "insampleExpectancyR": -0.0082,
-      "oosN": 79,
-      "oosExpectancyR": 0.4062
+      "insampleN": 116,
+      "insampleExpectancyR": 0.2787,
+      "oosN": 50,
+      "oosExpectancyR": 0.5731
     },
     {
       "label": "報酬風險比≥1.5｜量比≤1.2｜停損距離≥2.5%｜大盤不限",
-      "insampleN": 195,
-      "insampleExpectancyR": -0.0538,
-      "oosN": 81,
-      "oosExpectancyR": 0.6711
+      "insampleN": 123,
+      "insampleExpectancyR": 0.2248,
+      "oosN": 52,
+      "oosExpectancyR": 0.606
     },
     {
       "label": "報酬風險比≥1.5｜量比≤0.8｜停損距離不限｜大盤多頭或盤整",
-      "insampleN": 137,
-      "insampleExpectancyR": 0.0782,
-      "oosN": 52,
-      "oosExpectancyR": 0.5437
+      "insampleN": 96,
+      "insampleExpectancyR": 0.1986,
+      "oosN": 30,
+      "oosExpectancyR": 1.0142
     },
     {
       "label": "報酬風險比≥1.5｜量比≤0.8｜停損距離不限｜大盤不限",
-      "insampleN": 144,
-      "insampleExpectancyR": 0.0297,
-      "oosN": 54,
-      "oosExpectancyR": 0.5208
+      "insampleN": 100,
+      "insampleExpectancyR": 0.1456,
+      "oosN": 30,
+      "oosExpectancyR": 1.0114
     },
     {
       "label": "報酬風險比≥1.5｜量比≤0.8｜停損距離≥1.5%｜大盤多頭或盤整",
-      "insampleN": 131,
-      "insampleExpectancyR": 0.1645,
-      "oosN": 52,
-      "oosExpectancyR": 0.5437
+      "insampleN": 90,
+      "insampleExpectancyR": 0.2533,
+      "oosN": 30,
+      "oosExpectancyR": 1.0142
     },
     {
       "label": "報酬風險比≥1.5｜量比≤0.8｜停損距離≥1.5%｜大盤不限",
-      "insampleN": 138,
-      "insampleExpectancyR": 0.1095,
-      "oosN": 54,
-      "oosExpectancyR": 0.5208
+      "insampleN": 94,
+      "insampleExpectancyR": 0.1946,
+      "oosN": 30,
+      "oosExpectancyR": 1.0114
     },
     {
       "label": "報酬風險比≥1.5｜量比≤0.8｜停損距離≥2.5%｜大盤多頭或盤整",
-      "insampleN": 120,
-      "insampleExpectancyR": 0.1133,
-      "oosN": 51,
-      "oosExpectancyR": 0.5409
+      "insampleN": 78,
+      "insampleExpectancyR": 0.3102,
+      "oosN": 29,
+      "oosExpectancyR": 0.9883
     },
     {
       "label": "報酬風險比≥1.5｜量比≤0.8｜停損距離≥2.5%｜大盤不限",
-      "insampleN": 127,
-      "insampleExpectancyR": 0.0564,
-      "oosN": 53,
-      "oosExpectancyR": 0.5177
+      "insampleN": 82,
+      "insampleExpectancyR": 0.2402,
+      "oosN": 29,
+      "oosExpectancyR": 0.9855
     },
     {
       "label": "報酬風險比≥1.8｜量比不限｜停損距離不限｜大盤多頭或盤整",
-      "insampleN": 158,
-      "insampleExpectancyR": 0.0403,
-      "oosN": 54,
-      "oosExpectancyR": 0.2708
+      "insampleN": 96,
+      "insampleExpectancyR": 0.0825,
+      "oosN": 32,
+      "oosExpectancyR": 0.2219
     },
     {
       "label": "報酬風險比≥1.8｜量比不限｜停損距離不限｜大盤不限",
-      "insampleN": 169,
-      "insampleExpectancyR": 0.0027,
-      "oosN": 56,
-      "oosExpectancyR": 0.3184
+      "insampleN": 100,
+      "insampleExpectancyR": 0.0349,
+      "oosN": 34,
+      "oosExpectancyR": 0.2076
     },
     {
       "label": "報酬風險比≥1.8｜量比不限｜停損距離≥1.5%｜大盤多頭或盤整",
-      "insampleN": 150,
-      "insampleExpectancyR": 0.1154,
-      "oosN": 54,
-      "oosExpectancyR": 0.2708
+      "insampleN": 86,
+      "insampleExpectancyR": 0.0918,
+      "oosN": 31,
+      "oosExpectancyR": 0.0749
     },
     {
       "label": "報酬風險比≥1.8｜量比不限｜停損距離≥1.5%｜大盤不限",
-      "insampleN": 161,
-      "insampleExpectancyR": 0.0708,
-      "oosN": 56,
-      "oosExpectancyR": 0.3184
+      "insampleN": 90,
+      "insampleExpectancyR": 0.0384,
+      "oosN": 33,
+      "oosExpectancyR": 0.0691
     },
     {
       "label": "報酬風險比≥1.8｜量比不限｜停損距離≥2.5%｜大盤多頭或盤整",
-      "insampleN": 125,
-      "insampleExpectancyR": 0.1448,
-      "oosN": 49,
-      "oosExpectancyR": 0.0805
+      "insampleN": 66,
+      "insampleExpectancyR": 0.0532,
+      "oosN": 25,
+      "oosExpectancyR": -0.0931
     },
     {
       "label": "報酬風險比≥1.8｜量比不限｜停損距離≥2.5%｜大盤不限",
-      "insampleN": 135,
-      "insampleExpectancyR": 0.0892,
-      "oosN": 51,
-      "oosExpectancyR": 0.1161
+      "insampleN": 69,
+      "insampleExpectancyR": 0.0019,
+      "oosN": 26,
+      "oosExpectancyR": -0.1286
     },
     {
       "label": "報酬風險比≥1.8｜量比≤1.2｜停損距離不限｜大盤多頭或盤整",
-      "insampleN": 130,
-      "insampleExpectancyR": 0.1663,
-      "oosN": 48,
-      "oosExpectancyR": 0.3712
+      "insampleN": 83,
+      "insampleExpectancyR": 0.2414,
+      "oosN": 30,
+      "oosExpectancyR": 0.2936
     },
     {
       "label": "報酬風險比≥1.8｜量比≤1.2｜停損距離不限｜大盤不限",
-      "insampleN": 142,
-      "insampleExpectancyR": 0.1034,
-      "oosN": 50,
-      "oosExpectancyR": 0.4205
+      "insampleN": 88,
+      "insampleExpectancyR": 0.1657,
+      "oosN": 32,
+      "oosExpectancyR": 0.274
     },
     {
       "label": "報酬風險比≥1.8｜量比≤1.2｜停損距離≥1.5%｜大盤多頭或盤整",
-      "insampleN": 123,
-      "insampleExpectancyR": 0.2485,
-      "oosN": 48,
-      "oosExpectancyR": 0.3712
+      "insampleN": 72,
+      "insampleExpectancyR": 0.278,
+      "oosN": 29,
+      "oosExpectancyR": 0.139
     },
     {
       "label": "報酬風險比≥1.8｜量比≤1.2｜停損距離≥1.5%｜大盤不限",
-      "insampleN": 135,
-      "insampleExpectancyR": 0.1751,
-      "oosN": 50,
-      "oosExpectancyR": 0.4205
+      "insampleN": 77,
+      "insampleExpectancyR": 0.1892,
+      "oosN": 31,
+      "oosExpectancyR": 0.1287
     },
     {
       "label": "報酬風險比≥1.8｜量比≤1.2｜停損距離≥2.5%｜大盤多頭或盤整",
-      "insampleN": 101,
-      "insampleExpectancyR": 0.2371,
-      "oosN": 43,
-      "oosExpectancyR": 0.1843
+      "insampleN": 55,
+      "insampleExpectancyR": 0.2065,
+      "oosN": 23,
+      "oosExpectancyR": -0.0098
     },
     {
       "label": "報酬風險比≥1.8｜量比≤1.2｜停損距離≥2.5%｜大盤不限",
-      "insampleN": 112,
-      "insampleExpectancyR": 0.1507,
-      "oosN": 45,
-      "oosExpectancyR": 0.22
+      "insampleN": 59,
+      "insampleExpectancyR": 0.118,
+      "oosN": 24,
+      "oosExpectancyR": -0.0518
     },
     {
       "label": "報酬風險比≥1.8｜量比≤0.8｜停損距離不限｜大盤多頭或盤整",
-      "insampleN": 90,
-      "insampleExpectancyR": 0.3098,
-      "oosN": 26,
-      "oosExpectancyR": 0.4512
+      "insampleN": 57,
+      "insampleExpectancyR": 0.3036,
+      "oosN": 13,
+      "oosExpectancyR": 0.5853
     },
     {
       "label": "報酬風險比≥1.8｜量比≤0.8｜停損距離不限｜大盤不限",
-      "insampleN": 93,
-      "insampleExpectancyR": 0.2629,
-      "oosN": 27,
-      "oosExpectancyR": 0.5039
+      "insampleN": 59,
+      "insampleExpectancyR": 0.2536,
+      "oosN": 13,
+      "oosExpectancyR": 0.5853
     },
     {
       "label": "報酬風險比≥1.8｜量比≤0.8｜停損距離≥1.5%｜大盤多頭或盤整",
-      "insampleN": 85,
-      "insampleExpectancyR": 0.4585,
-      "oosN": 26,
-      "oosExpectancyR": 0.4512
+      "insampleN": 52,
+      "insampleExpectancyR": 0.3835,
+      "oosN": 13,
+      "oosExpectancyR": 0.5853
     },
     {
       "label": "報酬風險比≥1.8｜量比≤0.8｜停損距離≥1.5%｜大盤不限",
-      "insampleN": 88,
-      "insampleExpectancyR": 0.4038,
-      "oosN": 27,
-      "oosExpectancyR": 0.5039
+      "insampleN": 54,
+      "insampleExpectancyR": 0.326,
+      "oosN": 13,
+      "oosExpectancyR": 0.5853
     },
     {
       "label": "報酬風險比≥1.8｜量比≤0.8｜停損距離≥2.5%｜大盤多頭或盤整",
-      "insampleN": 73,
-      "insampleExpectancyR": 0.4351,
-      "oosN": 24,
-      "oosExpectancyR": 0.3866
+      "insampleN": 40,
+      "insampleExpectancyR": 0.2982,
+      "oosN": 12,
+      "oosExpectancyR": 0.487
     },
     {
       "label": "報酬風險比≥1.8｜量比≤0.8｜停損距離≥2.5%｜大盤不限",
-      "insampleN": 76,
-      "insampleExpectancyR": 0.3727,
-      "oosN": 25,
-      "oosExpectancyR": 0.4461
+      "insampleN": 42,
+      "insampleExpectancyR": 0.2282,
+      "oosN": 12,
+      "oosExpectancyR": 0.487
     }
   ],
   "note": "每日訊號仍使用 scripts/strategy.py 的預設參數；這裡只是對照，不會自動切換參數。"

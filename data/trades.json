@@ -79,5 +79,33 @@
     "resultPct": 8.1443,
     "holdingDays": 2,
     "ambiguousDay": false
+  },
+  {
+    "id": "3017.TW-2026-10-08",
+    "symbol": "3017.TW",
+    "market": "TW",
+    "signalDate": "2026-10-08",
+    "entryDate": "2026-10-12",
+    "entryPrice": 3380.0,
+    "stopPrice": 3187.1786,
+    "target1": 3857.2143,
+    "target2": 4046.8571,
+    "rsi": 52.8451,
+    "macd": "零軸下",
+    "volumeRatio": 1.0685,
+    "atr": 189.6429,
+    "dailyTrend": "多頭",
+    "weeklyTrend": "多頭",
+    "marketRegime": "BULL",
+    "theme": "AI散熱",
+    "status": "OPEN",
+    "exitDate": null,
+    "exitPrice": null,
+    "exitReason": null,
+    "resultR": null,
+    "resultPct": null,
+    "holdingDays": null,
+    "ambiguousDay": false,
+    "entryRR": 2.4749
   }
 ]

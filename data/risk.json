@@ -1,8 +1,8 @@
 {
-  "generatedAt": "2026-10-11T12:16:13.673771+00:00",
+  "generatedAt": "2026-10-12T15:41:05.421626+00:00",
   "today": {
-    "TW": "2026-10-11",
-    "US": "2026-10-11"
+    "TW": "2026-10-12",
+    "US": "2026-10-12"
   },
   "thresholds": {
     "bias_mid": 6.0,
@@ -64,9 +64,8 @@
       "fail": 0
     },
     "regsho_nyse": {
-      "ok": 0,
-      "fail": 1,
-      "lastError": "HTTPError: HTTP Error 406: Not Acceptable"
+      "ok": 1,
+      "fail": 0
     },
     "finmind": {
       "ok": 96,
@@ -95,28 +94,32 @@
   },
   "symbols": {
     "2330.TW": {
-      "total": 2,
+      "total": 3,
       "max": 10,
       "scored": 5,
-      "score10": 2.0,
+      "score10": 3.0,
       "level": "low",
-      "flags": [],
+      "flags": [
+        "earnings_soon"
+      ],
       "gate": {
-        "block": false,
-        "reasons": []
+        "block": true,
+        "reasons": [
+          "財報前觀察"
+        ]
       },
       "items": {
         "tech": {
           "score": 0,
-          "why": "乖離 +2.97%",
-          "date": "2026-10-08"
+          "why": "乖離 +2.41%",
+          "date": "2026-10-12"
         },
         "earnings": {
-          "score": 1,
-          "why": "財報 2026-10-15，還有 4 個交易日",
+          "score": 2,
+          "why": "財報 2026-10-15，還有 3 個交易日",
           "date": "2026-10-15",
           "source": "https://investor.tsmc.com/english/quarterly-results",
-          "days": 4
+          "days": 3
         },
         "fundamentals": {
           "score": 0,
@@ -125,8 +128,8 @@
         },
         "chips": {
           "score": 1,
-          "why": "近 5 日法人 -7263 張、融資 +928 張",
-          "date": "2026-10-08"
+          "why": "近 5 日法人 -9383 張、融資 +1603 張",
+          "date": "2026-10-12"
         },
         "policy": {
           "score": 0,
@@ -151,8 +154,8 @@
       "items": {
         "tech": {
           "score": 0,
-          "why": "乖離 -2.99%",
-          "date": "2026-10-08"
+          "why": "乖離 -4.33%",
+          "date": "2026-10-12"
         },
         "earnings": {
           "score": null,
@@ -165,8 +168,8 @@
         },
         "chips": {
           "score": 1,
-          "why": "近 5 日法人 -11091 張、融資 +402 張",
-          "date": "2026-10-08"
+          "why": "近 5 日法人 -11793 張、融資 +502 張",
+          "date": "2026-10-12"
         },
         "policy": {
           "score": 0,
@@ -178,10 +181,10 @@
       "group": "TW|AI晶片"
     },
     "2308.TW": {
-      "total": 2,
+      "total": 1,
       "max": 8,
       "scored": 4,
-      "score10": 2.5,
+      "score10": 1.2,
       "level": "low",
       "flags": [],
       "gate": {
@@ -190,9 +193,9 @@
       },
       "items": {
         "tech": {
-          "score": 1,
-          "why": "乖離 +7.32%",
-          "date": "2026-10-08"
+          "score": 0,
+          "why": "乖離 +3.47%",
+          "date": "2026-10-12"
         },
         "earnings": {
           "score": null,
@@ -205,8 +208,8 @@
         },
         "chips": {
           "score": 0,
-          "why": "近 5 日法人 +5311 張、融資 -570 張",
-          "date": "2026-10-08"
+          "why": "近 5 日法人 +4043 張、融資 -415 張",
+          "date": "2026-10-12"
         },
         "policy": {
           "score": 0,
@@ -231,8 +234,8 @@
       "items": {
         "tech": {
           "score": 0,
-          "why": "乖離 +2.31%",
-          "date": "2026-10-08"
+          "why": "乖離 +3.11%",
+          "date": "2026-10-12"
         },
         "earnings": {
           "score": null,
@@ -245,8 +248,8 @@
         },
         "chips": {
           "score": 1,
-          "why": "近 5 日法人 -1483 張、融資 +274 張",
-          "date": "2026-10-08"
+          "why": "近 5 日法人 -954 張、融資 +159 張",
+          "date": "2026-10-12"
         },
         "policy": {
           "score": 0,
@@ -271,8 +274,8 @@
       "items": {
         "tech": {
           "score": 1,
-          "why": "乖離 +14.51%",
-          "date": "2026-10-08"
+          "why": "乖離 +13.17%",
+          "date": "2026-10-12"
         },
         "earnings": {
           "score": null,
@@ -285,8 +288,8 @@
         },
         "chips": {
           "score": 0,
-          "why": "近 5 日法人 -129 張、融資 -86 張",
-          "date": "2026-10-08"
+          "why": "近 5 日法人 -46 張、融資 -78 張",
+          "date": "2026-10-12"
         },
         "policy": {
           "score": 0,
@@ -311,8 +314,8 @@
       "items": {
         "tech": {
           "score": 0,
-          "why": "乖離 +0.74%",
-          "date": "2026-10-08"
+          "why": "乖離 -0.88%",
+          "date": "2026-10-12"
         },
         "earnings": {
           "score": null,
@@ -325,8 +328,8 @@
         },
         "chips": {
           "score": 0,
-          "why": "近 5 日法人 -848 張、融資 -121 張",
-          "date": "2026-10-08"
+          "why": "近 5 日法人 -161 張、融資 -329 張",
+          "date": "2026-10-12"
         },
         "policy": {
           "score": 0,
@@ -338,23 +341,21 @@
       "group": "TW|AI散熱"
     },
     "3189.TW": {
-      "total": 2,
+      "total": 1,
       "max": 8,
       "scored": 4,
-      "score10": 2.5,
+      "score10": 1.2,
       "level": "low",
-      "flags": [
-        "overheated"
-      ],
+      "flags": [],
       "gate": {
         "block": false,
         "reasons": []
       },
       "items": {
         "tech": {
-          "score": 2,
-          "why": "乖離 +16.59%",
-          "date": "2026-10-08"
+          "score": 1,
+          "why": "乖離 +13.44%",
+          "date": "2026-10-12"
         },
         "earnings": {
           "score": null,
@@ -367,8 +368,8 @@
         },
         "chips": {
           "score": 0,
-          "why": "近 5 日法人 +4672 張、融資 -3609 張",
-          "date": "2026-10-08"
+          "why": "近 5 日法人 +2982 張、融資 -2216 張",
+          "date": "2026-10-12"
         },
         "policy": {
           "score": 0,
@@ -393,8 +394,8 @@
       "items": {
         "tech": {
           "score": 1,
-          "why": "乖離 +13.79%",
-          "date": "2026-10-08"
+          "why": "乖離 +11.14%",
+          "date": "2026-10-12"
         },
         "earnings": {
           "score": null,
@@ -407,8 +408,8 @@
         },
         "chips": {
           "score": 0,
-          "why": "近 5 日法人 +11574 張、融資 -223 張",
-          "date": "2026-10-08"
+          "why": "近 5 日法人 +6009 張、融資 -842 張",
+          "date": "2026-10-12"
         },
         "policy": {
           "score": 0,
@@ -420,23 +421,21 @@
       "group": "TW|ABF"
     },
     "8046.TW": {
-      "total": 2,
+      "total": 1,
       "max": 8,
       "scored": 4,
-      "score10": 2.5,
+      "score10": 1.2,
       "level": "low",
-      "flags": [
-        "overheated"
-      ],
+      "flags": [],
       "gate": {
         "block": false,
         "reasons": []
       },
       "items": {
         "tech": {
-          "score": 2,
-          "why": "乖離 +19.00%",
-          "date": "2026-10-08"
+          "score": 1,
+          "why": "乖離 +14.65%",
+          "date": "2026-10-12"
         },
         "earnings": {
           "score": null,
@@ -449,8 +448,8 @@
         },
         "chips": {
           "score": 0,
-          "why": "近 5 日法人 +4334 張、融資 -2350 張",
-          "date": "2026-10-08"
+          "why": "近 5 日法人 +2691 張、融資 -2383 張",
+          "date": "2026-10-12"
         },
         "policy": {
           "score": 0,
@@ -480,8 +479,8 @@
       "items": {
         "tech": {
           "score": 2,
-          "why": "乖離 +33.62%",
-          "date": "2026-10-08"
+          "why": "乖離 +31.47%",
+          "date": "2026-10-12"
         },
         "earnings": {
           "score": null,
@@ -508,21 +507,23 @@
       "group": "TW|CCL"
     },
     "2383.TW": {
-      "total": 1,
+      "total": 2,
       "max": 8,
       "scored": 4,
-      "score10": 1.2,
+      "score10": 2.5,
       "level": "low",
-      "flags": [],
+      "flags": [
+        "overheated"
+      ],
       "gate": {
         "block": false,
         "reasons": []
       },
       "items": {
         "tech": {
-          "score": 1,
-          "why": "乖離 +14.58%",
-          "date": "2026-10-08"
+          "score": 2,
+          "why": "乖離 +16.58%",
+          "date": "2026-10-12"
         },
         "earnings": {
           "score": null,
@@ -535,8 +536,8 @@
         },
         "chips": {
           "score": 0,
-          "why": "近 5 日法人 +1875 張、融資 -93 張",
-          "date": "2026-10-08"
+          "why": "近 5 日法人 +1922 張、融資 -10 張",
+          "date": "2026-10-12"
         },
         "policy": {
           "score": 0,
@@ -561,8 +562,8 @@
       "items": {
         "tech": {
           "score": 0,
-          "why": "乖離 +1.64%",
-          "date": "2026-10-08"
+          "why": "乖離 +2.12%",
+          "date": "2026-10-12"
         },
         "earnings": {
           "score": null,
@@ -570,13 +571,13 @@
         },
         "fundamentals": {
           "score": 0,
-          "why": "營收年增 +0.0%（2026-08）、毛利率 14.6%，年變動 +6.2 個百分點（2026-06-30）",
-          "date": "2026-08"
+          "why": "營收年增 +0.7%（2026-09）、毛利率 14.6%，年變動 +6.2 個百分點（2026-06-30）",
+          "date": "2026-09"
         },
         "chips": {
           "score": 0,
-          "why": "近 5 日法人 -22479 張、融資 -5698 張",
-          "date": "2026-10-08"
+          "why": "近 5 日法人 -9678 張、融資 -5319 張",
+          "date": "2026-10-12"
         },
         "policy": {
           "score": 0,
@@ -601,8 +602,8 @@
       "items": {
         "tech": {
           "score": 0,
-          "why": "乖離 -0.58%",
-          "date": "2026-10-08"
+          "why": "乖離 -1.61%",
+          "date": "2026-10-12"
         },
         "earnings": {
           "score": null,
@@ -615,8 +616,8 @@
         },
         "chips": {
           "score": 1,
-          "why": "近 5 日法人 -46956 張、融資 +2045 張",
-          "date": "2026-10-08"
+          "why": "近 5 日法人 -120076 張、融資 +4007 張",
+          "date": "2026-10-12"
         },
         "policy": {
           "score": 0,
@@ -628,14 +629,13 @@
       "group": "TW|晶圓代工＋記憶體"
     },
     "2221.TWO": {
-      "total": 4,
+      "total": 3,
       "max": 8,
       "scored": 4,
-      "score10": 5.0,
+      "score10": 3.8,
       "level": "high",
       "flags": [
-        "disposition",
-        "overheated"
+        "disposition"
       ],
       "gate": {
         "block": true,
@@ -645,9 +645,9 @@
       },
       "items": {
         "tech": {
-          "score": 2,
-          "why": "乖離 +31.09%",
-          "date": "2026-10-08"
+          "score": 1,
+          "why": "乖離 +14.78%",
+          "date": "2026-10-12"
         },
         "earnings": {
           "score": null,
@@ -674,15 +674,19 @@
       "group": "TW|半導體廠務"
     },
     "TSM": {
-      "total": 1,
+      "total": 2,
       "max": 10,
       "scored": 5,
-      "score10": 1.0,
+      "score10": 2.0,
       "level": "low",
-      "flags": [],
+      "flags": [
+        "earnings_soon"
+      ],
       "gate": {
-        "block": false,
-        "reasons": []
+        "block": true,
+        "reasons": [
+          "財報前觀察"
+        ]
       },
       "items": {
         "tech": {
@@ -691,11 +695,11 @@
           "date": "2026-10-09"
         },
         "earnings": {
-          "score": 1,
-          "why": "財報 2026-10-15，還有 4 個交易日",
+          "score": 2,
+          "why": "財報 2026-10-15，還有 3 個交易日",
           "date": "2026-10-15",
           "source": "https://investor.tsmc.com/english/quarterly-results",
-          "days": 4
+          "days": 3
         },
         "fundamentals": {
           "score": 0,
@@ -704,7 +708,7 @@
         },
         "chips": {
           "score": 0,
-          "why": "放空餘額 27.8 百萬股（佔流通股 0.6%），較前期 -7.9%（Yahoo）；Reg SHO 門檻名單沒有完整抓到",
+          "why": "放空餘額 27.8 百萬股（佔流通股 0.6%），較前期 -7.9%（Yahoo）",
           "date": "2026-09-14"
         },
         "policy": {
@@ -735,10 +739,10 @@
         },
         "earnings": {
           "score": 0,
-          "why": "財報 2026-11-17，還有 27 個交易日（Yahoo，已確認）",
+          "why": "財報 2026-11-17，還有 26 個交易日（Yahoo，已確認）",
           "date": "2026-11-17",
           "source": "https://finance.yahoo.com/quote/NVDA/",
-          "days": 27,
+          "days": 26,
           "provider": "Yahoo"
         },
         "fundamentals": {
@@ -749,7 +753,7 @@
         },
         "chips": {
           "score": 0,
-          "why": "放空餘額 294.2 百萬股（佔流通股 1.3%），較前期 +2.9%（Yahoo）；Reg SHO 門檻名單沒有完整抓到",
+          "why": "放空餘額 294.2 百萬股（佔流通股 1.3%），較前期 +2.9%（Yahoo）",
           "date": "2026-09-14"
         },
         "policy": {
@@ -780,10 +784,10 @@
         },
         "earnings": {
           "score": 0,
-          "why": "財報 2026-11-03，還有 17 個交易日",
+          "why": "財報 2026-11-03，還有 16 個交易日",
           "date": "2026-11-03",
           "source": "https://ir.amd.com/news-events/press-releases/detail/1300/amd-to-report-fiscal-third-quarter-2026-financial-results",
-          "days": 17
+          "days": 16
         },
         "fundamentals": {
           "score": 0,
@@ -793,7 +797,7 @@
         },
         "chips": {
           "score": 0,
-          "why": "放空餘額 40.0 百萬股（佔流通股 2.5%），較前期 -0.2%（Yahoo）；Reg SHO 門檻名單沒有完整抓到",
+          "why": "放空餘額 40.0 百萬股（佔流通股 2.5%），較前期 -0.2%（Yahoo）",
           "date": "2026-09-14"
         },
         "policy": {
@@ -824,10 +828,10 @@
         },
         "earnings": {
           "score": 0,
-          "why": "財報 2026-12-09，還有 43 個交易日（Yahoo，已確認）",
+          "why": "財報 2026-12-09，還有 42 個交易日（Yahoo，已確認）",
           "date": "2026-12-09",
           "source": "https://finance.yahoo.com/quote/AVGO/",
-          "days": 43,
+          "days": 42,
           "provider": "Yahoo"
         },
         "fundamentals": {
@@ -838,7 +842,7 @@
         },
         "chips": {
           "score": 0,
-          "why": "放空餘額 51.9 百萬股（佔流通股 1.1%），較前期 -7.6%（Yahoo）；Reg SHO 門檻名單沒有完整抓到",
+          "why": "放空餘額 51.9 百萬股（佔流通股 1.1%），較前期 -7.6%（Yahoo）",
           "date": "2026-09-14"
         },
         "policy": {
@@ -869,10 +873,10 @@
         },
         "earnings": {
           "score": 0,
-          "why": "財報 2026-10-28，還有 13 個交易日",
+          "why": "財報 2026-10-28，還有 12 個交易日",
           "date": "2026-10-28",
           "source": "https://news.microsoft.com/source/2026/10/07/microsoft-announces-quarterly-earnings-release-date-69/",
-          "days": 13
+          "days": 12
         },
         "fundamentals": {
           "score": 1,
@@ -882,7 +886,7 @@
         },
         "chips": {
           "score": 0,
-          "why": "放空餘額 67.3 百萬股（佔流通股 0.9%），較前期 -1.7%（Yahoo）；Reg SHO 門檻名單沒有完整抓到",
+          "why": "放空餘額 67.3 百萬股（佔流通股 0.9%），較前期 -1.7%（Yahoo）",
           "date": "2026-09-14"
         },
         "policy": {
@@ -913,11 +917,11 @@
         },
         "earnings": {
           "score": 0,
-          "why": "財報約 2026-10-28（Yahoo預估，公司尚未確認），還有 13 個交易日",
+          "why": "財報約 2026-10-28（Yahoo預估，公司尚未確認），還有 12 個交易日",
           "estimated": true,
           "date": "2026-10-28",
           "source": "https://finance.yahoo.com/quote/META/",
-          "days": 13,
+          "days": 12,
           "provider": "Yahoo"
         },
         "fundamentals": {
@@ -928,7 +932,7 @@
         },
         "chips": {
           "score": 0,
-          "why": "放空餘額 31.0 百萬股（佔流通股 1.4%），較前期 +10.5%；佔比低於 2% 不計分（Yahoo）；Reg SHO 門檻名單沒有完整抓到",
+          "why": "放空餘額 31.0 百萬股（佔流通股 1.4%），較前期 +10.5%；佔比低於 2% 不計分（Yahoo）",
           "date": "2026-09-14"
         },
         "policy": {
@@ -959,11 +963,11 @@
         },
         "earnings": {
           "score": 0,
-          "why": "財報約 2026-12-23（Yahoo預估，公司尚未確認），還有 53 個交易日",
+          "why": "財報約 2026-12-23（Yahoo預估，公司尚未確認），還有 52 個交易日",
           "estimated": true,
           "date": "2026-12-23",
           "source": "https://finance.yahoo.com/quote/MU/",
-          "days": 53,
+          "days": 52,
           "provider": "Yahoo"
         },
         "fundamentals": {
@@ -974,7 +978,7 @@
         },
         "chips": {
           "score": 0,
-          "why": "放空餘額 27.6 百萬股（佔流通股 2.5%），較前期 -7.9%（Yahoo）；Reg SHO 門檻名單沒有完整抓到",
+          "why": "放空餘額 27.6 百萬股（佔流通股 2.5%），較前期 -7.9%（Yahoo）",
           "date": "2026-09-14"
         },
         "policy": {
@@ -1005,10 +1009,10 @@
         },
         "earnings": {
           "score": 1,
-          "why": "財報 2026-10-21，還有 8 個交易日",
+          "why": "財報 2026-10-21，還有 7 個交易日",
           "date": "2026-10-21",
           "source": "https://www.sec.gov/Archives/edgar/data/1318605/000162828026064366/0001628280-26-064366.txt",
-          "days": 8
+          "days": 7
         },
         "fundamentals": {
           "score": 0,
@@ -1018,7 +1022,7 @@
         },
         "chips": {
           "score": 0,
-          "why": "放空餘額 68.9 百萬股（佔流通股 1.9%），較前期 -0.5%（Yahoo）；Reg SHO 門檻名單沒有完整抓到",
+          "why": "放空餘額 68.9 百萬股（佔流通股 1.9%），較前期 -0.5%（Yahoo）",
           "date": "2026-09-14"
         },
         "policy": {
@@ -1049,11 +1053,11 @@
         },
         "earnings": {
           "score": 0,
-          "why": "財報約 2026-11-03（Yahoo預估，公司尚未確認），還有 17 個交易日",
+          "why": "財報約 2026-11-03（Yahoo預估，公司尚未確認），還有 16 個交易日",
           "estimated": true,
           "date": "2026-11-03",
           "source": "https://finance.yahoo.com/quote/SPCX/",
-          "days": 17,
+          "days": 16,
           "provider": "Yahoo"
         },
         "fundamentals": {
@@ -1064,7 +1068,7 @@
         },
         "chips": {
           "score": 0,
-          "why": "放空餘額 162.3 百萬股（佔流通股 2.4%），較前期 -12.0%（Yahoo）；Reg SHO 門檻名單沒有完整抓到",
+          "why": "放空餘額 162.3 百萬股（佔流通股 2.4%），較前期 -12.0%（Yahoo）",
           "date": "2026-09-14"
         },
         "policy": {
@@ -1090,8 +1094,8 @@
       "items": {
         "tech": {
           "score": 0,
-          "why": "乖離 -1.07%",
-          "date": "2026-10-08"
+          "why": "乖離 -2.24%",
+          "date": "2026-10-12"
         },
         "earnings": {
           "score": null,
@@ -1104,8 +1108,8 @@
         },
         "chips": {
           "score": 1,
-          "why": "近 5 日法人 -2750 張、融資 +459 張",
-          "date": "2026-10-08"
+          "why": "近 5 日法人 -3194 張、融資 +491 張",
+          "date": "2026-10-12"
         },
         "policy": {
           "score": 0,
@@ -1130,8 +1134,8 @@
       "items": {
         "tech": {
           "score": 0,
-          "why": "乖離 +3.63%",
-          "date": "2026-10-08"
+          "why": "乖離 +1.93%",
+          "date": "2026-10-12"
         },
         "earnings": {
           "score": null,
@@ -1144,8 +1148,8 @@
         },
         "chips": {
           "score": 0,
-          "why": "近 5 日法人 -3171 張、融資 -1727 張",
-          "date": "2026-10-08"
+          "why": "近 5 日法人 -11541 張、融資 -47 張",
+          "date": "2026-10-12"
         },
         "policy": {
           "score": 0,
@@ -1170,8 +1174,8 @@
       "items": {
         "tech": {
           "score": 1,
-          "why": "乖離 +7.83%",
-          "date": "2026-10-08"
+          "why": "乖離 +9.07%",
+          "date": "2026-10-12"
         },
         "earnings": {
           "score": null,
@@ -1184,8 +1188,8 @@
         },
         "chips": {
           "score": 1,
-          "why": "近 5 日法人 -112 張、融資 +632 張",
-          "date": "2026-10-08"
+          "why": "近 5 日法人 -401 張、融資 +745 張",
+          "date": "2026-10-12"
         },
         "policy": {
           "score": 0,
@@ -1210,8 +1214,8 @@
       "items": {
         "tech": {
           "score": 0,
-          "why": "乖離 +4.55%",
-          "date": "2026-10-08"
+          "why": "乖離 +3.53%",
+          "date": "2026-10-12"
         },
         "earnings": {
           "score": null,
@@ -1224,8 +1228,8 @@
         },
         "chips": {
           "score": 0,
-          "why": "近 5 日法人 +23879 張、融資 -4755 張",
-          "date": "2026-10-08"
+          "why": "近 5 日法人 +12774 張、融資 -3245 張",
+          "date": "2026-10-12"
         },
         "policy": {
           "score": 0,
@@ -1252,8 +1256,8 @@
       "items": {
         "tech": {
           "score": 2,
-          "why": "乖離 +23.40%",
-          "date": "2026-10-08"
+          "why": "乖離 +19.03%",
+          "date": "2026-10-12"
         },
         "earnings": {
           "score": null,
@@ -1261,13 +1265,13 @@
         },
         "fundamentals": {
           "score": 0,
-          "why": "營收年增 +46.7%（2026-08）、毛利率 18.9%，年變動 +10.3 個百分點（2026-06-30）",
-          "date": "2026-08"
+          "why": "營收年增 +55.3%（2026-09）、毛利率 18.9%，年變動 +10.3 個百分點（2026-06-30）",
+          "date": "2026-09"
         },
         "chips": {
           "score": 0,
-          "why": "近 5 日法人 +26604 張、融資 -993 張",
-          "date": "2026-10-08"
+          "why": "近 5 日法人 +10966 張、融資 +2322 張",
+          "date": "2026-10-12"
         },
         "policy": {
           "score": 0,
@@ -1296,8 +1300,8 @@
       "items": {
         "tech": {
           "score": 0,
-          "why": "乖離 +4.56%",
-          "date": "2026-10-08"
+          "why": "乖離 +2.06%",
+          "date": "2026-10-12"
         },
         "earnings": {
           "score": null,
@@ -1324,23 +1328,21 @@
       "group": "TW|PCB／銅箔"
     },
     "4958.TW": {
-      "total": 2,
+      "total": 1,
       "max": 8,
       "scored": 4,
-      "score10": 2.5,
+      "score10": 1.2,
       "level": "low",
-      "flags": [
-        "overheated"
-      ],
+      "flags": [],
       "gate": {
         "block": false,
         "reasons": []
       },
       "items": {
         "tech": {
-          "score": 2,
-          "why": "乖離 +15.83%",
-          "date": "2026-10-08"
+          "score": 1,
+          "why": "乖離 +12.80%",
+          "date": "2026-10-12"
         },
         "earnings": {
           "score": null,
@@ -1353,8 +1355,8 @@
         },
         "chips": {
           "score": 0,
-          "why": "近 5 日法人 +35888 張、融資 -634 張",
-          "date": "2026-10-08"
+          "why": "近 5 日法人 +13464 張、融資 -1201 張",
+          "date": "2026-10-12"
         },
         "policy": {
           "score": 0,
@@ -1366,6 +1368,86 @@
       "group": "TW|PCB／銅箔"
     },
     "4919.TW": {
+      "total": 2,
+      "max": 8,
+      "scored": 4,
+      "score10": 2.5,
+      "level": "low",
+      "flags": [],
+      "gate": {
+        "block": false,
+        "reasons": []
+      },
+      "items": {
+        "tech": {
+          "score": 1,
+          "why": "乖離 +13.93%",
+          "date": "2026-10-12"
+        },
+        "earnings": {
+          "score": null,
+          "why": "events.json 沒有這檔的財報日"
+        },
+        "fundamentals": {
+          "score": 0,
+          "why": "營收年增 +4.7%（2026-09）、毛利率 38.0%，年變動 +3.1 個百分點（2026-06-30）",
+          "date": "2026-09"
+        },
+        "chips": {
+          "score": 1,
+          "why": "近 5 日法人 -4620 張、融資 +1260 張",
+          "date": "2026-10-12"
+        },
+        "policy": {
+          "score": 0,
+          "why": "14 天內沒有排定事件，也沒有生效中的不利政策",
+          "date": "2026-10-09"
+        }
+      },
+      "market": "TW",
+      "group": "TW|電池監測IC"
+    },
+    "2327.TW": {
+      "total": 1,
+      "max": 8,
+      "scored": 4,
+      "score10": 1.2,
+      "level": "low",
+      "flags": [],
+      "gate": {
+        "block": false,
+        "reasons": []
+      },
+      "items": {
+        "tech": {
+          "score": 1,
+          "why": "乖離 +9.78%",
+          "date": "2026-10-12"
+        },
+        "earnings": {
+          "score": null,
+          "why": "events.json 沒有這檔的財報日"
+        },
+        "fundamentals": {
+          "score": 0,
+          "why": "營收年增 +46.1%（2026-09）、毛利率 38.5%，年變動 +2.9 個百分點（2026-06-30）",
+          "date": "2026-09"
+        },
+        "chips": {
+          "score": 0,
+          "why": "近 5 日法人 -12232 張、融資 -591 張",
+          "date": "2026-10-12"
+        },
+        "policy": {
+          "score": 0,
+          "why": "14 天內沒有排定事件，也沒有生效中的不利政策",
+          "date": "2026-10-09"
+        }
+      },
+      "market": "TW",
+      "group": "TW|被動元件"
+    },
+    "1569.TWO": {
       "total": 3,
       "max": 8,
       "scored": 4,
@@ -1383,8 +1465,8 @@
       "items": {
         "tech": {
           "score": 2,
-          "why": "乖離 +16.54%",
-          "date": "2026-10-08"
+          "why": "乖離 +20.67%",
+          "date": "2026-10-12"
         },
         "earnings": {
           "score": null,
@@ -1392,97 +1474,13 @@
         },
         "fundamentals": {
           "score": 0,
-          "why": "營收年增 +4.7%（2026-09）、毛利率 38.0%，年變動 +3.1 個百分點（2026-06-30）",
+          "why": "營收年增 +39.1%（2026-09）、毛利率 6.5%，年變動 +6.2 個百分點（2026-06-30）",
           "date": "2026-09"
         },
         "chips": {
           "score": 1,
-          "why": "近 5 日法人 -5478 張、融資 +3387 張",
-          "date": "2026-10-08"
-        },
-        "policy": {
-          "score": 0,
-          "why": "14 天內沒有排定事件，也沒有生效中的不利政策",
-          "date": "2026-10-09"
-        }
-      },
-      "market": "TW",
-      "group": "TW|電池監測IC"
-    },
-    "2327.TW": {
-      "total": 2,
-      "max": 8,
-      "scored": 4,
-      "score10": 2.5,
-      "level": "low",
-      "flags": [],
-      "gate": {
-        "block": false,
-        "reasons": []
-      },
-      "items": {
-        "tech": {
-          "score": 1,
-          "why": "乖離 +10.28%",
-          "date": "2026-10-08"
-        },
-        "earnings": {
-          "score": null,
-          "why": "events.json 沒有這檔的財報日"
-        },
-        "fundamentals": {
-          "score": 0,
-          "why": "營收年增 +46.1%（2026-09）、毛利率 38.5%，年變動 +2.9 個百分點（2026-06-30）",
-          "date": "2026-09"
-        },
-        "chips": {
-          "score": 1,
-          "why": "近 5 日法人 -10768 張、融資 +219 張",
-          "date": "2026-10-08"
-        },
-        "policy": {
-          "score": 0,
-          "why": "14 天內沒有排定事件，也沒有生效中的不利政策",
-          "date": "2026-10-09"
-        }
-      },
-      "market": "TW",
-      "group": "TW|被動元件"
-    },
-    "1569.TWO": {
-      "total": 5,
-      "max": 8,
-      "scored": 4,
-      "score10": 6.2,
-      "level": "mid",
-      "flags": [
-        "overheated"
-      ],
-      "gate": {
-        "block": true,
-        "reasons": [
-          "風險中"
-        ]
-      },
-      "items": {
-        "tech": {
-          "score": 2,
-          "why": "乖離 +16.94%",
-          "date": "2026-10-08"
-        },
-        "earnings": {
-          "score": null,
-          "why": "events.json 沒有這檔的財報日"
-        },
-        "fundamentals": {
-          "score": 2,
-          "why": "營收年增 -25.3%（2026-08）、年增率連兩個月放緩（-6%→-14%→-25%）、毛利率 6.5%，年變動 +6.2 個百分點（2026-06-30）",
-          "date": "2026-08"
-        },
-        "chips": {
-          "score": 1,
-          "why": "近 5 日法人 -1680 張、融資 +1061 張",
-          "date": "2026-10-08"
+          "why": "近 5 日法人 -981 張、融資 +1272 張",
+          "date": "2026-10-12"
         },
         "policy": {
           "score": 0,
