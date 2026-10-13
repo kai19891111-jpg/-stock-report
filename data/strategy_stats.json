@@ -1,12 +1,12 @@
 {
-  "updated": "2026-10-13T03:10:46.307908+00:00",
+  "updated": "2026-10-13T07:01:06.287127+00:00",
   "source": "backtest.py",
   "isFinalClose": true,
   "meta": {
     "symbols": 33,
     "from": "2025-01-07",
-    "to": "2026-10-12",
-    "splitDate": "2026-04-01",
+    "to": "2026-10-13",
+    "splitDate": "2026-04-02",
     "maxHoldDays": 20,
     "costs": {
       "TW": {
@@ -110,35 +110,35 @@
     "expectancyExMaxR": 0.4935
   },
   "live": {
-    "sampleSize": 2,
+    "sampleSize": 3,
     "wins": 2,
-    "losses": 0,
-    "winRate": 1.0,
-    "lossRate": 0.0,
+    "losses": 1,
+    "winRate": 0.6667,
+    "lossRate": 0.3333,
     "avgWinR": 1.3183,
-    "avgLossR": 0.0,
-    "expectancyR": 1.3183,
+    "avgLossR": -1.1226,
+    "expectancyR": 0.5047,
     "expLow": null,
     "expHigh": null,
-    "profitFactor": null,
-    "maxDrawdownR": 0.0,
-    "medianR": 1.3183,
-    "avgHoldingDays": 2.5,
+    "profitFactor": 2.3487,
+    "maxDrawdownR": -1.1226,
+    "medianR": 0.975,
+    "avgHoldingDays": 2.6667,
     "recent20WinRate": null,
     "recent50WinRate": null,
-    "ciLow": 0.3424,
-    "ciHigh": 1.0,
+    "ciLow": 0.2077,
+    "ciHigh": 0.9385,
     "maxSingleR": 1.6616,
     "expectancyExMaxR": null
   },
   "benchmark": {
     "draws": 300,
     "trades": 231,
-    "meanR": 0.1268,
-    "p05": -0.0682,
-    "p95": 0.3239,
+    "meanR": 0.1309,
+    "p05": -0.0449,
+    "p95": 0.3214,
     "actualR": 0.1993,
-    "beats": 0.7133,
+    "beats": 0.75,
     "definition": "同樣的股票、同樣的停損停利距離與成本，但進場日隨機"
   },
   "bySymbol": {
@@ -361,11 +361,11 @@
       "benchmark": {
         "draws": 300,
         "trades": 162,
-        "meanR": 0.144,
-        "p05": -0.0532,
-        "p95": 0.3712,
+        "meanR": 0.1374,
+        "p05": -0.0907,
+        "p95": 0.3374,
         "actualR": 0.1447,
-        "beats": 0.53,
+        "beats": 0.51,
         "definition": "同樣的股票、同樣的停損停利距離與成本，但進場日隨機"
       },
       "byRegime": {
@@ -816,56 +816,56 @@
     "byStatus": {
       "go": {
         "5": {
-          "n": 1423,
-          "mean": 1.3289,
-          "median": 0.4219,
-          "hitRate": 0.5221
+          "n": 1426,
+          "mean": 1.3119,
+          "median": 0.3779,
+          "hitRate": 0.521
         },
         "10": {
-          "n": 1404,
-          "mean": 3.1991,
-          "median": 1.4898,
-          "hitRate": 0.562
+          "n": 1407,
+          "mean": 3.2167,
+          "median": 1.487,
+          "hitRate": 0.5622
         },
         "20": {
-          "n": 1360,
-          "mean": 7.1588,
-          "median": 3.2364,
-          "hitRate": 0.6044
+          "n": 1361,
+          "mean": 7.1598,
+          "median": 3.2374,
+          "hitRate": 0.6047
         }
       },
       "hold": {
         "5": {
-          "n": 1016,
-          "mean": 1.6209,
-          "median": 0.3515,
-          "hitRate": 0.5148
+          "n": 1021,
+          "mean": 1.5752,
+          "median": 0.2762,
+          "hitRate": 0.5132
         },
         "10": {
-          "n": 999,
-          "mean": 4.0068,
-          "median": 1.9737,
-          "hitRate": 0.5916
+          "n": 1000,
+          "mean": 4.031,
+          "median": 1.9745,
+          "hitRate": 0.592
         },
         "20": {
-          "n": 970,
-          "mean": 9.3183,
-          "median": 4.4743,
-          "hitRate": 0.6258
+          "n": 971,
+          "mean": 9.3062,
+          "median": 4.428,
+          "hitRate": 0.6251
         }
       },
       "trim": {
         "5": {
-          "n": 300,
-          "mean": 2.6045,
-          "median": 0.7128,
-          "hitRate": 0.5267
+          "n": 303,
+          "mean": 2.5851,
+          "median": 0.6948,
+          "hitRate": 0.5248
         },
         "10": {
-          "n": 295,
-          "mean": 5.4807,
-          "median": 3.2787,
-          "hitRate": 0.6068
+          "n": 296,
+          "mean": 5.4617,
+          "median": 3.1099,
+          "hitRate": 0.6047
         },
         "20": {
           "n": 289,
@@ -882,37 +882,37 @@
           "hitRate": 0.5536
         },
         "10": {
-          "n": 789,
-          "mean": 3.523,
-          "median": 1.1765,
-          "hitRate": 0.5627
+          "n": 790,
+          "mean": 3.5177,
+          "median": 1.1702,
+          "hitRate": 0.562
         },
         "20": {
-          "n": 761,
-          "mean": 6.884,
+          "n": 763,
+          "mean": 6.9394,
           "median": 2.7278,
-          "hitRate": 0.5926
+          "hitRate": 0.5924
         }
       }
     },
     "baseline": {
       "5": {
-        "n": 13584,
-        "mean": 1.5708,
-        "median": 0.6869,
-        "hitRate": 0.5445
+        "n": 13612,
+        "mean": 1.5584,
+        "median": 0.6736,
+        "hitRate": 0.5438
       },
       "10": {
-        "n": 13419,
-        "mean": 3.5951,
-        "median": 1.6653,
+        "n": 13447,
+        "mean": 3.5996,
+        "median": 1.6634,
         "hitRate": 0.5755
       },
       "20": {
-        "n": 13089,
-        "mean": 7.8513,
-        "median": 3.9095,
-        "hitRate": 0.6176
+        "n": 13117,
+        "mean": 7.877,
+        "median": 3.9267,
+        "hitRate": 0.618
       }
     }
   },
