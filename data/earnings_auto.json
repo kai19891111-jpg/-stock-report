@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-12T15:41:05.421626+00:00",
+  "updatedAt": "2026-10-13T02:34:37.652987+00:00",
   "note": "scripts/risk.py 自動抓到的美股財報日。要指定日期請改 data/events.json 的 earnings，那邊永遠優先。",
   "symbols": {
     "AVGO": {
@@ -11,9 +11,9 @@
       "fetchedAt": "2026-10-12"
     },
     "META": {
-      "date": "2026-10-28",
+      "date": "2026-10-21",
       "dateEnd": null,
-      "estimated": true,
+      "estimated": false,
       "provider": "Yahoo",
       "source": "https://finance.yahoo.com/quote/META/",
       "fetchedAt": "2026-10-12"
