@@ -94,4 +94,158 @@ const POSITIONS = [
 const FX = { USDTWD: 31.84432, source: "截圖反推" };
 const STOCK_META = {"TW|AI晶片": ["2330.TW", "2454.TW"], "TW|AI電源": ["2308.TW"], "TW|AI散熱": ["3324.TWO", "3653.TW", "3017.TW"], "TW|ABF": ["3189.TW", "3037.TW", "8046.TW"], "TW|CCL": ["6213.TW", "2383.TW"], "TW|面板／光電": ["3481.TW"], "TW|晶圓代工＋記憶體": ["6770.TW"], "TW|半導體廠務": ["2221.TWO"], "US|AI晶片": ["TSM", "NVDA", "AMD", "AVGO"], "US|AI雲端": ["MSFT", "META"], "US|AI記憶體": ["MU"], "US|AI自駕機器人": ["TSLA"], "US|航太科技": ["SPCX"], "TW|AI伺服器／機櫃": ["8210.TW"], "TW|AI基建／電力": ["2371.TW"], "TW|光學／CPO": ["3406.TW"], "TW|記憶體": ["2408.TW"], "TW|CCL／電子材料": ["1303.TW"], "TW|PCB／銅箔": ["8358.TWO", "4958.TW"], "TW|電池監測IC": ["4919.TW"], "TW|被動元件": ["2327.TW"], "TW|NB機構件": ["1569.TWO"]};
 const NAMES = {"2330.TW": "台積電", "2454.TW": "聯發科", "2308.TW": "台達電", "3324.TWO": "双鴻", "3653.TW": "健策", "3017.TW": "奇鈧", "3189.TW": "景碩", "3037.TW": "欣興", "8046.TW": "南電", "6213.TW": "聯茂", "2383.TW": "台光電", "3481.TW": "群創", "6770.TW": "力積電", "2221.TWO": "大甲", "TSM": "TSMC ADR", "NVDA": "NVIDIA", "AMD": "AMD", "AVGO": "Broadcom", "MSFT": "Microsoft", "META": "Meta", "MU": "Micron", "TSLA": "Tesla", "SPCX": "SPCX", "^TNX": "美10年債殖利率", "^TWII": "加權指數", "^IXIC": "Nasdaq", "^SOX": "費城半導體", "2371.TW": "大同", "8210.TW": "勤誠", "3406.TW": "玉晶光", "2408.TW": "南亞科", "1303.TW": "南亞", "8358.TWO": "金居", "4958.TW": "臻鼎-KY", "4919.TW": "新唐", "2327.TW": "國巨", "1569.TWO": "濱川"};
-const DATA = 
+const DATA = {"2330.TW": {"p": 2490.0, "ch": -50.0, "pct": -1.97, "date": "2026-10-13", "s20": 2482.25, "s60": 2415.67, "bias": 0.31, "high20": 2590.0, "near": true, "entry": "2445.02-2507.07", "invalid": "2437.25", "resist": "2572.50", "rr": 1.564, "session": "完成日K", "live_note": "來自 latest.json"}, "2454.TW": {"p": 4525.0, "ch": -100.0, "pct": -2.16, "date": "2026-10-13", "s20": 4824.75, "s60": 4232.67, "bias": -6.21, "high20": 5480.0, "near": false, "entry": "4752.38-4873.00", "invalid": "4567.18", "resist": "4997.21", "rr": null, "session": "完成日K", "live_note": "來自 latest.json"}, "2308.TW": {"p": 1775.0, "ch": -125.0, "pct": -6.58, "date": "2026-10-13", "s20": 1841.25, "s60": 1781.92, "bias": -3.6, "high20": 2115.0, "near": false, "entry": "1813.63-1859.66", "invalid": "1732.82", "resist": "1973.79", "rr": null, "session": "完成日K", "live_note": "來自 latest.json"}, "3324.TWO": {"p": 1475.0, "ch": -65.0, "pct": -4.22, "date": "2026-10-13", "s20": 1495.25, "s60": 1210.33, "bias": -1.35, "high20": 1750.0, "near": false, "entry": "1472.82-1510.20", "invalid": "1382.54", "resist": "1681.64", "rr": 2.2348, "session": "完成日K", "live_note": "來自 latest.json"}, "3653.TW": {"p": 6990.0, "ch": -170.0, "pct": -2.37, "date": "2026-10-13", "s20": 6387.0, "s60": 5244.83, "bias": 9.44, "high20": 7440.0, "near": false, "entry": "6291.19-6450.87", "invalid": "5926.71", "resist": "7833.86", "rr": 0.7936, "session": "完成日K", "live_note": "來自 latest.json"}, "3017.TW": {"p": 3280.0, "ch": -105.0, "pct": -3.1, "date": "2026-10-13", "s20": 3406.0, "s60": 3047.5, "bias": -3.7, "high20": 3700.0, "near": false, "entry": "3354.91-3440.06", "invalid": "3194.29", "resist": "3668.14", "rr": null, "session": "完成日K", "live_note": "來自 latest.json"}, "3189.TW": {"p": 1040.0, "ch": -20.0, "pct": -1.89, "date": "2026-10-13", "s20": 945.05, "s60": 844.28, "bias": 10.05, "high20": 1150.0, "near": false, "entry": "930.87-954.50", "invalid": "872.36", "resist": "1173.26", "rr": 0.7949, "session": "完成日K", "live_note": "來自 latest.json"}, "3037.TW": {"p": 1180.0, "ch": -75.0, "pct": -5.98, "date": "2026-10-13", "s20": 1138.5, "s60": 1019.53, "bias": 3.65, "high20": 1420.0, "near": true, "entry": "1121.42-1149.88", "invalid": "1057.16", "resist": "1329.13", "rr": 1.214, "session": "完成日K", "live_note": "來自 latest.json"}, "8046.TW": {"p": 1440.0, "ch": 0.0, "pct": 0.0, "date": "2026-10-13", "s20": 1274.5, "s60": 1178.0, "bias": 12.99, "high20": 1560.0, "near": false, "entry": "1255.38-1287.24", "invalid": "1175.50", "resist": "1621.50", "rr": 0.6862, "session": "完成日K", "live_note": "來自 latest.json"}, "6213.TW": {"p": 795.0, "ch": -17.0, "pct": -2.09, "date": "2026-10-13", "s20": 631.45, "s60": 498.68, "bias": 25.9, "high20": 825.0, "near": false, "entry": "621.98-637.76", "invalid": "577.88", "resist": "893.21", "rr": 0.4523, "session": "完成日K", "live_note": "來自 latest.json"}, "2383.TW": {"p": 5545.0, "ch": -605.0, "pct": -9.84, "date": "2026-10-13", "s20": 5283.75, "s60": 5299.08, "bias": 4.94, "high20": 6325.0, "near": true, "entry": "5204.49-5336.59", "invalid": "4934.04", "resist": "6186.14", "rr": 1.0494, "session": "完成日K", "live_note": "來自 latest.json"}, "3481.TW": {"p": 50.0, "ch": -1.3, "pct": -2.53, "date": "2026-10-13", "s20": 50.27, "s60": 49.02, "bias": -0.54, "high20": 56.2, "near": false, "entry": "49.52-50.77", "invalid": "47.38", "resist": "55.30", "rr": 2.0221, "session": "完成日K", "live_note": "來自 latest.json"}, "6770.TW": {"p": 67.5, "ch": -3.9, "pct": -5.46, "date": "2026-10-13", "s20": 72.27, "s60": 68.71, "bias": -6.6, "high20": 78.1, "near": false, "entry": "71.19-72.99", "invalid": "69.06", "resist": "73.38", "rr": null, "session": "完成日K", "live_note": "來自 latest.json"}, "2221.TWO": {"p": 156.0, "ch": -17.0, "pct": -9.83, "date": "2026-10-13", "s20": 153.69, "s60": 91.48, "bias": 1.5, "high20": 198.0, "near": true, "entry": "151.39-155.23", "invalid": "136.85", "resist": "186.88", "rr": 1.6126, "session": "完成日K", "live_note": "來自 latest.json"}, "TSM": {"p": 444.35, "ch": -8.96, "pct": -1.98, "date": "2026-10-12", "s20": 451.79, "s60": 428.41, "bias": -1.65, "high20": 487.47, "near": false, "entry": "445.01-456.31", "invalid": "438.44", "resist": "468.83", "rr": 4.1396, "session": "完成日K", "live_note": "來自 latest.json"}, "NVDA": {"p": 226.32, "ch": -2.96, "pct": -1.29, "date": "2026-10-12", "s20": 227.5, "s60": 219.12, "bias": -0.52, "high20": 243.37, "near": false, "entry": "224.09-229.78", "invalid": "221.19", "resist": "237.90", "rr": 2.2554, "session": "完成日K", "live_note": "來自 latest.json"}, "AMD": {"p": 594.24, "ch": -13.86, "pct": -2.28, "date": "2026-10-12", "s20": 603.11, "s60": 526.11, "bias": -1.47, "high20": 658.52, "near": false, "entry": "594.07-609.15", "invalid": "576.21", "resist": "643.56", "rr": 2.7359, "session": "完成日K", "live_note": "來自 latest.json"}, "AVGO": {"p": 354.73, "ch": -6.81, "pct": -1.88, "date": "2026-10-12", "s20": 355.75, "s60": 373.44, "bias": -0.29, "high20": 380.84, "near": false, "entry": "350.41-359.30", "invalid": "343.37", "resist": "377.42", "rr": 1.9974, "session": "完成日K", "live_note": "來自 latest.json"}, "MSFT": {"p": 541.15, "ch": 6.08, "pct": 1.14, "date": "2026-10-12", "s20": 511.89, "s60": 485.69, "bias": 5.72, "high20": 542.74, "near": false, "entry": "504.21-517.01", "invalid": "497.24", "resist": "568.00", "rr": 0.6116, "session": "完成日K", "live_note": "來自 latest.json"}, "META": {"p": 742.96, "ch": 24.29, "pct": 3.38, "date": "2026-10-12", "s20": 723.05, "s60": 635.99, "bias": 2.75, "high20": 779.82, "near": true, "entry": "712.21-730.28", "invalid": "696.10", "resist": "792.37", "rr": 1.0544, "session": "完成日K", "live_note": "來自 latest.json"}, "MU": {"p": 989.04, "ch": -39.96, "pct": -3.88, "date": "2026-10-12", "s20": 1041.51, "s60": 963.99, "bias": -5.04, "high20": 1108.72, "near": false, "entry": "1025.88-1051.92", "invalid": "990.17", "resist": "1083.15", "rr": null, "session": "完成日K", "live_note": "來自 latest.json"}, "TSLA": {"p": 378.03, "ch": -4.67, "pct": -1.22, "date": "2026-10-12", "s20": 369.61, "s60": 351.57, "bias": 2.28, "high20": 388.56, "near": true, "entry": "364.07-373.31", "invalid": "356.59", "resist": "401.91", "rr": 1.1137, "session": "完成日K", "live_note": "來自 latest.json"}, "SPCX": {"p": 163.42, "ch": 0.85, "pct": 0.52, "date": "2026-10-12", "s20": 155.16, "s60": 140.37, "bias": 5.32, "high20": 176.42, "near": true, "entry": "152.84-156.72", "invalid": "147.19", "resist": "178.05", "rr": 0.901, "session": "完成日K", "live_note": "來自 latest.json"}, "8210.TW": {"p": 838.0, "ch": -23.0, "pct": -2.67, "date": "2026-10-13", "s20": 877.1, "s60": 976.48, "bias": -4.46, "high20": 920.0, "near": false, "entry": "863.94-885.87", "invalid": "847.10", "resist": "893.00", "rr": null, "session": "完成日K", "live_note": "來自 latest.json"}, "2371.TW": {"p": 29.0, "ch": -1.0, "pct": -3.33, "date": "2026-10-13", "s20": 29.49, "s60": 27.63, "bias": -1.66, "high20": 31.6, "near": false, "entry": "29.05-29.78", "invalid": "28.32", "resist": "31.15", "rr": 3.1461, "session": "完成日K", "live_note": "來自 latest.json"}, "3406.TW": {"p": 1175.0, "ch": 105.0, "pct": 9.81, "date": "2026-10-13", "s20": 986.25, "s60": 786.99, "bias": 19.14, "high20": 1175.0, "near": false, "entry": "971.46-996.11", "invalid": "904.14", "resist": "1325.54", "rr": 0.5558, "session": "完成日K", "live_note": "來自 latest.json"}, "2408.TW": {"p": 488.0, "ch": -39.0, "pct": -7.4, "date": "2026-10-13", "s20": 507.7, "s60": 483.07, "bias": -3.88, "high20": 537.0, "near": false, "entry": "500.08-512.78", "invalid": "482.63", "resist": "533.96", "rr": null, "session": "完成日K", "live_note": "來自 latest.json"}, "1303.TW": {"p": 319.0, "ch": 16.0, "pct": 5.28, "date": "2026-10-13", "s20": 258.3, "s60": 217.38, "bias": 23.5, "high20": 322.0, "near": false, "entry": "254.43-260.88", "invalid": "237.56", "resist": "357.03", "rr": 0.4669, "session": "完成日K", "live_note": "來自 latest.json"}, "8358.TWO": {"p": 493.0, "ch": -29.0, "pct": -5.56, "date": "2026-10-13", "s20": 510.05, "s60": 448.73, "bias": -3.34, "high20": 578.0, "near": false, "entry": "502.40-515.15", "invalid": "480.74", "resist": "546.74", "rr": 4.3821, "session": "完成日K", "live_note": "來自 latest.json"}, "4958.TW": {"p": 552.0, "ch": -29.0, "pct": -4.99, "date": "2026-10-13", "s20": 517.92, "s60": 488.55, "bias": 6.58, "high20": 613.0, "near": false, "entry": "510.16-523.10", "invalid": "484.80", "resist": "612.74", "rr": 0.9038, "session": "完成日K", "live_note": "來自 latest.json"}, "4919.TW": {"p": 142.5, "ch": -11.5, "pct": -7.47, "date": "2026-10-13", "s20": 136.47, "s60": 127.91, "bias": 4.41, "high20": 167.0, "near": true, "entry": "134.43-137.84", "invalid": "122.80", "resist": "167.56", "rr": 1.2725, "session": "完成日K", "live_note": "來自 latest.json"}, "2327.TW": {"p": 599.0, "ch": -37.0, "pct": -5.82, "date": "2026-10-13", "s20": 580.7, "s60": 581.14, "bias": 3.15, "high20": 686.0, "near": true, "entry": "571.99-586.51", "invalid": "538.61", "resist": "676.16", "rr": 1.2777, "session": "完成日K", "live_note": "來自 latest.json"}, "1569.TWO": {"p": 81.0, "ch": 7.3, "pct": 9.91, "date": "2026-10-13", "s20": 62.69, "s60": 50.07, "bias": 29.22, "high20": 80.8, "near": false, "entry": "61.74-63.31", "invalid": "57.10", "resist": "91.23", "rr": 0.4281, "session": "完成日K", "live_note": "來自 latest.json"}, "^TWII": {"p": 48341.3086, "ch": -960.65, "pct": -1.95, "date": "2026-10-13", "s20": 47863.82, "s60": 45833.23, "bias": 1.0, "high20": 49968.92, "near": false, "entry": "N/A", "invalid": "N/A", "resist": "N/A", "rr": null, "session": "完成日K", "live_note": "來自 latest.json"}, "^IXIC": {"p": 27245.9004, "ch": -120.27, "pct": -0.44, "date": "2026-10-12", "s20": 26958.7, "s60": 26365.31, "bias": 1.07, "high20": 27722.75, "near": false, "entry": "N/A", "invalid": "N/A", "resist": "N/A", "rr": null, "session": "完成日K", "live_note": "來自 latest.json"}, "^SOX": {"p": 12236.79, "ch": -335.63, "pct": -2.67, "date": "2026-10-12", "s20": 12467.0, "s60": 12009.32, "bias": -1.85, "high20": 13349.96, "near": false, "entry": "N/A", "invalid": "N/A", "resist": "N/A", "rr": null, "session": "完成日K", "live_note": "來自 latest.json"}, "^TNX": {"p": 5.24, "ch": -0.0, "pct": -0.08, "date": "2026-10-12", "s20": 5.16, "s60": 4.86, "bias": 1.54, "high20": 5.36, "near": false, "entry": "N/A", "invalid": "N/A", "resist": "N/A", "rr": null, "session": "完成日K", "live_note": "來自 latest.json"}};
+
+/* 精簡版畫面邏輯：優先用 latest.json 補齊全部股票 */
+(function(){
+  const $ = id => document.getElementById(id);
+  const esc = s => String(s).replace(/[&<>"']/g, c => ({'&':'&','<':'<','>':'>','"':'"',"'":'&#39;'}[c]));
+  const META = {}, ORDER = [];
+  Object.keys(STOCK_META).forEach(k => {
+    const [mkt, grp] = k.split("|");
+    STOCK_META[k].forEach(c => { META[c] = {mkt, grp}; ORDER.push(c); });
+  });
+  const HELD = {}; POSITIONS.forEach(p => HELD[p.code] = p);
+  const MKT_NAME = {TW:"台股", US:"美股"};
+  const name = c => NAMES[c] || c;
+  let AUTO = null;
+
+  function applyLatest(L) {
+    if (!L || !L.quotes) return false;
+    let n = 0;
+    Object.keys(L.quotes).forEach(c => {
+      const q = L.quotes[c];
+      if (!META[c] || !q || !q.close || !q.ma20) return;
+      const prev = q.prevClose;
+      DATA[c] = {
+        p: q.close,
+        ch: prev ? q.close - prev : null,
+        pct: prev ? (q.close/prev - 1)*100 : null,
+        date: q.date, s20: q.ma20, s60: q.ma60,
+        bias: q.bias || (q.close/q.ma20 - 1)*100,
+        high20: q.high20, near: q.pageStatus === "go",
+        entry: (q.entryLow && q.entryHigh) ? q.entryLow+"-"+q.entryHigh : "N/A",
+        invalid: q.stop ? String(q.stop) : "N/A",
+        resist: q.target1 ? String(q.target1) : "N/A",
+        auto: true, rr: q.entryRR, signal: q.entrySignal === true
+      };
+      n++;
+    });
+    Object.keys(L.indexQuotes||{}).forEach(c => {
+      const q = L.indexQuotes[c];
+      if (q && q.close) DATA[c] = {p:q.close, date:q.date, s20:q.ma20, s60:q.ma60, bias:q.bias, high20:q.high20, auto:true, entry:"N/A", invalid:"N/A", resist:"N/A"};
+    });
+    if (n) AUTO = L;
+    return n > 0;
+  }
+
+  function analyse(code) {
+    const d = DATA[code]; if (!d) return null;
+    const held = !!HELD[code];
+    const above = (d.bias||0) >= 0;
+    let cat = "hold", why = "";
+    if ((d.bias||0) > 15) { cat = "trim"; why = "乖離過高"; }
+    else if (!above) { cat = "wait"; why = "均線之下"; }
+    else if ((d.bias||0) <= 6 && !d.near) { cat = "go"; why = "均線附近"; }
+    else { cat = "hold"; why = "偏高"; }
+    const label = {go:"均線附近", wait:"均線之下", hold:"偏高", trim:"過熱"}[cat];
+    return {code, d, held, cat, label, why, auto:!!d.auto};
+  }
+
+  function renderAll() {
+    const A = {}, CODES = [];
+    ORDER.forEach(c => { const a = analyse(c); if (a) { A[c]=a; CODES.push(c); } });
+    const TW_DATE = CODES.filter(c=>META[c].mkt==="TW").map(c=>DATA[c].date).sort().pop() || "—";
+    const US_DATE = CODES.filter(c=>META[c].mkt==="US").map(c=>DATA[c].date).sort().pop() || "—";
+
+    $("stamps").innerHTML = `<span class="stamp">台股日K <b>${TW_DATE}</b></span><span class="stamp">美股日K <b>${US_DATE}</b></span>` +
+      (AUTO ? `<span class="stamp">自動更新 <b>已載入</b></span>` : `<span class="stamp">自動更新 <b>載入中</b></span>`);
+    document.title = `技術與基本面報告｜台股 ${TW_DATE}｜美股 ${US_DATE}`;
+
+    // Cards
+    const filters = [["all","全部",()=>true],["go","均線附近",a=>a.cat==="go"],["held","持倉",a=>a.held]];
+    function setFilter(key) {
+      const f = filters.find(x=>x[0]===key) || filters[0];
+      const list = CODES.map(c=>A[c]).filter(f[2]);
+      $("cards").innerHTML = list.length ? list.map(a => {
+        const d=a.d, c=a.code, m=META[c];
+        const entry = d.entry && d.entry !== "N/A" ? d.entry : "—";
+        const inv = d.invalid && d.invalid !== "N/A" ? d.invalid : "—";
+        const res = d.resist && d.resist !== "N/A" ? d.resist : "—";
+        const rr = d.rr != null ? Number(d.rr).toFixed(2) : "—";
+        return `<article class="card"><div class="title">${esc(MKT_NAME[m.mkt]+"｜"+m.grp+"｜"+name(c))}${a.held?' <span class="badge own">持倉</span>':''}</div>
+          <div class="sub">${esc(c)}｜${d.date||''}</div>
+          <div class="px">${d.p||'—'}</div>
+          <div class="status"><span class="badge ${a.cat}">${a.label}</span></div>
+          <div class="why">${esc(a.why)}</div>
+          <div class="kv" style="display:grid;grid-template-columns:1fr 1fr;gap:4px 8px;margin-top:6px;font-size:12px;">
+            <div><span style="color:#9fb3c8">進場區</span><br><b>${entry}</b></div>
+            <div><span style="color:#9fb3c8">失效價</span><br><b>${inv}</b></div>
+            <div><span style="color:#9fb3c8">目標／壓力</span><br><b>${res}</b></div>
+            <div><span style="color:#9fb3c8">報酬風險比</span><br><b>${rr}</b></div>
+          </div></article>`;
+      }).join("") : '<p class="note">無資料</p>';
+    }
+    $("chips").innerHTML = filters.map(f=>`<button class="chip" data-f="${f[0]}">${f[1]} <b>${CODES.filter(c=>f[2](A[c])).length}</b></button>`).join("");
+    $("chips").onclick = e => { const b=e.target.closest(".chip"); if(b) setFilter(b.dataset.f); };
+    setFilter("all");
+    $("card-stamp").textContent = `共 ${CODES.length} 檔`;
+    $("levels-note").textContent = REPORT.levelsNote;
+
+    // Summary
+    $("summary-body").innerHTML = REPORT.notes.map(n=>`<p>${esc(n)}</p>`).join("") +
+      `<p>目前顯示 ${CODES.length} 檔（載入 latest.json 後會補齊）。</p>`;
+    $("radar-body").innerHTML = `<li>台股 ${TW_DATE}，美股 ${US_DATE}</li>`;
+
+    // Index
+    const idxs = ["^TWII","^IXIC","^SOX"].filter(c=>DATA[c]);
+    $("index-body").innerHTML = idxs.map(c=>`<tr><td>${name(c)}</td><td>${DATA[c].date||''}</td><td>${DATA[c].p}</td><td>${DATA[c].pct?DATA[c].pct.toFixed(2)+'%':''}</td></tr>`).join("");
+
+    // Groups
+    $("group-body").innerHTML = Object.keys(STOCK_META).map(k => {
+      const mem = STOCK_META[k].filter(c=>DATA[c]);
+      return `<tr><td>${esc(k)}</td><td>${mem.map(c=>esc(name(c))+" "+(DATA[c].pct?DATA[c].pct.toFixed(1)+"%":"")).join(" ")}</td></tr>`;
+    }).join("");
+
+    $("changelog").innerHTML = REPORT.changelog.map(s=>`<li>${esc(s)}</li>`).join("");
+
+    // Positions simple
+    const rows = POSITIONS.filter(p=>DATA[p.code]||p.quote);
+    if (rows.length) {
+      let h = "";
+      rows.forEach(p => {
+        const price = p.quote || (DATA[p.code]&&DATA[p.code].p) || 0;
+        const pl = (price - p.cost) * p.qty;
+        h += `<div class="card"><div class="title">${esc(name(p.code))}</div><div>${p.qty} 股｜成本 ${p.cost}</div><div class="px">${price}</div><div>損益 ${pl.toFixed(0)}</div></div>`;
+      });
+      $("pos-body").innerHTML = '<div class="cards">'+h+'</div>';
+    }
+  }
+
+  renderAll();
+  fetch("./data/latest.json", {cache:"no-store"})
+    .then(r => r.ok ? r.json() : Promise.reject())
+    .then(L => { if (applyLatest(L)) renderAll(); })
+    .catch(() => { $("levels-note").textContent += "（latest.json 載入失敗，請檢查網路）"; });
+
+  fetch("./data/strategy_stats.json", {cache:"no-store"})
+    .then(r => r.ok ? r.json() : Promise.reject())
+    .then(S => {
+      const m = S.meta || {};
+      $("bt-body").innerHTML = `<p>回測期間 ${m.from||''} ～ ${m.to||''}，共 ${m.symbols||''} 檔。</p>
+        <p>整體期望值約 ${(S.all&&S.all.expectancyR)||'—'} R（樣本 ${(S.all&&S.all.sampleSize)||0}）。</p>
+        <p class="note">完整統計請看資料檔。此為精簡顯示。</p>`;
+      if (S.updated) $("bt-stamp").textContent = S.updated.slice(0,10);
+    })
+    .catch(() => { $("bt-body").innerHTML = '<p class="note">讀不到回測資料。</p>'; });
+})();
+</script>
+<script src="./backtest.js"></script>
+<script src="./entry-gate.js"></script>
+<script src="./risk-score.js"></script>
+<script src="./verdict.js"></script>
+<script src="./live.js"></script>
+<script src="./position-risk.js"></script>
+<script src="./music.js"></script>
+</body>
+</html>
