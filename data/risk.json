@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-13T02:34:37.652987+00:00",
+  "generatedAt": "2026-10-13T03:10:47.631009+00:00",
   "today": {
     "TW": "2026-10-13",
     "US": "2026-10-12"
@@ -234,8 +234,8 @@
       "items": {
         "tech": {
           "score": 0,
-          "why": "乖離 +3.11%",
-          "date": "2026-10-12"
+          "why": "乖離 +2.31%",
+          "date": "2026-10-08"
         },
         "earnings": {
           "score": null,
@@ -629,21 +629,23 @@
       "group": "TW|晶圓代工＋記憶體"
     },
     "2221.TWO": {
-      "total": 1,
+      "total": 2,
       "max": 8,
       "scored": 4,
-      "score10": 1.2,
+      "score10": 2.5,
       "level": "low",
-      "flags": [],
+      "flags": [
+        "overheated"
+      ],
       "gate": {
         "block": false,
         "reasons": []
       },
       "items": {
         "tech": {
-          "score": 1,
-          "why": "乖離 +14.78%",
-          "date": "2026-10-12"
+          "score": 2,
+          "why": "乖離 +31.09%",
+          "date": "2026-10-08"
         },
         "earnings": {
           "score": null,
@@ -1294,8 +1296,8 @@
       "items": {
         "tech": {
           "score": 0,
-          "why": "乖離 +2.06%",
-          "date": "2026-10-12"
+          "why": "乖離 +4.56%",
+          "date": "2026-10-08"
         },
         "earnings": {
           "score": null,
@@ -1459,8 +1461,8 @@
       "items": {
         "tech": {
           "score": 2,
-          "why": "乖離 +20.67%",
-          "date": "2026-10-12"
+          "why": "乖離 +16.94%",
+          "date": "2026-10-08"
         },
         "earnings": {
           "score": null,
