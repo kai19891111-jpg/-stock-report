@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-14T05:14:24.723373+00:00",
+  "updatedAt": "2026-10-14T12:04:03.092897+00:00",
   "note": "scripts/risk.py 自動抓到的美股財報日。要指定日期請改 data/events.json 的 earnings，那邊永遠優先。",
   "symbols": {
     "AVGO": {
