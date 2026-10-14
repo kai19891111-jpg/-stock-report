@@ -126,6 +126,34 @@
     "weeklyTrend": "多頭",
     "marketRegime": "BULL",
     "theme": "AI晶片",
+    "status": "LOSS",
+    "exitDate": "2026-10-14",
+    "exitPrice": 221.1857,
+    "exitReason": "stop",
+    "resultR": -1.0706,
+    "resultPct": -1.5053,
+    "holdingDays": 2,
+    "ambiguousDay": false,
+    "entryRR": 4.2989
+  },
+  {
+    "id": "SPCX-2026-10-13",
+    "symbol": "SPCX",
+    "market": "US",
+    "signalDate": "2026-10-13",
+    "entryDate": "2026-10-14",
+    "entryPrice": 154.96,
+    "stopPrice": 147.7929,
+    "target1": 171.2517,
+    "target2": 177.9388,
+    "rsi": 52.1257,
+    "macd": "零軸上",
+    "volumeRatio": 0.7222,
+    "atr": 6.6871,
+    "dailyTrend": "多頭",
+    "weeklyTrend": "多頭",
+    "marketRegime": "BULL",
+    "theme": "航太科技",
     "status": "OPEN",
     "exitDate": null,
     "exitPrice": null,
@@ -134,6 +162,6 @@
     "resultPct": null,
     "holdingDays": null,
     "ambiguousDay": false,
-    "entryRR": 4.2989
+    "entryRR": 2.2731
   }
 ]
