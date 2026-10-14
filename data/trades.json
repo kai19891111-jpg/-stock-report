@@ -107,5 +107,33 @@
     "holdingDays": null,
     "ambiguousDay": false,
     "entryRR": 2.4749
+  },
+  {
+    "id": "NVDA-2026-10-12",
+    "symbol": "NVDA",
+    "market": "US",
+    "signalDate": "2026-10-12",
+    "entryDate": "2026-10-13",
+    "entryPrice": 224.34,
+    "stopPrice": 221.1857,
+    "target1": 237.8999,
+    "target2": 243.1634,
+    "rsi": 49.3544,
+    "macd": "零軸下",
+    "volumeRatio": 0.6683,
+    "atr": 5.2636,
+    "dailyTrend": "盤整",
+    "weeklyTrend": "多頭",
+    "marketRegime": "BULL",
+    "theme": "AI晶片",
+    "status": "OPEN",
+    "exitDate": null,
+    "exitPrice": null,
+    "exitReason": null,
+    "resultR": null,
+    "resultPct": null,
+    "holdingDays": null,
+    "ambiguousDay": false,
+    "entryRR": 4.2989
   }
 ]

@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-14T01:23:01.432069+00:00",
+  "updated": "2026-10-14T05:14:23.945805+00:00",
   "source": "backtest.py",
   "isFinalClose": true,
   "meta": {
@@ -33,7 +33,7 @@
       "market": "BULL_NEUTRAL"
     },
     "paramsLabel": "報酬風險比≥1.5｜量比不限｜停損距離不限｜大盤多頭或盤整",
-    "openTrades": 2,
+    "openTrades": 3,
     "minSample": 30,
     "outliers": [
       "AMD-2025-09-24"
@@ -134,11 +134,11 @@
   "benchmark": {
     "draws": 300,
     "trades": 231,
-    "meanR": 0.1309,
-    "p05": -0.0449,
-    "p95": 0.3214,
+    "meanR": 0.1474,
+    "p05": -0.0207,
+    "p95": 0.342,
     "actualR": 0.1993,
-    "beats": 0.75,
+    "beats": 0.72,
     "definition": "同樣的股票、同樣的停損停利距離與成本，但進場日隨機"
   },
   "bySymbol": {
@@ -505,11 +505,11 @@
       "benchmark": {
         "draws": 300,
         "trades": 69,
-        "meanR": 0.1327,
-        "p05": -0.2385,
-        "p95": 0.5206,
+        "meanR": 0.1547,
+        "p05": -0.1977,
+        "p95": 0.5463,
         "actualR": 0.3274,
-        "beats": 0.8,
+        "beats": 0.7733,
         "definition": "同樣的股票、同樣的停損停利距離與成本，但進場日隨機"
       },
       "byRegime": {
@@ -822,10 +822,10 @@
           "hitRate": 0.521
         },
         "10": {
-          "n": 1407,
-          "mean": 3.2167,
-          "median": 1.487,
-          "hitRate": 0.5622
+          "n": 1408,
+          "mean": 3.2182,
+          "median": 1.4898,
+          "hitRate": 0.5625
         },
         "20": {
           "n": 1361,
@@ -888,44 +888,44 @@
           "hitRate": 0.562
         },
         "20": {
-          "n": 763,
-          "mean": 6.9394,
-          "median": 2.7278,
-          "hitRate": 0.5924
+          "n": 764,
+          "mean": 6.9367,
+          "median": 2.7409,
+          "hitRate": 0.5929
         }
       }
     },
     "baseline": {
       "5": {
-        "n": 13612,
-        "mean": 1.5584,
-        "median": 0.6736,
-        "hitRate": 0.5438
+        "n": 13621,
+        "mean": 1.5554,
+        "median": 0.6704,
+        "hitRate": 0.5436
       },
       "10": {
-        "n": 13447,
-        "mean": 3.5996,
-        "median": 1.6634,
+        "n": 13456,
+        "mean": 3.5977,
+        "median": 1.6629,
         "hitRate": 0.5755
       },
       "20": {
-        "n": 13117,
-        "mean": 7.877,
-        "median": 3.9267,
-        "hitRate": 0.618
+        "n": 13126,
+        "mean": 7.8771,
+        "median": 3.9334,
+        "hitRate": 0.6182
       }
     }
   },
   "exitStudy": {
     "definition": "進入過熱後隔日開盤賣出，對比續抱到收盤跌破 SMA20 的隔日開盤才賣；數字是續抱多賺（或少賺）的百分比，未扣成本",
-    "n": 134,
-    "stillOpen": 13,
-    "meanExtra": 18.4109,
-    "medianExtra": 5.052,
-    "betterRate": 0.5672,
+    "n": 135,
+    "stillOpen": 12,
+    "meanExtra": 18.239,
+    "medianExtra": 4.4834,
+    "betterRate": 0.563,
     "worstExtra": -23.9819,
-    "avgExtraDays": 24.306,
-    "avgDeepestDip": -7.9595
+    "avgExtraDays": 24.237,
+    "avgDeepestDip": -7.925
   },
   "note": "insample＝前 70% 期間，oos＝後 30% 期間，兩者不混用；live＝實際逐日記錄的交易。N<30 不宣稱勝率。"
 }
