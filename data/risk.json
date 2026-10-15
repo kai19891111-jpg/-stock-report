@@ -1,8 +1,8 @@
 {
-  "generatedAt": "2026-10-15T00:50:13.661587+00:00",
+  "generatedAt": "2026-10-15T05:02:04.046380+00:00",
   "today": {
     "TW": "2026-10-15",
-    "US": "2026-10-14"
+    "US": "2026-10-15"
   },
   "thresholds": {
     "bias_mid": 6.0,
@@ -718,10 +718,10 @@
         },
         "earnings": {
           "score": 2,
-          "why": "財報 2026-10-15，還有 1 個交易日",
+          "why": "財報 2026-10-15，還有 0 個交易日",
           "date": "2026-10-15",
           "source": "https://investor.tsmc.com/english/quarterly-results",
-          "days": 1
+          "days": 0
         },
         "fundamentals": {
           "score": 0,
@@ -762,10 +762,10 @@
         },
         "earnings": {
           "score": 0,
-          "why": "財報 2026-11-17，還有 24 個交易日（Yahoo，已確認）",
+          "why": "財報 2026-11-17，還有 23 個交易日（Yahoo，已確認）",
           "date": "2026-11-17",
           "source": "https://finance.yahoo.com/quote/NVDA/",
-          "days": 24,
+          "days": 23,
           "provider": "Yahoo"
         },
         "fundamentals": {
@@ -808,10 +808,10 @@
         },
         "earnings": {
           "score": 0,
-          "why": "財報 2026-11-03，還有 14 個交易日",
+          "why": "財報 2026-11-03，還有 13 個交易日",
           "date": "2026-11-03",
           "source": "https://ir.amd.com/news-events/press-releases/detail/1300/amd-to-report-fiscal-third-quarter-2026-financial-results",
-          "days": 14
+          "days": 13
         },
         "fundamentals": {
           "score": 0,
@@ -853,10 +853,10 @@
         },
         "earnings": {
           "score": 0,
-          "why": "財報 2026-12-09，還有 40 個交易日（Yahoo，已確認）",
+          "why": "財報 2026-12-09，還有 39 個交易日（Yahoo，已確認）",
           "date": "2026-12-09",
           "source": "https://finance.yahoo.com/quote/AVGO/",
-          "days": 40,
+          "days": 39,
           "provider": "Yahoo"
         },
         "fundamentals": {
@@ -899,10 +899,10 @@
         },
         "earnings": {
           "score": 1,
-          "why": "財報 2026-10-28，還有 10 個交易日",
+          "why": "財報 2026-10-28，還有 9 個交易日",
           "date": "2026-10-28",
           "source": "https://news.microsoft.com/source/2026/10/07/microsoft-announces-quarterly-earnings-release-date-69/",
-          "days": 10
+          "days": 9
         },
         "fundamentals": {
           "score": 1,
@@ -939,15 +939,15 @@
       "items": {
         "tech": {
           "score": 0,
-          "why": "乖離 +4.79%",
-          "date": "2026-10-13"
+          "why": "乖離 +0.91%",
+          "date": "2026-10-14"
         },
         "earnings": {
           "score": 1,
-          "why": "財報 2026-10-21，還有 5 個交易日（Yahoo，已確認）",
+          "why": "財報 2026-10-21，還有 4 個交易日（Yahoo，已確認）",
           "date": "2026-10-21",
           "source": "https://finance.yahoo.com/quote/META/",
-          "days": 5,
+          "days": 4,
           "provider": "Yahoo"
         },
         "fundamentals": {
@@ -990,11 +990,11 @@
         },
         "earnings": {
           "score": 0,
-          "why": "財報約 2026-12-23（Yahoo預估，公司尚未確認），還有 50 個交易日",
+          "why": "財報約 2026-12-23（Yahoo預估，公司尚未確認），還有 49 個交易日",
           "estimated": true,
           "date": "2026-12-23",
           "source": "https://finance.yahoo.com/quote/MU/",
-          "days": 50,
+          "days": 49,
           "provider": "Yahoo"
         },
         "fundamentals": {
@@ -1037,10 +1037,10 @@
         },
         "earnings": {
           "score": 1,
-          "why": "財報 2026-10-21，還有 5 個交易日",
+          "why": "財報 2026-10-21，還有 4 個交易日",
           "date": "2026-10-21",
           "source": "https://www.sec.gov/Archives/edgar/data/1318605/000162828026064366/0001628280-26-064366.txt",
-          "days": 5
+          "days": 4
         },
         "fundamentals": {
           "score": 0,
@@ -1077,16 +1077,16 @@
       "items": {
         "tech": {
           "score": 0,
-          "why": "乖離 +0.46%",
-          "date": "2026-10-13"
+          "why": "乖離 -2.39%",
+          "date": "2026-10-14"
         },
         "earnings": {
           "score": 0,
-          "why": "財報約 2026-11-03（Yahoo預估，公司尚未確認），還有 14 個交易日",
+          "why": "財報約 2026-11-03（Yahoo預估，公司尚未確認），還有 13 個交易日",
           "estimated": true,
           "date": "2026-11-03",
           "source": "https://finance.yahoo.com/quote/SPCX/",
-          "days": 14,
+          "days": 13,
           "provider": "Yahoo"
         },
         "fundamentals": {
