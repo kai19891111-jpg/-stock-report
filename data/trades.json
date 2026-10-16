@@ -163,5 +163,33 @@
     "holdingDays": 2,
     "ambiguousDay": false,
     "entryRR": 2.2731
+  },
+  {
+    "id": "4919.TW-2026-10-15",
+    "symbol": "4919.TW",
+    "market": "TW",
+    "signalDate": "2026-10-15",
+    "entryDate": "2026-10-16",
+    "entryPrice": 139.5,
+    "stopPrice": 125.8679,
+    "target1": 163.7214,
+    "target2": 175.1857,
+    "rsi": 49.7283,
+    "macd": "零軸下",
+    "volumeRatio": 0.5338,
+    "atr": 11.4643,
+    "dailyTrend": "盤整",
+    "weeklyTrend": "盤整",
+    "marketRegime": "NEUTRAL",
+    "theme": "電池監測IC",
+    "status": "OPEN",
+    "exitDate": null,
+    "exitPrice": null,
+    "exitReason": null,
+    "resultR": null,
+    "resultPct": null,
+    "holdingDays": null,
+    "ambiguousDay": false,
+    "entryRR": 1.7768
   }
 ]

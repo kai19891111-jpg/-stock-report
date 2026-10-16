@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-16T04:51:31.893518+00:00",
+  "updatedAt": "2026-10-16T11:35:02.029728+00:00",
   "note": "scripts/risk.py 自動抓到的美股財報日。要指定日期請改 data/events.json 的 earnings，那邊永遠優先。",
   "symbols": {
     "AVGO": {
@@ -40,6 +40,14 @@
       "estimated": true,
       "provider": "Yahoo",
       "source": "https://finance.yahoo.com/quote/SPCX/",
+      "fetchedAt": "2026-10-16"
+    },
+    "TSM": {
+      "date": "2027-01-14",
+      "dateEnd": null,
+      "estimated": true,
+      "provider": "Yahoo",
+      "source": "https://finance.yahoo.com/quote/TSM/",
       "fetchedAt": "2026-10-16"
     }
   }

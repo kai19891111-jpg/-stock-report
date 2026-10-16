@@ -1,11 +1,11 @@
 {
-  "updated": "2026-10-16T04:51:30.534172+00:00",
+  "updated": "2026-10-16T11:35:00.660506+00:00",
   "source": "backtest.py",
   "isFinalClose": true,
   "meta": {
     "symbols": 33,
     "from": "2025-01-09",
-    "to": "2026-10-15",
+    "to": "2026-10-16",
     "splitDate": "2026-04-07",
     "maxHoldDays": 20,
     "costs": {
@@ -33,7 +33,7 @@
       "market": "BULL_NEUTRAL"
     },
     "paramsLabel": "報酬風險比≥1.5｜量比不限｜停損距離不限｜大盤多頭或盤整",
-    "openTrades": 0,
+    "openTrades": 1,
     "minSample": 30,
     "outliers": [
       "AMD-2025-09-24"
@@ -134,11 +134,11 @@
   "benchmark": {
     "draws": 300,
     "trades": 233,
-    "meanR": 0.1319,
-    "p05": -0.0589,
-    "p95": 0.3314,
+    "meanR": 0.1372,
+    "p05": -0.0424,
+    "p95": 0.3264,
     "actualR": 0.1975,
-    "beats": 0.6967,
+    "beats": 0.7033,
     "definition": "同樣的股票、同樣的停損停利距離與成本，但進場日隨機"
   },
   "bySymbol": {
@@ -361,11 +361,11 @@
       "benchmark": {
         "draws": 300,
         "trades": 162,
-        "meanR": 0.1474,
-        "p05": -0.0628,
-        "p95": 0.3537,
+        "meanR": 0.1303,
+        "p05": -0.0662,
+        "p95": 0.3332,
         "actualR": 0.1554,
-        "beats": 0.5367,
+        "beats": 0.57,
         "definition": "同樣的股票、同樣的停損停利距離與成本，但進場日隨機"
       },
       "byRegime": {
@@ -816,36 +816,36 @@
     "byStatus": {
       "go": {
         "5": {
-          "n": 1422,
-          "mean": 1.3321,
-          "median": 0.4234,
-          "hitRate": 0.5218
+          "n": 1424,
+          "mean": 1.3195,
+          "median": 0.4016,
+          "hitRate": 0.5211
         },
         "10": {
-          "n": 1405,
-          "mean": 3.2091,
-          "median": 1.487,
-          "hitRate": 0.5616
+          "n": 1408,
+          "mean": 3.1835,
+          "median": 1.4638,
+          "hitRate": 0.5604
         },
         "20": {
-          "n": 1359,
-          "mean": 7.2565,
-          "median": 3.4169,
-          "hitRate": 0.6063
+          "n": 1364,
+          "mean": 7.2765,
+          "median": 3.4338,
+          "hitRate": 0.607
         }
       },
       "hold": {
         "5": {
-          "n": 1021,
-          "mean": 1.5987,
-          "median": 0.3509,
-          "hitRate": 0.5142
+          "n": 1023,
+          "mean": 1.5684,
+          "median": 0.2762,
+          "hitRate": 0.5132
         },
         "10": {
-          "n": 1004,
-          "mean": 3.991,
-          "median": 1.9678,
-          "hitRate": 0.5906
+          "n": 1006,
+          "mean": 3.9736,
+          "median": 1.9479,
+          "hitRate": 0.5895
         },
         "20": {
           "n": 972,
@@ -862,10 +862,10 @@
           "hitRate": 0.5213
         },
         "10": {
-          "n": 298,
-          "mean": 5.5389,
-          "median": 3.1099,
-          "hitRate": 0.604
+          "n": 300,
+          "mean": 5.4722,
+          "median": 2.9412,
+          "hitRate": 0.6
         },
         "20": {
           "n": 289,
@@ -888,44 +888,44 @@
           "hitRate": 0.5575
         },
         "20": {
-          "n": 767,
-          "mean": 7.0433,
-          "median": 2.899,
+          "n": 772,
+          "mean": 7.0533,
+          "median": 2.9129,
           "hitRate": 0.5984
         }
       }
     },
     "baseline": {
       "5": {
-        "n": 13623,
-        "mean": 1.5438,
-        "median": 0.6689,
-        "hitRate": 0.5431
+        "n": 13647,
+        "mean": 1.5288,
+        "median": 0.6534,
+        "hitRate": 0.5423
       },
       "10": {
-        "n": 13458,
-        "mean": 3.6019,
-        "median": 1.6537,
-        "hitRate": 0.5758
+        "n": 13482,
+        "mean": 3.5903,
+        "median": 1.6428,
+        "hitRate": 0.5752
       },
       "20": {
-        "n": 13128,
-        "mean": 7.9413,
-        "median": 3.9896,
-        "hitRate": 0.6197
+        "n": 13152,
+        "mean": 7.9512,
+        "median": 4.0,
+        "hitRate": 0.62
       }
     }
   },
   "exitStudy": {
     "definition": "進入過熱後隔日開盤賣出，對比續抱到收盤跌破 SMA20 的隔日開盤才賣；數字是續抱多賺（或少賺）的百分比，未扣成本",
-    "n": 137,
-    "stillOpen": 11,
-    "meanExtra": 18.9012,
-    "medianExtra": 5.6206,
-    "betterRate": 0.5693,
+    "n": 141,
+    "stillOpen": 7,
+    "meanExtra": 18.1112,
+    "medianExtra": 3.8005,
+    "betterRate": 0.5532,
     "worstExtra": -23.9819,
-    "avgExtraDays": 24.3431,
-    "avgDeepestDip": -7.8541
+    "avgExtraDays": 23.9007,
+    "avgDeepestDip": -7.951
   },
   "note": "insample＝前 70% 期間，oos＝後 30% 期間，兩者不混用；live＝實際逐日記錄的交易。N<30 不宣稱勝率。"
 }
