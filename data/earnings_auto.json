@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-16T11:35:02.029728+00:00",
+  "updatedAt": "2026-10-16T23:33:41.004668+00:00",
   "note": "scripts/risk.py 自動抓到的美股財報日。要指定日期請改 data/events.json 的 earnings，那邊永遠優先。",
   "symbols": {
     "AVGO": {
@@ -35,9 +35,9 @@
       "fetchedAt": "2026-10-16"
     },
     "SPCX": {
-      "date": "2026-11-03",
+      "date": "2026-10-20",
       "dateEnd": null,
-      "estimated": true,
+      "estimated": false,
       "provider": "Yahoo",
       "source": "https://finance.yahoo.com/quote/SPCX/",
       "fetchedAt": "2026-10-16"
