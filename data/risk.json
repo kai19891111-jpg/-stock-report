@@ -1,8 +1,8 @@
 {
-  "generatedAt": "2026-10-16T00:43:41.784151+00:00",
+  "generatedAt": "2026-10-16T04:51:31.893518+00:00",
   "today": {
     "TW": "2026-10-16",
-    "US": "2026-10-15"
+    "US": "2026-10-16"
   },
   "thresholds": {
     "bias_mid": 6.0,
@@ -47,12 +47,14 @@
       "fail": 0
     },
     "tpex_disposal": {
-      "ok": 1,
-      "fail": 0
+      "ok": 0,
+      "fail": 1,
+      "lastError": "HTTPError: HTTP Error 403: Forbidden"
     },
     "tpex_warning": {
-      "ok": 1,
-      "fail": 0
+      "ok": 0,
+      "fail": 1,
+      "lastError": "HTTPError: HTTP Error 403: Forbidden"
     },
     "sec_tickers": {
       "ok": 0,
@@ -77,6 +79,10 @@
     },
     "yahoo": {
       "ok": 9,
+      "fail": 0
+    },
+    "nasdaq_earnings": {
+      "ok": 1,
       "fail": 0
     },
     "yahoo_fundamentals": {
@@ -123,7 +129,7 @@
         },
         "chips": {
           "score": 1,
-          "why": "近 5 日法人 -67485 張、融資 +3945 張",
+          "why": "近 5 日法人 -67485 張、融資 +3945 張；注意／處置名單沒有完整抓到",
           "date": "2026-10-15"
         },
         "policy": {
@@ -166,7 +172,7 @@
         },
         "chips": {
           "score": 1,
-          "why": "近 5 日法人 -17257 張、融資 +470 張",
+          "why": "近 5 日法人 -17257 張、融資 +470 張；注意／處置名單沒有完整抓到",
           "date": "2026-10-15"
         },
         "policy": {
@@ -209,7 +215,7 @@
         },
         "chips": {
           "score": 1,
-          "why": "近 5 日法人 -22778 張、融資 +663 張",
+          "why": "近 5 日法人 -22778 張、融資 +663 張；注意／處置名單沒有完整抓到",
           "date": "2026-10-15"
         },
         "policy": {
@@ -250,7 +256,7 @@
         },
         "chips": {
           "score": 0,
-          "why": "近 5 日法人 -639 張、融資 -288 張",
+          "why": "近 5 日法人 -639 張、融資 -288 張；注意／處置名單沒有完整抓到",
           "date": "2026-10-15"
         },
         "policy": {
@@ -291,7 +297,7 @@
         },
         "chips": {
           "score": 0,
-          "why": "近 5 日法人 -50 張、融資 -201 張",
+          "why": "近 5 日法人 -50 張、融資 -201 張；注意／處置名單沒有完整抓到",
           "date": "2026-10-15"
         },
         "policy": {
@@ -332,7 +338,7 @@
         },
         "chips": {
           "score": 0,
-          "why": "近 5 日法人 -2448 張、融資 -64 張",
+          "why": "近 5 日法人 -2448 張、融資 -64 張；注意／處置名單沒有完整抓到",
           "date": "2026-10-15"
         },
         "policy": {
@@ -373,7 +379,7 @@
         },
         "chips": {
           "score": 0,
-          "why": "近 5 日法人 -870 張、融資 -1201 張",
+          "why": "近 5 日法人 -870 張、融資 -1201 張；注意／處置名單沒有完整抓到",
           "date": "2026-10-15"
         },
         "policy": {
@@ -414,7 +420,7 @@
         },
         "chips": {
           "score": 1,
-          "why": "近 5 日法人 -6452 張、融資 +1498 張",
+          "why": "近 5 日法人 -6452 張、融資 +1498 張；注意／處置名單沒有完整抓到",
           "date": "2026-10-15"
         },
         "policy": {
@@ -455,7 +461,7 @@
         },
         "chips": {
           "score": 0,
-          "why": "近 5 日法人 +724 張、融資 -547 張",
+          "why": "近 5 日法人 +724 張、融資 -547 張；注意／處置名單沒有完整抓到",
           "date": "2026-10-15"
         },
         "policy": {
@@ -543,7 +549,7 @@
         },
         "chips": {
           "score": 1,
-          "why": "近 5 日法人 -1371 張、融資 +430 張",
+          "why": "近 5 日法人 -1371 張、融資 +430 張；注意／處置名單沒有完整抓到",
           "date": "2026-10-15"
         },
         "policy": {
@@ -584,7 +590,7 @@
         },
         "chips": {
           "score": 0,
-          "why": "近 5 日法人 -31335 張、融資 -6725 張",
+          "why": "近 5 日法人 -31335 張、融資 -6725 張；注意／處置名單沒有完整抓到",
           "date": "2026-10-15"
         },
         "policy": {
@@ -625,7 +631,7 @@
         },
         "chips": {
           "score": 1,
-          "why": "近 5 日法人 -230209 張、融資 +7207 張",
+          "why": "近 5 日法人 -230209 張、融資 +7207 張；注意／處置名單沒有完整抓到",
           "date": "2026-10-15"
         },
         "policy": {
@@ -639,20 +645,15 @@
       "group": "TW|晶圓代工＋記憶體"
     },
     "2221.TWO": {
-      "total": 3,
+      "total": 1,
       "max": 8,
       "scored": 4,
-      "score10": 3.8,
-      "level": "mid",
-      "flags": [
-        "attention"
-      ],
+      "score10": 1.2,
+      "level": "low",
+      "flags": [],
       "gate": {
-        "block": true,
-        "reasons": [
-          "注意股",
-          "風險中"
-        ]
+        "block": false,
+        "reasons": []
       },
       "items": {
         "tech": {
@@ -670,10 +671,9 @@
           "date": "2026-09"
         },
         "chips": {
-          "score": 2,
-          "why": "列入注意股（2026-10-14）",
-          "date": "2026-10-14",
-          "flag": "attention"
+          "score": 0,
+          "why": "近 5 日法人 -86 張、融資 -108 張；注意／處置名單沒有完整抓到",
+          "date": "2026-10-15"
         },
         "policy": {
           "score": 1,
@@ -686,19 +686,15 @@
       "group": "TW|半導體廠務"
     },
     "TSM": {
-      "total": 3,
-      "max": 10,
-      "scored": 5,
-      "score10": 3.0,
+      "total": 1,
+      "max": 8,
+      "scored": 4,
+      "score10": 1.2,
       "level": "low",
-      "flags": [
-        "earnings_soon"
-      ],
+      "flags": [],
       "gate": {
-        "block": true,
-        "reasons": [
-          "財報前觀察"
-        ]
+        "block": false,
+        "reasons": []
       },
       "items": {
         "tech": {
@@ -707,11 +703,10 @@
           "date": "2026-10-15"
         },
         "earnings": {
-          "score": 2,
-          "why": "財報 2026-10-15，還有 0 個交易日",
+          "score": null,
+          "why": "財報日 2026-10-15 已過，等下一次日期",
           "date": "2026-10-15",
-          "source": "https://investor.tsmc.com/english/quarterly-results",
-          "days": 0
+          "source": "https://investor.tsmc.com/english/quarterly-results"
         },
         "fundamentals": {
           "score": 0,
@@ -752,10 +747,10 @@
         },
         "earnings": {
           "score": 0,
-          "why": "財報 2026-11-17，還有 23 個交易日（Yahoo，已確認）",
+          "why": "財報 2026-11-17，還有 22 個交易日（Yahoo，已確認）",
           "date": "2026-11-17",
           "source": "https://finance.yahoo.com/quote/NVDA/",
-          "days": 23,
+          "days": 22,
           "provider": "Yahoo"
         },
         "fundamentals": {
@@ -798,10 +793,10 @@
         },
         "earnings": {
           "score": 0,
-          "why": "財報 2026-11-03，還有 13 個交易日",
+          "why": "財報 2026-11-03，還有 12 個交易日",
           "date": "2026-11-03",
           "source": "https://ir.amd.com/news-events/press-releases/detail/1300/amd-to-report-fiscal-third-quarter-2026-financial-results",
-          "days": 13
+          "days": 12
         },
         "fundamentals": {
           "score": 0,
@@ -843,10 +838,10 @@
         },
         "earnings": {
           "score": 0,
-          "why": "財報 2026-12-09，還有 39 個交易日（Yahoo，已確認）",
+          "why": "財報 2026-12-09，還有 38 個交易日（Yahoo，已確認）",
           "date": "2026-12-09",
           "source": "https://finance.yahoo.com/quote/AVGO/",
-          "days": 39,
+          "days": 38,
           "provider": "Yahoo"
         },
         "fundamentals": {
@@ -889,10 +884,10 @@
         },
         "earnings": {
           "score": 1,
-          "why": "財報 2026-10-28，還有 9 個交易日",
+          "why": "財報 2026-10-28，還有 8 個交易日",
           "date": "2026-10-28",
           "source": "https://news.microsoft.com/source/2026/10/07/microsoft-announces-quarterly-earnings-release-date-69/",
-          "days": 9
+          "days": 8
         },
         "fundamentals": {
           "score": 1,
@@ -916,28 +911,32 @@
       "group": "US|AI雲端"
     },
     "META": {
-      "total": 2,
+      "total": 3,
       "max": 10,
       "scored": 5,
-      "score10": 2.0,
+      "score10": 3.0,
       "level": "low",
-      "flags": [],
+      "flags": [
+        "earnings_soon"
+      ],
       "gate": {
-        "block": false,
-        "reasons": []
+        "block": true,
+        "reasons": [
+          "財報前觀察"
+        ]
       },
       "items": {
         "tech": {
           "score": 0,
-          "why": "乖離 +0.91%",
-          "date": "2026-10-14"
+          "why": "乖離 +0.43%",
+          "date": "2026-10-15"
         },
         "earnings": {
-          "score": 1,
-          "why": "財報 2026-10-21，還有 4 個交易日（Yahoo，已確認）",
+          "score": 2,
+          "why": "財報 2026-10-21，還有 3 個交易日（Yahoo，已確認）",
           "date": "2026-10-21",
           "source": "https://finance.yahoo.com/quote/META/",
-          "days": 4,
+          "days": 3,
           "provider": "Yahoo"
         },
         "fundamentals": {
@@ -980,11 +979,11 @@
         },
         "earnings": {
           "score": 0,
-          "why": "財報約 2026-12-23（Yahoo預估，公司尚未確認），還有 49 個交易日",
+          "why": "財報約 2026-12-23（Yahoo預估，公司尚未確認），還有 48 個交易日",
           "estimated": true,
           "date": "2026-12-23",
           "source": "https://finance.yahoo.com/quote/MU/",
-          "days": 49,
+          "days": 48,
           "provider": "Yahoo"
         },
         "fundamentals": {
@@ -1009,15 +1008,19 @@
       "group": "US|AI記憶體"
     },
     "TSLA": {
-      "total": 2,
+      "total": 3,
       "max": 10,
       "scored": 5,
-      "score10": 2.0,
+      "score10": 3.0,
       "level": "low",
-      "flags": [],
+      "flags": [
+        "earnings_soon"
+      ],
       "gate": {
-        "block": false,
-        "reasons": []
+        "block": true,
+        "reasons": [
+          "財報前觀察"
+        ]
       },
       "items": {
         "tech": {
@@ -1026,11 +1029,11 @@
           "date": "2026-10-15"
         },
         "earnings": {
-          "score": 1,
-          "why": "財報 2026-10-21，還有 4 個交易日",
+          "score": 2,
+          "why": "財報 2026-10-21，還有 3 個交易日",
           "date": "2026-10-21",
           "source": "https://www.sec.gov/Archives/edgar/data/1318605/000162828026064366/0001628280-26-064366.txt",
-          "days": 4
+          "days": 3
         },
         "fundamentals": {
           "score": 0,
@@ -1067,16 +1070,16 @@
       "items": {
         "tech": {
           "score": 0,
-          "why": "乖離 -2.39%",
-          "date": "2026-10-14"
+          "why": "乖離 -4.47%",
+          "date": "2026-10-15"
         },
         "earnings": {
           "score": 0,
-          "why": "財報約 2026-11-03（Yahoo預估，公司尚未確認），還有 13 個交易日",
+          "why": "財報約 2026-11-03（Yahoo預估，公司尚未確認），還有 12 個交易日",
           "estimated": true,
           "date": "2026-11-03",
           "source": "https://finance.yahoo.com/quote/SPCX/",
-          "days": 13,
+          "days": 12,
           "provider": "Yahoo"
         },
         "fundamentals": {
@@ -1130,7 +1133,7 @@
         },
         "chips": {
           "score": 1,
-          "why": "近 5 日法人 -1403 張、融資 +200 張",
+          "why": "近 5 日法人 -1403 張、融資 +200 張；注意／處置名單沒有完整抓到",
           "date": "2026-10-15"
         },
         "policy": {
@@ -1171,7 +1174,7 @@
         },
         "chips": {
           "score": 0,
-          "why": "近 5 日法人 +1141 張、融資 -954 張",
+          "why": "近 5 日法人 +1141 張、融資 -954 張；注意／處置名單沒有完整抓到",
           "date": "2026-10-15"
         },
         "policy": {
@@ -1214,7 +1217,7 @@
         },
         "chips": {
           "score": 1,
-          "why": "近 5 日法人 -1777 張、融資 +627 張",
+          "why": "近 5 日法人 -1777 張、融資 +627 張；注意／處置名單沒有完整抓到",
           "date": "2026-10-15"
         },
         "policy": {
@@ -1255,7 +1258,7 @@
         },
         "chips": {
           "score": 1,
-          "why": "近 5 日法人 -74803 張、融資 +1457 張",
+          "why": "近 5 日法人 -74803 張、融資 +1457 張；注意／處置名單沒有完整抓到",
           "date": "2026-10-15"
         },
         "policy": {
@@ -1300,7 +1303,7 @@
         },
         "chips": {
           "score": 1,
-          "why": "近 5 日法人 -24421 張、融資 +8904 張",
+          "why": "近 5 日法人 -24421 張、融資 +8904 張；注意／處置名單沒有完整抓到",
           "date": "2026-10-15"
         },
         "policy": {
@@ -1341,7 +1344,7 @@
         },
         "chips": {
           "score": 0,
-          "why": "近 5 日法人 -919 張、融資 -2382 張",
+          "why": "近 5 日法人 -919 張、融資 -2382 張；注意／處置名單沒有完整抓到",
           "date": "2026-10-15"
         },
         "policy": {
@@ -1382,7 +1385,7 @@
         },
         "chips": {
           "score": 0,
-          "why": "近 5 日法人 -6630 張、融資 -3101 張",
+          "why": "近 5 日法人 -6630 張、融資 -3101 張；注意／處置名單沒有完整抓到",
           "date": "2026-10-15"
         },
         "policy": {
@@ -1423,7 +1426,7 @@
         },
         "chips": {
           "score": 0,
-          "why": "近 5 日法人 -1029 張、融資 -4794 張",
+          "why": "近 5 日法人 -1029 張、融資 -4794 張；注意／處置名單沒有完整抓到",
           "date": "2026-10-15"
         },
         "policy": {
@@ -1464,7 +1467,7 @@
         },
         "chips": {
           "score": 0,
-          "why": "近 5 日法人 -38869 張、融資 -3033 張",
+          "why": "近 5 日法人 -38869 張、融資 -3033 張；注意／處置名單沒有完整抓到",
           "date": "2026-10-15"
         },
         "policy": {
@@ -1509,7 +1512,7 @@
         },
         "chips": {
           "score": 0,
-          "why": "近 5 日法人 +948 張、融資 -673 張",
+          "why": "近 5 日法人 +948 張、融資 -673 張；注意／處置名單沒有完整抓到",
           "date": "2026-10-15"
         },
         "policy": {
