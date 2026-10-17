@@ -1,1 +1,44 @@
-PLACEHOLDER_FULL_CONTENT_WILL_BE_INSERTED
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>技術與基本面報告</title>
+<style>:root{--bg:#07182e;--card:rgba(8,32,64,.82);--accent:#ef3e42;--text:#f7f4ee;--muted:#c5d0de}body{margin:0;background:var(--bg);color:var(--text);font-family:sans-serif}.cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:10px}.card{background:var(--card);border:1px solid #8ec0ff;border-radius:12px;padding:12px}.px{font-size:24px;font-weight:700}.badge{padding:2px 8px;border-radius:999px;font-size:12px}.go{background:#1f7a4d;color:#fff}</style>
+</head><body>
+<header style="text-align:center;padding:16px"><h1>技術與基本面報告</h1><div id="stamps"></div></header>
+<nav style="padding:8px;background:#0b4f9c"><a href="#cards" style="color:#fff;margin:0 8px">個股</a><a href="#pos" style="color:#fff">持倉</a></nav>
+<main style="max-width:1000px;margin:auto;padding:12px">
+<section id="summary"></section>
+<section id="pos"><h2>我的持倉</h2><div id="pos-body"></div></section>
+<section><h2>個股卡片 <span id="cnt"></span></h2><div class="cards" id="cards"></div></section>
+<section><h2>族群</h2><div id="groups"></div></section>
+</main>
+<script>
+const STOCK_META = {"TW|AI晶片": ["2330.TW", "2454.TW"], "TW|AI電源": ["2308.TW"], "TW|AI散熱": ["3324.TWO", "3653.TW", "3017.TW"], "TW|ABF": ["3189.TW", "3037.TW", "8046.TW"], "TW|CCL": ["6213.TW", "2383.TW"], "TW|面板／光電": ["3481.TW"], "TW|晶圓代工＋記憶體": ["6770.TW"], "TW|半導體廠務": ["2221.TWO"], "US|AI晶片": ["TSM", "NVDA", "AMD", "AVGO"], "US|AI雲端": ["MSFT", "META"], "US|AI記憶體": ["MU"], "US|AI自駕機器人": ["TSLA"], "US|航太科技": ["SPCX", "RKLB", "ASTS", "SATS"], "TW|AI伺服器／機櫃": ["8210.TW"], "TW|AI基建／電力": ["2371.TW"], "TW|光學／CPO": ["3406.TW"], "TW|記憶體": ["2408.TW"], "TW|CCL／電子材料": ["1303.TW"], "TW|PCB／銅箔": ["8358.TWO", "4958.TW"], "TW|電池監測IC": ["4919.TW"], "TW|被動元件": ["2327.TW"], "TW|NB機構件": ["1569.TWO"], "TW|低軌衛星": ["2313.TW", "3491.TWO", "6285.TW", "6271.TW", "2367.TW", "2355.TW"]};
+const NAMES = {"1303.TW": "1303.TW", "3017.TW": "3017.TW", "2371.TW": "2371.TW", "8358.TWO": "8358.TWO", "6271.TW": "同欣電", "1569.TWO": "1569.TWO", "3491.TWO": "昇達科", "6770.TW": "6770.TW", "SPCX": "SPCX", "8210.TW": "8210.TW", "4958.TW": "4958.TW", "2367.TW": "燠華", "TSLA": "TSLA", "2308.TW": "台達電", "MU": "MU", "2383.TW": "2383.TW", "2408.TW": "2408.TW", "3324.TWO": "3324.TWO", "3406.TW": "3406.TW", "2454.TW": "聯發科", "2355.TW": "敬鵬", "2221.TWO": "2221.TWO", "META": "META", "2313.TW": "華通", "2327.TW": "2327.TW", "6285.TW": "啟祺", "3653.TW": "3653.TW", "2330.TW": "台積電", "8046.TW": "8046.TW", "NVDA": "NVDA", "MSFT": "MSFT", "TSM": "TSM", "6213.TW": "6213.TW", "ASTS": "AST SpaceMobile", "4919.TW": "4919.TW", "3037.TW": "3037.TW", "3189.TW": "3189.TW", "SATS": "EchoStar", "3481.TW": "3481.TW", "AMD": "AMD", "RKLB": "Rocket Lab", "AVGO": "AVGO", "^TWII": "加權指數", "^IXIC": "Nasdaq", "^SOX": "費城半導體"};
+const DATA = {"^TWII": {"p": 47111.26, "date": "2026-10-16", "s20": 0, "s60": 0, "bias": 0, "entry": "N/A", "invalid": "N/A", "resist": "N/A"}, "2330.TW": {"p": 2420.0, "date": "2026-10-16", "s20": 0, "s60": 0, "bias": 0, "entry": "N/A", "invalid": "N/A", "resist": "N/A"}};
+const POSITIONS = [{code:"2330.TW",qty:10,cost:2572.10},{code:"4958.TW",qty:80,cost:481.90},{code:"SPCX",qty:34.49,cost:152.12,quote:167.54}];
+const $ = id => document.getElementById(id);
+const name = c => NAMES[c]||c;
+function apply(L){
+  if(!L||!L.quotes) return;
+  Object.keys(L.quotes).forEach(c=>{
+    if(!STOCK_META[Object.keys(STOCK_META).find(k=>STOCK_META[k].includes(c))]) return;
+    const q=L.quotes[c]; if(!q||!q.close) return;
+    DATA[c]={p:q.close,date:q.date,s20:q.ma20,s60:q.ma60,bias:q.bias||0,entry:(q.entryLow&&q.entryHigh)?q.entryLow+"-"+q.entryHigh:"N/A",invalid:q.stop||"N/A",resist:q.target1||"N/A",rr:q.entryRR};
+  });
+}
+function render(){
+  const codes=[]; Object.values(STOCK_META).forEach(a=>a.forEach(c=>{if(DATA[c])codes.push(c)}));
+  $("stamps").innerHTML = "台股 " + (DATA["^TWII"]&&DATA["^TWII"].date||"") + " 美股載入中";
+  $("cards").innerHTML = codes.map(c=>{
+    const d=DATA[c];
+    return `<div class="card"><b>${name(c)}</b> <small>${c}</small><div class="px">${d.p||"—"}</div><div>進場 ${d.entry||"—"}｜失效 ${d.invalid||"—"}｜目標 ${d.resist||"—"}</div></div>`;
+  }).join("");
+  $("cnt").textContent = "("+codes.length+"檔)";
+  $("groups").innerHTML = Object.keys(STOCK_META).map(k=>`<div><b>${k}</b>: ${STOCK_META[k].map(name).join(", ")}</div>`).join("");
+  let ph=""; POSITIONS.forEach(p=>{const pr=p.quote||(DATA[p.code]&&DATA[p.code].p)||0; ph+=`<div class="card">${name(p.code)} ${p.qty}股 成本${p.cost} 現價${pr}</div>`;});
+  $("pos-body").innerHTML=ph;
+}
+render();
+fetch("./data/latest.json",{cache:"no-store"}).then(r=>r.json()).then(L=>{apply(L);render();}).catch(()=>{});
+</script>
+</body></html>
