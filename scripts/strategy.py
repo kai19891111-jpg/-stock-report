@@ -25,6 +25,7 @@ MIN_RISK_ATR = 0.5          # a stop closer than this many ATR gives a meaningle
 COSTS = {
     "TW": {"fee": 0.001425, "sell_tax": 0.003, "slip": 0.0005},
     "US": {"fee": 0.0, "sell_tax": 0.0, "slip": 0.0005},
+    "CRYPTO": {"fee": 0.001, "sell_tax": 0.0, "slip": 0.0005},   # 交易所現貨手續費約 0.1%
 }
 
 

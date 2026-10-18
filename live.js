@@ -42,8 +42,8 @@
 
   var STORE = "live-quotes-settings";
   var INDEX = ["^TWII", "^IXIC", "^SOX", "^TNX"];
-  var TZ = { TW: "Asia/Taipei", US: "America/New_York" };
-  var HOURS = { TW: [9 * 60, 13 * 60 + 30], US: [9 * 60 + 30, 16 * 60] };
+  var TZ = { TW: "Asia/Taipei", US: "America/New_York", CRYPTO: "UTC" };
+  var HOURS = { TW: [9 * 60, 13 * 60 + 30], US: [9 * 60 + 30, 16 * 60], CRYPTO: [0, 24 * 60] };
   var MKT_NAME = { TW: "台股", US: "美股" };
 
   var Q = {};                    // code -> {price, prev, time(ms), provider}
@@ -71,6 +71,7 @@
   function market(code) {
     if (code === "^TWII") return "TW";
     if (code.charAt(0) === "^") return "US";
+    if (/-USD$/.test(code)) return "CRYPTO";
     return /\.TWO?$/.test(code) ? "TW" : "US";
   }
   function codes() {
@@ -84,7 +85,7 @@
   function px(v, code) {                    // 和頁面同一套寫法
     if (!has(v)) return "—";
     if (code === "^TNX") return num(v, 3, 3);
-    if (code.charAt(0) === "^" || market(code) === "US") return num(v, 2, 2);
+    if (code.charAt(0) === "^" || market(code) !== "TW") return num(v, 2, 2);
     return num(v, 0, 2);
   }
   function clock(tz, ms) {                  // 那個時區的 {date:"2026-10-09", mins:從零點起的分鐘, wd:0-6}
@@ -96,6 +97,7 @@
              wd: ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"].indexOf(p.weekday) };
   }
   function state(mkt, ms) {                 // open 盤中｜pre 開盤前｜post 已收盤｜closed 週末
+    if (mkt === "CRYPTO") return "open";     // 24 小時交易
     var c = clock(TZ[mkt], ms || Date.now()), h = HOURS[mkt];
     if (c.wd === 0 || c.wd === 6) return "closed";
     return c.mins < h[0] ? "pre" : c.mins < h[1] ? "open" : "post";
@@ -228,7 +230,7 @@
     var label = live ? "盤中" : qDate === today ? "今日收盤（日 K 待同步）" : qDate.slice(5).replace("-", "/") + " 報價（日 K 待同步）";
     var base = has(q.prev) ? q.prev : d.p;
     var ch = q.price - base, pc = base ? ch / base * 100 : null;
-    var dec = code === "^TNX" ? 3 : (code.charAt(0) === "^" || mkt === "US") ? 2 : null;
+    var dec = code === "^TNX" ? 3 : (code.charAt(0) === "^" || mkt !== "TW") ? 2 : null;
     var amt = dec === null ? num(Math.abs(ch), 0, 2) : num(Math.abs(ch), dec, dec);
     var move = !has(pc) ? "" : (pc > 0.004 ? "▲ " : pc < -0.004 ? "▼ " : "— ") + amt + "（" + (pc > 0 ? "+" : pc < 0 ? "−" : "") + Math.abs(pc).toFixed(2) + "%）";
     var hint = "";

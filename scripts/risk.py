@@ -41,7 +41,7 @@ except Exception as _e:  # noqa: BLE001
 
 ROOT = Path(__file__).resolve().parents[1]
 DATA = Path(os.environ.get("RISK_DATA_DIR") or (ROOT / "data"))
-TZ = {"TW": ZoneInfo("Asia/Taipei"), "US": ZoneInfo("America/New_York")}
+TZ = {"TW": ZoneInfo("Asia/Taipei"), "US": ZoneInfo("America/New_York"), "CRYPTO": ZoneInfo("UTC")}
 
 FINMIND = "https://api.finmindtrade.com/api/v4/data"
 FINMIND_TOKEN = os.environ.get("FINMIND_TOKEN", "")      # 選填；沒有也能跑，只是每小時次數較少
@@ -64,6 +64,7 @@ T = {
     "event_ahead_days": 14,                      # 排定事件提前幾天開始計分（日曆日）
     "announced_default_days": 30,                # 已公告事件沒寫 expires 時，計分幾天
     "events_stale_days": 14,                     # events.json 超過幾天沒更新，政策項目改 N/A
+    "fng_hot": 75, "fng_warm": 60,              # 加密貨幣恐懼與貪婪指數：>=75 計 2 分、>=60 計 1 分
     "min_scored": 3,                             # 少於幾項有分數就標「資料不足」
     "short_up_pct": 10.0,                        # 美股：放空餘額比前一個月增加幾 % 以上才算增加
     "short_float_min": 2.0,                      # 美股：放空餘額佔流通股幾 % 以上才計分（太低的變動沒有意義）
@@ -194,6 +195,27 @@ def fetch_tpex_warning():
 def fetch_sec_tickers():
     raw = get_json("https://www.sec.gov/files/company_tickers.json", {"User-Agent": SEC_UA})
     return {str(v["ticker"]).upper(): int(v["cik_str"]) for v in raw.values()}
+
+
+def fetch_fear_greed():
+    """加密貨幣恐懼與貪婪指數（alternative.me，免金鑰）。-> {"value": 0-100, "label": 英文分類, "date": ISO}"""
+    raw = get_json("https://api.alternative.me/fng/?limit=1")
+    d = (raw.get("data") or [])[0]
+    ts = datetime.fromtimestamp(int(d["timestamp"]), tz=timezone.utc).date().isoformat()
+    return {"value": int(d["value"]), "label": d.get("value_classification") or "", "date": ts}
+
+
+FNG_ZH = {"Extreme Fear": "極度恐懼", "Fear": "恐懼", "Neutral": "中性", "Greed": "貪婪", "Extreme Greed": "極度貪婪"}
+
+
+def score_chips_crypto(fng):
+    """加密貨幣沒有法人與融資券，改看市場情緒：恐懼與貪婪指數 >= 75 極度貪婪 = 2，>= 60 貪婪 = 1。"""
+    if not fng or fng.get("value") is None:
+        return na("恐懼與貪婪指數抓不到")
+    v = fng["value"]
+    s = 2 if v >= T["fng_hot"] else 1 if v >= T["fng_warm"] else 0
+    zh = FNG_ZH.get(fng.get("label"), fng.get("label") or "")
+    return item(s, f"恐懼與貪婪指數 {v}（{zh}）", date=fng.get("date"), source="https://alternative.me/crypto/fear-and-greed-index/")
 
 
 def fetch_sec_facts(cik):
@@ -683,6 +705,10 @@ def main(now=None):
         lists = build_lists(src.call("twse_punish", fetch_twse_punish), src.call("twse_notice", fetch_twse_notice),
                             src.call("tpex_disposal", fetch_tpex_disposal), src.call("tpex_warning", fetch_tpex_warning))
 
+    fng = None
+    if any(q["market"] == "CRYPTO" for q in quotes.values()):
+        fng = src.call("fear_greed", fetch_fear_greed)
+
     sec_map, usd = None, None
     if any(q["market"] == "US" for q in quotes.values()):
         if SEC_UA:
@@ -725,7 +751,12 @@ def main(now=None):
                 earn_miss = "events.json 沒填，自動來源（Yahoo／Nasdaq／SEC）也抓不到財報日"
 
         note, fsrc, fmiss = "", None, "營收與毛利率都抓不到"
-        if market == "TW":
+        if market == "CRYPTO":
+            earn, earn_miss = None, "加密貨幣沒有財報日"
+            rev = mar = None
+            fmiss = "加密貨幣沒有營收與毛利率"
+            chips = score_chips_crypto(fng)
+        elif market == "TW":
             code = sym.split(".")[0]
             rev, mar = tw_fund(code, t)
             fl = flows(fm("TaiwanStockInstitutionalInvestorsBuySell", code, 20, t),

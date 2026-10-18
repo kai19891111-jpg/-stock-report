@@ -49,7 +49,7 @@
   var md = function (iso) { return iso ? String(iso).slice(5, 7) + "/" + String(iso).slice(8, 10) : "—"; };
   function px(v, market) {
     if (!has(v)) return "—";
-    return Number(v).toLocaleString("en-US", market === "US"
+    return Number(v).toLocaleString("en-US", market !== "TW"
       ? { minimumFractionDigits: 2, maximumFractionDigits: 2 }
       : { minimumFractionDigits: 0, maximumFractionDigits: 2 });
   }
@@ -75,7 +75,7 @@
     var src = mkt || S;
     var st = src ? (src[CFG.period] || src.all || null) : null;
     var b = src ? (src.benchmark || null) : null;
-    var scope = mkt ? ({ TW: "台股", US: "美股" }[q.market] || q.market) : "全部市場";
+    var scope = mkt ? ({ TW: "台股", US: "美股", CRYPTO: "加密貨幣" }[q.market] || q.market) : "全部市場";
     var meta = (S && S.meta) || {};
     var minN = has(meta.minSample) ? meta.minSample : 30;
     var minRR = (L.params && has(L.params.min_rr)) ? L.params.min_rr : 1.5;

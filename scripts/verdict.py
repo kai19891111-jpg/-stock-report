@@ -38,7 +38,7 @@ V = {
     "hot_bias": 15.0,           # 過熱
     "room_warn": 1.0,           # 到 20 日高的空間不到幾倍風險就提醒
 }
-MKT = {"TW": "台股", "US": "美股"}
+MKT = {"TW": "台股", "US": "美股", "CRYPTO": "加密貨幣"}
 REGIME = {"BULL": "多頭", "NEUTRAL": "盤整", "BEAR": "空頭"}
 ORDER = ["go", "signal_unproven", "signal_blocked", "conditions", "pullback", "no_chase", "below", "trend", "avoid", "nodata"]
 LABEL = {
@@ -68,7 +68,7 @@ def px(v, market):
     """和頁面一樣的價格寫法：美股固定兩位小數，台股最多兩位。"""
     if not num(v):
         return "—"
-    if market == "US":
+    if market != "TW":
         return f"{v:,.2f}"
     s = f"{v:,.2f}"
     return s.rstrip("0").rstrip(".") if "." in s else s

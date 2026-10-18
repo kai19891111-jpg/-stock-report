@@ -43,7 +43,7 @@
   function nm(code) { var n = g("NAMES"); return (n && n[code]) || code; }
   function px(v, market) {
     if (!has(v)) return "—";
-    return Number(v).toLocaleString("en-US", market === "US"
+    return Number(v).toLocaleString("en-US", market !== "TW"
       ? { minimumFractionDigits: 2, maximumFractionDigits: 2 }
       : { minimumFractionDigits: 0, maximumFractionDigits: 2 });
   }
@@ -62,7 +62,7 @@
   function label(code) { return (V.labels && V.labels[code]) || code; }
   function icon(code) { return (V.icons && V.icons[code]) || ""; }
   function sym(code) { return V.symbols[code]; }
-  function fxOf(market) { var f = g("FX"); return market === "US" ? (f && has(f.USDTWD) ? f.USDTWD : null) : 1; }
+  function fxOf(market) { var f = g("FX"); return market !== "TW" ? (f && has(f.USDTWD) ? f.USDTWD : null) : 1; }
   function riskBudget() {
     try { var v = parseFloat(localStorage.getItem(KEY)); return v > 0 ? v : null; } catch (e) { return null; }
   }
@@ -159,7 +159,7 @@
     var restN = rest.reduce(function (s, k) { return s + (c[k] || 0); }, 0);
     var age = V.generatedAt ? (Date.now() - new Date(V.generatedAt).getTime()) / 36e5 : null;
     var st = $("verdict-stamp");
-    if (st) st.textContent = "台股 " + md(ses.TW) + "｜美股 " + md(ses.US) + " 收盤｜計算 " + stamp(V.generatedAt) + " 台北";
+    if (st) st.textContent = "台股 " + md(ses.TW) + "｜美股 " + md(ses.US) + (ses.CRYPTO ? "｜加密貨幣 " + md(ses.CRYPTO) : "") + " 收盤｜計算 " + stamp(V.generatedAt) + " 台北";
 
     var h = '<p class="vd-top"><b class="' + (c.go ? "vd-ok" : "") + '">可進場 ' + (c.go || 0) + " 檔</b>" +
       "<span>有訊號但沒全過 " + ((c.signal_unproven || 0) + (c.signal_blocked || 0)) + " 檔</span>" +

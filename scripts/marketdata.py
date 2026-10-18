@@ -24,6 +24,9 @@ CACHE_MAX_AGE_SEC = 6 * 3600
 MARKETS = {
     "TW": {"tz": ZoneInfo("Asia/Taipei"), "close": (13, 30), "index": "^TWII"},
     "US": {"tz": ZoneInfo("America/New_York"), "close": (16, 0), "index": "^IXIC"},
+    # 加密貨幣 24 小時交易、週末也有日 K。Yahoo 的日 K 以 UTC 切日，當天 23:59 UTC 後才算收盤。
+    # 大盤多空用 BTC 自己判斷（BTC 是幣圈的「大盤」）。
+    "CRYPTO": {"tz": ZoneInfo("UTC"), "close": (23, 59), "index": "BTC-USD"},
 }
 # Shown in the page's index table only; not used by the entry rule.
 EXTRA_INDICES = {"^SOX": "US", "^TNX": "US"}

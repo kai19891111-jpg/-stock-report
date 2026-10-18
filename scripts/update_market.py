@@ -52,7 +52,8 @@ def load_regimes(now=None):
         if rows:
             index_info[market] = {"symbol": m["index"], "date": rows[-1]["date"], "close": rows[-1]["close"],
                                   "regime": regimes[market].on(rows[-1]["date"])}
-            index_quotes[m["index"]] = index_quote(rows)
+            if market != "CRYPTO":        # BTC 本身就是關注標的，不另外放進指數表，免得蓋掉個股卡片
+                index_quotes[m["index"]] = index_quote(rows)
     for symbol, market in EXTRA_INDICES.items():      # display only
         try:
             q = index_quote(bars_of(symbol, market, now=now))

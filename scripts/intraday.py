@@ -26,6 +26,8 @@ WORKERS = 6
 
 def session_state(market, now):
     """open 盤中｜settling 剛收盤｜closed 休市。不知道國定假日，假日當天會照抓，價格就是上一個收盤。"""
+    if market == "CRYPTO":                # 24 小時交易，永遠在盤中
+        return "open"
     m = MARKETS[market]
     local = now.astimezone(m["tz"])
     if local.weekday() >= 5:
@@ -70,7 +72,7 @@ def main(argv=None, now=None):
     now = now or datetime.now(timezone.utc)
     out = Path(argv[argv.index("--out") + 1]) if "--out" in argv else ROOT / "live-out" / "intraday.json"
     state = {m: session_state(m, now) for m in MARKETS}
-    if "--force" not in argv and all(s == "closed" for s in state.values()):
+    if "--force" not in argv and all(s == "closed" for m, s in state.items() if m != "CRYPTO"):
         print("兩個市場都休市，這次不抓。", state)
         return 0
 

@@ -341,11 +341,16 @@ def by_symbol(trades):
 
 def main():
     now = datetime.now(timezone.utc).isoformat()
-    data, regimes = load_all()
+    data_all, regimes = load_all()
+    # 加密貨幣只放進分市場統計（byMarket／byMarketDetail），不混進股票的整體統計與參數搜尋，
+    # 這樣原本股票的回測數字不會因為加了幣而改變。
+    data = {s: d for s, d in data_all.items() if d["market"] != "CRYPTO"}
     if not data:
         raise SystemExit("no bars available; existing backtest files left untouched")
     split, first, last = split_date(data)
-    trades = simulate(data, DEFAULT_PARAMS)
+    trades_all = simulate(data_all, DEFAULT_PARAMS)
+    done_all = closed(trades_all)
+    trades = [t for t in trades_all if t.get("market") != "CRYPTO"]
     done = closed(trades)
     ins = [t for t in done if t["signalDate"] < split]
     oos = [t for t in done if t["signalDate"] >= split]
@@ -388,8 +393,8 @@ def main():
         "benchmark": random_entry_benchmark(data, done),
         "bySymbol": by_symbol(done),
         "byRegime": {r: stats_of([t for t in done if t.get("marketRegime") == r]) for r in ("BULL", "NEUTRAL", "BEAR")},
-        "byMarket": {m: stats_of([t for t in done if t.get("market") == m]) for m in MARKETS},
-        "byMarketDetail": market_detail(data, done, split),
+        "byMarket": {m: stats_of([t for t in done_all if t.get("market") == m]) for m in MARKETS},
+        "byMarketDetail": market_detail(data_all, done_all, split),
         "roomStudy": room_study(data, done),
         "byTheme": {th: {"n": st["sampleSize"], "winRate": st["winRate"], "expectancyR": st["expectancyR"],
                          "profitFactor": st["profitFactor"]}
@@ -405,7 +410,7 @@ def main():
     }
     DATA.mkdir(parents=True, exist_ok=True)
     (DATA / "strategy_stats.json").write_text(json.dumps(rounded(payload), ensure_ascii=False, indent=2), encoding="utf-8")
-    (DATA / "backtest_trades.json").write_text(json.dumps(rounded(trades), ensure_ascii=False, indent=1), encoding="utf-8")
+    (DATA / "backtest_trades.json").write_text(json.dumps(rounded(trades_all), ensure_ascii=False, indent=1), encoding="utf-8")
 
     found["candidates"] = [{"label": label_of(r["params"]), "insampleN": r["insample"]["sampleSize"],
                             "insampleExpectancyR": r["insample"]["expectancyR"], "oosN": r["oos"]["sampleSize"],
