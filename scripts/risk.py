@@ -46,10 +46,8 @@ TZ = {"TW": ZoneInfo("Asia/Taipei"), "US": ZoneInfo("America/New_York")}
 FINMIND = "https://api.finmindtrade.com/api/v4/data"
 FINMIND_TOKEN = os.environ.get("FINMIND_TOKEN", "")      # 選填；沒有也能跑，只是每小時次數較少
 # SEC 規定 User-Agent 要留聯絡方式，例如 "stock-report you@example.com"。
-# 沒設定 SEC_UA 時，在 GitHub Actions 上自動用 repo 擁有者的 GitHub noreply 信箱，不用另外設 secret。
-_OWNER = os.environ.get("GITHUB_REPOSITORY_OWNER", "")
-SEC_UA = (os.environ.get("SEC_UA", "").strip()
-          or (f"stock-report {_OWNER}@users.noreply.github.com" if _OWNER else ""))
+# 沒設定 SEC_UA secret 時用下面這個預設值（GitHub noreply 信箱會被 SEC 回 403，所以改用真實信箱）。
+SEC_UA = os.environ.get("SEC_UA", "").strip() or "Kai Stock Report kai19891111@icloud.com"
 NO_NET = os.environ.get("RISK_OFFLINE") == "1"           # 測試用：不連網路
 
 # 同一家公司在兩個市場掛牌：美股這檔的基本面直接用台股那檔（月營收比季報即時）
