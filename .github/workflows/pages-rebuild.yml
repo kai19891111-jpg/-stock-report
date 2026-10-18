@@ -1,0 +1,51 @@
+name: pages-rebuild
+
+# 網站是「從 main 分支部署」的 GitHub Pages。只有本人帳號推送時 Pages 才會自動重建；
+# 機器人（每日資料更新）和其他工具推送的版本不會上線。這個流程在每次推送 main、
+# 以及每日資料更新跑完之後，主動要求 Pages 重新部署一次。
+
+on:
+  push:
+    branches: [main]
+  workflow_run:
+    workflows: [update-stock-report]
+    types: [completed]
+  workflow_dispatch:
+
+concurrency:
+  group: pages-rebuild
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+jobs:
+  rebuild:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+    steps:
+      - name: Request a Pages build (branch deploy)
+        id: legacy
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          code=$(curl -s -o resp.json -w '%{http_code}' -X POST \
+            -H "Authorization: Bearer $GH_TOKEN" -H "Accept: application/vnd.github+json" \
+            "https://api.github.com/repos/${GITHUB_REPOSITORY}/pages/builds")
+          echo "HTTP $code"; cat resp.json; echo
+          if [ "$code" = "201" ] || [ "$code" = "200" ]; then echo "ok=true" >> "$GITHUB_OUTPUT"; else echo "ok=false" >> "$GITHUB_OUTPUT"; fi
+
+      # Pages 的來源如果設成「GitHub Actions」，上面那個請求會失敗，改用這裡直接部署整個 repo。
+      - uses: actions/checkout@v4
+        if: steps.legacy.outputs.ok != 'true'
+      - uses: actions/configure-pages@v5
+        if: steps.legacy.outputs.ok != 'true'
+      - uses: actions/upload-pages-artifact@v3
+        if: steps.legacy.outputs.ok != 'true'
+        with:
+          path: .
+      - uses: actions/deploy-pages@v4
+        if: steps.legacy.outputs.ok != 'true'
