@@ -152,7 +152,7 @@
   function decorate() {
     var box = $("cards");
     if (!box || !loaded) return;
-    Array.prototype.forEach.call(box.querySelectorAll("article.card[data-code]"), function (card) {
+    Array.prototype.forEach.call(document.querySelectorAll("#cards article.card[data-code], #crypto-cards article.card[data-code]"), function (card) {
       var old = card.querySelector(".gate");
       if (old) old.remove();
       var v = check(card.getAttribute("data-code"));
@@ -174,7 +174,10 @@
     }
     if (!L || !L.quotes) { el.textContent = "進場條件核對：讀不到自動行情（data/latest.json），無法核對。"; return; }
     var by = { g: [], y: [], r: [], n: [] };
-    Object.keys(L.quotes).forEach(function (c) { var v = check(c); if (v) by[v.level].push(c); });
+    Object.keys(L.quotes).forEach(function (c) {
+      if (L.quotes[c] && L.quotes[c].market === "CRYPTO") return;        // 加密貨幣在自己的區塊，不混進股票統計
+      var v = check(c); if (v) by[v.level].push(c);
+    });
     var list = function (k) { return by[k].length ? "（" + by[k].map(stockName).map(esc).join("、") + "）" : ""; };
     el.innerHTML = "<b>進場條件核對</b>" +
       "<span>🟢 全過 " + by.g.length + " 檔" + list("g") + "</span>" +
@@ -223,6 +226,7 @@
     if (!box) return;
     addStyle();
     new MutationObserver(decorate).observe(box, { childList: true });   // 只看卡片清單本身，不會被自己加的內容觸發
+    if ($("crypto-cards")) new MutationObserver(decorate).observe($("crypto-cards"), { childList: true });
     Promise.all([getJSON("./data/latest.json"), getJSON("./data/strategy_stats.json")]).then(function (res) {
       L = res[0]; S = res[1]; loaded = true;
       decorate();

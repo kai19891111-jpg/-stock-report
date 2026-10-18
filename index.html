@@ -112,6 +112,7 @@ footer{text-align:center;padding:16px 12px 28px;font-size:11px;color:var(--muted
   <a href="#summary">摘要</a>
   <a href="#u2-position">我的持倉</a>
   <a href="#decision">個股卡片</a>
+  <a href="#crypto">加密貨幣</a>
   <a href="#backtest">回測</a>
   <a href="#index">指數</a>
   <a href="#u2-market-levels">大盤關卡</a>
@@ -145,6 +146,13 @@ footer{text-align:center;padding:16px 12px 28px;font-size:11px;color:var(--muted
     <div class="chips" id="chips" role="group" aria-label="篩選卡片"></div>
     <div class="cards" id="cards"></div>
     <p class="note" id="levels-note"></p>
+  </section>
+
+  <section id="crypto" class="panel">
+    <h2>加密貨幣 <small id="crypto-stamp"></small></h2>
+    <div id="crypto-verdict"></div>
+    <div class="cards" id="crypto-cards"></div>
+    <p class="note">24 小時交易，日 K 以 UTC 午夜（台北早上 8 點）為一天的收盤。和股票用同一套進場規則；大盤多空看 BTC 自己的走勢；風險分數看恐懼與貪婪指數（沒有財報與籌碼）。回測和股票分開統計。</p>
   </section>
 
   <section id="backtest" class="panel">
@@ -220,6 +228,7 @@ const REPORT = {
     sma20: "含最後完成日收盤的 20 日均線，當作觀察支撐。"
   },
   changelog: [
+    "2026-10-19：股市與加密貨幣分開：加密貨幣獨立成一個區塊（導覽列「加密貨幣」），有自己的指示與卡片；股票的入場指示、篩選、進場條件核對與風險分數統計不再混入加密貨幣。",
     "2026-10-19：新增加密貨幣分析（比特幣 BTC、以太幣 ETH）：同一套均線、進場區、失效價、目標價與回測；風險分數改看恐懼與貪婪指數（沒有財報與籌碼）；大盤多空用 BTC 判斷；週末也更新。",
     "2026-10-19：加回背景音樂（右下角 ♪ 按鈕，按了才播放）。",
     "2026-10-19：復原完整分析系統（最終判斷、市場摘要、持倉風險、今日入場指示、回測統計、大盤關卡、AI 分類、交易雷達、入場閘門、風險評分、盤中即時）；併入低軌衛星族群與 RKLB／ASTS／SATS。",
@@ -392,6 +401,7 @@ const DATA = {"2330.TW": {"p": 2550.0, "ch": -35.0, "pct": -1.35, "date": "2026-
     const A = {};
     ORDER.forEach((c) => { if (DATA[c]) A[c] = analyse(c); });
     const CODES = ORDER.filter((c) => A[c]);
+    const STOCKS = CODES.filter((c) => META[c].mkt !== "CRYPTO"), COINS = CODES.filter((c) => META[c].mkt === "CRYPTO");
     const autoN = CODES.filter((c) => A[c].auto).length;
     const hasSignals = CODES.some((c) => DATA[c].hasSignal);
     const lastDate = (mkt) => CODES.filter((c) => META[c].mkt === mkt).map((c) => DATA[c].date).sort().pop();
@@ -539,13 +549,16 @@ const DATA = {"2330.TW": {"p": 2550.0, "ch": -35.0, "pct": -1.35, "date": "2026-
     function setFilter(key) {
       const f = FILTERS.filter((x) => x[0] === key)[0] || FILTERS[0];
       current = f[0];
-      const list = CODES.map((c) => A[c]).filter(f[2]);
+      const list = STOCKS.map((c) => A[c]).filter(f[2]);
       $("cards").innerHTML = list.length ? list.map(cardHTML).join("") : '<p class="note">這個分類目前沒有股票。</p>';
       Array.prototype.forEach.call($("chips").children, (b) => b.setAttribute("aria-pressed", String(b.dataset.f === current)));
       try { sessionStorage.setItem("cardFilter", current); } catch (e) {}
     }
-    $("chips").innerHTML = FILTERS.map((f) => '<button type="button" class="chip" data-f="' + f[0] + '" aria-pressed="false">' + f[1] + "<b>" + CODES.filter((c) => f[2](A[c])).length + "</b></button>").join("");
-    $("card-stamp").textContent = "台股 " + TW_DATE + "｜美股 " + US_DATE + (CR_DATE ? "｜加密貨幣 " + CR_DATE : "") + "｜共 " + CODES.length + " 檔";
+    $("chips").innerHTML = FILTERS.map((f) => '<button type="button" class="chip" data-f="' + f[0] + '" aria-pressed="false">' + f[1] + "<b>" + STOCKS.filter((c) => f[2](A[c])).length + "</b></button>").join("");
+    $("card-stamp").textContent = "台股 " + TW_DATE + "｜美股 " + US_DATE + "｜共 " + STOCKS.length + " 檔";
+    $("crypto-cards").innerHTML = COINS.length ? COINS.map((c) => cardHTML(A[c])).join("")
+      : '<p class="note">加密貨幣的資料還沒更新，下一次自動更新後就會出現。</p>';
+    $("crypto-stamp").textContent = CR_DATE ? "日K " + CR_DATE + "（UTC 收盤）｜共 " + COINS.length + " 檔" : "";
     $("levels-note").textContent = autoN
       ? "價格、均線與價位由腳本每個交易日收盤後重算（" + autoN + "／" + CODES.length + " 檔）。進場區＝SMA20 的 −1.5% 到 +1%；失效價＝SMA20 − 1.2 倍 ATR；目標價＝收盤 + 2.2 倍 ATR；報酬風險比＝（目標價 − 收盤）÷（收盤 − 失效價）。「規則進場訊號」是回測統計裡那條規則今天成立。"
       : REPORT.levelsNote;

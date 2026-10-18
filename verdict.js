@@ -153,13 +153,17 @@
       body.innerHTML = '<p class="note">讀不到 data/verdict.json，沒有最終指示。請確認 scripts/verdict.py 有在每日更新裡執行。</p>';
       return;
     }
-    var c = V.counts, G = V.groups, ses = V.sessions || {};
+    var ses = V.sessions || {}, G = {}, c = {};
+    Object.keys(V.groups || {}).forEach(function (k) {                    // 股票的指示不含加密貨幣（加密貨幣有自己的區塊）
+      G[k] = (V.groups[k] || []).filter(function (x) { return !isCoin(x); });
+      c[k] = G[k].length;
+    });
     var sig = (G.go || []).concat(G.signal_unproven || [], G.signal_blocked || []);
     var rest = ["conditions", "no_chase", "below", "trend", "avoid", "nodata"];
     var restN = rest.reduce(function (s, k) { return s + (c[k] || 0); }, 0);
     var age = V.generatedAt ? (Date.now() - new Date(V.generatedAt).getTime()) / 36e5 : null;
     var st = $("verdict-stamp");
-    if (st) st.textContent = "台股 " + md(ses.TW) + "｜美股 " + md(ses.US) + (ses.CRYPTO ? "｜加密貨幣 " + md(ses.CRYPTO) : "") + " 收盤｜計算 " + stamp(V.generatedAt) + " 台北";
+    if (st) st.textContent = "台股 " + md(ses.TW) + "｜美股 " + md(ses.US) + " 收盤｜計算 " + stamp(V.generatedAt) + " 台北";
 
     var h = '<p class="vd-top"><b class="' + (c.go ? "vd-ok" : "") + '">可進場 ' + (c.go || 0) + " 檔</b>" +
       "<span>有訊號但沒全過 " + ((c.signal_unproven || 0) + (c.signal_blocked || 0)) + " 檔</span>" +
@@ -216,7 +220,7 @@
   function cards() {
     var box = $("cards");
     if (!box || !loaded) return;
-    Array.prototype.forEach.call(box.querySelectorAll("article.card[data-code]"), function (card) {
+    Array.prototype.forEach.call(document.querySelectorAll("#cards article.card[data-code], #crypto-cards article.card[data-code]"), function (card) {
       var old = card.querySelector(".vd-card");
       if (old) old.remove();
       var code = card.getAttribute("data-code");
@@ -293,13 +297,29 @@
   }
 
   /* ---------- 啟動 ---------- */
-  function renderAll() { panel(); cards(); holdings(); }
+  function isCoin(code) { var s = V && V.symbols && V.symbols[code]; return !!(s && s.market === "CRYPTO"); }
+  function coinPanel() {                     // 加密貨幣區塊最上面的指示（和股票同一套規則）
+    var el = $("crypto-verdict");
+    if (!el || !V || !V.symbols) return;
+    var list = (V.order || Object.keys(V.groups || {})).reduce(function (a, k) {
+      return a.concat((V.groups[k] || []).filter(isCoin));
+    }, []);
+    if (!list.length) { el.innerHTML = ""; return; }
+    var r = V.regimeNotes && V.regimeNotes.CRYPTO, reg = V.regime && V.regime.CRYPTO;
+    var REG = { BULL: "多頭", NEUTRAL: "盤整", BEAR: "空頭" };
+    el.innerHTML = '<div class="vd-coin">' + list.map(function (code) {
+      var v = sym(code);
+      return '<div class="vd-nb"><em>' + icon(v.code) + " " + esc(label(v.code)) + "</em><span><b>" + esc(nm(code)) + "</b> " + esc(v.text) +
+        (v.notes && v.notes.length ? "（" + v.notes.map(esc).join("｜") + "）" : "") + "</span></div>";
+    }).join("") + (reg ? '<p class="note">BTC 走勢目前' + esc(REG[reg] || reg) + "（當作加密貨幣的大盤）。" + (r && r.text ? esc(r.text) + "。" : "") + "</p>" : "") + "</div>";
+  }
+  function renderAll() { panel(); coinPanel(); cards(); holdings(); }
   function start() {
     addStyle();
     var box = $("cards"), pos = $("pos-body");
-    if (box) {
-      new MutationObserver(cards).observe(box, { childList: true });            // 只看卡片清單本身
-      box.addEventListener("click", function (e) {
+    [box, $("crypto-cards")].forEach(function (b) { if (!b) return;
+      new MutationObserver(cards).observe(b, { childList: true });            // 只看卡片清單本身
+      b.addEventListener("click", function (e) {
         var btn = e.target.closest && e.target.closest(".vd-more");
         if (!btn) return;
         var card = btn.closest("article.card"), code = card && card.getAttribute("data-code");
@@ -309,7 +329,7 @@
         btn.setAttribute("aria-expanded", openCards[code] ? "true" : "false");
         btn.textContent = openCards[code] ? "收起明細" : "進場條件與風險明細";
       });
-    }
+    });
     if (pos) new MutationObserver(function () { holdings(); panel(); }).observe(pos, { childList: true });   // 持倉重畫（行情更新）時跟著重算
     document.addEventListener("change", function (e) {
       if (!e.target || e.target.id !== "vd-risk") return;

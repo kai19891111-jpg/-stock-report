@@ -264,7 +264,7 @@
   }
   function paintCards() {
     var box = $("cards");
-    if (box) Array.prototype.forEach.call(box.querySelectorAll("article.card[data-code]"), function (card) {
+    if (box) Array.prototype.forEach.call(document.querySelectorAll("#cards article.card[data-code], #crypto-cards article.card[data-code]"), function (card) {
       setNote(card, card.querySelector(".live-note") || card.querySelector(".px"), note(card.getAttribute("data-code")));
     });
     var pos = $("pos-body");
@@ -398,7 +398,7 @@
   function start() {
     addStyle();
     buildBar();
-    ["cards", "pos-body", "index-body"].forEach(function (id) {
+    ["cards", "crypto-cards", "pos-body", "index-body"].forEach(function (id) {
       var el = $(id);
       if (el) new MutationObserver(paint).observe(el, { childList: true });   // 頁面重畫時補回註記；只看清單本身，不會被自己加的內容觸發
     });

@@ -78,7 +78,7 @@
   function decorate() {
     var box = $("cards");
     if (!box || !loaded) return;
-    Array.prototype.forEach.call(box.querySelectorAll("article.card[data-code]"), function (card) {
+    Array.prototype.forEach.call(document.querySelectorAll("#cards article.card[data-code], #crypto-cards article.card[data-code]"), function (card) {
       var old = card.querySelector(".risk");
       if (old) old.remove();
       var v = R && R.symbols && R.symbols[card.getAttribute("data-code")];
@@ -102,6 +102,7 @@
     var by = { high: [], mid: [], low: [], insufficient: [] }, soon = [];
     Object.keys(R.symbols).forEach(function (c) {
       var v = R.symbols[c];
+      if (v.market === "CRYPTO") return;                                  // 加密貨幣在自己的區塊
       (by[v.level] || by.insufficient).push(c);
       if (v.flags && v.flags.indexOf("earnings_soon") >= 0) soon.push(c);
     });
@@ -163,6 +164,7 @@
     if (!box) return;
     addStyle();
     new MutationObserver(decorate).observe(box, { childList: true });   // 只看卡片清單本身，不會被自己加的內容觸發
+    if ($("crypto-cards")) new MutationObserver(decorate).observe($("crypto-cards"), { childList: true });
     fetch("./data/risk.json", { cache: "no-store" })
       .then(function (r) { return r.ok ? r.json() : null; })
       .catch(function () { return null; })
