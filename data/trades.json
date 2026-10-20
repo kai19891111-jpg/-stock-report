@@ -359,5 +359,33 @@
     "holdingDays": 2,
     "ambiguousDay": false,
     "entryRR": 5.1336
+  },
+  {
+    "id": "TSLA-2026-10-19",
+    "symbol": "TSLA",
+    "market": "US",
+    "signalDate": "2026-10-19",
+    "entryDate": "2026-10-20",
+    "entryPrice": 370.28,
+    "stopPrice": 356.2538,
+    "target1": 393.2092,
+    "target2": 404.6406,
+    "rsi": 50.6085,
+    "macd": "零軸下",
+    "volumeRatio": 1.1224,
+    "atr": 11.4314,
+    "dailyTrend": "盤整",
+    "weeklyTrend": "盤整",
+    "marketRegime": "NEUTRAL",
+    "theme": "AI自駕機器人",
+    "status": "OPEN",
+    "exitDate": null,
+    "exitPrice": null,
+    "exitReason": null,
+    "resultR": null,
+    "resultPct": null,
+    "holdingDays": null,
+    "ambiguousDay": false,
+    "entryRR": 1.6347
   }
 ]
