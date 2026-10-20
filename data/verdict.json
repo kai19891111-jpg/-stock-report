@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-10-19T13:35:10.573728+00:00",
-  "dataTimestamp": "2026-10-19T13:32:30.788567+00:00",
+  "generatedAt": "2026-10-20T00:20:30.030692+00:00",
+  "dataTimestamp": "2026-10-20T00:18:01.602027+00:00",
   "sessions": {
     "TW": "2026-10-19",
     "US": "2026-10-16",
@@ -98,8 +98,8 @@
       "expLow": null,
       "expHigh": null,
       "winRate": 0.2857,
-      "beats": 0.83,
-      "why": "加密貨幣回測：後段只有 7 筆（要 30 筆）、期望值區間下緣 −0.23R，沒有大於 0、只勝過 83.0% 的隨機進場（要 95%）"
+      "beats": 0.81,
+      "why": "加密貨幣回測：後段只有 7 筆（要 30 筆）、期望值區間下緣 −0.23R，沒有大於 0、只勝過 81.0% 的隨機進場（要 95%）"
     }
   },
   "regimeNotes": {
@@ -119,10 +119,10 @@
     "signal_blocked": 0,
     "conditions": 2,
     "pullback": 7,
-    "no_chase": 2,
+    "no_chase": 3,
     "below": 28,
     "trend": 0,
-    "avoid": 4,
+    "avoid": 3,
     "nodata": 0
   },
   "groups": {
@@ -144,6 +144,7 @@
     ],
     "no_chase": [
       "1303.TW",
+      "6213.TW",
       "2355.TW"
     ],
     "below": [
@@ -178,7 +179,6 @@
     ],
     "trend": [],
     "avoid": [
-      "6213.TW",
       "2221.TWO",
       "8358.TWO",
       "1569.TWO"
@@ -638,7 +638,7 @@
       "bias": 11.7099,
       "high20": 858.0,
       "rr": 0.8109,
-      "code": "avoid",
+      "code": "no_chase",
       "signal": false,
       "blockers": [
         {
@@ -662,16 +662,14 @@
       "gapPct": -9.587222946544982,
       "roomRR": 0.6311931492653885,
       "plan": null,
-      "text": "處置股 2026-10-08～2026-10-19，不碰。",
+      "text": "乖離 +11.7%，不追。收盤回到 693.47 以下（還差 −9.6%）才會進入進場區。",
       "notes": [],
       "mismatch": null,
       "risk": {
-        "level": "high",
-        "total": 4,
+        "level": "low",
+        "total": 2,
         "max": 8,
-        "reasons": [
-          "處置股"
-        ]
+        "reasons": []
       },
       "hold": {
         "code": "keep",
@@ -2205,7 +2203,7 @@
       "target": 51.4914,
       "entryLow": 43.8867,
       "entryHigh": 45.0006,
-      "bias": 4.141,
+      "bias": 4.1409,
       "high20": 49.65,
       "rr": 1.1015,
       "code": "pullback",

@@ -1,9 +1,9 @@
 {
-  "generatedAt": "2026-10-19T13:33:19.754786+00:00",
+  "generatedAt": "2026-10-20T00:18:34.379885+00:00",
   "today": {
-    "TW": "2026-10-19",
+    "TW": "2026-10-20",
     "US": "2026-10-19",
-    "CRYPTO": "2026-10-19"
+    "CRYPTO": "2026-10-20"
   },
   "thresholds": {
     "bias_mid": 6.0,
@@ -475,19 +475,15 @@
       "group": "TW|ABF"
     },
     "6213.TW": {
-      "total": 4,
+      "total": 2,
       "max": 8,
       "scored": 4,
-      "score10": 5.0,
-      "level": "high",
-      "flags": [
-        "disposition"
-      ],
+      "score10": 2.5,
+      "level": "low",
+      "flags": [],
       "gate": {
-        "block": true,
-        "reasons": [
-          "處置股"
-        ]
+        "block": false,
+        "reasons": []
       },
       "items": {
         "tech": {
@@ -505,10 +501,9 @@
           "date": "2026-09"
         },
         "chips": {
-          "score": 2,
-          "why": "處置股 2026-10-08～2026-10-19",
-          "date": "2026-10-08",
-          "flag": "disposition"
+          "score": 0,
+          "why": "近 5 日法人 -1148 張、融資 -482 張",
+          "date": "2026-10-19"
         },
         "policy": {
           "score": 1,
@@ -1912,8 +1907,8 @@
         },
         "chips": {
           "score": 0,
-          "why": "恐懼與貪婪指數 59（貪婪）",
-          "date": "2026-10-19",
+          "why": "恐懼與貪婪指數 55（貪婪）",
+          "date": "2026-10-20",
           "source": "https://alternative.me/crypto/fear-and-greed-index/"
         },
         "policy": {
@@ -1953,8 +1948,8 @@
         },
         "chips": {
           "score": 0,
-          "why": "恐懼與貪婪指數 59（貪婪）",
-          "date": "2026-10-19",
+          "why": "恐懼與貪婪指數 55（貪婪）",
+          "date": "2026-10-20",
           "source": "https://alternative.me/crypto/fear-and-greed-index/"
         },
         "policy": {
