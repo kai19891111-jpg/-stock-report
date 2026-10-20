@@ -117,7 +117,11 @@ def main(now=None):
         sigs = build_signals(symbol, market, theme, rows, regimes[market], stamp)
         if sigs[-1]:
             # entrySignal: does the back-tested entry rule fire on this close?
-            latest[symbol] = dict(sigs[-1], entrySignal=can_open_trade(sigs[-1], DEFAULT_PARAMS))
+            closes = [r["close"] for r in rows]
+            latest[symbol] = dict(sigs[-1], entrySignal=can_open_trade(sigs[-1], DEFAULT_PARAMS),
+                                  # 頁面比較用（不影響訊號）：短均線與當日成交量
+                                  ma5=sum(closes[-5:]) / 5, ma10=sum(closes[-10:]) / 10,
+                                  volume=rows[-1].get("volume") or 0)
         signals.extend(s for s in sigs[-KEEP_SESSIONS:] if s)
         update_live_trades(trades, symbol, market, rows, sigs)
     if not latest:
