@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-20T00:18:34.379885+00:00",
+  "generatedAt": "2026-10-20T01:15:04.443812+00:00",
   "today": {
     "TW": "2026-10-20",
     "US": "2026-10-19",
@@ -74,7 +74,7 @@
       "fail": 0
     },
     "finmind": {
-      "ok": 120,
+      "ok": 152,
       "fail": 0
     },
     "yahoo_login": {
@@ -1961,6 +1961,338 @@
       },
       "market": "CRYPTO",
       "group": "CRYPTO|主流幣"
+    },
+    "2464.TW": {
+      "total": 1,
+      "max": 8,
+      "scored": 4,
+      "score10": 1.2,
+      "level": "low",
+      "flags": [],
+      "gate": {
+        "block": false,
+        "reasons": []
+      },
+      "items": {
+        "tech": {
+          "score": 0,
+          "why": "乖離 -8.39%",
+          "date": "2026-10-19"
+        },
+        "earnings": {
+          "score": null,
+          "why": "events.json 沒有這檔的財報日"
+        },
+        "fundamentals": {
+          "score": 0,
+          "why": "營收年增 +78.0%（2026-09）、毛利率 22.2%，年變動 +1.4 個百分點（2026-06-30）",
+          "date": "2026-09"
+        },
+        "chips": {
+          "score": 0,
+          "why": "近 5 日法人 -3530 張、融資 -1096 張",
+          "date": "2026-10-19"
+        },
+        "policy": {
+          "score": 1,
+          "why": "2026-10-28 FOMC 利率決議（10/27–28 會議）",
+          "date": "2026-10-28",
+          "source": "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm"
+        }
+      },
+      "market": "TW",
+      "group": "TW|人形機器人"
+    },
+    "3019.TW": {
+      "total": 3,
+      "max": 8,
+      "scored": 4,
+      "score10": 3.8,
+      "level": "mid",
+      "flags": [],
+      "gate": {
+        "block": true,
+        "reasons": [
+          "風險中"
+        ]
+      },
+      "items": {
+        "tech": {
+          "score": 0,
+          "why": "乖離 -4.41%",
+          "date": "2026-10-19"
+        },
+        "earnings": {
+          "score": null,
+          "why": "events.json 沒有這檔的財報日"
+        },
+        "fundamentals": {
+          "score": 2,
+          "why": "營收年增 -0.1%（2026-09）、毛利率 18.4%，年變動 -1.6 個百分點（2026-06-30）",
+          "date": "2026-09"
+        },
+        "chips": {
+          "score": 0,
+          "why": "近 5 日法人 -896 張、融資 -763 張",
+          "date": "2026-10-19"
+        },
+        "policy": {
+          "score": 1,
+          "why": "2026-10-28 FOMC 利率決議（10/27–28 會議）",
+          "date": "2026-10-28",
+          "source": "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm"
+        }
+      },
+      "market": "TW",
+      "group": "TW|人形機器人"
+    },
+    "2049.TW": {
+      "total": 2,
+      "max": 8,
+      "scored": 4,
+      "score10": 2.5,
+      "level": "low",
+      "flags": [],
+      "gate": {
+        "block": false,
+        "reasons": []
+      },
+      "items": {
+        "tech": {
+          "score": 0,
+          "why": "乖離 -7.68%",
+          "date": "2026-10-19"
+        },
+        "earnings": {
+          "score": null,
+          "why": "events.json 沒有這檔的財報日"
+        },
+        "fundamentals": {
+          "score": 0,
+          "why": "營收年增 +30.1%（2026-09）、毛利率 34.2%，年變動 +4.4 個百分點（2026-06-30）",
+          "date": "2026-09"
+        },
+        "chips": {
+          "score": 1,
+          "why": "近 5 日法人 -3224 張、融資 +276 張",
+          "date": "2026-10-19"
+        },
+        "policy": {
+          "score": 1,
+          "why": "2026-10-28 FOMC 利率決議（10/27–28 會議）",
+          "date": "2026-10-28",
+          "source": "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm"
+        }
+      },
+      "market": "TW",
+      "group": "TW|人形機器人"
+    },
+    "2233.TW": {
+      "total": 1,
+      "max": 8,
+      "scored": 4,
+      "score10": 1.2,
+      "level": "low",
+      "flags": [],
+      "gate": {
+        "block": false,
+        "reasons": []
+      },
+      "items": {
+        "tech": {
+          "score": 0,
+          "why": "乖離 -7.07%",
+          "date": "2026-10-19"
+        },
+        "earnings": {
+          "score": null,
+          "why": "events.json 沒有這檔的財報日"
+        },
+        "fundamentals": {
+          "score": 0,
+          "why": "營收年增 +6.5%（2026-09）、毛利率 31.5%，年變動 -0.7 個百分點（2026-06-30）",
+          "date": "2026-09"
+        },
+        "chips": {
+          "score": 0,
+          "why": "近 5 日法人 -104 張、融資 -108 張",
+          "date": "2026-10-19"
+        },
+        "policy": {
+          "score": 1,
+          "why": "2026-10-28 FOMC 利率決議（10/27–28 會議）",
+          "date": "2026-10-28",
+          "source": "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm"
+        }
+      },
+      "market": "TW",
+      "group": "TW|人形機器人"
+    },
+    "4576.TW": {
+      "total": 1,
+      "max": 8,
+      "scored": 4,
+      "score10": 1.2,
+      "level": "low",
+      "flags": [],
+      "gate": {
+        "block": false,
+        "reasons": []
+      },
+      "items": {
+        "tech": {
+          "score": 0,
+          "why": "乖離 -10.35%",
+          "date": "2026-10-19"
+        },
+        "earnings": {
+          "score": null,
+          "why": "events.json 沒有這檔的財報日"
+        },
+        "fundamentals": {
+          "score": 0,
+          "why": "營收年增 +74.7%（2026-09）、毛利率 37.1%，年變動 -0.7 個百分點（2026-06-30）",
+          "date": "2026-09"
+        },
+        "chips": {
+          "score": 0,
+          "why": "近 5 日法人 -737 張、融資 -135 張",
+          "date": "2026-10-19"
+        },
+        "policy": {
+          "score": 1,
+          "why": "2026-10-28 FOMC 利率決議（10/27–28 會議）",
+          "date": "2026-10-28",
+          "source": "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm"
+        }
+      },
+      "market": "TW",
+      "group": "TW|人形機器人"
+    },
+    "1536.TW": {
+      "total": 3,
+      "max": 8,
+      "scored": 4,
+      "score10": 3.8,
+      "level": "mid",
+      "flags": [],
+      "gate": {
+        "block": true,
+        "reasons": [
+          "風險中"
+        ]
+      },
+      "items": {
+        "tech": {
+          "score": 0,
+          "why": "乖離 -4.06%",
+          "date": "2026-10-19"
+        },
+        "earnings": {
+          "score": null,
+          "why": "events.json 沒有這檔的財報日"
+        },
+        "fundamentals": {
+          "score": 1,
+          "why": "營收年增 -13.8%（2026-09）、毛利率 6.9%，年變動 +2.8 個百分點（2026-06-30）",
+          "date": "2026-09"
+        },
+        "chips": {
+          "score": 1,
+          "why": "近 5 日法人 -996 張、融資 +31 張",
+          "date": "2026-10-19"
+        },
+        "policy": {
+          "score": 1,
+          "why": "2026-10-28 FOMC 利率決議（10/27–28 會議）",
+          "date": "2026-10-28",
+          "source": "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm"
+        }
+      },
+      "market": "TW",
+      "group": "TW|人形機器人"
+    },
+    "3023.TW": {
+      "total": 2,
+      "max": 8,
+      "scored": 4,
+      "score10": 2.5,
+      "level": "low",
+      "flags": [],
+      "gate": {
+        "block": false,
+        "reasons": []
+      },
+      "items": {
+        "tech": {
+          "score": 0,
+          "why": "乖離 -2.53%",
+          "date": "2026-10-19"
+        },
+        "earnings": {
+          "score": null,
+          "why": "events.json 沒有這檔的財報日"
+        },
+        "fundamentals": {
+          "score": 0,
+          "why": "營收年增 +25.5%（2026-09）、毛利率 24.5%，年變動 -0.2 個百分點（2026-06-30）",
+          "date": "2026-09"
+        },
+        "chips": {
+          "score": 1,
+          "why": "近 5 日法人 -296 張、融資 +20 張",
+          "date": "2026-10-19"
+        },
+        "policy": {
+          "score": 1,
+          "why": "2026-10-28 FOMC 利率決議（10/27–28 會議）",
+          "date": "2026-10-28",
+          "source": "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm"
+        }
+      },
+      "market": "TW",
+      "group": "TW|人形機器人"
+    },
+    "3665.TW": {
+      "total": 2,
+      "max": 8,
+      "scored": 4,
+      "score10": 2.5,
+      "level": "low",
+      "flags": [],
+      "gate": {
+        "block": false,
+        "reasons": []
+      },
+      "items": {
+        "tech": {
+          "score": 0,
+          "why": "乖離 -13.98%",
+          "date": "2026-10-19"
+        },
+        "earnings": {
+          "score": null,
+          "why": "events.json 沒有這檔的財報日"
+        },
+        "fundamentals": {
+          "score": 1,
+          "why": "營收年增 +39.2%（2026-09）、年增率連兩個月放緩（+60%→+54%→+39%）、毛利率 30.7%，年變動 -0.4 個百分點（2026-06-30）",
+          "date": "2026-09"
+        },
+        "chips": {
+          "score": 0,
+          "why": "近 5 日法人 -1362 張、融資 -526 張",
+          "date": "2026-10-19"
+        },
+        "policy": {
+          "score": 1,
+          "why": "2026-10-28 FOMC 利率決議（10/27–28 會議）",
+          "date": "2026-10-28",
+          "source": "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm"
+        }
+      },
+      "market": "TW",
+      "group": "TW|人形機器人"
     }
   }
 }
