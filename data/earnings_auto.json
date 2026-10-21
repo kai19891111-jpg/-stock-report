@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-20T23:51:11.459796+00:00",
+  "updatedAt": "2026-10-21T00:53:42.575507+00:00",
   "note": "scripts/risk.py 自動抓到的美股財報日。要指定日期請改 data/events.json 的 earnings，那邊永遠優先。",
   "symbols": {
     "ASTS": {

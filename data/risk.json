@@ -1,9 +1,9 @@
 {
-  "generatedAt": "2026-10-20T23:51:11.459796+00:00",
+  "generatedAt": "2026-10-21T00:53:42.575507+00:00",
   "today": {
     "TW": "2026-10-21",
     "US": "2026-10-20",
-    "CRYPTO": "2026-10-20"
+    "CRYPTO": "2026-10-21"
   },
   "thresholds": {
     "bias_mid": 6.0,
@@ -700,8 +700,8 @@
       "items": {
         "tech": {
           "score": 0,
-          "why": "乖離 -5.51%",
-          "date": "2026-10-20"
+          "why": "乖離 -6.87%",
+          "date": "2026-10-19"
         },
         "earnings": {
           "score": 0,
@@ -746,8 +746,8 @@
       "items": {
         "tech": {
           "score": 0,
-          "why": "乖離 -4.66%",
-          "date": "2026-10-20"
+          "why": "乖離 -4.64%",
+          "date": "2026-10-19"
         },
         "earnings": {
           "score": 0,
@@ -792,8 +792,8 @@
       "items": {
         "tech": {
           "score": 0,
-          "why": "乖離 -11.18%",
-          "date": "2026-10-20"
+          "why": "乖離 -11.29%",
+          "date": "2026-10-19"
         },
         "earnings": {
           "score": 1,
@@ -837,8 +837,8 @@
       "items": {
         "tech": {
           "score": 0,
-          "why": "乖離 -5.14%",
-          "date": "2026-10-20"
+          "why": "乖離 -5.48%",
+          "date": "2026-10-19"
         },
         "earnings": {
           "score": 0,
@@ -883,8 +883,8 @@
       "items": {
         "tech": {
           "score": 0,
-          "why": "乖離 +1.60%",
-          "date": "2026-10-20"
+          "why": "乖離 +2.24%",
+          "date": "2026-10-19"
         },
         "earnings": {
           "score": 1,
@@ -932,8 +932,8 @@
       "items": {
         "tech": {
           "score": 0,
-          "why": "乖離 -5.14%",
-          "date": "2026-10-20"
+          "why": "乖離 -3.89%",
+          "date": "2026-10-19"
         },
         "earnings": {
           "score": 2,
@@ -979,7 +979,7 @@
         "tech": {
           "score": 0,
           "why": "乖離 -11.81%",
-          "date": "2026-10-20"
+          "date": "2026-10-19"
         },
         "earnings": {
           "score": 0,
@@ -1029,8 +1029,8 @@
       "items": {
         "tech": {
           "score": 0,
-          "why": "乖離 +1.08%",
-          "date": "2026-10-20"
+          "why": "乖離 -0.52%",
+          "date": "2026-10-19"
         },
         "earnings": {
           "score": 2,
@@ -1078,8 +1078,8 @@
       "items": {
         "tech": {
           "score": 0,
-          "why": "乖離 -4.46%",
-          "date": "2026-10-20"
+          "why": "乖離 -4.57%",
+          "date": "2026-10-19"
         },
         "earnings": {
           "score": 2,
@@ -1124,8 +1124,8 @@
       "items": {
         "tech": {
           "score": 0,
-          "why": "乖離 -23.34%",
-          "date": "2026-10-20"
+          "why": "乖離 -23.85%",
+          "date": "2026-10-19"
         },
         "earnings": {
           "score": 0,
@@ -1170,8 +1170,8 @@
       "items": {
         "tech": {
           "score": 0,
-          "why": "乖離 -23.59%",
-          "date": "2026-10-20"
+          "why": "乖離 -23.81%",
+          "date": "2026-10-19"
         },
         "earnings": {
           "score": 0,
@@ -1874,10 +1874,10 @@
       "group": "TW|低軌衛星"
     },
     "BTC-USD": {
-      "total": 1,
+      "total": 2,
       "max": 6,
       "scored": 3,
-      "score10": 1.7,
+      "score10": 3.3,
       "level": "low",
       "flags": [],
       "gate": {
@@ -1899,9 +1899,9 @@
           "why": "加密貨幣沒有營收與毛利率"
         },
         "chips": {
-          "score": 0,
-          "why": "恐懼與貪婪指數 55（貪婪）",
-          "date": "2026-10-20",
+          "score": 1,
+          "why": "恐懼與貪婪指數 63（貪婪）",
+          "date": "2026-10-21",
           "source": "https://alternative.me/crypto/fear-and-greed-index/"
         },
         "policy": {
@@ -1915,10 +1915,10 @@
       "group": "CRYPTO|主流幣"
     },
     "ETH-USD": {
-      "total": 1,
+      "total": 2,
       "max": 6,
       "scored": 3,
-      "score10": 1.7,
+      "score10": 3.3,
       "level": "low",
       "flags": [],
       "gate": {
@@ -1940,9 +1940,9 @@
           "why": "加密貨幣沒有營收與毛利率"
         },
         "chips": {
-          "score": 0,
-          "why": "恐懼與貪婪指數 55（貪婪）",
-          "date": "2026-10-20",
+          "score": 1,
+          "why": "恐懼與貪婪指數 63（貪婪）",
+          "date": "2026-10-21",
           "source": "https://alternative.me/crypto/fear-and-greed-index/"
         },
         "policy": {
