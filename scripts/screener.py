@@ -21,8 +21,8 @@ import time
 from concurrent.futures import ThreadPoolExecutor
 from datetime import datetime, timezone
 
-from marketdata import (DATA, MARKETS, TPEX_STOCKS_URL, TWSE_STOCKS_URL, _download, bars_of, completed,
-                        load_universe, parse_chart)
+from marketdata import (DATA, MARKETS, TPEX_STOCKS_URL, TWSE_STOCKS_URL, _download, _official_tw, bars_of,
+                        completed, load_universe, merge_official_stock, parse_chart)
 from strategy import DEFAULT_PARAMS, NEAR_HIGH_PCT, RegimeLookup, build_signals, can_open_trade
 
 TW_TOP, TW_MIN_PRICE = 300, 20.0
@@ -160,7 +160,11 @@ def evaluate(item, market, regime, stamp, now=None):
     """抓日 K、算訊號、核對。-> 結果 dict 或 None"""
     code = item["code"]
     try:
-        rows = completed(parse_chart(_download(code, "1y"), market), market, now)
+        rows = parse_chart(_download(code, "1y"), market)
+        m = re.fullmatch(r"(\d{4})\.(TWO|TW)", code)
+        if m:                                   # Yahoo 台股日 K 常晚一天，蓋上證交所／櫃買的官方收盤
+            rows, _used = merge_official_stock(rows, _official_tw("TWO" if m.group(2) == "TWO" else "TW").get(m.group(1)))
+        rows = completed(rows, market, now)
     except Exception as e:  # noqa: BLE001
         return {"code": code, "error": f"{type(e).__name__}"}
     finally:
@@ -224,6 +228,8 @@ def main(argv=None, now=None):
             continue
         t0 = time.time()
         pool, desc = fn(out["errors"])
+        if market == "TW":                      # 先載好官方收盤，多執行緒時不會重複抓
+            _official_tw("TW"), _official_tw("TWO")
         if not pool:
             out["markets"][market] = {"universe": desc, "scanned": 0, "picks": []}
             continue
