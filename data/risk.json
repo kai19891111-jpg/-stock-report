@@ -1,7 +1,7 @@
 {
-  "generatedAt": "2026-10-22T12:03:32.755679+00:00",
+  "generatedAt": "2026-10-22T17:23:03.945129+00:00",
   "today": {
-    "TW": "2026-10-22",
+    "TW": "2026-10-23",
     "US": "2026-10-22",
     "CRYPTO": "2026-10-22"
   },
@@ -18,6 +18,9 @@
     "events_stale_days": 14,
     "fng_hot": 75,
     "fng_warm": 60,
+    "funding_hot": 0.05,
+    "oi_jump_pct": 20.0,
+    "stable_drop_pct": 0.0,
     "min_scored": 3,
     "short_up_pct": 10.0,
     "short_float_min": 2.0,
@@ -61,6 +64,14 @@
       "ok": 1,
       "fail": 0
     },
+    "defillama_stablecoins": {
+      "ok": 1,
+      "fail": 0
+    },
+    "coingecko_global": {
+      "ok": 1,
+      "fail": 0
+    },
     "sec_tickers": {
       "ok": 1,
       "fail": 0
@@ -74,7 +85,7 @@
       "fail": 0
     },
     "finmind": {
-      "ok": 152,
+      "ok": 192,
       "fail": 0
     },
     "yahoo_login": {
@@ -96,12 +107,20 @@
     "sec_submissions": {
       "ok": 2,
       "fail": 0
+    },
+    "okx_funding": {
+      "ok": 3,
+      "fail": 0
+    },
+    "okx_open_interest": {
+      "ok": 3,
+      "fail": 0
     }
   },
   "events": {
-    "updatedAt": "2026-10-09",
+    "updatedAt": "2026-10-23",
     "fresh": true,
-    "used": 2,
+    "used": 25,
     "earnings": 5,
     "autoEarnings": 9,
     "rejected": []
@@ -109,9 +128,9 @@
   "symbols": {
     "2330.TW": {
       "total": 2,
-      "max": 8,
-      "scored": 4,
-      "score10": 2.5,
+      "max": 10,
+      "scored": 5,
+      "score10": 2.0,
       "level": "low",
       "flags": [],
       "gate": {
@@ -121,14 +140,17 @@
       "items": {
         "tech": {
           "score": 0,
-          "why": "乖離 -4.03%",
-          "date": "2026-10-22"
+          "why": "乖離 -2.81%",
+          "date": "2026-10-21"
         },
         "earnings": {
-          "score": null,
-          "why": "財報日 2026-10-15 已過，等下一次日期",
-          "date": "2026-10-15",
-          "source": "https://investor.tsmc.com/english/quarterly-results"
+          "score": 0,
+          "why": "年報最晚 2027-03-31 要公布（法定期限，多數公司會提早），還有 113 個交易日",
+          "estimated": true,
+          "date": "2027-03-31",
+          "source": "https://mops.twse.com.tw/mops/#/web/t100sb02_1",
+          "days": 113,
+          "provider": "法定期限"
         },
         "fundamentals": {
           "score": 0,
@@ -137,7 +159,7 @@
         },
         "chips": {
           "score": 1,
-          "why": "近 5 日法人 -51293 張、融資 +1564 張",
+          "why": "近 5 日法人 -51293 張、融資 +1249 張",
           "date": "2026-10-22"
         },
         "policy": {
@@ -152,26 +174,29 @@
     },
     "2454.TW": {
       "total": 3,
-      "max": 8,
-      "scored": 4,
-      "score10": 3.8,
-      "level": "mid",
+      "max": 10,
+      "scored": 5,
+      "score10": 3.0,
+      "level": "low",
       "flags": [],
       "gate": {
-        "block": true,
-        "reasons": [
-          "風險中"
-        ]
+        "block": false,
+        "reasons": []
       },
       "items": {
         "tech": {
           "score": 0,
-          "why": "乖離 -14.28%",
-          "date": "2026-10-22"
+          "why": "乖離 -12.44%",
+          "date": "2026-10-21"
         },
         "earnings": {
-          "score": null,
-          "why": "events.json 沒有這檔的財報日"
+          "score": 0,
+          "why": "第三季財報最晚 2026-11-14 要公布（法定期限，多數公司會提早），還有 15 個交易日",
+          "estimated": true,
+          "date": "2026-11-14",
+          "source": "https://mops.twse.com.tw/mops/#/web/t100sb02_1",
+          "days": 15,
+          "provider": "法定期限"
         },
         "fundamentals": {
           "score": 1,
@@ -180,7 +205,7 @@
         },
         "chips": {
           "score": 1,
-          "why": "近 5 日法人 -6230 張、融資 +411 張",
+          "why": "近 5 日法人 -6230 張、融資 +141 張",
           "date": "2026-10-22"
         },
         "policy": {
@@ -195,26 +220,29 @@
     },
     "2308.TW": {
       "total": 3,
-      "max": 8,
-      "scored": 4,
-      "score10": 3.8,
-      "level": "mid",
+      "max": 10,
+      "scored": 5,
+      "score10": 3.0,
+      "level": "low",
       "flags": [],
       "gate": {
-        "block": true,
-        "reasons": [
-          "風險中"
-        ]
+        "block": false,
+        "reasons": []
       },
       "items": {
         "tech": {
           "score": 0,
-          "why": "乖離 -14.26%",
-          "date": "2026-10-22"
+          "why": "乖離 -11.46%",
+          "date": "2026-10-21"
         },
         "earnings": {
-          "score": null,
-          "why": "events.json 沒有這檔的財報日"
+          "score": 0,
+          "why": "第三季財報最晚 2026-11-14 要公布（法定期限，多數公司會提早），還有 15 個交易日",
+          "estimated": true,
+          "date": "2026-11-14",
+          "source": "https://mops.twse.com.tw/mops/#/web/t100sb02_1",
+          "days": 15,
+          "provider": "法定期限"
         },
         "fundamentals": {
           "score": 1,
@@ -223,7 +251,7 @@
         },
         "chips": {
           "score": 1,
-          "why": "近 5 日法人 -11783 張、融資 +491 張",
+          "why": "近 5 日法人 -11783 張、融資 +201 張",
           "date": "2026-10-22"
         },
         "policy": {
@@ -234,13 +262,105 @@
         }
       },
       "market": "TW",
-      "group": "TW|AI電源"
+      "group": "TW|AI電源／電力"
+    },
+    "2371.TW": {
+      "total": 2,
+      "max": 10,
+      "scored": 5,
+      "score10": 2.0,
+      "level": "low",
+      "flags": [],
+      "gate": {
+        "block": false,
+        "reasons": []
+      },
+      "items": {
+        "tech": {
+          "score": 0,
+          "why": "乖離 -4.41%",
+          "date": "2026-10-21"
+        },
+        "earnings": {
+          "score": 0,
+          "why": "第三季財報最晚 2026-11-14 要公布（法定期限，多數公司會提早），還有 15 個交易日",
+          "estimated": true,
+          "date": "2026-11-14",
+          "source": "https://mops.twse.com.tw/mops/#/web/t100sb02_1",
+          "days": 15,
+          "provider": "法定期限"
+        },
+        "fundamentals": {
+          "score": 1,
+          "why": "營收年增 -13.3%（2026-09）、毛利率 17.4%，年變動 -0.1 個百分點（2026-06-30）",
+          "date": "2026-09"
+        },
+        "chips": {
+          "score": 0,
+          "why": "近 5 日法人 -772 張、融資 -536 張",
+          "date": "2026-10-22"
+        },
+        "policy": {
+          "score": 1,
+          "why": "2026-10-28 FOMC 利率決議（10/27–28 會議）",
+          "date": "2026-10-28",
+          "source": "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm"
+        }
+      },
+      "market": "TW",
+      "group": "TW|AI電源／電力"
+    },
+    "8210.TW": {
+      "total": 2,
+      "max": 10,
+      "scored": 5,
+      "score10": 2.0,
+      "level": "low",
+      "flags": [],
+      "gate": {
+        "block": false,
+        "reasons": []
+      },
+      "items": {
+        "tech": {
+          "score": 0,
+          "why": "乖離 -6.43%",
+          "date": "2026-10-21"
+        },
+        "earnings": {
+          "score": 0,
+          "why": "第三季財報最晚 2026-11-14 要公布（法定期限，多數公司會提早），還有 15 個交易日",
+          "estimated": true,
+          "date": "2026-11-14",
+          "source": "https://mops.twse.com.tw/mops/#/web/t100sb02_1",
+          "days": 15,
+          "provider": "法定期限"
+        },
+        "fundamentals": {
+          "score": 1,
+          "why": "營收年增 +13.8%（2026-09）、年增率連兩個月放緩（+42%→+41%→+14%）、毛利率 32.6%，年變動 +2.7 個百分點（2026-06-30）",
+          "date": "2026-09"
+        },
+        "chips": {
+          "score": 0,
+          "why": "近 5 日法人 +248 張、融資 -173 張",
+          "date": "2026-10-22"
+        },
+        "policy": {
+          "score": 1,
+          "why": "2026-10-28 FOMC 利率決議（10/27–28 會議）",
+          "date": "2026-10-28",
+          "source": "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm"
+        }
+      },
+      "market": "TW",
+      "group": "TW|AI伺服器／散熱"
     },
     "3324.TWO": {
       "total": 2,
-      "max": 8,
-      "scored": 4,
-      "score10": 2.5,
+      "max": 10,
+      "scored": 5,
+      "score10": 2.0,
       "level": "low",
       "flags": [],
       "gate": {
@@ -254,8 +374,13 @@
           "date": "2026-10-22"
         },
         "earnings": {
-          "score": null,
-          "why": "events.json 沒有這檔的財報日"
+          "score": 0,
+          "why": "第三季財報最晚 2026-11-14 要公布（法定期限，多數公司會提早），還有 15 個交易日",
+          "estimated": true,
+          "date": "2026-11-14",
+          "source": "https://mops.twse.com.tw/mops/#/web/t100sb02_1",
+          "days": 15,
+          "provider": "法定期限"
         },
         "fundamentals": {
           "score": 1,
@@ -264,7 +389,7 @@
         },
         "chips": {
           "score": 0,
-          "why": "近 5 日法人 +553 張、融資 -1283 張",
+          "why": "近 5 日法人 +553 張、融資 -1197 張",
           "date": "2026-10-22"
         },
         "policy": {
@@ -275,13 +400,13 @@
         }
       },
       "market": "TW",
-      "group": "TW|AI散熱"
+      "group": "TW|AI伺服器／散熱"
     },
     "3653.TW": {
       "total": 2,
-      "max": 8,
-      "scored": 4,
-      "score10": 2.5,
+      "max": 10,
+      "scored": 5,
+      "score10": 2.0,
       "level": "low",
       "flags": [],
       "gate": {
@@ -291,12 +416,17 @@
       "items": {
         "tech": {
           "score": 0,
-          "why": "乖離 -10.28%",
-          "date": "2026-10-22"
+          "why": "乖離 -3.21%",
+          "date": "2026-10-21"
         },
         "earnings": {
-          "score": null,
-          "why": "events.json 沒有這檔的財報日"
+          "score": 0,
+          "why": "第三季財報最晚 2026-11-14 要公布（法定期限，多數公司會提早），還有 15 個交易日",
+          "estimated": true,
+          "date": "2026-11-14",
+          "source": "https://mops.twse.com.tw/mops/#/web/t100sb02_1",
+          "days": 15,
+          "provider": "法定期限"
         },
         "fundamentals": {
           "score": 1,
@@ -305,7 +435,7 @@
         },
         "chips": {
           "score": 0,
-          "why": "近 5 日法人 -145 張、融資 -244 張",
+          "why": "近 5 日法人 -191 張、融資 -255 張",
           "date": "2026-10-22"
         },
         "policy": {
@@ -316,13 +446,13 @@
         }
       },
       "market": "TW",
-      "group": "TW|AI散熱"
+      "group": "TW|AI伺服器／散熱"
     },
     "3017.TW": {
       "total": 2,
-      "max": 8,
-      "scored": 4,
-      "score10": 2.5,
+      "max": 10,
+      "scored": 5,
+      "score10": 2.0,
       "level": "low",
       "flags": [],
       "gate": {
@@ -332,12 +462,17 @@
       "items": {
         "tech": {
           "score": 0,
-          "why": "乖離 -7.31%",
-          "date": "2026-10-22"
+          "why": "乖離 -5.03%",
+          "date": "2026-10-21"
         },
         "earnings": {
-          "score": null,
-          "why": "events.json 沒有這檔的財報日"
+          "score": 0,
+          "why": "第三季財報最晚 2026-11-14 要公布（法定期限，多數公司會提早），還有 15 個交易日",
+          "estimated": true,
+          "date": "2026-11-14",
+          "source": "https://mops.twse.com.tw/mops/#/web/t100sb02_1",
+          "days": 15,
+          "provider": "法定期限"
         },
         "fundamentals": {
           "score": 1,
@@ -346,7 +481,7 @@
         },
         "chips": {
           "score": 0,
-          "why": "近 5 日法人 -531 張、融資 -15 張",
+          "why": "近 5 日法人 -531 張、融資 -203 張",
           "date": "2026-10-22"
         },
         "policy": {
@@ -357,13 +492,13 @@
         }
       },
       "market": "TW",
-      "group": "TW|AI散熱"
+      "group": "TW|AI伺服器／散熱"
     },
     "3189.TW": {
       "total": 1,
-      "max": 8,
-      "scored": 4,
-      "score10": 1.2,
+      "max": 10,
+      "scored": 5,
+      "score10": 1.0,
       "level": "low",
       "flags": [],
       "gate": {
@@ -373,12 +508,17 @@
       "items": {
         "tech": {
           "score": 0,
-          "why": "乖離 -2.15%",
-          "date": "2026-10-22"
+          "why": "乖離 +1.03%",
+          "date": "2026-10-21"
         },
         "earnings": {
-          "score": null,
-          "why": "events.json 沒有這檔的財報日"
+          "score": 0,
+          "why": "第三季財報最晚 2026-11-14 要公布（法定期限，多數公司會提早），還有 15 個交易日",
+          "estimated": true,
+          "date": "2026-11-14",
+          "source": "https://mops.twse.com.tw/mops/#/web/t100sb02_1",
+          "days": 15,
+          "provider": "法定期限"
         },
         "fundamentals": {
           "score": 0,
@@ -387,7 +527,7 @@
         },
         "chips": {
           "score": 0,
-          "why": "近 5 日法人 -1117 張、融資 -71 張",
+          "why": "近 5 日法人 -1117 張、融資 -4278 張",
           "date": "2026-10-22"
         },
         "policy": {
@@ -398,13 +538,13 @@
         }
       },
       "market": "TW",
-      "group": "TW|ABF"
+      "group": "TW|PCB／載板"
     },
     "3037.TW": {
       "total": 2,
-      "max": 8,
-      "scored": 4,
-      "score10": 2.5,
+      "max": 10,
+      "scored": 5,
+      "score10": 2.0,
       "level": "low",
       "flags": [],
       "gate": {
@@ -414,12 +554,17 @@
       "items": {
         "tech": {
           "score": 0,
-          "why": "乖離 -8.36%",
-          "date": "2026-10-22"
+          "why": "乖離 -6.84%",
+          "date": "2026-10-21"
         },
         "earnings": {
-          "score": null,
-          "why": "events.json 沒有這檔的財報日"
+          "score": 0,
+          "why": "第三季財報最晚 2026-11-14 要公布（法定期限，多數公司會提早），還有 15 個交易日",
+          "estimated": true,
+          "date": "2026-11-14",
+          "source": "https://mops.twse.com.tw/mops/#/web/t100sb02_1",
+          "days": 15,
+          "provider": "法定期限"
         },
         "fundamentals": {
           "score": 0,
@@ -428,7 +573,7 @@
         },
         "chips": {
           "score": 1,
-          "why": "近 5 日法人 -4139 張、融資 +2730 張",
+          "why": "近 5 日法人 -4139 張、融資 +1647 張",
           "date": "2026-10-22"
         },
         "policy": {
@@ -439,13 +584,13 @@
         }
       },
       "market": "TW",
-      "group": "TW|ABF"
+      "group": "TW|PCB／載板"
     },
     "8046.TW": {
       "total": 2,
-      "max": 8,
-      "scored": 4,
-      "score10": 2.5,
+      "max": 10,
+      "scored": 5,
+      "score10": 2.0,
       "level": "low",
       "flags": [],
       "gate": {
@@ -455,12 +600,17 @@
       "items": {
         "tech": {
           "score": 0,
-          "why": "乖離 -7.53%",
-          "date": "2026-10-22"
+          "why": "乖離 -1.31%",
+          "date": "2026-10-21"
         },
         "earnings": {
-          "score": null,
-          "why": "events.json 沒有這檔的財報日"
+          "score": 0,
+          "why": "第三季財報最晚 2026-11-14 要公布（法定期限，多數公司會提早），還有 15 個交易日",
+          "estimated": true,
+          "date": "2026-11-14",
+          "source": "https://mops.twse.com.tw/mops/#/web/t100sb02_1",
+          "days": 15,
+          "provider": "法定期限"
         },
         "fundamentals": {
           "score": 0,
@@ -469,7 +619,7 @@
         },
         "chips": {
           "score": 1,
-          "why": "近 5 日法人 -3256 張、融資 +27 張",
+          "why": "近 5 日法人 -3256 張、融資 +40 張",
           "date": "2026-10-22"
         },
         "policy": {
@@ -480,15 +630,114 @@
         }
       },
       "market": "TW",
-      "group": "TW|ABF"
+      "group": "TW|PCB／載板"
+    },
+    "8358.TWO": {
+      "total": 3,
+      "max": 10,
+      "scored": 5,
+      "score10": 3.0,
+      "level": "high",
+      "flags": [
+        "disposition"
+      ],
+      "gate": {
+        "block": true,
+        "reasons": [
+          "處置股"
+        ]
+      },
+      "items": {
+        "tech": {
+          "score": 0,
+          "why": "乖離 -12.70%",
+          "date": "2026-10-22"
+        },
+        "earnings": {
+          "score": 0,
+          "why": "第三季財報最晚 2026-11-14 要公布（法定期限，多數公司會提早），還有 15 個交易日",
+          "estimated": true,
+          "date": "2026-11-14",
+          "source": "https://mops.twse.com.tw/mops/#/web/t100sb02_1",
+          "days": 15,
+          "provider": "法定期限"
+        },
+        "fundamentals": {
+          "score": 0,
+          "why": "營收年增 +64.6%（2026-09）、毛利率 27.4%，年變動 +8.5 個百分點（2026-06-30）",
+          "date": "2026-09"
+        },
+        "chips": {
+          "score": 2,
+          "why": "處置股 2026-10-23～2026-10-30",
+          "date": "2026-10-23",
+          "flag": "disposition"
+        },
+        "policy": {
+          "score": 1,
+          "why": "2026-10-28 FOMC 利率決議（10/27–28 會議）",
+          "date": "2026-10-28",
+          "source": "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm"
+        }
+      },
+      "market": "TW",
+      "group": "TW|PCB／載板"
+    },
+    "4958.TW": {
+      "total": 3,
+      "max": 10,
+      "scored": 5,
+      "score10": 3.0,
+      "level": "low",
+      "flags": [],
+      "gate": {
+        "block": false,
+        "reasons": []
+      },
+      "items": {
+        "tech": {
+          "score": 1,
+          "why": "乖離 +7.35%",
+          "date": "2026-10-21"
+        },
+        "earnings": {
+          "score": 0,
+          "why": "第三季財報最晚 2026-11-14 要公布（法定期限，多數公司會提早），還有 15 個交易日",
+          "estimated": true,
+          "date": "2026-11-14",
+          "source": "https://mops.twse.com.tw/mops/#/web/t100sb02_1",
+          "days": 15,
+          "provider": "法定期限"
+        },
+        "fundamentals": {
+          "score": 0,
+          "why": "營收年增 +36.1%（2026-09）、毛利率 23.1%，年變動 +4.7 個百分點（2026-06-30）",
+          "date": "2026-09"
+        },
+        "chips": {
+          "score": 1,
+          "why": "近 5 日法人 -1217 張、融資 +1094 張",
+          "date": "2026-10-22"
+        },
+        "policy": {
+          "score": 1,
+          "why": "2026-10-28 FOMC 利率決議（10/27–28 會議）",
+          "date": "2026-10-28",
+          "source": "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm"
+        }
+      },
+      "market": "TW",
+      "group": "TW|PCB／載板"
     },
     "6213.TW": {
-      "total": 3,
-      "max": 8,
-      "scored": 4,
-      "score10": 3.8,
+      "total": 4,
+      "max": 10,
+      "scored": 5,
+      "score10": 4.0,
       "level": "mid",
-      "flags": [],
+      "flags": [
+        "overheated"
+      ],
       "gate": {
         "block": true,
         "reasons": [
@@ -497,13 +746,18 @@
       },
       "items": {
         "tech": {
-          "score": 1,
-          "why": "乖離 +6.88%",
-          "date": "2026-10-22"
+          "score": 2,
+          "why": "乖離 +15.07%",
+          "date": "2026-10-21"
         },
         "earnings": {
-          "score": null,
-          "why": "events.json 沒有這檔的財報日"
+          "score": 0,
+          "why": "第三季財報最晚 2026-11-14 要公布（法定期限，多數公司會提早），還有 15 個交易日",
+          "estimated": true,
+          "date": "2026-11-14",
+          "source": "https://mops.twse.com.tw/mops/#/web/t100sb02_1",
+          "days": 15,
+          "provider": "法定期限"
         },
         "fundamentals": {
           "score": 0,
@@ -512,7 +766,7 @@
         },
         "chips": {
           "score": 1,
-          "why": "近 5 日法人 -3738 張、融資 +235 張",
+          "why": "近 5 日法人 -3738 張、融資 +470 張",
           "date": "2026-10-22"
         },
         "policy": {
@@ -523,13 +777,13 @@
         }
       },
       "market": "TW",
-      "group": "TW|CCL"
+      "group": "TW|CCL／材料"
     },
     "2383.TW": {
       "total": 2,
-      "max": 8,
-      "scored": 4,
-      "score10": 2.5,
+      "max": 10,
+      "scored": 5,
+      "score10": 2.0,
       "level": "low",
       "flags": [],
       "gate": {
@@ -539,12 +793,17 @@
       "items": {
         "tech": {
           "score": 0,
-          "why": "乖離 -4.54%",
-          "date": "2026-10-22"
+          "why": "乖離 -5.89%",
+          "date": "2026-10-21"
         },
         "earnings": {
-          "score": null,
-          "why": "events.json 沒有這檔的財報日"
+          "score": 0,
+          "why": "第三季財報最晚 2026-11-14 要公布（法定期限，多數公司會提早），還有 15 個交易日",
+          "estimated": true,
+          "date": "2026-11-14",
+          "source": "https://mops.twse.com.tw/mops/#/web/t100sb02_1",
+          "days": 15,
+          "provider": "法定期限"
         },
         "fundamentals": {
           "score": 0,
@@ -553,7 +812,7 @@
         },
         "chips": {
           "score": 1,
-          "why": "近 5 日法人 -255 張、融資 +289 張",
+          "why": "近 5 日法人 -255 張、融資 +200 張",
           "date": "2026-10-22"
         },
         "policy": {
@@ -564,13 +823,59 @@
         }
       },
       "market": "TW",
-      "group": "TW|CCL"
+      "group": "TW|CCL／材料"
     },
-    "3481.TW": {
-      "total": 1,
-      "max": 8,
-      "scored": 4,
-      "score10": 1.2,
+    "1303.TW": {
+      "total": 2,
+      "max": 10,
+      "scored": 5,
+      "score10": 2.0,
+      "level": "low",
+      "flags": [],
+      "gate": {
+        "block": false,
+        "reasons": []
+      },
+      "items": {
+        "tech": {
+          "score": 1,
+          "why": "乖離 +13.08%",
+          "date": "2026-10-21"
+        },
+        "earnings": {
+          "score": 0,
+          "why": "第三季財報最晚 2026-11-14 要公布（法定期限，多數公司會提早），還有 15 個交易日",
+          "estimated": true,
+          "date": "2026-11-14",
+          "source": "https://mops.twse.com.tw/mops/#/web/t100sb02_1",
+          "days": 15,
+          "provider": "法定期限"
+        },
+        "fundamentals": {
+          "score": 0,
+          "why": "營收年增 +55.3%（2026-09）、毛利率 18.9%，年變動 +10.3 個百分點（2026-06-30）",
+          "date": "2026-09"
+        },
+        "chips": {
+          "score": 0,
+          "why": "近 5 日法人 -21414 張、融資 -1152 張",
+          "date": "2026-10-22"
+        },
+        "policy": {
+          "score": 1,
+          "why": "2026-10-28 FOMC 利率決議（10/27–28 會議）",
+          "date": "2026-10-28",
+          "source": "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm"
+        }
+      },
+      "market": "TW",
+      "group": "TW|CCL／材料"
+    },
+    "2408.TW": {
+      "total": 2,
+      "max": 10,
+      "scored": 5,
+      "score10": 2.0,
       "level": "low",
       "flags": [],
       "gate": {
@@ -580,12 +885,109 @@
       "items": {
         "tech": {
           "score": 0,
-          "why": "乖離 -6.86%",
-          "date": "2026-10-22"
+          "why": "乖離 -11.63%",
+          "date": "2026-10-21"
         },
         "earnings": {
-          "score": null,
-          "why": "events.json 沒有這檔的財報日"
+          "score": 0,
+          "why": "第三季財報最晚 2026-11-14 要公布（法定期限，多數公司會提早），還有 15 個交易日",
+          "estimated": true,
+          "date": "2026-11-14",
+          "source": "https://mops.twse.com.tw/mops/#/web/t100sb02_1",
+          "days": 15,
+          "provider": "法定期限"
+        },
+        "fundamentals": {
+          "score": 0,
+          "why": "營收年增 +576.6%（2026-09）、毛利率 79.5%，年變動 +100.0 個百分點（2026-06-30）",
+          "date": "2026-09"
+        },
+        "chips": {
+          "score": 1,
+          "why": "近 5 日法人 -17046 張、融資 +82 張",
+          "date": "2026-10-22"
+        },
+        "policy": {
+          "score": 1,
+          "why": "2026-10-28 FOMC 利率決議（10/27–28 會議）",
+          "date": "2026-10-28",
+          "source": "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm"
+        }
+      },
+      "market": "TW",
+      "group": "TW|記憶體"
+    },
+    "6770.TW": {
+      "total": 1,
+      "max": 10,
+      "scored": 5,
+      "score10": 1.0,
+      "level": "low",
+      "flags": [],
+      "gate": {
+        "block": false,
+        "reasons": []
+      },
+      "items": {
+        "tech": {
+          "score": 0,
+          "why": "乖離 -6.90%",
+          "date": "2026-10-21"
+        },
+        "earnings": {
+          "score": 0,
+          "why": "第三季財報最晚 2026-11-14 要公布（法定期限，多數公司會提早），還有 15 個交易日",
+          "estimated": true,
+          "date": "2026-11-14",
+          "source": "https://mops.twse.com.tw/mops/#/web/t100sb02_1",
+          "days": 15,
+          "provider": "法定期限"
+        },
+        "fundamentals": {
+          "score": 0,
+          "why": "營收年增 +94.0%（2026-09）、毛利率 28.3%，年變動 +37.3 個百分點（2026-06-30）",
+          "date": "2026-09"
+        },
+        "chips": {
+          "score": 0,
+          "why": "近 5 日法人 -36788 張、融資 -214 張",
+          "date": "2026-10-22"
+        },
+        "policy": {
+          "score": 1,
+          "why": "2026-10-28 FOMC 利率決議（10/27–28 會議）",
+          "date": "2026-10-28",
+          "source": "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm"
+        }
+      },
+      "market": "TW",
+      "group": "TW|記憶體"
+    },
+    "3481.TW": {
+      "total": 1,
+      "max": 10,
+      "scored": 5,
+      "score10": 1.0,
+      "level": "low",
+      "flags": [],
+      "gate": {
+        "block": false,
+        "reasons": []
+      },
+      "items": {
+        "tech": {
+          "score": 0,
+          "why": "乖離 -3.72%",
+          "date": "2026-10-21"
+        },
+        "earnings": {
+          "score": 0,
+          "why": "第三季財報最晚 2026-11-14 要公布（法定期限，多數公司會提早），還有 15 個交易日",
+          "estimated": true,
+          "date": "2026-11-14",
+          "source": "https://mops.twse.com.tw/mops/#/web/t100sb02_1",
+          "days": 15,
+          "provider": "法定期限"
         },
         "fundamentals": {
           "score": 0,
@@ -594,7 +996,7 @@
         },
         "chips": {
           "score": 0,
-          "why": "近 5 日法人 +13912 張、融資 -14565 張",
+          "why": "近 5 日法人 +13912 張、融資 -12078 張",
           "date": "2026-10-22"
         },
         "policy": {
@@ -605,13 +1007,59 @@
         }
       },
       "market": "TW",
-      "group": "TW|面板／光電"
+      "group": "TW|光電／CPO"
     },
-    "6770.TW": {
+    "3406.TW": {
       "total": 2,
-      "max": 8,
-      "scored": 4,
-      "score10": 2.5,
+      "max": 10,
+      "scored": 5,
+      "score10": 2.0,
+      "level": "low",
+      "flags": [],
+      "gate": {
+        "block": false,
+        "reasons": []
+      },
+      "items": {
+        "tech": {
+          "score": 1,
+          "why": "乖離 +12.07%",
+          "date": "2026-10-21"
+        },
+        "earnings": {
+          "score": 0,
+          "why": "第三季財報最晚 2026-11-14 要公布（法定期限，多數公司會提早），還有 15 個交易日",
+          "estimated": true,
+          "date": "2026-11-14",
+          "source": "https://mops.twse.com.tw/mops/#/web/t100sb02_1",
+          "days": 15,
+          "provider": "法定期限"
+        },
+        "fundamentals": {
+          "score": 0,
+          "why": "營收年增 +0.5%（2026-09）、毛利率 33.2%，年變動 +4.1 個百分點（2026-06-30）",
+          "date": "2026-09"
+        },
+        "chips": {
+          "score": 0,
+          "why": "近 5 日法人 -1382 張、融資 -389 張",
+          "date": "2026-10-22"
+        },
+        "policy": {
+          "score": 1,
+          "why": "2026-10-28 FOMC 利率決議（10/27–28 會議）",
+          "date": "2026-10-28",
+          "source": "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm"
+        }
+      },
+      "market": "TW",
+      "group": "TW|光電／CPO"
+    },
+    "2327.TW": {
+      "total": 1,
+      "max": 10,
+      "scored": 5,
+      "score10": 1.0,
       "level": "low",
       "flags": [],
       "gate": {
@@ -621,21 +1069,26 @@
       "items": {
         "tech": {
           "score": 0,
-          "why": "乖離 -6.20%",
-          "date": "2026-10-22"
+          "why": "乖離 -7.66%",
+          "date": "2026-10-21"
         },
         "earnings": {
-          "score": null,
-          "why": "events.json 沒有這檔的財報日"
+          "score": 0,
+          "why": "第三季財報最晚 2026-11-14 要公布（法定期限，多數公司會提早），還有 15 個交易日",
+          "estimated": true,
+          "date": "2026-11-14",
+          "source": "https://mops.twse.com.tw/mops/#/web/t100sb02_1",
+          "days": 15,
+          "provider": "法定期限"
         },
         "fundamentals": {
           "score": 0,
-          "why": "營收年增 +94.0%（2026-09）、毛利率 28.3%，年變動 +37.3 個百分點（2026-06-30）",
+          "why": "營收年增 +46.1%（2026-09）、毛利率 38.5%，年變動 +2.9 個百分點（2026-06-30）",
           "date": "2026-09"
         },
         "chips": {
-          "score": 1,
-          "why": "近 5 日法人 -36788 張、融資 +2031 張",
+          "score": 0,
+          "why": "近 5 日法人 -29218 張、融資 -3976 張",
           "date": "2026-10-22"
         },
         "policy": {
@@ -646,13 +1099,107 @@
         }
       },
       "market": "TW",
-      "group": "TW|晶圓代工＋記憶體"
+      "group": "TW|零組件／廠務"
+    },
+    "4919.TW": {
+      "total": 1,
+      "max": 10,
+      "scored": 5,
+      "score10": 1.0,
+      "level": "low",
+      "flags": [],
+      "gate": {
+        "block": false,
+        "reasons": []
+      },
+      "items": {
+        "tech": {
+          "score": 0,
+          "why": "乖離 -0.23%",
+          "date": "2026-10-21"
+        },
+        "earnings": {
+          "score": 0,
+          "why": "第三季財報最晚 2026-11-14 要公布（法定期限，多數公司會提早），還有 15 個交易日",
+          "estimated": true,
+          "date": "2026-11-14",
+          "source": "https://mops.twse.com.tw/mops/#/web/t100sb02_1",
+          "days": 15,
+          "provider": "法定期限"
+        },
+        "fundamentals": {
+          "score": 0,
+          "why": "營收年增 +4.7%（2026-09）、毛利率 38.0%，年變動 +3.1 個百分點（2026-06-30）",
+          "date": "2026-09"
+        },
+        "chips": {
+          "score": 0,
+          "why": "近 5 日法人 +724 張、融資 -1614 張",
+          "date": "2026-10-22"
+        },
+        "policy": {
+          "score": 1,
+          "why": "2026-10-28 FOMC 利率決議（10/27–28 會議）",
+          "date": "2026-10-28",
+          "source": "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm"
+        }
+      },
+      "market": "TW",
+      "group": "TW|零組件／廠務"
+    },
+    "1569.TWO": {
+      "total": 3,
+      "max": 10,
+      "scored": 5,
+      "score10": 3.0,
+      "level": "low",
+      "flags": [
+        "overheated"
+      ],
+      "gate": {
+        "block": false,
+        "reasons": []
+      },
+      "items": {
+        "tech": {
+          "score": 2,
+          "why": "乖離 +18.05%",
+          "date": "2026-10-22"
+        },
+        "earnings": {
+          "score": 0,
+          "why": "第三季財報最晚 2026-11-14 要公布（法定期限，多數公司會提早），還有 15 個交易日",
+          "estimated": true,
+          "date": "2026-11-14",
+          "source": "https://mops.twse.com.tw/mops/#/web/t100sb02_1",
+          "days": 15,
+          "provider": "法定期限"
+        },
+        "fundamentals": {
+          "score": 0,
+          "why": "營收年增 +39.1%（2026-09）、毛利率 6.5%，年變動 +6.2 個百分點（2026-06-30）",
+          "date": "2026-09"
+        },
+        "chips": {
+          "score": 0,
+          "why": "近 5 日法人 +2747 張、融資 -118 張",
+          "date": "2026-10-22"
+        },
+        "policy": {
+          "score": 1,
+          "why": "2026-10-28 FOMC 利率決議（10/27–28 會議）",
+          "date": "2026-10-28",
+          "source": "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm"
+        }
+      },
+      "market": "TW",
+      "group": "TW|零組件／廠務"
     },
     "2221.TWO": {
       "total": 3,
-      "max": 8,
-      "scored": 4,
-      "score10": 3.8,
+      "max": 10,
+      "scored": 5,
+      "score10": 3.0,
       "level": "high",
       "flags": [
         "disposition"
@@ -670,8 +1217,13 @@
           "date": "2026-10-22"
         },
         "earnings": {
-          "score": null,
-          "why": "events.json 沒有這檔的財報日"
+          "score": 0,
+          "why": "第三季財報最晚 2026-11-14 要公布（法定期限，多數公司會提早），還有 15 個交易日",
+          "estimated": true,
+          "date": "2026-11-14",
+          "source": "https://mops.twse.com.tw/mops/#/web/t100sb02_1",
+          "days": 15,
+          "provider": "法定期限"
         },
         "fundamentals": {
           "score": 0,
@@ -692,7 +1244,1113 @@
         }
       },
       "market": "TW",
-      "group": "TW|半導體廠務"
+      "group": "TW|零組件／廠務"
+    },
+    "2313.TW": {
+      "total": 2,
+      "max": 10,
+      "scored": 5,
+      "score10": 2.0,
+      "level": "low",
+      "flags": [],
+      "gate": {
+        "block": false,
+        "reasons": []
+      },
+      "items": {
+        "tech": {
+          "score": 0,
+          "why": "乖離 +1.43%",
+          "date": "2026-10-21"
+        },
+        "earnings": {
+          "score": 0,
+          "why": "第三季財報最晚 2026-11-14 要公布（法定期限，多數公司會提早），還有 15 個交易日",
+          "estimated": true,
+          "date": "2026-11-14",
+          "source": "https://mops.twse.com.tw/mops/#/web/t100sb02_1",
+          "days": 15,
+          "provider": "法定期限"
+        },
+        "fundamentals": {
+          "score": 0,
+          "why": "營收年增 +15.0%（2026-09）、毛利率 18.5%，年變動 +0.3 個百分點（2026-06-30）",
+          "date": "2026-09"
+        },
+        "chips": {
+          "score": 1,
+          "why": "近 5 日法人 -2642 張、融資 +798 張",
+          "date": "2026-10-22"
+        },
+        "policy": {
+          "score": 1,
+          "why": "2026-10-28 FOMC 利率決議（10/27–28 會議）",
+          "date": "2026-10-28",
+          "source": "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm"
+        }
+      },
+      "market": "TW",
+      "group": "TW|低軌衛星"
+    },
+    "3491.TWO": {
+      "total": 1,
+      "max": 10,
+      "scored": 5,
+      "score10": 1.0,
+      "level": "low",
+      "flags": [],
+      "gate": {
+        "block": false,
+        "reasons": []
+      },
+      "items": {
+        "tech": {
+          "score": 0,
+          "why": "乖離 -11.85%",
+          "date": "2026-10-22"
+        },
+        "earnings": {
+          "score": 0,
+          "why": "第三季財報最晚 2026-11-14 要公布（法定期限，多數公司會提早），還有 15 個交易日",
+          "estimated": true,
+          "date": "2026-11-14",
+          "source": "https://mops.twse.com.tw/mops/#/web/t100sb02_1",
+          "days": 15,
+          "provider": "法定期限"
+        },
+        "fundamentals": {
+          "score": 0,
+          "why": "營收年增 +52.5%（2026-09）、毛利率 55.6%，年變動 +12.3 個百分點（2026-06-30）",
+          "date": "2026-09"
+        },
+        "chips": {
+          "score": 0,
+          "why": "近 5 日法人 -250 張、融資 -87 張",
+          "date": "2026-10-22"
+        },
+        "policy": {
+          "score": 1,
+          "why": "2026-10-28 FOMC 利率決議（10/27–28 會議）",
+          "date": "2026-10-28",
+          "source": "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm"
+        }
+      },
+      "market": "TW",
+      "group": "TW|低軌衛星"
+    },
+    "6285.TW": {
+      "total": 3,
+      "max": 10,
+      "scored": 5,
+      "score10": 3.0,
+      "level": "low",
+      "flags": [],
+      "gate": {
+        "block": false,
+        "reasons": []
+      },
+      "items": {
+        "tech": {
+          "score": 0,
+          "why": "乖離 +0.68%",
+          "date": "2026-10-21"
+        },
+        "earnings": {
+          "score": 0,
+          "why": "第三季財報最晚 2026-11-14 要公布（法定期限，多數公司會提早），還有 15 個交易日",
+          "estimated": true,
+          "date": "2026-11-14",
+          "source": "https://mops.twse.com.tw/mops/#/web/t100sb02_1",
+          "days": 15,
+          "provider": "法定期限"
+        },
+        "fundamentals": {
+          "score": 1,
+          "why": "營收年增 +64.0%（2026-09）、年增率連兩個月放緩（+90%→+81%→+64%）、毛利率 13.0%，年變動 +1.4 個百分點（2026-06-30）",
+          "date": "2026-09"
+        },
+        "chips": {
+          "score": 1,
+          "why": "近 5 日法人 -6849 張、融資 +1106 張",
+          "date": "2026-10-22"
+        },
+        "policy": {
+          "score": 1,
+          "why": "2026-10-28 FOMC 利率決議（10/27–28 會議）",
+          "date": "2026-10-28",
+          "source": "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm"
+        }
+      },
+      "market": "TW",
+      "group": "TW|低軌衛星"
+    },
+    "6271.TW": {
+      "total": 1,
+      "max": 10,
+      "scored": 5,
+      "score10": 1.0,
+      "level": "low",
+      "flags": [],
+      "gate": {
+        "block": false,
+        "reasons": []
+      },
+      "items": {
+        "tech": {
+          "score": 0,
+          "why": "乖離 -0.47%",
+          "date": "2026-10-21"
+        },
+        "earnings": {
+          "score": 0,
+          "why": "第三季財報最晚 2026-11-14 要公布（法定期限，多數公司會提早），還有 15 個交易日",
+          "estimated": true,
+          "date": "2026-11-14",
+          "source": "https://mops.twse.com.tw/mops/#/web/t100sb02_1",
+          "days": 15,
+          "provider": "法定期限"
+        },
+        "fundamentals": {
+          "score": 0,
+          "why": "營收年增 +22.1%（2026-09）、毛利率 31.1%，年變動 +4.5 個百分點（2026-06-30）",
+          "date": "2026-09"
+        },
+        "chips": {
+          "score": 0,
+          "why": "近 5 日法人 +428 張、融資 -228 張",
+          "date": "2026-10-22"
+        },
+        "policy": {
+          "score": 1,
+          "why": "2026-10-28 FOMC 利率決議（10/27–28 會議）",
+          "date": "2026-10-28",
+          "source": "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm"
+        }
+      },
+      "market": "TW",
+      "group": "TW|低軌衛星"
+    },
+    "2367.TW": {
+      "total": 2,
+      "max": 10,
+      "scored": 5,
+      "score10": 2.0,
+      "level": "low",
+      "flags": [],
+      "gate": {
+        "block": false,
+        "reasons": []
+      },
+      "items": {
+        "tech": {
+          "score": 0,
+          "why": "乖離 +2.60%",
+          "date": "2026-10-21"
+        },
+        "earnings": {
+          "score": 0,
+          "why": "第三季財報最晚 2026-11-14 要公布（法定期限，多數公司會提早），還有 15 個交易日",
+          "estimated": true,
+          "date": "2026-11-14",
+          "source": "https://mops.twse.com.tw/mops/#/web/t100sb02_1",
+          "days": 15,
+          "provider": "法定期限"
+        },
+        "fundamentals": {
+          "score": 1,
+          "why": "營收年增 +3.5%（2026-09）、毛利率 7.2%，年變動 -11.4 個百分點（2026-06-30）",
+          "date": "2026-09"
+        },
+        "chips": {
+          "score": 0,
+          "why": "近 5 日法人 +1021 張、融資 +6 張",
+          "date": "2026-10-22"
+        },
+        "policy": {
+          "score": 1,
+          "why": "2026-10-28 FOMC 利率決議（10/27–28 會議）",
+          "date": "2026-10-28",
+          "source": "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm"
+        }
+      },
+      "market": "TW",
+      "group": "TW|低軌衛星"
+    },
+    "2355.TW": {
+      "total": 2,
+      "max": 10,
+      "scored": 5,
+      "score10": 2.0,
+      "level": "low",
+      "flags": [],
+      "gate": {
+        "block": false,
+        "reasons": []
+      },
+      "items": {
+        "tech": {
+          "score": 1,
+          "why": "乖離 +12.16%",
+          "date": "2026-10-21"
+        },
+        "earnings": {
+          "score": 0,
+          "why": "第三季財報最晚 2026-11-14 要公布（法定期限，多數公司會提早），還有 15 個交易日",
+          "estimated": true,
+          "date": "2026-11-14",
+          "source": "https://mops.twse.com.tw/mops/#/web/t100sb02_1",
+          "days": 15,
+          "provider": "法定期限"
+        },
+        "fundamentals": {
+          "score": 0,
+          "why": "營收年增 +44.3%（2026-09）、毛利率 12.2%，年變動 +1.3 個百分點（2026-06-30）",
+          "date": "2026-09"
+        },
+        "chips": {
+          "score": 0,
+          "why": "近 5 日法人 -2193 張、融資 -272 張",
+          "date": "2026-10-22"
+        },
+        "policy": {
+          "score": 1,
+          "why": "2026-10-28 FOMC 利率決議（10/27–28 會議）",
+          "date": "2026-10-28",
+          "source": "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm"
+        }
+      },
+      "market": "TW",
+      "group": "TW|低軌衛星"
+    },
+    "2049.TW": {
+      "total": 2,
+      "max": 10,
+      "scored": 5,
+      "score10": 2.0,
+      "level": "low",
+      "flags": [],
+      "gate": {
+        "block": false,
+        "reasons": []
+      },
+      "items": {
+        "tech": {
+          "score": 0,
+          "why": "乖離 -5.89%",
+          "date": "2026-10-21"
+        },
+        "earnings": {
+          "score": 0,
+          "why": "第三季財報最晚 2026-11-14 要公布（法定期限，多數公司會提早），還有 15 個交易日",
+          "estimated": true,
+          "date": "2026-11-14",
+          "source": "https://mops.twse.com.tw/mops/#/web/t100sb02_1",
+          "days": 15,
+          "provider": "法定期限"
+        },
+        "fundamentals": {
+          "score": 0,
+          "why": "營收年增 +30.1%（2026-09）、毛利率 34.2%，年變動 +4.4 個百分點（2026-06-30）",
+          "date": "2026-09"
+        },
+        "chips": {
+          "score": 1,
+          "why": "近 5 日法人 -719 張、融資 +93 張",
+          "date": "2026-10-22"
+        },
+        "policy": {
+          "score": 1,
+          "why": "2026-10-28 FOMC 利率決議（10/27–28 會議）",
+          "date": "2026-10-28",
+          "source": "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm"
+        }
+      },
+      "market": "TW",
+      "group": "TW|機器人・減速傳動"
+    },
+    "2233.TW": {
+      "total": 1,
+      "max": 10,
+      "scored": 5,
+      "score10": 1.0,
+      "level": "low",
+      "flags": [],
+      "gate": {
+        "block": false,
+        "reasons": []
+      },
+      "items": {
+        "tech": {
+          "score": 0,
+          "why": "乖離 -6.26%",
+          "date": "2026-10-21"
+        },
+        "earnings": {
+          "score": 0,
+          "why": "第三季財報最晚 2026-11-14 要公布（法定期限，多數公司會提早），還有 15 個交易日",
+          "estimated": true,
+          "date": "2026-11-14",
+          "source": "https://mops.twse.com.tw/mops/#/web/t100sb02_1",
+          "days": 15,
+          "provider": "法定期限"
+        },
+        "fundamentals": {
+          "score": 0,
+          "why": "營收年增 +6.5%（2026-09）、毛利率 31.5%，年變動 -0.7 個百分點（2026-06-30）",
+          "date": "2026-09"
+        },
+        "chips": {
+          "score": 0,
+          "why": "近 5 日法人 +110 張、融資 -102 張",
+          "date": "2026-10-22"
+        },
+        "policy": {
+          "score": 1,
+          "why": "2026-10-28 FOMC 利率決議（10/27–28 會議）",
+          "date": "2026-10-28",
+          "source": "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm"
+        }
+      },
+      "market": "TW",
+      "group": "TW|機器人・減速傳動"
+    },
+    "1536.TW": {
+      "total": 2,
+      "max": 10,
+      "scored": 5,
+      "score10": 2.0,
+      "level": "low",
+      "flags": [],
+      "gate": {
+        "block": false,
+        "reasons": []
+      },
+      "items": {
+        "tech": {
+          "score": 0,
+          "why": "乖離 -2.43%",
+          "date": "2026-10-21"
+        },
+        "earnings": {
+          "score": 0,
+          "why": "第三季財報最晚 2026-11-14 要公布（法定期限，多數公司會提早），還有 15 個交易日",
+          "estimated": true,
+          "date": "2026-11-14",
+          "source": "https://mops.twse.com.tw/mops/#/web/t100sb02_1",
+          "days": 15,
+          "provider": "法定期限"
+        },
+        "fundamentals": {
+          "score": 1,
+          "why": "營收年增 -13.8%（2026-09）、毛利率 6.9%，年變動 +2.8 個百分點（2026-06-30）",
+          "date": "2026-09"
+        },
+        "chips": {
+          "score": 0,
+          "why": "近 5 日法人 +312 張、融資 -41 張",
+          "date": "2026-10-22"
+        },
+        "policy": {
+          "score": 1,
+          "why": "2026-10-28 FOMC 利率決議（10/27–28 會議）",
+          "date": "2026-10-28",
+          "source": "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm"
+        }
+      },
+      "market": "TW",
+      "group": "TW|機器人・減速傳動"
+    },
+    "2464.TW": {
+      "total": 1,
+      "max": 10,
+      "scored": 5,
+      "score10": 1.0,
+      "level": "low",
+      "flags": [],
+      "gate": {
+        "block": false,
+        "reasons": []
+      },
+      "items": {
+        "tech": {
+          "score": 0,
+          "why": "乖離 -8.86%",
+          "date": "2026-10-21"
+        },
+        "earnings": {
+          "score": 0,
+          "why": "第三季財報最晚 2026-11-14 要公布（法定期限，多數公司會提早），還有 15 個交易日",
+          "estimated": true,
+          "date": "2026-11-14",
+          "source": "https://mops.twse.com.tw/mops/#/web/t100sb02_1",
+          "days": 15,
+          "provider": "法定期限"
+        },
+        "fundamentals": {
+          "score": 0,
+          "why": "營收年增 +78.0%（2026-09）、毛利率 22.2%，年變動 +1.4 個百分點（2026-06-30）",
+          "date": "2026-09"
+        },
+        "chips": {
+          "score": 0,
+          "why": "近 5 日法人 -35 張、融資 -6245 張",
+          "date": "2026-10-22"
+        },
+        "policy": {
+          "score": 1,
+          "why": "2026-10-28 FOMC 利率決議（10/27–28 會議）",
+          "date": "2026-10-28",
+          "source": "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm"
+        }
+      },
+      "market": "TW",
+      "group": "TW|機器人・減速傳動"
+    },
+    "1597.TW": {
+      "total": 1,
+      "max": 10,
+      "scored": 5,
+      "score10": 1.0,
+      "level": "low",
+      "flags": [],
+      "gate": {
+        "block": false,
+        "reasons": []
+      },
+      "items": {
+        "tech": {
+          "score": 0,
+          "why": "乖離 -1.35%",
+          "date": "2026-10-21"
+        },
+        "earnings": {
+          "score": 0,
+          "why": "第三季財報最晚 2026-11-14 要公布（法定期限，多數公司會提早），還有 15 個交易日",
+          "estimated": true,
+          "date": "2026-11-14",
+          "source": "https://mops.twse.com.tw/mops/#/web/t100sb02_1",
+          "days": 15,
+          "provider": "法定期限"
+        },
+        "fundamentals": {
+          "score": 0,
+          "why": "營收年增 +62.3%（2026-09）、毛利率 42.2%，年變動 +0.1 個百分點（2026-06-30）",
+          "date": "2026-09"
+        },
+        "chips": {
+          "score": 0,
+          "why": "近 5 日法人 -950 張、融資 -36 張",
+          "date": "2026-10-22"
+        },
+        "policy": {
+          "score": 1,
+          "why": "2026-10-28 FOMC 利率決議（10/27–28 會議）",
+          "date": "2026-10-28",
+          "source": "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm"
+        }
+      },
+      "market": "TW",
+      "group": "TW|機器人・減速傳動"
+    },
+    "4583.TW": {
+      "total": 1,
+      "max": 10,
+      "scored": 5,
+      "score10": 1.0,
+      "level": "low",
+      "flags": [],
+      "gate": {
+        "block": false,
+        "reasons": []
+      },
+      "items": {
+        "tech": {
+          "score": 0,
+          "why": "乖離 -5.61%",
+          "date": "2026-10-21"
+        },
+        "earnings": {
+          "score": 0,
+          "why": "第三季財報最晚 2026-11-14 要公布（法定期限，多數公司會提早），還有 15 個交易日",
+          "estimated": true,
+          "date": "2026-11-14",
+          "source": "https://mops.twse.com.tw/mops/#/web/t100sb02_1",
+          "days": 15,
+          "provider": "法定期限"
+        },
+        "fundamentals": {
+          "score": 0,
+          "why": "營收年增 +26.6%（2026-09）、毛利率 51.7%，年變動 -0.4 個百分點（2026-06-30）",
+          "date": "2026-09"
+        },
+        "chips": {
+          "score": 0,
+          "why": "近 5 日法人 +9 張、融資 +39 張",
+          "date": "2026-10-22"
+        },
+        "policy": {
+          "score": 1,
+          "why": "2026-10-28 FOMC 利率決議（10/27–28 會議）",
+          "date": "2026-10-28",
+          "source": "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm"
+        }
+      },
+      "market": "TW",
+      "group": "TW|機器人・減速傳動"
+    },
+    "4540.TWO": {
+      "total": 1,
+      "max": 10,
+      "scored": 5,
+      "score10": 1.0,
+      "level": "low",
+      "flags": [],
+      "gate": {
+        "block": false,
+        "reasons": []
+      },
+      "items": {
+        "tech": {
+          "score": 0,
+          "why": "乖離 -1.02%",
+          "date": "2026-10-21"
+        },
+        "earnings": {
+          "score": 0,
+          "why": "第三季財報最晚 2026-11-14 要公布（法定期限，多數公司會提早），還有 15 個交易日",
+          "estimated": true,
+          "date": "2026-11-14",
+          "source": "https://mops.twse.com.tw/mops/#/web/t100sb02_1",
+          "days": 15,
+          "provider": "法定期限"
+        },
+        "fundamentals": {
+          "score": 0,
+          "why": "營收年增 +40.2%（2026-09）、毛利率 20.8%，年變動 +13.5 個百分點（2026-06-30）",
+          "date": "2026-09"
+        },
+        "chips": {
+          "score": 0,
+          "why": "近 5 日法人 +293 張、融資 -109 張",
+          "date": "2026-10-22"
+        },
+        "policy": {
+          "score": 1,
+          "why": "2026-10-28 FOMC 利率決議（10/27–28 會議）",
+          "date": "2026-10-28",
+          "source": "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm"
+        }
+      },
+      "market": "TW",
+      "group": "TW|機器人・減速傳動"
+    },
+    "4576.TW": {
+      "total": 1,
+      "max": 10,
+      "scored": 5,
+      "score10": 1.0,
+      "level": "low",
+      "flags": [],
+      "gate": {
+        "block": false,
+        "reasons": []
+      },
+      "items": {
+        "tech": {
+          "score": 0,
+          "why": "乖離 -4.62%",
+          "date": "2026-10-21"
+        },
+        "earnings": {
+          "score": 0,
+          "why": "第三季財報最晚 2026-11-14 要公布（法定期限，多數公司會提早），還有 15 個交易日",
+          "estimated": true,
+          "date": "2026-11-14",
+          "source": "https://mops.twse.com.tw/mops/#/web/t100sb02_1",
+          "days": 15,
+          "provider": "法定期限"
+        },
+        "fundamentals": {
+          "score": 0,
+          "why": "營收年增 +74.7%（2026-09）、毛利率 37.1%，年變動 -0.7 個百分點（2026-06-30）",
+          "date": "2026-09"
+        },
+        "chips": {
+          "score": 0,
+          "why": "近 5 日法人 +441 張、融資 -144 張",
+          "date": "2026-10-22"
+        },
+        "policy": {
+          "score": 1,
+          "why": "2026-10-28 FOMC 利率決議（10/27–28 會議）",
+          "date": "2026-10-28",
+          "source": "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm"
+        }
+      },
+      "market": "TW",
+      "group": "TW|機器人・馬達驅動"
+    },
+    "1504.TW": {
+      "total": 1,
+      "max": 10,
+      "scored": 5,
+      "score10": 1.0,
+      "level": "low",
+      "flags": [],
+      "gate": {
+        "block": false,
+        "reasons": []
+      },
+      "items": {
+        "tech": {
+          "score": 0,
+          "why": "乖離 +1.17%",
+          "date": "2026-10-21"
+        },
+        "earnings": {
+          "score": 0,
+          "why": "第三季財報最晚 2026-11-14 要公布（法定期限，多數公司會提早），還有 15 個交易日",
+          "estimated": true,
+          "date": "2026-11-14",
+          "source": "https://mops.twse.com.tw/mops/#/web/t100sb02_1",
+          "days": 15,
+          "provider": "法定期限"
+        },
+        "fundamentals": {
+          "score": 0,
+          "why": "營收年增 +13.7%（2026-09）、毛利率 25.2%，年變動 +1.7 個百分點（2026-06-30）",
+          "date": "2026-09"
+        },
+        "chips": {
+          "score": 0,
+          "why": "近 5 日法人 +4464 張、融資 -209 張",
+          "date": "2026-10-22"
+        },
+        "policy": {
+          "score": 1,
+          "why": "2026-10-28 FOMC 利率決議（10/27–28 會議）",
+          "date": "2026-10-28",
+          "source": "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm"
+        }
+      },
+      "market": "TW",
+      "group": "TW|機器人・馬達驅動"
+    },
+    "1590.TW": {
+      "total": 2,
+      "max": 10,
+      "scored": 5,
+      "score10": 2.0,
+      "level": "low",
+      "flags": [],
+      "gate": {
+        "block": false,
+        "reasons": []
+      },
+      "items": {
+        "tech": {
+          "score": 0,
+          "why": "乖離 -5.86%",
+          "date": "2026-10-21"
+        },
+        "earnings": {
+          "score": 0,
+          "why": "第三季財報最晚 2026-11-14 要公布（法定期限，多數公司會提早），還有 15 個交易日",
+          "estimated": true,
+          "date": "2026-11-14",
+          "source": "https://mops.twse.com.tw/mops/#/web/t100sb02_1",
+          "days": 15,
+          "provider": "法定期限"
+        },
+        "fundamentals": {
+          "score": 1,
+          "why": "營收年增 +26.6%（2026-09）、年增率連兩個月放緩（+51%→+43%→+27%）、毛利率 49.7%，年變動 +3.7 個百分點（2026-06-30）",
+          "date": "2026-09"
+        },
+        "chips": {
+          "score": 0,
+          "why": "近 5 日法人 +62 張、融資 +40 張",
+          "date": "2026-10-22"
+        },
+        "policy": {
+          "score": 1,
+          "why": "2026-10-28 FOMC 利率決議（10/27–28 會議）",
+          "date": "2026-10-28",
+          "source": "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm"
+        }
+      },
+      "market": "TW",
+      "group": "TW|機器人・馬達驅動"
+    },
+    "3019.TW": {
+      "total": 3,
+      "max": 10,
+      "scored": 5,
+      "score10": 3.0,
+      "level": "low",
+      "flags": [],
+      "gate": {
+        "block": false,
+        "reasons": []
+      },
+      "items": {
+        "tech": {
+          "score": 0,
+          "why": "乖離 -1.58%",
+          "date": "2026-10-21"
+        },
+        "earnings": {
+          "score": 0,
+          "why": "第三季財報最晚 2026-11-14 要公布（法定期限，多數公司會提早），還有 15 個交易日",
+          "estimated": true,
+          "date": "2026-11-14",
+          "source": "https://mops.twse.com.tw/mops/#/web/t100sb02_1",
+          "days": 15,
+          "provider": "法定期限"
+        },
+        "fundamentals": {
+          "score": 2,
+          "why": "營收年增 -0.1%（2026-09）、毛利率 18.4%，年變動 -1.6 個百分點（2026-06-30）",
+          "date": "2026-09"
+        },
+        "chips": {
+          "score": 0,
+          "why": "近 5 日法人 +360 張、融資 -953 張",
+          "date": "2026-10-22"
+        },
+        "policy": {
+          "score": 1,
+          "why": "2026-10-28 FOMC 利率決議（10/27–28 會議）",
+          "date": "2026-10-28",
+          "source": "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm"
+        }
+      },
+      "market": "TW",
+      "group": "TW|機器人・感測視覺"
+    },
+    "2359.TW": {
+      "total": 2,
+      "max": 10,
+      "scored": 5,
+      "score10": 2.0,
+      "level": "low",
+      "flags": [],
+      "gate": {
+        "block": false,
+        "reasons": []
+      },
+      "items": {
+        "tech": {
+          "score": 0,
+          "why": "乖離 -5.37%",
+          "date": "2026-10-21"
+        },
+        "earnings": {
+          "score": 0,
+          "why": "第三季財報最晚 2026-11-14 要公布（法定期限，多數公司會提早），還有 15 個交易日",
+          "estimated": true,
+          "date": "2026-11-14",
+          "source": "https://mops.twse.com.tw/mops/#/web/t100sb02_1",
+          "days": 15,
+          "provider": "法定期限"
+        },
+        "fundamentals": {
+          "score": 1,
+          "why": "營收年增 +16.7%（2026-09）、毛利率 19.7%，年變動 -4.1 個百分點（2026-06-30）",
+          "date": "2026-09"
+        },
+        "chips": {
+          "score": 0,
+          "why": "近 5 日法人 +168 張、融資 -452 張",
+          "date": "2026-10-22"
+        },
+        "policy": {
+          "score": 1,
+          "why": "2026-10-28 FOMC 利率決議（10/27–28 會議）",
+          "date": "2026-10-28",
+          "source": "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm"
+        }
+      },
+      "market": "TW",
+      "group": "TW|機器人・感測視覺"
+    },
+    "3023.TW": {
+      "total": 1,
+      "max": 10,
+      "scored": 5,
+      "score10": 1.0,
+      "level": "low",
+      "flags": [],
+      "gate": {
+        "block": false,
+        "reasons": []
+      },
+      "items": {
+        "tech": {
+          "score": 0,
+          "why": "乖離 -2.37%",
+          "date": "2026-10-21"
+        },
+        "earnings": {
+          "score": 0,
+          "why": "第三季財報最晚 2026-11-14 要公布（法定期限，多數公司會提早），還有 15 個交易日",
+          "estimated": true,
+          "date": "2026-11-14",
+          "source": "https://mops.twse.com.tw/mops/#/web/t100sb02_1",
+          "days": 15,
+          "provider": "法定期限"
+        },
+        "fundamentals": {
+          "score": 0,
+          "why": "營收年增 +25.5%（2026-09）、毛利率 24.5%，年變動 -0.2 個百分點（2026-06-30）",
+          "date": "2026-09"
+        },
+        "chips": {
+          "score": 0,
+          "why": "近 5 日法人 -496 張、融資 -3 張",
+          "date": "2026-10-22"
+        },
+        "policy": {
+          "score": 1,
+          "why": "2026-10-28 FOMC 利率決議（10/27–28 會議）",
+          "date": "2026-10-28",
+          "source": "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm"
+        }
+      },
+      "market": "TW",
+      "group": "TW|機器人・線材連接"
+    },
+    "3665.TW": {
+      "total": 3,
+      "max": 10,
+      "scored": 5,
+      "score10": 3.0,
+      "level": "low",
+      "flags": [],
+      "gate": {
+        "block": false,
+        "reasons": []
+      },
+      "items": {
+        "tech": {
+          "score": 0,
+          "why": "乖離 -14.43%",
+          "date": "2026-10-21"
+        },
+        "earnings": {
+          "score": 0,
+          "why": "第三季財報最晚 2026-11-14 要公布（法定期限，多數公司會提早），還有 15 個交易日",
+          "estimated": true,
+          "date": "2026-11-14",
+          "source": "https://mops.twse.com.tw/mops/#/web/t100sb02_1",
+          "days": 15,
+          "provider": "法定期限"
+        },
+        "fundamentals": {
+          "score": 1,
+          "why": "營收年增 +39.2%（2026-09）、年增率連兩個月放緩（+60%→+54%→+39%）、毛利率 30.7%，年變動 -0.4 個百分點（2026-06-30）",
+          "date": "2026-09"
+        },
+        "chips": {
+          "score": 1,
+          "why": "近 5 日法人 -1517 張、融資 +40 張",
+          "date": "2026-10-22"
+        },
+        "policy": {
+          "score": 1,
+          "why": "2026-10-28 FOMC 利率決議（10/27–28 會議）",
+          "date": "2026-10-28",
+          "source": "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm"
+        }
+      },
+      "market": "TW",
+      "group": "TW|機器人・線材連接"
+    },
+    "4585.TW": {
+      "total": 1,
+      "max": 10,
+      "scored": 5,
+      "score10": 1.0,
+      "level": "low",
+      "flags": [],
+      "gate": {
+        "block": false,
+        "reasons": []
+      },
+      "items": {
+        "tech": {
+          "score": 0,
+          "why": "乖離 -4.18%",
+          "date": "2026-10-21"
+        },
+        "earnings": {
+          "score": 0,
+          "why": "第三季財報最晚 2026-11-14 要公布（法定期限，多數公司會提早），還有 15 個交易日",
+          "estimated": true,
+          "date": "2026-11-14",
+          "source": "https://mops.twse.com.tw/mops/#/web/t100sb02_1",
+          "days": 15,
+          "provider": "法定期限"
+        },
+        "fundamentals": {
+          "score": 0,
+          "why": "營收年增 +15.0%（2026-09）、毛利率 52.3%，年變動 +0.3 個百分點（2026-06-30）",
+          "date": "2026-09"
+        },
+        "chips": {
+          "score": 0,
+          "why": "近 5 日法人 -11 張、融資 -16 張",
+          "date": "2026-10-22"
+        },
+        "policy": {
+          "score": 1,
+          "why": "2026-10-28 FOMC 利率決議（10/27–28 會議）",
+          "date": "2026-10-28",
+          "source": "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm"
+        }
+      },
+      "market": "TW",
+      "group": "TW|機器人・整機系統"
+    },
+    "6215.TW": {
+      "total": 1,
+      "max": 10,
+      "scored": 5,
+      "score10": 1.0,
+      "level": "low",
+      "flags": [],
+      "gate": {
+        "block": false,
+        "reasons": []
+      },
+      "items": {
+        "tech": {
+          "score": 0,
+          "why": "乖離 -3.62%",
+          "date": "2026-10-21"
+        },
+        "earnings": {
+          "score": 0,
+          "why": "第三季財報最晚 2026-11-14 要公布（法定期限，多數公司會提早），還有 15 個交易日",
+          "estimated": true,
+          "date": "2026-11-14",
+          "source": "https://mops.twse.com.tw/mops/#/web/t100sb02_1",
+          "days": 15,
+          "provider": "法定期限"
+        },
+        "fundamentals": {
+          "score": 0,
+          "why": "營收年增 +28.9%（2026-09）、毛利率 24.9%，年變動 -0.1 個百分點（2026-06-30）",
+          "date": "2026-09"
+        },
+        "chips": {
+          "score": 0,
+          "why": "近 5 日法人 +160 張、融資 +76 張",
+          "date": "2026-10-22"
+        },
+        "policy": {
+          "score": 1,
+          "why": "2026-10-28 FOMC 利率決議（10/27–28 會議）",
+          "date": "2026-10-28",
+          "source": "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm"
+        }
+      },
+      "market": "TW",
+      "group": "TW|機器人・整機系統"
+    },
+    "8374.TW": {
+      "total": 4,
+      "max": 10,
+      "scored": 5,
+      "score10": 4.0,
+      "level": "mid",
+      "flags": [],
+      "gate": {
+        "block": true,
+        "reasons": [
+          "風險中"
+        ]
+      },
+      "items": {
+        "tech": {
+          "score": 0,
+          "why": "乖離 -4.60%",
+          "date": "2026-10-21"
+        },
+        "earnings": {
+          "score": 0,
+          "why": "第三季財報最晚 2026-11-14 要公布（法定期限，多數公司會提早），還有 15 個交易日",
+          "estimated": true,
+          "date": "2026-11-14",
+          "source": "https://mops.twse.com.tw/mops/#/web/t100sb02_1",
+          "days": 15,
+          "provider": "法定期限"
+        },
+        "fundamentals": {
+          "score": 2,
+          "why": "營收年增 +8.4%（2026-09）、年增率連兩個月放緩（+28%→+20%→+8%）、毛利率 23.2%，年變動 -2.0 個百分點（2026-06-30）",
+          "date": "2026-09"
+        },
+        "chips": {
+          "score": 1,
+          "why": "近 5 日法人 -4 張、融資 +4 張",
+          "date": "2026-10-22"
+        },
+        "policy": {
+          "score": 1,
+          "why": "2026-10-28 FOMC 利率決議（10/27–28 會議）",
+          "date": "2026-10-28",
+          "source": "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm"
+        }
+      },
+      "market": "TW",
+      "group": "TW|機器人・整機系統"
+    },
+    "2317.TW": {
+      "total": 2,
+      "max": 10,
+      "scored": 5,
+      "score10": 2.0,
+      "level": "low",
+      "flags": [],
+      "gate": {
+        "block": false,
+        "reasons": []
+      },
+      "items": {
+        "tech": {
+          "score": 0,
+          "why": "乖離 +0.61%",
+          "date": "2026-10-21"
+        },
+        "earnings": {
+          "score": 0,
+          "why": "第三季財報最晚 2026-11-14 要公布（法定期限，多數公司會提早），還有 15 個交易日",
+          "estimated": true,
+          "date": "2026-11-14",
+          "source": "https://mops.twse.com.tw/mops/#/web/t100sb02_1",
+          "days": 15,
+          "provider": "法定期限"
+        },
+        "fundamentals": {
+          "score": 1,
+          "why": "營收年增 +38.4%（2026-09）、年增率連兩個月放緩（+54%→+52%→+38%）、毛利率 6.1%，年變動 -0.2 個百分點（2026-06-30）",
+          "date": "2026-09"
+        },
+        "chips": {
+          "score": 0,
+          "why": "近 5 日法人 +44568 張、融資 -2824 張",
+          "date": "2026-10-22"
+        },
+        "policy": {
+          "score": 1,
+          "why": "2026-10-28 FOMC 利率決議（10/27–28 會議）",
+          "date": "2026-10-28",
+          "source": "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm"
+        }
+      },
+      "market": "TW",
+      "group": "TW|機器人・整機系統"
     },
     "TSM": {
       "total": 1,
@@ -920,7 +2578,7 @@
         }
       },
       "market": "US",
-      "group": "US|AI雲端"
+      "group": "US|AI雲端／記憶體"
     },
     "META": {
       "total": 2,
@@ -967,7 +2625,7 @@
         }
       },
       "market": "US",
-      "group": "US|AI雲端"
+      "group": "US|AI雲端／記憶體"
     },
     "MU": {
       "total": 1,
@@ -1014,7 +2672,7 @@
         }
       },
       "market": "US",
-      "group": "US|AI記憶體"
+      "group": "US|AI雲端／記憶體"
     },
     "TSLA": {
       "total": 2,
@@ -1061,7 +2719,7 @@
         }
       },
       "market": "US",
-      "group": "US|AI自駕機器人"
+      "group": "US|AI機器人"
     },
     "SPCX": {
       "total": 2,
@@ -1203,683 +2861,18 @@
       "market": "US",
       "group": "US|航太科技"
     },
-    "8210.TW": {
-      "total": 2,
-      "max": 8,
-      "scored": 4,
-      "score10": 2.5,
-      "level": "low",
-      "flags": [],
-      "gate": {
-        "block": false,
-        "reasons": []
-      },
-      "items": {
-        "tech": {
-          "score": 0,
-          "why": "乖離 -10.15%",
-          "date": "2026-10-22"
-        },
-        "earnings": {
-          "score": null,
-          "why": "events.json 沒有這檔的財報日"
-        },
-        "fundamentals": {
-          "score": 1,
-          "why": "營收年增 +13.8%（2026-09）、年增率連兩個月放緩（+42%→+41%→+14%）、毛利率 32.6%，年變動 +2.7 個百分點（2026-06-30）",
-          "date": "2026-09"
-        },
-        "chips": {
-          "score": 0,
-          "why": "近 5 日法人 +248 張、融資 +44 張",
-          "date": "2026-10-22"
-        },
-        "policy": {
-          "score": 1,
-          "why": "2026-10-28 FOMC 利率決議（10/27–28 會議）",
-          "date": "2026-10-28",
-          "source": "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm"
-        }
-      },
-      "market": "TW",
-      "group": "TW|AI伺服器／機櫃"
-    },
-    "2371.TW": {
-      "total": 2,
-      "max": 8,
-      "scored": 4,
-      "score10": 2.5,
-      "level": "low",
-      "flags": [],
-      "gate": {
-        "block": false,
-        "reasons": []
-      },
-      "items": {
-        "tech": {
-          "score": 0,
-          "why": "乖離 -4.30%",
-          "date": "2026-10-22"
-        },
-        "earnings": {
-          "score": null,
-          "why": "events.json 沒有這檔的財報日"
-        },
-        "fundamentals": {
-          "score": 1,
-          "why": "營收年增 -13.3%（2026-09）、毛利率 17.4%，年變動 -0.1 個百分點（2026-06-30）",
-          "date": "2026-09"
-        },
-        "chips": {
-          "score": 0,
-          "why": "近 5 日法人 -772 張、融資 -549 張",
-          "date": "2026-10-22"
-        },
-        "policy": {
-          "score": 1,
-          "why": "2026-10-28 FOMC 利率決議（10/27–28 會議）",
-          "date": "2026-10-28",
-          "source": "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm"
-        }
-      },
-      "market": "TW",
-      "group": "TW|AI基建／電力"
-    },
-    "3406.TW": {
-      "total": 2,
-      "max": 8,
-      "scored": 4,
-      "score10": 2.5,
-      "level": "low",
-      "flags": [],
-      "gate": {
-        "block": false,
-        "reasons": []
-      },
-      "items": {
-        "tech": {
-          "score": 1,
-          "why": "乖離 +12.88%",
-          "date": "2026-10-22"
-        },
-        "earnings": {
-          "score": null,
-          "why": "events.json 沒有這檔的財報日"
-        },
-        "fundamentals": {
-          "score": 0,
-          "why": "營收年增 +0.5%（2026-09）、毛利率 33.2%，年變動 +4.1 個百分點（2026-06-30）",
-          "date": "2026-09"
-        },
-        "chips": {
-          "score": 0,
-          "why": "近 5 日法人 -1382 張、融資 -73 張",
-          "date": "2026-10-22"
-        },
-        "policy": {
-          "score": 1,
-          "why": "2026-10-28 FOMC 利率決議（10/27–28 會議）",
-          "date": "2026-10-28",
-          "source": "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm"
-        }
-      },
-      "market": "TW",
-      "group": "TW|光學／CPO"
-    },
-    "2408.TW": {
-      "total": 1,
-      "max": 8,
-      "scored": 4,
-      "score10": 1.2,
-      "level": "low",
-      "flags": [],
-      "gate": {
-        "block": false,
-        "reasons": []
-      },
-      "items": {
-        "tech": {
-          "score": 0,
-          "why": "乖離 -15.31%",
-          "date": "2026-10-22"
-        },
-        "earnings": {
-          "score": null,
-          "why": "events.json 沒有這檔的財報日"
-        },
-        "fundamentals": {
-          "score": 0,
-          "why": "營收年增 +576.6%（2026-09）、毛利率 79.5%，年變動 +100.0 個百分點（2026-06-30）",
-          "date": "2026-09"
-        },
-        "chips": {
-          "score": 0,
-          "why": "近 5 日法人 -17046 張、融資 -3841 張",
-          "date": "2026-10-22"
-        },
-        "policy": {
-          "score": 1,
-          "why": "2026-10-28 FOMC 利率決議（10/27–28 會議）",
-          "date": "2026-10-28",
-          "source": "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm"
-        }
-      },
-      "market": "TW",
-      "group": "TW|記憶體"
-    },
-    "1303.TW": {
-      "total": 2,
-      "max": 8,
-      "scored": 4,
-      "score10": 2.5,
-      "level": "low",
-      "flags": [],
-      "gate": {
-        "block": false,
-        "reasons": []
-      },
-      "items": {
-        "tech": {
-          "score": 0,
-          "why": "乖離 +5.06%",
-          "date": "2026-10-22"
-        },
-        "earnings": {
-          "score": null,
-          "why": "events.json 沒有這檔的財報日"
-        },
-        "fundamentals": {
-          "score": 0,
-          "why": "營收年增 +55.3%（2026-09）、毛利率 18.9%，年變動 +10.3 個百分點（2026-06-30）",
-          "date": "2026-09"
-        },
-        "chips": {
-          "score": 1,
-          "why": "近 5 日法人 -21414 張、融資 +483 張",
-          "date": "2026-10-22"
-        },
-        "policy": {
-          "score": 1,
-          "why": "2026-10-28 FOMC 利率決議（10/27–28 會議）",
-          "date": "2026-10-28",
-          "source": "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm"
-        }
-      },
-      "market": "TW",
-      "group": "TW|CCL／電子材料"
-    },
-    "8358.TWO": {
-      "total": 3,
-      "max": 8,
-      "scored": 4,
-      "score10": 3.8,
-      "level": "high",
-      "flags": [
-        "disposition"
-      ],
-      "gate": {
-        "block": true,
-        "reasons": [
-          "處置股"
-        ]
-      },
-      "items": {
-        "tech": {
-          "score": 0,
-          "why": "乖離 -12.70%",
-          "date": "2026-10-22"
-        },
-        "earnings": {
-          "score": null,
-          "why": "events.json 沒有這檔的財報日"
-        },
-        "fundamentals": {
-          "score": 0,
-          "why": "營收年增 +64.6%（2026-09）、毛利率 27.4%，年變動 +8.5 個百分點（2026-06-30）",
-          "date": "2026-09"
-        },
-        "chips": {
-          "score": 2,
-          "why": "處置股 2026-10-23～2026-10-30",
-          "date": "2026-10-23",
-          "flag": "disposition"
-        },
-        "policy": {
-          "score": 1,
-          "why": "2026-10-28 FOMC 利率決議（10/27–28 會議）",
-          "date": "2026-10-28",
-          "source": "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm"
-        }
-      },
-      "market": "TW",
-      "group": "TW|PCB／銅箔"
-    },
-    "4958.TW": {
-      "total": 1,
-      "max": 8,
-      "scored": 4,
-      "score10": 1.2,
-      "level": "low",
-      "flags": [],
-      "gate": {
-        "block": false,
-        "reasons": []
-      },
-      "items": {
-        "tech": {
-          "score": 0,
-          "why": "乖離 +4.36%",
-          "date": "2026-10-22"
-        },
-        "earnings": {
-          "score": null,
-          "why": "events.json 沒有這檔的財報日"
-        },
-        "fundamentals": {
-          "score": 0,
-          "why": "營收年增 +36.1%（2026-09）、毛利率 23.1%，年變動 +4.7 個百分點（2026-06-30）",
-          "date": "2026-09"
-        },
-        "chips": {
-          "score": 0,
-          "why": "近 5 日法人 -1217 張、融資 0 張",
-          "date": "2026-10-22"
-        },
-        "policy": {
-          "score": 1,
-          "why": "2026-10-28 FOMC 利率決議（10/27–28 會議）",
-          "date": "2026-10-28",
-          "source": "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm"
-        }
-      },
-      "market": "TW",
-      "group": "TW|PCB／銅箔"
-    },
-    "4919.TW": {
-      "total": 1,
-      "max": 8,
-      "scored": 4,
-      "score10": 1.2,
-      "level": "low",
-      "flags": [],
-      "gate": {
-        "block": false,
-        "reasons": []
-      },
-      "items": {
-        "tech": {
-          "score": 0,
-          "why": "乖離 -6.78%",
-          "date": "2026-10-22"
-        },
-        "earnings": {
-          "score": null,
-          "why": "events.json 沒有這檔的財報日"
-        },
-        "fundamentals": {
-          "score": 0,
-          "why": "營收年增 +4.7%（2026-09）、毛利率 38.0%，年變動 +3.1 個百分點（2026-06-30）",
-          "date": "2026-09"
-        },
-        "chips": {
-          "score": 0,
-          "why": "近 5 日法人 +724 張、融資 -2424 張",
-          "date": "2026-10-22"
-        },
-        "policy": {
-          "score": 1,
-          "why": "2026-10-28 FOMC 利率決議（10/27–28 會議）",
-          "date": "2026-10-28",
-          "source": "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm"
-        }
-      },
-      "market": "TW",
-      "group": "TW|電池監測IC"
-    },
-    "2327.TW": {
-      "total": 1,
-      "max": 8,
-      "scored": 4,
-      "score10": 1.2,
-      "level": "low",
-      "flags": [],
-      "gate": {
-        "block": false,
-        "reasons": []
-      },
-      "items": {
-        "tech": {
-          "score": 0,
-          "why": "乖離 -13.25%",
-          "date": "2026-10-22"
-        },
-        "earnings": {
-          "score": null,
-          "why": "events.json 沒有這檔的財報日"
-        },
-        "fundamentals": {
-          "score": 0,
-          "why": "營收年增 +46.1%（2026-09）、毛利率 38.5%，年變動 +2.9 個百分點（2026-06-30）",
-          "date": "2026-09"
-        },
-        "chips": {
-          "score": 0,
-          "why": "近 5 日法人 -29218 張、融資 -2444 張",
-          "date": "2026-10-22"
-        },
-        "policy": {
-          "score": 1,
-          "why": "2026-10-28 FOMC 利率決議（10/27–28 會議）",
-          "date": "2026-10-28",
-          "source": "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm"
-        }
-      },
-      "market": "TW",
-      "group": "TW|被動元件"
-    },
-    "1569.TWO": {
-      "total": 3,
-      "max": 8,
-      "scored": 4,
-      "score10": 3.8,
-      "level": "mid",
-      "flags": [
-        "overheated"
-      ],
-      "gate": {
-        "block": true,
-        "reasons": [
-          "風險中"
-        ]
-      },
-      "items": {
-        "tech": {
-          "score": 2,
-          "why": "乖離 +18.05%",
-          "date": "2026-10-22"
-        },
-        "earnings": {
-          "score": null,
-          "why": "events.json 沒有這檔的財報日"
-        },
-        "fundamentals": {
-          "score": 0,
-          "why": "營收年增 +39.1%（2026-09）、毛利率 6.5%，年變動 +6.2 個百分點（2026-06-30）",
-          "date": "2026-09"
-        },
-        "chips": {
-          "score": 0,
-          "why": "近 5 日法人 +2747 張、融資 -913 張",
-          "date": "2026-10-22"
-        },
-        "policy": {
-          "score": 1,
-          "why": "2026-10-28 FOMC 利率決議（10/27–28 會議）",
-          "date": "2026-10-28",
-          "source": "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm"
-        }
-      },
-      "market": "TW",
-      "group": "TW|NB機構件"
-    },
-    "2313.TW": {
-      "total": 2,
-      "max": 8,
-      "scored": 4,
-      "score10": 2.5,
-      "level": "low",
-      "flags": [],
-      "gate": {
-        "block": false,
-        "reasons": []
-      },
-      "items": {
-        "tech": {
-          "score": 0,
-          "why": "乖離 -5.36%",
-          "date": "2026-10-22"
-        },
-        "earnings": {
-          "score": null,
-          "why": "events.json 沒有這檔的財報日"
-        },
-        "fundamentals": {
-          "score": 0,
-          "why": "營收年增 +15.0%（2026-09）、毛利率 18.5%，年變動 +0.3 個百分點（2026-06-30）",
-          "date": "2026-09"
-        },
-        "chips": {
-          "score": 1,
-          "why": "近 5 日法人 -2642 張、融資 +1710 張",
-          "date": "2026-10-22"
-        },
-        "policy": {
-          "score": 1,
-          "why": "2026-10-28 FOMC 利率決議（10/27–28 會議）",
-          "date": "2026-10-28",
-          "source": "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm"
-        }
-      },
-      "market": "TW",
-      "group": "TW|低軌衛星"
-    },
-    "3491.TWO": {
-      "total": 1,
-      "max": 8,
-      "scored": 4,
-      "score10": 1.2,
-      "level": "low",
-      "flags": [],
-      "gate": {
-        "block": false,
-        "reasons": []
-      },
-      "items": {
-        "tech": {
-          "score": 0,
-          "why": "乖離 -11.85%",
-          "date": "2026-10-22"
-        },
-        "earnings": {
-          "score": null,
-          "why": "events.json 沒有這檔的財報日"
-        },
-        "fundamentals": {
-          "score": 0,
-          "why": "營收年增 +52.5%（2026-09）、毛利率 55.6%，年變動 +12.3 個百分點（2026-06-30）",
-          "date": "2026-09"
-        },
-        "chips": {
-          "score": 0,
-          "why": "近 5 日法人 -250 張、融資 -147 張",
-          "date": "2026-10-22"
-        },
-        "policy": {
-          "score": 1,
-          "why": "2026-10-28 FOMC 利率決議（10/27–28 會議）",
-          "date": "2026-10-28",
-          "source": "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm"
-        }
-      },
-      "market": "TW",
-      "group": "TW|低軌衛星"
-    },
-    "6285.TW": {
-      "total": 3,
-      "max": 8,
-      "scored": 4,
-      "score10": 3.8,
-      "level": "mid",
-      "flags": [],
-      "gate": {
-        "block": true,
-        "reasons": [
-          "風險中"
-        ]
-      },
-      "items": {
-        "tech": {
-          "score": 0,
-          "why": "乖離 -5.98%",
-          "date": "2026-10-22"
-        },
-        "earnings": {
-          "score": null,
-          "why": "events.json 沒有這檔的財報日"
-        },
-        "fundamentals": {
-          "score": 1,
-          "why": "營收年增 +64.0%（2026-09）、年增率連兩個月放緩（+90%→+81%→+64%）、毛利率 13.0%，年變動 +1.4 個百分點（2026-06-30）",
-          "date": "2026-09"
-        },
-        "chips": {
-          "score": 1,
-          "why": "近 5 日法人 -6849 張、融資 +1421 張",
-          "date": "2026-10-22"
-        },
-        "policy": {
-          "score": 1,
-          "why": "2026-10-28 FOMC 利率決議（10/27–28 會議）",
-          "date": "2026-10-28",
-          "source": "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm"
-        }
-      },
-      "market": "TW",
-      "group": "TW|低軌衛星"
-    },
-    "6271.TW": {
-      "total": 1,
-      "max": 8,
-      "scored": 4,
-      "score10": 1.2,
-      "level": "low",
-      "flags": [],
-      "gate": {
-        "block": false,
-        "reasons": []
-      },
-      "items": {
-        "tech": {
-          "score": 0,
-          "why": "乖離 -7.47%",
-          "date": "2026-10-22"
-        },
-        "earnings": {
-          "score": null,
-          "why": "events.json 沒有這檔的財報日"
-        },
-        "fundamentals": {
-          "score": 0,
-          "why": "營收年增 +22.1%（2026-09）、毛利率 31.1%，年變動 +4.5 個百分點（2026-06-30）",
-          "date": "2026-09"
-        },
-        "chips": {
-          "score": 0,
-          "why": "近 5 日法人 +428 張、融資 -146 張",
-          "date": "2026-10-22"
-        },
-        "policy": {
-          "score": 1,
-          "why": "2026-10-28 FOMC 利率決議（10/27–28 會議）",
-          "date": "2026-10-28",
-          "source": "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm"
-        }
-      },
-      "market": "TW",
-      "group": "TW|低軌衛星"
-    },
-    "2367.TW": {
-      "total": 2,
-      "max": 8,
-      "scored": 4,
-      "score10": 2.5,
-      "level": "low",
-      "flags": [],
-      "gate": {
-        "block": false,
-        "reasons": []
-      },
-      "items": {
-        "tech": {
-          "score": 0,
-          "why": "乖離 -0.63%",
-          "date": "2026-10-22"
-        },
-        "earnings": {
-          "score": null,
-          "why": "events.json 沒有這檔的財報日"
-        },
-        "fundamentals": {
-          "score": 1,
-          "why": "營收年增 +3.5%（2026-09）、毛利率 7.2%，年變動 -11.4 個百分點（2026-06-30）",
-          "date": "2026-09"
-        },
-        "chips": {
-          "score": 0,
-          "why": "近 5 日法人 +1021 張、融資 +474 張",
-          "date": "2026-10-22"
-        },
-        "policy": {
-          "score": 1,
-          "why": "2026-10-28 FOMC 利率決議（10/27–28 會議）",
-          "date": "2026-10-28",
-          "source": "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm"
-        }
-      },
-      "market": "TW",
-      "group": "TW|低軌衛星"
-    },
-    "2355.TW": {
-      "total": 2,
-      "max": 8,
-      "scored": 4,
-      "score10": 2.5,
-      "level": "low",
-      "flags": [],
-      "gate": {
-        "block": false,
-        "reasons": []
-      },
-      "items": {
-        "tech": {
-          "score": 1,
-          "why": "乖離 +8.26%",
-          "date": "2026-10-22"
-        },
-        "earnings": {
-          "score": null,
-          "why": "events.json 沒有這檔的財報日"
-        },
-        "fundamentals": {
-          "score": 0,
-          "why": "營收年增 +44.3%（2026-09）、毛利率 12.2%，年變動 +1.3 個百分點（2026-06-30）",
-          "date": "2026-09"
-        },
-        "chips": {
-          "score": 0,
-          "why": "近 5 日法人 -2193 張、融資 -224 張",
-          "date": "2026-10-22"
-        },
-        "policy": {
-          "score": 1,
-          "why": "2026-10-28 FOMC 利率決議（10/27–28 會議）",
-          "date": "2026-10-28",
-          "source": "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm"
-        }
-      },
-      "market": "TW",
-      "group": "TW|低軌衛星"
-    },
     "BTC-USD": {
-      "total": 2,
-      "max": 6,
-      "scored": 3,
-      "score10": 3.3,
-      "level": "low",
+      "total": 3,
+      "max": 8,
+      "scored": 4,
+      "score10": 3.8,
+      "level": "mid",
       "flags": [],
       "gate": {
-        "block": false,
-        "reasons": []
+        "block": true,
+        "reasons": [
+          "風險中"
+        ]
       },
       "items": {
         "tech": {
@@ -1889,17 +2882,21 @@
         },
         "earnings": {
           "score": null,
-          "why": "加密貨幣沒有財報日"
+          "why": "加密貨幣沒有財報（FOMC、CPI 等事件算在「政策」）"
         },
         "fundamentals": {
-          "score": null,
-          "why": "加密貨幣沒有營收與毛利率"
+          "score": 1,
+          "why": "穩定幣總供給 30 日 -0.5%（304B 美元）、BTC 市占率 59.5%",
+          "date": "2026-10-22",
+          "source": "https://defillama.com/stablecoins",
+          "label": "市場結構"
         },
         "chips": {
           "score": 1,
-          "why": "恐懼與貪婪指數 68（貪婪）",
+          "why": "恐懼與貪婪指數 68（貪婪）；資金費率 +0.0086%、未平倉量 7 日 +0.2%",
           "date": "2026-10-22",
-          "source": "https://alternative.me/crypto/fear-and-greed-index/"
+          "source": "https://alternative.me/crypto/fear-and-greed-index/",
+          "label": "情緒／槓桿"
         },
         "policy": {
           "score": 1,
@@ -1912,88 +2909,6 @@
       "group": "CRYPTO|主流幣"
     },
     "ETH-USD": {
-      "total": 2,
-      "max": 6,
-      "scored": 3,
-      "score10": 3.3,
-      "level": "low",
-      "flags": [],
-      "gate": {
-        "block": false,
-        "reasons": []
-      },
-      "items": {
-        "tech": {
-          "score": 0,
-          "why": "乖離 -1.97%",
-          "date": "2026-10-21"
-        },
-        "earnings": {
-          "score": null,
-          "why": "加密貨幣沒有財報日"
-        },
-        "fundamentals": {
-          "score": null,
-          "why": "加密貨幣沒有營收與毛利率"
-        },
-        "chips": {
-          "score": 1,
-          "why": "恐懼與貪婪指數 68（貪婪）",
-          "date": "2026-10-22",
-          "source": "https://alternative.me/crypto/fear-and-greed-index/"
-        },
-        "policy": {
-          "score": 1,
-          "why": "2026-10-28 FOMC 利率決議（10/27–28 會議）",
-          "date": "2026-10-28",
-          "source": "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm"
-        }
-      },
-      "market": "CRYPTO",
-      "group": "CRYPTO|主流幣"
-    },
-    "2464.TW": {
-      "total": 1,
-      "max": 8,
-      "scored": 4,
-      "score10": 1.2,
-      "level": "low",
-      "flags": [],
-      "gate": {
-        "block": false,
-        "reasons": []
-      },
-      "items": {
-        "tech": {
-          "score": 0,
-          "why": "乖離 -12.95%",
-          "date": "2026-10-22"
-        },
-        "earnings": {
-          "score": null,
-          "why": "events.json 沒有這檔的財報日"
-        },
-        "fundamentals": {
-          "score": 0,
-          "why": "營收年增 +78.0%（2026-09）、毛利率 22.2%，年變動 +1.4 個百分點（2026-06-30）",
-          "date": "2026-09"
-        },
-        "chips": {
-          "score": 0,
-          "why": "近 5 日法人 -35 張、融資 -2276 張",
-          "date": "2026-10-22"
-        },
-        "policy": {
-          "score": 1,
-          "why": "2026-10-28 FOMC 利率決議（10/27–28 會議）",
-          "date": "2026-10-28",
-          "source": "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm"
-        }
-      },
-      "market": "TW",
-      "group": "TW|人形機器人"
-    },
-    "3019.TW": {
       "total": 3,
       "max": 8,
       "scored": 4,
@@ -2009,22 +2924,26 @@
       "items": {
         "tech": {
           "score": 0,
-          "why": "乖離 -4.66%",
-          "date": "2026-10-22"
+          "why": "乖離 -1.97%",
+          "date": "2026-10-21"
         },
         "earnings": {
           "score": null,
-          "why": "events.json 沒有這檔的財報日"
+          "why": "加密貨幣沒有財報（FOMC、CPI 等事件算在「政策」）"
         },
         "fundamentals": {
-          "score": 2,
-          "why": "營收年增 -0.1%（2026-09）、毛利率 18.4%，年變動 -1.6 個百分點（2026-06-30）",
-          "date": "2026-09"
+          "score": 1,
+          "why": "穩定幣總供給 30 日 -0.5%（304B 美元）、BTC 市占率 59.5%",
+          "date": "2026-10-22",
+          "source": "https://defillama.com/stablecoins",
+          "label": "市場結構"
         },
         "chips": {
-          "score": 0,
-          "why": "近 5 日法人 +360 張、融資 -1082 張",
-          "date": "2026-10-22"
+          "score": 1,
+          "why": "恐懼與貪婪指數 68（貪婪）；資金費率 +0.0034%、未平倉量 7 日 -1.1%",
+          "date": "2026-10-22",
+          "source": "https://alternative.me/crypto/fear-and-greed-index/",
+          "label": "情緒／槓桿"
         },
         "policy": {
           "score": 1,
@@ -2033,39 +2952,45 @@
           "source": "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm"
         }
       },
-      "market": "TW",
-      "group": "TW|人形機器人"
+      "market": "CRYPTO",
+      "group": "CRYPTO|主流幣"
     },
-    "2049.TW": {
-      "total": 2,
+    "SOL-USD": {
+      "total": 3,
       "max": 8,
       "scored": 4,
-      "score10": 2.5,
-      "level": "low",
+      "score10": 3.8,
+      "level": "mid",
       "flags": [],
       "gate": {
-        "block": false,
-        "reasons": []
+        "block": true,
+        "reasons": [
+          "風險中"
+        ]
       },
       "items": {
         "tech": {
           "score": 0,
-          "why": "乖離 -8.15%",
-          "date": "2026-10-22"
+          "why": "乖離 -3.30%",
+          "date": "2026-10-21"
         },
         "earnings": {
           "score": null,
-          "why": "events.json 沒有這檔的財報日"
+          "why": "加密貨幣沒有財報（FOMC、CPI 等事件算在「政策」）"
         },
         "fundamentals": {
-          "score": 0,
-          "why": "營收年增 +30.1%（2026-09）、毛利率 34.2%，年變動 +4.4 個百分點（2026-06-30）",
-          "date": "2026-09"
+          "score": 1,
+          "why": "穩定幣總供給 30 日 -0.5%（304B 美元）、BTC 市占率 59.5%",
+          "date": "2026-10-22",
+          "source": "https://defillama.com/stablecoins",
+          "label": "市場結構"
         },
         "chips": {
           "score": 1,
-          "why": "近 5 日法人 -719 張、融資 +217 張",
-          "date": "2026-10-22"
+          "why": "恐懼與貪婪指數 68（貪婪）；資金費率 +0.0036%、未平倉量 7 日 -2.2%",
+          "date": "2026-10-22",
+          "source": "https://alternative.me/crypto/fear-and-greed-index/",
+          "label": "情緒／槓桿"
         },
         "policy": {
           "score": 1,
@@ -2074,213 +2999,8 @@
           "source": "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm"
         }
       },
-      "market": "TW",
-      "group": "TW|人形機器人"
-    },
-    "2233.TW": {
-      "total": 1,
-      "max": 8,
-      "scored": 4,
-      "score10": 1.2,
-      "level": "low",
-      "flags": [],
-      "gate": {
-        "block": false,
-        "reasons": []
-      },
-      "items": {
-        "tech": {
-          "score": 0,
-          "why": "乖離 -10.44%",
-          "date": "2026-10-22"
-        },
-        "earnings": {
-          "score": null,
-          "why": "events.json 沒有這檔的財報日"
-        },
-        "fundamentals": {
-          "score": 0,
-          "why": "營收年增 +6.5%（2026-09）、毛利率 31.5%，年變動 -0.7 個百分點（2026-06-30）",
-          "date": "2026-09"
-        },
-        "chips": {
-          "score": 0,
-          "why": "近 5 日法人 +110 張、融資 -105 張",
-          "date": "2026-10-22"
-        },
-        "policy": {
-          "score": 1,
-          "why": "2026-10-28 FOMC 利率決議（10/27–28 會議）",
-          "date": "2026-10-28",
-          "source": "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm"
-        }
-      },
-      "market": "TW",
-      "group": "TW|人形機器人"
-    },
-    "4576.TW": {
-      "total": 1,
-      "max": 8,
-      "scored": 4,
-      "score10": 1.2,
-      "level": "low",
-      "flags": [],
-      "gate": {
-        "block": false,
-        "reasons": []
-      },
-      "items": {
-        "tech": {
-          "score": 0,
-          "why": "乖離 -9.12%",
-          "date": "2026-10-22"
-        },
-        "earnings": {
-          "score": null,
-          "why": "events.json 沒有這檔的財報日"
-        },
-        "fundamentals": {
-          "score": 0,
-          "why": "營收年增 +74.7%（2026-09）、毛利率 37.1%，年變動 -0.7 個百分點（2026-06-30）",
-          "date": "2026-09"
-        },
-        "chips": {
-          "score": 0,
-          "why": "近 5 日法人 +441 張、融資 -202 張",
-          "date": "2026-10-22"
-        },
-        "policy": {
-          "score": 1,
-          "why": "2026-10-28 FOMC 利率決議（10/27–28 會議）",
-          "date": "2026-10-28",
-          "source": "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm"
-        }
-      },
-      "market": "TW",
-      "group": "TW|人形機器人"
-    },
-    "1536.TW": {
-      "total": 2,
-      "max": 8,
-      "scored": 4,
-      "score10": 2.5,
-      "level": "low",
-      "flags": [],
-      "gate": {
-        "block": false,
-        "reasons": []
-      },
-      "items": {
-        "tech": {
-          "score": 0,
-          "why": "乖離 -4.08%",
-          "date": "2026-10-22"
-        },
-        "earnings": {
-          "score": null,
-          "why": "events.json 沒有這檔的財報日"
-        },
-        "fundamentals": {
-          "score": 1,
-          "why": "營收年增 -13.8%（2026-09）、毛利率 6.9%，年變動 +2.8 個百分點（2026-06-30）",
-          "date": "2026-09"
-        },
-        "chips": {
-          "score": 0,
-          "why": "近 5 日法人 +312 張、融資 -28 張",
-          "date": "2026-10-22"
-        },
-        "policy": {
-          "score": 1,
-          "why": "2026-10-28 FOMC 利率決議（10/27–28 會議）",
-          "date": "2026-10-28",
-          "source": "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm"
-        }
-      },
-      "market": "TW",
-      "group": "TW|人形機器人"
-    },
-    "3023.TW": {
-      "total": 2,
-      "max": 8,
-      "scored": 4,
-      "score10": 2.5,
-      "level": "low",
-      "flags": [],
-      "gate": {
-        "block": false,
-        "reasons": []
-      },
-      "items": {
-        "tech": {
-          "score": 0,
-          "why": "乖離 -5.20%",
-          "date": "2026-10-22"
-        },
-        "earnings": {
-          "score": null,
-          "why": "events.json 沒有這檔的財報日"
-        },
-        "fundamentals": {
-          "score": 0,
-          "why": "營收年增 +25.5%（2026-09）、毛利率 24.5%，年變動 -0.2 個百分點（2026-06-30）",
-          "date": "2026-09"
-        },
-        "chips": {
-          "score": 1,
-          "why": "近 5 日法人 -496 張、融資 +41 張",
-          "date": "2026-10-22"
-        },
-        "policy": {
-          "score": 1,
-          "why": "2026-10-28 FOMC 利率決議（10/27–28 會議）",
-          "date": "2026-10-28",
-          "source": "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm"
-        }
-      },
-      "market": "TW",
-      "group": "TW|人形機器人"
-    },
-    "3665.TW": {
-      "total": 2,
-      "max": 8,
-      "scored": 4,
-      "score10": 2.5,
-      "level": "low",
-      "flags": [],
-      "gate": {
-        "block": false,
-        "reasons": []
-      },
-      "items": {
-        "tech": {
-          "score": 0,
-          "why": "乖離 -16.94%",
-          "date": "2026-10-22"
-        },
-        "earnings": {
-          "score": null,
-          "why": "events.json 沒有這檔的財報日"
-        },
-        "fundamentals": {
-          "score": 1,
-          "why": "營收年增 +39.2%（2026-09）、年增率連兩個月放緩（+60%→+54%→+39%）、毛利率 30.7%，年變動 -0.4 個百分點（2026-06-30）",
-          "date": "2026-09"
-        },
-        "chips": {
-          "score": 0,
-          "why": "近 5 日法人 -1517 張、融資 -86 張",
-          "date": "2026-10-22"
-        },
-        "policy": {
-          "score": 1,
-          "why": "2026-10-28 FOMC 利率決議（10/27–28 會議）",
-          "date": "2026-10-28",
-          "source": "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm"
-        }
-      },
-      "market": "TW",
-      "group": "TW|人形機器人"
+      "market": "CRYPTO",
+      "group": "CRYPTO|主流幣"
     }
   }
 }
