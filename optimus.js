@@ -28,7 +28,7 @@
       { code: "1536.TW", cat: "減速傳動", tier: "延伸", role: "精密齒輪、傳動系統", news: "", confirmed: false },
       { code: "1597.TW", cat: "減速傳動", tier: "延伸", role: "線性滑軌、模組化關節、微型六軸手臂", news: "布局人形機器人模組化關節（媒體報導）", confirmed: false },
       { code: "4583.TW", cat: "減速傳動", tier: "延伸", role: "精密行星減速機（協作機器人腰、肩關節）", news: "已打入物流協作機器人供應鏈（媒體報導）", confirmed: false },
-      { code: "4540.TWO", cat: "減速傳動", tier: "延伸", role: "線性執行器、行星式滾柱螺桿（靈巧手）", news: "預計 2026 年小批量生產（媒體報導）", confirmed: false },
+      { code: "4540.TW", cat: "減速傳動", tier: "延伸", role: "線性執行器、行星式滾柱螺桿（靈巧手）", news: "預計 2026 年小批量生產（媒體報導）", confirmed: false },
       { code: "4576.TW", cat: "馬達驅動", tier: "優先", role: "馬達、驅動控制、關節模組", news: "人形機器人布局（媒體報導）", confirmed: false },
       { code: "1504.TW", cat: "馬達驅動", tier: "延伸", role: "馬達、驅動器", news: "", confirmed: false },
       { code: "1590.TW", cat: "馬達驅動", tier: "延伸", role: "氣動元件、致動器", news: "", confirmed: false },
