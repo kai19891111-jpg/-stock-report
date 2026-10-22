@@ -1,8 +1,8 @@
 {
-  "generatedAt": "2026-10-22T00:52:59.772509+00:00",
+  "generatedAt": "2026-10-22T05:14:52.846897+00:00",
   "today": {
     "TW": "2026-10-22",
-    "US": "2026-10-21",
+    "US": "2026-10-22",
     "CRYPTO": "2026-10-22"
   },
   "thresholds": {
@@ -90,7 +90,11 @@
       "fail": 0
     },
     "nasdaq_earnings": {
-      "ok": 1,
+      "ok": 3,
+      "fail": 0
+    },
+    "sec_submissions": {
+      "ok": 2,
       "fail": 0
     }
   },
@@ -99,7 +103,7 @@
     "fresh": true,
     "used": 2,
     "earnings": 5,
-    "autoEarnings": 8,
+    "autoEarnings": 9,
     "rejected": []
   },
   "symbols": {
@@ -706,16 +710,16 @@
       "items": {
         "tech": {
           "score": 0,
-          "why": "乖離 -5.51%",
-          "date": "2026-10-20"
+          "why": "乖離 -3.84%",
+          "date": "2026-10-21"
         },
         "earnings": {
           "score": 0,
-          "why": "財報約 2027-01-14（Yahoo預估，公司尚未確認），還有 61 個交易日",
+          "why": "財報約 2027-01-14（Yahoo預估，公司尚未確認），還有 60 個交易日",
           "estimated": true,
           "date": "2027-01-14",
           "source": "https://finance.yahoo.com/quote/TSM/",
-          "days": 61,
+          "days": 60,
           "provider": "Yahoo"
         },
         "fundamentals": {
@@ -752,15 +756,15 @@
       "items": {
         "tech": {
           "score": 0,
-          "why": "乖離 -4.66%",
-          "date": "2026-10-20"
+          "why": "乖離 -2.16%",
+          "date": "2026-10-21"
         },
         "earnings": {
           "score": 0,
-          "why": "財報 2026-11-17，還有 19 個交易日（Yahoo，已確認）",
+          "why": "財報 2026-11-17，還有 18 個交易日（Yahoo，已確認）",
           "date": "2026-11-17",
           "source": "https://finance.yahoo.com/quote/NVDA/",
-          "days": 19,
+          "days": 18,
           "provider": "Yahoo"
         },
         "fundamentals": {
@@ -798,15 +802,15 @@
       "items": {
         "tech": {
           "score": 0,
-          "why": "乖離 -11.18%",
-          "date": "2026-10-20"
+          "why": "乖離 -7.72%",
+          "date": "2026-10-21"
         },
         "earnings": {
           "score": 1,
-          "why": "財報 2026-11-03，還有 9 個交易日",
+          "why": "財報 2026-11-03，還有 8 個交易日",
           "date": "2026-11-03",
           "source": "https://ir.amd.com/news-events/press-releases/detail/1300/amd-to-report-fiscal-third-quarter-2026-financial-results",
-          "days": 9
+          "days": 8
         },
         "fundamentals": {
           "score": 0,
@@ -843,15 +847,15 @@
       "items": {
         "tech": {
           "score": 0,
-          "why": "乖離 -5.14%",
-          "date": "2026-10-20"
+          "why": "乖離 -3.93%",
+          "date": "2026-10-21"
         },
         "earnings": {
           "score": 0,
-          "why": "財報 2026-12-09，還有 35 個交易日（Yahoo，已確認）",
+          "why": "財報 2026-12-09，還有 34 個交易日（Yahoo，已確認）",
           "date": "2026-12-09",
           "source": "https://finance.yahoo.com/quote/AVGO/",
-          "days": 35,
+          "days": 34,
           "provider": "Yahoo"
         },
         "fundamentals": {
@@ -889,15 +893,15 @@
       "items": {
         "tech": {
           "score": 0,
-          "why": "乖離 +1.60%",
-          "date": "2026-10-20"
+          "why": "乖離 +1.49%",
+          "date": "2026-10-21"
         },
         "earnings": {
           "score": 1,
-          "why": "財報 2026-10-28，還有 5 個交易日",
+          "why": "財報 2026-10-28，還有 4 個交易日",
           "date": "2026-10-28",
           "source": "https://news.microsoft.com/source/2026/10/07/microsoft-announces-quarterly-earnings-release-date-69/",
-          "days": 5
+          "days": 4
         },
         "fundamentals": {
           "score": 1,
@@ -921,33 +925,30 @@
       "group": "US|AI雲端"
     },
     "META": {
-      "total": 3,
+      "total": 1,
       "max": 10,
       "scored": 5,
-      "score10": 3.0,
+      "score10": 1.0,
       "level": "low",
-      "flags": [
-        "earnings_soon"
-      ],
+      "flags": [],
       "gate": {
-        "block": true,
-        "reasons": [
-          "財報前觀察"
-        ]
+        "block": false,
+        "reasons": []
       },
       "items": {
         "tech": {
           "score": 0,
-          "why": "乖離 -5.14%",
-          "date": "2026-10-20"
+          "why": "乖離 -4.39%",
+          "date": "2026-10-21"
         },
         "earnings": {
-          "score": 2,
-          "why": "財報 2026-10-21，還有 0 個交易日（Yahoo，已確認）",
-          "date": "2026-10-21",
-          "source": "https://finance.yahoo.com/quote/META/",
-          "days": 0,
-          "provider": "Yahoo"
+          "score": 0,
+          "why": "財報約 2027-01-27（SEC 歷年發布日推估預估，公司尚未確認），還有 69 個交易日",
+          "estimated": true,
+          "date": "2027-01-27",
+          "source": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&type=8-K&CIK=0001326801",
+          "days": 69,
+          "provider": "SEC 歷年發布日推估"
         },
         "fundamentals": {
           "score": 0,
@@ -984,16 +985,16 @@
       "items": {
         "tech": {
           "score": 0,
-          "why": "乖離 -11.81%",
-          "date": "2026-10-20"
+          "why": "乖離 -9.37%",
+          "date": "2026-10-21"
         },
         "earnings": {
           "score": 0,
-          "why": "財報約 2026-12-23（Yahoo預估，公司尚未確認），還有 45 個交易日",
+          "why": "財報約 2026-12-23（Yahoo預估，公司尚未確認），還有 44 個交易日",
           "estimated": true,
           "date": "2026-12-23",
           "source": "https://finance.yahoo.com/quote/MU/",
-          "days": 45,
+          "days": 44,
           "provider": "Yahoo"
         },
         "fundamentals": {
@@ -1018,32 +1019,30 @@
       "group": "US|AI記憶體"
     },
     "TSLA": {
-      "total": 3,
+      "total": 1,
       "max": 10,
       "scored": 5,
-      "score10": 3.0,
+      "score10": 1.0,
       "level": "low",
-      "flags": [
-        "earnings_soon"
-      ],
+      "flags": [],
       "gate": {
-        "block": true,
-        "reasons": [
-          "財報前觀察"
-        ]
+        "block": false,
+        "reasons": []
       },
       "items": {
         "tech": {
           "score": 0,
-          "why": "乖離 +1.08%",
-          "date": "2026-10-20"
+          "why": "乖離 +4.44%",
+          "date": "2026-10-21"
         },
         "earnings": {
-          "score": 2,
-          "why": "財報 2026-10-21，還有 0 個交易日",
-          "date": "2026-10-21",
-          "source": "https://www.sec.gov/Archives/edgar/data/1318605/000162828026064366/0001628280-26-064366.txt",
-          "days": 0
+          "score": 0,
+          "why": "財報約 2027-01-01（SEC 歷年發布日推估預估，公司尚未確認），還有 51 個交易日",
+          "estimated": true,
+          "date": "2027-01-01",
+          "source": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&type=8-K&CIK=0001318605",
+          "days": 51,
+          "provider": "SEC 歷年發布日推估"
         },
         "fundamentals": {
           "score": 0,
@@ -1080,16 +1079,16 @@
       "items": {
         "tech": {
           "score": 0,
-          "why": "乖離 -4.46%",
-          "date": "2026-10-20"
+          "why": "乖離 +2.62%",
+          "date": "2026-10-21"
         },
         "earnings": {
           "score": 1,
-          "why": "財報約 2026-11-03（Nasdaq預估，公司尚未確認），還有 9 個交易日",
+          "why": "財報約 2026-11-03（Nasdaq預估，公司尚未確認），還有 8 個交易日；這是 2026-10-21 抓到的結果",
           "estimated": true,
           "date": "2026-11-03",
           "source": "https://www.nasdaq.com/market-activity/stocks/spcx/earnings",
-          "days": 9,
+          "days": 8,
           "provider": "Nasdaq"
         },
         "fundamentals": {
@@ -1127,15 +1126,15 @@
       "items": {
         "tech": {
           "score": 0,
-          "why": "乖離 -23.34%",
-          "date": "2026-10-20"
+          "why": "乖離 -18.14%",
+          "date": "2026-10-21"
         },
         "earnings": {
           "score": 0,
-          "why": "財報 2026-11-09，還有 13 個交易日（Yahoo，已確認）",
+          "why": "財報 2026-11-09，還有 12 個交易日（Yahoo，已確認）",
           "date": "2026-11-09",
           "source": "https://finance.yahoo.com/quote/RKLB/",
-          "days": 13,
+          "days": 12,
           "provider": "Yahoo"
         },
         "fundamentals": {
@@ -1173,15 +1172,15 @@
       "items": {
         "tech": {
           "score": 0,
-          "why": "乖離 -23.59%",
-          "date": "2026-10-20"
+          "why": "乖離 -22.64%",
+          "date": "2026-10-21"
         },
         "earnings": {
           "score": 0,
-          "why": "財報 2026-11-09，還有 13 個交易日（Yahoo，已確認）",
+          "why": "財報 2026-11-09，還有 12 個交易日（Yahoo，已確認）",
           "date": "2026-11-09",
           "source": "https://finance.yahoo.com/quote/ASTS/",
-          "days": 13,
+          "days": 12,
           "provider": "Yahoo"
         },
         "fundamentals": {
