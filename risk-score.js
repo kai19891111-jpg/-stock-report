@@ -63,13 +63,13 @@
     h += '<div class="risk-pips">' + order().map(function (k) {
       var it = v.items[k] || {};
       var s = has(it.score) ? it.score : null;
-      return '<span class="rk' + (s === null ? "na" : s) + '">' + esc(label(k)) + " " + (s === null ? "N/A" : s) + "</span>";
+      return '<span class="rk' + (s === null ? "na" : s) + '">' + esc(it.label || label(k)) + " " + (s === null ? "N/A" : s) + "</span>";
     }).join("") + "</div>";
     h += "<details><summary>每一項的理由與資料日期</summary><ul>" + order().map(function (k) {
       var it = v.items[k] || {};
       var s = has(it.score) ? it.score : null;
       var url = safeUrl(it.source);
-      return '<li class="rk' + (s === null ? "na" : s) + '"><i>' + (s === null ? "–" : s) + "</i><em>" + esc(label(k)) + "</em><span>" +
+      return '<li class="rk' + (s === null ? "na" : s) + '"><i>' + (s === null ? "–" : s) + "</i><em>" + esc(it.label || label(k)) + "</em><span>" +
         esc(it.why || "") + (url ? ' <a href="' + esc(url) + '" target="_blank" rel="noopener noreferrer">來源</a>' : "") + "</span></li>";
     }).join("") + "</ul></details></div>";
     return h;

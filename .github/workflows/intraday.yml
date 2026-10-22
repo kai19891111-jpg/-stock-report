@@ -8,6 +8,7 @@ on:
   schedule:
     - cron: "*/5 1-5 * * 1-5"      # 台股盤中（台北 09:00–13:30）
     - cron: "*/5 13-21 * * 1-5"    # 美股盤中（夏令 UTC 13:30–20:00、冬令 UTC 14:30–21:00）
+    - cron: "7,37 * * * *"         # 加密貨幣 24 小時：股市休市時每 30 分鐘只更新幣價
   workflow_dispatch:
 
 concurrency:
@@ -22,12 +23,15 @@ jobs:
       contents: write
     steps:
       - uses: actions/checkout@v4
+      - name: Previous snapshot
+        run: |
+          git fetch -q --depth=1 origin live && git show FETCH_HEAD:intraday.json > prev-intraday.json || echo "no previous snapshot"
       - name: Fetch quotes
         run: |
           if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
             python3 scripts/intraday.py --force --out live-out/intraday.json
           else
-            python3 scripts/intraday.py --out live-out/intraday.json
+            python3 scripts/intraday.py --prev prev-intraday.json --out live-out/intraday.json
           fi
       - name: Publish to the live branch
         env:

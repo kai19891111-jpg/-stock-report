@@ -6,7 +6,7 @@ every run, so a bad snapshot can never get stuck in signals.json.
 from __future__ import annotations
 import json
 from datetime import datetime, timezone
-from marketdata import DATA, EXTRA_INDICES, MARKETS, bars_of, load_universe
+from marketdata import DATA, EXTRA_INDICES, MARKETS, RESOLVED, bars_of, load_universe
 from strategy import (DEFAULT_PARAMS, MIN_HISTORY, RegimeLookup, build_signals,
                       can_open_trade, index_quote, open_trade, simulate_exit)
 
@@ -102,17 +102,19 @@ def main(now=None):
     stamp = (now or datetime.now(timezone.utc)).isoformat()
     regimes, index_info, index_quotes = load_regimes(now)
     trades = load_json("trades.json", [])
-    signals, latest, skipped = [], {}, []
+    signals, latest, skipped, skip_why = [], {}, [], {}
     for symbol, (market, theme) in universe.items():
         try:
             rows = bars_of(symbol, market, now=now)
         except Exception as e:  # noqa: BLE001
             print("skip", symbol, e)
             skipped.append(symbol)
+            skip_why[symbol] = "資料源抓不到：" + str(e)[:160]
             continue
         if len(rows) < MIN_BARS:
             print("skip", symbol, "only", len(rows), "bars")
             skipped.append(symbol)
+            skip_why[symbol] = f"歷史日 K 只有 {len(rows)} 根（需要 {MIN_BARS} 根），新上市或資料不完整"
             continue
         sigs = build_signals(symbol, market, theme, rows, regimes[market], stamp)
         if sigs[-1]:
@@ -133,7 +135,8 @@ def main(now=None):
     save_json("latest.json", {"dataTimestamp": stamp, "marketTimestamp": stamp, "source": "yahoo",
                               "isFinalClose": True, "sessions": sessions, "indices": index_info,
                               "indexQuotes": index_quotes, "params": DEFAULT_PARAMS,
-                              "skipped": skipped, "quotes": latest})
+                              "skipped": skipped, "skippedWhy": skip_why,
+                              "resolved": RESOLVED, "quotes": latest})
     print("symbols", len(latest), "signals", len(signals), "trades", len(trades), "skipped", skipped)
 
 

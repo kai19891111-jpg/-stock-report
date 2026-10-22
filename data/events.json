@@ -1,11 +1,26 @@
 {
-  "updatedAt": "2026-10-09",
+  "updatedAt": "2026-10-23",
   "earnings": {
-    "2330.TW": { "date": "2026-10-15", "source": "https://investor.tsmc.com/english/quarterly-results" },
-    "TSM": { "date": "2026-10-15", "source": "https://investor.tsmc.com/english/quarterly-results" },
-    "TSLA": { "date": "2026-10-21", "source": "https://www.sec.gov/Archives/edgar/data/1318605/000162828026064366/0001628280-26-064366.txt" },
-    "MSFT": { "date": "2026-10-28", "source": "https://news.microsoft.com/source/2026/10/07/microsoft-announces-quarterly-earnings-release-date-69/" },
-    "AMD": { "date": "2026-11-03", "source": "https://ir.amd.com/news-events/press-releases/detail/1300/amd-to-report-fiscal-third-quarter-2026-financial-results" }
+    "2330.TW": {
+      "date": "2026-10-15",
+      "source": "https://investor.tsmc.com/english/quarterly-results"
+    },
+    "TSM": {
+      "date": "2026-10-15",
+      "source": "https://investor.tsmc.com/english/quarterly-results"
+    },
+    "TSLA": {
+      "date": "2026-10-21",
+      "source": "https://www.sec.gov/Archives/edgar/data/1318605/000162828026064366/0001628280-26-064366.txt"
+    },
+    "MSFT": {
+      "date": "2026-10-28",
+      "source": "https://news.microsoft.com/source/2026/10/07/microsoft-announces-quarterly-earnings-release-date-69/"
+    },
+    "AMD": {
+      "date": "2026-11-03",
+      "source": "https://ir.amd.com/news-events/press-releases/detail/1300/amd-to-report-fiscal-third-quarter-2026-financial-results"
+    }
   },
   "events": [
     {
@@ -13,7 +28,9 @@
       "type": "scheduled",
       "date": "2026-10-28",
       "title": "FOMC 利率決議（10/27–28 會議）",
-      "targets": ["*"],
+      "targets": [
+        "*"
+      ],
       "source": "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm"
     },
     {
@@ -21,8 +38,269 @@
       "type": "scheduled",
       "date": "2026-12-09",
       "title": "FOMC 利率決議（12/8–9 會議，附經濟預測）",
-      "targets": ["*"],
+      "targets": [
+        "*"
+      ],
       "source": "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm"
+    },
+    {
+      "id": "auto-fomc-2027-01-27",
+      "type": "scheduled",
+      "date": "2027-01-27",
+      "title": "FOMC 利率決議（1/26–27 會議）",
+      "targets": [
+        "*"
+      ],
+      "source": "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm"
+    },
+    {
+      "id": "auto-fomc-2027-03-17",
+      "type": "scheduled",
+      "date": "2027-03-17",
+      "title": "FOMC 利率決議（3/16–17 會議，附經濟預測）",
+      "targets": [
+        "*"
+      ],
+      "source": "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm"
+    },
+    {
+      "id": "auto-fomc-2027-04-28",
+      "type": "scheduled",
+      "date": "2027-04-28",
+      "title": "FOMC 利率決議（4/27–28 會議）",
+      "targets": [
+        "*"
+      ],
+      "source": "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm"
+    },
+    {
+      "id": "auto-fomc-2027-06-09",
+      "type": "scheduled",
+      "date": "2027-06-09",
+      "title": "FOMC 利率決議（6/8–9 會議，附經濟預測）",
+      "targets": [
+        "*"
+      ],
+      "source": "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm"
+    },
+    {
+      "id": "auto-fomc-2027-07-28",
+      "type": "scheduled",
+      "date": "2027-07-28",
+      "title": "FOMC 利率決議（7/27–28 會議）",
+      "targets": [
+        "*"
+      ],
+      "source": "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm"
+    },
+    {
+      "id": "auto-fomc-2027-09-15",
+      "type": "scheduled",
+      "date": "2027-09-15",
+      "title": "FOMC 利率決議（9/14–15 會議，附經濟預測）",
+      "targets": [
+        "*"
+      ],
+      "source": "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm"
+    },
+    {
+      "id": "auto-fomc-2027-10-27",
+      "type": "scheduled",
+      "date": "2027-10-27",
+      "title": "FOMC 利率決議（10/26–27 會議）",
+      "targets": [
+        "*"
+      ],
+      "source": "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm"
+    },
+    {
+      "id": "auto-fomc-2027-12-08",
+      "type": "scheduled",
+      "date": "2027-12-08",
+      "title": "FOMC 利率決議（12/7–8 會議，附經濟預測）",
+      "targets": [
+        "*"
+      ],
+      "source": "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm"
+    },
+    {
+      "id": "auto-cpi-2026-11-10",
+      "type": "scheduled",
+      "date": "2026-11-10",
+      "title": "美國 10 月 CPI 公布",
+      "targets": [
+        "US",
+        "CRYPTO",
+        "TW"
+      ],
+      "source": "https://www.bls.gov/schedule/news_release/cpi.htm"
+    },
+    {
+      "id": "auto-cpi-2026-12-10",
+      "type": "scheduled",
+      "date": "2026-12-10",
+      "title": "美國 11 月 CPI 公布",
+      "targets": [
+        "US",
+        "CRYPTO",
+        "TW"
+      ],
+      "source": "https://www.bls.gov/schedule/news_release/cpi.htm"
+    },
+    {
+      "id": "auto-cpi-2027-01-13",
+      "type": "scheduled",
+      "date": "2027-01-13",
+      "title": "美國 12 月 CPI 公布",
+      "targets": [
+        "US",
+        "CRYPTO",
+        "TW"
+      ],
+      "source": "https://www.bls.gov/schedule/news_release/cpi.htm"
+    },
+    {
+      "id": "auto-cpi-2027-02-11",
+      "type": "scheduled",
+      "date": "2027-02-11",
+      "title": "美國 1 月 CPI 公布",
+      "targets": [
+        "US",
+        "CRYPTO",
+        "TW"
+      ],
+      "source": "https://www.bls.gov/schedule/news_release/cpi.htm"
+    },
+    {
+      "id": "auto-cpi-2027-03-10",
+      "type": "scheduled",
+      "date": "2027-03-10",
+      "title": "美國 2 月 CPI 公布",
+      "targets": [
+        "US",
+        "CRYPTO",
+        "TW"
+      ],
+      "source": "https://www.bls.gov/schedule/news_release/cpi.htm"
+    },
+    {
+      "id": "auto-cpi-2027-04-13",
+      "type": "scheduled",
+      "date": "2027-04-13",
+      "title": "美國 3 月 CPI 公布",
+      "targets": [
+        "US",
+        "CRYPTO",
+        "TW"
+      ],
+      "source": "https://www.bls.gov/schedule/news_release/cpi.htm"
+    },
+    {
+      "id": "auto-cpi-2027-05-12",
+      "type": "scheduled",
+      "date": "2027-05-12",
+      "title": "美國 4 月 CPI 公布",
+      "targets": [
+        "US",
+        "CRYPTO",
+        "TW"
+      ],
+      "source": "https://www.bls.gov/schedule/news_release/cpi.htm"
+    },
+    {
+      "id": "auto-cpi-2027-06-10",
+      "type": "scheduled",
+      "date": "2027-06-10",
+      "title": "美國 5 月 CPI 公布",
+      "targets": [
+        "US",
+        "CRYPTO",
+        "TW"
+      ],
+      "source": "https://www.bls.gov/schedule/news_release/cpi.htm"
+    },
+    {
+      "id": "auto-cpi-2027-07-14",
+      "type": "scheduled",
+      "date": "2027-07-14",
+      "title": "美國 6 月 CPI 公布",
+      "targets": [
+        "US",
+        "CRYPTO",
+        "TW"
+      ],
+      "source": "https://www.bls.gov/schedule/news_release/cpi.htm"
+    },
+    {
+      "id": "auto-cpi-2027-08-11",
+      "type": "scheduled",
+      "date": "2027-08-11",
+      "title": "美國 7 月 CPI 公布",
+      "targets": [
+        "US",
+        "CRYPTO",
+        "TW"
+      ],
+      "source": "https://www.bls.gov/schedule/news_release/cpi.htm"
+    },
+    {
+      "id": "auto-cpi-2027-09-14",
+      "type": "scheduled",
+      "date": "2027-09-14",
+      "title": "美國 8 月 CPI 公布",
+      "targets": [
+        "US",
+        "CRYPTO",
+        "TW"
+      ],
+      "source": "https://www.bls.gov/schedule/news_release/cpi.htm"
+    },
+    {
+      "id": "auto-cpi-2027-10-14",
+      "type": "scheduled",
+      "date": "2027-10-14",
+      "title": "美國 9 月 CPI 公布",
+      "targets": [
+        "US",
+        "CRYPTO",
+        "TW"
+      ],
+      "source": "https://www.bls.gov/schedule/news_release/cpi.htm"
+    },
+    {
+      "id": "auto-cpi-2027-11-10",
+      "type": "scheduled",
+      "date": "2027-11-10",
+      "title": "美國 10 月 CPI 公布",
+      "targets": [
+        "US",
+        "CRYPTO",
+        "TW"
+      ],
+      "source": "https://www.bls.gov/schedule/news_release/cpi.htm"
+    },
+    {
+      "id": "auto-cpi-2027-12-10",
+      "type": "scheduled",
+      "date": "2027-12-10",
+      "title": "美國 11 月 CPI 公布",
+      "targets": [
+        "US",
+        "CRYPTO",
+        "TW"
+      ],
+      "source": "https://www.bls.gov/schedule/news_release/cpi.htm"
+    },
+    {
+      "id": "auto-cbc-2026-12-17",
+      "type": "scheduled",
+      "date": "2026-12-17",
+      "title": "台灣央行第 4 季理監事會（利率決議）",
+      "targets": [
+        "TW"
+      ],
+      "source": "https://www.cbc.gov.tw/tw/cp-302-189514-82841-1.html"
     }
-  ]
+  ],
+  "autoNote": "id 以 auto- 開頭的是 scripts/events_auto.py 依官方日程自動加的，每次更新會重寫；手填事件不會被動到。"
 }

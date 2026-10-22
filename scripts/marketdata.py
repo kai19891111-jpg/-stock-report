@@ -39,16 +39,20 @@ MAX_INDEX_MOVE = 0.15       # an official bar this far from the previous close i
 
 # Used only if STOCK_META cannot be read from index.html.
 FALLBACK_META = {
-    "TW|AI晶片": ["2330.TW", "2454.TW"], "TW|AI電源": ["2308.TW"],
-    "TW|AI散熱": ["3324.TWO", "3653.TW", "3017.TW"], "TW|ABF": ["3189.TW", "3037.TW", "8046.TW"],
-    "TW|CCL": ["6213.TW", "2383.TW"], "TW|面板／光電": ["3481.TW"],
-    "TW|晶圓代工＋記憶體": ["6770.TW"], "TW|半導體廠務": ["2221.TWO"],
-    "US|AI晶片": ["TSM", "NVDA", "AMD", "AVGO"], "US|AI雲端": ["MSFT", "META"],
-    "US|AI記憶體": ["MU"], "US|AI自駕機器人": ["TSLA"], "US|航太科技": ["SPCX"],
-    "TW|AI伺服器／機櫃": ["8210.TW"], "TW|AI基建／電力": ["2371.TW"], "TW|光學／CPO": ["3406.TW"],
-    "TW|記憶體": ["2408.TW"], "TW|CCL／電子材料": ["1303.TW"],
-    "TW|PCB／銅箔": ["8358.TWO", "4958.TW"], "TW|電池監測IC": ["4919.TW"], "TW|被動元件": ["2327.TW"],
-    "TW|NB機構件": ["1569.TWO"],
+    "TW|AI晶片": ["2330.TW", "2454.TW"], "TW|AI電源／電力": ["2308.TW", "2371.TW"],
+    "TW|AI伺服器／散熱": ["8210.TW", "3324.TWO", "3653.TW", "3017.TW"],
+    "TW|PCB／載板": ["3189.TW", "3037.TW", "8046.TW", "8358.TWO", "4958.TW"],
+    "TW|CCL／材料": ["6213.TW", "2383.TW", "1303.TW"], "TW|記憶體": ["2408.TW", "6770.TW"],
+    "TW|光電／CPO": ["3481.TW", "3406.TW"], "TW|零組件／廠務": ["2327.TW", "4919.TW", "1569.TWO", "2221.TWO"],
+    "TW|低軌衛星": ["2313.TW", "3491.TWO", "6285.TW", "6271.TW", "2367.TW", "2355.TW"],
+    "TW|機器人・減速傳動": ["2049.TW", "2233.TW", "1536.TW", "2464.TW", "1597.TW", "4583.TW", "4540.TWO"],
+    "TW|機器人・馬達驅動": ["4576.TW", "1504.TW", "1590.TW"],
+    "TW|機器人・感測視覺": ["3019.TW", "2359.TW"],
+    "TW|機器人・線材連接": ["3023.TW", "3665.TW"],
+    "TW|機器人・整機系統": ["4585.TW", "6215.TW", "8374.TW", "2317.TW"],
+    "US|AI晶片": ["TSM", "NVDA", "AMD", "AVGO"], "US|AI雲端／記憶體": ["MSFT", "META", "MU"],
+    "US|AI機器人": ["TSLA"], "US|航太科技": ["SPCX", "RKLB", "ASTS", "SATS"],
+    "CRYPTO|主流幣": ["BTC-USD", "ETH-USD", "SOL-USD"],
 }
 
 
@@ -232,6 +236,75 @@ def merge_official_stock(rows, bar):
     return [by[d] for d in sorted(by)], True
 
 
+# 美股備援：Yahoo 抓不到（或回空資料）時改抓 Stooq 的日 K CSV。只用在美股個股。
+STOOQ_URL = "https://stooq.com/q/d/l/?s={sym}&i=d"
+STOOQ_DAYS = {"1y": 400, "2y": 760, "5d": 10}
+
+
+def parse_stooq(text, days=760):
+    """Stooq CSV（Date,Open,High,Low,Close,Volume）-> bars，只留最近 days 天。"""
+    lines = [ln.strip() for ln in str(text or "").splitlines() if ln.strip()]
+    if not lines or not lines[0].lower().startswith("date"):
+        raise ValueError("Stooq 沒有回 CSV：" + (lines[0][:60] if lines else "空白"))
+    out = []
+    for ln in lines[1:]:
+        p = ln.split(",")
+        if len(p) < 5:
+            continue
+        try:
+            o, h, l, c = (float(x) for x in p[1:5])
+            v = float(p[5]) if len(p) > 5 and p[5] else 0
+        except ValueError:
+            continue
+        if c <= 0 or not (l <= c <= h and l <= o <= h):
+            continue
+        out.append({"date": p[0], "open": o, "high": h, "low": l, "close": c, "volume": v})
+    out.sort(key=lambda b: b["date"])
+    return out[-days:]
+
+
+def _stooq(symbol, rng):
+    url = STOOQ_URL.format(sym=urllib.parse.quote(symbol.lower() + ".us"))
+    req = urllib.request.Request(url, headers={"User-Agent": "Mozilla/5.0 stock-report"})
+    with urllib.request.urlopen(req, timeout=25) as r:
+        return parse_stooq(r.read().decode("utf-8", "replace"), STOOQ_DAYS.get(rng, 760))
+
+
+def tw_alt(symbol):
+    """2049.TW <-> 2049.TWO：上市／上櫃寫錯時自動換另一個市場試。"""
+    m = re.fullmatch(r"(\d{4,6}[A-Z]?)\.(TWO|TW)", symbol)
+    if not m:
+        return None
+    return m.group(1) + (".TW" if m.group(2) == "TWO" else ".TWO")
+
+
+def fetch_rows(symbol, market, rng="2y"):
+    """抓日 K，含備援：台股代號後綴錯了自動換 .TW／.TWO；美股 Yahoo 失敗改 Stooq。
+    回傳 (rows, 實際使用的代號, 來源)。"""
+    tried = []
+    alt = tw_alt(symbol) if market == "TW" else None
+    for s in [symbol] + ([alt] if alt else []):
+        try:
+            rows = parse_chart(_download(s, rng), market)
+            if len(rows) >= 5:
+                return rows, s, "yahoo"
+            tried.append(f"{s} 只有 {len(rows)} 根")
+        except Exception as e:  # noqa: BLE001
+            tried.append(f"{s}: {type(e).__name__} {str(e)[:60]}")
+    if market == "US" and not symbol.startswith("^"):
+        try:
+            rows = _stooq(symbol, rng)
+            if len(rows) >= 5:
+                return rows, symbol, "stooq"
+            tried.append(f"stooq 只有 {len(rows)} 根")
+        except Exception as e:  # noqa: BLE001
+            tried.append(f"stooq: {type(e).__name__} {str(e)[:60]}")
+    raise RuntimeError("；".join(tried))
+
+
+RESOLVED = {}        # 這次執行裡，代號實際用了哪個後綴／來源（update_market.py 會寫進 latest.json）
+
+
 def bars_of(symbol, market, rng="2y", now=None, use_cache=False):
     """Completed daily bars for `symbol`. With use_cache, reuse bars fetched earlier in this run."""
     CACHE.mkdir(parents=True, exist_ok=True)
@@ -242,14 +315,17 @@ def bars_of(symbol, market, rng="2y", now=None, use_cache=False):
             raise FileNotFoundError(f"no cached bars for {symbol}")
         rows = json.loads(path.read_text(encoding="utf-8"))
     else:
-        rows = parse_chart(_download(symbol, rng), market)
+        rows, used_sym, source = fetch_rows(symbol, market, rng)
+        if used_sym != symbol or source != "yahoo":
+            RESOLVED[symbol] = {"symbol": used_sym, "source": source}
+            print("resolved", symbol, "->", used_sym, source)
         if symbol in OFFICIAL_INDEX:
             try:
                 rows, used = merge_official(rows, _official_index())
                 print("index", symbol, "official bars merged:", used, "last", rows[-1]["date"] if rows else None)
             except Exception as e:  # noqa: BLE001
                 print("warn: official index unavailable, using Yahoo only:", e)
-        m = re.fullmatch(r"(\d{4,6}[A-Z]?)\.(TWO|TW)", symbol)
+        m = re.fullmatch(r"(\d{4,6}[A-Z]?)\.(TWO|TW)", used_sym)
         if m:
             board = "TWO" if m.group(2) == "TWO" else "TW"
             rows, used = merge_official_stock(rows, _official_tw(board).get(m.group(1)))

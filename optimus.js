@@ -1,5 +1,5 @@
 /* =====================================================================
-   optimus.js｜Tesla Optimus 人形機器人｜台灣供應鏈關注名單
+   optimus.js｜人形機器人（Tesla Optimus 等）｜台灣供應鏈關注名單，依零件類別分組
 
    安裝：index.html 裡要有 <section id="optimus">…<div id="optimus-body"></div></section>，
         並在最後載入 <script src="./optimus.js"></script>。
@@ -16,18 +16,31 @@
   if (window.__optimus) return;
   window.__optimus = true;
 
+  /* cat：零件類別（頁面依這個分組）；tier：優先／延伸。
+     news 一律寫「媒體報導」或「公司說法」；沒有正式確認的供貨關係，confirmed 一律 false。 */
+  var CATS = ["減速傳動", "馬達驅動", "感測視覺", "線材連接", "整機系統", "AI 晶片"];
   var OPTIMUS = {
-    updated: "2026-10-20",
+    updated: "2026-10-23",
     items: [
-      { code: "2464.TW", tier: "優先", role: "諧波減速機、機器人關節", news: "媒體報導涉及 Tesla 供應鏈", confirmed: false },
-      { code: "3019.TW", tier: "優先", role: "視覺鏡頭、光學感測", news: "媒體報導涉及 Tesla 供應鏈", confirmed: false },
-      { code: "2049.TW", tier: "優先", role: "滾珠螺桿、精密傳動", news: "人形機器人送樣與布局", confirmed: false },
-      { code: "2233.TW", tier: "優先", role: "精密減速機、關節零件", news: "北美機器人客戶認證", confirmed: false },
-      { code: "4576.TW", tier: "優先", role: "馬達、驅動控制、關節模組", news: "人形機器人布局", confirmed: false },
-      { code: "1536.TW", tier: "延伸", role: "精密齒輪、傳動系統", news: "", confirmed: false },
-      { code: "3023.TW", tier: "延伸", role: "線束、連接器", news: "", confirmed: false },
-      { code: "3665.TW", tier: "延伸", role: "高階線纜、連接系統", news: "", confirmed: false },
-      { code: "2330.TW", tier: "延伸", role: "AI 晶片製造", news: "", confirmed: false }
+      { code: "2049.TW", cat: "減速傳動", tier: "優先", role: "諧波減速機、滾珠螺桿、線性滑軌、交叉滾柱軸承", news: "人形機器人送樣與布局（媒體報導）", confirmed: false },
+      { code: "2233.TW", cat: "減速傳動", tier: "優先", role: "精密減速機、關節零件", news: "北美機器人客戶認證（媒體報導）", confirmed: false },
+      { code: "2464.TW", cat: "減速傳動", tier: "優先", role: "諧波減速機、機器人關節", news: "媒體報導涉及 Tesla 供應鏈（待確認）", confirmed: false },
+      { code: "1536.TW", cat: "減速傳動", tier: "延伸", role: "精密齒輪、傳動系統", news: "", confirmed: false },
+      { code: "1597.TW", cat: "減速傳動", tier: "延伸", role: "線性滑軌、模組化關節、微型六軸手臂", news: "布局人形機器人模組化關節（媒體報導）", confirmed: false },
+      { code: "4583.TW", cat: "減速傳動", tier: "延伸", role: "精密行星減速機（協作機器人腰、肩關節）", news: "已打入物流協作機器人供應鏈（媒體報導）", confirmed: false },
+      { code: "4540.TWO", cat: "減速傳動", tier: "延伸", role: "線性執行器、行星式滾柱螺桿（靈巧手）", news: "預計 2026 年小批量生產（媒體報導）", confirmed: false },
+      { code: "4576.TW", cat: "馬達驅動", tier: "優先", role: "馬達、驅動控制、關節模組", news: "人形機器人布局（媒體報導）", confirmed: false },
+      { code: "1504.TW", cat: "馬達驅動", tier: "延伸", role: "馬達、驅動器", news: "", confirmed: false },
+      { code: "1590.TW", cat: "馬達驅動", tier: "延伸", role: "氣動元件、致動器", news: "", confirmed: false },
+      { code: "3019.TW", cat: "感測視覺", tier: "優先", role: "視覺鏡頭、光學感測", news: "媒體報導涉及 Tesla 供應鏈（待確認）", confirmed: false },
+      { code: "2359.TW", cat: "感測視覺", tier: "延伸", role: "機器視覺、AI 軟體", news: "", confirmed: false },
+      { code: "3023.TW", cat: "線材連接", tier: "延伸", role: "線束、連接器", news: "", confirmed: false },
+      { code: "3665.TW", cat: "線材連接", tier: "延伸", role: "高階線纜、連接系統", news: "", confirmed: false },
+      { code: "4585.TW", cat: "整機系統", tier: "延伸", role: "協作機器人（廣達集團）", news: "", confirmed: false },
+      { code: "6215.TW", cat: "整機系統", tier: "延伸", role: "自動化系統、優必選台灣代理", news: "", confirmed: false },
+      { code: "8374.TW", cat: "整機系統", tier: "延伸", role: "自動化設備、系統整合", news: "", confirmed: false },
+      { code: "2317.TW", cat: "整機系統", tier: "延伸", role: "代工與機器人平台（集團布局）", news: "", confirmed: false },
+      { code: "2330.TW", cat: "AI 晶片", tier: "延伸", role: "AI 晶片製造", news: "", confirmed: false }
     ]
   };
 
@@ -104,15 +117,18 @@
     OPTIMUS.items.forEach(function (it) { counts[tag(L && L.quotes && L.quotes[it.code])[0]]++; });
     var st = $("optimus-stamp");
     if (st) st.textContent = "名單更新 " + md(OPTIMUS.updated) + (L && L.sessions && L.sessions.TW ? "｜台股日K " + L.sessions.TW : "");
-    var group = function (tier) {
-      return '<h3>【' + tier + "關注】</h3><div class=\"op-grid\">" +
-        OPTIMUS.items.filter(function (it) { return it.tier === tier; }).map(function (it) { return card(it, L, R); }).join("") + "</div>";
+    var group = function (cat) {
+      var list = OPTIMUS.items.filter(function (it) { return it.cat === cat; });
+      if (!list.length) return "";
+      list.sort(function (a, b) { return (a.tier === "優先" ? 0 : 1) - (b.tier === "優先" ? 0 : 1); });
+      return '<h3>【' + esc(cat) + "】<small>" + list.length + " 檔</small></h3><div class=\"op-grid\">" +
+        list.map(function (it) { return card(it, L, R); }).join("") + "</div>";
     };
     body.innerHTML =
       '<p class="op-sum"><span>🟢 偏強 ' + counts.g + "</span><span>🟡 盤整 " + counts.y + "</span><span>🔴 轉弱 " + counts.r + "</span>" +
       (counts.n ? "<span>⚪ 資料不足 " + counts.n + "</span>" : "") + "<span>🔵 供應鏈消息 待確認 " +
       OPTIMUS.items.filter(function (it) { return !it.confirmed; }).length + "</span></p>" +
-      group("優先") + group("延伸") +
+      CATS.map(group).join("") +
       '<p class="note">' + esc(TAG_RULE) + "</p>" +
       '<p class="note">價格、均線、RSI、MACD、支撐壓力每個交易日收盤後自動更新；法人與月營收來自 FinMind。Tesla Optimus 的合作、送樣、量產消息與是否已有正式訂單，需要人工核對後更新名單，沒有正式確認前一律標「待確認」。</p>';
   }

@@ -26,6 +26,9 @@ jobs:
         run: |
           python scripts/update_market.py
           python scripts/backtest.py
+      - name: Scheduled events (FOMC / CPI / 央行)
+        continue-on-error: true
+        run: python scripts/events_auto.py
       - name: Risk score
         continue-on-error: true
         env:
@@ -36,6 +39,10 @@ jobs:
       - name: Final verdict
         continue-on-error: true
         run: python scripts/verdict.py
+      - name: Auto screener（自動選股雷達）
+        continue-on-error: true
+        timeout-minutes: 25
+        run: python scripts/screener.py
       - name: Commit data
         run: |
           git config user.name "stock-report-bot"

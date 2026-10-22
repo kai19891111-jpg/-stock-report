@@ -6,6 +6,9 @@
     python scripts/intraday.py                 # 有市場開盤才抓
     python scripts/intraday.py --force         # 不管開不開盤都抓一次
     python scripts/intraday.py --out x.json    # 指定輸出位置（預設 live-out/intraday.json）
+    python scripts/intraday.py --prev p.json   # 股市都休市時只抓加密貨幣，股票沿用上一份快照
+
+加密貨幣 24 小時交易：股市休市時（夜間、週末）只更新加密貨幣，股票報價從 --prev 那份沿用。
 
 只用標準函式庫。
 """
@@ -71,23 +74,33 @@ def main(argv=None, now=None):
     argv = list(sys.argv[1:] if argv is None else argv)
     now = now or datetime.now(timezone.utc)
     out = Path(argv[argv.index("--out") + 1]) if "--out" in argv else ROOT / "live-out" / "intraday.json"
+    prev_path = Path(argv[argv.index("--prev") + 1]) if "--prev" in argv else None
     state = {m: session_state(m, now) for m in MARKETS}
-    if "--force" not in argv and all(s == "closed" for m, s in state.items() if m != "CRYPTO"):
-        print("兩個市場都休市，這次不抓。", state)
-        return 0
+    crypto_only = "--force" not in argv and all(s == "closed" for m, s in state.items() if m != "CRYPTO")
 
     wanted = {s: m for s, (m, _theme) in load_universe().items()}
     for m, cfg in MARKETS.items():
         wanted[cfg["index"]] = m
     wanted.update(EXTRA_INDICES)
     quotes, errors = {}, {}
+    if crypto_only:
+        wanted = {s: m for s, m in wanted.items() if m == "CRYPTO"}
+        if not wanted:
+            print("股市都休市，也沒有加密貨幣，這次不抓。", state)
+            return 0
+        try:                                  # 股票報價沿用上一份快照（休市時價格不會變）
+            prev = json.loads(prev_path.read_text(encoding="utf-8")) if prev_path and prev_path.exists() else {}
+            quotes.update({k: v for k, v in (prev.get("quotes") or {}).items() if v.get("market") != "CRYPTO"})
+        except Exception as e:  # noqa: BLE001
+            print("上一份快照讀不到，只寫加密貨幣：", e)
+        print("股市都休市，只更新加密貨幣。", state)
     with ThreadPoolExecutor(max_workers=WORKERS) as pool:
         for symbol, q, err in pool.map(fetch_one, sorted(wanted.items())):
             if q:
                 quotes[symbol] = q
             else:
                 errors[symbol] = err or "沒有報價"
-    if not quotes:
+    if not quotes or not any(v.get("market") == "CRYPTO" or not crypto_only for v in quotes.values()):
         print("一檔都沒抓到，保留上一份快照。", errors)
         return 1
     out.parent.mkdir(parents=True, exist_ok=True)

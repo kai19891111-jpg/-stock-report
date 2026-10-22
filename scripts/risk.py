@@ -9,6 +9,8 @@
                             中一項 1 分、兩項以上 2 分                    台股 FinMind｜美股 SEC EDGAR（備援 Yahoo）
                                                                           TSM 和台積電是同一家公司，直接用 2330 的數字
   chips         籌碼        法人賣且融資增 = 1｜注意股／處置股 = 2        台股 FinMind＋證交所＋櫃買
+                            加密貨幣：恐懼貪婪指數與槓桿（OKX 資金費率、未平倉量）取高的
+  （加密貨幣的 fundamentals 改看市場結構：穩定幣總供給 30 日變化、BTC 市占率；台股沒填財報日時用法定期限預估）
                             放空餘額月增且佔流通股達門檻 = 1｜
                             列入 Reg SHO 門檻名單 = 2                     美股 Yahoo／Nasdaq 放空餘額＋交易所名單
   policy        政策政治    兩週內有排定事件 = 1｜不利政策已公告 = 2      來源 data/events.json 的 events
@@ -65,6 +67,9 @@ T = {
     "announced_default_days": 30,                # 已公告事件沒寫 expires 時，計分幾天
     "events_stale_days": 14,                     # events.json 超過幾天沒更新，政策項目改 N/A
     "fng_hot": 75, "fng_warm": 60,              # 加密貨幣恐懼與貪婪指數：>=75 計 2 分、>=60 計 1 分
+    "funding_hot": 0.05,                         # 加密貨幣：永續合約資金費率（每 8 小時，%）超過這個算槓桿過熱
+    "oi_jump_pct": 20.0,                         # 加密貨幣：未平倉量 7 日增加超過幾 % 算槓桿堆積
+    "stable_drop_pct": 0.0,                      # 加密貨幣：穩定幣總供給 30 日變化低於這個 % 算資金流出
     "min_scored": 3,                             # 少於幾項有分數就標「資料不足」
     "short_up_pct": 10.0,                        # 美股：放空餘額比前一個月增加幾 % 以上才算增加
     "short_float_min": 2.0,                      # 美股：放空餘額佔流通股幾 % 以上才計分（太低的變動沒有意義）
@@ -216,6 +221,103 @@ def score_chips_crypto(fng):
     s = 2 if v >= T["fng_hot"] else 1 if v >= T["fng_warm"] else 0
     zh = FNG_ZH.get(fng.get("label"), fng.get("label") or "")
     return item(s, f"恐懼與貪婪指數 {v}（{zh}）", date=fng.get("date"), source="https://alternative.me/crypto/fear-and-greed-index/")
+
+
+# ---- 加密貨幣的槓桿與市場結構（全部免金鑰；GitHub Actions 是美國 IP，所以不用 Binance） ----
+OKX = "https://www.okx.com/api/v5"
+CRYPTO_CCY = lambda sym: sym.split("-")[0].upper()  # noqa: E731   BTC-USD -> BTC
+
+
+def fetch_okx_funding(ccy):
+    raw = get_json(f"{OKX}/public/funding-rate?instId={ccy}-USDT-SWAP")
+    d = (raw.get("data") or [])[0]
+    return {"rate": float(d["fundingRate"]) * 100, "time": d.get("fundingTime")}
+
+
+def fetch_okx_oi(ccy):
+    """OKX 每日未平倉量（美元）-> [(日期, OI)]，舊到新"""
+    raw = get_json(f"{OKX}/rubik/stat/contracts/open-interest-volume?ccy={ccy}&period=1D")
+    rows = []
+    for r in raw.get("data") or []:
+        ts, oi = int(r[0]), float(r[1])
+        rows.append((datetime.fromtimestamp(ts / 1000, tz=timezone.utc).date().isoformat(), oi))
+    return sorted(rows)
+
+
+def fetch_stablecoins():
+    """DefiLlama 穩定幣總流通量（美元）-> [(日期, 總額)]，舊到新"""
+    raw = get_json("https://stablecoins.llama.fi/stablecoincharts/all", timeout=40)
+    out = []
+    for r in raw or []:
+        v = ((r.get("totalCirculatingUSD") or {}).get("peggedUSD"))
+        if v:
+            out.append((datetime.fromtimestamp(int(r["date"]), tz=timezone.utc).date().isoformat(), float(v)))
+    return sorted(out)
+
+
+def fetch_cg_global():
+    d = get_json("https://api.coingecko.com/api/v3/global").get("data") or {}
+    pct = d.get("market_cap_percentage") or {}
+    return {"btc": pct.get("btc"), "eth": pct.get("eth"), "chg24": d.get("market_cap_change_percentage_24h_usd")}
+
+
+def change_over(series, days):
+    """[(日期, 值)] -> 最新一筆相對 days 天前的變化 %"""
+    if len(series) < 2:
+        return None
+    last_d, last_v = series[-1]
+    target = (date.fromisoformat(last_d) - timedelta(days=days)).isoformat()
+    base = [v for d, v in series if d <= target]
+    if not base or not base[-1]:
+        return None
+    return (last_v / base[-1] - 1) * 100
+
+
+def score_leverage(funding, oi):
+    """資金費率過熱或未平倉量 7 日暴增 = 1，兩個都中 = 2。-> (分數或 None, 文字)"""
+    bits, s, got = [], 0, 0
+    if funding and funding.get("rate") is not None:
+        got += 1
+        r = funding["rate"]
+        bits.append(f"資金費率 {signed(r, 4)}%")
+        s += r >= T["funding_hot"]
+    oi_chg = change_over(oi or [], 7)
+    if oi_chg is not None:
+        got += 1
+        bits.append(f"未平倉量 7 日 {signed(oi_chg, 1)}%")
+        s += oi_chg >= T["oi_jump_pct"]
+    return (min(2, int(s)) if got else None), "、".join(bits)
+
+
+def score_chips_crypto2(fng, funding, oi):
+    """情緒＋槓桿：恐懼貪婪分數與槓桿分數取高的。"""
+    base = score_chips_crypto(fng)
+    lev, txt = score_leverage(funding, oi)
+    if base["score"] is None and lev is None:
+        return na("恐懼與貪婪指數、資金費率、未平倉量都抓不到", label="情緒／槓桿")
+    parts = [base["why"]] if base["score"] is not None else ["恐懼與貪婪指數 N/A"]
+    parts.append(txt or "資金費率與未平倉量 N/A（OKX）")
+    sc = max(x for x in (base["score"], lev) if x is not None)
+    return item(sc, "；".join(parts), date=base.get("date"), source=base.get("source"), label="情緒／槓桿")
+
+
+def score_structure(sym, stable, glob):
+    """市場結構：穩定幣總供給 30 日減少 = 1（場外資金流出）；山寨幣再加看 BTC 市占率是否 > 60%（資金集中 BTC）。"""
+    st = change_over(stable or [], 30)
+    if st is None and not (glob or {}).get("btc"):
+        return na("穩定幣供給與 BTC 市占率都抓不到", label="市場結構")
+    s, bits = 0, []
+    if st is not None:
+        bits.append(f"穩定幣總供給 30 日 {signed(st, 1)}%（{stable[-1][1] / 1e9:,.0f}B 美元）")
+        s += st < T["stable_drop_pct"]
+    dom = (glob or {}).get("btc")
+    if dom:
+        bits.append(f"BTC 市占率 {dom:.1f}%")
+        if CRYPTO_CCY(sym) != "BTC" and dom > 60:
+            s += 1
+            bits.append("資金集中在 BTC，對山寨幣不利")
+    return item(min(2, s), "、".join(bits), date=stable[-1][0] if stable else None,
+                source="https://defillama.com/stablecoins", label="市場結構")
 
 
 def fetch_sec_facts(cik):
@@ -459,6 +561,22 @@ def score_tech(q):
     return item(s, f"乖離 {signed(bias)}%", date=q.get("date"))
 
 
+# 台股財報的法定最晚公布日：Q1 5/15、Q2 8/14、Q3 11/14、年報 3/31（一般上市櫃公司）。
+TW_DEADLINES = [(3, 31, "年報"), (5, 15, "第一季財報"), (8, 14, "第二季財報"), (11, 14, "第三季財報")]
+
+
+def tw_deadline_estimate(today, after=None):
+    """下一個法定財報期限 -> earnings dict（estimated）。after 是已經公布過的日期，期限要在它 45 天以後。"""
+    floor = max(today, (after + timedelta(days=45)) if after else today)
+    for y in (floor.year, floor.year + 1):
+        for m, d, what in TW_DEADLINES:
+            dd = date(y, m, d)
+            if dd >= floor:
+                return {"date": dd.isoformat(), "estimated": True, "provider": "法定期限", "deadline": what,
+                        "source": "https://mops.twse.com.tw/mops/#/web/t100sb02_1"}
+    return None
+
+
 def score_earnings(today, e, miss="events.json 沒有這檔的財報日"):
     if not e:
         return na(miss)
@@ -471,6 +589,10 @@ def score_earnings(today, e, miss="events.json 沒有這檔的財報日"):
     if not e.get("estimated"):
         tail = f"（{e['provider']}，已確認）" if e.get("provider") else ""
         return item(s, f"財報 {d.isoformat()}，還有 {n} 個交易日{tail}", **extra)
+    if e.get("deadline"):
+        # 只知道最晚期限、不知道實際日期，最多計 1 分（只提醒，不擋進場）
+        why = f"{e['deadline']}最晚 {d.isoformat()} 要公布（法定期限，多數公司會提早），還有 {n} 個交易日"
+        return item(min(s, 1), why, estimated=True, **extra)
     span = f"～{e['dateEnd'][5:]}" if e.get("dateEnd") else ""
     why = f"財報約 {d.isoformat()}{span}（{e.get('provider') or '自動'}預估，公司尚未確認），還有 {n} 個交易日"
     if e.get("stale"):
@@ -705,9 +827,11 @@ def main(now=None):
         lists = build_lists(src.call("twse_punish", fetch_twse_punish), src.call("twse_notice", fetch_twse_notice),
                             src.call("tpex_disposal", fetch_tpex_disposal), src.call("tpex_warning", fetch_tpex_warning))
 
-    fng = None
+    fng, stable, glob = None, None, None
     if any(q["market"] == "CRYPTO" for q in quotes.values()):
         fng = src.call("fear_greed", fetch_fear_greed)
+        stable = src.call("defillama_stablecoins", fetch_stablecoins)
+        glob = src.call("coingecko_global", fetch_cg_global)
 
     sec_map, usd = None, None
     if any(q["market"] == "US" for q in quotes.values()):
@@ -751,11 +875,20 @@ def main(now=None):
                 earn_miss = "events.json 沒填，自動來源（Yahoo／Nasdaq／SEC）也抓不到財報日"
 
         note, fsrc, fmiss = "", None, "營收與毛利率都抓不到"
+        if market == "TW" and (not earn or to_date(earn["date"]) < t):
+            est = tw_deadline_estimate(t, to_date(earn["date"]) if earn else None)
+            if est:
+                earn = est
+
+        crypto_fund = None
         if market == "CRYPTO":
-            earn, earn_miss = None, "加密貨幣沒有財報日"
+            earn, earn_miss = None, "加密貨幣沒有財報（FOMC、CPI 等事件算在「政策」）"
             rev = mar = None
-            fmiss = "加密貨幣沒有營收與毛利率"
-            chips = score_chips_crypto(fng)
+            ccy = CRYPTO_CCY(sym)
+            funding = src.call("okx_funding", fetch_okx_funding, ccy) if not src.streak_failed("okx_funding", 2) else None
+            oi = src.call("okx_open_interest", fetch_okx_oi, ccy) if not src.streak_failed("okx_open_interest", 2) else None
+            chips = score_chips_crypto2(fng, funding, oi)
+            crypto_fund = score_structure(sym, stable, glob)
         elif market == "TW":
             code = sym.split(".")[0]
             rev, mar = tw_fund(code, t)
@@ -790,7 +923,7 @@ def main(now=None):
         out[sym] = summarise({
             "tech": score_tech(q),
             "earnings": score_earnings(t, earn, earn_miss),
-            "fundamentals": score_fundamentals(rev, mar, cuts, note, fsrc, fmiss),
+            "fundamentals": crypto_fund or score_fundamentals(rev, mar, cuts, note, fsrc, fmiss),
             "chips": chips,
             "policy": score_policy(ev, pol),
         })
