@@ -527,5 +527,33 @@
     "holdingDays": null,
     "ambiguousDay": false,
     "entryRR": 1.8921
+  },
+  {
+    "id": "4540.TW-2026-10-19",
+    "symbol": "4540.TW",
+    "market": "TW",
+    "signalDate": "2026-10-19",
+    "entryDate": "2026-10-20",
+    "entryPrice": 59.0,
+    "stopPrice": 57.1536,
+    "target1": 64.6643,
+    "target2": 67.0571,
+    "rsi": 49.8058,
+    "macd": "零軸下",
+    "volumeRatio": 0.8056,
+    "atr": 2.3929,
+    "dailyTrend": "盤整",
+    "weeklyTrend": "多頭",
+    "marketRegime": "NEUTRAL",
+    "theme": "機器人・減速傳動",
+    "status": "OPEN",
+    "exitDate": null,
+    "exitPrice": null,
+    "exitReason": null,
+    "resultR": null,
+    "resultPct": null,
+    "holdingDays": null,
+    "ambiguousDay": false,
+    "entryRR": 3.0677
   }
 ]

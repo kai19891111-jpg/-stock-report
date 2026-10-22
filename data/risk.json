@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-22T17:23:03.945129+00:00",
+  "generatedAt": "2026-10-22T17:28:38.543172+00:00",
   "today": {
     "TW": "2026-10-23",
     "US": "2026-10-22",
@@ -93,11 +93,11 @@
       "fail": 0
     },
     "yahoo": {
-      "ok": 11,
+      "ok": 12,
       "fail": 0
     },
     "sec_facts": {
-      "ok": 10,
+      "ok": 11,
       "fail": 0
     },
     "nasdaq_earnings": {
@@ -122,7 +122,7 @@
     "fresh": true,
     "used": 25,
     "earnings": 5,
-    "autoEarnings": 9,
+    "autoEarnings": 10,
     "rejected": []
   },
   "symbols": {
@@ -1798,7 +1798,7 @@
       "market": "TW",
       "group": "TW|機器人・減速傳動"
     },
-    "4540.TWO": {
+    "4540.TW": {
       "total": 1,
       "max": 10,
       "scored": 5,
@@ -2861,6 +2861,54 @@
       "market": "US",
       "group": "US|航太科技"
     },
+    "ECHO": {
+      "total": 3,
+      "max": 10,
+      "scored": 5,
+      "score10": 3.0,
+      "level": "low",
+      "flags": [],
+      "gate": {
+        "block": false,
+        "reasons": []
+      },
+      "items": {
+        "tech": {
+          "score": 0,
+          "why": "乖離 +1.38%",
+          "date": "2026-10-21"
+        },
+        "earnings": {
+          "score": 1,
+          "why": "財報約 2026-11-05（Yahoo預估，公司尚未確認），還有 10 個交易日",
+          "estimated": true,
+          "date": "2026-11-05",
+          "source": "https://finance.yahoo.com/quote/ECHO/",
+          "days": 10,
+          "provider": "Yahoo"
+        },
+        "fundamentals": {
+          "score": 1,
+          "why": "營收年增 -4.0%（2026-06-30）、毛利率 N/A（SEC 申報）",
+          "date": "2026-06-30",
+          "source": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&type=10-Q&CIK=0001415404",
+          "partial": true
+        },
+        "chips": {
+          "score": 0,
+          "why": "放空餘額 25.5 百萬股（佔流通股 22.5%），較前期 -8.1%（Yahoo）",
+          "date": "2026-09-29"
+        },
+        "policy": {
+          "score": 1,
+          "why": "2026-10-28 FOMC 利率決議（10/27–28 會議）",
+          "date": "2026-10-28",
+          "source": "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm"
+        }
+      },
+      "market": "US",
+      "group": "US|航太科技"
+    },
     "BTC-USD": {
       "total": 3,
       "max": 8,
@@ -2940,7 +2988,7 @@
         },
         "chips": {
           "score": 1,
-          "why": "恐懼與貪婪指數 68（貪婪）；資金費率 +0.0034%、未平倉量 7 日 -1.1%",
+          "why": "恐懼與貪婪指數 68（貪婪）；資金費率 +0.0032%、未平倉量 7 日 -1.1%",
           "date": "2026-10-22",
           "source": "https://alternative.me/crypto/fear-and-greed-index/",
           "label": "情緒／槓桿"
@@ -2987,7 +3035,7 @@
         },
         "chips": {
           "score": 1,
-          "why": "恐懼與貪婪指數 68（貪婪）；資金費率 +0.0036%、未平倉量 7 日 -2.2%",
+          "why": "恐懼與貪婪指數 68（貪婪）；資金費率 +0.0034%、未平倉量 7 日 -2.2%",
           "date": "2026-10-22",
           "source": "https://alternative.me/crypto/fear-and-greed-index/",
           "label": "情緒／槓桿"
