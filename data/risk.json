@@ -1,9 +1,9 @@
 {
-  "generatedAt": "2026-10-21T23:59:44.363308+00:00",
+  "generatedAt": "2026-10-22T00:52:59.772509+00:00",
   "today": {
     "TW": "2026-10-22",
     "US": "2026-10-21",
-    "CRYPTO": "2026-10-21"
+    "CRYPTO": "2026-10-22"
   },
   "thresholds": {
     "bias_mid": 6.0,
@@ -706,8 +706,8 @@
       "items": {
         "tech": {
           "score": 0,
-          "why": "乖離 -3.84%",
-          "date": "2026-10-21"
+          "why": "乖離 -5.51%",
+          "date": "2026-10-20"
         },
         "earnings": {
           "score": 0,
@@ -752,8 +752,8 @@
       "items": {
         "tech": {
           "score": 0,
-          "why": "乖離 -2.16%",
-          "date": "2026-10-21"
+          "why": "乖離 -4.66%",
+          "date": "2026-10-20"
         },
         "earnings": {
           "score": 0,
@@ -798,8 +798,8 @@
       "items": {
         "tech": {
           "score": 0,
-          "why": "乖離 -7.72%",
-          "date": "2026-10-21"
+          "why": "乖離 -11.18%",
+          "date": "2026-10-20"
         },
         "earnings": {
           "score": 1,
@@ -843,8 +843,8 @@
       "items": {
         "tech": {
           "score": 0,
-          "why": "乖離 -3.93%",
-          "date": "2026-10-21"
+          "why": "乖離 -5.14%",
+          "date": "2026-10-20"
         },
         "earnings": {
           "score": 0,
@@ -889,8 +889,8 @@
       "items": {
         "tech": {
           "score": 0,
-          "why": "乖離 +1.49%",
-          "date": "2026-10-21"
+          "why": "乖離 +1.60%",
+          "date": "2026-10-20"
         },
         "earnings": {
           "score": 1,
@@ -938,8 +938,8 @@
       "items": {
         "tech": {
           "score": 0,
-          "why": "乖離 -4.39%",
-          "date": "2026-10-21"
+          "why": "乖離 -5.14%",
+          "date": "2026-10-20"
         },
         "earnings": {
           "score": 2,
@@ -984,8 +984,8 @@
       "items": {
         "tech": {
           "score": 0,
-          "why": "乖離 -9.37%",
-          "date": "2026-10-21"
+          "why": "乖離 -11.81%",
+          "date": "2026-10-20"
         },
         "earnings": {
           "score": 0,
@@ -1035,8 +1035,8 @@
       "items": {
         "tech": {
           "score": 0,
-          "why": "乖離 +4.44%",
-          "date": "2026-10-21"
+          "why": "乖離 +1.08%",
+          "date": "2026-10-20"
         },
         "earnings": {
           "score": 2,
@@ -1080,8 +1080,8 @@
       "items": {
         "tech": {
           "score": 0,
-          "why": "乖離 +2.62%",
-          "date": "2026-10-21"
+          "why": "乖離 -4.46%",
+          "date": "2026-10-20"
         },
         "earnings": {
           "score": 1,
@@ -1127,8 +1127,8 @@
       "items": {
         "tech": {
           "score": 0,
-          "why": "乖離 -18.14%",
-          "date": "2026-10-21"
+          "why": "乖離 -23.34%",
+          "date": "2026-10-20"
         },
         "earnings": {
           "score": 0,
@@ -1173,8 +1173,8 @@
       "items": {
         "tech": {
           "score": 0,
-          "why": "乖離 -22.64%",
-          "date": "2026-10-21"
+          "why": "乖離 -23.59%",
+          "date": "2026-10-20"
         },
         "earnings": {
           "score": 0,
@@ -1907,8 +1907,8 @@
         },
         "chips": {
           "score": 1,
-          "why": "恐懼與貪婪指數 63（貪婪）",
-          "date": "2026-10-21",
+          "why": "恐懼與貪婪指數 68（貪婪）",
+          "date": "2026-10-22",
           "source": "https://alternative.me/crypto/fear-and-greed-index/"
         },
         "policy": {
@@ -1948,8 +1948,8 @@
         },
         "chips": {
           "score": 1,
-          "why": "恐懼與貪婪指數 63（貪婪）",
-          "date": "2026-10-21",
+          "why": "恐懼與貪婪指數 68（貪婪）",
+          "date": "2026-10-22",
           "source": "https://alternative.me/crypto/fear-and-greed-index/"
         },
         "policy": {
