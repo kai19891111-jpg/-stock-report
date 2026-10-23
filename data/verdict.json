@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-10-23T05:16:33.708231+00:00",
-  "dataTimestamp": "2026-10-23T05:13:08.173177+00:00",
+  "generatedAt": "2026-10-23T11:51:36.224094+00:00",
+  "dataTimestamp": "2026-10-23T11:48:06.813111+00:00",
   "sessions": {
     "TW": "2026-10-22",
     "US": "2026-10-22",
-    "CRYPTO": "2026-10-21"
+    "CRYPTO": "2026-10-22"
   },
   "params": {
     "rsi_lo": 45,
@@ -65,7 +65,7 @@
   "regime": {
     "TW": "NEUTRAL",
     "US": "NEUTRAL",
-    "CRYPTO": "BULL"
+    "CRYPTO": "NEUTRAL"
   },
   "evidence": {
     "TW": {
@@ -98,8 +98,8 @@
       "expLow": -1.0936,
       "expHigh": 0.4349,
       "winRate": 0.25,
-      "beats": 0.8333,
-      "why": "加密貨幣回測：後段只有 12 筆（要 30 筆）、期望值區間下緣 −1.09R，沒有大於 0、只勝過 83.3% 的隨機進場（要 95%）"
+      "beats": 0.88,
+      "why": "加密貨幣回測：後段只有 12 筆（要 30 筆）、期望值區間下緣 −1.09R，沒有大於 0、只勝過 88.0% 的隨機進場（要 95%）"
     }
   },
   "regimeNotes": {
@@ -118,9 +118,9 @@
     "signal_unproven": 2,
     "signal_blocked": 0,
     "conditions": 1,
-    "pullback": 4,
+    "pullback": 3,
     "no_chase": 4,
-    "below": 49,
+    "below": 50,
     "trend": 1,
     "avoid": 2,
     "nodata": 0
@@ -136,7 +136,6 @@
       "MSFT"
     ],
     "pullback": [
-      "BTC-USD",
       "TSLA",
       "4958.TW",
       "1303.TW"
@@ -195,6 +194,7 @@
       "RKLB",
       "ASTS",
       "ECHO",
+      "BTC-USD",
       "ETH-USD",
       "SOL-USD"
     ],
@@ -3429,99 +3429,15 @@
     },
     "BTC-USD": {
       "market": "CRYPTO",
-      "date": "2026-10-21",
-      "close": 84011.9688,
-      "ma20": 83172.2117,
-      "stop": 80717.0352,
-      "target": 88513.1258,
-      "entryLow": 81924.6285,
-      "entryHigh": 84003.9338,
-      "bias": 1.0097,
-      "high20": 87146.3516,
-      "rr": 1.3661,
-      "code": "pullback",
-      "signal": false,
-      "blockers": [
-        {
-          "key": "zone",
-          "text": "價格高於進場區"
-        },
-        {
-          "key": "rr",
-          "text": "報酬風險比 1.37（要 ≥1.5）"
-        }
-      ],
-      "buyBelow": 83717.80653333332,
-      "gapPct": -0.35014328418724316,
-      "roomRR": 0.9512734338561446,
-      "plan": null,
-      "text": "等收盤回到 83,717.81 以下（還差 −0.4%）再看訊號。",
-      "notes": [],
-      "mismatch": null,
-      "risk": {
-        "level": "low",
-        "total": 2,
-        "max": 8,
-        "reasons": []
-      },
-      "hold": {
-        "code": "keep",
-        "text": "續抱。失效價 80,717.04（距離 3.9%），收盤跌破就是出場優先。要加碼的話，條件和新進場一樣。"
-      }
-    },
-    "ETH-USD": {
-      "market": "CRYPTO",
-      "date": "2026-10-21",
-      "close": 2470.7661,
-      "ma20": 2520.5229,
-      "stop": 2402.8941,
-      "target": 2686.419,
-      "entryLow": 2482.7151,
-      "entryHigh": 2545.7282,
-      "bias": -1.9741,
-      "high20": 2773.5249,
-      "rr": 3.1773,
-      "code": "below",
-      "signal": false,
-      "blockers": [
-        {
-          "key": "zone",
-          "text": "價格低於進場區"
-        },
-        {
-          "key": "daily",
-          "text": "日線空頭"
-        }
-      ],
-      "buyBelow": 2545.7282,
-      "gapPct": 3.033961814515762,
-      "roomRR": 4.46073196605376,
-      "plan": null,
-      "text": "收盤 2,470.77 低於進場區下緣 2,482.72，等收盤站回 2,482.72 以上再看訊號。目前另外還卡：日線空頭。",
-      "notes": [],
-      "mismatch": null,
-      "risk": {
-        "level": "low",
-        "total": 2,
-        "max": 8,
-        "reasons": []
-      },
-      "hold": {
-        "code": "watch",
-        "text": "收盤在 SMA20（2,520.52）之下，還沒破失效價 2,402.89（距離 2.7%）。收盤跌破失效價就是出場優先。"
-      }
-    },
-    "SOL-USD": {
-      "market": "CRYPTO",
-      "date": "2026-10-21",
-      "close": 106.7937,
-      "ma20": 110.4437,
-      "stop": 104.833,
-      "target": 117.08,
-      "entryLow": 108.7871,
-      "entryHigh": 111.5482,
-      "bias": -3.3049,
-      "high20": 123.479,
+      "date": "2026-10-22",
+      "close": 81311.8906,
+      "ma20": 83012.9457,
+      "stop": 80530.1732,
+      "target": 85863.6403,
+      "entryLow": 81767.7515,
+      "entryHigh": 83843.0752,
+      "bias": -2.0491,
+      "high20": 86971.7812,
       "rr": null,
       "code": "below",
       "signal": false,
@@ -3533,13 +3449,17 @@
         {
           "key": "rr",
           "text": "報酬風險比算不出來"
+        },
+        {
+          "key": "macd",
+          "text": "MACD 轉弱"
         }
       ],
-      "buyBelow": 111.5482,
-      "gapPct": 4.452041646651428,
-      "roomRR": 8.509868924363735,
+      "buyBelow": 83564.67300000001,
+      "gapPct": 2.770544853128798,
+      "roomRR": 7.240328282317934,
       "plan": null,
-      "text": "收盤 106.79 低於進場區下緣 108.79，等收盤站回 108.79 以上再看訊號。",
+      "text": "收盤 81,311.89 低於進場區下緣 81,767.75，等收盤站回 81,767.75 以上再看訊號。目前另外還卡：MACD 轉弱。",
       "notes": [],
       "mismatch": null,
       "risk": {
@@ -3550,7 +3470,115 @@
       },
       "hold": {
         "code": "watch",
-        "text": "收盤在 SMA20（110.44）之下，還沒破失效價 104.83（距離 1.8%）。收盤跌破失效價就是出場優先。"
+        "text": "收盤在 SMA20（83,012.95）之下，還沒破失效價 80,530.17（距離 1.0%）。收盤跌破失效價就是出場優先。"
+      }
+    },
+    "ETH-USD": {
+      "market": "CRYPTO",
+      "date": "2026-10-22",
+      "close": 2386.1892,
+      "ma20": 2506.4248,
+      "stop": 2393.7782,
+      "target": 2592.708,
+      "entryLow": 2468.8285,
+      "entryHigh": 2531.4891,
+      "bias": -4.7971,
+      "high20": 2738.2566,
+      "rr": null,
+      "code": "below",
+      "signal": false,
+      "blockers": [
+        {
+          "key": "zone",
+          "text": "收盤已跌破失效價"
+        },
+        {
+          "key": "daily",
+          "text": "日線空頭"
+        },
+        {
+          "key": "rr",
+          "text": "報酬風險比算不出來"
+        },
+        {
+          "key": "levels",
+          "text": "收盤不在失效價和目標價之間"
+        },
+        {
+          "key": "rsi",
+          "text": "RSI 39（要 45–60）"
+        },
+        {
+          "key": "macd",
+          "text": "MACD 轉弱"
+        }
+      ],
+      "buyBelow": 2531.4574000000002,
+      "gapPct": 6.087874339553645,
+      "roomRR": null,
+      "plan": null,
+      "text": "收盤已跌破失效價 2,393.78，不進場。目前另外還卡：日線空頭、收盤不在失效價和目標價之間、RSI 39（要 45–60）、MACD 轉弱。",
+      "notes": [],
+      "mismatch": null,
+      "risk": {
+        "level": "low",
+        "total": 2,
+        "max": 8,
+        "reasons": []
+      },
+      "hold": {
+        "code": "exit",
+        "text": "收盤已跌破失效價 2,393.78，規則上這個部位已經失效，出場優先。"
+      }
+    },
+    "SOL-USD": {
+      "market": "CRYPTO",
+      "date": "2026-10-22",
+      "close": 103.5423,
+      "ma20": 109.6901,
+      "stop": 104.6384,
+      "target": 112.8038,
+      "entryLow": 108.0447,
+      "entryHigh": 110.787,
+      "bias": -5.6047,
+      "high20": 122.1609,
+      "rr": null,
+      "code": "below",
+      "signal": false,
+      "blockers": [
+        {
+          "key": "zone",
+          "text": "收盤已跌破失效價"
+        },
+        {
+          "key": "rr",
+          "text": "報酬風險比算不出來"
+        },
+        {
+          "key": "levels",
+          "text": "收盤不在失效價和目標價之間"
+        },
+        {
+          "key": "rsi",
+          "text": "RSI 40（要 45–60）"
+        }
+      ],
+      "buyBelow": 110.787,
+      "gapPct": 6.9968505625237265,
+      "roomRR": null,
+      "plan": null,
+      "text": "收盤已跌破失效價 104.64，不進場。目前另外還卡：收盤不在失效價和目標價之間、RSI 40（要 45–60）。",
+      "notes": [],
+      "mismatch": null,
+      "risk": {
+        "level": "low",
+        "total": 2,
+        "max": 8,
+        "reasons": []
+      },
+      "hold": {
+        "code": "exit",
+        "text": "收盤已跌破失效價 104.64，規則上這個部位已經失效，出場優先。"
       }
     }
   }
