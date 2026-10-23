@@ -583,5 +583,33 @@
     "holdingDays": null,
     "ambiguousDay": false,
     "entryRR": 1.6648
+  },
+  {
+    "id": "2367.TW-2026-10-22",
+    "symbol": "2367.TW",
+    "market": "TW",
+    "signalDate": "2026-10-22",
+    "entryDate": "2026-10-23",
+    "entryPrice": 44.95,
+    "stopPrice": 42.1193,
+    "target1": 50.6621,
+    "target2": 53.2586,
+    "rsi": 50.2343,
+    "macd": "零軸下",
+    "volumeRatio": 0.9118,
+    "atr": 2.5964,
+    "dailyTrend": "盤整",
+    "weeklyTrend": "盤整",
+    "marketRegime": "NEUTRAL",
+    "theme": "低軌衛星",
+    "status": "OPEN",
+    "exitDate": null,
+    "exitPrice": null,
+    "exitReason": null,
+    "resultR": null,
+    "resultPct": null,
+    "holdingDays": null,
+    "ambiguousDay": false,
+    "entryRR": 2.0179
   }
 ]
