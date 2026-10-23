@@ -1,8 +1,8 @@
 {
-  "generatedAt": "2026-10-23T00:55:16.912331+00:00",
+  "generatedAt": "2026-10-23T05:13:50.808001+00:00",
   "today": {
     "TW": "2026-10-23",
-    "US": "2026-10-22",
+    "US": "2026-10-23",
     "CRYPTO": "2026-10-23"
   },
   "thresholds": {
@@ -81,9 +81,8 @@
       "fail": 0
     },
     "regsho_nyse": {
-      "ok": 0,
-      "fail": 1,
-      "lastError": "HTTPError: HTTP Error 403: Forbidden"
+      "ok": 1,
+      "fail": 0
     },
     "finmind": {
       "ok": 192,
@@ -2363,16 +2362,16 @@
       "items": {
         "tech": {
           "score": 0,
-          "why": "乖離 -3.84%",
-          "date": "2026-10-21"
+          "why": "乖離 -7.79%",
+          "date": "2026-10-22"
         },
         "earnings": {
           "score": 0,
-          "why": "財報約 2027-01-14（Yahoo預估，公司尚未確認），還有 60 個交易日",
+          "why": "財報約 2027-01-14（Yahoo預估，公司尚未確認），還有 59 個交易日",
           "estimated": true,
           "date": "2027-01-14",
           "source": "https://finance.yahoo.com/quote/TSM/",
-          "days": 60,
+          "days": 59,
           "provider": "Yahoo"
         },
         "fundamentals": {
@@ -2382,7 +2381,7 @@
         },
         "chips": {
           "score": 0,
-          "why": "放空餘額 30.5 百萬股（佔流通股 0.6%），較前期 +2.2%（Yahoo）；Reg SHO 門檻名單沒有完整抓到",
+          "why": "放空餘額 30.5 百萬股（佔流通股 0.6%），較前期 +2.2%（Yahoo）",
           "date": "2026-09-29"
         },
         "policy": {
@@ -2409,15 +2408,15 @@
       "items": {
         "tech": {
           "score": 0,
-          "why": "乖離 -2.16%",
-          "date": "2026-10-21"
+          "why": "乖離 -6.20%",
+          "date": "2026-10-22"
         },
         "earnings": {
           "score": 0,
-          "why": "財報 2026-11-17，還有 18 個交易日（Yahoo，已確認）",
+          "why": "財報 2026-11-17，還有 17 個交易日（Yahoo，已確認）",
           "date": "2026-11-17",
           "source": "https://finance.yahoo.com/quote/NVDA/",
-          "days": 18,
+          "days": 17,
           "provider": "Yahoo"
         },
         "fundamentals": {
@@ -2428,7 +2427,7 @@
         },
         "chips": {
           "score": 0,
-          "why": "放空餘額 311.4 百萬股（佔流通股 1.3%），較前期 +4.4%（Yahoo）；Reg SHO 門檻名單沒有完整抓到",
+          "why": "放空餘額 311.4 百萬股（佔流通股 1.3%），較前期 +4.4%（Yahoo）",
           "date": "2026-09-29"
         },
         "policy": {
@@ -2455,15 +2454,15 @@
       "items": {
         "tech": {
           "score": 0,
-          "why": "乖離 -7.72%",
-          "date": "2026-10-21"
+          "why": "乖離 -14.33%",
+          "date": "2026-10-22"
         },
         "earnings": {
           "score": 1,
-          "why": "財報 2026-11-03，還有 8 個交易日",
+          "why": "財報 2026-11-03，還有 7 個交易日",
           "date": "2026-11-03",
           "source": "https://ir.amd.com/news-events/press-releases/detail/1300/amd-to-report-fiscal-third-quarter-2026-financial-results",
-          "days": 8
+          "days": 7
         },
         "fundamentals": {
           "score": 0,
@@ -2473,7 +2472,7 @@
         },
         "chips": {
           "score": 0,
-          "why": "放空餘額 39.3 百萬股（佔流通股 2.4%），較前期 -5.8%（Yahoo）；Reg SHO 門檻名單沒有完整抓到",
+          "why": "放空餘額 39.3 百萬股（佔流通股 2.4%），較前期 -5.8%（Yahoo）",
           "date": "2026-09-29"
         },
         "policy": {
@@ -2500,15 +2499,15 @@
       "items": {
         "tech": {
           "score": 0,
-          "why": "乖離 -3.93%",
-          "date": "2026-10-21"
+          "why": "乖離 -7.72%",
+          "date": "2026-10-22"
         },
         "earnings": {
           "score": 0,
-          "why": "財報 2026-12-09，還有 34 個交易日（Yahoo，已確認）",
+          "why": "財報 2026-12-09，還有 33 個交易日（Yahoo，已確認）",
           "date": "2026-12-09",
           "source": "https://finance.yahoo.com/quote/AVGO/",
-          "days": 34,
+          "days": 33,
           "provider": "Yahoo"
         },
         "fundamentals": {
@@ -2519,7 +2518,7 @@
         },
         "chips": {
           "score": 0,
-          "why": "放空餘額 54.2 百萬股（佔流通股 1.2%），較前期 +7.4%（Yahoo）；Reg SHO 門檻名單沒有完整抓到",
+          "why": "放空餘額 54.2 百萬股（佔流通股 1.2%），較前期 +7.4%（Yahoo）",
           "date": "2026-09-29"
         },
         "policy": {
@@ -2533,28 +2532,33 @@
       "group": "US|AI晶片"
     },
     "MSFT": {
-      "total": 3,
+      "total": 4,
       "max": 10,
       "scored": 5,
-      "score10": 3.0,
-      "level": "low",
-      "flags": [],
+      "score10": 4.0,
+      "level": "mid",
+      "flags": [
+        "earnings_soon"
+      ],
       "gate": {
-        "block": false,
-        "reasons": []
+        "block": true,
+        "reasons": [
+          "財報前觀察",
+          "風險中"
+        ]
       },
       "items": {
         "tech": {
           "score": 0,
-          "why": "乖離 +1.49%",
-          "date": "2026-10-21"
+          "why": "乖離 -0.99%",
+          "date": "2026-10-22"
         },
         "earnings": {
-          "score": 1,
-          "why": "財報 2026-10-28，還有 4 個交易日",
+          "score": 2,
+          "why": "財報 2026-10-28，還有 3 個交易日",
           "date": "2026-10-28",
           "source": "https://news.microsoft.com/source/2026/10/07/microsoft-announces-quarterly-earnings-release-date-69/",
-          "days": 4
+          "days": 3
         },
         "fundamentals": {
           "score": 1,
@@ -2564,7 +2568,7 @@
         },
         "chips": {
           "score": 0,
-          "why": "放空餘額 61.1 百萬股（佔流通股 0.8%），較前期 -17.9%（Yahoo）；Reg SHO 門檻名單沒有完整抓到",
+          "why": "放空餘額 61.1 百萬股（佔流通股 0.8%），較前期 -17.9%（Yahoo）",
           "date": "2026-09-29"
         },
         "policy": {
@@ -2591,16 +2595,16 @@
       "items": {
         "tech": {
           "score": 0,
-          "why": "乖離 -4.39%",
-          "date": "2026-10-21"
+          "why": "乖離 -10.27%",
+          "date": "2026-10-22"
         },
         "earnings": {
           "score": 0,
-          "why": "財報約 2027-01-27（SEC 歷年發布日推估預估，公司尚未確認），還有 69 個交易日",
+          "why": "財報約 2027-01-27（SEC 歷年發布日推估預估，公司尚未確認），還有 68 個交易日",
           "estimated": true,
           "date": "2027-01-27",
           "source": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&type=8-K&CIK=0001326801",
-          "days": 69,
+          "days": 68,
           "provider": "SEC 歷年發布日推估"
         },
         "fundamentals": {
@@ -2611,7 +2615,7 @@
         },
         "chips": {
           "score": 0,
-          "why": "放空餘額 33.6 百萬股（佔流通股 1.5%），較前期 +16.5%；佔比低於 2% 不計分（Yahoo）；Reg SHO 門檻名單沒有完整抓到",
+          "why": "放空餘額 33.6 百萬股（佔流通股 1.5%），較前期 +16.5%；佔比低於 2% 不計分（Yahoo）",
           "date": "2026-09-29"
         },
         "policy": {
@@ -2638,16 +2642,16 @@
       "items": {
         "tech": {
           "score": 0,
-          "why": "乖離 -9.37%",
-          "date": "2026-10-21"
+          "why": "乖離 -14.09%",
+          "date": "2026-10-22"
         },
         "earnings": {
           "score": 0,
-          "why": "財報約 2026-12-23（Yahoo預估，公司尚未確認），還有 44 個交易日",
+          "why": "財報約 2026-12-23（Yahoo預估，公司尚未確認），還有 43 個交易日",
           "estimated": true,
           "date": "2026-12-23",
           "source": "https://finance.yahoo.com/quote/MU/",
-          "days": 44,
+          "days": 43,
           "provider": "Yahoo"
         },
         "fundamentals": {
@@ -2658,7 +2662,7 @@
         },
         "chips": {
           "score": 0,
-          "why": "放空餘額 26.0 百萬股（佔流通股 2.3%），較前期 -12.4%（Yahoo）；Reg SHO 門檻名單沒有完整抓到",
+          "why": "放空餘額 26.0 百萬股（佔流通股 2.3%），較前期 -12.4%（Yahoo）",
           "date": "2026-09-29"
         },
         "policy": {
@@ -2685,16 +2689,16 @@
       "items": {
         "tech": {
           "score": 0,
-          "why": "乖離 +4.44%",
-          "date": "2026-10-21"
+          "why": "乖離 +1.28%",
+          "date": "2026-10-22"
         },
         "earnings": {
           "score": 0,
-          "why": "財報約 2027-01-01（SEC 歷年發布日推估預估，公司尚未確認），還有 51 個交易日",
+          "why": "財報約 2027-01-01（SEC 歷年發布日推估預估，公司尚未確認），還有 50 個交易日",
           "estimated": true,
           "date": "2027-01-01",
           "source": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&type=8-K&CIK=0001318605",
-          "days": 51,
+          "days": 50,
           "provider": "SEC 歷年發布日推估"
         },
         "fundamentals": {
@@ -2705,7 +2709,7 @@
         },
         "chips": {
           "score": 0,
-          "why": "放空餘額 70.9 百萬股（佔流通股 2.0%），較前期 -4.4%（Yahoo）；Reg SHO 門檻名單沒有完整抓到",
+          "why": "放空餘額 70.9 百萬股（佔流通股 2.0%），較前期 -4.4%（Yahoo）",
           "date": "2026-09-29"
         },
         "policy": {
@@ -2732,16 +2736,16 @@
       "items": {
         "tech": {
           "score": 0,
-          "why": "乖離 +2.62%",
-          "date": "2026-10-21"
+          "why": "乖離 -6.66%",
+          "date": "2026-10-22"
         },
         "earnings": {
           "score": 1,
-          "why": "財報約 2026-11-03（Nasdaq預估，公司尚未確認），還有 8 個交易日；這是 2026-10-21 抓到的結果",
+          "why": "財報約 2026-11-03（Nasdaq預估，公司尚未確認），還有 7 個交易日；這是 2026-10-21 抓到的結果",
           "estimated": true,
           "date": "2026-11-03",
           "source": "https://www.nasdaq.com/market-activity/stocks/spcx/earnings",
-          "days": 8,
+          "days": 7,
           "provider": "Nasdaq"
         },
         "fundamentals": {
@@ -2752,7 +2756,7 @@
         },
         "chips": {
           "score": 0,
-          "why": "放空餘額 181.0 百萬股（佔流通股 2.7%），較前期 +4.2%（Yahoo）；Reg SHO 門檻名單沒有完整抓到",
+          "why": "放空餘額 181.0 百萬股（佔流通股 2.7%），較前期 +4.2%（Yahoo）",
           "date": "2026-09-29"
         },
         "policy": {
@@ -2779,15 +2783,15 @@
       "items": {
         "tech": {
           "score": 0,
-          "why": "乖離 -18.14%",
-          "date": "2026-10-21"
+          "why": "乖離 -20.52%",
+          "date": "2026-10-22"
         },
         "earnings": {
           "score": 0,
-          "why": "財報 2026-11-09，還有 12 個交易日（Yahoo，已確認）",
+          "why": "財報 2026-11-09，還有 11 個交易日（Yahoo，已確認）",
           "date": "2026-11-09",
           "source": "https://finance.yahoo.com/quote/RKLB/",
-          "days": 12,
+          "days": 11,
           "provider": "Yahoo"
         },
         "fundamentals": {
@@ -2798,7 +2802,7 @@
         },
         "chips": {
           "score": 0,
-          "why": "放空餘額 44.4 百萬股（佔流通股 7.5%），較前期 -2.1%（Yahoo）；Reg SHO 門檻名單沒有完整抓到",
+          "why": "放空餘額 44.4 百萬股（佔流通股 7.5%），較前期 -2.1%（Yahoo）",
           "date": "2026-09-29"
         },
         "policy": {
@@ -2825,15 +2829,15 @@
       "items": {
         "tech": {
           "score": 0,
-          "why": "乖離 -22.64%",
-          "date": "2026-10-21"
+          "why": "乖離 -25.09%",
+          "date": "2026-10-22"
         },
         "earnings": {
           "score": 0,
-          "why": "財報 2026-11-09，還有 12 個交易日（Yahoo，已確認）",
+          "why": "財報 2026-11-09，還有 11 個交易日（Yahoo，已確認）",
           "date": "2026-11-09",
           "source": "https://finance.yahoo.com/quote/ASTS/",
-          "days": 12,
+          "days": 11,
           "provider": "Yahoo"
         },
         "fundamentals": {
@@ -2845,7 +2849,7 @@
         },
         "chips": {
           "score": 0,
-          "why": "放空餘額 64.8 百萬股（佔流通股 21.7%），較前期 +1.1%（Yahoo）；Reg SHO 門檻名單沒有完整抓到",
+          "why": "放空餘額 64.8 百萬股（佔流通股 21.7%），較前期 +1.1%（Yahoo）",
           "date": "2026-09-29"
         },
         "policy": {
@@ -2872,16 +2876,16 @@
       "items": {
         "tech": {
           "score": 0,
-          "why": "乖離 +1.38%",
-          "date": "2026-10-21"
+          "why": "乖離 -5.88%",
+          "date": "2026-10-22"
         },
         "earnings": {
           "score": 1,
-          "why": "財報約 2026-11-05（Yahoo預估，公司尚未確認），還有 10 個交易日",
+          "why": "財報約 2026-11-05（Yahoo預估，公司尚未確認），還有 9 個交易日",
           "estimated": true,
           "date": "2026-11-05",
           "source": "https://finance.yahoo.com/quote/ECHO/",
-          "days": 10,
+          "days": 9,
           "provider": "Yahoo"
         },
         "fundamentals": {
@@ -2893,7 +2897,7 @@
         },
         "chips": {
           "score": 0,
-          "why": "放空餘額 25.5 百萬股（佔流通股 22.5%），較前期 -8.1%（Yahoo）；Reg SHO 門檻名單沒有完整抓到",
+          "why": "放空餘額 25.5 百萬股（佔流通股 22.5%），較前期 -8.1%（Yahoo）",
           "date": "2026-09-29"
         },
         "policy": {
@@ -2929,14 +2933,14 @@
         },
         "fundamentals": {
           "score": 1,
-          "why": "穩定幣總供給 30 日 -0.5%（304B 美元）、BTC 市占率 59.5%",
-          "date": "2026-10-22",
+          "why": "穩定幣總供給 30 日 -0.7%（303B 美元）、BTC 市占率 59.4%",
+          "date": "2026-10-23",
           "source": "https://defillama.com/stablecoins",
           "label": "市場結構"
         },
         "chips": {
           "score": 0,
-          "why": "恐懼與貪婪指數 50（中性）；資金費率 +0.0072%、未平倉量 7 日 +0.2%",
+          "why": "恐懼與貪婪指數 50（中性）；資金費率 +0.0077%、未平倉量 7 日 +0.2%",
           "date": "2026-10-23",
           "source": "https://alternative.me/crypto/fear-and-greed-index/",
           "label": "情緒／槓桿"
@@ -2974,14 +2978,14 @@
         },
         "fundamentals": {
           "score": 1,
-          "why": "穩定幣總供給 30 日 -0.5%（304B 美元）、BTC 市占率 59.5%",
-          "date": "2026-10-22",
+          "why": "穩定幣總供給 30 日 -0.7%（303B 美元）、BTC 市占率 59.4%",
+          "date": "2026-10-23",
           "source": "https://defillama.com/stablecoins",
           "label": "市場結構"
         },
         "chips": {
           "score": 0,
-          "why": "恐懼與貪婪指數 50（中性）；資金費率 +0.0080%、未平倉量 7 日 -1.1%",
+          "why": "恐懼與貪婪指數 50（中性）；資金費率 +0.0085%、未平倉量 7 日 -1.1%",
           "date": "2026-10-23",
           "source": "https://alternative.me/crypto/fear-and-greed-index/",
           "label": "情緒／槓桿"
@@ -3019,8 +3023,8 @@
         },
         "fundamentals": {
           "score": 1,
-          "why": "穩定幣總供給 30 日 -0.5%（304B 美元）、BTC 市占率 59.5%",
-          "date": "2026-10-22",
+          "why": "穩定幣總供給 30 日 -0.7%（303B 美元）、BTC 市占率 59.4%",
+          "date": "2026-10-23",
           "source": "https://defillama.com/stablecoins",
           "label": "市場結構"
         },
