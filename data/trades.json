@@ -555,5 +555,33 @@
     "holdingDays": null,
     "ambiguousDay": false,
     "entryRR": 3.0677
+  },
+  {
+    "id": "2317.TW-2026-10-21",
+    "symbol": "2317.TW",
+    "market": "TW",
+    "signalDate": "2026-10-21",
+    "entryDate": "2026-10-22",
+    "entryPrice": 249.5,
+    "stopPrice": 241.3179,
+    "target1": 263.1214,
+    "target2": 269.0857,
+    "rsi": 52.4869,
+    "macd": "零軸下",
+    "volumeRatio": 1.3739,
+    "atr": 5.9643,
+    "dailyTrend": "盤整",
+    "weeklyTrend": "多頭",
+    "marketRegime": "NEUTRAL",
+    "theme": "機器人・整機系統",
+    "status": "OPEN",
+    "exitDate": null,
+    "exitPrice": null,
+    "exitReason": null,
+    "resultR": null,
+    "resultPct": null,
+    "holdingDays": null,
+    "ambiguousDay": false,
+    "entryRR": 1.6648
   }
 ]
