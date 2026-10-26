@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-26T05:10:53.604641+00:00",
+  "updated": "2026-10-26T13:16:01.020329+00:00",
   "source": "backtest.py",
   "isFinalClose": true,
   "meta": {
@@ -677,11 +677,11 @@
       "benchmark": {
         "draws": 300,
         "trades": 45,
-        "meanR": -0.0668,
-        "p05": -0.3924,
-        "p95": 0.2861,
+        "meanR": -0.068,
+        "p05": -0.3836,
+        "p95": 0.2745,
         "actualR": 0.117,
-        "beats": 0.83,
+        "beats": 0.8167,
         "definition": "同樣的股票、同樣的停損停利距離與成本，但進場日隨機"
       },
       "byRegime": {
