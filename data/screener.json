@@ -1,5 +1,5 @@
 {
- "generatedAt": "2026-10-27T01:40:00.609979+00:00",
+ "generatedAt": "2026-10-27T05:28:56.177641+00:00",
  "params": {
   "rsi_lo": 45,
   "rsi_hi": 60,
@@ -23,7 +23,7 @@
    "ok": 299,
    "failed": 1,
    "failedSample": [
-    "7856.TWO：只有 31 根日 K"
+    "7856.TWO：只有 32 根日 K"
    ],
    "candidates": 36,
    "signals": 10,
@@ -105,7 +105,7 @@
      "market": "TW",
      "date": "2026-10-23",
      "close": 48.55,
-     "pct": -0.0,
+     "pct": 0.0,
      "entryLow": 47.4228,
      "entryHigh": 48.6265,
      "stop": 43.1007,
@@ -741,7 +741,7 @@
     }
    ],
    "universe": "證交所＋櫃買中心全市場日收盤，成交金額前 300 名",
-   "seconds": 31,
+   "seconds": 28,
    "session": "2026-10-23"
   },
   "US": {
@@ -1466,7 +1466,7 @@
     }
    ],
    "universe": "Nasdaq 全市場名單，市值前 300 名",
-   "seconds": 18,
+   "seconds": 17,
    "session": "2026-10-26"
   },
   "CRYPTO": {

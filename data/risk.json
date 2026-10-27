@@ -1,8 +1,8 @@
 {
-  "generatedAt": "2026-10-27T01:37:19.660431+00:00",
+  "generatedAt": "2026-10-27T05:26:10.408598+00:00",
   "today": {
     "TW": "2026-10-27",
-    "US": "2026-10-26",
+    "US": "2026-10-27",
     "CRYPTO": "2026-10-27"
   },
   "thresholds": {
@@ -2362,11 +2362,11 @@
         },
         "earnings": {
           "score": 0,
-          "why": "財報約 2027-01-14（Yahoo預估，公司尚未確認），還有 58 個交易日",
+          "why": "財報約 2027-01-14（Yahoo預估，公司尚未確認），還有 57 個交易日",
           "estimated": true,
           "date": "2027-01-14",
           "source": "https://finance.yahoo.com/quote/TSM/",
-          "days": 58,
+          "days": 57,
           "provider": "Yahoo"
         },
         "fundamentals": {
@@ -2381,7 +2381,7 @@
         },
         "policy": {
           "score": 1,
-          "why": "2026-10-28 FOMC 利率決議（10/27–28 會議）",
+          "why": "2026-10-28 FOMC 利率決議（10/27–28 會議）（另有 1 件）",
           "date": "2026-10-28",
           "source": "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm"
         }
@@ -2408,10 +2408,10 @@
         },
         "earnings": {
           "score": 0,
-          "why": "財報 2026-11-17，還有 16 個交易日（Yahoo，已確認）",
+          "why": "財報 2026-11-17，還有 15 個交易日（Yahoo，已確認）",
           "date": "2026-11-17",
           "source": "https://finance.yahoo.com/quote/NVDA/",
-          "days": 16,
+          "days": 15,
           "provider": "Yahoo"
         },
         "fundamentals": {
@@ -2427,7 +2427,7 @@
         },
         "policy": {
           "score": 1,
-          "why": "2026-10-28 FOMC 利率決議（10/27–28 會議）",
+          "why": "2026-10-28 FOMC 利率決議（10/27–28 會議）（另有 1 件）",
           "date": "2026-10-28",
           "source": "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm"
         }
@@ -2454,10 +2454,10 @@
         },
         "earnings": {
           "score": 1,
-          "why": "財報 2026-11-03，還有 6 個交易日",
+          "why": "財報 2026-11-03，還有 5 個交易日",
           "date": "2026-11-03",
           "source": "https://ir.amd.com/news-events/press-releases/detail/1300/amd-to-report-fiscal-third-quarter-2026-financial-results",
-          "days": 6
+          "days": 5
         },
         "fundamentals": {
           "score": 0,
@@ -2472,7 +2472,7 @@
         },
         "policy": {
           "score": 1,
-          "why": "2026-10-28 FOMC 利率決議（10/27–28 會議）",
+          "why": "2026-10-28 FOMC 利率決議（10/27–28 會議）（另有 1 件）",
           "date": "2026-10-28",
           "source": "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm"
         }
@@ -2499,10 +2499,10 @@
         },
         "earnings": {
           "score": 0,
-          "why": "財報 2026-12-09，還有 32 個交易日（Yahoo，已確認）",
+          "why": "財報 2026-12-09，還有 31 個交易日（Yahoo，已確認）",
           "date": "2026-12-09",
           "source": "https://finance.yahoo.com/quote/AVGO/",
-          "days": 32,
+          "days": 31,
           "provider": "Yahoo"
         },
         "fundamentals": {
@@ -2518,7 +2518,7 @@
         },
         "policy": {
           "score": 1,
-          "why": "2026-10-28 FOMC 利率決議（10/27–28 會議）",
+          "why": "2026-10-28 FOMC 利率決議（10/27–28 會議）（另有 1 件）",
           "date": "2026-10-28",
           "source": "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm"
         }
@@ -2550,10 +2550,10 @@
         },
         "earnings": {
           "score": 2,
-          "why": "財報 2026-10-28，還有 2 個交易日",
+          "why": "財報 2026-10-28，還有 1 個交易日",
           "date": "2026-10-28",
           "source": "https://news.microsoft.com/source/2026/10/07/microsoft-announces-quarterly-earnings-release-date-69/",
-          "days": 2
+          "days": 1
         },
         "fundamentals": {
           "score": 1,
@@ -2568,7 +2568,7 @@
         },
         "policy": {
           "score": 1,
-          "why": "2026-10-28 FOMC 利率決議（10/27–28 會議）",
+          "why": "2026-10-28 FOMC 利率決議（10/27–28 會議）（另有 1 件）",
           "date": "2026-10-28",
           "source": "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm"
         }
@@ -2595,11 +2595,11 @@
         },
         "earnings": {
           "score": 0,
-          "why": "財報約 2027-01-27（SEC 歷年發布日推估預估，公司尚未確認），還有 67 個交易日",
+          "why": "財報約 2027-01-27（SEC 歷年發布日推估預估，公司尚未確認），還有 66 個交易日",
           "estimated": true,
           "date": "2027-01-27",
           "source": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&type=8-K&CIK=0001326801",
-          "days": 67,
+          "days": 66,
           "provider": "SEC 歷年發布日推估"
         },
         "fundamentals": {
@@ -2615,7 +2615,7 @@
         },
         "policy": {
           "score": 1,
-          "why": "2026-10-28 FOMC 利率決議（10/27–28 會議）",
+          "why": "2026-10-28 FOMC 利率決議（10/27–28 會議）（另有 1 件）",
           "date": "2026-10-28",
           "source": "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm"
         }
@@ -2642,11 +2642,11 @@
         },
         "earnings": {
           "score": 0,
-          "why": "財報約 2026-12-23（Yahoo預估，公司尚未確認），還有 42 個交易日",
+          "why": "財報約 2026-12-23（Yahoo預估，公司尚未確認），還有 41 個交易日",
           "estimated": true,
           "date": "2026-12-23",
           "source": "https://finance.yahoo.com/quote/MU/",
-          "days": 42,
+          "days": 41,
           "provider": "Yahoo"
         },
         "fundamentals": {
@@ -2662,7 +2662,7 @@
         },
         "policy": {
           "score": 1,
-          "why": "2026-10-28 FOMC 利率決議（10/27–28 會議）",
+          "why": "2026-10-28 FOMC 利率決議（10/27–28 會議）（另有 1 件）",
           "date": "2026-10-28",
           "source": "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm"
         }
@@ -2689,11 +2689,11 @@
         },
         "earnings": {
           "score": 0,
-          "why": "財報約 2027-01-01（SEC 歷年發布日推估預估，公司尚未確認），還有 49 個交易日",
+          "why": "財報約 2027-01-01（SEC 歷年發布日推估預估，公司尚未確認），還有 48 個交易日",
           "estimated": true,
           "date": "2027-01-01",
           "source": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&type=8-K&CIK=0001318605",
-          "days": 49,
+          "days": 48,
           "provider": "SEC 歷年發布日推估"
         },
         "fundamentals": {
@@ -2709,7 +2709,7 @@
         },
         "policy": {
           "score": 1,
-          "why": "2026-10-28 FOMC 利率決議（10/27–28 會議）",
+          "why": "2026-10-28 FOMC 利率決議（10/27–28 會議）（另有 1 件）",
           "date": "2026-10-28",
           "source": "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm"
         }
@@ -2736,11 +2736,11 @@
         },
         "earnings": {
           "score": 1,
-          "why": "財報約 2026-11-03（Nasdaq預估，公司尚未確認），還有 6 個交易日；這是 2026-10-21 抓到的結果",
+          "why": "財報約 2026-11-03（Nasdaq預估，公司尚未確認），還有 5 個交易日；這是 2026-10-21 抓到的結果",
           "estimated": true,
           "date": "2026-11-03",
           "source": "https://www.nasdaq.com/market-activity/stocks/spcx/earnings",
-          "days": 6,
+          "days": 5,
           "provider": "Nasdaq"
         },
         "fundamentals": {
@@ -2756,7 +2756,7 @@
         },
         "policy": {
           "score": 1,
-          "why": "2026-10-28 FOMC 利率決議（10/27–28 會議）",
+          "why": "2026-10-28 FOMC 利率決議（10/27–28 會議）（另有 1 件）",
           "date": "2026-10-28",
           "source": "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm"
         }
@@ -2783,10 +2783,10 @@
         },
         "earnings": {
           "score": 1,
-          "why": "財報 2026-11-09，還有 10 個交易日（Yahoo，已確認）",
+          "why": "財報 2026-11-09，還有 9 個交易日（Yahoo，已確認）",
           "date": "2026-11-09",
           "source": "https://finance.yahoo.com/quote/RKLB/",
-          "days": 10,
+          "days": 9,
           "provider": "Yahoo"
         },
         "fundamentals": {
@@ -2802,7 +2802,7 @@
         },
         "policy": {
           "score": 1,
-          "why": "2026-10-28 FOMC 利率決議（10/27–28 會議）",
+          "why": "2026-10-28 FOMC 利率決議（10/27–28 會議）（另有 1 件）",
           "date": "2026-10-28",
           "source": "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm"
         }
@@ -2829,10 +2829,10 @@
         },
         "earnings": {
           "score": 1,
-          "why": "財報 2026-11-09，還有 10 個交易日（Yahoo，已確認）",
+          "why": "財報 2026-11-09，還有 9 個交易日（Yahoo，已確認）",
           "date": "2026-11-09",
           "source": "https://finance.yahoo.com/quote/ASTS/",
-          "days": 10,
+          "days": 9,
           "provider": "Yahoo"
         },
         "fundamentals": {
@@ -2849,7 +2849,7 @@
         },
         "policy": {
           "score": 1,
-          "why": "2026-10-28 FOMC 利率決議（10/27–28 會議）",
+          "why": "2026-10-28 FOMC 利率決議（10/27–28 會議）（另有 1 件）",
           "date": "2026-10-28",
           "source": "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm"
         }
@@ -2876,11 +2876,11 @@
         },
         "earnings": {
           "score": 1,
-          "why": "財報約 2026-11-05（Yahoo預估，公司尚未確認），還有 8 個交易日",
+          "why": "財報約 2026-11-05（Yahoo預估，公司尚未確認），還有 7 個交易日",
           "estimated": true,
           "date": "2026-11-05",
           "source": "https://finance.yahoo.com/quote/ECHO/",
-          "days": 8,
+          "days": 7,
           "provider": "Yahoo"
         },
         "fundamentals": {
@@ -2897,7 +2897,7 @@
         },
         "policy": {
           "score": 1,
-          "why": "2026-10-28 FOMC 利率決議（10/27–28 會議）",
+          "why": "2026-10-28 FOMC 利率決議（10/27–28 會議）（另有 1 件）",
           "date": "2026-10-28",
           "source": "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm"
         }
@@ -2928,7 +2928,7 @@
         },
         "fundamentals": {
           "score": 1,
-          "why": "穩定幣總供給 30 日 -1.2%（302B 美元）、BTC 市占率 59.5%",
+          "why": "穩定幣總供給 30 日 -1.2%（302B 美元）、BTC 市占率 59.4%",
           "date": "2026-10-27",
           "source": "https://defillama.com/stablecoins",
           "label": "市場結構"
@@ -2973,7 +2973,7 @@
         },
         "fundamentals": {
           "score": 1,
-          "why": "穩定幣總供給 30 日 -1.2%（302B 美元）、BTC 市占率 59.5%",
+          "why": "穩定幣總供給 30 日 -1.2%（302B 美元）、BTC 市占率 59.4%",
           "date": "2026-10-27",
           "source": "https://defillama.com/stablecoins",
           "label": "市場結構"
@@ -3018,7 +3018,7 @@
         },
         "fundamentals": {
           "score": 1,
-          "why": "穩定幣總供給 30 日 -1.2%（302B 美元）、BTC 市占率 59.5%",
+          "why": "穩定幣總供給 30 日 -1.2%（302B 美元）、BTC 市占率 59.4%",
           "date": "2026-10-27",
           "source": "https://defillama.com/stablecoins",
           "label": "市場結構"
