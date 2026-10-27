@@ -1,9 +1,9 @@
 {
-  "generatedAt": "2026-10-26T13:16:03.552197+00:00",
+  "generatedAt": "2026-10-27T00:24:18.799870+00:00",
   "today": {
-    "TW": "2026-10-26",
+    "TW": "2026-10-27",
     "US": "2026-10-26",
-    "CRYPTO": "2026-10-26"
+    "CRYPTO": "2026-10-27"
   },
   "thresholds": {
     "bias_mid": 6.0,
@@ -118,7 +118,7 @@
     }
   },
   "events": {
-    "updatedAt": "2026-10-26",
+    "updatedAt": "2026-10-27",
     "fresh": true,
     "used": 25,
     "earnings": 5,
@@ -145,11 +145,11 @@
         },
         "earnings": {
           "score": 0,
-          "why": "年報最晚 2027-03-31 要公布（法定期限，多數公司會提早），還有 112 個交易日",
+          "why": "年報最晚 2027-03-31 要公布（法定期限，多數公司會提早），還有 111 個交易日",
           "estimated": true,
           "date": "2027-03-31",
           "source": "https://mops.twse.com.tw/mops/#/web/t100sb02_1",
-          "days": 112,
+          "days": 111,
           "provider": "法定期限"
         },
         "fundamentals": {
@@ -164,7 +164,7 @@
         },
         "policy": {
           "score": 1,
-          "why": "2026-10-28 FOMC 利率決議（10/27–28 會議）",
+          "why": "2026-10-28 FOMC 利率決議（10/27–28 會議）（另有 1 件）",
           "date": "2026-10-28",
           "source": "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm"
         }
@@ -191,11 +191,11 @@
         },
         "earnings": {
           "score": 0,
-          "why": "第三季財報最晚 2026-11-14 要公布（法定期限，多數公司會提早），還有 14 個交易日",
+          "why": "第三季財報最晚 2026-11-14 要公布（法定期限，多數公司會提早），還有 13 個交易日",
           "estimated": true,
           "date": "2026-11-14",
           "source": "https://mops.twse.com.tw/mops/#/web/t100sb02_1",
-          "days": 14,
+          "days": 13,
           "provider": "法定期限"
         },
         "fundamentals": {
@@ -210,7 +210,7 @@
         },
         "policy": {
           "score": 1,
-          "why": "2026-10-28 FOMC 利率決議（10/27–28 會議）",
+          "why": "2026-10-28 FOMC 利率決議（10/27–28 會議）（另有 1 件）",
           "date": "2026-10-28",
           "source": "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm"
         }
@@ -237,11 +237,11 @@
         },
         "earnings": {
           "score": 0,
-          "why": "第三季財報最晚 2026-11-14 要公布（法定期限，多數公司會提早），還有 14 個交易日",
+          "why": "第三季財報最晚 2026-11-14 要公布（法定期限，多數公司會提早），還有 13 個交易日",
           "estimated": true,
           "date": "2026-11-14",
           "source": "https://mops.twse.com.tw/mops/#/web/t100sb02_1",
-          "days": 14,
+          "days": 13,
           "provider": "法定期限"
         },
         "fundamentals": {
@@ -256,7 +256,7 @@
         },
         "policy": {
           "score": 1,
-          "why": "2026-10-28 FOMC 利率決議（10/27–28 會議）",
+          "why": "2026-10-28 FOMC 利率決議（10/27–28 會議）（另有 1 件）",
           "date": "2026-10-28",
           "source": "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm"
         }
@@ -283,11 +283,11 @@
         },
         "earnings": {
           "score": 0,
-          "why": "第三季財報最晚 2026-11-14 要公布（法定期限，多數公司會提早），還有 14 個交易日",
+          "why": "第三季財報最晚 2026-11-14 要公布（法定期限，多數公司會提早），還有 13 個交易日",
           "estimated": true,
           "date": "2026-11-14",
           "source": "https://mops.twse.com.tw/mops/#/web/t100sb02_1",
-          "days": 14,
+          "days": 13,
           "provider": "法定期限"
         },
         "fundamentals": {
@@ -302,7 +302,7 @@
         },
         "policy": {
           "score": 1,
-          "why": "2026-10-28 FOMC 利率決議（10/27–28 會議）",
+          "why": "2026-10-28 FOMC 利率決議（10/27–28 會議）（另有 1 件）",
           "date": "2026-10-28",
           "source": "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm"
         }
@@ -329,11 +329,11 @@
         },
         "earnings": {
           "score": 0,
-          "why": "第三季財報最晚 2026-11-14 要公布（法定期限，多數公司會提早），還有 14 個交易日",
+          "why": "第三季財報最晚 2026-11-14 要公布（法定期限，多數公司會提早），還有 13 個交易日",
           "estimated": true,
           "date": "2026-11-14",
           "source": "https://mops.twse.com.tw/mops/#/web/t100sb02_1",
-          "days": 14,
+          "days": 13,
           "provider": "法定期限"
         },
         "fundamentals": {
@@ -348,7 +348,7 @@
         },
         "policy": {
           "score": 1,
-          "why": "2026-10-28 FOMC 利率決議（10/27–28 會議）",
+          "why": "2026-10-28 FOMC 利率決議（10/27–28 會議）（另有 1 件）",
           "date": "2026-10-28",
           "source": "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm"
         }
@@ -375,11 +375,11 @@
         },
         "earnings": {
           "score": 0,
-          "why": "第三季財報最晚 2026-11-14 要公布（法定期限，多數公司會提早），還有 14 個交易日",
+          "why": "第三季財報最晚 2026-11-14 要公布（法定期限，多數公司會提早），還有 13 個交易日",
           "estimated": true,
           "date": "2026-11-14",
           "source": "https://mops.twse.com.tw/mops/#/web/t100sb02_1",
-          "days": 14,
+          "days": 13,
           "provider": "法定期限"
         },
         "fundamentals": {
@@ -394,7 +394,7 @@
         },
         "policy": {
           "score": 1,
-          "why": "2026-10-28 FOMC 利率決議（10/27–28 會議）",
+          "why": "2026-10-28 FOMC 利率決議（10/27–28 會議）（另有 1 件）",
           "date": "2026-10-28",
           "source": "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm"
         }
@@ -421,11 +421,11 @@
         },
         "earnings": {
           "score": 0,
-          "why": "第三季財報最晚 2026-11-14 要公布（法定期限，多數公司會提早），還有 14 個交易日",
+          "why": "第三季財報最晚 2026-11-14 要公布（法定期限，多數公司會提早），還有 13 個交易日",
           "estimated": true,
           "date": "2026-11-14",
           "source": "https://mops.twse.com.tw/mops/#/web/t100sb02_1",
-          "days": 14,
+          "days": 13,
           "provider": "法定期限"
         },
         "fundamentals": {
@@ -440,7 +440,7 @@
         },
         "policy": {
           "score": 1,
-          "why": "2026-10-28 FOMC 利率決議（10/27–28 會議）",
+          "why": "2026-10-28 FOMC 利率決議（10/27–28 會議）（另有 1 件）",
           "date": "2026-10-28",
           "source": "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm"
         }
@@ -467,11 +467,11 @@
         },
         "earnings": {
           "score": 0,
-          "why": "第三季財報最晚 2026-11-14 要公布（法定期限，多數公司會提早），還有 14 個交易日",
+          "why": "第三季財報最晚 2026-11-14 要公布（法定期限，多數公司會提早），還有 13 個交易日",
           "estimated": true,
           "date": "2026-11-14",
           "source": "https://mops.twse.com.tw/mops/#/web/t100sb02_1",
-          "days": 14,
+          "days": 13,
           "provider": "法定期限"
         },
         "fundamentals": {
@@ -486,7 +486,7 @@
         },
         "policy": {
           "score": 1,
-          "why": "2026-10-28 FOMC 利率決議（10/27–28 會議）",
+          "why": "2026-10-28 FOMC 利率決議（10/27–28 會議）（另有 1 件）",
           "date": "2026-10-28",
           "source": "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm"
         }
@@ -513,11 +513,11 @@
         },
         "earnings": {
           "score": 0,
-          "why": "第三季財報最晚 2026-11-14 要公布（法定期限，多數公司會提早），還有 14 個交易日",
+          "why": "第三季財報最晚 2026-11-14 要公布（法定期限，多數公司會提早），還有 13 個交易日",
           "estimated": true,
           "date": "2026-11-14",
           "source": "https://mops.twse.com.tw/mops/#/web/t100sb02_1",
-          "days": 14,
+          "days": 13,
           "provider": "法定期限"
         },
         "fundamentals": {
@@ -532,7 +532,7 @@
         },
         "policy": {
           "score": 1,
-          "why": "2026-10-28 FOMC 利率決議（10/27–28 會議）",
+          "why": "2026-10-28 FOMC 利率決議（10/27–28 會議）（另有 1 件）",
           "date": "2026-10-28",
           "source": "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm"
         }
@@ -559,11 +559,11 @@
         },
         "earnings": {
           "score": 0,
-          "why": "第三季財報最晚 2026-11-14 要公布（法定期限，多數公司會提早），還有 14 個交易日",
+          "why": "第三季財報最晚 2026-11-14 要公布（法定期限，多數公司會提早），還有 13 個交易日",
           "estimated": true,
           "date": "2026-11-14",
           "source": "https://mops.twse.com.tw/mops/#/web/t100sb02_1",
-          "days": 14,
+          "days": 13,
           "provider": "法定期限"
         },
         "fundamentals": {
@@ -578,7 +578,7 @@
         },
         "policy": {
           "score": 1,
-          "why": "2026-10-28 FOMC 利率決議（10/27–28 會議）",
+          "why": "2026-10-28 FOMC 利率決議（10/27–28 會議）（另有 1 件）",
           "date": "2026-10-28",
           "source": "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm"
         }
@@ -605,11 +605,11 @@
         },
         "earnings": {
           "score": 0,
-          "why": "第三季財報最晚 2026-11-14 要公布（法定期限，多數公司會提早），還有 14 個交易日",
+          "why": "第三季財報最晚 2026-11-14 要公布（法定期限，多數公司會提早），還有 13 個交易日",
           "estimated": true,
           "date": "2026-11-14",
           "source": "https://mops.twse.com.tw/mops/#/web/t100sb02_1",
-          "days": 14,
+          "days": 13,
           "provider": "法定期限"
         },
         "fundamentals": {
@@ -624,7 +624,7 @@
         },
         "policy": {
           "score": 1,
-          "why": "2026-10-28 FOMC 利率決議（10/27–28 會議）",
+          "why": "2026-10-28 FOMC 利率決議（10/27–28 會議）（另有 1 件）",
           "date": "2026-10-28",
           "source": "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm"
         }
@@ -655,11 +655,11 @@
         },
         "earnings": {
           "score": 0,
-          "why": "第三季財報最晚 2026-11-14 要公布（法定期限，多數公司會提早），還有 14 個交易日",
+          "why": "第三季財報最晚 2026-11-14 要公布（法定期限，多數公司會提早），還有 13 個交易日",
           "estimated": true,
           "date": "2026-11-14",
           "source": "https://mops.twse.com.tw/mops/#/web/t100sb02_1",
-          "days": 14,
+          "days": 13,
           "provider": "法定期限"
         },
         "fundamentals": {
@@ -675,7 +675,7 @@
         },
         "policy": {
           "score": 1,
-          "why": "2026-10-28 FOMC 利率決議（10/27–28 會議）",
+          "why": "2026-10-28 FOMC 利率決議（10/27–28 會議）（另有 1 件）",
           "date": "2026-10-28",
           "source": "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm"
         }
@@ -702,11 +702,11 @@
         },
         "earnings": {
           "score": 0,
-          "why": "第三季財報最晚 2026-11-14 要公布（法定期限，多數公司會提早），還有 14 個交易日",
+          "why": "第三季財報最晚 2026-11-14 要公布（法定期限，多數公司會提早），還有 13 個交易日",
           "estimated": true,
           "date": "2026-11-14",
           "source": "https://mops.twse.com.tw/mops/#/web/t100sb02_1",
-          "days": 14,
+          "days": 13,
           "provider": "法定期限"
         },
         "fundamentals": {
@@ -721,7 +721,7 @@
         },
         "policy": {
           "score": 1,
-          "why": "2026-10-28 FOMC 利率決議（10/27–28 會議）",
+          "why": "2026-10-28 FOMC 利率決議（10/27–28 會議）（另有 1 件）",
           "date": "2026-10-28",
           "source": "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm"
         }
@@ -748,11 +748,11 @@
         },
         "earnings": {
           "score": 0,
-          "why": "第三季財報最晚 2026-11-14 要公布（法定期限，多數公司會提早），還有 14 個交易日",
+          "why": "第三季財報最晚 2026-11-14 要公布（法定期限，多數公司會提早），還有 13 個交易日",
           "estimated": true,
           "date": "2026-11-14",
           "source": "https://mops.twse.com.tw/mops/#/web/t100sb02_1",
-          "days": 14,
+          "days": 13,
           "provider": "法定期限"
         },
         "fundamentals": {
@@ -767,7 +767,7 @@
         },
         "policy": {
           "score": 1,
-          "why": "2026-10-28 FOMC 利率決議（10/27–28 會議）",
+          "why": "2026-10-28 FOMC 利率決議（10/27–28 會議）（另有 1 件）",
           "date": "2026-10-28",
           "source": "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm"
         }
@@ -794,11 +794,11 @@
         },
         "earnings": {
           "score": 0,
-          "why": "第三季財報最晚 2026-11-14 要公布（法定期限，多數公司會提早），還有 14 個交易日",
+          "why": "第三季財報最晚 2026-11-14 要公布（法定期限，多數公司會提早），還有 13 個交易日",
           "estimated": true,
           "date": "2026-11-14",
           "source": "https://mops.twse.com.tw/mops/#/web/t100sb02_1",
-          "days": 14,
+          "days": 13,
           "provider": "法定期限"
         },
         "fundamentals": {
@@ -813,7 +813,7 @@
         },
         "policy": {
           "score": 1,
-          "why": "2026-10-28 FOMC 利率決議（10/27–28 會議）",
+          "why": "2026-10-28 FOMC 利率決議（10/27–28 會議）（另有 1 件）",
           "date": "2026-10-28",
           "source": "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm"
         }
@@ -840,11 +840,11 @@
         },
         "earnings": {
           "score": 0,
-          "why": "第三季財報最晚 2026-11-14 要公布（法定期限，多數公司會提早），還有 14 個交易日",
+          "why": "第三季財報最晚 2026-11-14 要公布（法定期限，多數公司會提早），還有 13 個交易日",
           "estimated": true,
           "date": "2026-11-14",
           "source": "https://mops.twse.com.tw/mops/#/web/t100sb02_1",
-          "days": 14,
+          "days": 13,
           "provider": "法定期限"
         },
         "fundamentals": {
@@ -859,7 +859,7 @@
         },
         "policy": {
           "score": 1,
-          "why": "2026-10-28 FOMC 利率決議（10/27–28 會議）",
+          "why": "2026-10-28 FOMC 利率決議（10/27–28 會議）（另有 1 件）",
           "date": "2026-10-28",
           "source": "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm"
         }
@@ -886,11 +886,11 @@
         },
         "earnings": {
           "score": 0,
-          "why": "第三季財報最晚 2026-11-14 要公布（法定期限，多數公司會提早），還有 14 個交易日",
+          "why": "第三季財報最晚 2026-11-14 要公布（法定期限，多數公司會提早），還有 13 個交易日",
           "estimated": true,
           "date": "2026-11-14",
           "source": "https://mops.twse.com.tw/mops/#/web/t100sb02_1",
-          "days": 14,
+          "days": 13,
           "provider": "法定期限"
         },
         "fundamentals": {
@@ -905,7 +905,7 @@
         },
         "policy": {
           "score": 1,
-          "why": "2026-10-28 FOMC 利率決議（10/27–28 會議）",
+          "why": "2026-10-28 FOMC 利率決議（10/27–28 會議）（另有 1 件）",
           "date": "2026-10-28",
           "source": "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm"
         }
@@ -932,11 +932,11 @@
         },
         "earnings": {
           "score": 0,
-          "why": "第三季財報最晚 2026-11-14 要公布（法定期限，多數公司會提早），還有 14 個交易日",
+          "why": "第三季財報最晚 2026-11-14 要公布（法定期限，多數公司會提早），還有 13 個交易日",
           "estimated": true,
           "date": "2026-11-14",
           "source": "https://mops.twse.com.tw/mops/#/web/t100sb02_1",
-          "days": 14,
+          "days": 13,
           "provider": "法定期限"
         },
         "fundamentals": {
@@ -951,7 +951,7 @@
         },
         "policy": {
           "score": 1,
-          "why": "2026-10-28 FOMC 利率決議（10/27–28 會議）",
+          "why": "2026-10-28 FOMC 利率決議（10/27–28 會議）（另有 1 件）",
           "date": "2026-10-28",
           "source": "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm"
         }
@@ -978,11 +978,11 @@
         },
         "earnings": {
           "score": 0,
-          "why": "第三季財報最晚 2026-11-14 要公布（法定期限，多數公司會提早），還有 14 個交易日",
+          "why": "第三季財報最晚 2026-11-14 要公布（法定期限，多數公司會提早），還有 13 個交易日",
           "estimated": true,
           "date": "2026-11-14",
           "source": "https://mops.twse.com.tw/mops/#/web/t100sb02_1",
-          "days": 14,
+          "days": 13,
           "provider": "法定期限"
         },
         "fundamentals": {
@@ -997,7 +997,7 @@
         },
         "policy": {
           "score": 1,
-          "why": "2026-10-28 FOMC 利率決議（10/27–28 會議）",
+          "why": "2026-10-28 FOMC 利率決議（10/27–28 會議）（另有 1 件）",
           "date": "2026-10-28",
           "source": "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm"
         }
@@ -1024,11 +1024,11 @@
         },
         "earnings": {
           "score": 0,
-          "why": "第三季財報最晚 2026-11-14 要公布（法定期限，多數公司會提早），還有 14 個交易日",
+          "why": "第三季財報最晚 2026-11-14 要公布（法定期限，多數公司會提早），還有 13 個交易日",
           "estimated": true,
           "date": "2026-11-14",
           "source": "https://mops.twse.com.tw/mops/#/web/t100sb02_1",
-          "days": 14,
+          "days": 13,
           "provider": "法定期限"
         },
         "fundamentals": {
@@ -1043,7 +1043,7 @@
         },
         "policy": {
           "score": 1,
-          "why": "2026-10-28 FOMC 利率決議（10/27–28 會議）",
+          "why": "2026-10-28 FOMC 利率決議（10/27–28 會議）（另有 1 件）",
           "date": "2026-10-28",
           "source": "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm"
         }
@@ -1070,11 +1070,11 @@
         },
         "earnings": {
           "score": 0,
-          "why": "第三季財報最晚 2026-11-14 要公布（法定期限，多數公司會提早），還有 14 個交易日",
+          "why": "第三季財報最晚 2026-11-14 要公布（法定期限，多數公司會提早），還有 13 個交易日",
           "estimated": true,
           "date": "2026-11-14",
           "source": "https://mops.twse.com.tw/mops/#/web/t100sb02_1",
-          "days": 14,
+          "days": 13,
           "provider": "法定期限"
         },
         "fundamentals": {
@@ -1089,7 +1089,7 @@
         },
         "policy": {
           "score": 1,
-          "why": "2026-10-28 FOMC 利率決議（10/27–28 會議）",
+          "why": "2026-10-28 FOMC 利率決議（10/27–28 會議）（另有 1 件）",
           "date": "2026-10-28",
           "source": "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm"
         }
@@ -1116,11 +1116,11 @@
         },
         "earnings": {
           "score": 0,
-          "why": "第三季財報最晚 2026-11-14 要公布（法定期限，多數公司會提早），還有 14 個交易日",
+          "why": "第三季財報最晚 2026-11-14 要公布（法定期限，多數公司會提早），還有 13 個交易日",
           "estimated": true,
           "date": "2026-11-14",
           "source": "https://mops.twse.com.tw/mops/#/web/t100sb02_1",
-          "days": 14,
+          "days": 13,
           "provider": "法定期限"
         },
         "fundamentals": {
@@ -1135,7 +1135,7 @@
         },
         "policy": {
           "score": 1,
-          "why": "2026-10-28 FOMC 利率決議（10/27–28 會議）",
+          "why": "2026-10-28 FOMC 利率決議（10/27–28 會議）（另有 1 件）",
           "date": "2026-10-28",
           "source": "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm"
         }
@@ -1164,11 +1164,11 @@
         },
         "earnings": {
           "score": 0,
-          "why": "第三季財報最晚 2026-11-14 要公布（法定期限，多數公司會提早），還有 14 個交易日",
+          "why": "第三季財報最晚 2026-11-14 要公布（法定期限，多數公司會提早），還有 13 個交易日",
           "estimated": true,
           "date": "2026-11-14",
           "source": "https://mops.twse.com.tw/mops/#/web/t100sb02_1",
-          "days": 14,
+          "days": 13,
           "provider": "法定期限"
         },
         "fundamentals": {
@@ -1183,7 +1183,7 @@
         },
         "policy": {
           "score": 1,
-          "why": "2026-10-28 FOMC 利率決議（10/27–28 會議）",
+          "why": "2026-10-28 FOMC 利率決議（10/27–28 會議）（另有 1 件）",
           "date": "2026-10-28",
           "source": "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm"
         }
@@ -1210,11 +1210,11 @@
         },
         "earnings": {
           "score": 0,
-          "why": "第三季財報最晚 2026-11-14 要公布（法定期限，多數公司會提早），還有 14 個交易日",
+          "why": "第三季財報最晚 2026-11-14 要公布（法定期限，多數公司會提早），還有 13 個交易日",
           "estimated": true,
           "date": "2026-11-14",
           "source": "https://mops.twse.com.tw/mops/#/web/t100sb02_1",
-          "days": 14,
+          "days": 13,
           "provider": "法定期限"
         },
         "fundamentals": {
@@ -1229,7 +1229,7 @@
         },
         "policy": {
           "score": 1,
-          "why": "2026-10-28 FOMC 利率決議（10/27–28 會議）",
+          "why": "2026-10-28 FOMC 利率決議（10/27–28 會議）（另有 1 件）",
           "date": "2026-10-28",
           "source": "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm"
         }
@@ -1256,11 +1256,11 @@
         },
         "earnings": {
           "score": 0,
-          "why": "第三季財報最晚 2026-11-14 要公布（法定期限，多數公司會提早），還有 14 個交易日",
+          "why": "第三季財報最晚 2026-11-14 要公布（法定期限，多數公司會提早），還有 13 個交易日",
           "estimated": true,
           "date": "2026-11-14",
           "source": "https://mops.twse.com.tw/mops/#/web/t100sb02_1",
-          "days": 14,
+          "days": 13,
           "provider": "法定期限"
         },
         "fundamentals": {
@@ -1275,7 +1275,7 @@
         },
         "policy": {
           "score": 1,
-          "why": "2026-10-28 FOMC 利率決議（10/27–28 會議）",
+          "why": "2026-10-28 FOMC 利率決議（10/27–28 會議）（另有 1 件）",
           "date": "2026-10-28",
           "source": "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm"
         }
@@ -1302,11 +1302,11 @@
         },
         "earnings": {
           "score": 0,
-          "why": "第三季財報最晚 2026-11-14 要公布（法定期限，多數公司會提早），還有 14 個交易日",
+          "why": "第三季財報最晚 2026-11-14 要公布（法定期限，多數公司會提早），還有 13 個交易日",
           "estimated": true,
           "date": "2026-11-14",
           "source": "https://mops.twse.com.tw/mops/#/web/t100sb02_1",
-          "days": 14,
+          "days": 13,
           "provider": "法定期限"
         },
         "fundamentals": {
@@ -1321,7 +1321,7 @@
         },
         "policy": {
           "score": 1,
-          "why": "2026-10-28 FOMC 利率決議（10/27–28 會議）",
+          "why": "2026-10-28 FOMC 利率決議（10/27–28 會議）（另有 1 件）",
           "date": "2026-10-28",
           "source": "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm"
         }
@@ -1348,11 +1348,11 @@
         },
         "earnings": {
           "score": 0,
-          "why": "第三季財報最晚 2026-11-14 要公布（法定期限，多數公司會提早），還有 14 個交易日",
+          "why": "第三季財報最晚 2026-11-14 要公布（法定期限，多數公司會提早），還有 13 個交易日",
           "estimated": true,
           "date": "2026-11-14",
           "source": "https://mops.twse.com.tw/mops/#/web/t100sb02_1",
-          "days": 14,
+          "days": 13,
           "provider": "法定期限"
         },
         "fundamentals": {
@@ -1367,7 +1367,7 @@
         },
         "policy": {
           "score": 1,
-          "why": "2026-10-28 FOMC 利率決議（10/27–28 會議）",
+          "why": "2026-10-28 FOMC 利率決議（10/27–28 會議）（另有 1 件）",
           "date": "2026-10-28",
           "source": "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm"
         }
@@ -1394,11 +1394,11 @@
         },
         "earnings": {
           "score": 0,
-          "why": "第三季財報最晚 2026-11-14 要公布（法定期限，多數公司會提早），還有 14 個交易日",
+          "why": "第三季財報最晚 2026-11-14 要公布（法定期限，多數公司會提早），還有 13 個交易日",
           "estimated": true,
           "date": "2026-11-14",
           "source": "https://mops.twse.com.tw/mops/#/web/t100sb02_1",
-          "days": 14,
+          "days": 13,
           "provider": "法定期限"
         },
         "fundamentals": {
@@ -1413,7 +1413,7 @@
         },
         "policy": {
           "score": 1,
-          "why": "2026-10-28 FOMC 利率決議（10/27–28 會議）",
+          "why": "2026-10-28 FOMC 利率決議（10/27–28 會議）（另有 1 件）",
           "date": "2026-10-28",
           "source": "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm"
         }
@@ -1440,11 +1440,11 @@
         },
         "earnings": {
           "score": 0,
-          "why": "第三季財報最晚 2026-11-14 要公布（法定期限，多數公司會提早），還有 14 個交易日",
+          "why": "第三季財報最晚 2026-11-14 要公布（法定期限，多數公司會提早），還有 13 個交易日",
           "estimated": true,
           "date": "2026-11-14",
           "source": "https://mops.twse.com.tw/mops/#/web/t100sb02_1",
-          "days": 14,
+          "days": 13,
           "provider": "法定期限"
         },
         "fundamentals": {
@@ -1459,7 +1459,7 @@
         },
         "policy": {
           "score": 1,
-          "why": "2026-10-28 FOMC 利率決議（10/27–28 會議）",
+          "why": "2026-10-28 FOMC 利率決議（10/27–28 會議）（另有 1 件）",
           "date": "2026-10-28",
           "source": "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm"
         }
@@ -1486,11 +1486,11 @@
         },
         "earnings": {
           "score": 0,
-          "why": "第三季財報最晚 2026-11-14 要公布（法定期限，多數公司會提早），還有 14 個交易日",
+          "why": "第三季財報最晚 2026-11-14 要公布（法定期限，多數公司會提早），還有 13 個交易日",
           "estimated": true,
           "date": "2026-11-14",
           "source": "https://mops.twse.com.tw/mops/#/web/t100sb02_1",
-          "days": 14,
+          "days": 13,
           "provider": "法定期限"
         },
         "fundamentals": {
@@ -1505,7 +1505,7 @@
         },
         "policy": {
           "score": 1,
-          "why": "2026-10-28 FOMC 利率決議（10/27–28 會議）",
+          "why": "2026-10-28 FOMC 利率決議（10/27–28 會議）（另有 1 件）",
           "date": "2026-10-28",
           "source": "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm"
         }
@@ -1532,11 +1532,11 @@
         },
         "earnings": {
           "score": 0,
-          "why": "第三季財報最晚 2026-11-14 要公布（法定期限，多數公司會提早），還有 14 個交易日",
+          "why": "第三季財報最晚 2026-11-14 要公布（法定期限，多數公司會提早），還有 13 個交易日",
           "estimated": true,
           "date": "2026-11-14",
           "source": "https://mops.twse.com.tw/mops/#/web/t100sb02_1",
-          "days": 14,
+          "days": 13,
           "provider": "法定期限"
         },
         "fundamentals": {
@@ -1551,7 +1551,7 @@
         },
         "policy": {
           "score": 1,
-          "why": "2026-10-28 FOMC 利率決議（10/27–28 會議）",
+          "why": "2026-10-28 FOMC 利率決議（10/27–28 會議）（另有 1 件）",
           "date": "2026-10-28",
           "source": "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm"
         }
@@ -1578,11 +1578,11 @@
         },
         "earnings": {
           "score": 0,
-          "why": "第三季財報最晚 2026-11-14 要公布（法定期限，多數公司會提早），還有 14 個交易日",
+          "why": "第三季財報最晚 2026-11-14 要公布（法定期限，多數公司會提早），還有 13 個交易日",
           "estimated": true,
           "date": "2026-11-14",
           "source": "https://mops.twse.com.tw/mops/#/web/t100sb02_1",
-          "days": 14,
+          "days": 13,
           "provider": "法定期限"
         },
         "fundamentals": {
@@ -1597,7 +1597,7 @@
         },
         "policy": {
           "score": 1,
-          "why": "2026-10-28 FOMC 利率決議（10/27–28 會議）",
+          "why": "2026-10-28 FOMC 利率決議（10/27–28 會議）（另有 1 件）",
           "date": "2026-10-28",
           "source": "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm"
         }
@@ -1624,11 +1624,11 @@
         },
         "earnings": {
           "score": 0,
-          "why": "第三季財報最晚 2026-11-14 要公布（法定期限，多數公司會提早），還有 14 個交易日",
+          "why": "第三季財報最晚 2026-11-14 要公布（法定期限，多數公司會提早），還有 13 個交易日",
           "estimated": true,
           "date": "2026-11-14",
           "source": "https://mops.twse.com.tw/mops/#/web/t100sb02_1",
-          "days": 14,
+          "days": 13,
           "provider": "法定期限"
         },
         "fundamentals": {
@@ -1643,7 +1643,7 @@
         },
         "policy": {
           "score": 1,
-          "why": "2026-10-28 FOMC 利率決議（10/27–28 會議）",
+          "why": "2026-10-28 FOMC 利率決議（10/27–28 會議）（另有 1 件）",
           "date": "2026-10-28",
           "source": "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm"
         }
@@ -1670,11 +1670,11 @@
         },
         "earnings": {
           "score": 0,
-          "why": "第三季財報最晚 2026-11-14 要公布（法定期限，多數公司會提早），還有 14 個交易日",
+          "why": "第三季財報最晚 2026-11-14 要公布（法定期限，多數公司會提早），還有 13 個交易日",
           "estimated": true,
           "date": "2026-11-14",
           "source": "https://mops.twse.com.tw/mops/#/web/t100sb02_1",
-          "days": 14,
+          "days": 13,
           "provider": "法定期限"
         },
         "fundamentals": {
@@ -1689,7 +1689,7 @@
         },
         "policy": {
           "score": 1,
-          "why": "2026-10-28 FOMC 利率決議（10/27–28 會議）",
+          "why": "2026-10-28 FOMC 利率決議（10/27–28 會議）（另有 1 件）",
           "date": "2026-10-28",
           "source": "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm"
         }
@@ -1716,11 +1716,11 @@
         },
         "earnings": {
           "score": 0,
-          "why": "第三季財報最晚 2026-11-14 要公布（法定期限，多數公司會提早），還有 14 個交易日",
+          "why": "第三季財報最晚 2026-11-14 要公布（法定期限，多數公司會提早），還有 13 個交易日",
           "estimated": true,
           "date": "2026-11-14",
           "source": "https://mops.twse.com.tw/mops/#/web/t100sb02_1",
-          "days": 14,
+          "days": 13,
           "provider": "法定期限"
         },
         "fundamentals": {
@@ -1735,7 +1735,7 @@
         },
         "policy": {
           "score": 1,
-          "why": "2026-10-28 FOMC 利率決議（10/27–28 會議）",
+          "why": "2026-10-28 FOMC 利率決議（10/27–28 會議）（另有 1 件）",
           "date": "2026-10-28",
           "source": "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm"
         }
@@ -1762,11 +1762,11 @@
         },
         "earnings": {
           "score": 0,
-          "why": "第三季財報最晚 2026-11-14 要公布（法定期限，多數公司會提早），還有 14 個交易日",
+          "why": "第三季財報最晚 2026-11-14 要公布（法定期限，多數公司會提早），還有 13 個交易日",
           "estimated": true,
           "date": "2026-11-14",
           "source": "https://mops.twse.com.tw/mops/#/web/t100sb02_1",
-          "days": 14,
+          "days": 13,
           "provider": "法定期限"
         },
         "fundamentals": {
@@ -1781,7 +1781,7 @@
         },
         "policy": {
           "score": 1,
-          "why": "2026-10-28 FOMC 利率決議（10/27–28 會議）",
+          "why": "2026-10-28 FOMC 利率決議（10/27–28 會議）（另有 1 件）",
           "date": "2026-10-28",
           "source": "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm"
         }
@@ -1808,11 +1808,11 @@
         },
         "earnings": {
           "score": 0,
-          "why": "第三季財報最晚 2026-11-14 要公布（法定期限，多數公司會提早），還有 14 個交易日",
+          "why": "第三季財報最晚 2026-11-14 要公布（法定期限，多數公司會提早），還有 13 個交易日",
           "estimated": true,
           "date": "2026-11-14",
           "source": "https://mops.twse.com.tw/mops/#/web/t100sb02_1",
-          "days": 14,
+          "days": 13,
           "provider": "法定期限"
         },
         "fundamentals": {
@@ -1827,7 +1827,7 @@
         },
         "policy": {
           "score": 1,
-          "why": "2026-10-28 FOMC 利率決議（10/27–28 會議）",
+          "why": "2026-10-28 FOMC 利率決議（10/27–28 會議）（另有 1 件）",
           "date": "2026-10-28",
           "source": "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm"
         }
@@ -1854,11 +1854,11 @@
         },
         "earnings": {
           "score": 0,
-          "why": "第三季財報最晚 2026-11-14 要公布（法定期限，多數公司會提早），還有 14 個交易日",
+          "why": "第三季財報最晚 2026-11-14 要公布（法定期限，多數公司會提早），還有 13 個交易日",
           "estimated": true,
           "date": "2026-11-14",
           "source": "https://mops.twse.com.tw/mops/#/web/t100sb02_1",
-          "days": 14,
+          "days": 13,
           "provider": "法定期限"
         },
         "fundamentals": {
@@ -1873,7 +1873,7 @@
         },
         "policy": {
           "score": 1,
-          "why": "2026-10-28 FOMC 利率決議（10/27–28 會議）",
+          "why": "2026-10-28 FOMC 利率決議（10/27–28 會議）（另有 1 件）",
           "date": "2026-10-28",
           "source": "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm"
         }
@@ -1900,11 +1900,11 @@
         },
         "earnings": {
           "score": 0,
-          "why": "第三季財報最晚 2026-11-14 要公布（法定期限，多數公司會提早），還有 14 個交易日",
+          "why": "第三季財報最晚 2026-11-14 要公布（法定期限，多數公司會提早），還有 13 個交易日",
           "estimated": true,
           "date": "2026-11-14",
           "source": "https://mops.twse.com.tw/mops/#/web/t100sb02_1",
-          "days": 14,
+          "days": 13,
           "provider": "法定期限"
         },
         "fundamentals": {
@@ -1919,7 +1919,7 @@
         },
         "policy": {
           "score": 1,
-          "why": "2026-10-28 FOMC 利率決議（10/27–28 會議）",
+          "why": "2026-10-28 FOMC 利率決議（10/27–28 會議）（另有 1 件）",
           "date": "2026-10-28",
           "source": "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm"
         }
@@ -1946,11 +1946,11 @@
         },
         "earnings": {
           "score": 0,
-          "why": "第三季財報最晚 2026-11-14 要公布（法定期限，多數公司會提早），還有 14 個交易日",
+          "why": "第三季財報最晚 2026-11-14 要公布（法定期限，多數公司會提早），還有 13 個交易日",
           "estimated": true,
           "date": "2026-11-14",
           "source": "https://mops.twse.com.tw/mops/#/web/t100sb02_1",
-          "days": 14,
+          "days": 13,
           "provider": "法定期限"
         },
         "fundamentals": {
@@ -1965,7 +1965,7 @@
         },
         "policy": {
           "score": 1,
-          "why": "2026-10-28 FOMC 利率決議（10/27–28 會議）",
+          "why": "2026-10-28 FOMC 利率決議（10/27–28 會議）（另有 1 件）",
           "date": "2026-10-28",
           "source": "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm"
         }
@@ -1992,11 +1992,11 @@
         },
         "earnings": {
           "score": 0,
-          "why": "第三季財報最晚 2026-11-14 要公布（法定期限，多數公司會提早），還有 14 個交易日",
+          "why": "第三季財報最晚 2026-11-14 要公布（法定期限，多數公司會提早），還有 13 個交易日",
           "estimated": true,
           "date": "2026-11-14",
           "source": "https://mops.twse.com.tw/mops/#/web/t100sb02_1",
-          "days": 14,
+          "days": 13,
           "provider": "法定期限"
         },
         "fundamentals": {
@@ -2011,7 +2011,7 @@
         },
         "policy": {
           "score": 1,
-          "why": "2026-10-28 FOMC 利率決議（10/27–28 會議）",
+          "why": "2026-10-28 FOMC 利率決議（10/27–28 會議）（另有 1 件）",
           "date": "2026-10-28",
           "source": "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm"
         }
@@ -2038,11 +2038,11 @@
         },
         "earnings": {
           "score": 0,
-          "why": "第三季財報最晚 2026-11-14 要公布（法定期限，多數公司會提早），還有 14 個交易日",
+          "why": "第三季財報最晚 2026-11-14 要公布（法定期限，多數公司會提早），還有 13 個交易日",
           "estimated": true,
           "date": "2026-11-14",
           "source": "https://mops.twse.com.tw/mops/#/web/t100sb02_1",
-          "days": 14,
+          "days": 13,
           "provider": "法定期限"
         },
         "fundamentals": {
@@ -2057,7 +2057,7 @@
         },
         "policy": {
           "score": 1,
-          "why": "2026-10-28 FOMC 利率決議（10/27–28 會議）",
+          "why": "2026-10-28 FOMC 利率決議（10/27–28 會議）（另有 1 件）",
           "date": "2026-10-28",
           "source": "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm"
         }
@@ -2084,11 +2084,11 @@
         },
         "earnings": {
           "score": 0,
-          "why": "第三季財報最晚 2026-11-14 要公布（法定期限，多數公司會提早），還有 14 個交易日",
+          "why": "第三季財報最晚 2026-11-14 要公布（法定期限，多數公司會提早），還有 13 個交易日",
           "estimated": true,
           "date": "2026-11-14",
           "source": "https://mops.twse.com.tw/mops/#/web/t100sb02_1",
-          "days": 14,
+          "days": 13,
           "provider": "法定期限"
         },
         "fundamentals": {
@@ -2103,7 +2103,7 @@
         },
         "policy": {
           "score": 1,
-          "why": "2026-10-28 FOMC 利率決議（10/27–28 會議）",
+          "why": "2026-10-28 FOMC 利率決議（10/27–28 會議）（另有 1 件）",
           "date": "2026-10-28",
           "source": "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm"
         }
@@ -2130,11 +2130,11 @@
         },
         "earnings": {
           "score": 0,
-          "why": "第三季財報最晚 2026-11-14 要公布（法定期限，多數公司會提早），還有 14 個交易日",
+          "why": "第三季財報最晚 2026-11-14 要公布（法定期限，多數公司會提早），還有 13 個交易日",
           "estimated": true,
           "date": "2026-11-14",
           "source": "https://mops.twse.com.tw/mops/#/web/t100sb02_1",
-          "days": 14,
+          "days": 13,
           "provider": "法定期限"
         },
         "fundamentals": {
@@ -2149,7 +2149,7 @@
         },
         "policy": {
           "score": 1,
-          "why": "2026-10-28 FOMC 利率決議（10/27–28 會議）",
+          "why": "2026-10-28 FOMC 利率決議（10/27–28 會議）（另有 1 件）",
           "date": "2026-10-28",
           "source": "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm"
         }
@@ -2176,11 +2176,11 @@
         },
         "earnings": {
           "score": 0,
-          "why": "第三季財報最晚 2026-11-14 要公布（法定期限，多數公司會提早），還有 14 個交易日",
+          "why": "第三季財報最晚 2026-11-14 要公布（法定期限，多數公司會提早），還有 13 個交易日",
           "estimated": true,
           "date": "2026-11-14",
           "source": "https://mops.twse.com.tw/mops/#/web/t100sb02_1",
-          "days": 14,
+          "days": 13,
           "provider": "法定期限"
         },
         "fundamentals": {
@@ -2195,7 +2195,7 @@
         },
         "policy": {
           "score": 1,
-          "why": "2026-10-28 FOMC 利率決議（10/27–28 會議）",
+          "why": "2026-10-28 FOMC 利率決議（10/27–28 會議）（另有 1 件）",
           "date": "2026-10-28",
           "source": "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm"
         }
@@ -2222,11 +2222,11 @@
         },
         "earnings": {
           "score": 0,
-          "why": "第三季財報最晚 2026-11-14 要公布（法定期限，多數公司會提早），還有 14 個交易日",
+          "why": "第三季財報最晚 2026-11-14 要公布（法定期限，多數公司會提早），還有 13 個交易日",
           "estimated": true,
           "date": "2026-11-14",
           "source": "https://mops.twse.com.tw/mops/#/web/t100sb02_1",
-          "days": 14,
+          "days": 13,
           "provider": "法定期限"
         },
         "fundamentals": {
@@ -2241,7 +2241,7 @@
         },
         "policy": {
           "score": 1,
-          "why": "2026-10-28 FOMC 利率決議（10/27–28 會議）",
+          "why": "2026-10-28 FOMC 利率決議（10/27–28 會議）（另有 1 件）",
           "date": "2026-10-28",
           "source": "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm"
         }
@@ -2270,11 +2270,11 @@
         },
         "earnings": {
           "score": 0,
-          "why": "第三季財報最晚 2026-11-14 要公布（法定期限，多數公司會提早），還有 14 個交易日",
+          "why": "第三季財報最晚 2026-11-14 要公布（法定期限，多數公司會提早），還有 13 個交易日",
           "estimated": true,
           "date": "2026-11-14",
           "source": "https://mops.twse.com.tw/mops/#/web/t100sb02_1",
-          "days": 14,
+          "days": 13,
           "provider": "法定期限"
         },
         "fundamentals": {
@@ -2289,7 +2289,7 @@
         },
         "policy": {
           "score": 1,
-          "why": "2026-10-28 FOMC 利率決議（10/27–28 會議）",
+          "why": "2026-10-28 FOMC 利率決議（10/27–28 會議）（另有 1 件）",
           "date": "2026-10-28",
           "source": "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm"
         }
@@ -2316,11 +2316,11 @@
         },
         "earnings": {
           "score": 0,
-          "why": "第三季財報最晚 2026-11-14 要公布（法定期限，多數公司會提早），還有 14 個交易日",
+          "why": "第三季財報最晚 2026-11-14 要公布（法定期限，多數公司會提早），還有 13 個交易日",
           "estimated": true,
           "date": "2026-11-14",
           "source": "https://mops.twse.com.tw/mops/#/web/t100sb02_1",
-          "days": 14,
+          "days": 13,
           "provider": "法定期限"
         },
         "fundamentals": {
@@ -2335,7 +2335,7 @@
         },
         "policy": {
           "score": 1,
-          "why": "2026-10-28 FOMC 利率決議（10/27–28 會議）",
+          "why": "2026-10-28 FOMC 利率決議（10/27–28 會議）（另有 1 件）",
           "date": "2026-10-28",
           "source": "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm"
         }
@@ -2928,21 +2928,21 @@
         },
         "fundamentals": {
           "score": 1,
-          "why": "穩定幣總供給 30 日 -0.9%（302B 美元）、BTC 市占率 59.5%",
+          "why": "穩定幣總供給 30 日 -0.9%（302B 美元）、BTC 市占率 59.4%",
           "date": "2026-10-26",
           "source": "https://defillama.com/stablecoins",
           "label": "市場結構"
         },
         "chips": {
           "score": 0,
-          "why": "恐懼與貪婪指數 50（中性）；資金費率 +0.0100%、未平倉量 7 日 +0.2%",
-          "date": "2026-10-26",
+          "why": "恐懼與貪婪指數 48（中性）；資金費率 +0.0100%、未平倉量 7 日 +5.5%",
+          "date": "2026-10-27",
           "source": "https://alternative.me/crypto/fear-and-greed-index/",
           "label": "情緒／槓桿"
         },
         "policy": {
           "score": 1,
-          "why": "2026-10-28 FOMC 利率決議（10/27–28 會議）",
+          "why": "2026-10-28 FOMC 利率決議（10/27–28 會議）（另有 1 件）",
           "date": "2026-10-28",
           "source": "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm"
         }
@@ -2973,21 +2973,21 @@
         },
         "fundamentals": {
           "score": 1,
-          "why": "穩定幣總供給 30 日 -0.9%（302B 美元）、BTC 市占率 59.5%",
+          "why": "穩定幣總供給 30 日 -0.9%（302B 美元）、BTC 市占率 59.4%",
           "date": "2026-10-26",
           "source": "https://defillama.com/stablecoins",
           "label": "市場結構"
         },
         "chips": {
           "score": 0,
-          "why": "恐懼與貪婪指數 50（中性）；資金費率 +0.0091%、未平倉量 7 日 +4.5%",
-          "date": "2026-10-26",
+          "why": "恐懼與貪婪指數 48（中性）；資金費率 +0.0100%、未平倉量 7 日 +5.4%",
+          "date": "2026-10-27",
           "source": "https://alternative.me/crypto/fear-and-greed-index/",
           "label": "情緒／槓桿"
         },
         "policy": {
           "score": 1,
-          "why": "2026-10-28 FOMC 利率決議（10/27–28 會議）",
+          "why": "2026-10-28 FOMC 利率決議（10/27–28 會議）（另有 1 件）",
           "date": "2026-10-28",
           "source": "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm"
         }
@@ -3018,21 +3018,21 @@
         },
         "fundamentals": {
           "score": 1,
-          "why": "穩定幣總供給 30 日 -0.9%（302B 美元）、BTC 市占率 59.5%",
+          "why": "穩定幣總供給 30 日 -0.9%（302B 美元）、BTC 市占率 59.4%",
           "date": "2026-10-26",
           "source": "https://defillama.com/stablecoins",
           "label": "市場結構"
         },
         "chips": {
           "score": 0,
-          "why": "恐懼與貪婪指數 50（中性）；資金費率 +0.0099%、未平倉量 7 日 -0.1%",
-          "date": "2026-10-26",
+          "why": "恐懼與貪婪指數 48（中性）；資金費率 +0.0100%、未平倉量 7 日 +2.3%",
+          "date": "2026-10-27",
           "source": "https://alternative.me/crypto/fear-and-greed-index/",
           "label": "情緒／槓桿"
         },
         "policy": {
           "score": 1,
-          "why": "2026-10-28 FOMC 利率決議（10/27–28 會議）",
+          "why": "2026-10-28 FOMC 利率決議（10/27–28 會議）（另有 1 件）",
           "date": "2026-10-28",
           "source": "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm"
         }
