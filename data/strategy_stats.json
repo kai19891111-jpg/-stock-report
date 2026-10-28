@@ -1,12 +1,12 @@
 {
-  "updated": "2026-10-28T01:40:48.213818+00:00",
+  "updated": "2026-10-28T06:06:58.299687+00:00",
   "source": "backtest.py",
   "isFinalClose": true,
   "meta": {
     "symbols": 60,
     "from": "2025-01-21",
-    "to": "2026-10-27",
-    "splitDate": "2026-04-17",
+    "to": "2026-10-28",
+    "splitDate": "2026-04-20",
     "maxHoldDays": 20,
     "costs": {
       "TW": {
@@ -38,7 +38,7 @@
       "market": "BULL_NEUTRAL"
     },
     "paramsLabel": "報酬風險比≥1.5｜量比不限｜停損距離不限｜大盤多頭或盤整",
-    "openTrades": 6,
+    "openTrades": 7,
     "minSample": 30,
     "outliers": [
       "AMD-2025-09-24"
@@ -140,11 +140,11 @@
   "benchmark": {
     "draws": 300,
     "trades": 412,
-    "meanR": 0.022,
-    "p05": -0.1326,
-    "p95": 0.1632,
+    "meanR": 0.0315,
+    "p05": -0.1096,
+    "p95": 0.1768,
     "actualR": -0.0043,
-    "beats": 0.3533,
+    "beats": 0.33,
     "definition": "同樣的股票、同樣的停損停利距離與成本，但進場日隨機"
   },
   "bySymbol": {
@@ -389,11 +389,11 @@
       "benchmark": {
         "draws": 300,
         "trades": 323,
-        "meanR": -0.018,
-        "p05": -0.1698,
-        "p95": 0.1217,
+        "meanR": -0.0035,
+        "p05": -0.1578,
+        "p95": 0.1625,
         "actualR": -0.0695,
-        "beats": 0.31,
+        "beats": 0.2233,
         "definition": "同樣的股票、同樣的停損停利距離與成本，但進場日隨機"
       },
       "byRegime": {
@@ -964,30 +964,30 @@
     "byStatus": {
       "go": {
         "5": {
-          "n": 2522,
-          "mean": 0.8259,
-          "median": -0.2543,
-          "hitRate": 0.4726
+          "n": 2523,
+          "mean": 0.8269,
+          "median": -0.2542,
+          "hitRate": 0.4728
         },
         "10": {
-          "n": 2499,
-          "mean": 1.9477,
-          "median": 0.3012,
-          "hitRate": 0.5074
+          "n": 2508,
+          "mean": 1.9209,
+          "median": 0.2147,
+          "hitRate": 0.506
         },
         "20": {
-          "n": 2430,
-          "mean": 4.8719,
-          "median": 1.2504,
-          "hitRate": 0.5354
+          "n": 2434,
+          "mean": 4.8739,
+          "median": 1.2407,
+          "hitRate": 0.5349
         }
       },
       "hold": {
         "5": {
-          "n": 1709,
-          "mean": 1.2502,
+          "n": 1711,
+          "mean": 1.2614,
           "median": 0.0,
-          "hitRate": 0.4933
+          "hitRate": 0.4939
         },
         "10": {
           "n": 1701,
@@ -996,10 +996,10 @@
           "hitRate": 0.5556
         },
         "20": {
-          "n": 1653,
-          "mean": 6.5765,
-          "median": 2.2371,
-          "hitRate": 0.5578
+          "n": 1654,
+          "mean": 6.5879,
+          "median": 2.2422,
+          "hitRate": 0.558
         }
       },
       "trim": {
@@ -1010,70 +1010,70 @@
           "hitRate": 0.5222
         },
         "10": {
-          "n": 495,
-          "mean": 4.49,
-          "median": 1.6917,
-          "hitRate": 0.5636
+          "n": 496,
+          "mean": 4.5095,
+          "median": 1.7119,
+          "hitRate": 0.5645
         },
         "20": {
-          "n": 481,
-          "mean": 9.8112,
-          "median": 4.4828,
-          "hitRate": 0.6008
+          "n": 482,
+          "mean": 9.7723,
+          "median": 4.4492,
+          "hitRate": 0.5996
         }
       },
       "wait": {
         "5": {
-          "n": 1503,
-          "mean": 1.0775,
-          "median": 0.3781,
-          "hitRate": 0.5256
+          "n": 1504,
+          "mean": 1.073,
+          "median": 0.3763,
+          "hitRate": 0.5253
         },
         "10": {
-          "n": 1466,
-          "mean": 2.0916,
-          "median": 0.2235,
-          "hitRate": 0.5075
+          "n": 1479,
+          "mean": 2.0242,
+          "median": 0.1701,
+          "hitRate": 0.5051
         },
         "20": {
-          "n": 1435,
-          "mean": 4.8094,
+          "n": 1437,
+          "mean": 4.8019,
           "median": 1.1024,
-          "hitRate": 0.5408
+          "hitRate": 0.5407
         }
       }
     },
     "baseline": {
       "5": {
-        "n": 24998,
-        "mean": 0.956,
-        "median": 0.1484,
-        "hitRate": 0.5042
+        "n": 25046,
+        "mean": 0.9545,
+        "median": 0.1495,
+        "hitRate": 0.5043
       },
       "10": {
-        "n": 24698,
-        "mean": 2.3519,
-        "median": 0.6556,
-        "hitRate": 0.5278
+        "n": 24746,
+        "mean": 2.3417,
+        "median": 0.6469,
+        "hitRate": 0.5273
       },
       "20": {
-        "n": 24098,
-        "mean": 5.4545,
-        "median": 1.8609,
-        "hitRate": 0.5522
+        "n": 24146,
+        "mean": 5.4456,
+        "median": 1.8519,
+        "hitRate": 0.552
       }
     }
   },
   "exitStudy": {
     "definition": "進入過熱後隔日開盤賣出，對比續抱到收盤跌破 SMA20 的隔日開盤才賣；數字是續抱多賺（或少賺）的百分比，未扣成本",
-    "n": 251,
-    "stillOpen": 5,
-    "meanExtra": 12.7592,
-    "medianExtra": -0.2035,
-    "betterRate": 0.49,
+    "n": 252,
+    "stillOpen": 4,
+    "meanExtra": 12.8135,
+    "medianExtra": -0.1017,
+    "betterRate": 0.4921,
     "worstExtra": -23.9819,
-    "avgExtraDays": 21.0717,
-    "avgDeepestDip": -8.2058
+    "avgExtraDays": 21.0595,
+    "avgDeepestDip": -8.1815
   },
   "note": "insample＝前 70% 期間，oos＝後 30% 期間，兩者不混用；live＝實際逐日記錄的交易。N<30 不宣稱勝率。"
 }
