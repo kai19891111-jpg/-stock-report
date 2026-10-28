@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-10-27T12:26:41.268646+00:00",
-  "dataTimestamp": "2026-10-27T12:22:53.098030+00:00",
+  "generatedAt": "2026-10-28T00:32:22.632076+00:00",
+  "dataTimestamp": "2026-10-28T00:29:08.274802+00:00",
   "sessions": {
     "TW": "2026-10-27",
     "US": "2026-10-26",
@@ -98,8 +98,8 @@
       "expLow": -1.0967,
       "expHigh": 0.3293,
       "winRate": 0.2308,
-      "beats": 0.8233,
-      "why": "加密貨幣回測：後段只有 13 筆（要 30 筆）、期望值區間下緣 −1.10R，沒有大於 0、只勝過 82.3% 的隨機進場（要 95%）"
+      "beats": 0.83,
+      "why": "加密貨幣回測：後段只有 13 筆（要 30 筆）、期望值區間下緣 −1.10R，沒有大於 0、只勝過 83.0% 的隨機進場（要 95%）"
     }
   },
   "regimeNotes": {
@@ -111,13 +111,7 @@
       "text": "大盤盤整時，這條規則在台股的期望值是 +0.20R（78 筆）"
     },
     "US": null,
-    "CRYPTO": {
-      "regime": "NEUTRAL",
-      "n": 30,
-      "expectancyR": 0.254,
-      "expLow": -0.2701,
-      "text": "大盤盤整時，這條規則在加密貨幣的期望值是 +0.25R（30 筆）"
-    }
+    "CRYPTO": null
   },
   "counts": {
     "go": 0,
@@ -369,7 +363,7 @@
       "mismatch": null,
       "risk": {
         "level": "low",
-        "total": 3,
+        "total": 2,
         "max": 10,
         "reasons": []
       },
@@ -386,7 +380,7 @@
       "stop": 28.565,
       "target": 30.305,
       "entryLow": 29.0526,
-      "entryHigh": 29.79,
+      "entryHigh": 29.7899,
       "bias": -3.0344,
       "high20": 31.6,
       "rr": null,
@@ -776,7 +770,7 @@
       "mismatch": null,
       "risk": {
         "level": "low",
-        "total": 2,
+        "total": 1,
         "max": 10,
         "reasons": []
       },
@@ -1214,7 +1208,7 @@
       "mismatch": null,
       "risk": {
         "level": "low",
-        "total": 2,
+        "total": 3,
         "max": 10,
         "reasons": []
       },
@@ -1340,7 +1334,7 @@
       "target": 107.2614,
       "entryLow": 74.5596,
       "entryHigh": 76.4519,
-      "bias": 25.2394,
+      "bias": 25.2395,
       "high20": 94.8,
       "rr": 0.4811,
       "code": "avoid",
@@ -1537,7 +1531,7 @@
       "mismatch": null,
       "risk": {
         "level": "low",
-        "total": 1,
+        "total": 2,
         "max": 10,
         "reasons": []
       },
@@ -1699,7 +1693,7 @@
       "mismatch": null,
       "risk": {
         "level": "low",
-        "total": 3,
+        "total": 2,
         "max": 10,
         "reasons": []
       },
@@ -2133,7 +2127,7 @@
       "entryHigh": 70.5889,
       "bias": -1.2734,
       "high20": 73.9,
-      "rr": 3.0219,
+      "rr": 3.0218,
       "code": "conditions",
       "signal": false,
       "blockers": [
@@ -2367,7 +2361,7 @@
       "mismatch": null,
       "risk": {
         "level": "low",
-        "total": 1,
+        "total": 2,
         "max": 10,
         "reasons": []
       },
@@ -2425,7 +2419,7 @@
       "mismatch": null,
       "risk": {
         "level": "low",
-        "total": 3,
+        "total": 2,
         "max": 10,
         "reasons": []
       },
