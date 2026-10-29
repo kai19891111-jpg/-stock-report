@@ -639,5 +639,33 @@
     "holdingDays": null,
     "ambiguousDay": false,
     "entryRR": 2.228
+  },
+  {
+    "id": "TSM-2026-10-27",
+    "symbol": "TSM",
+    "market": "US",
+    "signalDate": "2026-10-27",
+    "entryDate": "2026-10-28",
+    "entryPrice": 438.24,
+    "stopPrice": 426.0764,
+    "target1": 468.2074,
+    "target2": 482.4517,
+    "rsi": 50.6338,
+    "macd": "零軸下",
+    "volumeRatio": 0.7903,
+    "atr": 14.2443,
+    "dailyTrend": "盤整",
+    "weeklyTrend": "多頭",
+    "marketRegime": "NEUTRAL",
+    "theme": "AI晶片",
+    "status": "OPEN",
+    "exitDate": null,
+    "exitPrice": null,
+    "exitReason": null,
+    "resultR": null,
+    "resultPct": null,
+    "holdingDays": null,
+    "ambiguousDay": false,
+    "entryRR": 2.4637
   }
 ]
