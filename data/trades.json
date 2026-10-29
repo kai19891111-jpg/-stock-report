@@ -667,5 +667,33 @@
     "holdingDays": null,
     "ambiguousDay": false,
     "entryRR": 2.4637
+  },
+  {
+    "id": "BTC-USD-2026-10-27",
+    "symbol": "BTC-USD",
+    "market": "CRYPTO",
+    "signalDate": "2026-10-27",
+    "entryDate": "2026-10-28",
+    "entryPrice": 80805.0781,
+    "stopPrice": 79513.1576,
+    "target1": 85098.0626,
+    "target2": 87049.4192,
+    "rsi": 45.4511,
+    "macd": "零軸下",
+    "volumeRatio": 0.897,
+    "atr": 1951.3566,
+    "dailyTrend": "盤整",
+    "weeklyTrend": "盤整",
+    "marketRegime": "NEUTRAL",
+    "theme": "主流幣",
+    "status": "OPEN",
+    "exitDate": null,
+    "exitPrice": null,
+    "exitReason": null,
+    "resultR": null,
+    "resultPct": null,
+    "holdingDays": null,
+    "ambiguousDay": false,
+    "entryRR": 3.3229
   }
 ]

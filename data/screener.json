@@ -1,5 +1,5 @@
 {
- "generatedAt": "2026-10-29T06:20:35.368462+00:00",
+ "generatedAt": "2026-10-29T13:19:22.837782+00:00",
  "params": {
   "rsi_lo": 45,
   "rsi_hi": 60,
@@ -16,20 +16,89 @@
   "picks": 10
  },
  "note": "自動選股只是提示：用同一套進場規則核對，不會自動加入觀察名單，也不下單。",
- "errors": [
-  "台股 TWO 全市場收盤抓不到：IncompleteRead IncompleteRead(1965673 bytes read, 3160352 more expected)"
- ],
+ "errors": [],
  "markets": {
   "TW": {
    "scanned": 300,
    "ok": 299,
    "failed": 1,
    "failedSample": [
-    "7710.TW：只有 2 根日 K"
+    "7856.TWO：只有 35 根日 K"
    ],
-   "candidates": 58,
-   "signals": 22,
+   "candidates": 57,
+   "signals": 20,
    "picks": [
+    {
+     "code": "6538.TWO",
+     "name": "倉和",
+     "market": "TW",
+     "date": "2026-10-29",
+     "close": 316.0,
+     "pct": -1.8634,
+     "entryLow": 311.1615,
+     "entryHigh": 319.059,
+     "stop": 285.6,
+     "target1": 371.55,
+     "rr": 1.8273,
+     "rsi": 51.0775,
+     "volRatio": 1.9798,
+     "bias": 0.0317,
+     "zone": "IN_ZONE",
+     "dailyTrend": "多頭",
+     "weeklyTrend": "盤整",
+     "regime": "NEUTRAL",
+     "entrySignal": true,
+     "passed": 9,
+     "total": 9,
+     "checks": [
+      {
+       "k": "above",
+       "ok": true,
+       "t": "收在 SMA20 之上（乖離 0.0%）"
+      },
+      {
+       "k": "bias",
+       "ok": true,
+       "t": "乖離 0–6%"
+      },
+      {
+       "k": "high",
+       "ok": true,
+       "t": "未貼近 20 日高"
+      },
+      {
+       "k": "rr",
+       "ok": true,
+       "t": "報酬風險比 1.83 ≥ 1.5"
+      },
+      {
+       "k": "rsi",
+       "ok": true,
+       "t": "RSI 51（45–60）"
+      },
+      {
+       "k": "trend",
+       "ok": true,
+       "t": "日線多頭、週線盤整（不能是空頭）"
+      },
+      {
+       "k": "macd",
+       "ok": true,
+       "t": "MACD 零軸下（不能轉弱）"
+      },
+      {
+       "k": "market",
+       "ok": true,
+       "t": "大盤盤整"
+      },
+      {
+       "k": "vol",
+       "ok": true,
+       "t": "量比 1.98 ≥ 1.2"
+      }
+     ],
+     "watched": false
+    },
     {
      "code": "2426.TW",
      "name": "鼎元",
@@ -100,6 +169,220 @@
       }
      ],
      "watched": false
+    },
+    {
+     "code": "6173.TWO",
+     "name": "信昌電",
+     "market": "TW",
+     "date": "2026-10-29",
+     "close": 298.0,
+     "pct": 2.9361,
+     "entryLow": 292.8023,
+     "entryHigh": 300.2338,
+     "stop": 278.8645,
+     "target1": 331.7272,
+     "rr": 1.7625,
+     "rsi": 52.1384,
+     "volRatio": 1.6634,
+     "bias": 0.2485,
+     "zone": "IN_ZONE",
+     "dailyTrend": "多頭",
+     "weeklyTrend": "盤整",
+     "regime": "NEUTRAL",
+     "entrySignal": true,
+     "passed": 9,
+     "total": 9,
+     "checks": [
+      {
+       "k": "above",
+       "ok": true,
+       "t": "收在 SMA20 之上（乖離 0.2%）"
+      },
+      {
+       "k": "bias",
+       "ok": true,
+       "t": "乖離 0–6%"
+      },
+      {
+       "k": "high",
+       "ok": true,
+       "t": "未貼近 20 日高"
+      },
+      {
+       "k": "rr",
+       "ok": true,
+       "t": "報酬風險比 1.76 ≥ 1.5"
+      },
+      {
+       "k": "rsi",
+       "ok": true,
+       "t": "RSI 52（45–60）"
+      },
+      {
+       "k": "trend",
+       "ok": true,
+       "t": "日線多頭、週線盤整（不能是空頭）"
+      },
+      {
+       "k": "macd",
+       "ok": true,
+       "t": "MACD 零軸下（不能轉弱）"
+      },
+      {
+       "k": "market",
+       "ok": true,
+       "t": "大盤盤整"
+      },
+      {
+       "k": "vol",
+       "ok": true,
+       "t": "量比 1.66 ≥ 1.2"
+      }
+     ],
+     "watched": false
+    },
+    {
+     "code": "6727.TWO",
+     "name": "亞泰金屬",
+     "market": "TW",
+     "date": "2026-10-29",
+     "close": 499.5,
+     "pct": 9.901,
+     "entryLow": 489.1264,
+     "entryHigh": 501.5408,
+     "stop": 451.7893,
+     "target1": 581.6071,
+     "rr": 1.7209,
+     "rsi": 52.4357,
+     "volRatio": 1.6101,
+     "bias": 0.589,
+     "zone": "IN_ZONE",
+     "dailyTrend": "多頭",
+     "weeklyTrend": "盤整",
+     "regime": "NEUTRAL",
+     "entrySignal": true,
+     "passed": 9,
+     "total": 9,
+     "checks": [
+      {
+       "k": "above",
+       "ok": true,
+       "t": "收在 SMA20 之上（乖離 0.6%）"
+      },
+      {
+       "k": "bias",
+       "ok": true,
+       "t": "乖離 0–6%"
+      },
+      {
+       "k": "high",
+       "ok": true,
+       "t": "未貼近 20 日高"
+      },
+      {
+       "k": "rr",
+       "ok": true,
+       "t": "報酬風險比 1.72 ≥ 1.5"
+      },
+      {
+       "k": "rsi",
+       "ok": true,
+       "t": "RSI 52（45–60）"
+      },
+      {
+       "k": "trend",
+       "ok": true,
+       "t": "日線多頭、週線盤整（不能是空頭）"
+      },
+      {
+       "k": "macd",
+       "ok": true,
+       "t": "MACD 零軸下（不能轉弱）"
+      },
+      {
+       "k": "market",
+       "ok": true,
+       "t": "大盤盤整"
+      },
+      {
+       "k": "vol",
+       "ok": true,
+       "t": "量比 1.61 ≥ 1.2"
+      }
+     ],
+     "watched": false
+    },
+    {
+     "code": "3324.TWO",
+     "name": "雙鴻",
+     "market": "TW",
+     "date": "2026-10-29",
+     "close": 1465.0,
+     "pct": 2.0906,
+     "entryLow": 1434.6525,
+     "entryHigh": 1471.065,
+     "stop": 1339.9286,
+     "target1": 1678.7143,
+     "rr": 1.7087,
+     "rsi": 54.477,
+     "volRatio": 1.72,
+     "bias": 0.5836,
+     "zone": "IN_ZONE",
+     "dailyTrend": "多頭",
+     "weeklyTrend": "多頭",
+     "regime": "NEUTRAL",
+     "entrySignal": true,
+     "passed": 9,
+     "total": 9,
+     "checks": [
+      {
+       "k": "above",
+       "ok": true,
+       "t": "收在 SMA20 之上（乖離 0.6%）"
+      },
+      {
+       "k": "bias",
+       "ok": true,
+       "t": "乖離 0–6%"
+      },
+      {
+       "k": "high",
+       "ok": true,
+       "t": "未貼近 20 日高"
+      },
+      {
+       "k": "rr",
+       "ok": true,
+       "t": "報酬風險比 1.71 ≥ 1.5"
+      },
+      {
+       "k": "rsi",
+       "ok": true,
+       "t": "RSI 54（45–60）"
+      },
+      {
+       "k": "trend",
+       "ok": true,
+       "t": "日線多頭、週線多頭（不能是空頭）"
+      },
+      {
+       "k": "macd",
+       "ok": true,
+       "t": "MACD 零軸下（不能轉弱）"
+      },
+      {
+       "k": "market",
+       "ok": true,
+       "t": "大盤盤整"
+      },
+      {
+       "k": "vol",
+       "ok": true,
+       "t": "量比 1.72 ≥ 1.2"
+      }
+     ],
+     "watched": true,
+     "group": "TW|AI伺服器／散熱"
     },
     {
      "code": "2377.TW",
@@ -315,77 +598,6 @@
      "watched": false
     },
     {
-     "code": "3305.TW",
-     "name": "昇貿",
-     "market": "TW",
-     "date": "2026-10-29",
-     "close": 109.0,
-     "pct": -0.9091,
-     "entryLow": 106.9956,
-     "entryHigh": 109.7113,
-     "stop": 102.2393,
-     "target1": 120.7071,
-     "rr": 1.7316,
-     "rsi": 51.7604,
-     "volRatio": 0.6856,
-     "bias": 0.3452,
-     "zone": "IN_ZONE",
-     "dailyTrend": "多頭",
-     "weeklyTrend": "盤整",
-     "regime": "NEUTRAL",
-     "entrySignal": true,
-     "passed": 8,
-     "total": 9,
-     "checks": [
-      {
-       "k": "above",
-       "ok": true,
-       "t": "收在 SMA20 之上（乖離 0.3%）"
-      },
-      {
-       "k": "bias",
-       "ok": true,
-       "t": "乖離 0–6%"
-      },
-      {
-       "k": "high",
-       "ok": true,
-       "t": "未貼近 20 日高"
-      },
-      {
-       "k": "rr",
-       "ok": true,
-       "t": "報酬風險比 1.73 ≥ 1.5"
-      },
-      {
-       "k": "rsi",
-       "ok": true,
-       "t": "RSI 52（45–60）"
-      },
-      {
-       "k": "trend",
-       "ok": true,
-       "t": "日線多頭、週線盤整（不能是空頭）"
-      },
-      {
-       "k": "macd",
-       "ok": true,
-       "t": "MACD 零軸下（不能轉弱）"
-      },
-      {
-       "k": "market",
-       "ok": true,
-       "t": "大盤盤整"
-      },
-      {
-       "k": "vol",
-       "ok": false,
-       "t": "量比 0.69 ≥ 1.2"
-      }
-     ],
-     "watched": false
-    },
-    {
      "code": "3231.TW",
      "name": "緯創",
      "market": "TW",
@@ -526,224 +738,10 @@
       }
      ],
      "watched": false
-    },
-    {
-     "code": "2317.TW",
-     "name": "鴻海",
-     "market": "TW",
-     "date": "2026-10-29",
-     "close": 248.0,
-     "pct": -1.3917,
-     "entryLow": 243.6151,
-     "entryHigh": 249.7982,
-     "stop": 240.7679,
-     "target1": 260.0214,
-     "rr": 1.6622,
-     "rsi": 50.3679,
-     "volRatio": 0.5559,
-     "bias": 0.2729,
-     "zone": "IN_ZONE",
-     "dailyTrend": "盤整",
-     "weeklyTrend": "盤整",
-     "regime": "NEUTRAL",
-     "entrySignal": true,
-     "passed": 8,
-     "total": 9,
-     "checks": [
-      {
-       "k": "above",
-       "ok": true,
-       "t": "收在 SMA20 之上（乖離 0.3%）"
-      },
-      {
-       "k": "bias",
-       "ok": true,
-       "t": "乖離 0–6%"
-      },
-      {
-       "k": "high",
-       "ok": true,
-       "t": "未貼近 20 日高"
-      },
-      {
-       "k": "rr",
-       "ok": true,
-       "t": "報酬風險比 1.66 ≥ 1.5"
-      },
-      {
-       "k": "rsi",
-       "ok": true,
-       "t": "RSI 50（45–60）"
-      },
-      {
-       "k": "trend",
-       "ok": true,
-       "t": "日線盤整、週線盤整（不能是空頭）"
-      },
-      {
-       "k": "macd",
-       "ok": true,
-       "t": "MACD 零軸上（不能轉弱）"
-      },
-      {
-       "k": "market",
-       "ok": true,
-       "t": "大盤盤整"
-      },
-      {
-       "k": "vol",
-       "ok": false,
-       "t": "量比 0.56 ≥ 1.2"
-      }
-     ],
-     "watched": true,
-     "group": "TW|機器人・整機系統"
-    },
-    {
-     "code": "6409.TW",
-     "name": "旭隼",
-     "market": "TW",
-     "date": "2026-10-29",
-     "close": 903.0,
-     "pct": -3.2154,
-     "entryLow": 884.4808,
-     "entryHigh": 906.9295,
-     "stop": 852.7786,
-     "target1": 985.8143,
-     "rr": 1.649,
-     "rsi": 48.8435,
-     "volRatio": 0.6903,
-     "bias": 0.5624,
-     "zone": "IN_ZONE",
-     "dailyTrend": "盤整",
-     "weeklyTrend": "盤整",
-     "regime": "NEUTRAL",
-     "entrySignal": true,
-     "passed": 8,
-     "total": 9,
-     "checks": [
-      {
-       "k": "above",
-       "ok": true,
-       "t": "收在 SMA20 之上（乖離 0.6%）"
-      },
-      {
-       "k": "bias",
-       "ok": true,
-       "t": "乖離 0–6%"
-      },
-      {
-       "k": "high",
-       "ok": true,
-       "t": "未貼近 20 日高"
-      },
-      {
-       "k": "rr",
-       "ok": true,
-       "t": "報酬風險比 1.65 ≥ 1.5"
-      },
-      {
-       "k": "rsi",
-       "ok": true,
-       "t": "RSI 49（45–60）"
-      },
-      {
-       "k": "trend",
-       "ok": true,
-       "t": "日線盤整、週線盤整（不能是空頭）"
-      },
-      {
-       "k": "macd",
-       "ok": true,
-       "t": "MACD 零軸上（不能轉弱）"
-      },
-      {
-       "k": "market",
-       "ok": true,
-       "t": "大盤盤整"
-      },
-      {
-       "k": "vol",
-       "ok": false,
-       "t": "量比 0.69 ≥ 1.2"
-      }
-     ],
-     "watched": false
-    },
-    {
-     "code": "1809.TW",
-     "name": "中釉",
-     "market": "TW",
-     "date": "2026-10-29",
-     "close": 45.85,
-     "pct": -4.4792,
-     "entryLow": 44.7806,
-     "entryHigh": 45.9171,
-     "stop": 42.2825,
-     "target1": 51.68,
-     "rr": 1.6342,
-     "rsi": 54.3242,
-     "volRatio": 0.6716,
-     "bias": 0.8523,
-     "zone": "IN_ZONE",
-     "dailyTrend": "多頭",
-     "weeklyTrend": "多頭",
-     "regime": "NEUTRAL",
-     "entrySignal": true,
-     "passed": 8,
-     "total": 9,
-     "checks": [
-      {
-       "k": "above",
-       "ok": true,
-       "t": "收在 SMA20 之上（乖離 0.9%）"
-      },
-      {
-       "k": "bias",
-       "ok": true,
-       "t": "乖離 0–6%"
-      },
-      {
-       "k": "high",
-       "ok": true,
-       "t": "未貼近 20 日高"
-      },
-      {
-       "k": "rr",
-       "ok": true,
-       "t": "報酬風險比 1.63 ≥ 1.5"
-      },
-      {
-       "k": "rsi",
-       "ok": true,
-       "t": "RSI 54（45–60）"
-      },
-      {
-       "k": "trend",
-       "ok": true,
-       "t": "日線多頭、週線多頭（不能是空頭）"
-      },
-      {
-       "k": "macd",
-       "ok": true,
-       "t": "MACD 零軸上（不能轉弱）"
-      },
-      {
-       "k": "market",
-       "ok": true,
-       "t": "大盤盤整"
-      },
-      {
-       "k": "vol",
-       "ok": false,
-       "t": "量比 0.67 ≥ 1.2"
-      }
-     ],
-     "watched": false
     }
    ],
    "universe": "證交所＋櫃買中心全市場日收盤，成交金額前 300 名",
-   "seconds": 31,
+   "seconds": 50,
    "session": "2026-10-29"
   },
   "US": {
@@ -754,7 +752,7 @@
     "SKHY：只有 78 根日 K"
    ],
    "candidates": 110,
-   "signals": 13,
+   "signals": 14,
    "picks": [
     {
      "code": "IBN",
@@ -898,6 +896,77 @@
      ],
      "watched": true,
      "group": "US|AI雲端／記憶體"
+    },
+    {
+     "code": "AME",
+     "name": "AMETEK Inc.",
+     "market": "US",
+     "date": "2026-10-28",
+     "close": 248.13,
+     "pct": 0.7757,
+     "entryLow": 244.0899,
+     "entryHigh": 250.2851,
+     "stop": 240.8993,
+     "target1": 260.7941,
+     "rr": 1.7514,
+     "rsi": 53.3137,
+     "volRatio": 0.9091,
+     "bias": 0.1303,
+     "zone": "IN_ZONE",
+     "dailyTrend": "多頭",
+     "weeklyTrend": "多頭",
+     "regime": "NEUTRAL",
+     "entrySignal": true,
+     "passed": 8,
+     "total": 9,
+     "checks": [
+      {
+       "k": "above",
+       "ok": true,
+       "t": "收在 SMA20 之上（乖離 0.1%）"
+      },
+      {
+       "k": "bias",
+       "ok": true,
+       "t": "乖離 0–6%"
+      },
+      {
+       "k": "high",
+       "ok": true,
+       "t": "未貼近 20 日高"
+      },
+      {
+       "k": "rr",
+       "ok": true,
+       "t": "報酬風險比 1.75 ≥ 1.5"
+      },
+      {
+       "k": "rsi",
+       "ok": true,
+       "t": "RSI 53（45–60）"
+      },
+      {
+       "k": "trend",
+       "ok": true,
+       "t": "日線多頭、週線多頭（不能是空頭）"
+      },
+      {
+       "k": "macd",
+       "ok": true,
+       "t": "MACD 零軸下（不能轉弱）"
+      },
+      {
+       "k": "market",
+       "ok": true,
+       "t": "大盤盤整"
+      },
+      {
+       "k": "vol",
+       "ok": false,
+       "t": "量比 0.91 ≥ 1.2"
+      }
+     ],
+     "watched": false
     },
     {
      "code": "CAH",
@@ -1395,34 +1464,55 @@
       }
      ],
      "watched": false
-    },
+    }
+   ],
+   "universe": "Nasdaq 全市場名單，市值前 300 名",
+   "seconds": 27,
+   "session": "2026-10-28"
+  },
+  "CRYPTO": {
+   "scanned": 30,
+   "ok": 23,
+   "failed": 7,
+   "failedSample": [
+    "FIGR_HELOC-USD：HTTPError",
+    "RAIN-USD：HTTPError",
+    "UNI-USD：HTTPError",
+    "CC-USD：HTTPError",
+    "SUI-USD：HTTPError",
+    "TAO-USD：HTTPError",
+    "SHIB-USD：歷史不足"
+   ],
+   "candidates": 5,
+   "signals": 2,
+   "picks": [
     {
-     "code": "TSM",
-     "name": "Taiwan Semiconductor Manufacturing Compa",
-     "market": "US",
+     "code": "LTC-USD",
+     "name": "Litecoin",
+     "market": "CRYPTO",
      "date": "2026-10-28",
-     "close": 439.51,
-     "pct": 0.6043,
-     "entryLow": 435.7005,
-     "entryHigh": 446.7589,
-     "stop": 426.5521,
-     "target1": 468.4463,
-     "rr": 2.2331,
-     "rsi": 51.8385,
-     "volRatio": 0.7037,
-     "bias": -0.6388,
+     "close": 59.1474,
+     "pct": 3.5358,
+     "entryLow": 58.9462,
+     "entryHigh": 60.4423,
+     "stop": 57.0487,
+     "target1": 64.2719,
+     "rr": 2.4417,
+     "rsi": 46.3356,
+     "volRatio": 1.3293,
+     "bias": -1.1637,
      "zone": "IN_ZONE",
      "dailyTrend": "盤整",
-     "weeklyTrend": "多頭",
+     "weeklyTrend": "盤整",
      "regime": "NEUTRAL",
      "entrySignal": true,
-     "passed": 6,
+     "passed": 7,
      "total": 9,
      "checks": [
       {
        "k": "above",
        "ok": false,
-       "t": "收在 SMA20 之上（乖離 -0.6%）"
+       "t": "收在 SMA20 之上（乖離 -1.2%）"
       },
       {
        "k": "bias",
@@ -1437,17 +1527,17 @@
       {
        "k": "rr",
        "ok": true,
-       "t": "報酬風險比 2.23 ≥ 1.5"
+       "t": "報酬風險比 2.44 ≥ 1.5"
       },
       {
        "k": "rsi",
        "ok": true,
-       "t": "RSI 52（45–60）"
+       "t": "RSI 46（45–60）"
       },
       {
        "k": "trend",
        "ok": true,
-       "t": "日線盤整、週線多頭（不能是空頭）"
+       "t": "日線盤整、週線盤整（不能是空頭）"
       },
       {
        "k": "macd",
@@ -1461,66 +1551,43 @@
       },
       {
        "k": "vol",
-       "ok": false,
-       "t": "量比 0.70 ≥ 1.2"
+       "ok": true,
+       "t": "量比 1.33 ≥ 1.2"
       }
      ],
-     "watched": true,
-     "group": "US|AI晶片"
-    }
-   ],
-   "universe": "Nasdaq 全市場名單，市值前 300 名",
-   "seconds": 25,
-   "session": "2026-10-28"
-  },
-  "CRYPTO": {
-   "scanned": 30,
-   "ok": 22,
-   "failed": 8,
-   "failedSample": [
-    "FIGR_HELOC-USD：HTTPError",
-    "RAIN-USD：HTTPError",
-    "UNI-USD：HTTPError",
-    "CC-USD：HTTPError",
-    "SUI-USD：HTTPError",
-    "TAO-USD：HTTPError",
-    "SHIB-USD：歷史不足",
-    "BTW-USD：HTTPError"
-   ],
-   "candidates": 5,
-   "signals": 2,
-   "picks": [
+     "watched": false
+    },
     {
-     "code": "TRX-USD",
-     "name": "TRON",
+     "code": "BTC-USD",
+     "name": "Bitcoin",
      "market": "CRYPTO",
-     "date": "2026-10-27",
-     "close": 0.3311,
-     "pct": 0.6616,
-     "entryLow": 0.3258,
-     "entryHigh": 0.3341,
-     "stop": 0.3269,
-     "target1": 0.3382,
-     "rr": 1.6954,
-     "rsi": 47.9236,
-     "volRatio": 1.096,
-     "bias": 0.0951,
+     "date": "2026-10-28",
+     "close": 81267.5859,
+     "pct": 0.5724,
+     "entryLow": 80606.8328,
+     "entryHigh": 82652.6915,
+     "stop": 79604.1722,
+     "target1": 85356.2417,
+     "rr": 2.458,
+     "rsi": 47.6625,
+     "volRatio": 1.0072,
+     "bias": -0.6926,
      "zone": "IN_ZONE",
      "dailyTrend": "盤整",
      "weeklyTrend": "盤整",
      "regime": "NEUTRAL",
      "entrySignal": true,
-     "passed": 8,
+     "passed": 6,
      "total": 9,
      "checks": [
       {
        "k": "above",
-       "ok": true,
-       "t": "收在 SMA20 之上（乖離 0.1%）"
+       "ok": false,
+       "t": "收在 SMA20 之上（乖離 -0.7%）"
       },
       {
        "k": "bias",
-       "ok": true,
+       "ok": false,
        "t": "乖離 0–6%"
       },
       {
@@ -1531,7 +1598,7 @@
       {
        "k": "rr",
        "ok": true,
-       "t": "報酬風險比 1.70 ≥ 1.5"
+       "t": "報酬風險比 2.46 ≥ 1.5"
       },
       {
        "k": "rsi",
@@ -1546,77 +1613,6 @@
       {
        "k": "macd",
        "ok": true,
-       "t": "MACD 零軸上（不能轉弱）"
-      },
-      {
-       "k": "market",
-       "ok": true,
-       "t": "大盤盤整"
-      },
-      {
-       "k": "vol",
-       "ok": false,
-       "t": "量比 1.10 ≥ 1.2"
-      }
-     ],
-     "watched": false
-    },
-    {
-     "code": "BTC-USD",
-     "name": "Bitcoin",
-     "market": "CRYPTO",
-     "date": "2026-10-27",
-     "close": 80805.0781,
-     "pct": 0.9979,
-     "entryLow": 80626.9638,
-     "entryHigh": 82673.3334,
-     "stop": 79513.1576,
-     "target1": 85098.0626,
-     "rr": 3.3229,
-     "rsi": 45.4511,
-     "volRatio": 0.897,
-     "bias": -1.2824,
-     "zone": "IN_ZONE",
-     "dailyTrend": "盤整",
-     "weeklyTrend": "盤整",
-     "regime": "NEUTRAL",
-     "entrySignal": true,
-     "passed": 6,
-     "total": 9,
-     "checks": [
-      {
-       "k": "above",
-       "ok": false,
-       "t": "收在 SMA20 之上（乖離 -1.3%）"
-      },
-      {
-       "k": "bias",
-       "ok": false,
-       "t": "乖離 0–6%"
-      },
-      {
-       "k": "high",
-       "ok": true,
-       "t": "未貼近 20 日高"
-      },
-      {
-       "k": "rr",
-       "ok": true,
-       "t": "報酬風險比 3.32 ≥ 1.5"
-      },
-      {
-       "k": "rsi",
-       "ok": true,
-       "t": "RSI 45（45–60）"
-      },
-      {
-       "k": "trend",
-       "ok": true,
-       "t": "日線盤整、週線盤整（不能是空頭）"
-      },
-      {
-       "k": "macd",
-       "ok": true,
        "t": "MACD 零軸下（不能轉弱）"
       },
       {
@@ -1627,110 +1623,39 @@
       {
        "k": "vol",
        "ok": false,
-       "t": "量比 0.90 ≥ 1.2"
+       "t": "量比 1.01 ≥ 1.2"
       }
      ],
      "watched": true,
      "group": "CRYPTO|主流幣"
     },
     {
-     "code": "BNB-USD",
-     "name": "BNB",
+     "code": "ENA-USD",
+     "name": "Ethena",
      "market": "CRYPTO",
-     "date": "2026-10-27",
-     "close": 744.1481,
-     "pct": 0.368,
-     "entryLow": 724.9993,
-     "entryHigh": 743.4003,
-     "stop": 715.9489,
-     "target1": 780.9815,
-     "rr": 1.3062,
-     "rsi": 51.1816,
-     "volRatio": 1.0962,
-     "bias": 1.1016,
-     "zone": "ABOVE_ZONE",
-     "dailyTrend": "盤整",
-     "weeklyTrend": "盤整",
-     "regime": "NEUTRAL",
-     "entrySignal": false,
-     "passed": 7,
-     "total": 9,
-     "checks": [
-      {
-       "k": "above",
-       "ok": true,
-       "t": "收在 SMA20 之上（乖離 1.1%）"
-      },
-      {
-       "k": "bias",
-       "ok": true,
-       "t": "乖離 0–6%"
-      },
-      {
-       "k": "high",
-       "ok": true,
-       "t": "未貼近 20 日高"
-      },
-      {
-       "k": "rr",
-       "ok": false,
-       "t": "報酬風險比 1.31 ≥ 1.5"
-      },
-      {
-       "k": "rsi",
-       "ok": true,
-       "t": "RSI 51（45–60）"
-      },
-      {
-       "k": "trend",
-       "ok": true,
-       "t": "日線盤整、週線盤整（不能是空頭）"
-      },
-      {
-       "k": "macd",
-       "ok": true,
-       "t": "MACD 零軸上（不能轉弱）"
-      },
-      {
-       "k": "market",
-       "ok": true,
-       "t": "大盤盤整"
-      },
-      {
-       "k": "vol",
-       "ok": false,
-       "t": "量比 1.10 ≥ 1.2"
-      }
-     ],
-     "watched": false
-    },
-    {
-     "code": "XMR-USD",
-     "name": "Monero",
-     "market": "CRYPTO",
-     "date": "2026-10-27",
-     "close": 605.9438,
-     "pct": 1.525,
-     "entryLow": 563.3737,
-     "entryHigh": 577.6725,
-     "stop": 531.9413,
-     "target1": 679.2987,
-     "rr": 0.9912,
-     "rsi": 59.2562,
-     "volRatio": 0.9141,
-     "bias": 5.9429,
+     "date": "2026-10-28",
+     "close": 0.2095,
+     "pct": 0.3382,
+     "entryLow": 0.2012,
+     "entryHigh": 0.2063,
+     "stop": 0.183,
+     "target1": 0.2486,
+     "rr": 1.4758,
+     "rsi": 51.4643,
+     "volRatio": 1.4364,
+     "bias": 2.5307,
      "zone": "ABOVE_ZONE",
      "dailyTrend": "多頭",
      "weeklyTrend": "多頭",
      "regime": "NEUTRAL",
      "entrySignal": false,
-     "passed": 7,
+     "passed": 8,
      "total": 9,
      "checks": [
       {
        "k": "above",
        "ok": true,
-       "t": "收在 SMA20 之上（乖離 5.9%）"
+       "t": "收在 SMA20 之上（乖離 2.5%）"
       },
       {
        "k": "bias",
@@ -1745,12 +1670,12 @@
       {
        "k": "rr",
        "ok": false,
-       "t": "報酬風險比 0.99 ≥ 1.5"
+       "t": "報酬風險比 1.48 ≥ 1.5"
       },
       {
        "k": "rsi",
        "ok": true,
-       "t": "RSI 59（45–60）"
+       "t": "RSI 51（45–60）"
       },
       {
        "k": "trend",
@@ -1769,8 +1694,8 @@
       },
       {
        "k": "vol",
-       "ok": false,
-       "t": "量比 0.91 ≥ 1.2"
+       "ok": true,
+       "t": "量比 1.44 ≥ 1.2"
       }
      ],
      "watched": false
@@ -1779,33 +1704,33 @@
      "code": "BCH-USD",
      "name": "Bitcoin Cash",
      "market": "CRYPTO",
-     "date": "2026-10-27",
-     "close": 295.9039,
-     "pct": 5.5435,
-     "entryLow": 274.056,
-     "entryHigh": 281.0117,
-     "stop": 262.8658,
-     "target1": 324.0706,
-     "rr": 0.8526,
-     "rsi": 57.1958,
-     "volRatio": 1.242,
-     "bias": 6.3525,
+     "date": "2026-10-28",
+     "close": 288.7086,
+     "pct": -2.4316,
+     "entryLow": 274.9809,
+     "entryHigh": 281.9601,
+     "stop": 263.2114,
+     "target1": 317.9631,
+     "rr": 1.1474,
+     "rsi": 52.9036,
+     "volRatio": 1.5182,
+     "bias": 3.4174,
      "zone": "ABOVE_ZONE",
      "dailyTrend": "多頭",
      "weeklyTrend": "盤整",
      "regime": "NEUTRAL",
      "entrySignal": false,
-     "passed": 7,
+     "passed": 8,
      "total": 9,
      "checks": [
       {
        "k": "above",
        "ok": true,
-       "t": "收在 SMA20 之上（乖離 6.4%）"
+       "t": "收在 SMA20 之上（乖離 3.4%）"
       },
       {
        "k": "bias",
-       "ok": false,
+       "ok": true,
        "t": "乖離 0–6%"
       },
       {
@@ -1816,12 +1741,12 @@
       {
        "k": "rr",
        "ok": false,
-       "t": "報酬風險比 0.85 ≥ 1.5"
+       "t": "報酬風險比 1.15 ≥ 1.5"
       },
       {
        "k": "rsi",
        "ok": true,
-       "t": "RSI 57（45–60）"
+       "t": "RSI 53（45–60）"
       },
       {
        "k": "trend",
@@ -1841,7 +1766,78 @@
       {
        "k": "vol",
        "ok": true,
-       "t": "量比 1.24 ≥ 1.2"
+       "t": "量比 1.52 ≥ 1.2"
+      }
+     ],
+     "watched": false
+    },
+    {
+     "code": "XMR-USD",
+     "name": "Monero",
+     "market": "CRYPTO",
+     "date": "2026-10-28",
+     "close": 598.1243,
+     "pct": -1.2905,
+     "entryLow": 566.2255,
+     "entryHigh": 580.5967,
+     "stop": 533.8279,
+     "target1": 673.3282,
+     "rr": 1.1696,
+     "rsi": 56.7348,
+     "volRatio": 1.0433,
+     "bias": 4.0491,
+     "zone": "ABOVE_ZONE",
+     "dailyTrend": "多頭",
+     "weeklyTrend": "多頭",
+     "regime": "NEUTRAL",
+     "entrySignal": false,
+     "passed": 7,
+     "total": 9,
+     "checks": [
+      {
+       "k": "above",
+       "ok": true,
+       "t": "收在 SMA20 之上（乖離 4.0%）"
+      },
+      {
+       "k": "bias",
+       "ok": true,
+       "t": "乖離 0–6%"
+      },
+      {
+       "k": "high",
+       "ok": true,
+       "t": "未貼近 20 日高"
+      },
+      {
+       "k": "rr",
+       "ok": false,
+       "t": "報酬風險比 1.17 ≥ 1.5"
+      },
+      {
+       "k": "rsi",
+       "ok": true,
+       "t": "RSI 57（45–60）"
+      },
+      {
+       "k": "trend",
+       "ok": true,
+       "t": "日線多頭、週線多頭（不能是空頭）"
+      },
+      {
+       "k": "macd",
+       "ok": true,
+       "t": "MACD 零軸上（不能轉弱）"
+      },
+      {
+       "k": "market",
+       "ok": true,
+       "t": "大盤盤整"
+      },
+      {
+       "k": "vol",
+       "ok": false,
+       "t": "量比 1.04 ≥ 1.2"
       }
      ],
      "watched": false
@@ -1849,7 +1845,7 @@
    ],
    "universe": "CoinGecko 市值前 30 名（排除穩定幣、包裝與質押代幣）",
    "seconds": 7,
-   "session": "2026-10-27"
+   "session": "2026-10-28"
   }
  }
 }

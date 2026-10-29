@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-29T06:17:43.287944+00:00",
+  "updatedAt": "2026-10-29T13:16:13.571048+00:00",
   "note": "scripts/risk.py 自動抓到的美股財報日。要指定日期請改 data/events.json 的 earnings，那邊永遠優先。",
   "symbols": {
     "ASTS": {
@@ -33,6 +33,14 @@
       "provider": "Yahoo",
       "source": "https://finance.yahoo.com/quote/META/",
       "fetchedAt": "2026-10-21"
+    },
+    "MSFT": {
+      "date": "2027-01-27",
+      "dateEnd": null,
+      "estimated": true,
+      "provider": "Yahoo",
+      "source": "https://finance.yahoo.com/quote/MSFT/",
+      "fetchedAt": "2026-10-29"
     },
     "MU": {
       "date": "2026-12-23",
