@@ -1,6 +1,6 @@
 {
-  "dataTimestamp": "2026-10-28T13:08:54.238766+00:00",
-  "marketTimestamp": "2026-10-28T13:08:54.238766+00:00",
+  "dataTimestamp": "2026-10-29T00:52:39.583971+00:00",
+  "marketTimestamp": "2026-10-29T00:52:39.583971+00:00",
   "source": "yahoo",
   "isFinalClose": true,
   "sessions": {
@@ -12,13 +12,13 @@
     "TW": {
       "symbol": "^TWII",
       "date": "2026-10-28",
-      "close": 47035.5781,
+      "close": 47035.58,
       "regime": "NEUTRAL"
     },
     "US": {
       "symbol": "^IXIC",
-      "date": "2026-10-27",
-      "close": 26477.8105,
+      "date": "2026-10-28",
+      "close": 26549.8516,
       "regime": "NEUTRAL"
     },
     "CRYPTO": {
@@ -31,39 +31,39 @@
   "indexQuotes": {
     "^TWII": {
       "date": "2026-10-28",
-      "close": 47035.5781,
+      "close": 47035.58,
       "prevClose": 46096.23,
-      "ma20": 47930.3285,
+      "ma20": 47930.3286,
       "ma60": 46398.5791,
       "high20": 49968.92,
       "bias": -1.8668
     },
     "^IXIC": {
-      "date": "2026-10-27",
-      "close": 26477.8105,
-      "prevClose": 26169.3809,
-      "ma20": 26813.2494,
-      "ma60": 26583.7899,
+      "date": "2026-10-28",
+      "close": 26549.8516,
+      "prevClose": 26477.8105,
+      "ma20": 26797.689,
+      "ma60": 26583.2043,
       "high20": 27722.75,
-      "bias": -1.251
+      "bias": -0.9248
     },
     "^SOX": {
-      "date": "2026-10-27",
-      "close": 11482.5,
-      "prevClose": 11083.4697,
-      "ma20": 12013.9355,
-      "ma60": 11959.9729,
+      "date": "2026-10-28",
+      "close": 11684.0,
+      "prevClose": 11482.5,
+      "ma20": 11966.7045,
+      "ma60": 11951.7185,
       "high20": 13349.96,
-      "bias": -4.4235
+      "bias": -2.3624
     },
     "^TNX": {
-      "date": "2026-10-27",
-      "close": 4.993,
-      "prevClose": 4.986,
-      "ma20": 5.1646,
-      "ma60": 4.9406,
+      "date": "2026-10-28",
+      "close": 5.045,
+      "prevClose": 4.993,
+      "ma20": 5.1522,
+      "ma60": 4.9476,
       "high20": 5.364,
-      "bias": -3.3226
+      "bias": -2.0807
     }
   },
   "params": {
@@ -97,7 +97,7 @@
       "ma60": 2432.0,
       "rsi14": 45.9772,
       "macd": "零軸下",
-      "volumeRatio": 0.8911,
+      "volumeRatio": 0.8552,
       "atr14": 34.6429,
       "dailyTrend": "盤整",
       "weeklyTrend": "盤整",
@@ -117,13 +117,13 @@
       "marketRegime": "NEUTRAL",
       "themeTrend": null,
       "signal": "WATCH",
-      "dataTimestamp": "2026-10-28T13:08:54.238766+00:00",
+      "dataTimestamp": "2026-10-29T00:52:39.583971+00:00",
       "isFinalClose": true,
       "source": "yahoo",
       "entrySignal": false,
       "ma5": 2403.0,
       "ma10": 2419.0,
-      "volume": 20755222
+      "volume": 19880613
     },
     "2454.TW": {
       "date": "2026-10-28",
@@ -140,7 +140,7 @@
       "ma60": 4338.75,
       "rsi14": 44.3708,
       "macd": "零軸下",
-      "volumeRatio": 1.0632,
+      "volumeRatio": 0.9996,
       "atr14": 170.7143,
       "dailyTrend": "盤整",
       "weeklyTrend": "盤整",
@@ -160,13 +160,13 @@
       "marketRegime": "NEUTRAL",
       "themeTrend": null,
       "signal": "WATCH",
-      "dataTimestamp": "2026-10-28T13:08:54.238766+00:00",
+      "dataTimestamp": "2026-10-29T00:52:39.583971+00:00",
       "isFinalClose": true,
       "source": "yahoo",
       "entrySignal": false,
       "ma5": 4071.0,
       "ma10": 4160.0,
-      "volume": 7426125
+      "volume": 6958980
     },
     "2308.TW": {
       "date": "2026-10-28",
@@ -183,7 +183,7 @@
       "ma60": 1763.8333,
       "rsi14": 35.4862,
       "macd": "零軸下",
-      "volumeRatio": 0.765,
+      "volumeRatio": 0.7154,
       "atr14": 72.8571,
       "dailyTrend": "盤整",
       "weeklyTrend": "空頭",
@@ -203,13 +203,13 @@
       "marketRegime": "NEUTRAL",
       "themeTrend": null,
       "signal": "WATCH",
-      "dataTimestamp": "2026-10-28T13:08:54.238766+00:00",
+      "dataTimestamp": "2026-10-29T00:52:39.583971+00:00",
       "isFinalClose": true,
       "source": "yahoo",
       "entrySignal": false,
       "ma5": 1561.0,
       "ma10": 1610.0,
-      "volume": 7428503
+      "volume": 6929459
     },
     "2371.TW": {
       "date": "2026-10-28",
@@ -226,7 +226,7 @@
       "ma60": 28.1725,
       "rsi14": 49.3022,
       "macd": "零軸下",
-      "volumeRatio": 0.3964,
+      "volumeRatio": 0.3946,
       "atr14": 0.7429,
       "dailyTrend": "盤整",
       "weeklyTrend": "盤整",
@@ -246,13 +246,13 @@
       "marketRegime": "NEUTRAL",
       "themeTrend": null,
       "signal": "WATCH",
-      "dataTimestamp": "2026-10-28T13:08:54.238766+00:00",
+      "dataTimestamp": "2026-10-29T00:52:39.583971+00:00",
       "isFinalClose": true,
       "source": "yahoo",
       "entrySignal": false,
       "ma5": 28.49,
       "ma10": 28.78,
-      "volume": 5124922
+      "volume": 5101483
     },
     "8210.TW": {
       "date": "2026-10-28",
@@ -269,7 +269,7 @@
       "ma60": 929.5333,
       "rsi14": 32.7532,
       "macd": "零軸下",
-      "volumeRatio": 0.609,
+      "volumeRatio": 0.5648,
       "atr14": 24.2857,
       "dailyTrend": "空頭",
       "weeklyTrend": "空頭",
@@ -289,13 +289,13 @@
       "marketRegime": "NEUTRAL",
       "themeTrend": null,
       "signal": "WATCH",
-      "dataTimestamp": "2026-10-28T13:08:54.238766+00:00",
+      "dataTimestamp": "2026-10-29T00:52:39.583971+00:00",
       "isFinalClose": true,
       "source": "yahoo",
       "entrySignal": false,
       "ma5": 777.2,
       "ma10": 802.0,
-      "volume": 996344
+      "volume": 921952
     },
     "3324.TWO": {
       "date": "2026-10-28",
@@ -312,7 +312,7 @@
       "ma60": 1293.9833,
       "rsi14": 51.8472,
       "macd": "零軸下",
-      "volumeRatio": 1.0667,
+      "volumeRatio": 1.0448,
       "atr14": 95.3571,
       "dailyTrend": "盤整",
       "weeklyTrend": "盤整",
@@ -332,13 +332,13 @@
       "marketRegime": "NEUTRAL",
       "themeTrend": null,
       "signal": "WATCH",
-      "dataTimestamp": "2026-10-28T13:08:54.238766+00:00",
+      "dataTimestamp": "2026-10-29T00:52:39.583971+00:00",
       "isFinalClose": true,
       "source": "yahoo",
       "entrySignal": false,
       "ma5": 1373.0,
       "ma10": 1396.5,
-      "volume": 3366541
+      "volume": 3293752
     },
     "3653.TW": {
       "date": "2026-10-28",
@@ -355,7 +355,7 @@
       "ma60": 5757.75,
       "rsi14": 50.2447,
       "macd": "零軸下",
-      "volumeRatio": 1.7984,
+      "volumeRatio": 1.7696,
       "atr14": 368.9286,
       "dailyTrend": "盤整",
       "weeklyTrend": "多頭",
@@ -375,13 +375,13 @@
       "marketRegime": "NEUTRAL",
       "themeTrend": null,
       "signal": "WATCH",
-      "dataTimestamp": "2026-10-28T13:08:54.238766+00:00",
+      "dataTimestamp": "2026-10-29T00:52:39.583971+00:00",
       "isFinalClose": true,
       "source": "yahoo",
       "entrySignal": false,
       "ma5": 6182.0,
       "ma10": 6468.5,
-      "volume": 2169192
+      "volume": 2131173
     },
     "3017.TW": {
       "date": "2026-10-28",
@@ -398,7 +398,7 @@
       "ma60": 3208.25,
       "rsi14": 46.7816,
       "macd": "零軸下",
-      "volumeRatio": 0.738,
+      "volumeRatio": 0.7157,
       "atr14": 177.1429,
       "dailyTrend": "盤整",
       "weeklyTrend": "盤整",
@@ -418,13 +418,13 @@
       "marketRegime": "NEUTRAL",
       "themeTrend": null,
       "signal": "WATCH",
-      "dataTimestamp": "2026-10-28T13:08:54.238766+00:00",
+      "dataTimestamp": "2026-10-29T00:52:39.583971+00:00",
       "isFinalClose": true,
       "source": "yahoo",
       "entrySignal": false,
       "ma5": 3174.0,
       "ma10": 3223.0,
-      "volume": 2090079
+      "volume": 2024733
     },
     "3189.TW": {
       "date": "2026-10-28",
@@ -441,7 +441,7 @@
       "ma60": 894.3,
       "rsi14": 57.2098,
       "macd": "零軸下",
-      "volumeRatio": 1.2054,
+      "volumeRatio": 1.187,
       "atr14": 68.7857,
       "dailyTrend": "多頭",
       "weeklyTrend": "多頭",
@@ -461,13 +461,13 @@
       "marketRegime": "NEUTRAL",
       "themeTrend": null,
       "signal": "WATCH",
-      "dataTimestamp": "2026-10-28T13:08:54.238766+00:00",
+      "dataTimestamp": "2026-10-29T00:52:39.583971+00:00",
       "isFinalClose": true,
       "source": "yahoo",
       "entrySignal": false,
       "ma5": 991.6,
       "ma10": 991.4,
-      "volume": 18305264
+      "volume": 18008198
     },
     "3037.TW": {
       "date": "2026-10-28",
@@ -484,7 +484,7 @@
       "ma60": 1068.3333,
       "rsi14": 48.1717,
       "macd": "零軸下",
-      "volumeRatio": 1.5849,
+      "volumeRatio": 1.5594,
       "atr14": 74.6429,
       "dailyTrend": "盤整",
       "weeklyTrend": "盤整",
@@ -504,13 +504,13 @@
       "marketRegime": "NEUTRAL",
       "themeTrend": null,
       "signal": "WATCH",
-      "dataTimestamp": "2026-10-28T13:08:54.238766+00:00",
+      "dataTimestamp": "2026-10-29T00:52:39.583971+00:00",
       "isFinalClose": true,
       "source": "yahoo",
       "entrySignal": false,
       "ma5": 1086.0,
       "ma10": 1095.5,
-      "volume": 24474674
+      "volume": 24047759
     },
     "8046.TW": {
       "date": "2026-10-28",
@@ -527,7 +527,7 @@
       "ma60": 1217.7167,
       "rsi14": 49.534,
       "macd": "零軸下",
-      "volumeRatio": 1.1214,
+      "volumeRatio": 1.1059,
       "atr14": 84.2857,
       "dailyTrend": "盤整",
       "weeklyTrend": "多頭",
@@ -547,13 +547,13 @@
       "marketRegime": "NEUTRAL",
       "themeTrend": null,
       "signal": "WATCH",
-      "dataTimestamp": "2026-10-28T13:08:54.238766+00:00",
+      "dataTimestamp": "2026-10-29T00:52:39.583971+00:00",
       "isFinalClose": true,
       "source": "yahoo",
       "entrySignal": false,
       "ma5": 1285.0,
       "ma10": 1324.0,
-      "volume": 10343257
+      "volume": 10191811
     },
     "8358.TWO": {
       "date": "2026-10-28",
@@ -570,7 +570,7 @@
       "ma60": 465.4167,
       "rsi14": 45.7735,
       "macd": "零軸下",
-      "volumeRatio": 0.1765,
+      "volumeRatio": 0.1686,
       "atr14": 33.0,
       "dailyTrend": "盤整",
       "weeklyTrend": "盤整",
@@ -590,13 +590,13 @@
       "marketRegime": "NEUTRAL",
       "themeTrend": null,
       "signal": "WATCH",
-      "dataTimestamp": "2026-10-28T13:08:54.238766+00:00",
+      "dataTimestamp": "2026-10-29T00:52:39.583971+00:00",
       "isFinalClose": true,
       "source": "yahoo",
       "entrySignal": false,
       "ma5": 447.9,
       "ma10": 462.85,
-      "volume": 2203891
+      "volume": 2104282
     },
     "4958.TW": {
       "date": "2026-10-28",
@@ -613,7 +613,7 @@
       "ma60": 501.6333,
       "rsi14": 52.373,
       "macd": "轉弱",
-      "volumeRatio": 0.6173,
+      "volumeRatio": 0.606,
       "atr14": 36.5,
       "dailyTrend": "盤整",
       "weeklyTrend": "多頭",
@@ -633,13 +633,13 @@
       "marketRegime": "NEUTRAL",
       "themeTrend": null,
       "signal": "WATCH",
-      "dataTimestamp": "2026-10-28T13:08:54.238766+00:00",
+      "dataTimestamp": "2026-10-29T00:52:39.583971+00:00",
       "isFinalClose": true,
       "source": "yahoo",
       "entrySignal": false,
       "ma5": 556.4,
       "ma10": 551.9,
-      "volume": 19835311
+      "volume": 19461594
     },
     "6213.TW": {
       "date": "2026-10-28",
@@ -656,7 +656,7 @@
       "ma60": 577.9833,
       "rsi14": 59.2856,
       "macd": "轉弱",
-      "volumeRatio": 1.2795,
+      "volumeRatio": 1.2653,
       "atr14": 61.7143,
       "dailyTrend": "多頭",
       "weeklyTrend": "多頭",
@@ -676,13 +676,13 @@
       "marketRegime": "NEUTRAL",
       "themeTrend": null,
       "signal": "WATCH",
-      "dataTimestamp": "2026-10-28T13:08:54.238766+00:00",
+      "dataTimestamp": "2026-10-29T00:52:39.583971+00:00",
       "isFinalClose": true,
       "source": "yahoo",
       "entrySignal": false,
       "ma5": 780.2,
       "ma10": 784.6,
-      "volume": 19531108
+      "volume": 19300278
     },
     "2383.TW": {
       "date": "2026-10-28",
@@ -699,7 +699,7 @@
       "ma60": 5373.1667,
       "rsi14": 45.143,
       "macd": "零軸下",
-      "volumeRatio": 1.2858,
+      "volumeRatio": 1.2359,
       "atr14": 334.2857,
       "dailyTrend": "空頭",
       "weeklyTrend": "盤整",
@@ -719,13 +719,13 @@
       "marketRegime": "NEUTRAL",
       "themeTrend": null,
       "signal": "WATCH",
-      "dataTimestamp": "2026-10-28T13:08:54.238766+00:00",
+      "dataTimestamp": "2026-10-29T00:52:39.583971+00:00",
       "isFinalClose": true,
       "source": "yahoo",
       "entrySignal": false,
       "ma5": 4981.0,
       "ma10": 5078.0,
-      "volume": 3267674
+      "volume": 3132541
     },
     "1303.TW": {
       "date": "2026-10-28",
@@ -742,7 +742,7 @@
       "ma60": 239.5083,
       "rsi14": 61.0785,
       "macd": "零軸下",
-      "volumeRatio": 0.9442,
+      "volumeRatio": 0.9335,
       "atr14": 22.1786,
       "dailyTrend": "多頭",
       "weeklyTrend": "多頭",
@@ -762,13 +762,13 @@
       "marketRegime": "NEUTRAL",
       "themeTrend": null,
       "signal": "WATCH",
-      "dataTimestamp": "2026-10-28T13:08:54.238766+00:00",
+      "dataTimestamp": "2026-10-29T00:52:39.583971+00:00",
       "isFinalClose": true,
       "source": "yahoo",
       "entrySignal": false,
       "ma5": 307.8,
       "ma10": 310.9,
-      "volume": 89633067
+      "volume": 88569888
     },
     "2408.TW": {
       "date": "2026-10-28",
@@ -785,7 +785,7 @@
       "ma60": 490.4667,
       "rsi14": 50.9313,
       "macd": "零軸下",
-      "volumeRatio": 1.1407,
+      "volumeRatio": 1.1118,
       "atr14": 25.3571,
       "dailyTrend": "空頭",
       "weeklyTrend": "盤整",
@@ -805,13 +805,13 @@
       "marketRegime": "NEUTRAL",
       "themeTrend": null,
       "signal": "WATCH",
-      "dataTimestamp": "2026-10-28T13:08:54.238766+00:00",
+      "dataTimestamp": "2026-10-29T00:52:39.583971+00:00",
       "isFinalClose": true,
       "source": "yahoo",
       "entrySignal": false,
       "ma5": 436.5,
       "ma10": 440.8,
-      "volume": 46336251
+      "volume": 45094211
     },
     "6770.TW": {
       "date": "2026-10-28",
@@ -828,7 +828,7 @@
       "ma60": 69.7667,
       "rsi14": 53.7233,
       "macd": "零軸下",
-      "volumeRatio": 1.5729,
+      "volumeRatio": 1.5668,
       "atr14": 3.1571,
       "dailyTrend": "多頭",
       "weeklyTrend": "多頭",
@@ -848,13 +848,13 @@
       "marketRegime": "NEUTRAL",
       "themeTrend": null,
       "signal": "WATCH",
-      "dataTimestamp": "2026-10-28T13:08:54.238766+00:00",
+      "dataTimestamp": "2026-10-29T00:52:39.583971+00:00",
       "isFinalClose": true,
       "source": "yahoo",
       "entrySignal": false,
       "ma5": 67.94,
       "ma10": 67.36,
-      "volume": 163638175
+      "volume": 162949695
     },
     "3481.TW": {
       "date": "2026-10-28",
@@ -871,7 +871,7 @@
       "ma60": 48.9342,
       "rsi14": 48.28,
       "macd": "零軸下",
-      "volumeRatio": 0.5187,
+      "volumeRatio": 0.5171,
       "atr14": 1.9179,
       "dailyTrend": "盤整",
       "weeklyTrend": "盤整",
@@ -891,13 +891,13 @@
       "marketRegime": "NEUTRAL",
       "themeTrend": null,
       "signal": "WATCH",
-      "dataTimestamp": "2026-10-28T13:08:54.238766+00:00",
+      "dataTimestamp": "2026-10-29T00:52:39.583971+00:00",
       "isFinalClose": true,
       "source": "yahoo",
       "entrySignal": false,
       "ma5": 47.34,
       "ma10": 47.79,
-      "volume": 79892193
+      "volume": 79650934
     },
     "3406.TW": {
       "date": "2026-10-28",
@@ -914,7 +914,7 @@
       "ma60": 892.3,
       "rsi14": 72.1388,
       "macd": "零軸上",
-      "volumeRatio": 0.7921,
+      "volumeRatio": 0.78,
       "atr14": 99.6429,
       "dailyTrend": "多頭",
       "weeklyTrend": "多頭",
@@ -934,13 +934,13 @@
       "marketRegime": "NEUTRAL",
       "themeTrend": null,
       "signal": "WATCH",
-      "dataTimestamp": "2026-10-28T13:08:54.238766+00:00",
+      "dataTimestamp": "2026-10-29T00:52:39.583971+00:00",
       "isFinalClose": true,
       "source": "yahoo",
       "entrySignal": false,
       "ma5": 1200.0,
       "ma10": 1135.0,
-      "volume": 5454036
+      "volume": 5367115
     },
     "2327.TW": {
       "date": "2026-10-28",
@@ -957,7 +957,7 @@
       "ma60": 568.75,
       "rsi14": 46.4784,
       "macd": "零軸下",
-      "volumeRatio": 0.5826,
+      "volumeRatio": 0.5656,
       "atr14": 36.7143,
       "dailyTrend": "盤整",
       "weeklyTrend": "空頭",
@@ -977,13 +977,13 @@
       "marketRegime": "NEUTRAL",
       "themeTrend": null,
       "signal": "WATCH",
-      "dataTimestamp": "2026-10-28T13:08:54.238766+00:00",
+      "dataTimestamp": "2026-10-29T00:52:39.583971+00:00",
       "isFinalClose": true,
       "source": "yahoo",
       "entrySignal": false,
       "ma5": 524.8,
       "ma10": 544.8,
-      "volume": 26003721
+      "volume": 25226237
     },
     "4919.TW": {
       "date": "2026-10-28",
@@ -1000,7 +1000,7 @@
       "ma60": 129.2333,
       "rsi14": 52.854,
       "macd": "零軸下",
-      "volumeRatio": 0.4207,
+      "volumeRatio": 0.4179,
       "atr14": 9.9286,
       "dailyTrend": "盤整",
       "weeklyTrend": "盤整",
@@ -1020,13 +1020,13 @@
       "marketRegime": "NEUTRAL",
       "themeTrend": null,
       "signal": "WATCH",
-      "dataTimestamp": "2026-10-28T13:08:54.238766+00:00",
+      "dataTimestamp": "2026-10-29T00:52:39.583971+00:00",
       "isFinalClose": true,
       "source": "yahoo",
       "entrySignal": false,
       "ma5": 137.4,
       "ma10": 138.45,
-      "volume": 5974809
+      "volume": 5933870
     },
     "1569.TWO": {
       "date": "2026-10-28",
@@ -1043,7 +1043,7 @@
       "ma60": 57.4417,
       "rsi14": 83.4016,
       "macd": "零軸上",
-      "volumeRatio": 3.2872,
+      "volumeRatio": 3.2881,
       "atr14": 5.8214,
       "dailyTrend": "多頭",
       "weeklyTrend": "多頭",
@@ -1063,13 +1063,13 @@
       "marketRegime": "NEUTRAL",
       "themeTrend": null,
       "signal": "WATCH",
-      "dataTimestamp": "2026-10-28T13:08:54.238766+00:00",
+      "dataTimestamp": "2026-10-29T00:52:39.583971+00:00",
       "isFinalClose": true,
       "source": "yahoo",
       "entrySignal": false,
       "ma5": 90.76,
       "ma10": 85.49,
-      "volume": 32886265
+      "volume": 32896697
     },
     "2221.TWO": {
       "date": "2026-10-28",
@@ -1086,7 +1086,7 @@
       "ma60": 105.115,
       "rsi14": 53.951,
       "macd": "零軸下",
-      "volumeRatio": 0.8019,
+      "volumeRatio": 0.7771,
       "atr14": 12.0,
       "dailyTrend": "盤整",
       "weeklyTrend": "多頭",
@@ -1106,13 +1106,13 @@
       "marketRegime": "NEUTRAL",
       "themeTrend": null,
       "signal": "WATCH",
-      "dataTimestamp": "2026-10-28T13:08:54.238766+00:00",
+      "dataTimestamp": "2026-10-29T00:52:39.583971+00:00",
       "isFinalClose": true,
       "source": "yahoo",
       "entrySignal": false,
       "ma5": 133.8,
       "ma10": 130.45,
-      "volume": 1095464
+      "volume": 1060148
     },
     "2313.TW": {
       "date": "2026-10-28",
@@ -1129,7 +1129,7 @@
       "ma60": 226.4,
       "rsi14": 45.0803,
       "macd": "零軸下",
-      "volumeRatio": 0.4015,
+      "volumeRatio": 0.3969,
       "atr14": 15.2857,
       "dailyTrend": "盤整",
       "weeklyTrend": "空頭",
@@ -1149,13 +1149,13 @@
       "marketRegime": "NEUTRAL",
       "themeTrend": null,
       "signal": "WATCH",
-      "dataTimestamp": "2026-10-28T13:08:54.238766+00:00",
+      "dataTimestamp": "2026-10-29T00:52:39.583971+00:00",
       "isFinalClose": true,
       "source": "yahoo",
       "entrySignal": false,
       "ma5": 225.9,
       "ma10": 234.75,
-      "volume": 12820176
+      "volume": 12667344
     },
     "3491.TWO": {
       "date": "2026-10-28",
@@ -1172,7 +1172,7 @@
       "ma60": 1398.5667,
       "rsi14": 44.7577,
       "macd": "零軸下",
-      "volumeRatio": 0.5028,
+      "volumeRatio": 0.4832,
       "atr14": 95.3571,
       "dailyTrend": "盤整",
       "weeklyTrend": "空頭",
@@ -1192,13 +1192,13 @@
       "marketRegime": "NEUTRAL",
       "themeTrend": null,
       "signal": "WATCH",
-      "dataTimestamp": "2026-10-28T13:08:54.238766+00:00",
+      "dataTimestamp": "2026-10-29T00:52:39.583971+00:00",
       "isFinalClose": true,
       "source": "yahoo",
       "entrySignal": false,
       "ma5": 1337.0,
       "ma10": 1359.0,
-      "volume": 646503
+      "volume": 620738
     },
     "6285.TW": {
       "date": "2026-10-28",
@@ -1215,7 +1215,7 @@
       "ma60": 240.0583,
       "rsi14": 47.2624,
       "macd": "零軸下",
-      "volumeRatio": 0.5393,
+      "volumeRatio": 0.5313,
       "atr14": 12.9643,
       "dailyTrend": "盤整",
       "weeklyTrend": "空頭",
@@ -1235,13 +1235,13 @@
       "marketRegime": "NEUTRAL",
       "themeTrend": null,
       "signal": "WATCH",
-      "dataTimestamp": "2026-10-28T13:08:54.238766+00:00",
+      "dataTimestamp": "2026-10-29T00:52:39.583971+00:00",
       "isFinalClose": true,
       "source": "yahoo",
       "entrySignal": false,
       "ma5": 234.2,
       "ma10": 241.4,
-      "volume": 4100605
+      "volume": 4038040
     },
     "6271.TW": {
       "date": "2026-10-28",
@@ -1258,7 +1258,7 @@
       "ma60": 215.875,
       "rsi14": 42.6541,
       "macd": "零軸下",
-      "volumeRatio": 0.3371,
+      "volumeRatio": 0.3289,
       "atr14": 10.9286,
       "dailyTrend": "盤整",
       "weeklyTrend": "盤整",
@@ -1278,13 +1278,13 @@
       "marketRegime": "NEUTRAL",
       "themeTrend": null,
       "signal": "WATCH",
-      "dataTimestamp": "2026-10-28T13:08:54.238766+00:00",
+      "dataTimestamp": "2026-10-29T00:52:39.583971+00:00",
       "isFinalClose": true,
       "source": "yahoo",
       "entrySignal": false,
       "ma5": 216.8,
       "ma10": 222.85,
-      "volume": 991834
+      "volume": 967487
     },
     "2367.TW": {
       "date": "2026-10-28",
@@ -1301,7 +1301,7 @@
       "ma60": 43.4025,
       "rsi14": 51.6984,
       "macd": "零軸下",
-      "volumeRatio": 0.5518,
+      "volumeRatio": 0.5485,
       "atr14": 2.3643,
       "dailyTrend": "盤整",
       "weeklyTrend": "盤整",
@@ -1321,13 +1321,13 @@
       "marketRegime": "NEUTRAL",
       "themeTrend": null,
       "signal": "WATCH",
-      "dataTimestamp": "2026-10-28T13:08:54.238766+00:00",
+      "dataTimestamp": "2026-10-29T00:52:39.583971+00:00",
       "isFinalClose": true,
       "source": "yahoo",
       "entrySignal": true,
       "ma5": 44.96,
       "ma10": 45.53,
-      "volume": 5385846
+      "volume": 5352773
     },
     "2355.TW": {
       "date": "2026-10-28",
@@ -1344,7 +1344,7 @@
       "ma60": 43.9517,
       "rsi14": 70.3707,
       "macd": "零軸上",
-      "volumeRatio": 0.9437,
+      "volumeRatio": 0.9327,
       "atr14": 2.8429,
       "dailyTrend": "多頭",
       "weeklyTrend": "盤整",
@@ -1364,13 +1364,13 @@
       "marketRegime": "NEUTRAL",
       "themeTrend": null,
       "signal": "WATCH",
-      "dataTimestamp": "2026-10-28T13:08:54.238766+00:00",
+      "dataTimestamp": "2026-10-29T00:52:39.583971+00:00",
       "isFinalClose": true,
       "source": "yahoo",
       "entrySignal": false,
       "ma5": 51.49,
       "ma10": 51.995,
-      "volume": 9642951
+      "volume": 9524836
     },
     "2049.TW": {
       "date": "2026-10-28",
@@ -1387,7 +1387,7 @@
       "ma60": 343.2333,
       "rsi14": 57.4201,
       "macd": "零軸上",
-      "volumeRatio": 3.071,
+      "volumeRatio": 3.0339,
       "atr14": 13.4286,
       "dailyTrend": "盤整",
       "weeklyTrend": "多頭",
@@ -1407,13 +1407,13 @@
       "marketRegime": "NEUTRAL",
       "themeTrend": null,
       "signal": "WATCH",
-      "dataTimestamp": "2026-10-28T13:08:54.238766+00:00",
+      "dataTimestamp": "2026-10-29T00:52:39.583971+00:00",
       "isFinalClose": true,
       "source": "yahoo",
       "entrySignal": false,
       "ma5": 315.6,
       "ma10": 313.85,
-      "volume": 7735778
+      "volume": 7625512
     },
     "2233.TW": {
       "date": "2026-10-28",
@@ -1430,7 +1430,7 @@
       "ma60": 172.0667,
       "rsi14": 38.7993,
       "macd": "零軸下",
-      "volumeRatio": 0.6432,
+      "volumeRatio": 0.6175,
       "atr14": 5.3214,
       "dailyTrend": "空頭",
       "weeklyTrend": "空頭",
@@ -1450,13 +1450,13 @@
       "marketRegime": "NEUTRAL",
       "themeTrend": null,
       "signal": "WATCH",
-      "dataTimestamp": "2026-10-28T13:08:54.238766+00:00",
+      "dataTimestamp": "2026-10-29T00:52:39.583971+00:00",
       "isFinalClose": true,
       "source": "yahoo",
       "entrySignal": false,
       "ma5": 147.9,
       "ma10": 151.4,
-      "volume": 201401
+      "volume": 193090
     },
     "1536.TW": {
       "date": "2026-10-28",
@@ -1473,7 +1473,7 @@
       "ma60": 47.8842,
       "rsi14": 50.8097,
       "macd": "零軸上",
-      "volumeRatio": 1.1568,
+      "volumeRatio": 1.1506,
       "atr14": 0.8857,
       "dailyTrend": "盤整",
       "weeklyTrend": "空頭",
@@ -1493,13 +1493,13 @@
       "marketRegime": "NEUTRAL",
       "themeTrend": null,
       "signal": "WATCH",
-      "dataTimestamp": "2026-10-28T13:08:54.238766+00:00",
+      "dataTimestamp": "2026-10-29T00:52:39.583971+00:00",
       "isFinalClose": true,
       "source": "yahoo",
       "entrySignal": false,
       "ma5": 44.73,
       "ma10": 44.605,
-      "volume": 856315
+      "volume": 851411
     },
     "2464.TW": {
       "date": "2026-10-28",
@@ -1516,7 +1516,7 @@
       "ma60": 184.875,
       "rsi14": 49.2994,
       "macd": "零軸下",
-      "volumeRatio": 1.7128,
+      "volumeRatio": 1.7062,
       "atr14": 9.4643,
       "dailyTrend": "空頭",
       "weeklyTrend": "盤整",
@@ -1536,13 +1536,13 @@
       "marketRegime": "NEUTRAL",
       "themeTrend": null,
       "signal": "WATCH",
-      "dataTimestamp": "2026-10-28T13:08:54.238766+00:00",
+      "dataTimestamp": "2026-10-29T00:52:39.583971+00:00",
       "isFinalClose": true,
       "source": "yahoo",
       "entrySignal": false,
       "ma5": 169.7,
       "ma10": 173.3,
-      "volume": 14331562
+      "volume": 14271484
     },
     "1597.TW": {
       "date": "2026-10-28",
@@ -1559,7 +1559,7 @@
       "ma60": 141.9167,
       "rsi14": 54.7628,
       "macd": "零軸下",
-      "volumeRatio": 1.458,
+      "volumeRatio": 1.4431,
       "atr14": 8.0,
       "dailyTrend": "多頭",
       "weeklyTrend": "多頭",
@@ -1579,13 +1579,13 @@
       "marketRegime": "NEUTRAL",
       "themeTrend": null,
       "signal": "WATCH",
-      "dataTimestamp": "2026-10-28T13:08:54.238766+00:00",
+      "dataTimestamp": "2026-10-29T00:52:39.583971+00:00",
       "isFinalClose": true,
       "source": "yahoo",
       "entrySignal": false,
       "ma5": 141.0,
       "ma10": 143.5,
-      "volume": 3187323
+      "volume": 3152135
     },
     "4583.TW": {
       "date": "2026-10-28",
@@ -1602,7 +1602,7 @@
       "ma60": 445.9417,
       "rsi14": 42.1812,
       "macd": "零軸上",
-      "volumeRatio": 1.2562,
+      "volumeRatio": 1.2349,
       "atr14": 15.1429,
       "dailyTrend": "空頭",
       "weeklyTrend": "空頭",
@@ -1622,13 +1622,13 @@
       "marketRegime": "NEUTRAL",
       "themeTrend": null,
       "signal": "WATCH",
-      "dataTimestamp": "2026-10-28T13:08:54.238766+00:00",
+      "dataTimestamp": "2026-10-29T00:52:39.583971+00:00",
       "isFinalClose": true,
       "source": "yahoo",
       "entrySignal": false,
       "ma5": 389.6,
       "ma10": 395.9,
-      "volume": 122332
+      "volume": 120119
     },
     "4540.TW": {
       "date": "2026-10-28",
@@ -1645,13 +1645,13 @@
       "ma60": 58.7658,
       "rsi14": 62.0988,
       "macd": "零軸上",
-      "volumeRatio": 3.7415,
+      "volumeRatio": 3.7273,
       "atr14": 2.6214,
       "dailyTrend": "多頭",
       "weeklyTrend": "盤整",
       "entryLow": 59.1443,
-      "entryHigh": 60.6455,
-      "maxEntry": 60.6455,
+      "entryHigh": 60.6454,
+      "maxEntry": 60.6454,
       "stop": 56.8993,
       "target1": 70.0671,
       "target2": 72.6886,
@@ -1665,13 +1665,13 @@
       "marketRegime": "NEUTRAL",
       "themeTrend": null,
       "signal": "WATCH",
-      "dataTimestamp": "2026-10-28T13:08:54.238766+00:00",
+      "dataTimestamp": "2026-10-29T00:52:39.583971+00:00",
       "isFinalClose": true,
       "source": "yahoo",
       "entrySignal": false,
       "ma5": 60.0,
       "ma10": 59.51,
-      "volume": 9351297
+      "volume": 9307809
     },
     "4576.TW": {
       "date": "2026-10-28",
@@ -1688,7 +1688,7 @@
       "ma60": 222.0583,
       "rsi14": 54.0875,
       "macd": "零軸下",
-      "volumeRatio": 2.0613,
+      "volumeRatio": 2.0333,
       "atr14": 12.5714,
       "dailyTrend": "多頭",
       "weeklyTrend": "多頭",
@@ -1708,13 +1708,13 @@
       "marketRegime": "NEUTRAL",
       "themeTrend": null,
       "signal": "WATCH",
-      "dataTimestamp": "2026-10-28T13:08:54.238766+00:00",
+      "dataTimestamp": "2026-10-29T00:52:39.583971+00:00",
       "isFinalClose": true,
       "source": "yahoo",
       "entrySignal": false,
       "ma5": 213.7,
       "ma10": 211.35,
-      "volume": 2877642
+      "volume": 2834196
     },
     "1504.TW": {
       "date": "2026-10-28",
@@ -1731,7 +1731,7 @@
       "ma60": 69.9383,
       "rsi14": 51.0928,
       "macd": "零軸下",
-      "volumeRatio": 0.5981,
+      "volumeRatio": 0.5927,
       "atr14": 1.8286,
       "dailyTrend": "多頭",
       "weeklyTrend": "盤整",
@@ -1751,13 +1751,13 @@
       "marketRegime": "NEUTRAL",
       "themeTrend": null,
       "signal": "WATCH",
-      "dataTimestamp": "2026-10-28T13:08:54.238766+00:00",
+      "dataTimestamp": "2026-10-29T00:52:39.583971+00:00",
       "isFinalClose": true,
       "source": "yahoo",
       "entrySignal": true,
       "ma5": 69.84,
       "ma10": 69.66,
-      "volume": 3688406
+      "volume": 3653889
     },
     "1590.TW": {
       "date": "2026-10-28",
@@ -1774,7 +1774,7 @@
       "ma60": 1319.0,
       "rsi14": 39.359,
       "macd": "零軸上",
-      "volumeRatio": 0.5596,
+      "volumeRatio": 0.5291,
       "atr14": 40.7143,
       "dailyTrend": "空頭",
       "weeklyTrend": "空頭",
@@ -1794,13 +1794,13 @@
       "marketRegime": "NEUTRAL",
       "themeTrend": null,
       "signal": "WATCH",
-      "dataTimestamp": "2026-10-28T13:08:54.238766+00:00",
+      "dataTimestamp": "2026-10-29T00:52:39.583971+00:00",
       "isFinalClose": true,
       "source": "yahoo",
       "entrySignal": false,
       "ma5": 1120.0,
       "ma10": 1137.0,
-      "volume": 462386
+      "volume": 436486
     },
     "3019.TW": {
       "date": "2026-10-28",
@@ -1817,7 +1817,7 @@
       "ma60": 136.525,
       "rsi14": 45.5705,
       "macd": "零軸下",
-      "volumeRatio": 0.4807,
+      "volumeRatio": 0.4756,
       "atr14": 4.1786,
       "dailyTrend": "空頭",
       "weeklyTrend": "空頭",
@@ -1837,13 +1837,13 @@
       "marketRegime": "NEUTRAL",
       "themeTrend": null,
       "signal": "WATCH",
-      "dataTimestamp": "2026-10-28T13:08:54.238766+00:00",
+      "dataTimestamp": "2026-10-29T00:52:39.583971+00:00",
       "isFinalClose": true,
       "source": "yahoo",
       "entrySignal": false,
       "ma5": 131.3,
       "ma10": 132.3,
-      "volume": 1019058
+      "volume": 1007929
     },
     "2359.TW": {
       "date": "2026-10-28",
@@ -1860,7 +1860,7 @@
       "ma60": 135.65,
       "rsi14": 45.0176,
       "macd": "零軸上",
-      "volumeRatio": 1.1422,
+      "volumeRatio": 1.1299,
       "atr14": 3.6786,
       "dailyTrend": "空頭",
       "weeklyTrend": "空頭",
@@ -1880,13 +1880,13 @@
       "marketRegime": "NEUTRAL",
       "themeTrend": null,
       "signal": "WATCH",
-      "dataTimestamp": "2026-10-28T13:08:54.238766+00:00",
+      "dataTimestamp": "2026-10-29T00:52:39.583971+00:00",
       "isFinalClose": true,
       "source": "yahoo",
       "entrySignal": false,
       "ma5": 118.6,
       "ma10": 119.7,
-      "volume": 1457770
+      "volume": 1441215
     },
     "3023.TW": {
       "date": "2026-10-28",
@@ -1903,7 +1903,7 @@
       "ma60": 315.4917,
       "rsi14": 26.664,
       "macd": "轉弱",
-      "volumeRatio": 2.1439,
+      "volumeRatio": 2.0793,
       "atr14": 9.6786,
       "dailyTrend": "空頭",
       "weeklyTrend": "盤整",
@@ -1923,13 +1923,13 @@
       "marketRegime": "NEUTRAL",
       "themeTrend": null,
       "signal": "WATCH",
-      "dataTimestamp": "2026-10-28T13:08:54.238766+00:00",
+      "dataTimestamp": "2026-10-29T00:52:39.583971+00:00",
       "isFinalClose": true,
       "source": "yahoo",
       "entrySignal": false,
       "ma5": 292.3,
       "ma10": 303.15,
-      "volume": 2062988
+      "volume": 1993541
     },
     "3665.TW": {
       "date": "2026-10-28",
@@ -1946,7 +1946,7 @@
       "ma60": 2160.3333,
       "rsi14": 34.0168,
       "macd": "零軸下",
-      "volumeRatio": 1.2129,
+      "volumeRatio": 1.1771,
       "atr14": 108.9286,
       "dailyTrend": "盤整",
       "weeklyTrend": "空頭",
@@ -1966,13 +1966,13 @@
       "marketRegime": "NEUTRAL",
       "themeTrend": null,
       "signal": "WATCH",
-      "dataTimestamp": "2026-10-28T13:08:54.238766+00:00",
+      "dataTimestamp": "2026-10-29T00:52:39.583971+00:00",
       "isFinalClose": true,
       "source": "yahoo",
       "entrySignal": false,
       "ma5": 1849.0,
       "ma10": 1941.0,
-      "volume": 3693519
+      "volume": 3577705
     },
     "4585.TW": {
       "date": "2026-10-28",
@@ -1989,7 +1989,7 @@
       "ma60": 293.2,
       "rsi14": 30.4486,
       "macd": "零軸下",
-      "volumeRatio": 0.8747,
+      "volumeRatio": 0.8116,
       "atr14": 4.8571,
       "dailyTrend": "空頭",
       "weeklyTrend": "空頭",
@@ -2009,13 +2009,13 @@
       "marketRegime": "NEUTRAL",
       "themeTrend": null,
       "signal": "WATCH",
-      "dataTimestamp": "2026-10-28T13:08:54.238766+00:00",
+      "dataTimestamp": "2026-10-29T00:52:39.583971+00:00",
       "isFinalClose": true,
       "source": "yahoo",
       "entrySignal": false,
       "ma5": 269.2,
       "ma10": 274.45,
-      "volume": 83259
+      "volume": 77001
     },
     "6215.TW": {
       "date": "2026-10-28",
@@ -2032,7 +2032,7 @@
       "ma60": 96.7417,
       "rsi14": 46.7255,
       "macd": "零軸下",
-      "volumeRatio": 0.7625,
+      "volumeRatio": 0.7547,
       "atr14": 2.7214,
       "dailyTrend": "空頭",
       "weeklyTrend": "空頭",
@@ -2052,13 +2052,13 @@
       "marketRegime": "NEUTRAL",
       "themeTrend": null,
       "signal": "WATCH",
-      "dataTimestamp": "2026-10-28T13:08:54.238766+00:00",
+      "dataTimestamp": "2026-10-29T00:52:39.583971+00:00",
       "isFinalClose": true,
       "source": "yahoo",
       "entrySignal": false,
       "ma5": 90.74,
       "ma10": 91.13,
-      "volume": 274938
+      "volume": 272005
     },
     "8374.TW": {
       "date": "2026-10-28",
@@ -2075,7 +2075,7 @@
       "ma60": 78.0733,
       "rsi14": 42.5408,
       "macd": "零軸上",
-      "volumeRatio": 0.8372,
+      "volumeRatio": 0.8176,
       "atr14": 1.9071,
       "dailyTrend": "空頭",
       "weeklyTrend": "空頭",
@@ -2095,13 +2095,13 @@
       "marketRegime": "NEUTRAL",
       "themeTrend": null,
       "signal": "WATCH",
-      "dataTimestamp": "2026-10-28T13:08:54.238766+00:00",
+      "dataTimestamp": "2026-10-29T00:52:39.583971+00:00",
       "isFinalClose": true,
       "source": "yahoo",
       "entrySignal": false,
       "ma5": 71.2,
       "ma10": 71.37,
-      "volume": 111728
+      "volume": 109001
     },
     "2317.TW": {
       "date": "2026-10-28",
@@ -2118,7 +2118,7 @@
       "ma60": 250.9333,
       "rsi14": 54.4063,
       "macd": "零軸上",
-      "volumeRatio": 1.0882,
+      "volumeRatio": 1.0675,
       "atr14": 5.3214,
       "dailyTrend": "盤整",
       "weeklyTrend": "多頭",
@@ -2138,13 +2138,13 @@
       "marketRegime": "NEUTRAL",
       "themeTrend": null,
       "signal": "WATCH",
-      "dataTimestamp": "2026-10-28T13:08:54.238766+00:00",
+      "dataTimestamp": "2026-10-29T00:52:39.583971+00:00",
       "isFinalClose": true,
       "source": "yahoo",
       "entrySignal": false,
       "ma5": 247.8,
       "ma10": 244.65,
-      "volume": 42224529
+      "volume": 41376675
     },
     "TSM": {
       "date": "2026-10-27",
@@ -2161,7 +2161,7 @@
       "ma60": 432.2808,
       "rsi14": 50.6338,
       "macd": "零軸下",
-      "volumeRatio": 0.7885,
+      "volumeRatio": 0.7903,
       "atr14": 14.2443,
       "dailyTrend": "盤整",
       "weeklyTrend": "多頭",
@@ -2181,13 +2181,13 @@
       "marketRegime": "NEUTRAL",
       "themeTrend": null,
       "signal": "WATCH",
-      "dataTimestamp": "2026-10-28T13:08:54.238766+00:00",
+      "dataTimestamp": "2026-10-29T00:52:39.583971+00:00",
       "isFinalClose": true,
       "source": "yahoo",
       "entrySignal": true,
       "ma5": 424.798,
       "ma10": 423.415,
-      "volume": 9001200
+      "volume": 9022500
     },
     "NVDA": {
       "date": "2026-10-27",
@@ -2204,7 +2204,7 @@
       "ma60": 221.9437,
       "rsi14": 46.286,
       "macd": "零軸下",
-      "volumeRatio": 0.8298,
+      "volumeRatio": 0.8322,
       "atr14": 6.2007,
       "dailyTrend": "盤整",
       "weeklyTrend": "盤整",
@@ -2224,13 +2224,13 @@
       "marketRegime": "NEUTRAL",
       "themeTrend": null,
       "signal": "WATCH",
-      "dataTimestamp": "2026-10-28T13:08:54.238766+00:00",
+      "dataTimestamp": "2026-10-29T00:52:39.583971+00:00",
       "isFinalClose": true,
       "source": "yahoo",
       "entrySignal": false,
       "ma5": 215.816,
       "ma10": 216.53,
-      "volume": 84542200
+      "volume": 84799700
     },
     "AMD": {
       "date": "2026-10-27",
@@ -2247,7 +2247,7 @@
       "ma60": 534.81,
       "rsi14": 49.8169,
       "macd": "零軸下",
-      "volumeRatio": 1.0572,
+      "volumeRatio": 1.0605,
       "atr14": 29.655,
       "dailyTrend": "盤整",
       "weeklyTrend": "多頭",
@@ -2267,13 +2267,13 @@
       "marketRegime": "NEUTRAL",
       "themeTrend": null,
       "signal": "WATCH",
-      "dataTimestamp": "2026-10-28T13:08:54.238766+00:00",
+      "dataTimestamp": "2026-10-29T00:52:39.583971+00:00",
       "isFinalClose": true,
       "source": "yahoo",
       "entrySignal": false,
       "ma5": 533.796,
       "ma10": 540.357,
-      "volume": 20532000
+      "volume": 20599900
     },
     "AVGO": {
       "date": "2026-10-27",
@@ -2290,7 +2290,7 @@
       "ma60": 364.4412,
       "rsi14": 47.7082,
       "macd": "零軸下",
-      "volumeRatio": 1.1679,
+      "volumeRatio": 1.1697,
       "atr14": 11.8443,
       "dailyTrend": "空頭",
       "weeklyTrend": "空頭",
@@ -2310,13 +2310,13 @@
       "marketRegime": "NEUTRAL",
       "themeTrend": null,
       "signal": "WATCH",
-      "dataTimestamp": "2026-10-28T13:08:54.238766+00:00",
+      "dataTimestamp": "2026-10-29T00:52:39.583971+00:00",
       "isFinalClose": true,
       "source": "yahoo",
       "entrySignal": false,
       "ma5": 330.844,
       "ma10": 334.251,
-      "volume": 25526200
+      "volume": 25567200
     },
     "MSFT": {
       "date": "2026-10-27",
@@ -2333,7 +2333,7 @@
       "ma60": 507.7435,
       "rsi14": 56.3092,
       "macd": "零軸下",
-      "volumeRatio": 0.9716,
+      "volumeRatio": 0.973,
       "atr14": 11.0679,
       "dailyTrend": "多頭",
       "weeklyTrend": "多頭",
@@ -2353,13 +2353,13 @@
       "marketRegime": "NEUTRAL",
       "themeTrend": null,
       "signal": "WATCH",
-      "dataTimestamp": "2026-10-28T13:08:54.238766+00:00",
+      "dataTimestamp": "2026-10-29T00:52:39.583971+00:00",
       "isFinalClose": true,
       "source": "yahoo",
       "entrySignal": true,
       "ma5": 528.494,
       "ma10": 531.004,
-      "volume": 19503300
+      "volume": 19532300
     },
     "META": {
       "date": "2026-10-27",
@@ -2376,7 +2376,7 @@
       "ma60": 652.8008,
       "rsi14": 31.9217,
       "macd": "轉弱",
-      "volumeRatio": 2.4661,
+      "volumeRatio": 2.469,
       "atr14": 25.3979,
       "dailyTrend": "盤整",
       "weeklyTrend": "盤整",
@@ -2396,13 +2396,13 @@
       "marketRegime": "NEUTRAL",
       "themeTrend": null,
       "signal": "WATCH",
-      "dataTimestamp": "2026-10-28T13:08:54.238766+00:00",
+      "dataTimestamp": "2026-10-29T00:52:39.583971+00:00",
       "isFinalClose": true,
       "source": "yahoo",
       "entrySignal": false,
       "ma5": 647.948,
       "ma10": 682.302,
-      "volume": 51263800
+      "volume": 51334100
     },
     "MU": {
       "date": "2026-10-27",
@@ -2419,7 +2419,7 @@
       "ma60": 968.406,
       "rsi14": 46.0517,
       "macd": "零軸下",
-      "volumeRatio": 0.8437,
+      "volumeRatio": 0.8557,
       "atr14": 47.7236,
       "dailyTrend": "盤整",
       "weeklyTrend": "盤整",
@@ -2439,13 +2439,13 @@
       "marketRegime": "NEUTRAL",
       "themeTrend": null,
       "signal": "WATCH",
-      "dataTimestamp": "2026-10-28T13:08:54.238766+00:00",
+      "dataTimestamp": "2026-10-29T00:52:39.583971+00:00",
       "isFinalClose": true,
       "source": "yahoo",
       "entrySignal": false,
       "ma5": 896.034,
       "ma10": 900.535,
-      "volume": 22855300
+      "volume": 23194900
     },
     "TSLA": {
       "date": "2026-10-27",
@@ -2462,7 +2462,7 @@
       "ma60": 360.261,
       "rsi14": 65.4768,
       "macd": "零軸上",
-      "volumeRatio": 1.2027,
+      "volumeRatio": 1.2063,
       "atr14": 13.7836,
       "dailyTrend": "多頭",
       "weeklyTrend": "盤整",
@@ -2482,13 +2482,13 @@
       "marketRegime": "NEUTRAL",
       "themeTrend": null,
       "signal": "WATCH",
-      "dataTimestamp": "2026-10-28T13:08:54.238766+00:00",
+      "dataTimestamp": "2026-10-29T00:52:39.583971+00:00",
       "isFinalClose": true,
       "source": "yahoo",
       "entrySignal": false,
       "ma5": 386.47,
       "ma10": 375.844,
-      "volume": 45189400
+      "volume": 45333200
     },
     "SPCX": {
       "date": "2026-10-27",
@@ -2505,7 +2505,7 @@
       "ma60": 146.6425,
       "rsi14": 47.4761,
       "macd": "零軸下",
-      "volumeRatio": 0.9245,
+      "volumeRatio": 0.9272,
       "atr14": 7.8964,
       "dailyTrend": "盤整",
       "weeklyTrend": "空頭",
@@ -2525,13 +2525,13 @@
       "marketRegime": "NEUTRAL",
       "themeTrend": null,
       "signal": "WATCH",
-      "dataTimestamp": "2026-10-28T13:08:54.238766+00:00",
+      "dataTimestamp": "2026-10-29T00:52:39.583971+00:00",
       "isFinalClose": true,
       "source": "yahoo",
       "entrySignal": false,
       "ma5": 149.406,
       "ma10": 148.959,
-      "volume": 95552700
+      "volume": 95845400
     },
     "RKLB": {
       "date": "2026-10-27",
@@ -2548,7 +2548,7 @@
       "ma60": 67.6385,
       "rsi14": 45.1237,
       "macd": "零軸下",
-      "volumeRatio": 1.009,
+      "volumeRatio": 1.0133,
       "atr14": 4.0089,
       "dailyTrend": "空頭",
       "weeklyTrend": "空頭",
@@ -2568,13 +2568,13 @@
       "marketRegime": "NEUTRAL",
       "themeTrend": null,
       "signal": "WATCH",
-      "dataTimestamp": "2026-10-28T13:08:54.238766+00:00",
+      "dataTimestamp": "2026-10-29T00:52:39.583971+00:00",
       "isFinalClose": true,
       "source": "yahoo",
       "entrySignal": false,
       "ma5": 53.924,
       "ma10": 53.715,
-      "volume": 21247200
+      "volume": 21341400
     },
     "ASTS": {
       "date": "2026-10-27",
@@ -2591,7 +2591,7 @@
       "ma60": 58.8255,
       "rsi14": 36.4538,
       "macd": "零軸下",
-      "volumeRatio": 0.855,
+      "volumeRatio": 0.8663,
       "atr14": 4.2463,
       "dailyTrend": "空頭",
       "weeklyTrend": "空頭",
@@ -2611,13 +2611,13 @@
       "marketRegime": "NEUTRAL",
       "themeTrend": null,
       "signal": "WATCH",
-      "dataTimestamp": "2026-10-28T13:08:54.238766+00:00",
+      "dataTimestamp": "2026-10-29T00:52:39.583971+00:00",
       "isFinalClose": true,
       "source": "yahoo",
       "entrySignal": false,
       "ma5": 40.174,
       "ma10": 41.113,
-      "volume": 15271700
+      "volume": 15482800
     },
     "ECHO": {
       "date": "2026-10-27",
@@ -2654,7 +2654,7 @@
       "marketRegime": "NEUTRAL",
       "themeTrend": null,
       "signal": "WATCH",
-      "dataTimestamp": "2026-10-28T13:08:54.238766+00:00",
+      "dataTimestamp": "2026-10-29T00:52:39.583971+00:00",
       "isFinalClose": true,
       "source": "yahoo",
       "entrySignal": false,
@@ -2697,7 +2697,7 @@
       "marketRegime": "NEUTRAL",
       "themeTrend": null,
       "signal": "WATCH",
-      "dataTimestamp": "2026-10-28T13:08:54.238766+00:00",
+      "dataTimestamp": "2026-10-29T00:52:39.583971+00:00",
       "isFinalClose": true,
       "source": "yahoo",
       "entrySignal": true,
@@ -2740,7 +2740,7 @@
       "marketRegime": "NEUTRAL",
       "themeTrend": null,
       "signal": "WATCH",
-      "dataTimestamp": "2026-10-28T13:08:54.238766+00:00",
+      "dataTimestamp": "2026-10-29T00:52:39.583971+00:00",
       "isFinalClose": true,
       "source": "yahoo",
       "entrySignal": false,
@@ -2783,7 +2783,7 @@
       "marketRegime": "NEUTRAL",
       "themeTrend": null,
       "signal": "WATCH",
-      "dataTimestamp": "2026-10-28T13:08:54.238766+00:00",
+      "dataTimestamp": "2026-10-29T00:52:39.583971+00:00",
       "isFinalClose": true,
       "source": "yahoo",
       "entrySignal": false,
