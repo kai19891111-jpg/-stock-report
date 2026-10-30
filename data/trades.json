@@ -695,5 +695,33 @@
     "holdingDays": null,
     "ambiguousDay": false,
     "entryRR": 3.3229
+  },
+  {
+    "id": "AMD-2026-10-28",
+    "symbol": "AMD",
+    "market": "US",
+    "signalDate": "2026-10-28",
+    "entryDate": "2026-10-29",
+    "entryPrice": 562.27,
+    "stopPrice": 544.9412,
+    "target1": 641.5438,
+    "target2": 670.2274,
+    "rsi": 53.6184,
+    "macd": "零軸下",
+    "volumeRatio": 0.9651,
+    "atr": 28.6836,
+    "dailyTrend": "盤整",
+    "weeklyTrend": "多頭",
+    "marketRegime": "NEUTRAL",
+    "theme": "AI晶片",
+    "status": "OPEN",
+    "exitDate": null,
+    "exitPrice": null,
+    "exitReason": null,
+    "resultR": null,
+    "resultPct": null,
+    "holdingDays": null,
+    "ambiguousDay": false,
+    "entryRR": 4.5747
   }
 ]

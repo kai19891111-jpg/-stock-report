@@ -1,5 +1,5 @@
 {
- "generatedAt": "2026-10-30T01:00:56.317474+00:00",
+ "generatedAt": "2026-10-30T02:11:31.858323+00:00",
  "params": {
   "rsi_lo": 45,
   "rsi_hi": 60,
@@ -741,7 +741,7 @@
     }
    ],
    "universe": "證交所＋櫃買中心全市場日收盤，成交金額前 300 名",
-   "seconds": 49,
+   "seconds": 46,
    "session": "2026-10-29"
   },
   "US": {
@@ -749,29 +749,29 @@
    "ok": 299,
    "failed": 1,
    "failedSample": [
-    "SKHY：只有 78 根日 K"
+    "SKHY：只有 79 根日 K"
    ],
-   "candidates": 111,
-   "signals": 14,
+   "candidates": 64,
+   "signals": 8,
    "picks": [
     {
-     "code": "IBN",
-     "name": "ICICI Bank Limited Common Stock",
+     "code": "APH",
+     "name": "Amphenol Corporation Common Stock",
      "market": "US",
-     "date": "2026-10-28",
-     "close": 28.7,
-     "pct": -0.7607,
-     "entryLow": 28.2626,
-     "entryHigh": 28.9799,
-     "stop": 27.9481,
-     "target1": 30.0656,
-     "rr": 1.8163,
-     "rsi": 48.0387,
-     "volRatio": 1.3681,
-     "bias": 0.0244,
+     "date": "2026-10-29",
+     "close": 82.08,
+     "pct": 1.3834,
+     "entryLow": 80.8217,
+     "entryHigh": 82.873,
+     "stop": 78.0959,
+     "target1": 89.3337,
+     "rr": 1.8207,
+     "rsi": 52.7093,
+     "volRatio": 1.3031,
+     "bias": 0.0335,
      "zone": "IN_ZONE",
-     "dailyTrend": "盤整",
-     "weeklyTrend": "盤整",
+     "dailyTrend": "多頭",
+     "weeklyTrend": "多頭",
      "regime": "NEUTRAL",
      "entrySignal": true,
      "passed": 9,
@@ -800,17 +800,17 @@
       {
        "k": "rsi",
        "ok": true,
-       "t": "RSI 48（45–60）"
+       "t": "RSI 53（45–60）"
       },
       {
        "k": "trend",
        "ok": true,
-       "t": "日線盤整、週線盤整（不能是空頭）"
+       "t": "日線多頭、週線多頭（不能是空頭）"
       },
       {
        "k": "macd",
        "ok": true,
-       "t": "MACD 零軸上（不能轉弱）"
+       "t": "MACD 零軸下（不能轉弱）"
       },
       {
        "k": "market",
@@ -820,29 +820,29 @@
       {
        "k": "vol",
        "ok": true,
-       "t": "量比 1.37 ≥ 1.2"
+       "t": "量比 1.30 ≥ 1.2"
       }
      ],
      "watched": false
     },
     {
-     "code": "MSFT",
-     "name": "Microsoft Corporation Common Stock",
+     "code": "ORLY",
+     "name": "O'Reilly Automotive Inc. Common Stock",
      "market": "US",
-     "date": "2026-10-28",
-     "close": 531.01,
-     "pct": -0.0602,
-     "entryLow": 521.9466,
-     "entryHigh": 535.194,
-     "stop": 517.1159,
-     "target1": 554.4384,
-     "rr": 1.6862,
-     "rsi": 56.0621,
-     "volRatio": 1.4195,
-     "bias": 0.2104,
+     "date": "2026-10-29",
+     "close": 88.07,
+     "pct": -2.6205,
+     "entryLow": 86.5687,
+     "entryHigh": 88.7659,
+     "stop": 85.2787,
+     "target1": 92.8519,
+     "rr": 1.7131,
+     "rsi": 49.6496,
+     "volRatio": 2.0973,
+     "bias": 0.2082,
      "zone": "IN_ZONE",
-     "dailyTrend": "多頭",
-     "weeklyTrend": "多頭",
+     "dailyTrend": "盤整",
+     "weeklyTrend": "盤整",
      "regime": "NEUTRAL",
      "entrySignal": true,
      "passed": 9,
@@ -866,22 +866,22 @@
       {
        "k": "rr",
        "ok": true,
-       "t": "報酬風險比 1.69 ≥ 1.5"
+       "t": "報酬風險比 1.71 ≥ 1.5"
       },
       {
        "k": "rsi",
        "ok": true,
-       "t": "RSI 56（45–60）"
+       "t": "RSI 50（45–60）"
       },
       {
        "k": "trend",
        "ok": true,
-       "t": "日線多頭、週線多頭（不能是空頭）"
+       "t": "日線盤整、週線盤整（不能是空頭）"
       },
       {
        "k": "macd",
        "ok": true,
-       "t": "MACD 零軸下（不能轉弱）"
+       "t": "MACD 零軸上（不能轉弱）"
       },
       {
        "k": "market",
@@ -891,172 +891,29 @@
       {
        "k": "vol",
        "ok": true,
-       "t": "量比 1.42 ≥ 1.2"
-      }
-     ],
-     "watched": true,
-     "group": "US|AI雲端／記憶體"
-    },
-    {
-     "code": "AME",
-     "name": "AMETEK Inc.",
-     "market": "US",
-     "date": "2026-10-28",
-     "close": 248.13,
-     "pct": 0.7757,
-     "entryLow": 244.0899,
-     "entryHigh": 250.2851,
-     "stop": 240.8993,
-     "target1": 260.7941,
-     "rr": 1.7514,
-     "rsi": 53.3137,
-     "volRatio": 0.9091,
-     "bias": 0.1303,
-     "zone": "IN_ZONE",
-     "dailyTrend": "多頭",
-     "weeklyTrend": "多頭",
-     "regime": "NEUTRAL",
-     "entrySignal": true,
-     "passed": 8,
-     "total": 9,
-     "checks": [
-      {
-       "k": "above",
-       "ok": true,
-       "t": "收在 SMA20 之上（乖離 0.1%）"
-      },
-      {
-       "k": "bias",
-       "ok": true,
-       "t": "乖離 0–6%"
-      },
-      {
-       "k": "high",
-       "ok": true,
-       "t": "未貼近 20 日高"
-      },
-      {
-       "k": "rr",
-       "ok": true,
-       "t": "報酬風險比 1.75 ≥ 1.5"
-      },
-      {
-       "k": "rsi",
-       "ok": true,
-       "t": "RSI 53（45–60）"
-      },
-      {
-       "k": "trend",
-       "ok": true,
-       "t": "日線多頭、週線多頭（不能是空頭）"
-      },
-      {
-       "k": "macd",
-       "ok": true,
-       "t": "MACD 零軸下（不能轉弱）"
-      },
-      {
-       "k": "market",
-       "ok": true,
-       "t": "大盤盤整"
-      },
-      {
-       "k": "vol",
-       "ok": false,
-       "t": "量比 0.91 ≥ 1.2"
+       "t": "量比 2.10 ≥ 1.2"
       }
      ],
      "watched": false
     },
     {
-     "code": "CAH",
-     "name": "Cardinal Health Inc. Common Stock",
+     "code": "ADBE",
+     "name": "Adobe Inc. Common Stock",
      "market": "US",
-     "date": "2026-10-28",
-     "close": 244.76,
-     "pct": -0.6857,
-     "entryLow": 240.4666,
-     "entryHigh": 246.5698,
-     "stop": 237.9922,
-     "target1": 256.0098,
-     "rr": 1.6623,
-     "rsi": 52.4896,
-     "volRatio": 0.6656,
-     "bias": 0.2587,
+     "date": "2026-10-29",
+     "close": 248.12,
+     "pct": -0.6566,
+     "entryLow": 243.3329,
+     "entryHigh": 249.5089,
+     "stop": 235.9582,
+     "target1": 268.4339,
+     "rr": 1.6703,
+     "rsi": 48.7536,
+     "volRatio": 0.8023,
+     "bias": 0.4378,
      "zone": "IN_ZONE",
-     "dailyTrend": "多頭",
-     "weeklyTrend": "多頭",
-     "regime": "NEUTRAL",
-     "entrySignal": true,
-     "passed": 8,
-     "total": 9,
-     "checks": [
-      {
-       "k": "above",
-       "ok": true,
-       "t": "收在 SMA20 之上（乖離 0.3%）"
-      },
-      {
-       "k": "bias",
-       "ok": true,
-       "t": "乖離 0–6%"
-      },
-      {
-       "k": "high",
-       "ok": true,
-       "t": "未貼近 20 日高"
-      },
-      {
-       "k": "rr",
-       "ok": true,
-       "t": "報酬風險比 1.66 ≥ 1.5"
-      },
-      {
-       "k": "rsi",
-       "ok": true,
-       "t": "RSI 52（45–60）"
-      },
-      {
-       "k": "trend",
-       "ok": true,
-       "t": "日線多頭、週線多頭（不能是空頭）"
-      },
-      {
-       "k": "macd",
-       "ok": true,
-       "t": "MACD 零軸下（不能轉弱）"
-      },
-      {
-       "k": "market",
-       "ok": true,
-       "t": "大盤盤整"
-      },
-      {
-       "k": "vol",
-       "ok": false,
-       "t": "量比 0.67 ≥ 1.2"
-      }
-     ],
-     "watched": false
-    },
-    {
-     "code": "FAST",
-     "name": "Fastenal Company Common Stock",
-     "market": "US",
-     "date": "2026-10-28",
-     "close": 51.45,
-     "pct": -0.194,
-     "entryLow": 50.4881,
-     "entryHigh": 51.7696,
-     "stop": 49.4373,
-     "target1": 54.7861,
-     "rr": 1.6575,
-     "rsi": 52.5808,
-     "volRatio": 0.6847,
-     "bias": 0.3765,
-     "zone": "IN_ZONE",
-     "dailyTrend": "多頭",
-     "weeklyTrend": "多頭",
+     "dailyTrend": "盤整",
+     "weeklyTrend": "盤整",
      "regime": "NEUTRAL",
      "entrySignal": true,
      "passed": 8,
@@ -1080,225 +937,12 @@
       {
        "k": "rr",
        "ok": true,
-       "t": "報酬風險比 1.66 ≥ 1.5"
-      },
-      {
-       "k": "rsi",
-       "ok": true,
-       "t": "RSI 53（45–60）"
-      },
-      {
-       "k": "trend",
-       "ok": true,
-       "t": "日線多頭、週線多頭（不能是空頭）"
-      },
-      {
-       "k": "macd",
-       "ok": true,
-       "t": "MACD 零軸上（不能轉弱）"
-      },
-      {
-       "k": "market",
-       "ok": true,
-       "t": "大盤盤整"
-      },
-      {
-       "k": "vol",
-       "ok": false,
-       "t": "量比 0.68 ≥ 1.2"
-      }
-     ],
-     "watched": false
-    },
-    {
-     "code": "MDLZ",
-     "name": "Mondelez International Inc. Class A Comm",
-     "market": "US",
-     "date": "2026-10-28",
-     "close": 61.87,
-     "pct": -0.7698,
-     "entryLow": 60.7533,
-     "entryHigh": 62.2953,
-     "stop": 60.0782,
-     "target1": 64.8039,
-     "rr": 1.6374,
-     "rsi": 49.1372,
-     "volRatio": 0.7902,
-     "bias": 0.3105,
-     "zone": "IN_ZONE",
-     "dailyTrend": "盤整",
-     "weeklyTrend": "多頭",
-     "regime": "NEUTRAL",
-     "entrySignal": true,
-     "passed": 8,
-     "total": 9,
-     "checks": [
-      {
-       "k": "above",
-       "ok": true,
-       "t": "收在 SMA20 之上（乖離 0.3%）"
-      },
-      {
-       "k": "bias",
-       "ok": true,
-       "t": "乖離 0–6%"
-      },
-      {
-       "k": "high",
-       "ok": true,
-       "t": "未貼近 20 日高"
-      },
-      {
-       "k": "rr",
-       "ok": true,
-       "t": "報酬風險比 1.64 ≥ 1.5"
+       "t": "報酬風險比 1.67 ≥ 1.5"
       },
       {
        "k": "rsi",
        "ok": true,
        "t": "RSI 49（45–60）"
-      },
-      {
-       "k": "trend",
-       "ok": true,
-       "t": "日線盤整、週線多頭（不能是空頭）"
-      },
-      {
-       "k": "macd",
-       "ok": true,
-       "t": "MACD 零軸上（不能轉弱）"
-      },
-      {
-       "k": "market",
-       "ok": true,
-       "t": "大盤盤整"
-      },
-      {
-       "k": "vol",
-       "ok": false,
-       "t": "量比 0.79 ≥ 1.2"
-      }
-     ],
-     "watched": false
-    },
-    {
-     "code": "ASX",
-     "name": "ASE Technology Holding Co. Ltd. American",
-     "market": "US",
-     "date": "2026-10-28",
-     "close": 43.92,
-     "pct": 4.4222,
-     "entryLow": 42.9027,
-     "entryHigh": 43.9916,
-     "stop": 40.6683,
-     "target1": 49.2141,
-     "rr": 1.6281,
-     "rsi": 54.2066,
-     "volRatio": 1.1246,
-     "bias": 0.8357,
-     "zone": "IN_ZONE",
-     "dailyTrend": "多頭",
-     "weeklyTrend": "多頭",
-     "regime": "NEUTRAL",
-     "entrySignal": true,
-     "passed": 8,
-     "total": 9,
-     "checks": [
-      {
-       "k": "above",
-       "ok": true,
-       "t": "收在 SMA20 之上（乖離 0.8%）"
-      },
-      {
-       "k": "bias",
-       "ok": true,
-       "t": "乖離 0–6%"
-      },
-      {
-       "k": "high",
-       "ok": true,
-       "t": "未貼近 20 日高"
-      },
-      {
-       "k": "rr",
-       "ok": true,
-       "t": "報酬風險比 1.63 ≥ 1.5"
-      },
-      {
-       "k": "rsi",
-       "ok": true,
-       "t": "RSI 54（45–60）"
-      },
-      {
-       "k": "trend",
-       "ok": true,
-       "t": "日線多頭、週線多頭（不能是空頭）"
-      },
-      {
-       "k": "macd",
-       "ok": true,
-       "t": "MACD 零軸下（不能轉弱）"
-      },
-      {
-       "k": "market",
-       "ok": true,
-       "t": "大盤盤整"
-      },
-      {
-       "k": "vol",
-       "ok": false,
-       "t": "量比 1.12 ≥ 1.2"
-      }
-     ],
-     "watched": false
-    },
-    {
-     "code": "BMY",
-     "name": "Bristol-Myers Squibb Company Common Stoc",
-     "market": "US",
-     "date": "2026-10-28",
-     "close": 60.57,
-     "pct": -1.5922,
-     "entryLow": 59.2527,
-     "entryHigh": 60.7566,
-     "stop": 57.8219,
-     "target1": 64.8474,
-     "rr": 1.5565,
-     "rsi": 47.5724,
-     "volRatio": 0.6055,
-     "bias": 0.6899,
-     "zone": "IN_ZONE",
-     "dailyTrend": "盤整",
-     "weeklyTrend": "盤整",
-     "regime": "NEUTRAL",
-     "entrySignal": true,
-     "passed": 8,
-     "total": 9,
-     "checks": [
-      {
-       "k": "above",
-       "ok": true,
-       "t": "收在 SMA20 之上（乖離 0.7%）"
-      },
-      {
-       "k": "bias",
-       "ok": true,
-       "t": "乖離 0–6%"
-      },
-      {
-       "k": "high",
-       "ok": true,
-       "t": "未貼近 20 日高"
-      },
-      {
-       "k": "rr",
-       "ok": true,
-       "t": "報酬風險比 1.56 ≥ 1.5"
-      },
-      {
-       "k": "rsi",
-       "ok": true,
-       "t": "RSI 48（45–60）"
       },
       {
        "k": "trend",
@@ -1318,26 +962,26 @@
       {
        "k": "vol",
        "ok": false,
-       "t": "量比 0.61 ≥ 1.2"
+       "t": "量比 0.80 ≥ 1.2"
       }
      ],
      "watched": false
     },
     {
-     "code": "MET",
-     "name": "MetLife Inc. Common Stock",
+     "code": "COR",
+     "name": "Cencora Inc. Common Stock",
      "market": "US",
-     "date": "2026-10-28",
-     "close": 99.64,
-     "pct": -0.3401,
-     "entryLow": 97.6115,
-     "entryHigh": 100.089,
-     "stop": 96.5386,
-     "target1": 104.3323,
-     "rr": 1.5129,
-     "rsi": 52.4022,
-     "volRatio": 0.7529,
-     "bias": 0.5469,
+     "date": "2026-10-29",
+     "close": 330.53,
+     "pct": 1.9053,
+     "entryLow": 324.0601,
+     "entryHigh": 332.2849,
+     "stop": 321.3699,
+     "target1": 344.5094,
+     "rr": 1.5261,
+     "rsi": 53.8271,
+     "volRatio": 0.902,
+     "bias": 0.4666,
      "zone": "IN_ZONE",
      "dailyTrend": "多頭",
      "weeklyTrend": "多頭",
@@ -1364,12 +1008,12 @@
       {
        "k": "rr",
        "ok": true,
-       "t": "報酬風險比 1.51 ≥ 1.5"
+       "t": "報酬風險比 1.53 ≥ 1.5"
       },
       {
        "k": "rsi",
        "ok": true,
-       "t": "RSI 52（45–60）"
+       "t": "RSI 54（45–60）"
       },
       {
        "k": "trend",
@@ -1389,38 +1033,38 @@
       {
        "k": "vol",
        "ok": false,
-       "t": "量比 0.75 ≥ 1.2"
+       "t": "量比 0.90 ≥ 1.2"
       }
      ],
      "watched": false
     },
     {
-     "code": "ELV",
-     "name": "Elevance Health Inc. Common Stock",
+     "code": "PANW",
+     "name": "Palo Alto Networks Inc. Common Stock",
      "market": "US",
-     "date": "2026-10-28",
-     "close": 414.41,
-     "pct": -1.6798,
-     "entryLow": 412.2117,
-     "entryHigh": 422.6739,
-     "stop": 402.9953,
-     "target1": 442.8152,
-     "rr": 2.4885,
-     "rsi": 47.2705,
-     "volRatio": 0.8778,
-     "bias": -0.9747,
+     "date": "2026-10-29",
+     "close": 380.57,
+     "pct": -3.5286,
+     "entryLow": 378.1464,
+     "entryHigh": 387.7441,
+     "stop": 360.4176,
+     "target1": 423.6303,
+     "rr": 2.1367,
+     "rsi": 50.8027,
+     "volRatio": 1.3833,
+     "bias": -0.8687,
      "zone": "IN_ZONE",
      "dailyTrend": "盤整",
      "weeklyTrend": "多頭",
      "regime": "NEUTRAL",
      "entrySignal": true,
-     "passed": 6,
+     "passed": 7,
      "total": 9,
      "checks": [
       {
        "k": "above",
        "ok": false,
-       "t": "收在 SMA20 之上（乖離 -1.0%）"
+       "t": "收在 SMA20 之上（乖離 -0.9%）"
       },
       {
        "k": "bias",
@@ -1435,12 +1079,154 @@
       {
        "k": "rr",
        "ok": true,
-       "t": "報酬風險比 2.49 ≥ 1.5"
+       "t": "報酬風險比 2.14 ≥ 1.5"
       },
       {
        "k": "rsi",
        "ok": true,
-       "t": "RSI 47（45–60）"
+       "t": "RSI 51（45–60）"
+      },
+      {
+       "k": "trend",
+       "ok": true,
+       "t": "日線盤整、週線多頭（不能是空頭）"
+      },
+      {
+       "k": "macd",
+       "ok": true,
+       "t": "MACD 零軸上（不能轉弱）"
+      },
+      {
+       "k": "market",
+       "ok": true,
+       "t": "大盤盤整"
+      },
+      {
+       "k": "vol",
+       "ok": true,
+       "t": "量比 1.38 ≥ 1.2"
+      }
+     ],
+     "watched": false
+    },
+    {
+     "code": "BUD",
+     "name": "Anheuser-Busch Inbev SA Sponsored ADR (B",
+     "market": "US",
+     "date": "2026-10-29",
+     "close": 79.52,
+     "pct": -1.8029,
+     "entryLow": 78.5813,
+     "entryHigh": 80.5758,
+     "stop": 77.6609,
+     "target1": 83.4014,
+     "rr": 2.0878,
+     "rsi": 48.1183,
+     "volRatio": 1.7635,
+     "bias": -0.3234,
+     "zone": "IN_ZONE",
+     "dailyTrend": "盤整",
+     "weeklyTrend": "盤整",
+     "regime": "NEUTRAL",
+     "entrySignal": true,
+     "passed": 7,
+     "total": 9,
+     "checks": [
+      {
+       "k": "above",
+       "ok": false,
+       "t": "收在 SMA20 之上（乖離 -0.3%）"
+      },
+      {
+       "k": "bias",
+       "ok": false,
+       "t": "乖離 0–6%"
+      },
+      {
+       "k": "high",
+       "ok": true,
+       "t": "未貼近 20 日高"
+      },
+      {
+       "k": "rr",
+       "ok": true,
+       "t": "報酬風險比 2.09 ≥ 1.5"
+      },
+      {
+       "k": "rsi",
+       "ok": true,
+       "t": "RSI 48（45–60）"
+      },
+      {
+       "k": "trend",
+       "ok": true,
+       "t": "日線盤整、週線盤整（不能是空頭）"
+      },
+      {
+       "k": "macd",
+       "ok": true,
+       "t": "MACD 零軸下（不能轉弱）"
+      },
+      {
+       "k": "market",
+       "ok": true,
+       "t": "大盤盤整"
+      },
+      {
+       "k": "vol",
+       "ok": true,
+       "t": "量比 1.76 ≥ 1.2"
+      }
+     ],
+     "watched": false
+    },
+    {
+     "code": "MSFT",
+     "name": "Microsoft Corporation Common Stock",
+     "market": "US",
+     "date": "2026-10-29",
+     "close": 530.14,
+     "pct": -0.1638,
+     "entryLow": 522.8006,
+     "entryHigh": 536.0696,
+     "stop": 517.3726,
+     "target1": 554.6873,
+     "rr": 1.9226,
+     "rsi": 55.351,
+     "volRatio": 1.8569,
+     "bias": -0.1172,
+     "zone": "IN_ZONE",
+     "dailyTrend": "盤整",
+     "weeklyTrend": "多頭",
+     "regime": "NEUTRAL",
+     "entrySignal": true,
+     "passed": 7,
+     "total": 9,
+     "checks": [
+      {
+       "k": "above",
+       "ok": false,
+       "t": "收在 SMA20 之上（乖離 -0.1%）"
+      },
+      {
+       "k": "bias",
+       "ok": false,
+       "t": "乖離 0–6%"
+      },
+      {
+       "k": "high",
+       "ok": true,
+       "t": "未貼近 20 日高"
+      },
+      {
+       "k": "rr",
+       "ok": true,
+       "t": "報酬風險比 1.92 ≥ 1.5"
+      },
+      {
+       "k": "rsi",
+       "ok": true,
+       "t": "RSI 55（45–60）"
       },
       {
        "k": "trend",
@@ -1459,21 +1245,235 @@
       },
       {
        "k": "vol",
+       "ok": true,
+       "t": "量比 1.86 ≥ 1.2"
+      }
+     ],
+     "watched": true,
+     "group": "US|AI雲端／記憶體"
+    },
+    {
+     "code": "SNOW",
+     "name": "Snowflake Inc. Common Stock",
+     "market": "US",
+     "date": "2026-10-29",
+     "close": 330.27,
+     "pct": -2.836,
+     "entryLow": 329.7716,
+     "entryHigh": 338.1414,
+     "stop": 314.7777,
+     "target1": 366.9657,
+     "rr": 2.3686,
+     "rsi": 49.1528,
+     "volRatio": 0.7973,
+     "bias": -1.3511,
+     "zone": "IN_ZONE",
+     "dailyTrend": "盤整",
+     "weeklyTrend": "盤整",
+     "regime": "NEUTRAL",
+     "entrySignal": true,
+     "passed": 6,
+     "total": 9,
+     "checks": [
+      {
+       "k": "above",
        "ok": false,
-       "t": "量比 0.88 ≥ 1.2"
+       "t": "收在 SMA20 之上（乖離 -1.4%）"
+      },
+      {
+       "k": "bias",
+       "ok": false,
+       "t": "乖離 0–6%"
+      },
+      {
+       "k": "high",
+       "ok": true,
+       "t": "未貼近 20 日高"
+      },
+      {
+       "k": "rr",
+       "ok": true,
+       "t": "報酬風險比 2.37 ≥ 1.5"
+      },
+      {
+       "k": "rsi",
+       "ok": true,
+       "t": "RSI 49（45–60）"
+      },
+      {
+       "k": "trend",
+       "ok": true,
+       "t": "日線盤整、週線盤整（不能是空頭）"
+      },
+      {
+       "k": "macd",
+       "ok": true,
+       "t": "MACD 零軸下（不能轉弱）"
+      },
+      {
+       "k": "market",
+       "ok": true,
+       "t": "大盤盤整"
+      },
+      {
+       "k": "vol",
+       "ok": false,
+       "t": "量比 0.80 ≥ 1.2"
+      }
+     ],
+     "watched": false
+    },
+    {
+     "code": "CVS",
+     "name": "CVS Health Corporation Common Stock",
+     "market": "US",
+     "date": "2026-10-29",
+     "close": 90.33,
+     "pct": 0.4225,
+     "entryLow": 88.9061,
+     "entryHigh": 91.1626,
+     "stop": 87.6286,
+     "target1": 95.1543,
+     "rr": 1.7858,
+     "rsi": 47.7431,
+     "volRatio": 1.2064,
+     "bias": 0.0776,
+     "zone": "IN_ZONE",
+     "dailyTrend": "盤整",
+     "weeklyTrend": "空頭",
+     "regime": "NEUTRAL",
+     "entrySignal": false,
+     "passed": 8,
+     "total": 9,
+     "checks": [
+      {
+       "k": "above",
+       "ok": true,
+       "t": "收在 SMA20 之上（乖離 0.1%）"
+      },
+      {
+       "k": "bias",
+       "ok": true,
+       "t": "乖離 0–6%"
+      },
+      {
+       "k": "high",
+       "ok": true,
+       "t": "未貼近 20 日高"
+      },
+      {
+       "k": "rr",
+       "ok": true,
+       "t": "報酬風險比 1.79 ≥ 1.5"
+      },
+      {
+       "k": "rsi",
+       "ok": true,
+       "t": "RSI 48（45–60）"
+      },
+      {
+       "k": "trend",
+       "ok": false,
+       "t": "日線盤整、週線空頭（不能是空頭）"
+      },
+      {
+       "k": "macd",
+       "ok": true,
+       "t": "MACD 零軸上（不能轉弱）"
+      },
+      {
+       "k": "market",
+       "ok": true,
+       "t": "大盤盤整"
+      },
+      {
+       "k": "vol",
+       "ok": true,
+       "t": "量比 1.21 ≥ 1.2"
+      }
+     ],
+     "watched": false
+    },
+    {
+     "code": "SHW",
+     "name": "Sherwin-Williams Company (The) Common St",
+     "market": "US",
+     "date": "2026-10-29",
+     "close": 330.1,
+     "pct": 2.899,
+     "entryLow": 322.8406,
+     "entryHigh": 331.0346,
+     "stop": 316.5996,
+     "target1": 350.5553,
+     "rr": 1.5152,
+     "rsi": 50.4411,
+     "volRatio": 1.421,
+     "bias": 0.7149,
+     "zone": "IN_ZONE",
+     "dailyTrend": "盤整",
+     "weeklyTrend": "盤整",
+     "regime": "NEUTRAL",
+     "entrySignal": false,
+     "passed": 8,
+     "total": 9,
+     "checks": [
+      {
+       "k": "above",
+       "ok": true,
+       "t": "收在 SMA20 之上（乖離 0.7%）"
+      },
+      {
+       "k": "bias",
+       "ok": true,
+       "t": "乖離 0–6%"
+      },
+      {
+       "k": "high",
+       "ok": true,
+       "t": "未貼近 20 日高"
+      },
+      {
+       "k": "rr",
+       "ok": true,
+       "t": "報酬風險比 1.52 ≥ 1.5"
+      },
+      {
+       "k": "rsi",
+       "ok": true,
+       "t": "RSI 50（45–60）"
+      },
+      {
+       "k": "trend",
+       "ok": true,
+       "t": "日線盤整、週線盤整（不能是空頭）"
+      },
+      {
+       "k": "macd",
+       "ok": false,
+       "t": "MACD 轉弱（不能轉弱）"
+      },
+      {
+       "k": "market",
+       "ok": true,
+       "t": "大盤盤整"
+      },
+      {
+       "k": "vol",
+       "ok": true,
+       "t": "量比 1.42 ≥ 1.2"
       }
      ],
      "watched": false
     }
    ],
    "universe": "Nasdaq 全市場名單，市值前 300 名",
-   "seconds": 22,
-   "session": "2026-10-28"
+   "seconds": 19,
+   "session": "2026-10-29"
   },
   "CRYPTO": {
    "scanned": 30,
-   "ok": 22,
-   "failed": 8,
+   "ok": 23,
+   "failed": 7,
    "failedSample": [
     "FIGR_HELOC-USD：HTTPError",
     "RAIN-USD：HTTPError",
@@ -1481,10 +1481,9 @@
     "CC-USD：HTTPError",
     "SUI-USD：HTTPError",
     "SHIB-USD：歷史不足",
-    "TAO-USD：HTTPError",
-    "BTW-USD：HTTPError"
+    "TAO-USD：HTTPError"
    ],
-   "candidates": 4,
+   "candidates": 5,
    "signals": 2,
    "picks": [
     {
@@ -1631,6 +1630,77 @@
      "group": "CRYPTO|主流幣"
     },
     {
+     "code": "ENA-USD",
+     "name": "Ethena",
+     "market": "CRYPTO",
+     "date": "2026-10-28",
+     "close": 0.2095,
+     "pct": 0.3382,
+     "entryLow": 0.2012,
+     "entryHigh": 0.2063,
+     "stop": 0.183,
+     "target1": 0.2486,
+     "rr": 1.4758,
+     "rsi": 51.4643,
+     "volRatio": 1.4364,
+     "bias": 2.5307,
+     "zone": "ABOVE_ZONE",
+     "dailyTrend": "多頭",
+     "weeklyTrend": "多頭",
+     "regime": "NEUTRAL",
+     "entrySignal": false,
+     "passed": 8,
+     "total": 9,
+     "checks": [
+      {
+       "k": "above",
+       "ok": true,
+       "t": "收在 SMA20 之上（乖離 2.5%）"
+      },
+      {
+       "k": "bias",
+       "ok": true,
+       "t": "乖離 0–6%"
+      },
+      {
+       "k": "high",
+       "ok": true,
+       "t": "未貼近 20 日高"
+      },
+      {
+       "k": "rr",
+       "ok": false,
+       "t": "報酬風險比 1.48 ≥ 1.5"
+      },
+      {
+       "k": "rsi",
+       "ok": true,
+       "t": "RSI 51（45–60）"
+      },
+      {
+       "k": "trend",
+       "ok": true,
+       "t": "日線多頭、週線多頭（不能是空頭）"
+      },
+      {
+       "k": "macd",
+       "ok": true,
+       "t": "MACD 零軸上（不能轉弱）"
+      },
+      {
+       "k": "market",
+       "ok": true,
+       "t": "大盤盤整"
+      },
+      {
+       "k": "vol",
+       "ok": true,
+       "t": "量比 1.44 ≥ 1.2"
+      }
+     ],
+     "watched": false
+    },
+    {
      "code": "BCH-USD",
      "name": "Bitcoin Cash",
      "market": "CRYPTO",
@@ -1774,7 +1844,7 @@
     }
    ],
    "universe": "CoinGecko 市值前 30 名（排除穩定幣、包裝與質押代幣）",
-   "seconds": 7,
+   "seconds": 6,
    "session": "2026-10-28"
   }
  }
