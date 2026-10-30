@@ -1,5 +1,5 @@
 {
- "generatedAt": "2026-10-29T13:19:22.837782+00:00",
+ "generatedAt": "2026-10-30T01:00:56.317474+00:00",
  "params": {
   "rsi_lo": 45,
   "rsi_hi": 60,
@@ -25,8 +25,8 @@
    "failedSample": [
     "7856.TWO：只有 35 根日 K"
    ],
-   "candidates": 57,
-   "signals": 20,
+   "candidates": 56,
+   "signals": 17,
    "picks": [
     {
      "code": "6538.TWO",
@@ -41,7 +41,7 @@
      "target1": 371.55,
      "rr": 1.8273,
      "rsi": 51.0775,
-     "volRatio": 1.9798,
+     "volRatio": 1.9708,
      "bias": 0.0317,
      "zone": "IN_ZONE",
      "dailyTrend": "多頭",
@@ -94,7 +94,7 @@
       {
        "k": "vol",
        "ok": true,
-       "t": "量比 1.98 ≥ 1.2"
+       "t": "量比 1.97 ≥ 1.2"
       }
      ],
      "watched": false
@@ -105,14 +105,14 @@
      "market": "TW",
      "date": "2026-10-29",
      "close": 97.0,
-     "pct": 6.3596,
+     "pct": 6.3597,
      "entryLow": 95.4416,
      "entryHigh": 97.8639,
      "stop": 90.3207,
      "target1": 109.0529,
      "rr": 1.8045,
      "rsi": 53.0147,
-     "volRatio": 1.9706,
+     "volRatio": 1.9627,
      "bias": 0.1084,
      "zone": "IN_ZONE",
      "dailyTrend": "多頭",
@@ -165,7 +165,7 @@
       {
        "k": "vol",
        "ok": true,
-       "t": "量比 1.97 ≥ 1.2"
+       "t": "量比 1.96 ≥ 1.2"
       }
      ],
      "watched": false
@@ -183,7 +183,7 @@
      "target1": 331.7272,
      "rr": 1.7625,
      "rsi": 52.1384,
-     "volRatio": 1.6634,
+     "volRatio": 1.6307,
      "bias": 0.2485,
      "zone": "IN_ZONE",
      "dailyTrend": "多頭",
@@ -236,7 +236,7 @@
       {
        "k": "vol",
        "ok": true,
-       "t": "量比 1.66 ≥ 1.2"
+       "t": "量比 1.63 ≥ 1.2"
       }
      ],
      "watched": false
@@ -254,7 +254,7 @@
      "target1": 581.6071,
      "rr": 1.7209,
      "rsi": 52.4357,
-     "volRatio": 1.6101,
+     "volRatio": 1.5684,
      "bias": 0.589,
      "zone": "IN_ZONE",
      "dailyTrend": "多頭",
@@ -307,7 +307,7 @@
       {
        "k": "vol",
        "ok": true,
-       "t": "量比 1.61 ≥ 1.2"
+       "t": "量比 1.57 ≥ 1.2"
       }
      ],
      "watched": false
@@ -325,7 +325,7 @@
      "target1": 1678.7143,
      "rr": 1.7087,
      "rsi": 54.477,
-     "volRatio": 1.72,
+     "volRatio": 1.697,
      "bias": 0.5836,
      "zone": "IN_ZONE",
      "dailyTrend": "多頭",
@@ -378,7 +378,7 @@
       {
        "k": "vol",
        "ok": true,
-       "t": "量比 1.72 ≥ 1.2"
+       "t": "量比 1.70 ≥ 1.2"
       }
      ],
      "watched": true,
@@ -397,7 +397,7 @@
      "target1": 171.55,
      "rr": 1.5714,
      "rsi": 52.2202,
-     "volRatio": 1.4944,
+     "volRatio": 1.4774,
      "bias": 0.6606,
      "zone": "IN_ZONE",
      "dailyTrend": "多頭",
@@ -450,7 +450,7 @@
       {
        "k": "vol",
        "ok": true,
-       "t": "量比 1.49 ≥ 1.2"
+       "t": "量比 1.48 ≥ 1.2"
       }
      ],
      "watched": false
@@ -468,7 +468,7 @@
      "target1": 38.9914,
      "rr": 1.8333,
      "rsi": 47.2295,
-     "volRatio": 0.9582,
+     "volRatio": 0.9549,
      "bias": 0.0,
      "zone": "IN_ZONE",
      "dailyTrend": "盤整",
@@ -521,7 +521,7 @@
       {
        "k": "vol",
        "ok": false,
-       "t": "量比 0.96 ≥ 1.2"
+       "t": "量比 0.95 ≥ 1.2"
       }
      ],
      "watched": false
@@ -539,7 +539,7 @@
      "target1": 575.1357,
      "rr": 1.8154,
      "rsi": 54.0357,
-     "volRatio": 0.8129,
+     "volRatio": 0.8022,
      "bias": 0.1037,
      "zone": "IN_ZONE",
      "dailyTrend": "多頭",
@@ -592,7 +592,7 @@
       {
        "k": "vol",
        "ok": false,
-       "t": "量比 0.81 ≥ 1.2"
+       "t": "量比 0.80 ≥ 1.2"
       }
      ],
      "watched": false
@@ -610,7 +610,7 @@
      "target1": 205.2357,
      "rr": 1.6814,
      "rsi": 51.3892,
-     "volRatio": 0.6568,
+     "volRatio": 0.6496,
      "bias": 0.4396,
      "zone": "IN_ZONE",
      "dailyTrend": "多頭",
@@ -663,7 +663,7 @@
       {
        "k": "vol",
        "ok": false,
-       "t": "量比 0.66 ≥ 1.2"
+       "t": "量比 0.65 ≥ 1.2"
       }
      ],
      "watched": false
@@ -676,12 +676,12 @@
      "close": 32.0,
      "pct": -2.1407,
      "entryLow": 31.4264,
-     "entryHigh": 32.224,
+     "entryHigh": 32.2241,
      "stop": 30.9107,
      "target1": 33.8229,
      "rr": 1.6734,
      "rsi": 50.4315,
-     "volRatio": 0.8959,
+     "volRatio": 0.8949,
      "bias": 0.2978,
      "zone": "IN_ZONE",
      "dailyTrend": "多頭",
@@ -734,14 +734,14 @@
       {
        "k": "vol",
        "ok": false,
-       "t": "量比 0.90 ≥ 1.2"
+       "t": "量比 0.89 ≥ 1.2"
       }
      ],
      "watched": false
     }
    ],
    "universe": "證交所＋櫃買中心全市場日收盤，成交金額前 300 名",
-   "seconds": 50,
+   "seconds": 49,
    "session": "2026-10-29"
   },
   "US": {
@@ -751,7 +751,7 @@
    "failedSample": [
     "SKHY：只有 78 根日 K"
    ],
-   "candidates": 110,
+   "candidates": 111,
    "signals": 14,
    "picks": [
     {
@@ -838,7 +838,7 @@
      "target1": 554.4384,
      "rr": 1.6862,
      "rsi": 56.0621,
-     "volRatio": 1.3773,
+     "volRatio": 1.4195,
      "bias": 0.2104,
      "zone": "IN_ZONE",
      "dailyTrend": "多頭",
@@ -891,7 +891,7 @@
       {
        "k": "vol",
        "ok": true,
-       "t": "量比 1.38 ≥ 1.2"
+       "t": "量比 1.42 ≥ 1.2"
       }
      ],
      "watched": true,
@@ -1194,7 +1194,7 @@
      "target1": 49.2141,
      "rr": 1.6281,
      "rsi": 54.2066,
-     "volRatio": 1.1231,
+     "volRatio": 1.1246,
      "bias": 0.8357,
      "zone": "IN_ZONE",
      "dailyTrend": "多頭",
@@ -1467,23 +1467,24 @@
     }
    ],
    "universe": "Nasdaq 全市場名單，市值前 300 名",
-   "seconds": 27,
+   "seconds": 22,
    "session": "2026-10-28"
   },
   "CRYPTO": {
    "scanned": 30,
-   "ok": 23,
-   "failed": 7,
+   "ok": 22,
+   "failed": 8,
    "failedSample": [
     "FIGR_HELOC-USD：HTTPError",
     "RAIN-USD：HTTPError",
     "UNI-USD：HTTPError",
     "CC-USD：HTTPError",
     "SUI-USD：HTTPError",
+    "SHIB-USD：歷史不足",
     "TAO-USD：HTTPError",
-    "SHIB-USD：歷史不足"
+    "BTW-USD：HTTPError"
    ],
-   "candidates": 5,
+   "candidates": 4,
    "signals": 2,
    "picks": [
     {
@@ -1628,77 +1629,6 @@
      ],
      "watched": true,
      "group": "CRYPTO|主流幣"
-    },
-    {
-     "code": "ENA-USD",
-     "name": "Ethena",
-     "market": "CRYPTO",
-     "date": "2026-10-28",
-     "close": 0.2095,
-     "pct": 0.3382,
-     "entryLow": 0.2012,
-     "entryHigh": 0.2063,
-     "stop": 0.183,
-     "target1": 0.2486,
-     "rr": 1.4758,
-     "rsi": 51.4643,
-     "volRatio": 1.4364,
-     "bias": 2.5307,
-     "zone": "ABOVE_ZONE",
-     "dailyTrend": "多頭",
-     "weeklyTrend": "多頭",
-     "regime": "NEUTRAL",
-     "entrySignal": false,
-     "passed": 8,
-     "total": 9,
-     "checks": [
-      {
-       "k": "above",
-       "ok": true,
-       "t": "收在 SMA20 之上（乖離 2.5%）"
-      },
-      {
-       "k": "bias",
-       "ok": true,
-       "t": "乖離 0–6%"
-      },
-      {
-       "k": "high",
-       "ok": true,
-       "t": "未貼近 20 日高"
-      },
-      {
-       "k": "rr",
-       "ok": false,
-       "t": "報酬風險比 1.48 ≥ 1.5"
-      },
-      {
-       "k": "rsi",
-       "ok": true,
-       "t": "RSI 51（45–60）"
-      },
-      {
-       "k": "trend",
-       "ok": true,
-       "t": "日線多頭、週線多頭（不能是空頭）"
-      },
-      {
-       "k": "macd",
-       "ok": true,
-       "t": "MACD 零軸上（不能轉弱）"
-      },
-      {
-       "k": "market",
-       "ok": true,
-       "t": "大盤盤整"
-      },
-      {
-       "k": "vol",
-       "ok": true,
-       "t": "量比 1.44 ≥ 1.2"
-      }
-     ],
-     "watched": false
     },
     {
      "code": "BCH-USD",
