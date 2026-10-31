@@ -1,9 +1,9 @@
 {
-  "generatedAt": "2026-10-30T13:08:03.415551+00:00",
+  "generatedAt": "2026-10-31T00:45:14.346255+00:00",
   "today": {
-    "TW": "2026-10-30",
+    "TW": "2026-10-31",
     "US": "2026-10-30",
-    "CRYPTO": "2026-10-30"
+    "CRYPTO": "2026-10-31"
   },
   "thresholds": {
     "bias_mid": 6.0,
@@ -118,7 +118,7 @@
     }
   },
   "events": {
-    "updatedAt": "2026-10-30",
+    "updatedAt": "2026-10-31",
     "fresh": true,
     "used": 25,
     "earnings": 5,
@@ -643,19 +643,15 @@
       "group": "TW|PCB／載板"
     },
     "8358.TWO": {
-      "total": 4,
+      "total": 2,
       "max": 10,
       "scored": 5,
-      "score10": 4.0,
-      "level": "high",
-      "flags": [
-        "disposition"
-      ],
+      "score10": 2.0,
+      "level": "low",
+      "flags": [],
       "gate": {
-        "block": true,
-        "reasons": [
-          "處置股"
-        ]
+        "block": false,
+        "reasons": []
       },
       "items": {
         "tech": {
@@ -678,10 +674,9 @@
           "date": "2026-09"
         },
         "chips": {
-          "score": 2,
-          "why": "處置股 2026-10-23～2026-10-30",
-          "date": "2026-10-23",
-          "flag": "disposition"
+          "score": 0,
+          "why": "近 5 日法人 -1243 張、融資 -2587 張",
+          "date": "2026-10-30"
         },
         "policy": {
           "score": 1,
@@ -2957,15 +2952,15 @@
         },
         "fundamentals": {
           "score": 1,
-          "why": "穩定幣總供給 30 日 -2.2%（300B 美元）、BTC 市占率 59.2%",
+          "why": "穩定幣總供給 30 日 -2.2%（300B 美元）、BTC 市占率 59.1%",
           "date": "2026-10-30",
           "source": "https://defillama.com/stablecoins",
           "label": "市場結構"
         },
         "chips": {
           "score": 0,
-          "why": "恐懼與貪婪指數 30（恐懼）；資金費率 +0.0100%、未平倉量 7 日 +5.1%",
-          "date": "2026-10-30",
+          "why": "恐懼與貪婪指數 30（恐懼）；資金費率 +0.0100%、未平倉量 7 日 +7.5%",
+          "date": "2026-10-31",
           "source": "https://alternative.me/crypto/fear-and-greed-index/",
           "label": "情緒／槓桿"
         },
@@ -3002,15 +2997,15 @@
         },
         "fundamentals": {
           "score": 1,
-          "why": "穩定幣總供給 30 日 -2.2%（300B 美元）、BTC 市占率 59.2%",
+          "why": "穩定幣總供給 30 日 -2.2%（300B 美元）、BTC 市占率 59.1%",
           "date": "2026-10-30",
           "source": "https://defillama.com/stablecoins",
           "label": "市場結構"
         },
         "chips": {
           "score": 0,
-          "why": "恐懼與貪婪指數 30（恐懼）；資金費率 +0.0022%、未平倉量 7 日 +7.6%",
-          "date": "2026-10-30",
+          "why": "恐懼與貪婪指數 30（恐懼）；資金費率 -0.0076%、未平倉量 7 日 +0.7%",
+          "date": "2026-10-31",
           "source": "https://alternative.me/crypto/fear-and-greed-index/",
           "label": "情緒／槓桿"
         },
@@ -3047,15 +3042,15 @@
         },
         "fundamentals": {
           "score": 1,
-          "why": "穩定幣總供給 30 日 -2.2%（300B 美元）、BTC 市占率 59.2%",
+          "why": "穩定幣總供給 30 日 -2.2%（300B 美元）、BTC 市占率 59.1%",
           "date": "2026-10-30",
           "source": "https://defillama.com/stablecoins",
           "label": "市場結構"
         },
         "chips": {
           "score": 0,
-          "why": "恐懼與貪婪指數 30（恐懼）；資金費率 +0.0093%、未平倉量 7 日 +5.6%",
-          "date": "2026-10-30",
+          "why": "恐懼與貪婪指數 30（恐懼）；資金費率 -0.0082%、未平倉量 7 日 +5.1%",
+          "date": "2026-10-31",
           "source": "https://alternative.me/crypto/fear-and-greed-index/",
           "label": "情緒／槓桿"
         },
