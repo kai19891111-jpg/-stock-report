@@ -1,8 +1,8 @@
 {
-  "generatedAt": "2026-10-31T01:46:52.019803+00:00",
+  "generatedAt": "2026-10-31T06:09:18.288907+00:00",
   "today": {
     "TW": "2026-10-31",
-    "US": "2026-10-30",
+    "US": "2026-10-31",
     "CRYPTO": "2026-10-31"
   },
   "thresholds": {
@@ -1186,8 +1186,8 @@
         },
         "chips": {
           "score": 2,
-          "why": "列入注意股（2026-10-29）",
-          "date": "2026-10-29",
+          "why": "列入注意股（2026-10-30）",
+          "date": "2026-10-30",
           "flag": "attention"
         },
         "policy": {
@@ -1201,20 +1201,15 @@
       "group": "TW|零組件／廠務"
     },
     "2221.TWO": {
-      "total": 4,
+      "total": 3,
       "max": 10,
       "scored": 5,
-      "score10": 4.0,
-      "level": "mid",
-      "flags": [
-        "attention"
-      ],
+      "score10": 3.0,
+      "level": "low",
+      "flags": [],
       "gate": {
-        "block": true,
-        "reasons": [
-          "注意股",
-          "風險中"
-        ]
+        "block": false,
+        "reasons": []
       },
       "items": {
         "tech": {
@@ -1237,10 +1232,9 @@
           "date": "2026-09"
         },
         "chips": {
-          "score": 2,
-          "why": "列入注意股（2026-10-29）",
-          "date": "2026-10-29",
-          "flag": "attention"
+          "score": 1,
+          "why": "近 5 日法人 -3 張、融資 +266 張",
+          "date": "2026-10-30"
         },
         "policy": {
           "score": 1,
@@ -2957,7 +2951,7 @@
         },
         "chips": {
           "score": 0,
-          "why": "恐懼與貪婪指數 30（恐懼）；資金費率 +0.0091%、未平倉量 7 日 +7.5%",
+          "why": "恐懼與貪婪指數 30（恐懼）；資金費率 +0.0100%、未平倉量 7 日 +7.5%",
           "date": "2026-10-31",
           "source": "https://alternative.me/crypto/fear-and-greed-index/",
           "label": "情緒／槓桿"
@@ -3002,7 +2996,7 @@
         },
         "chips": {
           "score": 0,
-          "why": "恐懼與貪婪指數 30（恐懼）；資金費率 -0.0082%、未平倉量 7 日 +0.7%",
+          "why": "恐懼與貪婪指數 30（恐懼）；資金費率 -0.0074%、未平倉量 7 日 +0.7%",
           "date": "2026-10-31",
           "source": "https://alternative.me/crypto/fear-and-greed-index/",
           "label": "情緒／槓桿"
@@ -3047,7 +3041,7 @@
         },
         "chips": {
           "score": 0,
-          "why": "恐懼與貪婪指數 30（恐懼）；資金費率 -0.0111%、未平倉量 7 日 +5.1%",
+          "why": "恐懼與貪婪指數 30（恐懼）；資金費率 -0.0146%、未平倉量 7 日 +5.1%",
           "date": "2026-10-31",
           "source": "https://alternative.me/crypto/fear-and-greed-index/",
           "label": "情緒／槓桿"
