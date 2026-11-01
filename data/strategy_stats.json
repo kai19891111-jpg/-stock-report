@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-31T06:09:15.712361+00:00",
+  "updated": "2026-11-01T06:40:07.252411+00:00",
   "source": "backtest.py",
   "isFinalClose": true,
   "meta": {
@@ -47,7 +47,7 @@
   "marketRegime": {
     "TW": "NEUTRAL",
     "US": "NEUTRAL",
-    "CRYPTO": "NEUTRAL"
+    "CRYPTO": "BEAR"
   },
   "all": {
     "sampleSize": 419,
@@ -677,11 +677,11 @@
       "benchmark": {
         "draws": 300,
         "trades": 45,
-        "meanR": -0.0905,
-        "p05": -0.4139,
-        "p95": 0.2446,
+        "meanR": -0.0827,
+        "p05": -0.416,
+        "p95": 0.2358,
         "actualR": 0.1144,
-        "beats": 0.82,
+        "beats": 0.8333,
         "definition": "同樣的股票、同樣的停損停利距離與成本，但進場日隨機"
       },
       "byRegime": {

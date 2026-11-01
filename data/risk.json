@@ -1,9 +1,9 @@
 {
-  "generatedAt": "2026-10-31T06:09:18.288907+00:00",
+  "generatedAt": "2026-11-01T06:40:09.959301+00:00",
   "today": {
-    "TW": "2026-10-31",
-    "US": "2026-10-31",
-    "CRYPTO": "2026-10-31"
+    "TW": "2026-11-01",
+    "US": "2026-11-01",
+    "CRYPTO": "2026-11-01"
   },
   "thresholds": {
     "bias_mid": 6.0,
@@ -101,11 +101,11 @@
       "fail": 0
     },
     "nasdaq_earnings": {
-      "ok": 3,
+      "ok": 1,
       "fail": 0
     },
     "sec_submissions": {
-      "ok": 2,
+      "ok": 1,
       "fail": 0
     },
     "okx_funding": {
@@ -118,11 +118,11 @@
     }
   },
   "events": {
-    "updatedAt": "2026-10-31",
+    "updatedAt": "2026-11-01",
     "fresh": true,
     "used": 25,
     "earnings": 5,
-    "autoEarnings": 11,
+    "autoEarnings": 10,
     "rejected": []
   },
   "symbols": {
@@ -2607,12 +2607,12 @@
         },
         "earnings": {
           "score": 0,
-          "why": "財報約 2027-01-27（SEC 歷年發布日推估預估，公司尚未確認），還有 63 個交易日",
+          "why": "財報約 2027-01-27（Yahoo預估，公司尚未確認），還有 63 個交易日",
           "estimated": true,
           "date": "2027-01-27",
-          "source": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&type=8-K&CIK=0001326801",
+          "source": "https://finance.yahoo.com/quote/META/",
           "days": 63,
-          "provider": "SEC 歷年發布日推估"
+          "provider": "Yahoo"
         },
         "fundamentals": {
           "score": 1,
@@ -2701,12 +2701,12 @@
         },
         "earnings": {
           "score": 0,
-          "why": "財報約 2027-01-01（SEC 歷年發布日推估預估，公司尚未確認），還有 45 個交易日",
+          "why": "財報約 2027-01-27（Yahoo預估，公司尚未確認），還有 63 個交易日",
           "estimated": true,
-          "date": "2027-01-01",
-          "source": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&type=8-K&CIK=0001318605",
-          "days": 45,
-          "provider": "SEC 歷年發布日推估"
+          "date": "2027-01-27",
+          "source": "https://finance.yahoo.com/quote/TSLA/",
+          "days": 63,
+          "provider": "Yahoo"
         },
         "fundamentals": {
           "score": 1,
@@ -2730,19 +2730,15 @@
       "group": "US|AI機器人"
     },
     "SPCX": {
-      "total": 3,
-      "max": 10,
-      "scored": 5,
-      "score10": 3.0,
+      "total": 1,
+      "max": 8,
+      "scored": 4,
+      "score10": 1.2,
       "level": "low",
-      "flags": [
-        "earnings_soon"
-      ],
+      "flags": [],
       "gate": {
-        "block": true,
-        "reasons": [
-          "財報前觀察"
-        ]
+        "block": false,
+        "reasons": []
       },
       "items": {
         "tech": {
@@ -2751,13 +2747,8 @@
           "date": "2026-10-30"
         },
         "earnings": {
-          "score": 2,
-          "why": "財報約 2026-11-03（Nasdaq預估，公司尚未確認），還有 2 個交易日；這是 2026-10-21 抓到的結果",
-          "estimated": true,
-          "date": "2026-11-03",
-          "source": "https://www.nasdaq.com/market-activity/stocks/spcx/earnings",
-          "days": 2,
-          "provider": "Nasdaq"
+          "score": null,
+          "why": "events.json 沒填，自動來源（Yahoo／Nasdaq／SEC）也抓不到財報日"
         },
         "fundamentals": {
           "score": 0,
@@ -2935,8 +2926,8 @@
       "items": {
         "tech": {
           "score": 0,
-          "why": "乖離 -4.68%",
-          "date": "2026-10-29"
+          "why": "乖離 -5.06%",
+          "date": "2026-10-30"
         },
         "earnings": {
           "score": null,
@@ -2944,15 +2935,15 @@
         },
         "fundamentals": {
           "score": 1,
-          "why": "穩定幣總供給 30 日 -2.3%（299B 美元）、BTC 市占率 59.2%",
-          "date": "2026-10-31",
+          "why": "穩定幣總供給 30 日 -2.6%（298B 美元）、BTC 市占率 59.3%",
+          "date": "2026-11-01",
           "source": "https://defillama.com/stablecoins",
           "label": "市場結構"
         },
         "chips": {
           "score": 0,
-          "why": "恐懼與貪婪指數 30（恐懼）；資金費率 +0.0100%、未平倉量 7 日 +7.5%",
-          "date": "2026-10-31",
+          "why": "恐懼與貪婪指數 34（恐懼）；資金費率 +0.0084%、未平倉量 7 日 +11.2%",
+          "date": "2026-11-01",
           "source": "https://alternative.me/crypto/fear-and-greed-index/",
           "label": "情緒／槓桿"
         },
@@ -2980,8 +2971,8 @@
       "items": {
         "tech": {
           "score": 0,
-          "why": "乖離 -6.50%",
-          "date": "2026-10-29"
+          "why": "乖離 -6.34%",
+          "date": "2026-10-30"
         },
         "earnings": {
           "score": null,
@@ -2989,15 +2980,15 @@
         },
         "fundamentals": {
           "score": 1,
-          "why": "穩定幣總供給 30 日 -2.3%（299B 美元）、BTC 市占率 59.2%",
-          "date": "2026-10-31",
+          "why": "穩定幣總供給 30 日 -2.6%（298B 美元）、BTC 市占率 59.3%",
+          "date": "2026-11-01",
           "source": "https://defillama.com/stablecoins",
           "label": "市場結構"
         },
         "chips": {
           "score": 0,
-          "why": "恐懼與貪婪指數 30（恐懼）；資金費率 -0.0074%、未平倉量 7 日 +0.7%",
-          "date": "2026-10-31",
+          "why": "恐懼與貪婪指數 34（恐懼）；資金費率 -0.0017%、未平倉量 7 日 -0.8%",
+          "date": "2026-11-01",
           "source": "https://alternative.me/crypto/fear-and-greed-index/",
           "label": "情緒／槓桿"
         },
@@ -3025,8 +3016,8 @@
       "items": {
         "tech": {
           "score": 0,
-          "why": "乖離 -8.28%",
-          "date": "2026-10-29"
+          "why": "乖離 -6.97%",
+          "date": "2026-10-30"
         },
         "earnings": {
           "score": null,
@@ -3034,15 +3025,15 @@
         },
         "fundamentals": {
           "score": 1,
-          "why": "穩定幣總供給 30 日 -2.3%（299B 美元）、BTC 市占率 59.2%",
-          "date": "2026-10-31",
+          "why": "穩定幣總供給 30 日 -2.6%（298B 美元）、BTC 市占率 59.3%",
+          "date": "2026-11-01",
           "source": "https://defillama.com/stablecoins",
           "label": "市場結構"
         },
         "chips": {
           "score": 0,
-          "why": "恐懼與貪婪指數 30（恐懼）；資金費率 -0.0146%、未平倉量 7 日 +5.1%",
-          "date": "2026-10-31",
+          "why": "恐懼與貪婪指數 34（恐懼）；資金費率 +0.0100%、未平倉量 7 日 +4.6%",
+          "date": "2026-11-01",
           "source": "https://alternative.me/crypto/fear-and-greed-index/",
           "label": "情緒／槓桿"
         },
