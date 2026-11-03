@@ -1,8 +1,8 @@
 {
-  "generatedAt": "2026-11-03T03:42:45.637249+00:00",
+  "generatedAt": "2026-11-03T07:08:58.952249+00:00",
   "today": {
     "TW": "2026-11-03",
-    "US": "2026-11-02",
+    "US": "2026-11-03",
     "CRYPTO": "2026-11-03"
   },
   "thresholds": {
@@ -140,8 +140,8 @@
       "items": {
         "tech": {
           "score": 0,
-          "why": "乖離 -5.15%",
-          "date": "2026-11-02"
+          "why": "乖離 -6.18%",
+          "date": "2026-11-03"
         },
         "earnings": {
           "score": 0,
@@ -188,8 +188,8 @@
       "items": {
         "tech": {
           "score": 0,
-          "why": "乖離 -8.99%",
-          "date": "2026-11-02"
+          "why": "乖離 -14.50%",
+          "date": "2026-11-03"
         },
         "earnings": {
           "score": 1,
@@ -236,8 +236,8 @@
       "items": {
         "tech": {
           "score": 0,
-          "why": "乖離 -19.92%",
-          "date": "2026-11-02"
+          "why": "乖離 -23.55%",
+          "date": "2026-11-03"
         },
         "earnings": {
           "score": 1,
@@ -282,8 +282,8 @@
       "items": {
         "tech": {
           "score": 0,
-          "why": "乖離 +1.73%",
-          "date": "2026-11-02"
+          "why": "乖離 -0.81%",
+          "date": "2026-11-03"
         },
         "earnings": {
           "score": 1,
@@ -328,8 +328,8 @@
       "items": {
         "tech": {
           "score": 0,
-          "why": "乖離 -13.27%",
-          "date": "2026-11-02"
+          "why": "乖離 -19.45%",
+          "date": "2026-11-03"
         },
         "earnings": {
           "score": 1,
@@ -361,26 +361,21 @@
       "group": "TW|AI伺服器／散熱"
     },
     "3324.TWO": {
-      "total": 5,
+      "total": 3,
       "max": 10,
       "scored": 5,
-      "score10": 5.0,
-      "level": "mid",
-      "flags": [
-        "attention"
-      ],
+      "score10": 3.0,
+      "level": "low",
+      "flags": [],
       "gate": {
-        "block": true,
-        "reasons": [
-          "注意股",
-          "風險中"
-        ]
+        "block": false,
+        "reasons": []
       },
       "items": {
         "tech": {
           "score": 0,
-          "why": "乖離 -3.12%",
-          "date": "2026-11-02"
+          "why": "乖離 -7.74%",
+          "date": "2026-11-03"
         },
         "earnings": {
           "score": 1,
@@ -397,10 +392,9 @@
           "date": "2026-09"
         },
         "chips": {
-          "score": 2,
-          "why": "列入注意股（2026-10-30）",
-          "date": "2026-10-30",
-          "flag": "attention"
+          "score": 0,
+          "why": "近 5 日法人 +1319 張、融資 -1066 張",
+          "date": "2026-11-02"
         },
         "policy": {
           "score": 1,
@@ -428,8 +422,8 @@
       "items": {
         "tech": {
           "score": 0,
-          "why": "乖離 -4.91%",
-          "date": "2026-11-02"
+          "why": "乖離 -8.67%",
+          "date": "2026-11-03"
         },
         "earnings": {
           "score": 1,
@@ -474,8 +468,8 @@
       "items": {
         "tech": {
           "score": 0,
-          "why": "乖離 -7.06%",
-          "date": "2026-11-02"
+          "why": "乖離 -10.17%",
+          "date": "2026-11-03"
         },
         "earnings": {
           "score": 1,
@@ -520,8 +514,8 @@
       "items": {
         "tech": {
           "score": 0,
-          "why": "乖離 -9.92%",
-          "date": "2026-11-02"
+          "why": "乖離 -17.99%",
+          "date": "2026-11-03"
         },
         "earnings": {
           "score": 1,
@@ -566,8 +560,8 @@
       "items": {
         "tech": {
           "score": 0,
-          "why": "乖離 -13.04%",
-          "date": "2026-11-02"
+          "why": "乖離 -19.92%",
+          "date": "2026-11-03"
         },
         "earnings": {
           "score": 1,
@@ -612,8 +606,8 @@
       "items": {
         "tech": {
           "score": 0,
-          "why": "乖離 -12.74%",
-          "date": "2026-11-02"
+          "why": "乖離 -20.06%",
+          "date": "2026-11-03"
         },
         "earnings": {
           "score": 1,
@@ -658,8 +652,8 @@
       "items": {
         "tech": {
           "score": 0,
-          "why": "乖離 -13.28%",
-          "date": "2026-11-02"
+          "why": "乖離 -20.72%",
+          "date": "2026-11-03"
         },
         "earnings": {
           "score": 1,
@@ -704,8 +698,8 @@
       "items": {
         "tech": {
           "score": 0,
-          "why": "乖離 -11.80%",
-          "date": "2026-11-02"
+          "why": "乖離 -18.90%",
+          "date": "2026-11-03"
         },
         "earnings": {
           "score": 1,
@@ -750,8 +744,8 @@
       "items": {
         "tech": {
           "score": 0,
-          "why": "乖離 -14.61%",
-          "date": "2026-11-02"
+          "why": "乖離 -21.47%",
+          "date": "2026-11-03"
         },
         "earnings": {
           "score": 1,
@@ -796,8 +790,8 @@
       "items": {
         "tech": {
           "score": 0,
-          "why": "乖離 -10.97%",
-          "date": "2026-11-02"
+          "why": "乖離 -16.21%",
+          "date": "2026-11-03"
         },
         "earnings": {
           "score": 1,
@@ -842,8 +836,8 @@
       "items": {
         "tech": {
           "score": 0,
-          "why": "乖離 -1.36%",
-          "date": "2026-11-02"
+          "why": "乖離 -11.35%",
+          "date": "2026-11-03"
         },
         "earnings": {
           "score": 1,
@@ -888,8 +882,8 @@
       "items": {
         "tech": {
           "score": 0,
-          "why": "乖離 -3.26%",
-          "date": "2026-11-02"
+          "why": "乖離 -11.83%",
+          "date": "2026-11-03"
         },
         "earnings": {
           "score": 1,
@@ -934,8 +928,8 @@
       "items": {
         "tech": {
           "score": 0,
-          "why": "乖離 -5.72%",
-          "date": "2026-11-02"
+          "why": "乖離 -12.05%",
+          "date": "2026-11-03"
         },
         "earnings": {
           "score": 1,
@@ -980,8 +974,8 @@
       "items": {
         "tech": {
           "score": 0,
-          "why": "乖離 -8.33%",
-          "date": "2026-11-02"
+          "why": "乖離 -14.20%",
+          "date": "2026-11-03"
         },
         "earnings": {
           "score": 1,
@@ -1026,8 +1020,8 @@
       "items": {
         "tech": {
           "score": 0,
-          "why": "乖離 -6.42%",
-          "date": "2026-11-02"
+          "why": "乖離 -15.28%",
+          "date": "2026-11-03"
         },
         "earnings": {
           "score": 1,
@@ -1072,8 +1066,8 @@
       "items": {
         "tech": {
           "score": 0,
-          "why": "乖離 -12.43%",
-          "date": "2026-11-02"
+          "why": "乖離 -19.20%",
+          "date": "2026-11-03"
         },
         "earnings": {
           "score": 1,
@@ -1118,8 +1112,8 @@
       "items": {
         "tech": {
           "score": 0,
-          "why": "乖離 -16.24%",
-          "date": "2026-11-02"
+          "why": "乖離 -22.83%",
+          "date": "2026-11-03"
         },
         "earnings": {
           "score": 1,
@@ -1151,26 +1145,23 @@
       "group": "TW|零組件／廠務"
     },
     "1569.TWO": {
-      "total": 5,
+      "total": 4,
       "max": 10,
       "scored": 5,
-      "score10": 5.0,
+      "score10": 4.0,
       "level": "mid",
-      "flags": [
-        "attention"
-      ],
+      "flags": [],
       "gate": {
         "block": true,
         "reasons": [
-          "注意股",
           "風險中"
         ]
       },
       "items": {
         "tech": {
           "score": 1,
-          "why": "乖離 +8.60%",
-          "date": "2026-11-02"
+          "why": "乖離 +8.87%",
+          "date": "2026-11-03"
         },
         "earnings": {
           "score": 1,
@@ -1187,10 +1178,9 @@
           "date": "2026-09"
         },
         "chips": {
-          "score": 2,
-          "why": "列入注意股（2026-10-30）",
-          "date": "2026-10-30",
-          "flag": "attention"
+          "score": 1,
+          "why": "近 5 日法人 -2923 張、融資 +1770 張",
+          "date": "2026-11-02"
         },
         "policy": {
           "score": 1,
@@ -1221,8 +1211,8 @@
       "items": {
         "tech": {
           "score": 0,
-          "why": "乖離 -8.32%",
-          "date": "2026-11-02"
+          "why": "乖離 -13.23%",
+          "date": "2026-11-03"
         },
         "earnings": {
           "score": 1,
@@ -1268,8 +1258,8 @@
       "items": {
         "tech": {
           "score": 0,
-          "why": "乖離 -12.47%",
-          "date": "2026-11-02"
+          "why": "乖離 -19.90%",
+          "date": "2026-11-03"
         },
         "earnings": {
           "score": 1,
@@ -1314,8 +1304,8 @@
       "items": {
         "tech": {
           "score": 0,
-          "why": "乖離 -9.19%",
-          "date": "2026-11-02"
+          "why": "乖離 -11.28%",
+          "date": "2026-11-03"
         },
         "earnings": {
           "score": 1,
@@ -1360,8 +1350,8 @@
       "items": {
         "tech": {
           "score": 0,
-          "why": "乖離 -9.33%",
-          "date": "2026-11-02"
+          "why": "乖離 -15.33%",
+          "date": "2026-11-03"
         },
         "earnings": {
           "score": 1,
@@ -1406,8 +1396,8 @@
       "items": {
         "tech": {
           "score": 0,
-          "why": "乖離 -4.50%",
-          "date": "2026-11-02"
+          "why": "乖離 -11.74%",
+          "date": "2026-11-03"
         },
         "earnings": {
           "score": 1,
@@ -1452,8 +1442,8 @@
       "items": {
         "tech": {
           "score": 0,
-          "why": "乖離 -8.71%",
-          "date": "2026-11-02"
+          "why": "乖離 -14.47%",
+          "date": "2026-11-03"
         },
         "earnings": {
           "score": 1,
@@ -1498,8 +1488,8 @@
       "items": {
         "tech": {
           "score": 0,
-          "why": "乖離 +2.75%",
-          "date": "2026-11-02"
+          "why": "乖離 -3.36%",
+          "date": "2026-11-03"
         },
         "earnings": {
           "score": 1,
@@ -1544,8 +1534,8 @@
       "items": {
         "tech": {
           "score": 0,
-          "why": "乖離 -0.79%",
-          "date": "2026-11-02"
+          "why": "乖離 -7.69%",
+          "date": "2026-11-03"
         },
         "earnings": {
           "score": 1,
@@ -1590,8 +1580,8 @@
       "items": {
         "tech": {
           "score": 0,
-          "why": "乖離 -9.66%",
-          "date": "2026-11-02"
+          "why": "乖離 -15.02%",
+          "date": "2026-11-03"
         },
         "earnings": {
           "score": 1,
@@ -1636,8 +1626,8 @@
       "items": {
         "tech": {
           "score": 0,
-          "why": "乖離 -5.16%",
-          "date": "2026-11-02"
+          "why": "乖離 -9.11%",
+          "date": "2026-11-03"
         },
         "earnings": {
           "score": 1,
@@ -1682,8 +1672,8 @@
       "items": {
         "tech": {
           "score": 0,
-          "why": "乖離 -8.22%",
-          "date": "2026-11-02"
+          "why": "乖離 -10.64%",
+          "date": "2026-11-03"
         },
         "earnings": {
           "score": 1,
@@ -1728,8 +1718,8 @@
       "items": {
         "tech": {
           "score": 0,
-          "why": "乖離 -6.62%",
-          "date": "2026-11-02"
+          "why": "乖離 -12.86%",
+          "date": "2026-11-03"
         },
         "earnings": {
           "score": 1,
@@ -1774,8 +1764,8 @@
       "items": {
         "tech": {
           "score": 0,
-          "why": "乖離 -4.24%",
-          "date": "2026-11-02"
+          "why": "乖離 -9.64%",
+          "date": "2026-11-03"
         },
         "earnings": {
           "score": 1,
@@ -1820,8 +1810,8 @@
       "items": {
         "tech": {
           "score": 0,
-          "why": "乖離 -5.09%",
-          "date": "2026-11-02"
+          "why": "乖離 -11.82%",
+          "date": "2026-11-03"
         },
         "earnings": {
           "score": 1,
@@ -1866,8 +1856,8 @@
       "items": {
         "tech": {
           "score": 0,
-          "why": "乖離 -5.97%",
-          "date": "2026-11-02"
+          "why": "乖離 -11.96%",
+          "date": "2026-11-03"
         },
         "earnings": {
           "score": 1,
@@ -1912,8 +1902,8 @@
       "items": {
         "tech": {
           "score": 0,
-          "why": "乖離 -1.05%",
-          "date": "2026-11-02"
+          "why": "乖離 -5.24%",
+          "date": "2026-11-03"
         },
         "earnings": {
           "score": 1,
@@ -1958,8 +1948,8 @@
       "items": {
         "tech": {
           "score": 0,
-          "why": "乖離 -5.44%",
-          "date": "2026-11-02"
+          "why": "乖離 -8.40%",
+          "date": "2026-11-03"
         },
         "earnings": {
           "score": 1,
@@ -2006,8 +1996,8 @@
       "items": {
         "tech": {
           "score": 0,
-          "why": "乖離 -7.53%",
-          "date": "2026-11-02"
+          "why": "乖離 -12.75%",
+          "date": "2026-11-03"
         },
         "earnings": {
           "score": 1,
@@ -2052,8 +2042,8 @@
       "items": {
         "tech": {
           "score": 0,
-          "why": "乖離 -6.25%",
-          "date": "2026-11-02"
+          "why": "乖離 -10.83%",
+          "date": "2026-11-03"
         },
         "earnings": {
           "score": 1,
@@ -2098,8 +2088,8 @@
       "items": {
         "tech": {
           "score": 0,
-          "why": "乖離 -17.94%",
-          "date": "2026-11-02"
+          "why": "乖離 -20.28%",
+          "date": "2026-11-03"
         },
         "earnings": {
           "score": 1,
@@ -2144,8 +2134,8 @@
       "items": {
         "tech": {
           "score": 0,
-          "why": "乖離 -20.74%",
-          "date": "2026-11-02"
+          "why": "乖離 -21.33%",
+          "date": "2026-11-03"
         },
         "earnings": {
           "score": 1,
@@ -2190,8 +2180,8 @@
       "items": {
         "tech": {
           "score": 0,
-          "why": "乖離 -12.32%",
-          "date": "2026-11-02"
+          "why": "乖離 -15.52%",
+          "date": "2026-11-03"
         },
         "earnings": {
           "score": 1,
@@ -2236,8 +2226,8 @@
       "items": {
         "tech": {
           "score": 0,
-          "why": "乖離 -5.26%",
-          "date": "2026-11-02"
+          "why": "乖離 -11.18%",
+          "date": "2026-11-03"
         },
         "earnings": {
           "score": 1,
@@ -2284,8 +2274,8 @@
       "items": {
         "tech": {
           "score": 0,
-          "why": "乖離 -3.97%",
-          "date": "2026-11-02"
+          "why": "乖離 -7.94%",
+          "date": "2026-11-03"
         },
         "earnings": {
           "score": 1,
@@ -2330,8 +2320,8 @@
       "items": {
         "tech": {
           "score": 0,
-          "why": "乖離 +1.67%",
-          "date": "2026-11-02"
+          "why": "乖離 -0.45%",
+          "date": "2026-11-03"
         },
         "earnings": {
           "score": 1,
@@ -2381,11 +2371,11 @@
         },
         "earnings": {
           "score": 0,
-          "why": "財報約 2027-01-14（Yahoo預估，公司尚未確認），還有 53 個交易日",
+          "why": "財報約 2027-01-14（Yahoo預估，公司尚未確認），還有 52 個交易日",
           "estimated": true,
           "date": "2027-01-14",
           "source": "https://finance.yahoo.com/quote/TSM/",
-          "days": 53,
+          "days": 52,
           "provider": "Yahoo"
         },
         "fundamentals": {
@@ -2409,10 +2399,10 @@
       "group": "US|AI晶片"
     },
     "NVDA": {
-      "total": 1,
+      "total": 2,
       "max": 10,
       "scored": 5,
-      "score10": 1.0,
+      "score10": 2.0,
       "level": "low",
       "flags": [],
       "gate": {
@@ -2426,11 +2416,11 @@
           "date": "2026-11-02"
         },
         "earnings": {
-          "score": 0,
-          "why": "財報 2026-11-17，還有 11 個交易日（Yahoo，已確認）",
+          "score": 1,
+          "why": "財報 2026-11-17，還有 10 個交易日（Yahoo，已確認）",
           "date": "2026-11-17",
           "source": "https://finance.yahoo.com/quote/NVDA/",
-          "days": 11,
+          "days": 10,
           "provider": "Yahoo"
         },
         "fundamentals": {
@@ -2477,10 +2467,10 @@
         },
         "earnings": {
           "score": 2,
-          "why": "財報 2026-11-03，還有 1 個交易日",
+          "why": "財報 2026-11-03，還有 0 個交易日",
           "date": "2026-11-03",
           "source": "https://ir.amd.com/news-events/press-releases/detail/1300/amd-to-report-fiscal-third-quarter-2026-financial-results",
-          "days": 1
+          "days": 0
         },
         "fundamentals": {
           "score": 0,
@@ -2522,10 +2512,10 @@
         },
         "earnings": {
           "score": 0,
-          "why": "財報 2026-12-09，還有 27 個交易日（Yahoo，已確認）",
+          "why": "財報 2026-12-09，還有 26 個交易日（Yahoo，已確認）",
           "date": "2026-12-09",
           "source": "https://finance.yahoo.com/quote/AVGO/",
-          "days": 27,
+          "days": 26,
           "provider": "Yahoo"
         },
         "fundamentals": {
@@ -2568,11 +2558,11 @@
         },
         "earnings": {
           "score": 0,
-          "why": "財報約 2027-01-27（Yahoo預估，公司尚未確認），還有 62 個交易日",
+          "why": "財報約 2027-01-27（Yahoo預估，公司尚未確認），還有 61 個交易日",
           "estimated": true,
           "date": "2027-01-27",
           "source": "https://finance.yahoo.com/quote/MSFT/",
-          "days": 62,
+          "days": 61,
           "provider": "Yahoo"
         },
         "fundamentals": {
@@ -2615,11 +2605,11 @@
         },
         "earnings": {
           "score": 0,
-          "why": "財報約 2027-01-27（Yahoo預估，公司尚未確認），還有 62 個交易日",
+          "why": "財報約 2027-01-27（Yahoo預估，公司尚未確認），還有 61 個交易日",
           "estimated": true,
           "date": "2027-01-27",
           "source": "https://finance.yahoo.com/quote/META/",
-          "days": 62,
+          "days": 61,
           "provider": "Yahoo"
         },
         "fundamentals": {
@@ -2662,11 +2652,11 @@
         },
         "earnings": {
           "score": 0,
-          "why": "財報約 2026-12-23（Yahoo預估，公司尚未確認），還有 37 個交易日",
+          "why": "財報約 2026-12-23（Yahoo預估，公司尚未確認），還有 36 個交易日",
           "estimated": true,
           "date": "2026-12-23",
           "source": "https://finance.yahoo.com/quote/MU/",
-          "days": 37,
+          "days": 36,
           "provider": "Yahoo"
         },
         "fundamentals": {
@@ -2709,11 +2699,11 @@
         },
         "earnings": {
           "score": 0,
-          "why": "財報約 2027-01-27（Yahoo預估，公司尚未確認），還有 62 個交易日",
+          "why": "財報約 2027-01-27（Yahoo預估，公司尚未確認），還有 61 個交易日",
           "estimated": true,
           "date": "2027-01-27",
           "source": "https://finance.yahoo.com/quote/TSLA/",
-          "days": 62,
+          "days": 61,
           "provider": "Yahoo"
         },
         "fundamentals": {
@@ -2798,10 +2788,10 @@
         },
         "earnings": {
           "score": 1,
-          "why": "財報 2026-11-09，還有 5 個交易日（Yahoo，已確認）",
+          "why": "財報 2026-11-09，還有 4 個交易日（Yahoo，已確認）",
           "date": "2026-11-09",
           "source": "https://finance.yahoo.com/quote/RKLB/",
-          "days": 5,
+          "days": 4,
           "provider": "Yahoo"
         },
         "fundamentals": {
@@ -2844,10 +2834,10 @@
         },
         "earnings": {
           "score": 1,
-          "why": "財報 2026-11-09，還有 5 個交易日（Yahoo，已確認）",
+          "why": "財報 2026-11-09，還有 4 個交易日（Yahoo，已確認）",
           "date": "2026-11-09",
           "source": "https://finance.yahoo.com/quote/ASTS/",
-          "days": 5,
+          "days": 4,
           "provider": "Yahoo"
         },
         "fundamentals": {
@@ -2896,11 +2886,11 @@
         },
         "earnings": {
           "score": 2,
-          "why": "財報約 2026-11-05（Yahoo預估，公司尚未確認），還有 3 個交易日",
+          "why": "財報約 2026-11-05（Yahoo預估，公司尚未確認），還有 2 個交易日",
           "estimated": true,
           "date": "2026-11-05",
           "source": "https://finance.yahoo.com/quote/ECHO/",
-          "days": 3,
+          "days": 2,
           "provider": "Yahoo"
         },
         "fundamentals": {
@@ -2939,8 +2929,8 @@
       "items": {
         "tech": {
           "score": 0,
-          "why": "乖離 -3.18%",
-          "date": "2026-11-01"
+          "why": "乖離 -4.75%",
+          "date": "2026-11-02"
         },
         "earnings": {
           "score": null,
@@ -2948,7 +2938,7 @@
         },
         "fundamentals": {
           "score": 1,
-          "why": "穩定幣總供給 30 日 -3.6%（296B 美元）、BTC 市占率 59.3%",
+          "why": "穩定幣總供給 30 日 -3.6%（296B 美元）、BTC 市占率 59.2%",
           "date": "2026-11-03",
           "source": "https://defillama.com/stablecoins",
           "label": "市場結構"
@@ -2984,8 +2974,8 @@
       "items": {
         "tech": {
           "score": 0,
-          "why": "乖離 -4.09%",
-          "date": "2026-11-01"
+          "why": "乖離 -4.61%",
+          "date": "2026-11-02"
         },
         "earnings": {
           "score": null,
@@ -2993,7 +2983,7 @@
         },
         "fundamentals": {
           "score": 1,
-          "why": "穩定幣總供給 30 日 -3.6%（296B 美元）、BTC 市占率 59.3%",
+          "why": "穩定幣總供給 30 日 -3.6%（296B 美元）、BTC 市占率 59.2%",
           "date": "2026-11-03",
           "source": "https://defillama.com/stablecoins",
           "label": "市場結構"
@@ -3029,8 +3019,8 @@
       "items": {
         "tech": {
           "score": 0,
-          "why": "乖離 -7.47%",
-          "date": "2026-11-01"
+          "why": "乖離 -9.37%",
+          "date": "2026-11-02"
         },
         "earnings": {
           "score": null,
@@ -3038,14 +3028,14 @@
         },
         "fundamentals": {
           "score": 1,
-          "why": "穩定幣總供給 30 日 -3.6%（296B 美元）、BTC 市占率 59.3%",
+          "why": "穩定幣總供給 30 日 -3.6%（296B 美元）、BTC 市占率 59.2%",
           "date": "2026-11-03",
           "source": "https://defillama.com/stablecoins",
           "label": "市場結構"
         },
         "chips": {
           "score": 0,
-          "why": "恐懼與貪婪指數 26（恐懼）；資金費率 +0.0100%、未平倉量 7 日 +7.7%",
+          "why": "恐懼與貪婪指數 26（恐懼）；資金費率 +0.0095%、未平倉量 7 日 +7.7%",
           "date": "2026-11-03",
           "source": "https://alternative.me/crypto/fear-and-greed-index/",
           "label": "情緒／槓桿"
