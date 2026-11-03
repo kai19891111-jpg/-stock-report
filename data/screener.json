@@ -1,5 +1,5 @@
 {
- "generatedAt": "2026-11-03T07:11:57.751076+00:00",
+ "generatedAt": "2026-11-03T14:30:02.066693+00:00",
  "params": {
   "rsi_lo": 45,
   "rsi_hi": 60,
@@ -25,8 +25,8 @@
    "failedSample": [
     "7856.TWO：只有 38 根日 K"
    ],
-   "candidates": 30,
-   "signals": 7,
+   "candidates": 31,
+   "signals": 6,
    "picks": [
     {
      "code": "2371.TW",
@@ -456,77 +456,6 @@
      "watched": false
     },
     {
-     "code": "1476.TW",
-     "name": "儒鴻",
-     "market": "TW",
-     "date": "2026-11-03",
-     "close": 313.5,
-     "pct": -1.5699,
-     "entryLow": 310.3735,
-     "entryHigh": 318.251,
-     "stop": 306.1429,
-     "target1": 329.9214,
-     "rr": 2.232,
-     "rsi": 51.6625,
-     "volRatio": 0.5493,
-     "bias": -0.5078,
-     "zone": "IN_ZONE",
-     "dailyTrend": "盤整",
-     "weeklyTrend": "盤整",
-     "regime": "NEUTRAL",
-     "entrySignal": true,
-     "passed": 6,
-     "total": 9,
-     "checks": [
-      {
-       "k": "above",
-       "ok": false,
-       "t": "收在 SMA20 之上（乖離 -0.5%）"
-      },
-      {
-       "k": "bias",
-       "ok": false,
-       "t": "乖離 0–6%"
-      },
-      {
-       "k": "high",
-       "ok": true,
-       "t": "未貼近 20 日高"
-      },
-      {
-       "k": "rr",
-       "ok": true,
-       "t": "報酬風險比 2.23 ≥ 1.5"
-      },
-      {
-       "k": "rsi",
-       "ok": true,
-       "t": "RSI 52（45–60）"
-      },
-      {
-       "k": "trend",
-       "ok": true,
-       "t": "日線盤整、週線盤整（不能是空頭）"
-      },
-      {
-       "k": "macd",
-       "ok": true,
-       "t": "MACD 零軸下（不能轉弱）"
-      },
-      {
-       "k": "market",
-       "ok": true,
-       "t": "大盤盤整"
-      },
-      {
-       "k": "vol",
-       "ok": false,
-       "t": "量比 0.55 ≥ 1.2"
-      }
-     ],
-     "watched": false
-    },
-    {
      "code": "1528.TW",
      "name": "恩德",
      "market": "TW",
@@ -738,10 +667,81 @@
       }
      ],
      "watched": false
+    },
+    {
+     "code": "2886.TW",
+     "name": "兆豐金",
+     "market": "TW",
+     "date": "2026-11-03",
+     "close": 53.2,
+     "pct": -1.6636,
+     "entryLow": 51.8135,
+     "entryHigh": 53.1285,
+     "stop": 50.8882,
+     "target1": 56.3429,
+     "rr": 1.3595,
+     "rsi": 54.351,
+     "volRatio": 1.3851,
+     "bias": 1.1359,
+     "zone": "ABOVE_ZONE",
+     "dailyTrend": "多頭",
+     "weeklyTrend": "多頭",
+     "regime": "NEUTRAL",
+     "entrySignal": false,
+     "passed": 8,
+     "total": 9,
+     "checks": [
+      {
+       "k": "above",
+       "ok": true,
+       "t": "收在 SMA20 之上（乖離 1.1%）"
+      },
+      {
+       "k": "bias",
+       "ok": true,
+       "t": "乖離 0–6%"
+      },
+      {
+       "k": "high",
+       "ok": true,
+       "t": "未貼近 20 日高"
+      },
+      {
+       "k": "rr",
+       "ok": false,
+       "t": "報酬風險比 1.36 ≥ 1.5"
+      },
+      {
+       "k": "rsi",
+       "ok": true,
+       "t": "RSI 54（45–60）"
+      },
+      {
+       "k": "trend",
+       "ok": true,
+       "t": "日線多頭、週線多頭（不能是空頭）"
+      },
+      {
+       "k": "macd",
+       "ok": true,
+       "t": "MACD 零軸下（不能轉弱）"
+      },
+      {
+       "k": "market",
+       "ok": true,
+       "t": "大盤盤整"
+      },
+      {
+       "k": "vol",
+       "ok": true,
+       "t": "量比 1.39 ≥ 1.2"
+      }
+     ],
+     "watched": false
     }
    ],
    "universe": "證交所＋櫃買中心全市場日收盤，成交金額前 300 名",
-   "seconds": 41,
+   "seconds": 56,
    "session": "2026-11-03"
   },
   "US": {
@@ -1466,7 +1466,7 @@
     }
    ],
    "universe": "Nasdaq 全市場名單，市值前 300 名",
-   "seconds": 20,
+   "seconds": 22,
    "session": "2026-11-02"
   },
   "CRYPTO": {
@@ -1485,7 +1485,7 @@
    "signals": 0,
    "picks": [],
    "universe": "CoinGecko 市值前 30 名（排除穩定幣、包裝與質押代幣）",
-   "seconds": 6,
+   "seconds": 7,
    "session": null
   }
  }

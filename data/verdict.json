@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-11-03T07:11:57.586339+00:00",
-  "dataTimestamp": "2026-11-03T07:08:13.190635+00:00",
+  "generatedAt": "2026-11-03T14:30:01.835199+00:00",
+  "dataTimestamp": "2026-11-03T14:26:32.165853+00:00",
   "sessions": {
     "TW": "2026-11-03",
     "US": "2026-11-02",
@@ -115,8 +115,8 @@
   },
   "counts": {
     "go": 0,
-    "signal_unproven": 1,
-    "signal_blocked": 0,
+    "signal_unproven": 0,
+    "signal_blocked": 1,
     "conditions": 0,
     "pullback": 1,
     "no_chase": 2,
@@ -127,10 +127,10 @@
   },
   "groups": {
     "go": [],
-    "signal_unproven": [
+    "signal_unproven": [],
+    "signal_blocked": [
       "2371.TW"
     ],
-    "signal_blocked": [],
     "conditions": [],
     "pullback": [
       "TSLA"
@@ -387,12 +387,10 @@
       ],
       "mismatch": null,
       "risk": {
-        "level": "mid",
-        "total": 4,
+        "level": "low",
+        "total": 3,
         "max": 10,
-        "reasons": [
-          "風險中"
-        ]
+        "reasons": []
       },
       "hold": {
         "code": "exit",
@@ -411,7 +409,7 @@
       "bias": -0.8052,
       "high20": 31.5,
       "rr": 2.2663,
-      "code": "signal_unproven",
+      "code": "signal_blocked",
       "signal": true,
       "blockers": [],
       "buyBelow": 29.458333333333332,
@@ -426,7 +424,7 @@
         "maxHoldDays": 20,
         "riskPerShare": 0.995000000000001
       },
-      "text": "規則訊號成立，但回測證據沒過。照規則的做法是：下一個交易日開盤買；開盤價要在 27.95～31.2 之間，否則不買。停損 27.95、目標 31.2，最多抱 20 個交易日。",
+      "text": "規則訊號成立，但風險中，不進場。",
       "notes": [
         "台股回測：期望值區間下緣 −0.32R，沒有大於 0、只勝過 33.7% 的隨機進場（要 95%）",
         "大盤盤整時，這條規則在台股的期望值是 +0.12R（84 筆）",
@@ -434,10 +432,12 @@
       ],
       "mismatch": null,
       "risk": {
-        "level": "low",
-        "total": 3,
+        "level": "mid",
+        "total": 4,
         "max": 10,
-        "reasons": []
+        "reasons": [
+          "風險中"
+        ]
       },
       "hold": {
         "code": "watch",
@@ -1001,7 +1001,7 @@
       "mismatch": null,
       "risk": {
         "level": "low",
-        "total": 3,
+        "total": 2,
         "max": 10,
         "reasons": []
       },
@@ -1113,7 +1113,7 @@
       "mismatch": null,
       "risk": {
         "level": "low",
-        "total": 3,
+        "total": 2,
         "max": 10,
         "reasons": []
       },
@@ -1169,7 +1169,7 @@
       "mismatch": null,
       "risk": {
         "level": "low",
-        "total": 2,
+        "total": 3,
         "max": 10,
         "reasons": []
       },
@@ -1345,7 +1345,7 @@
       "mismatch": null,
       "risk": {
         "level": "low",
-        "total": 3,
+        "total": 2,
         "max": 10,
         "reasons": []
       },
@@ -1810,7 +1810,7 @@
       "mismatch": null,
       "risk": {
         "level": "low",
-        "total": 2,
+        "total": 3,
         "max": 10,
         "reasons": []
       },
@@ -2290,7 +2290,7 @@
       "mismatch": null,
       "risk": {
         "level": "low",
-        "total": 2,
+        "total": 3,
         "max": 10,
         "reasons": []
       },
@@ -2534,7 +2534,7 @@
       "mismatch": null,
       "risk": {
         "level": "low",
-        "total": 3,
+        "total": 2,
         "max": 10,
         "reasons": []
       },
