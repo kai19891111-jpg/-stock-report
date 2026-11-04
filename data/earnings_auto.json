@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-04T02:41:08.499360+00:00",
+  "updatedAt": "2026-11-04T06:54:23.398153+00:00",
   "note": "scripts/risk.py 自動抓到的美股財報日。要指定日期請改 data/events.json 的 earnings，那邊永遠優先。",
   "symbols": {
     "ASTS": {
@@ -8,7 +8,7 @@
       "estimated": false,
       "provider": "Yahoo",
       "source": "https://finance.yahoo.com/quote/ASTS/",
-      "fetchedAt": "2026-11-03"
+      "fetchedAt": "2026-11-04"
     },
     "AVGO": {
       "date": "2026-12-09",
@@ -16,15 +16,15 @@
       "estimated": false,
       "provider": "Yahoo",
       "source": "https://finance.yahoo.com/quote/AVGO/",
-      "fetchedAt": "2026-11-03"
+      "fetchedAt": "2026-11-04"
     },
     "ECHO": {
-      "date": "2026-11-03",
+      "date": "2026-11-05",
       "dateEnd": null,
-      "estimated": false,
-      "provider": "Yahoo",
-      "source": "https://finance.yahoo.com/quote/ECHO/",
-      "fetchedAt": "2026-11-03"
+      "estimated": true,
+      "provider": "Nasdaq",
+      "source": "https://www.nasdaq.com/market-activity/stocks/echo/earnings",
+      "fetchedAt": "2026-11-04"
     },
     "META": {
       "date": "2027-01-27",
@@ -32,7 +32,7 @@
       "estimated": true,
       "provider": "Yahoo",
       "source": "https://finance.yahoo.com/quote/META/",
-      "fetchedAt": "2026-11-03"
+      "fetchedAt": "2026-11-04"
     },
     "MSFT": {
       "date": "2027-01-27",
@@ -40,7 +40,7 @@
       "estimated": true,
       "provider": "Yahoo",
       "source": "https://finance.yahoo.com/quote/MSFT/",
-      "fetchedAt": "2026-11-03"
+      "fetchedAt": "2026-11-04"
     },
     "MU": {
       "date": "2026-12-23",
@@ -48,7 +48,7 @@
       "estimated": true,
       "provider": "Yahoo",
       "source": "https://finance.yahoo.com/quote/MU/",
-      "fetchedAt": "2026-11-03"
+      "fetchedAt": "2026-11-04"
     },
     "NVDA": {
       "date": "2026-11-17",
@@ -56,7 +56,7 @@
       "estimated": false,
       "provider": "Yahoo",
       "source": "https://finance.yahoo.com/quote/NVDA/",
-      "fetchedAt": "2026-11-03"
+      "fetchedAt": "2026-11-04"
     },
     "RKLB": {
       "date": "2026-11-09",
@@ -64,7 +64,7 @@
       "estimated": false,
       "provider": "Yahoo",
       "source": "https://finance.yahoo.com/quote/RKLB/",
-      "fetchedAt": "2026-11-03"
+      "fetchedAt": "2026-11-04"
     },
     "SPCX": {
       "date": "2026-11-03",
@@ -80,7 +80,7 @@
       "estimated": true,
       "provider": "Yahoo",
       "source": "https://finance.yahoo.com/quote/TSLA/",
-      "fetchedAt": "2026-11-03"
+      "fetchedAt": "2026-11-04"
     },
     "TSM": {
       "date": "2027-01-14",
@@ -88,7 +88,7 @@
       "estimated": true,
       "provider": "Yahoo",
       "source": "https://finance.yahoo.com/quote/TSM/",
-      "fetchedAt": "2026-11-03"
+      "fetchedAt": "2026-11-04"
     }
   }
 }

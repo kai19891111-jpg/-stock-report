@@ -1,11 +1,11 @@
 {
-  "updated": "2026-11-04T02:41:05.959973+00:00",
+  "updated": "2026-11-04T06:54:20.871468+00:00",
   "source": "backtest.py",
   "isFinalClose": true,
   "meta": {
     "symbols": 60,
     "from": "2025-01-31",
-    "to": "2026-11-03",
+    "to": "2026-11-04",
     "splitDate": "2026-04-27",
     "maxHoldDays": 20,
     "costs": {
@@ -50,26 +50,26 @@
     "CRYPTO": "BEAR"
   },
   "all": {
-    "sampleSize": 420,
+    "sampleSize": 421,
     "wins": 150,
-    "losses": 270,
-    "winRate": 0.3571,
-    "lossRate": 0.6429,
+    "losses": 271,
+    "winRate": 0.3563,
+    "lossRate": 0.6437,
     "avgWinR": 2.1003,
-    "avgLossR": -1.2121,
-    "expectancyR": -0.0291,
-    "expLow": -0.1957,
-    "expHigh": 0.1377,
-    "profitFactor": 0.9626,
+    "avgLossR": -1.2119,
+    "expectancyR": -0.0318,
+    "expLow": -0.1917,
+    "expHigh": 0.1412,
+    "profitFactor": 0.9592,
     "maxDrawdownR": -44.5018,
-    "medianR": -1.0709,
-    "avgHoldingDays": 6.0881,
+    "medianR": -1.0712,
+    "avgHoldingDays": 6.076,
     "recent20WinRate": 0.1,
     "recent50WinRate": 0.4,
-    "ciLow": 0.3128,
-    "ciHigh": 0.4041,
+    "ciLow": 0.312,
+    "ciHigh": 0.4032,
     "maxSingleR": 15.4196,
-    "expectancyExMaxR": -0.066
+    "expectancyExMaxR": -0.0686
   },
   "insample": {
     "sampleSize": 279,
@@ -94,61 +94,61 @@
     "expectancyExMaxR": -0.0813
   },
   "oos": {
-    "sampleSize": 141,
+    "sampleSize": 142,
     "wins": 51,
-    "losses": 90,
-    "winRate": 0.3617,
-    "lossRate": 0.6383,
+    "losses": 91,
+    "winRate": 0.3592,
+    "lossRate": 0.6408,
     "avgWinR": 1.9847,
-    "avgLossR": -1.1808,
-    "expectancyR": -0.0359,
-    "expLow": -0.2859,
-    "expHigh": 0.2375,
-    "profitFactor": 0.9524,
-    "maxDrawdownR": -25.4007,
-    "medianR": -1.0714,
-    "avgHoldingDays": 6.227,
+    "avgLossR": -1.1806,
+    "expectancyR": -0.0438,
+    "expLow": -0.3008,
+    "expHigh": 0.2153,
+    "profitFactor": 0.9421,
+    "maxDrawdownR": -25.8279,
+    "medianR": -1.0717,
+    "avgHoldingDays": 6.1901,
     "recent20WinRate": 0.1,
     "recent50WinRate": 0.4,
-    "ciLow": 0.287,
-    "ciHigh": 0.4437,
+    "ciLow": 0.2849,
+    "ciHigh": 0.4408,
     "maxSingleR": 4.7782,
-    "expectancyExMaxR": -0.0703
+    "expectancyExMaxR": -0.078
   },
   "live": {
-    "sampleSize": 27,
+    "sampleSize": 28,
     "wins": 4,
-    "losses": 23,
-    "winRate": 0.1481,
-    "lossRate": 0.8519,
+    "losses": 24,
+    "winRate": 0.1429,
+    "lossRate": 0.8571,
     "avgWinR": 1.7695,
-    "avgLossR": -1.311,
-    "expectancyR": -0.8547,
+    "avgLossR": -1.3048,
+    "expectancyR": -0.8656,
     "expLow": null,
     "expHigh": null,
-    "profitFactor": 0.2347,
-    "maxDrawdownR": -25.7123,
-    "medianR": -1.145,
-    "avgHoldingDays": 3.5185,
+    "profitFactor": 0.226,
+    "maxDrawdownR": -26.8745,
+    "medianR": -1.1457,
+    "avgHoldingDays": 3.4286,
     "recent20WinRate": 0.1,
-    "recent50WinRate": 0.1481,
-    "ciLow": 0.0592,
-    "ciHigh": 0.3248,
+    "recent50WinRate": 0.1429,
+    "ciLow": 0.057,
+    "ciHigh": 0.3149,
     "maxSingleR": -3.1321,
-    "expectancyExMaxR": -0.7671
+    "expectancyExMaxR": -0.7817
   },
   "benchmark": {
     "draws": 300,
-    "trades": 420,
-    "meanR": 0.004,
-    "p05": -0.1411,
-    "p95": 0.1614,
-    "actualR": -0.0291,
-    "beats": 0.3567,
+    "trades": 421,
+    "meanR": 0.0045,
+    "p05": -0.1353,
+    "p95": 0.138,
+    "actualR": -0.0318,
+    "beats": 0.3433,
     "definition": "同樣的股票、同樣的停損停利距離與成本，但進場日隨機"
   },
   "bySymbol": {
-    "totalR": -12.2313,
+    "totalR": -13.3935,
     "top": [
       {
         "symbol": "AMD",
@@ -208,26 +208,26 @@
       "expectancyExMaxR": -0.1102
     },
     "NEUTRAL": {
-      "sampleSize": 108,
+      "sampleSize": 109,
       "wins": 42,
-      "losses": 66,
-      "winRate": 0.3889,
-      "lossRate": 0.6111,
+      "losses": 67,
+      "winRate": 0.3853,
+      "lossRate": 0.6147,
       "avgWinR": 1.9938,
-      "avgLossR": -1.1683,
-      "expectancyR": 0.0614,
+      "avgLossR": -1.1682,
+      "expectancyR": 0.0501,
       "expLow": null,
       "expHigh": null,
-      "profitFactor": 1.086,
-      "maxDrawdownR": -19.4586,
+      "profitFactor": 1.0698,
+      "maxDrawdownR": -20.6208,
       "medianR": -1.0544,
-      "avgHoldingDays": 6.25,
+      "avgHoldingDays": 6.2018,
       "recent20WinRate": 0.3,
       "recent50WinRate": 0.28,
-      "ciLow": 0.3023,
-      "ciHigh": 0.4831,
+      "ciLow": 0.2993,
+      "ciHigh": 0.4791,
       "maxSingleR": 5.3943,
-      "expectancyExMaxR": 0.0115
+      "expectancyExMaxR": 0.0007
     },
     "BEAR": {
       "sampleSize": 0,
@@ -252,26 +252,26 @@
   },
   "byMarket": {
     "TW": {
-      "sampleSize": 328,
+      "sampleSize": 329,
       "wins": 117,
-      "losses": 211,
-      "winRate": 0.3567,
-      "lossRate": 0.6433,
+      "losses": 212,
+      "winRate": 0.3556,
+      "lossRate": 0.6444,
       "avgWinR": 1.9918,
-      "avgLossR": -1.231,
-      "expectancyR": -0.0814,
+      "avgLossR": -1.2307,
+      "expectancyR": -0.0847,
       "expLow": null,
       "expHigh": null,
-      "profitFactor": 0.8972,
+      "profitFactor": 0.8932,
       "maxDrawdownR": -47.6294,
-      "medianR": -1.1055,
-      "avgHoldingDays": 6.0457,
+      "medianR": -1.1056,
+      "avgHoldingDays": 6.0304,
       "recent20WinRate": 0.1,
-      "recent50WinRate": 0.34,
-      "ciLow": 0.3068,
-      "ciHigh": 0.4099,
+      "recent50WinRate": 0.32,
+      "ciLow": 0.3058,
+      "ciHigh": 0.4087,
       "maxSingleR": 5.3943,
-      "expectancyExMaxR": -0.0982
+      "expectancyExMaxR": -0.1014
     },
     "US": {
       "sampleSize": 92,
@@ -321,26 +321,26 @@
   "byMarketDetail": {
     "TW": {
       "all": {
-        "sampleSize": 328,
+        "sampleSize": 329,
         "wins": 117,
-        "losses": 211,
-        "winRate": 0.3567,
-        "lossRate": 0.6433,
+        "losses": 212,
+        "winRate": 0.3556,
+        "lossRate": 0.6444,
         "avgWinR": 1.9918,
-        "avgLossR": -1.231,
-        "expectancyR": -0.0814,
-        "expLow": -0.2515,
-        "expHigh": 0.0892,
-        "profitFactor": 0.8972,
+        "avgLossR": -1.2307,
+        "expectancyR": -0.0847,
+        "expLow": -0.2501,
+        "expHigh": 0.0953,
+        "profitFactor": 0.8932,
         "maxDrawdownR": -47.6294,
-        "medianR": -1.1055,
-        "avgHoldingDays": 6.0457,
+        "medianR": -1.1056,
+        "avgHoldingDays": 6.0304,
         "recent20WinRate": 0.1,
-        "recent50WinRate": 0.34,
-        "ciLow": 0.3068,
-        "ciHigh": 0.4099,
+        "recent50WinRate": 0.32,
+        "ciLow": 0.3058,
+        "ciHigh": 0.4087,
         "maxSingleR": 5.3943,
-        "expectancyExMaxR": -0.0982
+        "expectancyExMaxR": -0.1014
       },
       "insample": {
         "sampleSize": 214,
@@ -365,35 +365,35 @@
         "expectancyExMaxR": -0.1337
       },
       "oos": {
-        "sampleSize": 114,
+        "sampleSize": 115,
         "wins": 40,
-        "losses": 74,
-        "winRate": 0.3509,
-        "lossRate": 0.6491,
+        "losses": 75,
+        "winRate": 0.3478,
+        "lossRate": 0.6522,
         "avgWinR": 2.0642,
-        "avgLossR": -1.1647,
-        "expectancyR": -0.0317,
-        "expLow": -0.3216,
-        "expHigh": 0.2666,
-        "profitFactor": 0.958,
+        "avgLossR": -1.1646,
+        "expectancyR": -0.0416,
+        "expLow": -0.3403,
+        "expHigh": 0.2587,
+        "profitFactor": 0.9453,
         "maxDrawdownR": -22.3134,
-        "medianR": -1.0852,
-        "avgHoldingDays": 6.2895,
+        "medianR": -1.0861,
+        "avgHoldingDays": 6.2435,
         "recent20WinRate": 0.1,
-        "recent50WinRate": 0.34,
-        "ciLow": 0.2694,
-        "ciHigh": 0.442,
+        "recent50WinRate": 0.32,
+        "ciLow": 0.267,
+        "ciHigh": 0.4385,
         "maxSingleR": 4.7782,
-        "expectancyExMaxR": -0.0743
+        "expectancyExMaxR": -0.0838
       },
       "benchmark": {
         "draws": 300,
-        "trades": 328,
-        "meanR": -0.0438,
-        "p05": -0.1914,
-        "p95": 0.0961,
-        "actualR": -0.0814,
-        "beats": 0.3367,
+        "trades": 329,
+        "meanR": -0.039,
+        "p05": -0.1937,
+        "p95": 0.0914,
+        "actualR": -0.0847,
+        "beats": 0.3167,
         "definition": "同樣的股票、同樣的停損停利距離與成本，但進場日隨機"
       },
       "byRegime": {
@@ -420,26 +420,26 @@
           "expectancyExMaxR": -0.1704
         },
         "NEUTRAL": {
-          "sampleSize": 84,
+          "sampleSize": 85,
           "wins": 33,
-          "losses": 51,
-          "winRate": 0.3929,
-          "lossRate": 0.6071,
+          "losses": 52,
+          "winRate": 0.3882,
+          "lossRate": 0.6118,
           "avgWinR": 2.0527,
-          "avgLossR": -1.1335,
-          "expectancyR": 0.1182,
-          "expLow": -0.2139,
-          "expHigh": 0.4988,
-          "profitFactor": 1.1718,
+          "avgLossR": -1.1341,
+          "expectancyR": 0.1031,
+          "expLow": -0.2382,
+          "expHigh": 0.4584,
+          "profitFactor": 1.1487,
           "maxDrawdownR": -15.8613,
-          "medianR": -1.0834,
-          "avgHoldingDays": 5.9286,
+          "medianR": -1.0841,
+          "avgHoldingDays": 5.8706,
           "recent20WinRate": 0.3,
           "recent50WinRate": 0.34,
-          "ciLow": 0.2953,
-          "ciHigh": 0.4998,
+          "ciLow": 0.2916,
+          "ciHigh": 0.4945,
           "maxSingleR": 5.3943,
-          "expectancyExMaxR": 0.0546
+          "expectancyExMaxR": 0.0402
         },
         "BEAR": {
           "sampleSize": 0,
@@ -804,26 +804,26 @@
         "label": "1 到 1.5 倍"
       },
       {
-        "sampleSize": 337,
+        "sampleSize": 338,
         "wins": 117,
-        "losses": 220,
-        "winRate": 0.3472,
-        "lossRate": 0.6528,
+        "losses": 221,
+        "winRate": 0.3462,
+        "lossRate": 0.6538,
         "avgWinR": 2.0609,
-        "avgLossR": -1.2194,
-        "expectancyR": -0.0805,
-        "expLow": -0.2597,
-        "expHigh": 0.0901,
-        "profitFactor": 0.8988,
+        "avgLossR": -1.2191,
+        "expectancyR": -0.0837,
+        "expLow": -0.2498,
+        "expHigh": 0.0914,
+        "profitFactor": 0.895,
         "maxDrawdownR": -44.9051,
-        "medianR": -1.0806,
-        "avgHoldingDays": 5.8398,
-        "recent20WinRate": 0.15,
+        "medianR": -1.0814,
+        "avgHoldingDays": 5.8254,
+        "recent20WinRate": 0.1,
         "recent50WinRate": 0.38,
-        "ciLow": 0.2983,
-        "ciHigh": 0.3995,
+        "ciLow": 0.2974,
+        "ciHigh": 0.3983,
         "maxSingleR": 5.3943,
-        "expectancyExMaxR": -0.0968,
+        "expectancyExMaxR": -0.1,
         "key": "ge1.5",
         "label": "1.5 倍以上"
       }
@@ -837,10 +837,10 @@
       "profitFactor": 1.0167
     },
     "AI電源／電力": {
-      "n": 8,
-      "winRate": 0.125,
-      "expectancyR": -0.8384,
-      "profitFactor": 0.1932
+      "n": 9,
+      "winRate": 0.1111,
+      "expectancyR": -0.8744,
+      "profitFactor": 0.1695
     },
     "AI伺服器／散熱": {
       "n": 31,
@@ -936,7 +936,7 @@
   "byExit": {
     "gap_stop": 57,
     "gap_target": 39,
-    "stop": 208,
+    "stop": 209,
     "target": 103,
     "time": 13
   },
@@ -964,50 +964,50 @@
     "byStatus": {
       "go": {
         "5": {
-          "n": 2513,
-          "mean": 0.7818,
-          "median": -0.3096,
-          "hitRate": 0.4708
+          "n": 2520,
+          "mean": 0.7388,
+          "median": -0.3155,
+          "hitRate": 0.4694
         },
         "10": {
-          "n": 2498,
-          "mean": 1.8652,
-          "median": 0.1378,
-          "hitRate": 0.5024
+          "n": 2499,
+          "mean": 1.8603,
+          "median": 0.1348,
+          "hitRate": 0.5022
         },
         "20": {
-          "n": 2439,
-          "mean": 4.6818,
-          "median": 1.0489,
-          "hitRate": 0.5297
+          "n": 2445,
+          "mean": 4.6319,
+          "median": 1.0384,
+          "hitRate": 0.5284
         }
       },
       "hold": {
         "5": {
-          "n": 1710,
-          "mean": 1.2538,
+          "n": 1713,
+          "mean": 1.2275,
           "median": 0.0,
-          "hitRate": 0.4936
+          "hitRate": 0.4927
         },
         "10": {
-          "n": 1702,
-          "mean": 3.1154,
+          "n": 1704,
+          "mean": 3.1118,
           "median": 1.4572,
           "hitRate": 0.5558
         },
         "20": {
-          "n": 1667,
-          "mean": 6.3802,
-          "median": 1.938,
-          "hitRate": 0.5513
+          "n": 1677,
+          "mean": 6.1959,
+          "median": 1.845,
+          "hitRate": 0.5486
         }
       },
       "trim": {
         "5": {
-          "n": 497,
-          "mean": 2.0207,
-          "median": 0.7307,
-          "hitRate": 0.5231
+          "n": 498,
+          "mean": 1.9576,
+          "median": 0.7128,
+          "hitRate": 0.5221
         },
         "10": {
           "n": 495,
@@ -1016,10 +1016,10 @@
           "hitRate": 0.5677
         },
         "20": {
-          "n": 486,
-          "mean": 9.5727,
-          "median": 4.1277,
-          "hitRate": 0.5947
+          "n": 490,
+          "mean": 9.3657,
+          "median": 3.947,
+          "hitRate": 0.5898
         }
       },
       "wait": {
@@ -1030,50 +1030,50 @@
           "hitRate": 0.5237
         },
         "10": {
-          "n": 1483,
-          "mean": 1.9847,
-          "median": 0.0372,
-          "hitRate": 0.5003
+          "n": 1484,
+          "mean": 1.9687,
+          "median": 0.0186,
+          "hitRate": 0.5
         },
         "20": {
-          "n": 1424,
-          "mean": 4.6908,
-          "median": 0.962,
-          "hitRate": 0.5386
+          "n": 1425,
+          "mean": 4.6754,
+          "median": 0.9569,
+          "hitRate": 0.5382
         }
       }
     },
     "baseline": {
       "5": {
-        "n": 25051,
-        "mean": 0.8758,
+        "n": 25099,
+        "mean": 0.849,
         "median": 0.0,
-        "hitRate": 0.4999
+        "hitRate": 0.4989
       },
       "10": {
-        "n": 24751,
-        "mean": 2.226,
-        "median": 0.5297,
-        "hitRate": 0.5221
+        "n": 24799,
+        "mean": 2.1964,
+        "median": 0.5139,
+        "hitRate": 0.5212
       },
       "20": {
-        "n": 24151,
-        "mean": 5.3006,
-        "median": 1.7123,
-        "hitRate": 0.5469
+        "n": 24199,
+        "mean": 5.2526,
+        "median": 1.6877,
+        "hitRate": 0.5459
       }
     }
   },
   "exitStudy": {
     "definition": "進入過熱後隔日開盤賣出，對比續抱到收盤跌破 SMA20 的隔日開盤才賣；數字是續抱多賺（或少賺）的百分比，未扣成本",
-    "n": 253,
-    "stillOpen": 2,
-    "meanExtra": 12.7769,
-    "medianExtra": 0.0,
-    "betterRate": 0.4901,
+    "n": 254,
+    "stillOpen": 1,
+    "meanExtra": 12.7258,
+    "medianExtra": -0.1017,
+    "betterRate": 0.4882,
     "worstExtra": -23.9819,
-    "avgExtraDays": 21.0356,
-    "avgDeepestDip": -8.1675
+    "avgExtraDays": 21.0118,
+    "avgDeepestDip": -8.1486
   },
   "note": "insample＝前 70% 期間，oos＝後 30% 期間，兩者不混用；live＝實際逐日記錄的交易。N<30 不宣稱勝率。"
 }
