@@ -1,7 +1,15 @@
 {
-  "updatedAt": "2026-11-04T06:54:23.398153+00:00",
+  "updatedAt": "2026-11-04T14:41:52.481230+00:00",
   "note": "scripts/risk.py 自動抓到的美股財報日。要指定日期請改 data/events.json 的 earnings，那邊永遠優先。",
   "symbols": {
+    "AMD": {
+      "date": "2027-02-02",
+      "dateEnd": null,
+      "estimated": true,
+      "provider": "Yahoo",
+      "source": "https://finance.yahoo.com/quote/AMD/",
+      "fetchedAt": "2026-11-04"
+    },
     "ASTS": {
       "date": "2026-11-09",
       "dateEnd": null,
