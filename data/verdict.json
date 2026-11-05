@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-11-05T07:16:28.124615+00:00",
-  "dataTimestamp": "2026-11-05T07:12:47.779329+00:00",
+  "generatedAt": "2026-11-05T14:49:36.577900+00:00",
+  "dataTimestamp": "2026-11-05T14:45:27.751624+00:00",
   "sessions": {
     "TW": "2026-11-05",
     "US": "2026-11-04",
@@ -324,12 +324,10 @@
       ],
       "mismatch": null,
       "risk": {
-        "level": "mid",
-        "total": 4,
+        "level": "low",
+        "total": 3,
         "max": 10,
-        "reasons": [
-          "風險中"
-        ]
+        "reasons": []
       },
       "hold": {
         "code": "exit",
@@ -1096,7 +1094,7 @@
       "mismatch": null,
       "risk": {
         "level": "low",
-        "total": 2,
+        "total": 3,
         "max": 10,
         "reasons": []
       },
@@ -1849,7 +1847,7 @@
       "mismatch": null,
       "risk": {
         "level": "low",
-        "total": 3,
+        "total": 2,
         "max": 10,
         "reasons": []
       },
@@ -2337,7 +2335,7 @@
       "mismatch": null,
       "risk": {
         "level": "low",
-        "total": 3,
+        "total": 2,
         "max": 10,
         "reasons": []
       },
@@ -2461,7 +2459,7 @@
       "mismatch": null,
       "risk": {
         "level": "low",
-        "total": 2,
+        "total": 3,
         "max": 10,
         "reasons": []
       },
@@ -2633,7 +2631,7 @@
       "mismatch": null,
       "risk": {
         "level": "mid",
-        "total": 4,
+        "total": 5,
         "max": 10,
         "reasons": [
           "風險中"
@@ -2759,7 +2757,7 @@
       "mismatch": null,
       "risk": {
         "level": "low",
-        "total": 3,
+        "total": 2,
         "max": 10,
         "reasons": []
       },
@@ -3764,7 +3762,7 @@
       "plan": null,
       "text": "大盤空頭，不進場。",
       "notes": [
-        "財報約 2026-11-05（Nasdaq預估，公司尚未確認），還有 0 個交易日；這是 2026-11-04 抓到的結果"
+        "財報約 2026-11-06（Nasdaq預估，公司尚未確認），還有 1 個交易日"
       ],
       "mismatch": null,
       "risk": {
@@ -3778,7 +3776,7 @@
       },
       "hold": {
         "code": "keep",
-        "text": "續抱。失效價 86.60（距離 12.2%），收盤跌破就是出場優先。要加碼的話，條件和新進場一樣。財報約 2026-11-05（Nasdaq預估，公司尚未確認），還有 0 個交易日；這是 2026-11-04 抓到的結果。"
+        "text": "續抱。失效價 86.60（距離 12.2%），收盤跌破就是出場優先。要加碼的話，條件和新進場一樣。財報約 2026-11-06（Nasdaq預估，公司尚未確認），還有 1 個交易日。"
       }
     },
     "BTC-USD": {
