@@ -1,5 +1,5 @@
 {
- "generatedAt": "2026-11-06T01:33:54.293455+00:00",
+ "generatedAt": "2026-11-06T02:51:29.855130+00:00",
  "params": {
   "rsi_lo": 45,
   "rsi_hi": 60,
@@ -17,7 +17,7 @@
  },
  "note": "自動選股只是提示：用同一套進場規則核對，不會自動加入觀察名單，也不下單。",
  "errors": [
-  "台股 TWO 全市場收盤抓不到：IncompleteRead IncompleteRead(1932905 bytes read, 3396194 more expected)"
+  "台股 TWO 全市場收盤抓不到：IncompleteRead IncompleteRead(1441385 bytes read, 3887714 more expected)"
  ],
  "markets": {
   "TW": {
@@ -742,7 +742,7 @@
     }
    ],
    "universe": "證交所＋櫃買中心全市場日收盤，成交金額前 300 名",
-   "seconds": 87,
+   "seconds": 51,
    "session": "2026-11-05"
   },
   "US": {
@@ -752,7 +752,7 @@
    "failedSample": [
     "METAM：只有 8 根日 K"
    ],
-   "candidates": 32,
+   "candidates": 44,
    "signals": 0,
    "picks": [
     {
@@ -827,22 +827,22 @@
      "watched": false
     },
     {
-     "code": "TSLA",
-     "name": "Tesla Inc. Common Stock",
+     "code": "JPM",
+     "name": "JP Morgan Chase & Co. Common Stock",
      "market": "US",
-     "date": "2026-11-04",
-     "close": 385.19,
-     "pct": -3.34,
-     "entryLow": 377.4638,
-     "entryHigh": 387.0441,
-     "stop": 364.2794,
-     "target1": 419.8997,
-     "rr": 1.6599,
-     "rsi": 51.3755,
-     "volRatio": 1.2779,
-     "bias": 0.5162,
+     "date": "2026-11-05",
+     "close": 337.34,
+     "pct": -4.1947,
+     "entryLow": 331.9012,
+     "entryHigh": 340.3251,
+     "stop": 327.5852,
+     "target1": 354.5188,
+     "rr": 1.7611,
+     "rsi": 48.715,
+     "volRatio": 1.7544,
+     "bias": 0.1141,
      "zone": "IN_ZONE",
-     "dailyTrend": "多頭",
+     "dailyTrend": "盤整",
      "weeklyTrend": "盤整",
      "regime": "BEAR",
      "entrySignal": false,
@@ -852,7 +852,7 @@
       {
        "k": "above",
        "ok": true,
-       "t": "收在 SMA20 之上（乖離 0.5%）"
+       "t": "收在 SMA20 之上（乖離 0.1%）"
       },
       {
        "k": "bias",
@@ -867,17 +867,17 @@
       {
        "k": "rr",
        "ok": true,
-       "t": "報酬風險比 1.66 ≥ 1.5"
+       "t": "報酬風險比 1.76 ≥ 1.5"
       },
       {
        "k": "rsi",
        "ok": true,
-       "t": "RSI 51（45–60）"
+       "t": "RSI 49（45–60）"
       },
       {
        "k": "trend",
        "ok": true,
-       "t": "日線多頭、週線盤整（不能是空頭）"
+       "t": "日線盤整、週線盤整（不能是空頭）"
       },
       {
        "k": "macd",
@@ -892,30 +892,171 @@
       {
        "k": "vol",
        "ok": true,
-       "t": "量比 1.28 ≥ 1.2"
+       "t": "量比 1.75 ≥ 1.2"
       }
      ],
-     "watched": true,
-     "group": "US|AI機器人"
+     "watched": false
     },
     {
-     "code": "ING",
-     "name": "ING Group N.V. Common Stock",
+     "code": "ENB",
+     "name": "Enbridge Inc Common Stock",
      "market": "US",
-     "date": "2026-11-04",
-     "close": 32.84,
-     "pct": 6.2783,
-     "entryLow": 32.2139,
-     "entryHigh": 33.0315,
-     "stop": 31.7291,
-     "target1": 34.6283,
-     "rr": 1.6097,
-     "rsi": 47.6621,
-     "volRatio": 1.4465,
-     "bias": 0.4143,
+     "date": "2026-11-05",
+     "close": 48.11,
+     "pct": -1.3735,
+     "entryLow": 47.3499,
+     "entryHigh": 48.5517,
+     "stop": 47.2404,
+     "target1": 49.6327,
+     "rr": 1.7511,
+     "rsi": 48.7196,
+     "volRatio": 1.3025,
+     "bias": 0.0811,
      "zone": "IN_ZONE",
      "dailyTrend": "盤整",
      "weeklyTrend": "盤整",
+     "regime": "BEAR",
+     "entrySignal": false,
+     "passed": 8,
+     "total": 9,
+     "checks": [
+      {
+       "k": "above",
+       "ok": true,
+       "t": "收在 SMA20 之上（乖離 0.1%）"
+      },
+      {
+       "k": "bias",
+       "ok": true,
+       "t": "乖離 0–6%"
+      },
+      {
+       "k": "high",
+       "ok": true,
+       "t": "未貼近 20 日高"
+      },
+      {
+       "k": "rr",
+       "ok": true,
+       "t": "報酬風險比 1.75 ≥ 1.5"
+      },
+      {
+       "k": "rsi",
+       "ok": true,
+       "t": "RSI 49（45–60）"
+      },
+      {
+       "k": "trend",
+       "ok": true,
+       "t": "日線盤整、週線盤整（不能是空頭）"
+      },
+      {
+       "k": "macd",
+       "ok": true,
+       "t": "MACD 零軸上（不能轉弱）"
+      },
+      {
+       "k": "market",
+       "ok": false,
+       "t": "大盤空頭"
+      },
+      {
+       "k": "vol",
+       "ok": true,
+       "t": "量比 1.30 ≥ 1.2"
+      }
+     ],
+     "watched": false
+    },
+    {
+     "code": "AAPL",
+     "name": "Apple Inc. Common Stock",
+     "market": "US",
+     "date": "2026-11-05",
+     "close": 344.17,
+     "pct": -1.5279,
+     "entryLow": 337.9515,
+     "entryHigh": 346.529,
+     "stop": 332.4154,
+     "target1": 363.7547,
+     "rr": 1.6661,
+     "rsi": 53.0056,
+     "volRatio": 1.5608,
+     "bias": 0.3125,
+     "zone": "IN_ZONE",
+     "dailyTrend": "多頭",
+     "weeklyTrend": "多頭",
+     "regime": "BEAR",
+     "entrySignal": false,
+     "passed": 8,
+     "total": 9,
+     "checks": [
+      {
+       "k": "above",
+       "ok": true,
+       "t": "收在 SMA20 之上（乖離 0.3%）"
+      },
+      {
+       "k": "bias",
+       "ok": true,
+       "t": "乖離 0–6%"
+      },
+      {
+       "k": "high",
+       "ok": true,
+       "t": "未貼近 20 日高"
+      },
+      {
+       "k": "rr",
+       "ok": true,
+       "t": "報酬風險比 1.67 ≥ 1.5"
+      },
+      {
+       "k": "rsi",
+       "ok": true,
+       "t": "RSI 53（45–60）"
+      },
+      {
+       "k": "trend",
+       "ok": true,
+       "t": "日線多頭、週線多頭（不能是空頭）"
+      },
+      {
+       "k": "macd",
+       "ok": true,
+       "t": "MACD 零軸下（不能轉弱）"
+      },
+      {
+       "k": "market",
+       "ok": false,
+       "t": "大盤空頭"
+      },
+      {
+       "k": "vol",
+       "ok": true,
+       "t": "量比 1.56 ≥ 1.2"
+      }
+     ],
+     "watched": false
+    },
+    {
+     "code": "COF",
+     "name": "Capital One Financial Corporation Common",
+     "market": "US",
+     "date": "2026-11-05",
+     "close": 203.84,
+     "pct": -1.1972,
+     "entryLow": 199.9614,
+     "entryHigh": 205.0366,
+     "stop": 195.2819,
+     "target1": 218.0017,
+     "rr": 1.6548,
+     "rsi": 50.2146,
+     "volRatio": 1.2979,
+     "bias": 0.4106,
+     "zone": "IN_ZONE",
+     "dailyTrend": "盤整",
+     "weeklyTrend": "多頭",
      "regime": "BEAR",
      "entrySignal": false,
      "passed": 8,
@@ -939,17 +1080,17 @@
       {
        "k": "rr",
        "ok": true,
-       "t": "報酬風險比 1.61 ≥ 1.5"
+       "t": "報酬風險比 1.65 ≥ 1.5"
       },
       {
        "k": "rsi",
        "ok": true,
-       "t": "RSI 48（45–60）"
+       "t": "RSI 50（45–60）"
       },
       {
        "k": "trend",
        "ok": true,
-       "t": "日線盤整、週線盤整（不能是空頭）"
+       "t": "日線盤整、週線多頭（不能是空頭）"
       },
       {
        "k": "macd",
@@ -964,26 +1105,168 @@
       {
        "k": "vol",
        "ok": true,
-       "t": "量比 1.45 ≥ 1.2"
+       "t": "量比 1.30 ≥ 1.2"
       }
      ],
      "watched": false
     },
     {
-     "code": "BABA",
-     "name": "Alibaba Group Holding Limited American D",
+     "code": "NXPI",
+     "name": "NXP Semiconductors N.V. Common Stock",
      "market": "US",
-     "date": "2026-11-04",
-     "close": 105.29,
-     "pct": 4.9123,
-     "entryLow": 103.3925,
-     "entryHigh": 106.0167,
-     "stop": 101.2983,
-     "target1": 112.016,
-     "rr": 1.685,
-     "rsi": 50.0827,
-     "volRatio": 1.6546,
-     "bias": 0.3077,
+     "date": "2026-11-05",
+     "close": 244.43,
+     "pct": -7.7658,
+     "entryLow": 238.8261,
+     "entryHigh": 244.8876,
+     "stop": 227.2427,
+     "target1": 272.3338,
+     "rr": 1.6235,
+     "rsi": 49.8476,
+     "volRatio": 2.4268,
+     "bias": 0.8113,
+     "zone": "IN_ZONE",
+     "dailyTrend": "多頭",
+     "weeklyTrend": "盤整",
+     "regime": "BEAR",
+     "entrySignal": false,
+     "passed": 8,
+     "total": 9,
+     "checks": [
+      {
+       "k": "above",
+       "ok": true,
+       "t": "收在 SMA20 之上（乖離 0.8%）"
+      },
+      {
+       "k": "bias",
+       "ok": true,
+       "t": "乖離 0–6%"
+      },
+      {
+       "k": "high",
+       "ok": true,
+       "t": "未貼近 20 日高"
+      },
+      {
+       "k": "rr",
+       "ok": true,
+       "t": "報酬風險比 1.62 ≥ 1.5"
+      },
+      {
+       "k": "rsi",
+       "ok": true,
+       "t": "RSI 50（45–60）"
+      },
+      {
+       "k": "trend",
+       "ok": true,
+       "t": "日線多頭、週線盤整（不能是空頭）"
+      },
+      {
+       "k": "macd",
+       "ok": true,
+       "t": "MACD 零軸上（不能轉弱）"
+      },
+      {
+       "k": "market",
+       "ok": false,
+       "t": "大盤空頭"
+      },
+      {
+       "k": "vol",
+       "ok": true,
+       "t": "量比 2.43 ≥ 1.2"
+      }
+     ],
+     "watched": false
+    },
+    {
+     "code": "PFE",
+     "name": "Pfizer Inc. Common Stock",
+     "market": "US",
+     "date": "2026-11-05",
+     "close": 29.88,
+     "pct": -2.9555,
+     "entryLow": 29.2535,
+     "entryHigh": 29.996,
+     "stop": 28.811,
+     "target1": 31.508,
+     "rr": 1.5229,
+     "rsi": 54.121,
+     "volRatio": 1.5782,
+     "bias": 0.6094,
+     "zone": "IN_ZONE",
+     "dailyTrend": "多頭",
+     "weeklyTrend": "多頭",
+     "regime": "BEAR",
+     "entrySignal": false,
+     "passed": 8,
+     "total": 9,
+     "checks": [
+      {
+       "k": "above",
+       "ok": true,
+       "t": "收在 SMA20 之上（乖離 0.6%）"
+      },
+      {
+       "k": "bias",
+       "ok": true,
+       "t": "乖離 0–6%"
+      },
+      {
+       "k": "high",
+       "ok": true,
+       "t": "未貼近 20 日高"
+      },
+      {
+       "k": "rr",
+       "ok": true,
+       "t": "報酬風險比 1.52 ≥ 1.5"
+      },
+      {
+       "k": "rsi",
+       "ok": true,
+       "t": "RSI 54（45–60）"
+      },
+      {
+       "k": "trend",
+       "ok": true,
+       "t": "日線多頭、週線多頭（不能是空頭）"
+      },
+      {
+       "k": "macd",
+       "ok": true,
+       "t": "MACD 零軸下（不能轉弱）"
+      },
+      {
+       "k": "market",
+       "ok": false,
+       "t": "大盤空頭"
+      },
+      {
+       "k": "vol",
+       "ok": true,
+       "t": "量比 1.58 ≥ 1.2"
+      }
+     ],
+     "watched": false
+    },
+    {
+     "code": "PLD",
+     "name": "Prologis Inc. Common Stock",
+     "market": "US",
+     "date": "2026-11-05",
+     "close": 128.55,
+     "pct": -2.1392,
+     "entryLow": 126.2558,
+     "entryHigh": 129.4603,
+     "stop": 125.2025,
+     "target1": 134.006,
+     "rr": 1.6299,
+     "rsi": 47.9206,
+     "volRatio": 1.3627,
+     "bias": 0.2898,
      "zone": "IN_ZONE",
      "dailyTrend": "盤整",
      "weeklyTrend": "空頭",
@@ -1010,220 +1293,7 @@
       {
        "k": "rr",
        "ok": true,
-       "t": "報酬風險比 1.68 ≥ 1.5"
-      },
-      {
-       "k": "rsi",
-       "ok": true,
-       "t": "RSI 50（45–60）"
-      },
-      {
-       "k": "trend",
-       "ok": false,
-       "t": "日線盤整、週線空頭（不能是空頭）"
-      },
-      {
-       "k": "macd",
-       "ok": true,
-       "t": "MACD 零軸上（不能轉弱）"
-      },
-      {
-       "k": "market",
-       "ok": false,
-       "t": "大盤空頭"
-      },
-      {
-       "k": "vol",
-       "ok": true,
-       "t": "量比 1.65 ≥ 1.2"
-      }
-     ],
-     "watched": false
-    },
-    {
-     "code": "MPWR",
-     "name": "Monolithic Power Systems Inc. Common Sto",
-     "market": "US",
-     "date": "2026-11-04",
-     "close": 1261.08,
-     "pct": -5.0606,
-     "entryLow": 1232.5285,
-     "entryHigh": 1263.811,
-     "stop": 1164.8629,
-     "target1": 1419.5444,
-     "rr": 1.6469,
-     "rsi": 49.7584,
-     "volRatio": 1.293,
-     "bias": 0.7817,
-     "zone": "IN_ZONE",
-     "dailyTrend": "盤整",
-     "weeklyTrend": "空頭",
-     "regime": "BEAR",
-     "entrySignal": false,
-     "passed": 7,
-     "total": 9,
-     "checks": [
-      {
-       "k": "above",
-       "ok": true,
-       "t": "收在 SMA20 之上（乖離 0.8%）"
-      },
-      {
-       "k": "bias",
-       "ok": true,
-       "t": "乖離 0–6%"
-      },
-      {
-       "k": "high",
-       "ok": true,
-       "t": "未貼近 20 日高"
-      },
-      {
-       "k": "rr",
-       "ok": true,
-       "t": "報酬風險比 1.65 ≥ 1.5"
-      },
-      {
-       "k": "rsi",
-       "ok": true,
-       "t": "RSI 50（45–60）"
-      },
-      {
-       "k": "trend",
-       "ok": false,
-       "t": "日線盤整、週線空頭（不能是空頭）"
-      },
-      {
-       "k": "macd",
-       "ok": true,
-       "t": "MACD 零軸上（不能轉弱）"
-      },
-      {
-       "k": "market",
-       "ok": false,
-       "t": "大盤空頭"
-      },
-      {
-       "k": "vol",
-       "ok": true,
-       "t": "量比 1.29 ≥ 1.2"
-      }
-     ],
-     "watched": false
-    },
-    {
-     "code": "KOF",
-     "name": "Coca Cola Femsa S.A.B. de C.V.  American",
-     "market": "US",
-     "date": "2026-11-04",
-     "close": 116.4,
-     "pct": -0.0172,
-     "entryLow": 114.2004,
-     "entryHigh": 117.0989,
-     "stop": 112.0986,
-     "target1": 123.4416,
-     "rr": 1.6371,
-     "rsi": 56.1595,
-     "volRatio": 2.8901,
-     "bias": 0.3972,
-     "zone": "IN_ZONE",
-     "dailyTrend": "多頭",
-     "weeklyTrend": "多頭",
-     "regime": "BEAR",
-     "entrySignal": false,
-     "passed": 7,
-     "total": 9,
-     "checks": [
-      {
-       "k": "above",
-       "ok": true,
-       "t": "收在 SMA20 之上（乖離 0.4%）"
-      },
-      {
-       "k": "bias",
-       "ok": true,
-       "t": "乖離 0–6%"
-      },
-      {
-       "k": "high",
-       "ok": true,
-       "t": "未貼近 20 日高"
-      },
-      {
-       "k": "rr",
-       "ok": true,
-       "t": "報酬風險比 1.64 ≥ 1.5"
-      },
-      {
-       "k": "rsi",
-       "ok": true,
-       "t": "RSI 56（45–60）"
-      },
-      {
-       "k": "trend",
-       "ok": true,
-       "t": "日線多頭、週線多頭（不能是空頭）"
-      },
-      {
-       "k": "macd",
-       "ok": false,
-       "t": "MACD 轉弱（不能轉弱）"
-      },
-      {
-       "k": "market",
-       "ok": false,
-       "t": "大盤空頭"
-      },
-      {
-       "k": "vol",
-       "ok": true,
-       "t": "量比 2.89 ≥ 1.2"
-      }
-     ],
-     "watched": false
-    },
-    {
-     "code": "C",
-     "name": "Citigroup Inc. Common Stock",
-     "market": "US",
-     "date": "2026-11-04",
-     "close": 124.74,
-     "pct": 1.6543,
-     "entryLow": 122.2326,
-     "entryHigh": 125.3349,
-     "stop": 120.446,
-     "target1": 131.428,
-     "rr": 1.5575,
-     "rsi": 48.0725,
-     "volRatio": 1.6597,
-     "bias": 0.5206,
-     "zone": "IN_ZONE",
-     "dailyTrend": "盤整",
-     "weeklyTrend": "空頭",
-     "regime": "BEAR",
-     "entrySignal": false,
-     "passed": 7,
-     "total": 9,
-     "checks": [
-      {
-       "k": "above",
-       "ok": true,
-       "t": "收在 SMA20 之上（乖離 0.5%）"
-      },
-      {
-       "k": "bias",
-       "ok": true,
-       "t": "乖離 0–6%"
-      },
-      {
-       "k": "high",
-       "ok": true,
-       "t": "未貼近 20 日高"
-      },
-      {
-       "k": "rr",
-       "ok": true,
-       "t": "報酬風險比 1.56 ≥ 1.5"
+       "t": "報酬風險比 1.63 ≥ 1.5"
       },
       {
        "k": "rsi",
@@ -1248,29 +1318,100 @@
       {
        "k": "vol",
        "ok": true,
-       "t": "量比 1.66 ≥ 1.2"
+       "t": "量比 1.36 ≥ 1.2"
       }
      ],
      "watched": false
     },
     {
-     "code": "SMFG",
-     "name": "Sumitomo Mitsui Financial Group Inc Unsp",
+     "code": "TD",
+     "name": "Toronto Dominion Bank (The) Common Stock",
      "market": "US",
-     "date": "2026-11-04",
-     "close": 24.63,
-     "pct": 3.1407,
-     "entryLow": 24.1089,
-     "entryHigh": 24.7208,
-     "stop": 23.8923,
-     "target1": 25.7001,
-     "rr": 1.4506,
-     "rsi": 48.8716,
-     "volRatio": 1.2258,
-     "bias": 0.6292,
+     "date": "2026-11-05",
+     "close": 123.09,
+     "pct": -3.986,
+     "entryLow": 120.8743,
+     "entryHigh": 123.9421,
+     "stop": 119.9293,
+     "target1": 128.1971,
+     "rr": 1.6158,
+     "rsi": 50.8335,
+     "volRatio": 0.9426,
+     "bias": 0.3056,
+     "zone": "IN_ZONE",
+     "dailyTrend": "多頭",
+     "weeklyTrend": "多頭",
+     "regime": "BEAR",
+     "entrySignal": false,
+     "passed": 7,
+     "total": 9,
+     "checks": [
+      {
+       "k": "above",
+       "ok": true,
+       "t": "收在 SMA20 之上（乖離 0.3%）"
+      },
+      {
+       "k": "bias",
+       "ok": true,
+       "t": "乖離 0–6%"
+      },
+      {
+       "k": "high",
+       "ok": true,
+       "t": "未貼近 20 日高"
+      },
+      {
+       "k": "rr",
+       "ok": true,
+       "t": "報酬風險比 1.62 ≥ 1.5"
+      },
+      {
+       "k": "rsi",
+       "ok": true,
+       "t": "RSI 51（45–60）"
+      },
+      {
+       "k": "trend",
+       "ok": true,
+       "t": "日線多頭、週線多頭（不能是空頭）"
+      },
+      {
+       "k": "macd",
+       "ok": true,
+       "t": "MACD 零軸上（不能轉弱）"
+      },
+      {
+       "k": "market",
+       "ok": false,
+       "t": "大盤空頭"
+      },
+      {
+       "k": "vol",
+       "ok": false,
+       "t": "量比 0.94 ≥ 1.2"
+      }
+     ],
+     "watched": false
+    },
+    {
+     "code": "UBER",
+     "name": "Uber Technologies Inc. Common Stock",
+     "market": "US",
+     "date": "2026-11-05",
+     "close": 68.78,
+     "pct": -1.56,
+     "entryLow": 67.3573,
+     "entryHigh": 69.0668,
+     "stop": 66.0036,
+     "target1": 73.1423,
+     "rr": 1.5712,
+     "rsi": 50.9934,
+     "volRatio": 1.6158,
+     "bias": 0.5806,
      "zone": "IN_ZONE",
      "dailyTrend": "盤整",
-     "weeklyTrend": "盤整",
+     "weeklyTrend": "空頭",
      "regime": "BEAR",
      "entrySignal": false,
      "passed": 7,
@@ -1293,18 +1434,18 @@
       },
       {
        "k": "rr",
-       "ok": false,
-       "t": "報酬風險比 1.45 ≥ 1.5"
+       "ok": true,
+       "t": "報酬風險比 1.57 ≥ 1.5"
       },
       {
        "k": "rsi",
        "ok": true,
-       "t": "RSI 49（45–60）"
+       "t": "RSI 51（45–60）"
       },
       {
        "k": "trend",
-       "ok": true,
-       "t": "日線盤整、週線盤整（不能是空頭）"
+       "ok": false,
+       "t": "日線盤整、週線空頭（不能是空頭）"
       },
       {
        "k": "macd",
@@ -1319,156 +1460,14 @@
       {
        "k": "vol",
        "ok": true,
-       "t": "量比 1.23 ≥ 1.2"
-      }
-     ],
-     "watched": false
-    },
-    {
-     "code": "AEM",
-     "name": "Agnico Eagle Mines Limited Common Stock",
-     "market": "US",
-     "date": "2026-11-04",
-     "close": 183.45,
-     "pct": 9.6664,
-     "entryLow": 177.9915,
-     "entryHigh": 182.509,
-     "stop": 171.3994,
-     "target1": 200.5047,
-     "rr": 1.4153,
-     "rsi": 51.5697,
-     "volRatio": 1.7368,
-     "bias": 1.5207,
-     "zone": "ABOVE_ZONE",
-     "dailyTrend": "盤整",
-     "weeklyTrend": "盤整",
-     "regime": "BEAR",
-     "entrySignal": false,
-     "passed": 7,
-     "total": 9,
-     "checks": [
-      {
-       "k": "above",
-       "ok": true,
-       "t": "收在 SMA20 之上（乖離 1.5%）"
-      },
-      {
-       "k": "bias",
-       "ok": true,
-       "t": "乖離 0–6%"
-      },
-      {
-       "k": "high",
-       "ok": true,
-       "t": "未貼近 20 日高"
-      },
-      {
-       "k": "rr",
-       "ok": false,
-       "t": "報酬風險比 1.42 ≥ 1.5"
-      },
-      {
-       "k": "rsi",
-       "ok": true,
-       "t": "RSI 52（45–60）"
-      },
-      {
-       "k": "trend",
-       "ok": true,
-       "t": "日線盤整、週線盤整（不能是空頭）"
-      },
-      {
-       "k": "macd",
-       "ok": true,
-       "t": "MACD 零軸下（不能轉弱）"
-      },
-      {
-       "k": "market",
-       "ok": false,
-       "t": "大盤空頭"
-      },
-      {
-       "k": "vol",
-       "ok": true,
-       "t": "量比 1.74 ≥ 1.2"
-      }
-     ],
-     "watched": false
-    },
-    {
-     "code": "NTES",
-     "name": "NetEase Inc. American Depositary Shares",
-     "market": "US",
-     "date": "2026-11-04",
-     "close": 121.26,
-     "pct": 4.3276,
-     "entryLow": 118.4517,
-     "entryHigh": 121.4581,
-     "stop": 116.9624,
-     "target1": 127.2974,
-     "rr": 1.4048,
-     "rsi": 54.5798,
-     "volRatio": 1.3757,
-     "bias": 0.8353,
-     "zone": "IN_ZONE",
-     "dailyTrend": "盤整",
-     "weeklyTrend": "盤整",
-     "regime": "BEAR",
-     "entrySignal": false,
-     "passed": 7,
-     "total": 9,
-     "checks": [
-      {
-       "k": "above",
-       "ok": true,
-       "t": "收在 SMA20 之上（乖離 0.8%）"
-      },
-      {
-       "k": "bias",
-       "ok": true,
-       "t": "乖離 0–6%"
-      },
-      {
-       "k": "high",
-       "ok": true,
-       "t": "未貼近 20 日高"
-      },
-      {
-       "k": "rr",
-       "ok": false,
-       "t": "報酬風險比 1.40 ≥ 1.5"
-      },
-      {
-       "k": "rsi",
-       "ok": true,
-       "t": "RSI 55（45–60）"
-      },
-      {
-       "k": "trend",
-       "ok": true,
-       "t": "日線盤整、週線盤整（不能是空頭）"
-      },
-      {
-       "k": "macd",
-       "ok": true,
-       "t": "MACD 零軸下（不能轉弱）"
-      },
-      {
-       "k": "market",
-       "ok": false,
-       "t": "大盤空頭"
-      },
-      {
-       "k": "vol",
-       "ok": true,
-       "t": "量比 1.38 ≥ 1.2"
+       "t": "量比 1.62 ≥ 1.2"
       }
      ],
      "watched": false
     }
    ],
    "universe": "Nasdaq 全市場名單，市值前 300 名",
-   "seconds": 24,
+   "seconds": 15,
    "session": "2026-11-05"
   },
   "CRYPTO": {
