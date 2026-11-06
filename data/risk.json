@@ -1,9 +1,9 @@
 {
-  "generatedAt": "2026-11-05T14:46:25.671418+00:00",
+  "generatedAt": "2026-11-06T01:31:17.191258+00:00",
   "today": {
-    "TW": "2026-11-05",
+    "TW": "2026-11-06",
     "US": "2026-11-05",
-    "CRYPTO": "2026-11-05"
+    "CRYPTO": "2026-11-06"
   },
   "thresholds": {
     "bias_mid": 6.0,
@@ -118,7 +118,7 @@
     }
   },
   "events": {
-    "updatedAt": "2026-11-05",
+    "updatedAt": "2026-11-06",
     "fresh": true,
     "used": 25,
     "earnings": 5,
@@ -145,11 +145,11 @@
         },
         "earnings": {
           "score": 0,
-          "why": "年報最晚 2027-03-31 要公布（法定期限，多數公司會提早），還有 104 個交易日",
+          "why": "年報最晚 2027-03-31 要公布（法定期限，多數公司會提早），還有 103 個交易日",
           "estimated": true,
           "date": "2027-03-31",
           "source": "https://mops.twse.com.tw/mops/#/web/t100sb02_1",
-          "days": 104,
+          "days": 103,
           "provider": "法定期限"
         },
         "fundamentals": {
@@ -191,11 +191,11 @@
         },
         "earnings": {
           "score": 1,
-          "why": "第三季財報最晚 2026-11-14 要公布（法定期限，多數公司會提早），還有 6 個交易日",
+          "why": "第三季財報最晚 2026-11-14 要公布（法定期限，多數公司會提早），還有 5 個交易日",
           "estimated": true,
           "date": "2026-11-14",
           "source": "https://mops.twse.com.tw/mops/#/web/t100sb02_1",
-          "days": 6,
+          "days": 5,
           "provider": "法定期限"
         },
         "fundamentals": {
@@ -237,11 +237,11 @@
         },
         "earnings": {
           "score": 1,
-          "why": "第三季財報最晚 2026-11-14 要公布（法定期限，多數公司會提早），還有 6 個交易日",
+          "why": "第三季財報最晚 2026-11-14 要公布（法定期限，多數公司會提早），還有 5 個交易日",
           "estimated": true,
           "date": "2026-11-14",
           "source": "https://mops.twse.com.tw/mops/#/web/t100sb02_1",
-          "days": 6,
+          "days": 5,
           "provider": "法定期限"
         },
         "fundamentals": {
@@ -285,11 +285,11 @@
         },
         "earnings": {
           "score": 1,
-          "why": "第三季財報最晚 2026-11-14 要公布（法定期限，多數公司會提早），還有 6 個交易日",
+          "why": "第三季財報最晚 2026-11-14 要公布（法定期限，多數公司會提早），還有 5 個交易日",
           "estimated": true,
           "date": "2026-11-14",
           "source": "https://mops.twse.com.tw/mops/#/web/t100sb02_1",
-          "days": 6,
+          "days": 5,
           "provider": "法定期限"
         },
         "fundamentals": {
@@ -331,17 +331,17 @@
         },
         "earnings": {
           "score": 1,
-          "why": "第三季財報最晚 2026-11-14 要公布（法定期限，多數公司會提早），還有 6 個交易日",
+          "why": "第三季財報最晚 2026-11-14 要公布（法定期限，多數公司會提早），還有 5 個交易日",
           "estimated": true,
           "date": "2026-11-14",
           "source": "https://mops.twse.com.tw/mops/#/web/t100sb02_1",
-          "days": 6,
+          "days": 5,
           "provider": "法定期限"
         },
         "fundamentals": {
           "score": 1,
-          "why": "營收年增 +13.8%（2026-09）、年增率連兩個月放緩（+42%→+41%→+14%）、毛利率 32.6%，年變動 +2.7 個百分點（2026-06-30）",
-          "date": "2026-09"
+          "why": "營收年增 +15.8%（2026-10）、毛利率 25.8%，年變動 -5.5 個百分點（2026-09-30）",
+          "date": "2026-10"
         },
         "chips": {
           "score": 0,
@@ -382,11 +382,11 @@
         },
         "earnings": {
           "score": 1,
-          "why": "第三季財報最晚 2026-11-14 要公布（法定期限，多數公司會提早），還有 6 個交易日",
+          "why": "第三季財報最晚 2026-11-14 要公布（法定期限，多數公司會提早），還有 5 個交易日",
           "estimated": true,
           "date": "2026-11-14",
           "source": "https://mops.twse.com.tw/mops/#/web/t100sb02_1",
-          "days": 6,
+          "days": 5,
           "provider": "法定期限"
         },
         "fundamentals": {
@@ -431,11 +431,11 @@
         },
         "earnings": {
           "score": 1,
-          "why": "第三季財報最晚 2026-11-14 要公布（法定期限，多數公司會提早），還有 6 個交易日",
+          "why": "第三季財報最晚 2026-11-14 要公布（法定期限，多數公司會提早），還有 5 個交易日",
           "estimated": true,
           "date": "2026-11-14",
           "source": "https://mops.twse.com.tw/mops/#/web/t100sb02_1",
-          "days": 6,
+          "days": 5,
           "provider": "法定期限"
         },
         "fundamentals": {
@@ -477,11 +477,11 @@
         },
         "earnings": {
           "score": 1,
-          "why": "第三季財報最晚 2026-11-14 要公布（法定期限，多數公司會提早），還有 6 個交易日",
+          "why": "第三季財報最晚 2026-11-14 要公布（法定期限，多數公司會提早），還有 5 個交易日",
           "estimated": true,
           "date": "2026-11-14",
           "source": "https://mops.twse.com.tw/mops/#/web/t100sb02_1",
-          "days": 6,
+          "days": 5,
           "provider": "法定期限"
         },
         "fundamentals": {
@@ -523,11 +523,11 @@
         },
         "earnings": {
           "score": 1,
-          "why": "第三季財報最晚 2026-11-14 要公布（法定期限，多數公司會提早），還有 6 個交易日",
+          "why": "第三季財報最晚 2026-11-14 要公布（法定期限，多數公司會提早），還有 5 個交易日",
           "estimated": true,
           "date": "2026-11-14",
           "source": "https://mops.twse.com.tw/mops/#/web/t100sb02_1",
-          "days": 6,
+          "days": 5,
           "provider": "法定期限"
         },
         "fundamentals": {
@@ -569,11 +569,11 @@
         },
         "earnings": {
           "score": 1,
-          "why": "第三季財報最晚 2026-11-14 要公布（法定期限，多數公司會提早），還有 6 個交易日",
+          "why": "第三季財報最晚 2026-11-14 要公布（法定期限，多數公司會提早），還有 5 個交易日",
           "estimated": true,
           "date": "2026-11-14",
           "source": "https://mops.twse.com.tw/mops/#/web/t100sb02_1",
-          "days": 6,
+          "days": 5,
           "provider": "法定期限"
         },
         "fundamentals": {
@@ -615,11 +615,11 @@
         },
         "earnings": {
           "score": 1,
-          "why": "第三季財報最晚 2026-11-14 要公布（法定期限，多數公司會提早），還有 6 個交易日",
+          "why": "第三季財報最晚 2026-11-14 要公布（法定期限，多數公司會提早），還有 5 個交易日",
           "estimated": true,
           "date": "2026-11-14",
           "source": "https://mops.twse.com.tw/mops/#/web/t100sb02_1",
-          "days": 6,
+          "days": 5,
           "provider": "法定期限"
         },
         "fundamentals": {
@@ -661,11 +661,11 @@
         },
         "earnings": {
           "score": 1,
-          "why": "第三季財報最晚 2026-11-14 要公布（法定期限，多數公司會提早），還有 6 個交易日",
+          "why": "第三季財報最晚 2026-11-14 要公布（法定期限，多數公司會提早），還有 5 個交易日",
           "estimated": true,
           "date": "2026-11-14",
           "source": "https://mops.twse.com.tw/mops/#/web/t100sb02_1",
-          "days": 6,
+          "days": 5,
           "provider": "法定期限"
         },
         "fundamentals": {
@@ -707,17 +707,17 @@
         },
         "earnings": {
           "score": 1,
-          "why": "第三季財報最晚 2026-11-14 要公布（法定期限，多數公司會提早），還有 6 個交易日",
+          "why": "第三季財報最晚 2026-11-14 要公布（法定期限，多數公司會提早），還有 5 個交易日",
           "estimated": true,
           "date": "2026-11-14",
           "source": "https://mops.twse.com.tw/mops/#/web/t100sb02_1",
-          "days": 6,
+          "days": 5,
           "provider": "法定期限"
         },
         "fundamentals": {
           "score": 0,
-          "why": "營收年增 +36.1%（2026-09）、毛利率 23.1%，年變動 +4.7 個百分點（2026-06-30）",
-          "date": "2026-09"
+          "why": "營收年增 +40.0%（2026-10）、毛利率 23.1%，年變動 +4.7 個百分點（2026-06-30）",
+          "date": "2026-10"
         },
         "chips": {
           "score": 0,
@@ -757,17 +757,17 @@
         },
         "earnings": {
           "score": 1,
-          "why": "第三季財報最晚 2026-11-14 要公布（法定期限，多數公司會提早），還有 6 個交易日",
+          "why": "第三季財報最晚 2026-11-14 要公布（法定期限，多數公司會提早），還有 5 個交易日",
           "estimated": true,
           "date": "2026-11-14",
           "source": "https://mops.twse.com.tw/mops/#/web/t100sb02_1",
-          "days": 6,
+          "days": 5,
           "provider": "法定期限"
         },
         "fundamentals": {
           "score": 0,
-          "why": "營收年增 +110.7%（2026-09）、毛利率 22.0%，年變動 +6.4 個百分點（2026-06-30）",
-          "date": "2026-09"
+          "why": "營收年增 +119.5%（2026-10）、毛利率 22.0%，年變動 +6.4 個百分點（2026-06-30）",
+          "date": "2026-10"
         },
         "chips": {
           "score": 2,
@@ -804,11 +804,11 @@
         },
         "earnings": {
           "score": 1,
-          "why": "第三季財報最晚 2026-11-14 要公布（法定期限，多數公司會提早），還有 6 個交易日",
+          "why": "第三季財報最晚 2026-11-14 要公布（法定期限，多數公司會提早），還有 5 個交易日",
           "estimated": true,
           "date": "2026-11-14",
           "source": "https://mops.twse.com.tw/mops/#/web/t100sb02_1",
-          "days": 6,
+          "days": 5,
           "provider": "法定期限"
         },
         "fundamentals": {
@@ -850,11 +850,11 @@
         },
         "earnings": {
           "score": 1,
-          "why": "第三季財報最晚 2026-11-14 要公布（法定期限，多數公司會提早），還有 6 個交易日",
+          "why": "第三季財報最晚 2026-11-14 要公布（法定期限，多數公司會提早），還有 5 個交易日",
           "estimated": true,
           "date": "2026-11-14",
           "source": "https://mops.twse.com.tw/mops/#/web/t100sb02_1",
-          "days": 6,
+          "days": 5,
           "provider": "法定期限"
         },
         "fundamentals": {
@@ -896,11 +896,11 @@
         },
         "earnings": {
           "score": 1,
-          "why": "第三季財報最晚 2026-11-14 要公布（法定期限，多數公司會提早），還有 6 個交易日",
+          "why": "第三季財報最晚 2026-11-14 要公布（法定期限，多數公司會提早），還有 5 個交易日",
           "estimated": true,
           "date": "2026-11-14",
           "source": "https://mops.twse.com.tw/mops/#/web/t100sb02_1",
-          "days": 6,
+          "days": 5,
           "provider": "法定期限"
         },
         "fundamentals": {
@@ -942,11 +942,11 @@
         },
         "earnings": {
           "score": 1,
-          "why": "第三季財報最晚 2026-11-14 要公布（法定期限，多數公司會提早），還有 6 個交易日",
+          "why": "第三季財報最晚 2026-11-14 要公布（法定期限，多數公司會提早），還有 5 個交易日",
           "estimated": true,
           "date": "2026-11-14",
           "source": "https://mops.twse.com.tw/mops/#/web/t100sb02_1",
-          "days": 6,
+          "days": 5,
           "provider": "法定期限"
         },
         "fundamentals": {
@@ -988,11 +988,11 @@
         },
         "earnings": {
           "score": 1,
-          "why": "第三季財報最晚 2026-11-14 要公布（法定期限，多數公司會提早），還有 6 個交易日",
+          "why": "第三季財報最晚 2026-11-14 要公布（法定期限，多數公司會提早），還有 5 個交易日",
           "estimated": true,
           "date": "2026-11-14",
           "source": "https://mops.twse.com.tw/mops/#/web/t100sb02_1",
-          "days": 6,
+          "days": 5,
           "provider": "法定期限"
         },
         "fundamentals": {
@@ -1034,11 +1034,11 @@
         },
         "earnings": {
           "score": 1,
-          "why": "第三季財報最晚 2026-11-14 要公布（法定期限，多數公司會提早），還有 6 個交易日",
+          "why": "第三季財報最晚 2026-11-14 要公布（法定期限，多數公司會提早），還有 5 個交易日",
           "estimated": true,
           "date": "2026-11-14",
           "source": "https://mops.twse.com.tw/mops/#/web/t100sb02_1",
-          "days": 6,
+          "days": 5,
           "provider": "法定期限"
         },
         "fundamentals": {
@@ -1080,11 +1080,11 @@
         },
         "earnings": {
           "score": 1,
-          "why": "第三季財報最晚 2026-11-14 要公布（法定期限，多數公司會提早），還有 6 個交易日",
+          "why": "第三季財報最晚 2026-11-14 要公布（法定期限，多數公司會提早），還有 5 個交易日",
           "estimated": true,
           "date": "2026-11-14",
           "source": "https://mops.twse.com.tw/mops/#/web/t100sb02_1",
-          "days": 6,
+          "days": 5,
           "provider": "法定期限"
         },
         "fundamentals": {
@@ -1126,11 +1126,11 @@
         },
         "earnings": {
           "score": 1,
-          "why": "第三季財報最晚 2026-11-14 要公布（法定期限，多數公司會提早），還有 6 個交易日",
+          "why": "第三季財報最晚 2026-11-14 要公布（法定期限，多數公司會提早），還有 5 個交易日",
           "estimated": true,
           "date": "2026-11-14",
           "source": "https://mops.twse.com.tw/mops/#/web/t100sb02_1",
-          "days": 6,
+          "days": 5,
           "provider": "法定期限"
         },
         "fundamentals": {
@@ -1172,11 +1172,11 @@
         },
         "earnings": {
           "score": 1,
-          "why": "第三季財報最晚 2026-11-14 要公布（法定期限，多數公司會提早），還有 6 個交易日",
+          "why": "第三季財報最晚 2026-11-14 要公布（法定期限，多數公司會提早），還有 5 個交易日",
           "estimated": true,
           "date": "2026-11-14",
           "source": "https://mops.twse.com.tw/mops/#/web/t100sb02_1",
-          "days": 6,
+          "days": 5,
           "provider": "法定期限"
         },
         "fundamentals": {
@@ -1218,11 +1218,11 @@
         },
         "earnings": {
           "score": 1,
-          "why": "第三季財報最晚 2026-11-14 要公布（法定期限，多數公司會提早），還有 6 個交易日",
+          "why": "第三季財報最晚 2026-11-14 要公布（法定期限，多數公司會提早），還有 5 個交易日",
           "estimated": true,
           "date": "2026-11-14",
           "source": "https://mops.twse.com.tw/mops/#/web/t100sb02_1",
-          "days": 6,
+          "days": 5,
           "provider": "法定期限"
         },
         "fundamentals": {
@@ -1264,17 +1264,17 @@
         },
         "earnings": {
           "score": 1,
-          "why": "第三季財報最晚 2026-11-14 要公布（法定期限，多數公司會提早），還有 6 個交易日",
+          "why": "第三季財報最晚 2026-11-14 要公布（法定期限，多數公司會提早），還有 5 個交易日",
           "estimated": true,
           "date": "2026-11-14",
           "source": "https://mops.twse.com.tw/mops/#/web/t100sb02_1",
-          "days": 6,
+          "days": 5,
           "provider": "法定期限"
         },
         "fundamentals": {
           "score": 0,
-          "why": "營收年增 +15.0%（2026-09）、毛利率 18.5%，年變動 +0.3 個百分點（2026-06-30）",
-          "date": "2026-09"
+          "why": "營收年增 +24.7%（2026-10）、毛利率 18.5%，年變動 +0.3 個百分點（2026-06-30）",
+          "date": "2026-10"
         },
         "chips": {
           "score": 0,
@@ -1310,11 +1310,11 @@
         },
         "earnings": {
           "score": 1,
-          "why": "第三季財報最晚 2026-11-14 要公布（法定期限，多數公司會提早），還有 6 個交易日",
+          "why": "第三季財報最晚 2026-11-14 要公布（法定期限，多數公司會提早），還有 5 個交易日",
           "estimated": true,
           "date": "2026-11-14",
           "source": "https://mops.twse.com.tw/mops/#/web/t100sb02_1",
-          "days": 6,
+          "days": 5,
           "provider": "法定期限"
         },
         "fundamentals": {
@@ -1356,11 +1356,11 @@
         },
         "earnings": {
           "score": 1,
-          "why": "第三季財報最晚 2026-11-14 要公布（法定期限，多數公司會提早），還有 6 個交易日",
+          "why": "第三季財報最晚 2026-11-14 要公布（法定期限，多數公司會提早），還有 5 個交易日",
           "estimated": true,
           "date": "2026-11-14",
           "source": "https://mops.twse.com.tw/mops/#/web/t100sb02_1",
-          "days": 6,
+          "days": 5,
           "provider": "法定期限"
         },
         "fundamentals": {
@@ -1402,11 +1402,11 @@
         },
         "earnings": {
           "score": 1,
-          "why": "第三季財報最晚 2026-11-14 要公布（法定期限，多數公司會提早），還有 6 個交易日",
+          "why": "第三季財報最晚 2026-11-14 要公布（法定期限，多數公司會提早），還有 5 個交易日",
           "estimated": true,
           "date": "2026-11-14",
           "source": "https://mops.twse.com.tw/mops/#/web/t100sb02_1",
-          "days": 6,
+          "days": 5,
           "provider": "法定期限"
         },
         "fundamentals": {
@@ -1448,11 +1448,11 @@
         },
         "earnings": {
           "score": 1,
-          "why": "第三季財報最晚 2026-11-14 要公布（法定期限，多數公司會提早），還有 6 個交易日",
+          "why": "第三季財報最晚 2026-11-14 要公布（法定期限，多數公司會提早），還有 5 個交易日",
           "estimated": true,
           "date": "2026-11-14",
           "source": "https://mops.twse.com.tw/mops/#/web/t100sb02_1",
-          "days": 6,
+          "days": 5,
           "provider": "法定期限"
         },
         "fundamentals": {
@@ -1494,11 +1494,11 @@
         },
         "earnings": {
           "score": 1,
-          "why": "第三季財報最晚 2026-11-14 要公布（法定期限，多數公司會提早），還有 6 個交易日",
+          "why": "第三季財報最晚 2026-11-14 要公布（法定期限，多數公司會提早），還有 5 個交易日",
           "estimated": true,
           "date": "2026-11-14",
           "source": "https://mops.twse.com.tw/mops/#/web/t100sb02_1",
-          "days": 6,
+          "days": 5,
           "provider": "法定期限"
         },
         "fundamentals": {
@@ -1540,11 +1540,11 @@
         },
         "earnings": {
           "score": 1,
-          "why": "第三季財報最晚 2026-11-14 要公布（法定期限，多數公司會提早），還有 6 個交易日",
+          "why": "第三季財報最晚 2026-11-14 要公布（法定期限，多數公司會提早），還有 5 個交易日",
           "estimated": true,
           "date": "2026-11-14",
           "source": "https://mops.twse.com.tw/mops/#/web/t100sb02_1",
-          "days": 6,
+          "days": 5,
           "provider": "法定期限"
         },
         "fundamentals": {
@@ -1586,11 +1586,11 @@
         },
         "earnings": {
           "score": 1,
-          "why": "第三季財報最晚 2026-11-14 要公布（法定期限，多數公司會提早），還有 6 個交易日",
+          "why": "第三季財報最晚 2026-11-14 要公布（法定期限，多數公司會提早），還有 5 個交易日",
           "estimated": true,
           "date": "2026-11-14",
           "source": "https://mops.twse.com.tw/mops/#/web/t100sb02_1",
-          "days": 6,
+          "days": 5,
           "provider": "法定期限"
         },
         "fundamentals": {
@@ -1632,11 +1632,11 @@
         },
         "earnings": {
           "score": 1,
-          "why": "第三季財報最晚 2026-11-14 要公布（法定期限，多數公司會提早），還有 6 個交易日",
+          "why": "第三季財報最晚 2026-11-14 要公布（法定期限，多數公司會提早），還有 5 個交易日",
           "estimated": true,
           "date": "2026-11-14",
           "source": "https://mops.twse.com.tw/mops/#/web/t100sb02_1",
-          "days": 6,
+          "days": 5,
           "provider": "法定期限"
         },
         "fundamentals": {
@@ -1678,11 +1678,11 @@
         },
         "earnings": {
           "score": 1,
-          "why": "第三季財報最晚 2026-11-14 要公布（法定期限，多數公司會提早），還有 6 個交易日",
+          "why": "第三季財報最晚 2026-11-14 要公布（法定期限，多數公司會提早），還有 5 個交易日",
           "estimated": true,
           "date": "2026-11-14",
           "source": "https://mops.twse.com.tw/mops/#/web/t100sb02_1",
-          "days": 6,
+          "days": 5,
           "provider": "法定期限"
         },
         "fundamentals": {
@@ -1724,11 +1724,11 @@
         },
         "earnings": {
           "score": 1,
-          "why": "第三季財報最晚 2026-11-14 要公布（法定期限，多數公司會提早），還有 6 個交易日",
+          "why": "第三季財報最晚 2026-11-14 要公布（法定期限，多數公司會提早），還有 5 個交易日",
           "estimated": true,
           "date": "2026-11-14",
           "source": "https://mops.twse.com.tw/mops/#/web/t100sb02_1",
-          "days": 6,
+          "days": 5,
           "provider": "法定期限"
         },
         "fundamentals": {
@@ -1770,11 +1770,11 @@
         },
         "earnings": {
           "score": 1,
-          "why": "第三季財報最晚 2026-11-14 要公布（法定期限，多數公司會提早），還有 6 個交易日",
+          "why": "第三季財報最晚 2026-11-14 要公布（法定期限，多數公司會提早），還有 5 個交易日",
           "estimated": true,
           "date": "2026-11-14",
           "source": "https://mops.twse.com.tw/mops/#/web/t100sb02_1",
-          "days": 6,
+          "days": 5,
           "provider": "法定期限"
         },
         "fundamentals": {
@@ -1816,11 +1816,11 @@
         },
         "earnings": {
           "score": 1,
-          "why": "第三季財報最晚 2026-11-14 要公布（法定期限，多數公司會提早），還有 6 個交易日",
+          "why": "第三季財報最晚 2026-11-14 要公布（法定期限，多數公司會提早），還有 5 個交易日",
           "estimated": true,
           "date": "2026-11-14",
           "source": "https://mops.twse.com.tw/mops/#/web/t100sb02_1",
-          "days": 6,
+          "days": 5,
           "provider": "法定期限"
         },
         "fundamentals": {
@@ -1862,11 +1862,11 @@
         },
         "earnings": {
           "score": 1,
-          "why": "第三季財報最晚 2026-11-14 要公布（法定期限，多數公司會提早），還有 6 個交易日",
+          "why": "第三季財報最晚 2026-11-14 要公布（法定期限，多數公司會提早），還有 5 個交易日",
           "estimated": true,
           "date": "2026-11-14",
           "source": "https://mops.twse.com.tw/mops/#/web/t100sb02_1",
-          "days": 6,
+          "days": 5,
           "provider": "法定期限"
         },
         "fundamentals": {
@@ -1908,11 +1908,11 @@
         },
         "earnings": {
           "score": 1,
-          "why": "第三季財報最晚 2026-11-14 要公布（法定期限，多數公司會提早），還有 6 個交易日",
+          "why": "第三季財報最晚 2026-11-14 要公布（法定期限，多數公司會提早），還有 5 個交易日",
           "estimated": true,
           "date": "2026-11-14",
           "source": "https://mops.twse.com.tw/mops/#/web/t100sb02_1",
-          "days": 6,
+          "days": 5,
           "provider": "法定期限"
         },
         "fundamentals": {
@@ -1954,11 +1954,11 @@
         },
         "earnings": {
           "score": 1,
-          "why": "第三季財報最晚 2026-11-14 要公布（法定期限，多數公司會提早），還有 6 個交易日",
+          "why": "第三季財報最晚 2026-11-14 要公布（法定期限，多數公司會提早），還有 5 個交易日",
           "estimated": true,
           "date": "2026-11-14",
           "source": "https://mops.twse.com.tw/mops/#/web/t100sb02_1",
-          "days": 6,
+          "days": 5,
           "provider": "法定期限"
         },
         "fundamentals": {
@@ -2002,11 +2002,11 @@
         },
         "earnings": {
           "score": 1,
-          "why": "第三季財報最晚 2026-11-14 要公布（法定期限，多數公司會提早），還有 6 個交易日",
+          "why": "第三季財報最晚 2026-11-14 要公布（法定期限，多數公司會提早），還有 5 個交易日",
           "estimated": true,
           "date": "2026-11-14",
           "source": "https://mops.twse.com.tw/mops/#/web/t100sb02_1",
-          "days": 6,
+          "days": 5,
           "provider": "法定期限"
         },
         "fundamentals": {
@@ -2048,11 +2048,11 @@
         },
         "earnings": {
           "score": 1,
-          "why": "第三季財報最晚 2026-11-14 要公布（法定期限，多數公司會提早），還有 6 個交易日",
+          "why": "第三季財報最晚 2026-11-14 要公布（法定期限，多數公司會提早），還有 5 個交易日",
           "estimated": true,
           "date": "2026-11-14",
           "source": "https://mops.twse.com.tw/mops/#/web/t100sb02_1",
-          "days": 6,
+          "days": 5,
           "provider": "法定期限"
         },
         "fundamentals": {
@@ -2094,11 +2094,11 @@
         },
         "earnings": {
           "score": 1,
-          "why": "第三季財報最晚 2026-11-14 要公布（法定期限，多數公司會提早），還有 6 個交易日",
+          "why": "第三季財報最晚 2026-11-14 要公布（法定期限，多數公司會提早），還有 5 個交易日",
           "estimated": true,
           "date": "2026-11-14",
           "source": "https://mops.twse.com.tw/mops/#/web/t100sb02_1",
-          "days": 6,
+          "days": 5,
           "provider": "法定期限"
         },
         "fundamentals": {
@@ -2122,10 +2122,10 @@
       "group": "TW|機器人・線材連接"
     },
     "3665.TW": {
-      "total": 3,
+      "total": 2,
       "max": 10,
       "scored": 5,
-      "score10": 3.0,
+      "score10": 2.0,
       "level": "low",
       "flags": [],
       "gate": {
@@ -2140,17 +2140,17 @@
         },
         "earnings": {
           "score": 1,
-          "why": "第三季財報最晚 2026-11-14 要公布（法定期限，多數公司會提早），還有 6 個交易日",
+          "why": "第三季財報最晚 2026-11-14 要公布（法定期限，多數公司會提早），還有 5 個交易日",
           "estimated": true,
           "date": "2026-11-14",
           "source": "https://mops.twse.com.tw/mops/#/web/t100sb02_1",
-          "days": 6,
+          "days": 5,
           "provider": "法定期限"
         },
         "fundamentals": {
-          "score": 1,
-          "why": "營收年增 +39.2%（2026-09）、年增率連兩個月放緩（+60%→+54%→+39%）、毛利率 30.7%，年變動 -0.4 個百分點（2026-06-30）",
-          "date": "2026-09"
+          "score": 0,
+          "why": "營收年增 +80.0%（2026-10）、毛利率 30.7%，年變動 -0.4 個百分點（2026-06-30）",
+          "date": "2026-10"
         },
         "chips": {
           "score": 0,
@@ -2186,11 +2186,11 @@
         },
         "earnings": {
           "score": 1,
-          "why": "第三季財報最晚 2026-11-14 要公布（法定期限，多數公司會提早），還有 6 個交易日",
+          "why": "第三季財報最晚 2026-11-14 要公布（法定期限，多數公司會提早），還有 5 個交易日",
           "estimated": true,
           "date": "2026-11-14",
           "source": "https://mops.twse.com.tw/mops/#/web/t100sb02_1",
-          "days": 6,
+          "days": 5,
           "provider": "法定期限"
         },
         "fundamentals": {
@@ -2232,11 +2232,11 @@
         },
         "earnings": {
           "score": 1,
-          "why": "第三季財報最晚 2026-11-14 要公布（法定期限，多數公司會提早），還有 6 個交易日",
+          "why": "第三季財報最晚 2026-11-14 要公布（法定期限，多數公司會提早），還有 5 個交易日",
           "estimated": true,
           "date": "2026-11-14",
           "source": "https://mops.twse.com.tw/mops/#/web/t100sb02_1",
-          "days": 6,
+          "days": 5,
           "provider": "法定期限"
         },
         "fundamentals": {
@@ -2280,11 +2280,11 @@
         },
         "earnings": {
           "score": 1,
-          "why": "第三季財報最晚 2026-11-14 要公布（法定期限，多數公司會提早），還有 6 個交易日",
+          "why": "第三季財報最晚 2026-11-14 要公布（法定期限，多數公司會提早），還有 5 個交易日",
           "estimated": true,
           "date": "2026-11-14",
           "source": "https://mops.twse.com.tw/mops/#/web/t100sb02_1",
-          "days": 6,
+          "days": 5,
           "provider": "法定期限"
         },
         "fundamentals": {
@@ -2308,10 +2308,10 @@
       "group": "TW|機器人・整機系統"
     },
     "2317.TW": {
-      "total": 3,
+      "total": 2,
       "max": 10,
       "scored": 5,
-      "score10": 3.0,
+      "score10": 2.0,
       "level": "low",
       "flags": [],
       "gate": {
@@ -2326,17 +2326,17 @@
         },
         "earnings": {
           "score": 1,
-          "why": "第三季財報最晚 2026-11-14 要公布（法定期限，多數公司會提早），還有 6 個交易日",
+          "why": "第三季財報最晚 2026-11-14 要公布（法定期限，多數公司會提早），還有 5 個交易日",
           "estimated": true,
           "date": "2026-11-14",
           "source": "https://mops.twse.com.tw/mops/#/web/t100sb02_1",
-          "days": 6,
+          "days": 5,
           "provider": "法定期限"
         },
         "fundamentals": {
-          "score": 1,
-          "why": "營收年增 +38.4%（2026-09）、年增率連兩個月放緩（+54%→+52%→+38%）、毛利率 6.1%，年變動 -0.2 個百分點（2026-06-30）",
-          "date": "2026-09"
+          "score": 0,
+          "why": "營收年增 +45.7%（2026-10）、毛利率 6.1%，年變動 -0.2 個百分點（2026-06-30）",
+          "date": "2026-10"
         },
         "chips": {
           "score": 0,
@@ -2945,15 +2945,15 @@
         },
         "fundamentals": {
           "score": 1,
-          "why": "穩定幣總供給 30 日 -4.3%（295B 美元）、BTC 市占率 59.5%",
-          "date": "2026-11-05",
+          "why": "穩定幣總供給 30 日 -4.6%（294B 美元）、BTC 市占率 59.2%",
+          "date": "2026-11-06",
           "source": "https://defillama.com/stablecoins",
           "label": "市場結構"
         },
         "chips": {
           "score": 0,
-          "why": "恐懼與貪婪指數 50（中性）；資金費率 +0.0100%、未平倉量 7 日 +10.5%",
-          "date": "2026-11-05",
+          "why": "恐懼與貪婪指數 28（恐懼）；資金費率 +0.0025%、未平倉量 7 日 +2.0%",
+          "date": "2026-11-06",
           "source": "https://alternative.me/crypto/fear-and-greed-index/",
           "label": "情緒／槓桿"
         },
@@ -2990,15 +2990,15 @@
         },
         "fundamentals": {
           "score": 1,
-          "why": "穩定幣總供給 30 日 -4.3%（295B 美元）、BTC 市占率 59.5%",
-          "date": "2026-11-05",
+          "why": "穩定幣總供給 30 日 -4.6%（294B 美元）、BTC 市占率 59.2%",
+          "date": "2026-11-06",
           "source": "https://defillama.com/stablecoins",
           "label": "市場結構"
         },
         "chips": {
           "score": 0,
-          "why": "恐懼與貪婪指數 50（中性）；資金費率 +0.0100%、未平倉量 7 日 +10.1%",
-          "date": "2026-11-05",
+          "why": "恐懼與貪婪指數 28（恐懼）；資金費率 -0.0008%、未平倉量 7 日 -10.3%",
+          "date": "2026-11-06",
           "source": "https://alternative.me/crypto/fear-and-greed-index/",
           "label": "情緒／槓桿"
         },
@@ -3035,15 +3035,15 @@
         },
         "fundamentals": {
           "score": 1,
-          "why": "穩定幣總供給 30 日 -4.3%（295B 美元）、BTC 市占率 59.5%",
-          "date": "2026-11-05",
+          "why": "穩定幣總供給 30 日 -4.6%（294B 美元）、BTC 市占率 59.2%",
+          "date": "2026-11-06",
           "source": "https://defillama.com/stablecoins",
           "label": "市場結構"
         },
         "chips": {
           "score": 0,
-          "why": "恐懼與貪婪指數 50（中性）；資金費率 +0.0053%、未平倉量 7 日 +7.0%",
-          "date": "2026-11-05",
+          "why": "恐懼與貪婪指數 28（恐懼）；資金費率 +0.0005%、未平倉量 7 日 -4.0%",
+          "date": "2026-11-06",
           "source": "https://alternative.me/crypto/fear-and-greed-index/",
           "label": "情緒／槓桿"
         },
