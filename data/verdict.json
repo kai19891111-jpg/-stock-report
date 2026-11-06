@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-11-06T02:51:29.726692+00:00",
-  "dataTimestamp": "2026-11-06T02:48:20.409054+00:00",
+  "generatedAt": "2026-11-06T07:17:59.508973+00:00",
+  "dataTimestamp": "2026-11-06T07:12:48.273682+00:00",
   "sessions": {
-    "TW": "2026-11-05",
+    "TW": "2026-11-06",
     "US": "2026-11-05",
-    "CRYPTO": "2026-11-04"
+    "CRYPTO": "2026-11-05"
   },
   "params": {
     "rsi_lo": 45,
@@ -63,9 +63,9 @@
     "nodata"
   ],
   "regime": {
-    "TW": "NEUTRAL",
+    "TW": "BEAR",
     "US": "BEAR",
-    "CRYPTO": "NEUTRAL"
+    "CRYPTO": "BEAR"
   },
   "evidence": {
     "TW": {
@@ -93,49 +93,38 @@
     "CRYPTO": {
       "ok": false,
       "scope": "加密貨幣",
-      "n": 14,
-      "expectancyR": -0.4503,
-      "expLow": -1.1005,
-      "expHigh": 0.2173,
-      "winRate": 0.2143,
-      "beats": 0.7933,
-      "why": "加密貨幣回測：後段只有 14 筆（要 30 筆）、期望值區間下緣 −1.10R，沒有大於 0、只勝過 79.3% 的隨機進場（要 95%）"
+      "n": 15,
+      "expectancyR": -0.4926,
+      "expLow": -1.1029,
+      "expHigh": 0.1377,
+      "winRate": 0.2,
+      "beats": 0.75,
+      "why": "加密貨幣回測：後段只有 15 筆（要 30 筆）、期望值區間下緣 −1.10R，沒有大於 0、只勝過 75.0% 的隨機進場（要 95%）"
     }
   },
   "regimeNotes": {
-    "TW": {
-      "regime": "NEUTRAL",
-      "n": 85,
-      "expectancyR": 0.1046,
-      "expLow": -0.2368,
-      "text": "大盤盤整時，這條規則在台股的期望值是 +0.10R（85 筆）"
-    },
+    "TW": null,
     "US": null,
     "CRYPTO": null
   },
   "counts": {
     "go": 0,
-    "signal_unproven": 2,
+    "signal_unproven": 0,
     "signal_blocked": 0,
     "conditions": 0,
-    "pullback": 1,
+    "pullback": 0,
     "no_chase": 0,
-    "below": 57,
-    "trend": 1,
-    "avoid": 2,
+    "below": 60,
+    "trend": 2,
+    "avoid": 1,
     "nodata": 0
   },
   "groups": {
     "go": [],
-    "signal_unproven": [
-      "2221.TWO",
-      "BTC-USD"
-    ],
+    "signal_unproven": [],
     "signal_blocked": [],
     "conditions": [],
-    "pullback": [
-      "ETH-USD"
-    ],
+    "pullback": [],
     "no_chase": [],
     "below": [
       "2330.TW",
@@ -143,6 +132,7 @@
       "2308.TW",
       "2371.TW",
       "8210.TW",
+      "3324.TWO",
       "3653.TW",
       "3017.TW",
       "3189.TW",
@@ -194,13 +184,15 @@
       "RKLB",
       "ASTS",
       "ECHO",
+      "BTC-USD",
+      "ETH-USD",
       "SOL-USD"
     ],
     "trend": [
+      "2221.TWO",
       "MSFT"
     ],
     "avoid": [
-      "3324.TWO",
       "6213.TW"
     ],
     "nodata": []
@@ -218,15 +210,15 @@
   "symbols": {
     "2330.TW": {
       "market": "TW",
-      "date": "2026-11-05",
-      "close": 2240.0,
-      "ma20": 2413.25,
-      "stop": 2365.25,
-      "target": 2328.0,
-      "entryLow": 2377.0512,
-      "entryHigh": 2437.3825,
-      "bias": -7.1791,
-      "high20": 2585.0,
+      "date": "2026-11-06",
+      "close": 2135.0,
+      "ma20": 2390.75,
+      "stop": 2326.0357,
+      "target": 2253.6429,
+      "entryLow": 2354.8888,
+      "entryHigh": 2414.6575,
+      "bias": -10.6975,
+      "high20": 2575.0,
       "rr": null,
       "code": "below",
       "signal": false,
@@ -249,18 +241,22 @@
         },
         {
           "key": "rsi",
-          "text": "RSI 25（要 45–60）"
+          "text": "RSI 19（要 45–60）"
         },
         {
           "key": "macd",
           "text": "MACD 轉弱"
+        },
+        {
+          "key": "regime",
+          "text": "大盤空頭"
         }
       ],
-      "buyBelow": 2423.9166666666665,
-      "gapPct": 8.210565476190478,
+      "buyBelow": 2405.1309666666666,
+      "gapPct": 12.652504293520694,
       "roomRR": null,
       "plan": null,
-      "text": "收盤已跌破失效價 2,365.25，不進場。目前另外還卡：日線空頭、收盤不在失效價和目標價之間、RSI 25（要 45–60）、MACD 轉弱。",
+      "text": "收盤已跌破失效價 2,326.04，不進場。目前另外還卡：日線空頭、收盤不在失效價和目標價之間、RSI 19（要 45–60）、MACD 轉弱、大盤空頭。",
       "notes": [],
       "mismatch": null,
       "risk": {
@@ -271,20 +267,842 @@
       },
       "hold": {
         "code": "exit",
-        "text": "收盤已跌破失效價 2,365.25，規則上這個部位已經失效，出場優先。"
+        "text": "收盤已跌破失效價 2,326.04，規則上這個部位已經失效，出場優先。"
       }
     },
     "2454.TW": {
       "market": "TW",
-      "date": "2026-11-05",
-      "close": 3460.0,
-      "ma20": 4152.75,
-      "stop": 3896.4643,
-      "target": 3929.8571,
-      "entryLow": 4090.4587,
-      "entryHigh": 4194.2775,
-      "bias": -16.6817,
-      "high20": 4940.0,
+      "date": "2026-11-06",
+      "close": 3390.0,
+      "ma20": 4080.5,
+      "stop": 3809.6429,
+      "target": 3886.5714,
+      "entryLow": 4019.2925,
+      "entryHigh": 4121.305,
+      "bias": -16.9219,
+      "high20": 4850.0,
+      "rr": null,
+      "code": "below",
+      "signal": false,
+      "blockers": [
+        {
+          "key": "zone",
+          "text": "收盤已跌破失效價"
+        },
+        {
+          "key": "daily",
+          "text": "日線空頭"
+        },
+        {
+          "key": "rr",
+          "text": "報酬風險比算不出來"
+        },
+        {
+          "key": "levels",
+          "text": "收盤不在失效價和目標價之間"
+        },
+        {
+          "key": "rsi",
+          "text": "RSI 28（要 45–60）"
+        },
+        {
+          "key": "macd",
+          "text": "MACD 轉弱"
+        },
+        {
+          "key": "regime",
+          "text": "大盤空頭"
+        }
+      ],
+      "buyBelow": 4121.305,
+      "gapPct": 21.572418879056055,
+      "roomRR": null,
+      "plan": null,
+      "text": "收盤已跌破失效價 3,809.64，不進場。目前另外還卡：日線空頭、收盤不在失效價和目標價之間、RSI 28（要 45–60）、MACD 轉弱、大盤空頭。",
+      "notes": [
+        "第三季財報最晚 2026-11-14 要公布（法定期限，多數公司會提早），還有 5 個交易日"
+      ],
+      "mismatch": null,
+      "risk": {
+        "level": "low",
+        "total": 3,
+        "max": 10,
+        "reasons": []
+      },
+      "hold": {
+        "code": "exit",
+        "text": "收盤已跌破失效價 3,809.64，規則上這個部位已經失效，出場優先。第三季財報最晚 2026-11-14 要公布（法定期限，多數公司會提早），還有 5 個交易日。"
+      }
+    },
+    "2308.TW": {
+      "market": "TW",
+      "date": "2026-11-06",
+      "close": 1055.0,
+      "ma20": 1529.25,
+      "stop": 1423.8214,
+      "target": 1248.2857,
+      "entryLow": 1506.3112,
+      "entryHigh": 1544.5425,
+      "bias": -31.0119,
+      "high20": 1990.0,
+      "rr": null,
+      "code": "below",
+      "signal": false,
+      "blockers": [
+        {
+          "key": "zone",
+          "text": "收盤已跌破失效價"
+        },
+        {
+          "key": "daily",
+          "text": "日線空頭"
+        },
+        {
+          "key": "weekly",
+          "text": "週線空頭"
+        },
+        {
+          "key": "rr",
+          "text": "報酬風險比算不出來"
+        },
+        {
+          "key": "levels",
+          "text": "收盤不在失效價和目標價之間"
+        },
+        {
+          "key": "rsi",
+          "text": "RSI 18（要 45–60）"
+        },
+        {
+          "key": "macd",
+          "text": "MACD 轉弱"
+        },
+        {
+          "key": "regime",
+          "text": "大盤空頭"
+        }
+      ],
+      "buyBelow": 1544.5425,
+      "gapPct": 46.40213270142179,
+      "roomRR": null,
+      "plan": null,
+      "text": "收盤已跌破失效價 1,423.82，不進場。目前另外還卡：日線空頭、週線空頭、收盤不在失效價和目標價之間、RSI 18（要 45–60）、MACD 轉弱、大盤空頭。",
+      "notes": [
+        "第三季財報最晚 2026-11-14 要公布（法定期限，多數公司會提早），還有 5 個交易日"
+      ],
+      "mismatch": null,
+      "risk": {
+        "level": "low",
+        "total": 3,
+        "max": 10,
+        "reasons": []
+      },
+      "hold": {
+        "code": "exit",
+        "text": "收盤已跌破失效價 1,423.82，規則上這個部位已經失效，出場優先。第三季財報最晚 2026-11-14 要公布（法定期限，多數公司會提早），還有 5 個交易日。"
+      }
+    },
+    "2371.TW": {
+      "market": "TW",
+      "date": "2026-11-06",
+      "close": 26.2,
+      "ma20": 28.7225,
+      "stop": 27.1754,
+      "target": 29.0364,
+      "entryLow": 28.2917,
+      "entryHigh": 29.0097,
+      "bias": -8.7823,
+      "high20": 31.3,
+      "rr": null,
+      "code": "below",
+      "signal": false,
+      "blockers": [
+        {
+          "key": "zone",
+          "text": "收盤已跌破失效價"
+        },
+        {
+          "key": "rr",
+          "text": "報酬風險比算不出來"
+        },
+        {
+          "key": "levels",
+          "text": "收盤不在失效價和目標價之間"
+        },
+        {
+          "key": "rsi",
+          "text": "RSI 35（要 45–60）"
+        },
+        {
+          "key": "macd",
+          "text": "MACD 轉弱"
+        },
+        {
+          "key": "regime",
+          "text": "大盤空頭"
+        }
+      ],
+      "buyBelow": 29.0097,
+      "gapPct": 10.724045801526705,
+      "roomRR": null,
+      "plan": null,
+      "text": "收盤已跌破失效價 27.18，不進場。目前另外還卡：收盤不在失效價和目標價之間、RSI 35（要 45–60）、MACD 轉弱、大盤空頭。",
+      "notes": [
+        "第三季財報最晚 2026-11-14 要公布（法定期限，多數公司會提早），還有 5 個交易日"
+      ],
+      "mismatch": null,
+      "risk": {
+        "level": "mid",
+        "total": 4,
+        "max": 10,
+        "reasons": [
+          "風險中"
+        ]
+      },
+      "hold": {
+        "code": "exit",
+        "text": "收盤已跌破失效價 27.18，規則上這個部位已經失效，出場優先。第三季財報最晚 2026-11-14 要公布（法定期限，多數公司會提早），還有 5 個交易日。"
+      }
+    },
+    "8210.TW": {
+      "market": "TW",
+      "date": "2026-11-06",
+      "close": 546.0,
+      "ma20": 759.65,
+      "stop": 714.9929,
+      "target": 627.8714,
+      "entryLow": 748.2552,
+      "entryHigh": 767.2465,
+      "bias": -28.1248,
+      "high20": 884.0,
+      "rr": null,
+      "code": "below",
+      "signal": false,
+      "blockers": [
+        {
+          "key": "zone",
+          "text": "收盤已跌破失效價"
+        },
+        {
+          "key": "daily",
+          "text": "日線空頭"
+        },
+        {
+          "key": "weekly",
+          "text": "週線空頭"
+        },
+        {
+          "key": "rr",
+          "text": "報酬風險比算不出來"
+        },
+        {
+          "key": "levels",
+          "text": "收盤不在失效價和目標價之間"
+        },
+        {
+          "key": "rsi",
+          "text": "RSI 12（要 45–60）"
+        },
+        {
+          "key": "macd",
+          "text": "MACD 轉弱"
+        },
+        {
+          "key": "regime",
+          "text": "大盤空頭"
+        }
+      ],
+      "buyBelow": 767.2465,
+      "gapPct": 40.521336996337,
+      "roomRR": null,
+      "plan": null,
+      "text": "收盤已跌破失效價 714.99，不進場。目前另外還卡：日線空頭、週線空頭、收盤不在失效價和目標價之間、RSI 12（要 45–60）、MACD 轉弱、大盤空頭。",
+      "notes": [
+        "第三季財報最晚 2026-11-14 要公布（法定期限，多數公司會提早），還有 5 個交易日"
+      ],
+      "mismatch": null,
+      "risk": {
+        "level": "low",
+        "total": 3,
+        "max": 10,
+        "reasons": []
+      },
+      "hold": {
+        "code": "exit",
+        "text": "收盤已跌破失效價 714.99，規則上這個部位已經失效，出場優先。第三季財報最晚 2026-11-14 要公布（法定期限，多數公司會提早），還有 5 個交易日。"
+      }
+    },
+    "3324.TWO": {
+      "market": "TW",
+      "date": "2026-11-06",
+      "close": 1055.0,
+      "ma20": 1376.75,
+      "stop": 1236.1786,
+      "target": 1312.7143,
+      "entryLow": 1356.0987,
+      "entryHigh": 1390.5175,
+      "bias": -23.3703,
+      "high20": 1570.0,
+      "rr": null,
+      "code": "below",
+      "signal": false,
+      "blockers": [
+        {
+          "key": "zone",
+          "text": "收盤已跌破失效價"
+        },
+        {
+          "key": "rr",
+          "text": "報酬風險比算不出來"
+        },
+        {
+          "key": "levels",
+          "text": "收盤不在失效價和目標價之間"
+        },
+        {
+          "key": "rsi",
+          "text": "RSI 30（要 45–60）"
+        },
+        {
+          "key": "macd",
+          "text": "MACD 轉弱"
+        },
+        {
+          "key": "regime",
+          "text": "大盤空頭"
+        }
+      ],
+      "buyBelow": 1390.5175,
+      "gapPct": 31.802606635071086,
+      "roomRR": null,
+      "plan": null,
+      "text": "收盤已跌破失效價 1,236.18，不進場。目前另外還卡：收盤不在失效價和目標價之間、RSI 30（要 45–60）、MACD 轉弱、大盤空頭。",
+      "notes": [
+        "第三季財報最晚 2026-11-14 要公布（法定期限，多數公司會提早），還有 5 個交易日"
+      ],
+      "mismatch": null,
+      "risk": {
+        "level": "low",
+        "total": 3,
+        "max": 10,
+        "reasons": []
+      },
+      "hold": {
+        "code": "exit",
+        "text": "收盤已跌破失效價 1,236.18，規則上這個部位已經失效，出場優先。第三季財報最晚 2026-11-14 要公布（法定期限，多數公司會提早），還有 5 個交易日。"
+      }
+    },
+    "3653.TW": {
+      "market": "TW",
+      "date": "2026-11-06",
+      "close": 5225.0,
+      "ma20": 6427.75,
+      "stop": 5863.75,
+      "target": 6259.0,
+      "entryLow": 6331.3337,
+      "entryHigh": 6492.0275,
+      "bias": -18.7118,
+      "high20": 7330.0,
+      "rr": null,
+      "code": "below",
+      "signal": false,
+      "blockers": [
+        {
+          "key": "zone",
+          "text": "收盤已跌破失效價"
+        },
+        {
+          "key": "rr",
+          "text": "報酬風險比算不出來"
+        },
+        {
+          "key": "levels",
+          "text": "收盤不在失效價和目標價之間"
+        },
+        {
+          "key": "rsi",
+          "text": "RSI 35（要 45–60）"
+        },
+        {
+          "key": "macd",
+          "text": "MACD 轉弱"
+        },
+        {
+          "key": "regime",
+          "text": "大盤空頭"
+        }
+      ],
+      "buyBelow": 6492.0275,
+      "gapPct": 24.24933014354067,
+      "roomRR": null,
+      "plan": null,
+      "text": "收盤已跌破失效價 5,863.75，不進場。目前另外還卡：收盤不在失效價和目標價之間、RSI 35（要 45–60）、MACD 轉弱、大盤空頭。",
+      "notes": [
+        "第三季財報最晚 2026-11-14 要公布（法定期限，多數公司會提早），還有 5 個交易日"
+      ],
+      "mismatch": null,
+      "risk": {
+        "level": "mid",
+        "total": 4,
+        "max": 10,
+        "reasons": [
+          "風險中"
+        ]
+      },
+      "hold": {
+        "code": "exit",
+        "text": "收盤已跌破失效價 5,863.75，規則上這個部位已經失效，出場優先。第三季財報最晚 2026-11-14 要公布（法定期限，多數公司會提早），還有 5 個交易日。"
+      }
+    },
+    "3017.TW": {
+      "market": "TW",
+      "date": "2026-11-06",
+      "close": 2310.0,
+      "ma20": 3111.25,
+      "stop": 2863.5357,
+      "target": 2764.1429,
+      "entryLow": 3064.5813,
+      "entryHigh": 3142.3625,
+      "bias": -25.7533,
+      "high20": 3515.0,
+      "rr": null,
+      "code": "below",
+      "signal": false,
+      "blockers": [
+        {
+          "key": "zone",
+          "text": "收盤已跌破失效價"
+        },
+        {
+          "key": "daily",
+          "text": "日線空頭"
+        },
+        {
+          "key": "rr",
+          "text": "報酬風險比算不出來"
+        },
+        {
+          "key": "levels",
+          "text": "收盤不在失效價和目標價之間"
+        },
+        {
+          "key": "rsi",
+          "text": "RSI 22（要 45–60）"
+        },
+        {
+          "key": "macd",
+          "text": "MACD 轉弱"
+        },
+        {
+          "key": "regime",
+          "text": "大盤空頭"
+        }
+      ],
+      "buyBelow": 3142.3625,
+      "gapPct": 36.03300865800867,
+      "roomRR": null,
+      "plan": null,
+      "text": "收盤已跌破失效價 2,863.54，不進場。目前另外還卡：日線空頭、收盤不在失效價和目標價之間、RSI 22（要 45–60）、MACD 轉弱、大盤空頭。",
+      "notes": [
+        "第三季財報最晚 2026-11-14 要公布（法定期限，多數公司會提早），還有 5 個交易日"
+      ],
+      "mismatch": null,
+      "risk": {
+        "level": "low",
+        "total": 3,
+        "max": 10,
+        "reasons": []
+      },
+      "hold": {
+        "code": "exit",
+        "text": "收盤已跌破失效價 2,863.54，規則上這個部位已經失效，出場優先。第三季財報最晚 2026-11-14 要公布（法定期限，多數公司會提早），還有 5 個交易日。"
+      }
+    },
+    "3189.TW": {
+      "market": "TW",
+      "date": "2026-11-06",
+      "close": 671.0,
+      "ma20": 947.1,
+      "stop": 855.9857,
+      "target": 838.0429,
+      "entryLow": 932.8935,
+      "entryHigh": 956.571,
+      "bias": -29.1521,
+      "high20": 1095.0,
+      "rr": null,
+      "code": "below",
+      "signal": false,
+      "blockers": [
+        {
+          "key": "zone",
+          "text": "收盤已跌破失效價"
+        },
+        {
+          "key": "rr",
+          "text": "報酬風險比算不出來"
+        },
+        {
+          "key": "levels",
+          "text": "收盤不在失效價和目標價之間"
+        },
+        {
+          "key": "rsi",
+          "text": "RSI 28（要 45–60）"
+        },
+        {
+          "key": "macd",
+          "text": "MACD 轉弱"
+        },
+        {
+          "key": "regime",
+          "text": "大盤空頭"
+        }
+      ],
+      "buyBelow": 956.571,
+      "gapPct": 42.55901639344262,
+      "roomRR": null,
+      "plan": null,
+      "text": "收盤已跌破失效價 855.99，不進場。目前另外還卡：收盤不在失效價和目標價之間、RSI 28（要 45–60）、MACD 轉弱、大盤空頭。",
+      "notes": [
+        "第三季財報最晚 2026-11-14 要公布（法定期限，多數公司會提早），還有 5 個交易日"
+      ],
+      "mismatch": null,
+      "risk": {
+        "level": "low",
+        "total": 2,
+        "max": 10,
+        "reasons": []
+      },
+      "hold": {
+        "code": "exit",
+        "text": "收盤已跌破失效價 855.99，規則上這個部位已經失效，出場優先。第三季財報最晚 2026-11-14 要公布（法定期限，多數公司會提早），還有 5 個交易日。"
+      }
+    },
+    "3037.TW": {
+      "market": "TW",
+      "date": "2026-11-06",
+      "close": 727.0,
+      "ma20": 1050.15,
+      "stop": 948.5786,
+      "target": 913.2143,
+      "entryLow": 1034.3978,
+      "entryHigh": 1060.6515,
+      "bias": -30.7718,
+      "high20": 1295.0,
+      "rr": null,
+      "code": "below",
+      "signal": false,
+      "blockers": [
+        {
+          "key": "zone",
+          "text": "收盤已跌破失效價"
+        },
+        {
+          "key": "daily",
+          "text": "日線空頭"
+        },
+        {
+          "key": "rr",
+          "text": "報酬風險比算不出來"
+        },
+        {
+          "key": "levels",
+          "text": "收盤不在失效價和目標價之間"
+        },
+        {
+          "key": "rsi",
+          "text": "RSI 23（要 45–60）"
+        },
+        {
+          "key": "macd",
+          "text": "MACD 轉弱"
+        },
+        {
+          "key": "regime",
+          "text": "大盤空頭"
+        }
+      ],
+      "buyBelow": 1060.6515,
+      "gapPct": 45.8942916093535,
+      "roomRR": null,
+      "plan": null,
+      "text": "收盤已跌破失效價 948.58，不進場。目前另外還卡：日線空頭、收盤不在失效價和目標價之間、RSI 23（要 45–60）、MACD 轉弱、大盤空頭。",
+      "notes": [
+        "第三季財報最晚 2026-11-14 要公布（法定期限，多數公司會提早），還有 5 個交易日"
+      ],
+      "mismatch": null,
+      "risk": {
+        "level": "low",
+        "total": 2,
+        "max": 10,
+        "reasons": []
+      },
+      "hold": {
+        "code": "exit",
+        "text": "收盤已跌破失效價 948.58，規則上這個部位已經失效，出場優先。第三季財報最晚 2026-11-14 要公布（法定期限，多數公司會提早），還有 5 個交易日。"
+      }
+    },
+    "8046.TW": {
+      "market": "TW",
+      "date": "2026-11-06",
+      "close": 875.0,
+      "ma20": 1260.85,
+      "stop": 1143.1643,
+      "target": 1090.7571,
+      "entryLow": 1241.9372,
+      "entryHigh": 1273.4585,
+      "bias": -30.6024,
+      "high20": 1490.0,
+      "rr": null,
+      "code": "below",
+      "signal": false,
+      "blockers": [
+        {
+          "key": "zone",
+          "text": "收盤已跌破失效價"
+        },
+        {
+          "key": "rr",
+          "text": "報酬風險比算不出來"
+        },
+        {
+          "key": "levels",
+          "text": "收盤不在失效價和目標價之間"
+        },
+        {
+          "key": "rsi",
+          "text": "RSI 23（要 45–60）"
+        },
+        {
+          "key": "macd",
+          "text": "MACD 轉弱"
+        },
+        {
+          "key": "regime",
+          "text": "大盤空頭"
+        }
+      ],
+      "buyBelow": 1273.4585,
+      "gapPct": 45.53811428571428,
+      "roomRR": null,
+      "plan": null,
+      "text": "收盤已跌破失效價 1,143.16，不進場。目前另外還卡：收盤不在失效價和目標價之間、RSI 23（要 45–60）、MACD 轉弱、大盤空頭。",
+      "notes": [
+        "第三季財報最晚 2026-11-14 要公布（法定期限，多數公司會提早），還有 5 個交易日"
+      ],
+      "mismatch": null,
+      "risk": {
+        "level": "low",
+        "total": 2,
+        "max": 10,
+        "reasons": []
+      },
+      "hold": {
+        "code": "exit",
+        "text": "收盤已跌破失效價 1,143.16，規則上這個部位已經失效，出場優先。第三季財報最晚 2026-11-14 要公布（法定期限，多數公司會提早），還有 5 個交易日。"
+      }
+    },
+    "8358.TWO": {
+      "market": "TW",
+      "date": "2026-11-06",
+      "close": 303.0,
+      "ma20": 440.95,
+      "stop": 397.0214,
+      "target": 383.5357,
+      "entryLow": 434.3357,
+      "entryHigh": 445.3595,
+      "bias": -31.2847,
+      "high20": 542.0,
+      "rr": null,
+      "code": "below",
+      "signal": false,
+      "blockers": [
+        {
+          "key": "zone",
+          "text": "收盤已跌破失效價"
+        },
+        {
+          "key": "daily",
+          "text": "日線空頭"
+        },
+        {
+          "key": "weekly",
+          "text": "週線空頭"
+        },
+        {
+          "key": "rr",
+          "text": "報酬風險比算不出來"
+        },
+        {
+          "key": "levels",
+          "text": "收盤不在失效價和目標價之間"
+        },
+        {
+          "key": "rsi",
+          "text": "RSI 27（要 45–60）"
+        },
+        {
+          "key": "macd",
+          "text": "MACD 轉弱"
+        },
+        {
+          "key": "regime",
+          "text": "大盤空頭"
+        }
+      ],
+      "buyBelow": 445.3595,
+      "gapPct": 46.983333333333334,
+      "roomRR": null,
+      "plan": null,
+      "text": "收盤已跌破失效價 397.02，不進場。目前另外還卡：日線空頭、週線空頭、收盤不在失效價和目標價之間、RSI 27（要 45–60）、MACD 轉弱、大盤空頭。",
+      "notes": [
+        "第三季財報最晚 2026-11-14 要公布（法定期限，多數公司會提早），還有 5 個交易日"
+      ],
+      "mismatch": null,
+      "risk": {
+        "level": "low",
+        "total": 2,
+        "max": 10,
+        "reasons": []
+      },
+      "hold": {
+        "code": "exit",
+        "text": "收盤已跌破失效價 397.02，規則上這個部位已經失效，出場優先。第三季財報最晚 2026-11-14 要公布（法定期限，多數公司會提早），還有 5 個交易日。"
+      }
+    },
+    "4958.TW": {
+      "market": "TW",
+      "date": "2026-11-06",
+      "close": 373.0,
+      "ma20": 519.0,
+      "stop": 471.7286,
+      "target": 459.6643,
+      "entryLow": 511.215,
+      "entryHigh": 524.19,
+      "bias": -28.131,
+      "high20": 614.0,
+      "rr": null,
+      "code": "below",
+      "signal": false,
+      "blockers": [
+        {
+          "key": "zone",
+          "text": "收盤已跌破失效價"
+        },
+        {
+          "key": "rr",
+          "text": "報酬風險比算不出來"
+        },
+        {
+          "key": "levels",
+          "text": "收盤不在失效價和目標價之間"
+        },
+        {
+          "key": "rsi",
+          "text": "RSI 28（要 45–60）"
+        },
+        {
+          "key": "macd",
+          "text": "MACD 轉弱"
+        },
+        {
+          "key": "regime",
+          "text": "大盤空頭"
+        }
+      ],
+      "buyBelow": 524.19,
+      "gapPct": 40.53351206434317,
+      "roomRR": null,
+      "plan": null,
+      "text": "收盤已跌破失效價 471.73，不進場。目前另外還卡：收盤不在失效價和目標價之間、RSI 28（要 45–60）、MACD 轉弱、大盤空頭。",
+      "notes": [
+        "第三季財報最晚 2026-11-14 要公布（法定期限，多數公司會提早），還有 5 個交易日"
+      ],
+      "mismatch": null,
+      "risk": {
+        "level": "low",
+        "total": 2,
+        "max": 10,
+        "reasons": []
+      },
+      "hold": {
+        "code": "exit",
+        "text": "收盤已跌破失效價 471.73，規則上這個部位已經失效，出場優先。第三季財報最晚 2026-11-14 要公布（法定期限，多數公司會提早），還有 5 個交易日。"
+      }
+    },
+    "6213.TW": {
+      "market": "TW",
+      "date": "2026-11-06",
+      "close": 496.0,
+      "ma20": 730.3,
+      "stop": 648.2714,
+      "target": 646.3857,
+      "entryLow": 719.3455,
+      "entryHigh": 737.603,
+      "bias": -32.0827,
+      "high20": 885.0,
+      "rr": null,
+      "code": "avoid",
+      "signal": false,
+      "blockers": [
+        {
+          "key": "zone",
+          "text": "收盤已跌破失效價"
+        },
+        {
+          "key": "rr",
+          "text": "報酬風險比算不出來"
+        },
+        {
+          "key": "levels",
+          "text": "收盤不在失效價和目標價之間"
+        },
+        {
+          "key": "rsi",
+          "text": "RSI 30（要 45–60）"
+        },
+        {
+          "key": "macd",
+          "text": "MACD 轉弱"
+        },
+        {
+          "key": "regime",
+          "text": "大盤空頭"
+        }
+      ],
+      "buyBelow": 737.603,
+      "gapPct": 48.71028225806451,
+      "roomRR": null,
+      "plan": null,
+      "text": "處置股 2026-11-05～2026-11-11，不碰。",
+      "notes": [
+        "第三季財報最晚 2026-11-14 要公布（法定期限，多數公司會提早），還有 5 個交易日"
+      ],
+      "mismatch": null,
+      "risk": {
+        "level": "high",
+        "total": 4,
+        "max": 10,
+        "reasons": [
+          "處置股"
+        ]
+      },
+      "hold": {
+        "code": "exit",
+        "text": "收盤已跌破失效價 648.27，規則上這個部位已經失效，出場優先。第三季財報最晚 2026-11-14 要公布（法定期限，多數公司會提早），還有 5 個交易日。"
+      }
+    },
+    "2383.TW": {
+      "market": "TW",
+      "date": "2026-11-06",
+      "close": 3820.0,
+      "ma20": 4986.75,
+      "stop": 4568.4643,
+      "target": 4586.8571,
+      "entryLow": 4911.9487,
+      "entryHigh": 5036.6175,
+      "bias": -23.397,
+      "high20": 6190.0,
       "rr": null,
       "code": "below",
       "signal": false,
@@ -312,13 +1130,17 @@
         {
           "key": "macd",
           "text": "MACD 轉弱"
+        },
+        {
+          "key": "regime",
+          "text": "大盤空頭"
         }
       ],
-      "buyBelow": 4194.2775,
-      "gapPct": 21.22189306358382,
+      "buyBelow": 5036.6175,
+      "gapPct": 31.84862565445028,
       "roomRR": null,
       "plan": null,
-      "text": "收盤已跌破失效價 3,896.46，不進場。目前另外還卡：日線空頭、收盤不在失效價和目標價之間、RSI 29（要 45–60）、MACD 轉弱。",
+      "text": "收盤已跌破失效價 4,568.46，不進場。目前另外還卡：日線空頭、收盤不在失效價和目標價之間、RSI 29（要 45–60）、MACD 轉弱、大盤空頭。",
       "notes": [
         "第三季財報最晚 2026-11-14 要公布（法定期限，多數公司會提早），還有 5 個交易日"
       ],
@@ -331,20 +1153,1012 @@
       },
       "hold": {
         "code": "exit",
-        "text": "收盤已跌破失效價 3,896.46，規則上這個部位已經失效，出場優先。第三季財報最晚 2026-11-14 要公布（法定期限，多數公司會提早），還有 5 個交易日。"
+        "text": "收盤已跌破失效價 4,568.46，規則上這個部位已經失效，出場優先。第三季財報最晚 2026-11-14 要公布（法定期限，多數公司會提早），還有 5 個交易日。"
       }
     },
-    "2308.TW": {
+    "1303.TW": {
       "market": "TW",
-      "date": "2026-11-05",
-      "close": 1130.0,
-      "ma20": 1576.0,
-      "stop": 1477.0,
-      "target": 1311.5,
-      "entryLow": 1552.36,
-      "entryHigh": 1591.76,
-      "bias": -28.2995,
-      "high20": 2045.0,
+      "date": "2026-11-06",
+      "close": 239.5,
+      "ma20": 299.3,
+      "stop": 271.2286,
+      "target": 290.9643,
+      "entryLow": 294.8105,
+      "entryHigh": 302.293,
+      "bias": -19.98,
+      "high20": 350.5,
+      "rr": null,
+      "code": "below",
+      "signal": false,
+      "blockers": [
+        {
+          "key": "zone",
+          "text": "收盤已跌破失效價"
+        },
+        {
+          "key": "rr",
+          "text": "報酬風險比算不出來"
+        },
+        {
+          "key": "levels",
+          "text": "收盤不在失效價和目標價之間"
+        },
+        {
+          "key": "rsi",
+          "text": "RSI 38（要 45–60）"
+        },
+        {
+          "key": "macd",
+          "text": "MACD 轉弱"
+        },
+        {
+          "key": "regime",
+          "text": "大盤空頭"
+        }
+      ],
+      "buyBelow": 302.293,
+      "gapPct": 26.218371607515657,
+      "roomRR": null,
+      "plan": null,
+      "text": "收盤已跌破失效價 271.23，不進場。目前另外還卡：收盤不在失效價和目標價之間、RSI 38（要 45–60）、MACD 轉弱、大盤空頭。",
+      "notes": [
+        "第三季財報最晚 2026-11-14 要公布（法定期限，多數公司會提早），還有 5 個交易日"
+      ],
+      "mismatch": null,
+      "risk": {
+        "level": "low",
+        "total": 2,
+        "max": 10,
+        "reasons": []
+      },
+      "hold": {
+        "code": "exit",
+        "text": "收盤已跌破失效價 271.23，規則上這個部位已經失效，出場優先。第三季財報最晚 2026-11-14 要公布（法定期限，多數公司會提早），還有 5 個交易日。"
+      }
+    },
+    "2408.TW": {
+      "market": "TW",
+      "date": "2026-11-06",
+      "close": 343.5,
+      "ma20": 442.85,
+      "stop": 404.7929,
+      "target": 413.2714,
+      "entryLow": 436.2073,
+      "entryHigh": 447.2785,
+      "bias": -22.4342,
+      "high20": 537.0,
+      "rr": null,
+      "code": "below",
+      "signal": false,
+      "blockers": [
+        {
+          "key": "zone",
+          "text": "收盤已跌破失效價"
+        },
+        {
+          "key": "daily",
+          "text": "日線空頭"
+        },
+        {
+          "key": "rr",
+          "text": "報酬風險比算不出來"
+        },
+        {
+          "key": "levels",
+          "text": "收盤不在失效價和目標價之間"
+        },
+        {
+          "key": "rsi",
+          "text": "RSI 28（要 45–60）"
+        },
+        {
+          "key": "macd",
+          "text": "MACD 轉弱"
+        },
+        {
+          "key": "regime",
+          "text": "大盤空頭"
+        }
+      ],
+      "buyBelow": 447.2785,
+      "gapPct": 30.212081513828238,
+      "roomRR": null,
+      "plan": null,
+      "text": "收盤已跌破失效價 404.79，不進場。目前另外還卡：日線空頭、收盤不在失效價和目標價之間、RSI 28（要 45–60）、MACD 轉弱、大盤空頭。",
+      "notes": [
+        "第三季財報最晚 2026-11-14 要公布（法定期限，多數公司會提早），還有 5 個交易日"
+      ],
+      "mismatch": null,
+      "risk": {
+        "level": "low",
+        "total": 2,
+        "max": 10,
+        "reasons": []
+      },
+      "hold": {
+        "code": "exit",
+        "text": "收盤已跌破失效價 404.79，規則上這個部位已經失效，出場優先。第三季財報最晚 2026-11-14 要公布（法定期限，多數公司會提早），還有 5 個交易日。"
+      }
+    },
+    "6770.TW": {
+      "market": "TW",
+      "date": "2026-11-06",
+      "close": 52.9,
+      "ma20": 65.67,
+      "stop": 61.1571,
+      "target": 61.1736,
+      "entryLow": 64.685,
+      "entryHigh": 66.3267,
+      "bias": -19.4457,
+      "high20": 75.4,
+      "rr": null,
+      "code": "below",
+      "signal": false,
+      "blockers": [
+        {
+          "key": "zone",
+          "text": "收盤已跌破失效價"
+        },
+        {
+          "key": "daily",
+          "text": "日線空頭"
+        },
+        {
+          "key": "rr",
+          "text": "報酬風險比算不出來"
+        },
+        {
+          "key": "levels",
+          "text": "收盤不在失效價和目標價之間"
+        },
+        {
+          "key": "rsi",
+          "text": "RSI 27（要 45–60）"
+        },
+        {
+          "key": "macd",
+          "text": "MACD 轉弱"
+        },
+        {
+          "key": "regime",
+          "text": "大盤空頭"
+        }
+      ],
+      "buyBelow": 66.3267,
+      "gapPct": 25.381285444234415,
+      "roomRR": null,
+      "plan": null,
+      "text": "收盤已跌破失效價 61.16，不進場。目前另外還卡：日線空頭、收盤不在失效價和目標價之間、RSI 27（要 45–60）、MACD 轉弱、大盤空頭。",
+      "notes": [
+        "第三季財報最晚 2026-11-14 要公布（法定期限，多數公司會提早），還有 5 個交易日"
+      ],
+      "mismatch": null,
+      "risk": {
+        "level": "low",
+        "total": 2,
+        "max": 10,
+        "reasons": []
+      },
+      "hold": {
+        "code": "exit",
+        "text": "收盤已跌破失效價 61.16，規則上這個部位已經失效，出場優先。第三季財報最晚 2026-11-14 要公布（法定期限，多數公司會提早），還有 5 個交易日。"
+      }
+    },
+    "3481.TW": {
+      "market": "TW",
+      "date": "2026-11-06",
+      "close": 36.05,
+      "ma20": 45.9725,
+      "stop": 42.6425,
+      "target": 42.155,
+      "entryLow": 45.2829,
+      "entryHigh": 46.4322,
+      "bias": -21.5836,
+      "high20": 52.5,
+      "rr": null,
+      "code": "below",
+      "signal": false,
+      "blockers": [
+        {
+          "key": "zone",
+          "text": "收盤已跌破失效價"
+        },
+        {
+          "key": "daily",
+          "text": "日線空頭"
+        },
+        {
+          "key": "rr",
+          "text": "報酬風險比算不出來"
+        },
+        {
+          "key": "levels",
+          "text": "收盤不在失效價和目標價之間"
+        },
+        {
+          "key": "rsi",
+          "text": "RSI 27（要 45–60）"
+        },
+        {
+          "key": "macd",
+          "text": "MACD 轉弱"
+        },
+        {
+          "key": "regime",
+          "text": "大盤空頭"
+        }
+      ],
+      "buyBelow": 46.4322,
+      "gapPct": 28.799445214979215,
+      "roomRR": null,
+      "plan": null,
+      "text": "收盤已跌破失效價 42.64，不進場。目前另外還卡：日線空頭、收盤不在失效價和目標價之間、RSI 27（要 45–60）、MACD 轉弱、大盤空頭。",
+      "notes": [
+        "第三季財報最晚 2026-11-14 要公布（法定期限，多數公司會提早），還有 5 個交易日"
+      ],
+      "mismatch": null,
+      "risk": {
+        "level": "low",
+        "total": 2,
+        "max": 10,
+        "reasons": []
+      },
+      "hold": {
+        "code": "exit",
+        "text": "收盤已跌破失效價 42.64，規則上這個部位已經失效，出場優先。第三季財報最晚 2026-11-14 要公布（法定期限，多數公司會提早），還有 5 個交易日。"
+      }
+    },
+    "3406.TW": {
+      "market": "TW",
+      "date": "2026-11-06",
+      "close": 825.0,
+      "ma20": 1076.05,
+      "stop": 963.5929,
+      "target": 1031.1714,
+      "entryLow": 1059.9092,
+      "entryHigh": 1086.8105,
+      "bias": -23.3307,
+      "high20": 1330.0,
+      "rr": null,
+      "code": "below",
+      "signal": false,
+      "blockers": [
+        {
+          "key": "zone",
+          "text": "收盤已跌破失效價"
+        },
+        {
+          "key": "rr",
+          "text": "報酬風險比算不出來"
+        },
+        {
+          "key": "levels",
+          "text": "收盤不在失效價和目標價之間"
+        },
+        {
+          "key": "rsi",
+          "text": "RSI 36（要 45–60）"
+        },
+        {
+          "key": "macd",
+          "text": "MACD 轉弱"
+        },
+        {
+          "key": "regime",
+          "text": "大盤空頭"
+        }
+      ],
+      "buyBelow": 1086.8105,
+      "gapPct": 31.734606060606076,
+      "roomRR": null,
+      "plan": null,
+      "text": "收盤已跌破失效價 963.59，不進場。目前另外還卡：收盤不在失效價和目標價之間、RSI 36（要 45–60）、MACD 轉弱、大盤空頭。",
+      "notes": [
+        "第三季財報最晚 2026-11-14 要公布（法定期限，多數公司會提早），還有 5 個交易日"
+      ],
+      "mismatch": null,
+      "risk": {
+        "level": "low",
+        "total": 2,
+        "max": 10,
+        "reasons": []
+      },
+      "hold": {
+        "code": "exit",
+        "text": "收盤已跌破失效價 963.59，規則上這個部位已經失效，出場優先。第三季財報最晚 2026-11-14 要公布（法定期限，多數公司會提早），還有 5 個交易日。"
+      }
+    },
+    "2327.TW": {
+      "market": "TW",
+      "date": "2026-11-06",
+      "close": 374.0,
+      "ma20": 527.1,
+      "stop": 484.4571,
+      "target": 452.1786,
+      "entryLow": 519.1935,
+      "entryHigh": 532.371,
+      "bias": -29.0457,
+      "high20": 647.0,
+      "rr": null,
+      "code": "below",
+      "signal": false,
+      "blockers": [
+        {
+          "key": "zone",
+          "text": "收盤已跌破失效價"
+        },
+        {
+          "key": "daily",
+          "text": "日線空頭"
+        },
+        {
+          "key": "weekly",
+          "text": "週線空頭"
+        },
+        {
+          "key": "rr",
+          "text": "報酬風險比算不出來"
+        },
+        {
+          "key": "levels",
+          "text": "收盤不在失效價和目標價之間"
+        },
+        {
+          "key": "rsi",
+          "text": "RSI 25（要 45–60）"
+        },
+        {
+          "key": "macd",
+          "text": "MACD 轉弱"
+        },
+        {
+          "key": "regime",
+          "text": "大盤空頭"
+        }
+      ],
+      "buyBelow": 532.371,
+      "gapPct": 42.3451871657754,
+      "roomRR": null,
+      "plan": null,
+      "text": "收盤已跌破失效價 484.46，不進場。目前另外還卡：日線空頭、週線空頭、收盤不在失效價和目標價之間、RSI 25（要 45–60）、MACD 轉弱、大盤空頭。",
+      "notes": [
+        "第三季財報最晚 2026-11-14 要公布（法定期限，多數公司會提早），還有 5 個交易日"
+      ],
+      "mismatch": null,
+      "risk": {
+        "level": "low",
+        "total": 2,
+        "max": 10,
+        "reasons": []
+      },
+      "hold": {
+        "code": "exit",
+        "text": "收盤已跌破失效價 484.46，規則上這個部位已經失效，出場優先。第三季財報最晚 2026-11-14 要公布（法定期限，多數公司會提早），還有 5 個交易日。"
+      }
+    },
+    "4919.TW": {
+      "market": "TW",
+      "date": "2026-11-06",
+      "close": 88.9,
+      "ma20": 130.78,
+      "stop": 119.5943,
+      "target": 109.4071,
+      "entryLow": 128.8183,
+      "entryHigh": 132.0878,
+      "bias": -32.0232,
+      "high20": 163.0,
+      "rr": null,
+      "code": "below",
+      "signal": false,
+      "blockers": [
+        {
+          "key": "zone",
+          "text": "收盤已跌破失效價"
+        },
+        {
+          "key": "weekly",
+          "text": "週線空頭"
+        },
+        {
+          "key": "rr",
+          "text": "報酬風險比算不出來"
+        },
+        {
+          "key": "levels",
+          "text": "收盤不在失效價和目標價之間"
+        },
+        {
+          "key": "rsi",
+          "text": "RSI 27（要 45–60）"
+        },
+        {
+          "key": "macd",
+          "text": "MACD 轉弱"
+        },
+        {
+          "key": "regime",
+          "text": "大盤空頭"
+        }
+      ],
+      "buyBelow": 132.0878,
+      "gapPct": 48.58020247469064,
+      "roomRR": null,
+      "plan": null,
+      "text": "收盤已跌破失效價 119.59，不進場。目前另外還卡：週線空頭、收盤不在失效價和目標價之間、RSI 27（要 45–60）、MACD 轉弱、大盤空頭。",
+      "notes": [
+        "第三季財報最晚 2026-11-14 要公布（法定期限，多數公司會提早），還有 5 個交易日"
+      ],
+      "mismatch": null,
+      "risk": {
+        "level": "low",
+        "total": 2,
+        "max": 10,
+        "reasons": []
+      },
+      "hold": {
+        "code": "exit",
+        "text": "收盤已跌破失效價 119.59，規則上這個部位已經失效，出場優先。第三季財報最晚 2026-11-14 要公布（法定期限，多數公司會提早），還有 5 個交易日。"
+      }
+    },
+    "1569.TWO": {
+      "market": "TW",
+      "date": "2026-11-06",
+      "close": 78.6,
+      "ma20": 84.54,
+      "stop": 75.9,
+      "target": 94.44,
+      "entryLow": 83.2719,
+      "entryHigh": 85.3854,
+      "bias": -7.0263,
+      "high20": 99.6,
+      "rr": null,
+      "code": "below",
+      "signal": false,
+      "blockers": [
+        {
+          "key": "zone",
+          "text": "價格低於進場區"
+        },
+        {
+          "key": "rr",
+          "text": "報酬風險比算不出來"
+        },
+        {
+          "key": "macd",
+          "text": "MACD 轉弱"
+        },
+        {
+          "key": "regime",
+          "text": "大盤空頭"
+        }
+      ],
+      "buyBelow": 85.3854,
+      "gapPct": 8.632824427480923,
+      "roomRR": 7.7777777777778105,
+      "plan": null,
+      "text": "收盤 78.6 低於進場區下緣 83.27，等收盤站回 83.27 以上再看訊號。目前另外還卡：MACD 轉弱、大盤空頭。",
+      "notes": [
+        "第三季財報最晚 2026-11-14 要公布（法定期限，多數公司會提早），還有 5 個交易日"
+      ],
+      "mismatch": null,
+      "risk": {
+        "level": "low",
+        "total": 2,
+        "max": 10,
+        "reasons": []
+      },
+      "hold": {
+        "code": "watch",
+        "text": "收盤在 SMA20（84.54）之下，還沒破失效價 75.9（距離 3.4%）。收盤跌破失效價就是出場優先。第三季財報最晚 2026-11-14 要公布（法定期限，多數公司會提早），還有 5 個交易日。"
+      }
+    },
+    "2221.TWO": {
+      "market": "TW",
+      "date": "2026-11-06",
+      "close": 143.5,
+      "ma20": 141.375,
+      "stop": 124.7464,
+      "target": 173.9857,
+      "entryLow": 139.2544,
+      "entryHigh": 142.7887,
+      "bias": 1.5031,
+      "high20": 195.0,
+      "rr": 1.6256,
+      "code": "trend",
+      "signal": false,
+      "blockers": [
+        {
+          "key": "zone",
+          "text": "價格高於進場區"
+        },
+        {
+          "key": "regime",
+          "text": "大盤空頭"
+        }
+      ],
+      "buyBelow": 142.7887,
+      "gapPct": -0.4956794425087119,
+      "roomRR": 2.746139407900349,
+      "plan": null,
+      "text": "大盤空頭，不進場。",
+      "notes": [
+        "第三季財報最晚 2026-11-14 要公布（法定期限，多數公司會提早），還有 5 個交易日"
+      ],
+      "mismatch": null,
+      "risk": {
+        "level": "low",
+        "total": 2,
+        "max": 10,
+        "reasons": []
+      },
+      "hold": {
+        "code": "keep",
+        "text": "續抱。失效價 124.75（距離 13.1%），收盤跌破就是出場優先。要加碼的話，條件和新進場一樣。第三季財報最晚 2026-11-14 要公布（法定期限，多數公司會提早），還有 5 個交易日。"
+      }
+    },
+    "2313.TW": {
+      "market": "TW",
+      "date": "2026-11-06",
+      "close": 159.0,
+      "ma20": 220.225,
+      "stop": 201.7536,
+      "target": 192.8643,
+      "entryLow": 216.9216,
+      "entryHigh": 222.4272,
+      "bias": -27.8011,
+      "high20": 266.0,
+      "rr": null,
+      "code": "below",
+      "signal": false,
+      "blockers": [
+        {
+          "key": "zone",
+          "text": "收盤已跌破失效價"
+        },
+        {
+          "key": "daily",
+          "text": "日線空頭"
+        },
+        {
+          "key": "weekly",
+          "text": "週線空頭"
+        },
+        {
+          "key": "rr",
+          "text": "報酬風險比算不出來"
+        },
+        {
+          "key": "levels",
+          "text": "收盤不在失效價和目標價之間"
+        },
+        {
+          "key": "rsi",
+          "text": "RSI 25（要 45–60）"
+        },
+        {
+          "key": "macd",
+          "text": "MACD 轉弱"
+        },
+        {
+          "key": "regime",
+          "text": "大盤空頭"
+        }
+      ],
+      "buyBelow": 222.4272,
+      "gapPct": 39.89132075471697,
+      "roomRR": null,
+      "plan": null,
+      "text": "收盤已跌破失效價 201.75，不進場。目前另外還卡：日線空頭、週線空頭、收盤不在失效價和目標價之間、RSI 25（要 45–60）、MACD 轉弱、大盤空頭。",
+      "notes": [
+        "第三季財報最晚 2026-11-14 要公布（法定期限，多數公司會提早），還有 5 個交易日"
+      ],
+      "mismatch": null,
+      "risk": {
+        "level": "low",
+        "total": 2,
+        "max": 10,
+        "reasons": []
+      },
+      "hold": {
+        "code": "exit",
+        "text": "收盤已跌破失效價 201.75，規則上這個部位已經失效，出場優先。第三季財報最晚 2026-11-14 要公布（法定期限，多數公司會提早），還有 5 個交易日。"
+      }
+    },
+    "3491.TWO": {
+      "market": "TW",
+      "date": "2026-11-06",
+      "close": 1085.0,
+      "ma20": 1342.25,
+      "stop": 1223.1071,
+      "target": 1303.4286,
+      "entryLow": 1322.1163,
+      "entryHigh": 1355.6725,
+      "bias": -19.1656,
+      "high20": 1730.0,
+      "rr": null,
+      "code": "below",
+      "signal": false,
+      "blockers": [
+        {
+          "key": "zone",
+          "text": "收盤已跌破失效價"
+        },
+        {
+          "key": "daily",
+          "text": "日線空頭"
+        },
+        {
+          "key": "weekly",
+          "text": "週線空頭"
+        },
+        {
+          "key": "rr",
+          "text": "報酬風險比算不出來"
+        },
+        {
+          "key": "levels",
+          "text": "收盤不在失效價和目標價之間"
+        },
+        {
+          "key": "rsi",
+          "text": "RSI 33（要 45–60）"
+        },
+        {
+          "key": "macd",
+          "text": "MACD 轉弱"
+        },
+        {
+          "key": "regime",
+          "text": "大盤空頭"
+        }
+      ],
+      "buyBelow": 1355.6725,
+      "gapPct": 24.946774193548382,
+      "roomRR": null,
+      "plan": null,
+      "text": "收盤已跌破失效價 1,223.11，不進場。目前另外還卡：日線空頭、週線空頭、收盤不在失效價和目標價之間、RSI 33（要 45–60）、MACD 轉弱、大盤空頭。",
+      "notes": [
+        "第三季財報最晚 2026-11-14 要公布（法定期限，多數公司會提早），還有 5 個交易日"
+      ],
+      "mismatch": null,
+      "risk": {
+        "level": "low",
+        "total": 2,
+        "max": 10,
+        "reasons": []
+      },
+      "hold": {
+        "code": "exit",
+        "text": "收盤已跌破失效價 1,223.11，規則上這個部位已經失效，出場優先。第三季財報最晚 2026-11-14 要公布（法定期限，多數公司會提早），還有 5 個交易日。"
+      }
+    },
+    "6285.TW": {
+      "market": "TW",
+      "date": "2026-11-06",
+      "close": 164.5,
+      "ma20": 229.6,
+      "stop": 212.1143,
+      "target": 196.5571,
+      "entryLow": 226.156,
+      "entryHigh": 231.896,
+      "bias": -28.3537,
+      "high20": 266.0,
+      "rr": null,
+      "code": "below",
+      "signal": false,
+      "blockers": [
+        {
+          "key": "zone",
+          "text": "收盤已跌破失效價"
+        },
+        {
+          "key": "daily",
+          "text": "日線空頭"
+        },
+        {
+          "key": "weekly",
+          "text": "週線空頭"
+        },
+        {
+          "key": "rr",
+          "text": "報酬風險比算不出來"
+        },
+        {
+          "key": "levels",
+          "text": "收盤不在失效價和目標價之間"
+        },
+        {
+          "key": "rsi",
+          "text": "RSI 24（要 45–60）"
+        },
+        {
+          "key": "macd",
+          "text": "MACD 轉弱"
+        },
+        {
+          "key": "regime",
+          "text": "大盤空頭"
+        }
+      ],
+      "buyBelow": 231.896,
+      "gapPct": 40.97021276595745,
+      "roomRR": null,
+      "plan": null,
+      "text": "收盤已跌破失效價 212.11，不進場。目前另外還卡：日線空頭、週線空頭、收盤不在失效價和目標價之間、RSI 24（要 45–60）、MACD 轉弱、大盤空頭。",
+      "notes": [
+        "第三季財報最晚 2026-11-14 要公布（法定期限，多數公司會提早），還有 5 個交易日"
+      ],
+      "mismatch": null,
+      "risk": {
+        "level": "low",
+        "total": 3,
+        "max": 10,
+        "reasons": []
+      },
+      "hold": {
+        "code": "exit",
+        "text": "收盤已跌破失效價 212.11，規則上這個部位已經失效，出場優先。第三季財報最晚 2026-11-14 要公布（法定期限，多數公司會提早），還有 5 個交易日。"
+      }
+    },
+    "6271.TW": {
+      "market": "TW",
+      "date": "2026-11-06",
+      "close": 168.5,
+      "ma20": 216.575,
+      "stop": 198.875,
+      "target": 200.95,
+      "entryLow": 213.3264,
+      "entryHigh": 218.7407,
+      "bias": -22.1979,
+      "high20": 250.0,
+      "rr": null,
+      "code": "below",
+      "signal": false,
+      "blockers": [
+        {
+          "key": "zone",
+          "text": "收盤已跌破失效價"
+        },
+        {
+          "key": "daily",
+          "text": "日線空頭"
+        },
+        {
+          "key": "rr",
+          "text": "報酬風險比算不出來"
+        },
+        {
+          "key": "levels",
+          "text": "收盤不在失效價和目標價之間"
+        },
+        {
+          "key": "rsi",
+          "text": "RSI 30（要 45–60）"
+        },
+        {
+          "key": "macd",
+          "text": "MACD 轉弱"
+        },
+        {
+          "key": "regime",
+          "text": "大盤空頭"
+        }
+      ],
+      "buyBelow": 218.7407,
+      "gapPct": 29.816439169139475,
+      "roomRR": null,
+      "plan": null,
+      "text": "收盤已跌破失效價 198.88，不進場。目前另外還卡：日線空頭、收盤不在失效價和目標價之間、RSI 30（要 45–60）、MACD 轉弱、大盤空頭。",
+      "notes": [
+        "第三季財報最晚 2026-11-14 要公布（法定期限，多數公司會提早），還有 5 個交易日"
+      ],
+      "mismatch": null,
+      "risk": {
+        "level": "low",
+        "total": 2,
+        "max": 10,
+        "reasons": []
+      },
+      "hold": {
+        "code": "exit",
+        "text": "收盤已跌破失效價 198.88，規則上這個部位已經失效，出場優先。第三季財報最晚 2026-11-14 要公布（法定期限，多數公司會提早），還有 5 個交易日。"
+      }
+    },
+    "2367.TW": {
+      "market": "TW",
+      "date": "2026-11-06",
+      "close": 32.8,
+      "ma20": 43.2175,
+      "stop": 40.0675,
+      "target": 38.575,
+      "entryLow": 42.5692,
+      "entryHigh": 43.6497,
+      "bias": -24.1048,
+      "high20": 48.45,
+      "rr": null,
+      "code": "below",
+      "signal": false,
+      "blockers": [
+        {
+          "key": "zone",
+          "text": "收盤已跌破失效價"
+        },
+        {
+          "key": "weekly",
+          "text": "週線空頭"
+        },
+        {
+          "key": "rr",
+          "text": "報酬風險比算不出來"
+        },
+        {
+          "key": "levels",
+          "text": "收盤不在失效價和目標價之間"
+        },
+        {
+          "key": "rsi",
+          "text": "RSI 27（要 45–60）"
+        },
+        {
+          "key": "macd",
+          "text": "MACD 轉弱"
+        },
+        {
+          "key": "regime",
+          "text": "大盤空頭"
+        }
+      ],
+      "buyBelow": 43.6497,
+      "gapPct": 33.0783536585366,
+      "roomRR": null,
+      "plan": null,
+      "text": "收盤已跌破失效價 40.07，不進場。目前另外還卡：週線空頭、收盤不在失效價和目標價之間、RSI 27（要 45–60）、MACD 轉弱、大盤空頭。",
+      "notes": [
+        "第三季財報最晚 2026-11-14 要公布（法定期限，多數公司會提早），還有 5 個交易日"
+      ],
+      "mismatch": null,
+      "risk": {
+        "level": "low",
+        "total": 3,
+        "max": 10,
+        "reasons": []
+      },
+      "hold": {
+        "code": "exit",
+        "text": "收盤已跌破失效價 40.07，規則上這個部位已經失效，出場優先。第三季財報最晚 2026-11-14 要公布（法定期限，多數公司會提早），還有 5 個交易日。"
+      }
+    },
+    "2355.TW": {
+      "market": "TW",
+      "date": "2026-11-06",
+      "close": 47.25,
+      "ma20": 50.6675,
+      "stop": 46.9518,
+      "target": 54.0621,
+      "entryLow": 49.9075,
+      "entryHigh": 51.1742,
+      "bias": -6.745,
+      "high20": 56.3,
+      "rr": null,
+      "code": "below",
+      "signal": false,
+      "blockers": [
+        {
+          "key": "zone",
+          "text": "價格低於進場區"
+        },
+        {
+          "key": "rr",
+          "text": "報酬風險比算不出來"
+        },
+        {
+          "key": "macd",
+          "text": "MACD 轉弱"
+        },
+        {
+          "key": "regime",
+          "text": "大盤空頭"
+        }
+      ],
+      "buyBelow": 51.1742,
+      "gapPct": 8.305185185185193,
+      "roomRR": 30.348759221998513,
+      "plan": null,
+      "text": "收盤 47.25 低於進場區下緣 49.91，等收盤站回 49.91 以上再看訊號。目前另外還卡：MACD 轉弱、大盤空頭。",
+      "notes": [
+        "第三季財報最晚 2026-11-14 要公布（法定期限，多數公司會提早），還有 5 個交易日"
+      ],
+      "mismatch": null,
+      "risk": {
+        "level": "low",
+        "total": 3,
+        "max": 10,
+        "reasons": []
+      },
+      "hold": {
+        "code": "watch",
+        "text": "收盤在 SMA20（50.67）之下，還沒破失效價 46.95（距離 0.6%）。收盤跌破失效價就是出場優先。第三季財報最晚 2026-11-14 要公布（法定期限，多數公司會提早），還有 5 個交易日。"
+      }
+    },
+    "2049.TW": {
+      "market": "TW",
+      "date": "2026-11-06",
+      "close": 274.5,
+      "ma20": 314.0,
+      "stop": 293.9,
+      "target": 311.35,
+      "entryLow": 309.29,
+      "entryHigh": 317.14,
+      "bias": -12.5796,
+      "high20": 347.5,
+      "rr": null,
+      "code": "below",
+      "signal": false,
+      "blockers": [
+        {
+          "key": "zone",
+          "text": "收盤已跌破失效價"
+        },
+        {
+          "key": "daily",
+          "text": "日線空頭"
+        },
+        {
+          "key": "weekly",
+          "text": "週線空頭"
+        },
+        {
+          "key": "rr",
+          "text": "報酬風險比算不出來"
+        },
+        {
+          "key": "levels",
+          "text": "收盤不在失效價和目標價之間"
+        },
+        {
+          "key": "rsi",
+          "text": "RSI 34（要 45–60）"
+        },
+        {
+          "key": "macd",
+          "text": "MACD 轉弱"
+        },
+        {
+          "key": "regime",
+          "text": "大盤空頭"
+        }
+      ],
+      "buyBelow": 317.14,
+      "gapPct": 15.533697632058274,
+      "roomRR": null,
+      "plan": null,
+      "text": "收盤已跌破失效價 293.9，不進場。目前另外還卡：日線空頭、週線空頭、收盤不在失效價和目標價之間、RSI 34（要 45–60）、MACD 轉弱、大盤空頭。",
+      "notes": [
+        "第三季財報最晚 2026-11-14 要公布（法定期限，多數公司會提早），還有 5 個交易日"
+      ],
+      "mismatch": null,
+      "risk": {
+        "level": "low",
+        "total": 2,
+        "max": 10,
+        "reasons": []
+      },
+      "hold": {
+        "code": "exit",
+        "text": "收盤已跌破失效價 293.9，規則上這個部位已經失效，出場優先。第三季財報最晚 2026-11-14 要公布（法定期限，多數公司會提早），還有 5 個交易日。"
+      }
+    },
+    "2233.TW": {
+      "market": "TW",
+      "date": "2026-11-06",
+      "close": 115.5,
+      "ma20": 146.2,
+      "stop": 137.9286,
+      "target": 130.6643,
+      "entryLow": 144.007,
+      "entryHigh": 147.662,
+      "bias": -20.9986,
+      "high20": 167.0,
       "rr": null,
       "code": "below",
       "signal": false,
@@ -376,368 +2190,17 @@
         {
           "key": "macd",
           "text": "MACD 轉弱"
+        },
+        {
+          "key": "regime",
+          "text": "大盤空頭"
         }
       ],
-      "buyBelow": 1591.76,
-      "gapPct": 40.863716814159304,
+      "buyBelow": 147.662,
+      "gapPct": 27.845887445887453,
       "roomRR": null,
       "plan": null,
-      "text": "收盤已跌破失效價 1,477，不進場。目前另外還卡：日線空頭、週線空頭、收盤不在失效價和目標價之間、RSI 20（要 45–60）、MACD 轉弱。",
-      "notes": [
-        "第三季財報最晚 2026-11-14 要公布（法定期限，多數公司會提早），還有 5 個交易日"
-      ],
-      "mismatch": null,
-      "risk": {
-        "level": "low",
-        "total": 3,
-        "max": 10,
-        "reasons": []
-      },
-      "hold": {
-        "code": "exit",
-        "text": "收盤已跌破失效價 1,477，規則上這個部位已經失效，出場優先。第三季財報最晚 2026-11-14 要公布（法定期限，多數公司會提早），還有 5 個交易日。"
-      }
-    },
-    "2371.TW": {
-      "market": "TW",
-      "date": "2026-11-05",
-      "close": 27.25,
-      "ma20": 28.9425,
-      "stop": 27.5496,
-      "target": 29.8036,
-      "entryLow": 28.5084,
-      "entryHigh": 29.2319,
-      "bias": -5.8478,
-      "high20": 31.4,
-      "rr": null,
-      "code": "below",
-      "signal": false,
-      "blockers": [
-        {
-          "key": "zone",
-          "text": "收盤已跌破失效價"
-        },
-        {
-          "key": "rr",
-          "text": "報酬風險比算不出來"
-        },
-        {
-          "key": "levels",
-          "text": "收盤不在失效價和目標價之間"
-        },
-        {
-          "key": "rsi",
-          "text": "RSI 40（要 45–60）"
-        },
-        {
-          "key": "macd",
-          "text": "MACD 轉弱"
-        }
-      ],
-      "buyBelow": 29.2319,
-      "gapPct": 7.273027522935771,
-      "roomRR": null,
-      "plan": null,
-      "text": "收盤已跌破失效價 27.55，不進場。目前另外還卡：收盤不在失效價和目標價之間、RSI 40（要 45–60）、MACD 轉弱。",
-      "notes": [
-        "第三季財報最晚 2026-11-14 要公布（法定期限，多數公司會提早），還有 5 個交易日"
-      ],
-      "mismatch": null,
-      "risk": {
-        "level": "mid",
-        "total": 4,
-        "max": 10,
-        "reasons": [
-          "風險中"
-        ]
-      },
-      "hold": {
-        "code": "exit",
-        "text": "收盤已跌破失效價 27.55，規則上這個部位已經失效，出場優先。第三季財報最晚 2026-11-14 要公布（法定期限，多數公司會提早），還有 5 個交易日。"
-      }
-    },
-    "8210.TW": {
-      "market": "TW",
-      "date": "2026-11-05",
-      "close": 596.0,
-      "ma20": 775.95,
-      "stop": 735.0643,
-      "target": 670.9571,
-      "entryLow": 764.3107,
-      "entryHigh": 783.7095,
-      "bias": -23.1909,
-      "high20": 891.0,
-      "rr": null,
-      "code": "below",
-      "signal": false,
-      "blockers": [
-        {
-          "key": "zone",
-          "text": "收盤已跌破失效價"
-        },
-        {
-          "key": "daily",
-          "text": "日線空頭"
-        },
-        {
-          "key": "weekly",
-          "text": "週線空頭"
-        },
-        {
-          "key": "rr",
-          "text": "報酬風險比算不出來"
-        },
-        {
-          "key": "levels",
-          "text": "收盤不在失效價和目標價之間"
-        },
-        {
-          "key": "rsi",
-          "text": "RSI 15（要 45–60）"
-        },
-        {
-          "key": "macd",
-          "text": "MACD 轉弱"
-        }
-      ],
-      "buyBelow": 783.7095,
-      "gapPct": 31.494882550335568,
-      "roomRR": null,
-      "plan": null,
-      "text": "收盤已跌破失效價 735.06，不進場。目前另外還卡：日線空頭、週線空頭、收盤不在失效價和目標價之間、RSI 15（要 45–60）、MACD 轉弱。",
-      "notes": [
-        "第三季財報最晚 2026-11-14 要公布（法定期限，多數公司會提早），還有 5 個交易日"
-      ],
-      "mismatch": null,
-      "risk": {
-        "level": "low",
-        "total": 3,
-        "max": 10,
-        "reasons": []
-      },
-      "hold": {
-        "code": "exit",
-        "text": "收盤已跌破失效價 735.06，規則上這個部位已經失效，出場優先。第三季財報最晚 2026-11-14 要公布（法定期限，多數公司會提早），還有 5 個交易日。"
-      }
-    },
-    "3324.TWO": {
-      "market": "TW",
-      "date": "2026-11-05",
-      "close": 1170.0,
-      "ma20": 1400.25,
-      "stop": 1263.9643,
-      "target": 1419.8571,
-      "entryLow": 1379.2462,
-      "entryHigh": 1414.2525,
-      "bias": -16.4435,
-      "high20": 1570.0,
-      "rr": null,
-      "code": "avoid",
-      "signal": false,
-      "blockers": [
-        {
-          "key": "zone",
-          "text": "收盤已跌破失效價"
-        },
-        {
-          "key": "rr",
-          "text": "報酬風險比算不出來"
-        },
-        {
-          "key": "levels",
-          "text": "收盤不在失效價和目標價之間"
-        },
-        {
-          "key": "rsi",
-          "text": "RSI 35（要 45–60）"
-        },
-        {
-          "key": "macd",
-          "text": "MACD 轉弱"
-        }
-      ],
-      "buyBelow": 1414.2525,
-      "gapPct": 20.876282051282047,
-      "roomRR": null,
-      "plan": null,
-      "text": "列入注意股（2026-11-04），不碰。",
-      "notes": [
-        "第三季財報最晚 2026-11-14 要公布（法定期限，多數公司會提早），還有 5 個交易日"
-      ],
-      "mismatch": null,
-      "risk": {
-        "level": "mid",
-        "total": 5,
-        "max": 10,
-        "reasons": [
-          "注意股",
-          "風險中"
-        ]
-      },
-      "hold": {
-        "code": "exit",
-        "text": "收盤已跌破失效價 1,263.96，規則上這個部位已經失效，出場優先。第三季財報最晚 2026-11-14 要公布（法定期限，多數公司會提早），還有 5 個交易日。"
-      }
-    },
-    "3653.TW": {
-      "market": "TW",
-      "date": "2026-11-05",
-      "close": 5805.0,
-      "ma20": 6506.75,
-      "stop": 5968.8929,
-      "target": 6791.0714,
-      "entryLow": 6409.1488,
-      "entryHigh": 6571.8175,
-      "bias": -10.785,
-      "high20": 7330.0,
-      "rr": null,
-      "code": "below",
-      "signal": false,
-      "blockers": [
-        {
-          "key": "zone",
-          "text": "收盤已跌破失效價"
-        },
-        {
-          "key": "rr",
-          "text": "報酬風險比算不出來"
-        },
-        {
-          "key": "levels",
-          "text": "收盤不在失效價和目標價之間"
-        },
-        {
-          "key": "rsi",
-          "text": "RSI 42（要 45–60）"
-        },
-        {
-          "key": "macd",
-          "text": "MACD 轉弱"
-        }
-      ],
-      "buyBelow": 6571.8175,
-      "gapPct": 13.209603789836354,
-      "roomRR": null,
-      "plan": null,
-      "text": "收盤已跌破失效價 5,968.89，不進場。目前另外還卡：收盤不在失效價和目標價之間、RSI 42（要 45–60）、MACD 轉弱。",
-      "notes": [
-        "第三季財報最晚 2026-11-14 要公布（法定期限，多數公司會提早），還有 5 個交易日"
-      ],
-      "mismatch": null,
-      "risk": {
-        "level": "mid",
-        "total": 4,
-        "max": 10,
-        "reasons": [
-          "風險中"
-        ]
-      },
-      "hold": {
-        "code": "exit",
-        "text": "收盤已跌破失效價 5,968.89，規則上這個部位已經失效，出場優先。第三季財報最晚 2026-11-14 要公布（法定期限，多數公司會提早），還有 5 個交易日。"
-      }
-    },
-    "3017.TW": {
-      "market": "TW",
-      "date": "2026-11-05",
-      "close": 2565.0,
-      "ma20": 3173.0,
-      "stop": 2923.5714,
-      "target": 3022.2857,
-      "entryLow": 3125.405,
-      "entryHigh": 3204.73,
-      "bias": -19.1617,
-      "high20": 3655.0,
-      "rr": null,
-      "code": "below",
-      "signal": false,
-      "blockers": [
-        {
-          "key": "zone",
-          "text": "收盤已跌破失效價"
-        },
-        {
-          "key": "daily",
-          "text": "日線空頭"
-        },
-        {
-          "key": "rr",
-          "text": "報酬風險比算不出來"
-        },
-        {
-          "key": "levels",
-          "text": "收盤不在失效價和目標價之間"
-        },
-        {
-          "key": "rsi",
-          "text": "RSI 26（要 45–60）"
-        },
-        {
-          "key": "macd",
-          "text": "MACD 轉弱"
-        }
-      ],
-      "buyBelow": 3204.73,
-      "gapPct": 24.94074074074075,
-      "roomRR": null,
-      "plan": null,
-      "text": "收盤已跌破失效價 2,923.57，不進場。目前另外還卡：日線空頭、收盤不在失效價和目標價之間、RSI 26（要 45–60）、MACD 轉弱。",
-      "notes": [
-        "第三季財報最晚 2026-11-14 要公布（法定期限，多數公司會提早），還有 5 個交易日"
-      ],
-      "mismatch": null,
-      "risk": {
-        "level": "low",
-        "total": 3,
-        "max": 10,
-        "reasons": []
-      },
-      "hold": {
-        "code": "exit",
-        "text": "收盤已跌破失效價 2,923.57，規則上這個部位已經失效，出場優先。第三季財報最晚 2026-11-14 要公布（法定期限，多數公司會提早），還有 5 個交易日。"
-      }
-    },
-    "3189.TW": {
-      "market": "TW",
-      "date": "2026-11-05",
-      "close": 740.0,
-      "ma20": 968.55,
-      "stop": 878.1214,
-      "target": 905.7857,
-      "entryLow": 954.0217,
-      "entryHigh": 978.2355,
-      "bias": -23.5971,
-      "high20": 1145.0,
-      "rr": null,
-      "code": "below",
-      "signal": false,
-      "blockers": [
-        {
-          "key": "zone",
-          "text": "收盤已跌破失效價"
-        },
-        {
-          "key": "rr",
-          "text": "報酬風險比算不出來"
-        },
-        {
-          "key": "levels",
-          "text": "收盤不在失效價和目標價之間"
-        },
-        {
-          "key": "rsi",
-          "text": "RSI 32（要 45–60）"
-        },
-        {
-          "key": "macd",
-          "text": "MACD 轉弱"
-        }
-      ],
-      "buyBelow": 978.2355,
-      "gapPct": 32.19398648648648,
-      "roomRR": null,
-      "plan": null,
-      "text": "收盤已跌破失效價 878.12，不進場。目前另外還卡：收盤不在失效價和目標價之間、RSI 32（要 45–60）、MACD 轉弱。",
+      "text": "收盤已跌破失效價 137.93，不進場。目前另外還卡：日線空頭、週線空頭、收盤不在失效價和目標價之間、RSI 20（要 45–60）、MACD 轉弱、大盤空頭。",
       "notes": [
         "第三季財報最晚 2026-11-14 要公布（法定期限，多數公司會提早），還有 5 個交易日"
       ],
@@ -750,1359 +2213,20 @@
       },
       "hold": {
         "code": "exit",
-        "text": "收盤已跌破失效價 878.12，規則上這個部位已經失效，出場優先。第三季財報最晚 2026-11-14 要公布（法定期限，多數公司會提早），還有 5 個交易日。"
-      }
-    },
-    "3037.TW": {
-      "market": "TW",
-      "date": "2026-11-05",
-      "close": 800.0,
-      "ma20": 1079.05,
-      "stop": 980.05,
-      "target": 981.5,
-      "entryLow": 1062.8642,
-      "entryHigh": 1089.8405,
-      "bias": -25.8607,
-      "high20": 1345.0,
-      "rr": null,
-      "code": "below",
-      "signal": false,
-      "blockers": [
-        {
-          "key": "zone",
-          "text": "收盤已跌破失效價"
-        },
-        {
-          "key": "rr",
-          "text": "報酬風險比算不出來"
-        },
-        {
-          "key": "levels",
-          "text": "收盤不在失效價和目標價之間"
-        },
-        {
-          "key": "rsi",
-          "text": "RSI 27（要 45–60）"
-        },
-        {
-          "key": "macd",
-          "text": "MACD 轉弱"
-        }
-      ],
-      "buyBelow": 1089.8405,
-      "gapPct": 36.2300625,
-      "roomRR": null,
-      "plan": null,
-      "text": "收盤已跌破失效價 980.05，不進場。目前另外還卡：收盤不在失效價和目標價之間、RSI 27（要 45–60）、MACD 轉弱。",
-      "notes": [
-        "第三季財報最晚 2026-11-14 要公布（法定期限，多數公司會提早），還有 5 個交易日"
-      ],
-      "mismatch": null,
-      "risk": {
-        "level": "low",
-        "total": 2,
-        "max": 10,
-        "reasons": []
-      },
-      "hold": {
-        "code": "exit",
-        "text": "收盤已跌破失效價 980.05，規則上這個部位已經失效，出場優先。第三季財報最晚 2026-11-14 要公布（法定期限，多數公司會提早），還有 5 個交易日。"
-      }
-    },
-    "8046.TW": {
-      "market": "TW",
-      "date": "2026-11-05",
-      "close": 972.0,
-      "ma20": 1291.1,
-      "stop": 1176.1571,
-      "target": 1182.7286,
-      "entryLow": 1271.7335,
-      "entryHigh": 1304.011,
-      "bias": -24.7154,
-      "high20": 1560.0,
-      "rr": null,
-      "code": "below",
-      "signal": false,
-      "blockers": [
-        {
-          "key": "zone",
-          "text": "收盤已跌破失效價"
-        },
-        {
-          "key": "rr",
-          "text": "報酬風險比算不出來"
-        },
-        {
-          "key": "levels",
-          "text": "收盤不在失效價和目標價之間"
-        },
-        {
-          "key": "rsi",
-          "text": "RSI 27（要 45–60）"
-        },
-        {
-          "key": "macd",
-          "text": "MACD 轉弱"
-        }
-      ],
-      "buyBelow": 1304.011,
-      "gapPct": 34.157510288065836,
-      "roomRR": null,
-      "plan": null,
-      "text": "收盤已跌破失效價 1,176.16，不進場。目前另外還卡：收盤不在失效價和目標價之間、RSI 27（要 45–60）、MACD 轉弱。",
-      "notes": [
-        "第三季財報最晚 2026-11-14 要公布（法定期限，多數公司會提早），還有 5 個交易日"
-      ],
-      "mismatch": null,
-      "risk": {
-        "level": "low",
-        "total": 2,
-        "max": 10,
-        "reasons": []
-      },
-      "hold": {
-        "code": "exit",
-        "text": "收盤已跌破失效價 1,176.16，規則上這個部位已經失效，出場優先。第三季財報最晚 2026-11-14 要公布（法定期限，多數公司會提早），還有 5 個交易日。"
-      }
-    },
-    "8358.TWO": {
-      "market": "TW",
-      "date": "2026-11-05",
-      "close": 334.0,
-      "ma20": 453.25,
-      "stop": 408.8929,
-      "target": 415.3214,
-      "entryLow": 446.4513,
-      "entryHigh": 457.7825,
-      "bias": -26.31,
-      "high20": 560.0,
-      "rr": null,
-      "code": "below",
-      "signal": false,
-      "blockers": [
-        {
-          "key": "zone",
-          "text": "收盤已跌破失效價"
-        },
-        {
-          "key": "daily",
-          "text": "日線空頭"
-        },
-        {
-          "key": "weekly",
-          "text": "週線空頭"
-        },
-        {
-          "key": "rr",
-          "text": "報酬風險比算不出來"
-        },
-        {
-          "key": "levels",
-          "text": "收盤不在失效價和目標價之間"
-        },
-        {
-          "key": "rsi",
-          "text": "RSI 30（要 45–60）"
-        },
-        {
-          "key": "macd",
-          "text": "MACD 轉弱"
-        }
-      ],
-      "buyBelow": 457.7825,
-      "gapPct": 37.060628742514965,
-      "roomRR": null,
-      "plan": null,
-      "text": "收盤已跌破失效價 408.89，不進場。目前另外還卡：日線空頭、週線空頭、收盤不在失效價和目標價之間、RSI 30（要 45–60）、MACD 轉弱。",
-      "notes": [
-        "第三季財報最晚 2026-11-14 要公布（法定期限，多數公司會提早），還有 5 個交易日"
-      ],
-      "mismatch": null,
-      "risk": {
-        "level": "low",
-        "total": 2,
-        "max": 10,
-        "reasons": []
-      },
-      "hold": {
-        "code": "exit",
-        "text": "收盤已跌破失效價 408.89，規則上這個部位已經失效，出場優先。第三季財報最晚 2026-11-14 要公布（法定期限，多數公司會提早），還有 5 個交易日。"
-      }
-    },
-    "4958.TW": {
-      "market": "TW",
-      "date": "2026-11-05",
-      "close": 394.0,
-      "ma20": 530.1,
-      "stop": 482.2286,
-      "target": 481.7643,
-      "entryLow": 522.1485,
-      "entryHigh": 535.401,
-      "bias": -25.6744,
-      "high20": 614.0,
-      "rr": null,
-      "code": "below",
-      "signal": false,
-      "blockers": [
-        {
-          "key": "zone",
-          "text": "收盤已跌破失效價"
-        },
-        {
-          "key": "rr",
-          "text": "報酬風險比算不出來"
-        },
-        {
-          "key": "levels",
-          "text": "收盤不在失效價和目標價之間"
-        },
-        {
-          "key": "rsi",
-          "text": "RSI 30（要 45–60）"
-        },
-        {
-          "key": "macd",
-          "text": "MACD 轉弱"
-        }
-      ],
-      "buyBelow": 535.401,
-      "gapPct": 35.88857868020303,
-      "roomRR": null,
-      "plan": null,
-      "text": "收盤已跌破失效價 482.23，不進場。目前另外還卡：收盤不在失效價和目標價之間、RSI 30（要 45–60）、MACD 轉弱。",
-      "notes": [
-        "第三季財報最晚 2026-11-14 要公布（法定期限，多數公司會提早），還有 5 個交易日"
-      ],
-      "mismatch": null,
-      "risk": {
-        "level": "low",
-        "total": 2,
-        "max": 10,
-        "reasons": []
-      },
-      "hold": {
-        "code": "exit",
-        "text": "收盤已跌破失效價 482.23，規則上這個部位已經失效，出場優先。第三季財報最晚 2026-11-14 要公布（法定期限，多數公司會提早），還有 5 個交易日。"
-      }
-    },
-    "6213.TW": {
-      "market": "TW",
-      "date": "2026-11-05",
-      "close": 551.0,
-      "ma20": 745.3,
-      "stop": 662.5857,
-      "target": 702.6429,
-      "entryLow": 734.1205,
-      "entryHigh": 752.753,
-      "bias": -26.07,
-      "high20": 885.0,
-      "rr": null,
-      "code": "avoid",
-      "signal": false,
-      "blockers": [
-        {
-          "key": "zone",
-          "text": "收盤已跌破失效價"
-        },
-        {
-          "key": "rr",
-          "text": "報酬風險比算不出來"
-        },
-        {
-          "key": "levels",
-          "text": "收盤不在失效價和目標價之間"
-        },
-        {
-          "key": "rsi",
-          "text": "RSI 34（要 45–60）"
-        },
-        {
-          "key": "macd",
-          "text": "MACD 轉弱"
-        }
-      ],
-      "buyBelow": 752.753,
-      "gapPct": 36.615789473684224,
-      "roomRR": null,
-      "plan": null,
-      "text": "處置股 2026-11-05～2026-11-11，不碰。",
-      "notes": [
-        "第三季財報最晚 2026-11-14 要公布（法定期限，多數公司會提早），還有 5 個交易日"
-      ],
-      "mismatch": null,
-      "risk": {
-        "level": "high",
-        "total": 4,
-        "max": 10,
-        "reasons": [
-          "處置股"
-        ]
-      },
-      "hold": {
-        "code": "exit",
-        "text": "收盤已跌破失效價 662.59，規則上這個部位已經失效，出場優先。第三季財報最晚 2026-11-14 要公布（法定期限，多數公司會提早），還有 5 個交易日。"
-      }
-    },
-    "2383.TW": {
-      "market": "TW",
-      "date": "2026-11-05",
-      "close": 4100.0,
-      "ma20": 5093.25,
-      "stop": 4688.25,
-      "target": 4842.5,
-      "entryLow": 5016.8512,
-      "entryHigh": 5144.1825,
-      "bias": -19.5013,
-      "high20": 6325.0,
-      "rr": null,
-      "code": "below",
-      "signal": false,
-      "blockers": [
-        {
-          "key": "zone",
-          "text": "收盤已跌破失效價"
-        },
-        {
-          "key": "daily",
-          "text": "日線空頭"
-        },
-        {
-          "key": "rr",
-          "text": "報酬風險比算不出來"
-        },
-        {
-          "key": "levels",
-          "text": "收盤不在失效價和目標價之間"
-        },
-        {
-          "key": "rsi",
-          "text": "RSI 32（要 45–60）"
-        },
-        {
-          "key": "macd",
-          "text": "MACD 轉弱"
-        }
-      ],
-      "buyBelow": 5144.1825,
-      "gapPct": 25.467865853658544,
-      "roomRR": null,
-      "plan": null,
-      "text": "收盤已跌破失效價 4,688.25，不進場。目前另外還卡：日線空頭、收盤不在失效價和目標價之間、RSI 32（要 45–60）、MACD 轉弱。",
-      "notes": [
-        "第三季財報最晚 2026-11-14 要公布（法定期限，多數公司會提早），還有 5 個交易日"
-      ],
-      "mismatch": null,
-      "risk": {
-        "level": "low",
-        "total": 3,
-        "max": 10,
-        "reasons": []
-      },
-      "hold": {
-        "code": "exit",
-        "text": "收盤已跌破失效價 4,688.25，規則上這個部位已經失效，出場優先。第三季財報最晚 2026-11-14 要公布（法定期限，多數公司會提早），還有 5 個交易日。"
-      }
-    },
-    "1303.TW": {
-      "market": "TW",
-      "date": "2026-11-05",
-      "close": 249.0,
-      "ma20": 303.025,
-      "stop": 276.1964,
-      "target": 298.1857,
-      "entryLow": 298.4796,
-      "entryHigh": 306.0553,
-      "bias": -17.8286,
-      "high20": 350.5,
-      "rr": null,
-      "code": "below",
-      "signal": false,
-      "blockers": [
-        {
-          "key": "zone",
-          "text": "收盤已跌破失效價"
-        },
-        {
-          "key": "rr",
-          "text": "報酬風險比算不出來"
-        },
-        {
-          "key": "levels",
-          "text": "收盤不在失效價和目標價之間"
-        },
-        {
-          "key": "rsi",
-          "text": "RSI 40（要 45–60）"
-        },
-        {
-          "key": "macd",
-          "text": "MACD 轉弱"
-        }
-      ],
-      "buyBelow": 306.0553,
-      "gapPct": 22.9137751004016,
-      "roomRR": null,
-      "plan": null,
-      "text": "收盤已跌破失效價 276.2，不進場。目前另外還卡：收盤不在失效價和目標價之間、RSI 40（要 45–60）、MACD 轉弱。",
-      "notes": [
-        "第三季財報最晚 2026-11-14 要公布（法定期限，多數公司會提早），還有 5 個交易日"
-      ],
-      "mismatch": null,
-      "risk": {
-        "level": "low",
-        "total": 2,
-        "max": 10,
-        "reasons": []
-      },
-      "hold": {
-        "code": "exit",
-        "text": "收盤已跌破失效價 276.2，規則上這個部位已經失效，出場優先。第三季財報最晚 2026-11-14 要公布（法定期限，多數公司會提早），還有 5 個交易日。"
-      }
-    },
-    "2408.TW": {
-      "market": "TW",
-      "date": "2026-11-05",
-      "close": 360.0,
-      "ma20": 451.375,
-      "stop": 414.5607,
-      "target": 427.4929,
-      "entryLow": 444.6044,
-      "entryHigh": 455.8888,
-      "bias": -20.2437,
-      "high20": 537.0,
-      "rr": null,
-      "code": "below",
-      "signal": false,
-      "blockers": [
-        {
-          "key": "zone",
-          "text": "收盤已跌破失效價"
-        },
-        {
-          "key": "daily",
-          "text": "日線空頭"
-        },
-        {
-          "key": "rr",
-          "text": "報酬風險比算不出來"
-        },
-        {
-          "key": "levels",
-          "text": "收盤不在失效價和目標價之間"
-        },
-        {
-          "key": "rsi",
-          "text": "RSI 30（要 45–60）"
-        },
-        {
-          "key": "macd",
-          "text": "MACD 轉弱"
-        }
-      ],
-      "buyBelow": 455.8888,
-      "gapPct": 26.63577777777777,
-      "roomRR": null,
-      "plan": null,
-      "text": "收盤已跌破失效價 414.56，不進場。目前另外還卡：日線空頭、收盤不在失效價和目標價之間、RSI 30（要 45–60）、MACD 轉弱。",
-      "notes": [
-        "第三季財報最晚 2026-11-14 要公布（法定期限，多數公司會提早），還有 5 個交易日"
-      ],
-      "mismatch": null,
-      "risk": {
-        "level": "low",
-        "total": 2,
-        "max": 10,
-        "reasons": []
-      },
-      "hold": {
-        "code": "exit",
-        "text": "收盤已跌破失效價 414.56，規則上這個部位已經失效，出場優先。第三季財報最晚 2026-11-14 要公布（法定期限，多數公司會提早），還有 5 個交易日。"
-      }
-    },
-    "6770.TW": {
-      "market": "TW",
-      "date": "2026-11-05",
-      "close": 54.8,
-      "ma20": 66.655,
-      "stop": 62.335,
-      "target": 62.72,
-      "entryLow": 65.6552,
-      "entryHigh": 67.3216,
-      "bias": -17.7856,
-      "high20": 75.4,
-      "rr": null,
-      "code": "below",
-      "signal": false,
-      "blockers": [
-        {
-          "key": "zone",
-          "text": "收盤已跌破失效價"
-        },
-        {
-          "key": "daily",
-          "text": "日線空頭"
-        },
-        {
-          "key": "rr",
-          "text": "報酬風險比算不出來"
-        },
-        {
-          "key": "levels",
-          "text": "收盤不在失效價和目標價之間"
-        },
-        {
-          "key": "rsi",
-          "text": "RSI 28（要 45–60）"
-        },
-        {
-          "key": "macd",
-          "text": "MACD 轉弱"
-        }
-      ],
-      "buyBelow": 67.3216,
-      "gapPct": 22.849635036496373,
-      "roomRR": null,
-      "plan": null,
-      "text": "收盤已跌破失效價 62.34，不進場。目前另外還卡：日線空頭、收盤不在失效價和目標價之間、RSI 28（要 45–60）、MACD 轉弱。",
-      "notes": [
-        "第三季財報最晚 2026-11-14 要公布（法定期限，多數公司會提早），還有 5 個交易日"
-      ],
-      "mismatch": null,
-      "risk": {
-        "level": "low",
-        "total": 2,
-        "max": 10,
-        "reasons": []
-      },
-      "hold": {
-        "code": "exit",
-        "text": "收盤已跌破失效價 62.34，規則上這個部位已經失效，出場優先。第三季財報最晚 2026-11-14 要公布（法定期限，多數公司會提早），還有 5 個交易日。"
-      }
-    },
-    "3481.TW": {
-      "market": "TW",
-      "date": "2026-11-05",
-      "close": 38.0,
-      "ma20": 46.795,
-      "stop": 43.6836,
-      "target": 43.7043,
-      "entryLow": 46.0931,
-      "entryHigh": 47.263,
-      "bias": -18.7947,
-      "high20": 52.7,
-      "rr": null,
-      "code": "below",
-      "signal": false,
-      "blockers": [
-        {
-          "key": "zone",
-          "text": "收盤已跌破失效價"
-        },
-        {
-          "key": "daily",
-          "text": "日線空頭"
-        },
-        {
-          "key": "rr",
-          "text": "報酬風險比算不出來"
-        },
-        {
-          "key": "levels",
-          "text": "收盤不在失效價和目標價之間"
-        },
-        {
-          "key": "rsi",
-          "text": "RSI 30（要 45–60）"
-        },
-        {
-          "key": "macd",
-          "text": "MACD 轉弱"
-        }
-      ],
-      "buyBelow": 47.263,
-      "gapPct": 24.37631578947368,
-      "roomRR": null,
-      "plan": null,
-      "text": "收盤已跌破失效價 43.68，不進場。目前另外還卡：日線空頭、收盤不在失效價和目標價之間、RSI 30（要 45–60）、MACD 轉弱。",
-      "notes": [
-        "第三季財報最晚 2026-11-14 要公布（法定期限，多數公司會提早），還有 5 個交易日"
-      ],
-      "mismatch": null,
-      "risk": {
-        "level": "low",
-        "total": 2,
-        "max": 10,
-        "reasons": []
-      },
-      "hold": {
-        "code": "exit",
-        "text": "收盤已跌破失效價 43.68，規則上這個部位已經失效，出場優先。第三季財報最晚 2026-11-14 要公布（法定期限，多數公司會提早），還有 5 個交易日。"
-      }
-    },
-    "3406.TW": {
-      "market": "TW",
-      "date": "2026-11-05",
-      "close": 846.0,
-      "ma20": 1089.05,
-      "stop": 969.2214,
-      "target": 1065.6857,
-      "entryLow": 1072.7142,
-      "entryHigh": 1099.9405,
-      "bias": -22.3176,
-      "high20": 1330.0,
-      "rr": null,
-      "code": "below",
-      "signal": false,
-      "blockers": [
-        {
-          "key": "zone",
-          "text": "收盤已跌破失效價"
-        },
-        {
-          "key": "rr",
-          "text": "報酬風險比算不出來"
-        },
-        {
-          "key": "levels",
-          "text": "收盤不在失效價和目標價之間"
-        },
-        {
-          "key": "rsi",
-          "text": "RSI 37（要 45–60）"
-        },
-        {
-          "key": "macd",
-          "text": "MACD 轉弱"
-        }
-      ],
-      "buyBelow": 1099.9405,
-      "gapPct": 30.01660756501181,
-      "roomRR": null,
-      "plan": null,
-      "text": "收盤已跌破失效價 969.22，不進場。目前另外還卡：收盤不在失效價和目標價之間、RSI 37（要 45–60）、MACD 轉弱。",
-      "notes": [
-        "第三季財報最晚 2026-11-14 要公布（法定期限，多數公司會提早），還有 5 個交易日"
-      ],
-      "mismatch": null,
-      "risk": {
-        "level": "low",
-        "total": 2,
-        "max": 10,
-        "reasons": []
-      },
-      "hold": {
-        "code": "exit",
-        "text": "收盤已跌破失效價 969.22，規則上這個部位已經失效，出場優先。第三季財報最晚 2026-11-14 要公布（法定期限，多數公司會提早），還有 5 個交易日。"
-      }
-    },
-    "2327.TW": {
-      "market": "TW",
-      "date": "2026-11-05",
-      "close": 404.5,
-      "ma20": 540.75,
-      "stop": 499.1357,
-      "target": 480.7929,
-      "entryLow": 532.6387,
-      "entryHigh": 546.1575,
-      "bias": -25.1965,
-      "high20": 686.0,
-      "rr": null,
-      "code": "below",
-      "signal": false,
-      "blockers": [
-        {
-          "key": "zone",
-          "text": "收盤已跌破失效價"
-        },
-        {
-          "key": "daily",
-          "text": "日線空頭"
-        },
-        {
-          "key": "weekly",
-          "text": "週線空頭"
-        },
-        {
-          "key": "rr",
-          "text": "報酬風險比算不出來"
-        },
-        {
-          "key": "levels",
-          "text": "收盤不在失效價和目標價之間"
-        },
-        {
-          "key": "rsi",
-          "text": "RSI 27（要 45–60）"
-        },
-        {
-          "key": "macd",
-          "text": "MACD 轉弱"
-        }
-      ],
-      "buyBelow": 546.1575,
-      "gapPct": 35.02039555006182,
-      "roomRR": null,
-      "plan": null,
-      "text": "收盤已跌破失效價 499.14，不進場。目前另外還卡：日線空頭、週線空頭、收盤不在失效價和目標價之間、RSI 27（要 45–60）、MACD 轉弱。",
-      "notes": [
-        "第三季財報最晚 2026-11-14 要公布（法定期限，多數公司會提早），還有 5 個交易日"
-      ],
-      "mismatch": null,
-      "risk": {
-        "level": "low",
-        "total": 2,
-        "max": 10,
-        "reasons": []
-      },
-      "hold": {
-        "code": "exit",
-        "text": "收盤已跌破失效價 499.14，規則上這個部位已經失效，出場優先。第三季財報最晚 2026-11-14 要公布（法定期限，多數公司會提早），還有 5 個交易日。"
-      }
-    },
-    "4919.TW": {
-      "market": "TW",
-      "date": "2026-11-05",
-      "close": 97.7,
-      "ma20": 134.31,
-      "stop": 123.3557,
-      "target": 117.7829,
-      "entryLow": 132.2954,
-      "entryHigh": 135.6531,
-      "bias": -27.2578,
-      "high20": 164.0,
-      "rr": null,
-      "code": "below",
-      "signal": false,
-      "blockers": [
-        {
-          "key": "zone",
-          "text": "收盤已跌破失效價"
-        },
-        {
-          "key": "weekly",
-          "text": "週線空頭"
-        },
-        {
-          "key": "rr",
-          "text": "報酬風險比算不出來"
-        },
-        {
-          "key": "levels",
-          "text": "收盤不在失效價和目標價之間"
-        },
-        {
-          "key": "rsi",
-          "text": "RSI 30（要 45–60）"
-        },
-        {
-          "key": "macd",
-          "text": "MACD 轉弱"
-        }
-      ],
-      "buyBelow": 135.6531,
-      "gapPct": 38.84657113613101,
-      "roomRR": null,
-      "plan": null,
-      "text": "收盤已跌破失效價 123.36，不進場。目前另外還卡：週線空頭、收盤不在失效價和目標價之間、RSI 30（要 45–60）、MACD 轉弱。",
-      "notes": [
-        "第三季財報最晚 2026-11-14 要公布（法定期限，多數公司會提早），還有 5 個交易日"
-      ],
-      "mismatch": null,
-      "risk": {
-        "level": "low",
-        "total": 2,
-        "max": 10,
-        "reasons": []
-      },
-      "hold": {
-        "code": "exit",
-        "text": "收盤已跌破失效價 123.36，規則上這個部位已經失效，出場優先。第三季財報最晚 2026-11-14 要公布（法定期限，多數公司會提早），還有 5 個交易日。"
-      }
-    },
-    "1569.TWO": {
-      "market": "TW",
-      "date": "2026-11-05",
-      "close": 80.5,
-      "ma20": 84.22,
-      "stop": 76.1457,
-      "target": 95.3029,
-      "entryLow": 82.9567,
-      "entryHigh": 85.0622,
-      "bias": -4.417,
-      "high20": 99.6,
-      "rr": 3.3996,
-      "code": "below",
-      "signal": false,
-      "blockers": [
-        {
-          "key": "zone",
-          "text": "價格低於進場區"
-        },
-        {
-          "key": "macd",
-          "text": "MACD 轉弱"
-        }
-      ],
-      "buyBelow": 85.0622,
-      "gapPct": 5.6673291925466,
-      "roomRR": 4.386468548331538,
-      "plan": null,
-      "text": "收盤 80.5 低於進場區下緣 82.96，等收盤站回 82.96 以上再看訊號。目前另外還卡：MACD 轉弱。",
-      "notes": [
-        "第三季財報最晚 2026-11-14 要公布（法定期限，多數公司會提早），還有 5 個交易日"
-      ],
-      "mismatch": null,
-      "risk": {
-        "level": "low",
-        "total": 2,
-        "max": 10,
-        "reasons": []
-      },
-      "hold": {
-        "code": "watch",
-        "text": "收盤在 SMA20（84.22）之下，還沒破失效價 76.15（距離 5.4%）。收盤跌破失效價就是出場優先。第三季財報最晚 2026-11-14 要公布（法定期限，多數公司會提早），還有 5 個交易日。"
-      }
-    },
-    "2221.TWO": {
-      "market": "TW",
-      "date": "2026-11-05",
-      "close": 142.5,
-      "ma20": 143.675,
-      "stop": 127.3036,
-      "target": 172.5143,
-      "entryLow": 141.5199,
-      "entryHigh": 145.1118,
-      "bias": -0.8178,
-      "high20": 195.0,
-      "rr": 1.9751,
-      "code": "signal_unproven",
-      "signal": true,
-      "blockers": [],
-      "buyBelow": 145.1118,
-      "gapPct": 1.832842105263155,
-      "roomRR": 3.4547656023795117,
-      "plan": {
-        "entry": "下一個交易日開盤",
-        "openLow": 127.3036,
-        "openHigh": 172.5143,
-        "stop": 127.3036,
-        "target": 172.5143,
-        "maxHoldDays": 20,
-        "riskPerShare": 15.196399999999997
-      },
-      "text": "規則訊號成立，但回測證據沒過。照規則的做法是：下一個交易日開盤買；開盤價要在 127.3～172.51 之間，否則不買。停損 127.3、目標 172.51，最多抱 20 個交易日。",
-      "notes": [
-        "台股回測：期望值區間下緣 −0.34R，沒有大於 0、只勝過 38.3% 的隨機進場（要 95%）",
-        "大盤盤整時，這條規則在台股的期望值是 +0.10R（85 筆）",
-        "第三季財報最晚 2026-11-14 要公布（法定期限，多數公司會提早），還有 5 個交易日"
-      ],
-      "mismatch": null,
-      "risk": {
-        "level": "low",
-        "total": 2,
-        "max": 10,
-        "reasons": []
-      },
-      "hold": {
-        "code": "watch",
-        "text": "收盤在 SMA20（143.68）之下，還沒破失效價 127.3（距離 10.7%）。收盤跌破失效價就是出場優先。第三季財報最晚 2026-11-14 要公布（法定期限，多數公司會提早），還有 5 個交易日。"
-      }
-    },
-    "2313.TW": {
-      "market": "TW",
-      "date": "2026-11-05",
-      "close": 165.5,
-      "ma20": 224.575,
-      "stop": 205.5893,
-      "target": 200.3071,
-      "entryLow": 221.2064,
-      "entryHigh": 226.8208,
-      "bias": -26.3052,
-      "high20": 266.0,
-      "rr": null,
-      "code": "below",
-      "signal": false,
-      "blockers": [
-        {
-          "key": "zone",
-          "text": "收盤已跌破失效價"
-        },
-        {
-          "key": "daily",
-          "text": "日線空頭"
-        },
-        {
-          "key": "weekly",
-          "text": "週線空頭"
-        },
-        {
-          "key": "rr",
-          "text": "報酬風險比算不出來"
-        },
-        {
-          "key": "levels",
-          "text": "收盤不在失效價和目標價之間"
-        },
-        {
-          "key": "rsi",
-          "text": "RSI 26（要 45–60）"
-        },
-        {
-          "key": "macd",
-          "text": "MACD 轉弱"
-        }
-      ],
-      "buyBelow": 226.8208,
-      "gapPct": 37.0518429003021,
-      "roomRR": null,
-      "plan": null,
-      "text": "收盤已跌破失效價 205.59，不進場。目前另外還卡：日線空頭、週線空頭、收盤不在失效價和目標價之間、RSI 26（要 45–60）、MACD 轉弱。",
-      "notes": [
-        "第三季財報最晚 2026-11-14 要公布（法定期限，多數公司會提早），還有 5 個交易日"
-      ],
-      "mismatch": null,
-      "risk": {
-        "level": "low",
-        "total": 2,
-        "max": 10,
-        "reasons": []
-      },
-      "hold": {
-        "code": "exit",
-        "text": "收盤已跌破失效價 205.59，規則上這個部位已經失效，出場優先。第三季財報最晚 2026-11-14 要公布（法定期限，多數公司會提早），還有 5 個交易日。"
-      }
-    },
-    "3491.TWO": {
-      "market": "TW",
-      "date": "2026-11-05",
-      "close": 1180.0,
-      "ma20": 1373.25,
-      "stop": 1252.8214,
-      "target": 1400.7857,
-      "entryLow": 1352.6512,
-      "entryHigh": 1386.9825,
-      "bias": -14.0725,
-      "high20": 1760.0,
-      "rr": null,
-      "code": "below",
-      "signal": false,
-      "blockers": [
-        {
-          "key": "zone",
-          "text": "收盤已跌破失效價"
-        },
-        {
-          "key": "daily",
-          "text": "日線空頭"
-        },
-        {
-          "key": "weekly",
-          "text": "週線空頭"
-        },
-        {
-          "key": "rr",
-          "text": "報酬風險比算不出來"
-        },
-        {
-          "key": "levels",
-          "text": "收盤不在失效價和目標價之間"
-        },
-        {
-          "key": "rsi",
-          "text": "RSI 37（要 45–60）"
-        },
-        {
-          "key": "macd",
-          "text": "MACD 轉弱"
-        }
-      ],
-      "buyBelow": 1386.9825,
-      "gapPct": 17.540889830508476,
-      "roomRR": null,
-      "plan": null,
-      "text": "收盤已跌破失效價 1,252.82，不進場。目前另外還卡：日線空頭、週線空頭、收盤不在失效價和目標價之間、RSI 37（要 45–60）、MACD 轉弱。",
-      "notes": [
-        "第三季財報最晚 2026-11-14 要公布（法定期限，多數公司會提早），還有 5 個交易日"
-      ],
-      "mismatch": null,
-      "risk": {
-        "level": "low",
-        "total": 2,
-        "max": 10,
-        "reasons": []
-      },
-      "hold": {
-        "code": "exit",
-        "text": "收盤已跌破失效價 1,252.82，規則上這個部位已經失效，出場優先。第三季財報最晚 2026-11-14 要公布（法定期限，多數公司會提早），還有 5 個交易日。"
-      }
-    },
-    "6285.TW": {
-      "market": "TW",
-      "date": "2026-11-05",
-      "close": 182.5,
-      "ma20": 234.25,
-      "stop": 216.4214,
-      "target": 215.1857,
-      "entryLow": 230.7362,
-      "entryHigh": 236.5925,
-      "bias": -22.0918,
-      "high20": 266.0,
-      "rr": null,
-      "code": "below",
-      "signal": false,
-      "blockers": [
-        {
-          "key": "zone",
-          "text": "收盤已跌破失效價"
-        },
-        {
-          "key": "daily",
-          "text": "日線空頭"
-        },
-        {
-          "key": "weekly",
-          "text": "週線空頭"
-        },
-        {
-          "key": "rr",
-          "text": "報酬風險比算不出來"
-        },
-        {
-          "key": "levels",
-          "text": "收盤不在失效價和目標價之間"
-        },
-        {
-          "key": "rsi",
-          "text": "RSI 28（要 45–60）"
-        },
-        {
-          "key": "macd",
-          "text": "MACD 轉弱"
-        }
-      ],
-      "buyBelow": 236.5925,
-      "gapPct": 29.639726027397263,
-      "roomRR": null,
-      "plan": null,
-      "text": "收盤已跌破失效價 216.42，不進場。目前另外還卡：日線空頭、週線空頭、收盤不在失效價和目標價之間、RSI 28（要 45–60）、MACD 轉弱。",
-      "notes": [
-        "第三季財報最晚 2026-11-14 要公布（法定期限，多數公司會提早），還有 5 個交易日"
-      ],
-      "mismatch": null,
-      "risk": {
-        "level": "low",
-        "total": 3,
-        "max": 10,
-        "reasons": []
-      },
-      "hold": {
-        "code": "exit",
-        "text": "收盤已跌破失效價 216.42，規則上這個部位已經失效，出場優先。第三季財報最晚 2026-11-14 要公布（法定期限，多數公司會提早），還有 5 個交易日。"
-      }
-    },
-    "6271.TW": {
-      "market": "TW",
-      "date": "2026-11-05",
-      "close": 182.0,
-      "ma20": 220.225,
-      "stop": 203.3393,
-      "target": 212.9571,
-      "entryLow": 216.9216,
-      "entryHigh": 222.4272,
-      "bias": -17.3572,
-      "high20": 250.0,
-      "rr": null,
-      "code": "below",
-      "signal": false,
-      "blockers": [
-        {
-          "key": "zone",
-          "text": "收盤已跌破失效價"
-        },
-        {
-          "key": "rr",
-          "text": "報酬風險比算不出來"
-        },
-        {
-          "key": "levels",
-          "text": "收盤不在失效價和目標價之間"
-        },
-        {
-          "key": "rsi",
-          "text": "RSI 34（要 45–60）"
-        },
-        {
-          "key": "macd",
-          "text": "MACD 轉弱"
-        }
-      ],
-      "buyBelow": 222.4272,
-      "gapPct": 22.212747252747246,
-      "roomRR": null,
-      "plan": null,
-      "text": "收盤已跌破失效價 203.34，不進場。目前另外還卡：收盤不在失效價和目標價之間、RSI 34（要 45–60）、MACD 轉弱。",
-      "notes": [
-        "第三季財報最晚 2026-11-14 要公布（法定期限，多數公司會提早），還有 5 個交易日"
-      ],
-      "mismatch": null,
-      "risk": {
-        "level": "low",
-        "total": 2,
-        "max": 10,
-        "reasons": []
-      },
-      "hold": {
-        "code": "exit",
-        "text": "收盤已跌破失效價 203.34，規則上這個部位已經失效，出場優先。第三季財報最晚 2026-11-14 要公布（法定期限，多數公司會提早），還有 5 個交易日。"
-      }
-    },
-    "2367.TW": {
-      "market": "TW",
-      "date": "2026-11-05",
-      "close": 34.95,
-      "ma20": 43.9375,
-      "stop": 40.7832,
-      "target": 40.7329,
-      "entryLow": 43.2784,
-      "entryHigh": 44.3769,
-      "bias": -20.4552,
-      "high20": 49.0,
-      "rr": null,
-      "code": "below",
-      "signal": false,
-      "blockers": [
-        {
-          "key": "zone",
-          "text": "收盤已跌破失效價"
-        },
-        {
-          "key": "weekly",
-          "text": "週線空頭"
-        },
-        {
-          "key": "rr",
-          "text": "報酬風險比算不出來"
-        },
-        {
-          "key": "levels",
-          "text": "收盤不在失效價和目標價之間"
-        },
-        {
-          "key": "rsi",
-          "text": "RSI 30（要 45–60）"
-        },
-        {
-          "key": "macd",
-          "text": "MACD 轉弱"
-        }
-      ],
-      "buyBelow": 44.3769,
-      "gapPct": 26.972532188841193,
-      "roomRR": null,
-      "plan": null,
-      "text": "收盤已跌破失效價 40.78，不進場。目前另外還卡：週線空頭、收盤不在失效價和目標價之間、RSI 30（要 45–60）、MACD 轉弱。",
-      "notes": [
-        "第三季財報最晚 2026-11-14 要公布（法定期限，多數公司會提早），還有 5 個交易日"
-      ],
-      "mismatch": null,
-      "risk": {
-        "level": "low",
-        "total": 3,
-        "max": 10,
-        "reasons": []
-      },
-      "hold": {
-        "code": "exit",
-        "text": "收盤已跌破失效價 40.78，規則上這個部位已經失效，出場優先。第三季財報最晚 2026-11-14 要公布（法定期限，多數公司會提早），還有 5 個交易日。"
-      }
-    },
-    "2355.TW": {
-      "market": "TW",
-      "date": "2026-11-05",
-      "close": 48.05,
-      "ma20": 50.535,
-      "stop": 47.0036,
-      "target": 54.5243,
-      "entryLow": 49.777,
-      "entryHigh": 51.0404,
-      "bias": -4.9174,
-      "high20": 56.3,
-      "rr": null,
-      "code": "below",
-      "signal": false,
-      "blockers": [
-        {
-          "key": "zone",
-          "text": "價格低於進場區"
-        },
-        {
-          "key": "rr",
-          "text": "報酬風險比算不出來"
-        },
-        {
-          "key": "macd",
-          "text": "MACD 轉弱"
-        }
-      ],
-      "buyBelow": 51.0404,
-      "gapPct": 6.223517169614978,
-      "roomRR": 7.884174311926618,
-      "plan": null,
-      "text": "收盤 48.05 低於進場區下緣 49.78，等收盤站回 49.78 以上再看訊號。目前另外還卡：MACD 轉弱。",
-      "notes": [
-        "第三季財報最晚 2026-11-14 要公布（法定期限，多數公司會提早），還有 5 個交易日"
-      ],
-      "mismatch": null,
-      "risk": {
-        "level": "low",
-        "total": 3,
-        "max": 10,
-        "reasons": []
-      },
-      "hold": {
-        "code": "watch",
-        "text": "收盤在 SMA20（50.53）之下，還沒破失效價 47（距離 2.2%）。收盤跌破失效價就是出場優先。第三季財報最晚 2026-11-14 要公布（法定期限，多數公司會提早），還有 5 個交易日。"
-      }
-    },
-    "2049.TW": {
-      "market": "TW",
-      "date": "2026-11-05",
-      "close": 284.5,
-      "ma20": 317.4,
-      "stop": 299.0143,
-      "target": 318.2071,
-      "entryLow": 312.639,
-      "entryHigh": 320.574,
-      "bias": -10.3655,
-      "high20": 356.5,
-      "rr": null,
-      "code": "below",
-      "signal": false,
-      "blockers": [
-        {
-          "key": "zone",
-          "text": "收盤已跌破失效價"
-        },
-        {
-          "key": "daily",
-          "text": "日線空頭"
-        },
-        {
-          "key": "weekly",
-          "text": "週線空頭"
-        },
-        {
-          "key": "rr",
-          "text": "報酬風險比算不出來"
-        },
-        {
-          "key": "levels",
-          "text": "收盤不在失效價和目標價之間"
-        },
-        {
-          "key": "rsi",
-          "text": "RSI 36（要 45–60）"
-        },
-        {
-          "key": "macd",
-          "text": "MACD 轉弱"
-        }
-      ],
-      "buyBelow": 320.574,
-      "gapPct": 12.679789103690698,
-      "roomRR": null,
-      "plan": null,
-      "text": "收盤已跌破失效價 299.01，不進場。目前另外還卡：日線空頭、週線空頭、收盤不在失效價和目標價之間、RSI 36（要 45–60）、MACD 轉弱。",
-      "notes": [
-        "第三季財報最晚 2026-11-14 要公布（法定期限，多數公司會提早），還有 5 個交易日"
-      ],
-      "mismatch": null,
-      "risk": {
-        "level": "low",
-        "total": 2,
-        "max": 10,
-        "reasons": []
-      },
-      "hold": {
-        "code": "exit",
-        "text": "收盤已跌破失效價 299.01，規則上這個部位已經失效，出場優先。第三季財報最晚 2026-11-14 要公布（法定期限，多數公司會提早），還有 5 個交易日。"
-      }
-    },
-    "2233.TW": {
-      "market": "TW",
-      "date": "2026-11-05",
-      "close": 122.0,
-      "ma20": 148.825,
-      "stop": 141.2393,
-      "target": 135.9071,
-      "entryLow": 146.5926,
-      "entryHigh": 150.3132,
-      "bias": -18.0245,
-      "high20": 169.5,
-      "rr": null,
-      "code": "below",
-      "signal": false,
-      "blockers": [
-        {
-          "key": "zone",
-          "text": "收盤已跌破失效價"
-        },
-        {
-          "key": "daily",
-          "text": "日線空頭"
-        },
-        {
-          "key": "weekly",
-          "text": "週線空頭"
-        },
-        {
-          "key": "rr",
-          "text": "報酬風險比算不出來"
-        },
-        {
-          "key": "levels",
-          "text": "收盤不在失效價和目標價之間"
-        },
-        {
-          "key": "rsi",
-          "text": "RSI 23（要 45–60）"
-        },
-        {
-          "key": "macd",
-          "text": "MACD 轉弱"
-        }
-      ],
-      "buyBelow": 150.3132,
-      "gapPct": 23.207540983606556,
-      "roomRR": null,
-      "plan": null,
-      "text": "收盤已跌破失效價 141.24，不進場。目前另外還卡：日線空頭、週線空頭、收盤不在失效價和目標價之間、RSI 23（要 45–60）、MACD 轉弱。",
-      "notes": [
-        "第三季財報最晚 2026-11-14 要公布（法定期限，多數公司會提早），還有 5 個交易日"
-      ],
-      "mismatch": null,
-      "risk": {
-        "level": "low",
-        "total": 2,
-        "max": 10,
-        "reasons": []
-      },
-      "hold": {
-        "code": "exit",
-        "text": "收盤已跌破失效價 141.24，規則上這個部位已經失效，出場優先。第三季財報最晚 2026-11-14 要公布（法定期限，多數公司會提早），還有 5 個交易日。"
+        "text": "收盤已跌破失效價 137.93，規則上這個部位已經失效，出場優先。第三季財報最晚 2026-11-14 要公布（法定期限，多數公司會提早），還有 5 個交易日。"
       }
     },
     "1536.TW": {
       "market": "TW",
-      "date": "2026-11-05",
-      "close": 38.6,
-      "ma20": 43.9375,
-      "stop": 42.2789,
-      "target": 41.6407,
-      "entryLow": 43.2784,
-      "entryHigh": 44.3769,
-      "bias": -12.1479,
-      "high20": 46.85,
+      "date": "2026-11-06",
+      "close": 36.6,
+      "ma20": 43.44,
+      "stop": 41.5286,
+      "target": 40.1043,
+      "entryLow": 42.7884,
+      "entryHigh": 43.8744,
+      "bias": -15.7459,
+      "high20": 46.65,
       "rr": null,
       "code": "below",
       "signal": false,
@@ -2129,18 +2253,22 @@
         },
         {
           "key": "rsi",
-          "text": "RSI 22（要 45–60）"
+          "text": "RSI 18（要 45–60）"
         },
         {
           "key": "macd",
           "text": "MACD 轉弱"
+        },
+        {
+          "key": "regime",
+          "text": "大盤空頭"
         }
       ],
-      "buyBelow": 44.30603333333333,
-      "gapPct": 14.782469775474949,
+      "buyBelow": 43.864799999999995,
+      "gapPct": 19.849180327868844,
       "roomRR": null,
       "plan": null,
-      "text": "收盤已跌破失效價 42.28，不進場。目前另外還卡：日線空頭、週線空頭、收盤不在失效價和目標價之間、RSI 22（要 45–60）、MACD 轉弱。",
+      "text": "收盤已跌破失效價 41.53，不進場。目前另外還卡：日線空頭、週線空頭、收盤不在失效價和目標價之間、RSI 18（要 45–60）、MACD 轉弱、大盤空頭。",
       "notes": [
         "第三季財報最晚 2026-11-14 要公布（法定期限，多數公司會提早），還有 5 個交易日"
       ],
@@ -2153,19 +2281,19 @@
       },
       "hold": {
         "code": "exit",
-        "text": "收盤已跌破失效價 42.28，規則上這個部位已經失效，出場優先。第三季財報最晚 2026-11-14 要公布（法定期限，多數公司會提早），還有 5 個交易日。"
+        "text": "收盤已跌破失效價 41.53，規則上這個部位已經失效，出場優先。第三季財報最晚 2026-11-14 要公布（法定期限，多數公司會提早），還有 5 個交易日。"
       }
     },
     "2464.TW": {
       "market": "TW",
-      "date": "2026-11-05",
-      "close": 145.0,
-      "ma20": 172.8,
-      "stop": 161.1429,
-      "target": 166.3714,
-      "entryLow": 170.208,
-      "entryHigh": 174.528,
-      "bias": -16.088,
+      "date": "2026-11-06",
+      "close": 135.0,
+      "ma20": 169.9,
+      "stop": 157.5571,
+      "target": 157.6286,
+      "entryLow": 167.3515,
+      "entryHigh": 171.599,
+      "bias": -20.5415,
       "high20": 195.0,
       "rr": null,
       "code": "below",
@@ -2189,18 +2317,22 @@
         },
         {
           "key": "rsi",
-          "text": "RSI 32（要 45–60）"
+          "text": "RSI 28（要 45–60）"
         },
         {
           "key": "macd",
           "text": "MACD 轉弱"
+        },
+        {
+          "key": "regime",
+          "text": "大盤空頭"
         }
       ],
-      "buyBelow": 174.528,
-      "gapPct": 20.364137931034488,
+      "buyBelow": 171.599,
+      "gapPct": 27.11037037037036,
       "roomRR": null,
       "plan": null,
-      "text": "收盤已跌破失效價 161.14，不進場。目前另外還卡：日線空頭、收盤不在失效價和目標價之間、RSI 32（要 45–60）、MACD 轉弱。",
+      "text": "收盤已跌破失效價 157.56，不進場。目前另外還卡：日線空頭、收盤不在失效價和目標價之間、RSI 28（要 45–60）、MACD 轉弱、大盤空頭。",
       "notes": [
         "第三季財報最晚 2026-11-14 要公布（法定期限，多數公司會提早），還有 5 個交易日"
       ],
@@ -2213,19 +2345,19 @@
       },
       "hold": {
         "code": "exit",
-        "text": "收盤已跌破失效價 161.14，規則上這個部位已經失效，出場優先。第三季財報最晚 2026-11-14 要公布（法定期限，多數公司會提早），還有 5 個交易日。"
+        "text": "收盤已跌破失效價 157.56，規則上這個部位已經失效，出場優先。第三季財報最晚 2026-11-14 要公布（法定期限，多數公司會提早），還有 5 個交易日。"
       }
     },
     "1597.TW": {
       "market": "TW",
-      "date": "2026-11-05",
-      "close": 115.0,
-      "ma20": 139.875,
-      "stop": 130.0179,
-      "target": 133.0714,
-      "entryLow": 137.7769,
-      "entryHigh": 141.2738,
-      "bias": -17.7837,
+      "date": "2026-11-06",
+      "close": 104.5,
+      "ma20": 137.85,
+      "stop": 127.4786,
+      "target": 123.5143,
+      "entryLow": 135.7823,
+      "entryHigh": 139.2285,
+      "bias": -24.193,
       "high20": 160.5,
       "rr": null,
       "code": "below",
@@ -2253,18 +2385,22 @@
         },
         {
           "key": "rsi",
-          "text": "RSI 34（要 45–60）"
+          "text": "RSI 30（要 45–60）"
         },
         {
           "key": "macd",
           "text": "MACD 轉弱"
+        },
+        {
+          "key": "regime",
+          "text": "大盤空頭"
         }
       ],
-      "buyBelow": 141.2738,
-      "gapPct": 22.846782608695637,
+      "buyBelow": 139.2285,
+      "gapPct": 33.23301435406698,
       "roomRR": null,
       "plan": null,
-      "text": "收盤已跌破失效價 130.02，不進場。目前另外還卡：日線空頭、週線空頭、收盤不在失效價和目標價之間、RSI 34（要 45–60）、MACD 轉弱。",
+      "text": "收盤已跌破失效價 127.48，不進場。目前另外還卡：日線空頭、週線空頭、收盤不在失效價和目標價之間、RSI 30（要 45–60）、MACD 轉弱、大盤空頭。",
       "notes": [
         "第三季財報最晚 2026-11-14 要公布（法定期限，多數公司會提早），還有 5 個交易日"
       ],
@@ -2277,19 +2413,19 @@
       },
       "hold": {
         "code": "exit",
-        "text": "收盤已跌破失效價 130.02，規則上這個部位已經失效，出場優先。第三季財報最晚 2026-11-14 要公布（法定期限，多數公司會提早），還有 5 個交易日。"
+        "text": "收盤已跌破失效價 127.48，規則上這個部位已經失效，出場優先。第三季財報最晚 2026-11-14 要公布（法定期限，多數公司會提早），還有 5 個交易日。"
       }
     },
     "4583.TW": {
       "market": "TW",
-      "date": "2026-11-05",
-      "close": 337.0,
-      "ma20": 389.325,
-      "stop": 367.8107,
-      "target": 376.4429,
-      "entryLow": 383.4851,
-      "entryHigh": 393.2183,
-      "bias": -13.4399,
+      "date": "2026-11-06",
+      "close": 319.5,
+      "ma20": 384.5,
+      "stop": 361.5286,
+      "target": 361.6143,
+      "entryLow": 378.7325,
+      "entryHigh": 388.345,
+      "bias": -16.9051,
       "high20": 431.0,
       "rr": null,
       "code": "below",
@@ -2317,18 +2453,22 @@
         },
         {
           "key": "rsi",
-          "text": "RSI 28（要 45–60）"
+          "text": "RSI 25（要 45–60）"
         },
         {
           "key": "macd",
           "text": "MACD 轉弱"
+        },
+        {
+          "key": "regime",
+          "text": "大盤空頭"
         }
       ],
-      "buyBelow": 393.2183,
-      "gapPct": 16.68198813056381,
+      "buyBelow": 388.345,
+      "gapPct": 21.547730829420985,
       "roomRR": null,
       "plan": null,
-      "text": "收盤已跌破失效價 367.81，不進場。目前另外還卡：日線空頭、週線空頭、收盤不在失效價和目標價之間、RSI 28（要 45–60）、MACD 轉弱。",
+      "text": "收盤已跌破失效價 361.53，不進場。目前另外還卡：日線空頭、週線空頭、收盤不在失效價和目標價之間、RSI 25（要 45–60）、MACD 轉弱、大盤空頭。",
       "notes": [
         "第三季財報最晚 2026-11-14 要公布（法定期限，多數公司會提早），還有 5 個交易日"
       ],
@@ -2341,20 +2481,418 @@
       },
       "hold": {
         "code": "exit",
-        "text": "收盤已跌破失效價 367.81，規則上這個部位已經失效，出場優先。第三季財報最晚 2026-11-14 要公布（法定期限，多數公司會提早），還有 5 個交易日。"
+        "text": "收盤已跌破失效價 361.53，規則上這個部位已經失效，出場優先。第三季財報最晚 2026-11-14 要公布（法定期限，多數公司會提早），還有 5 個交易日。"
       }
     },
     "4540.TW": {
       "market": "TW",
-      "date": "2026-11-05",
-      "close": 49.85,
-      "ma20": 58.2625,
-      "stop": 54.3711,
-      "target": 56.9843,
-      "entryLow": 57.3886,
-      "entryHigh": 58.8451,
-      "bias": -14.439,
+      "date": "2026-11-06",
+      "close": 47.95,
+      "ma20": 57.715,
+      "stop": 53.545,
+      "target": 55.595,
+      "entryLow": 56.8493,
+      "entryHigh": 58.2922,
+      "bias": -16.9193,
       "high20": 65.3,
+      "rr": null,
+      "code": "below",
+      "signal": false,
+      "blockers": [
+        {
+          "key": "zone",
+          "text": "收盤已跌破失效價"
+        },
+        {
+          "key": "daily",
+          "text": "日線空頭"
+        },
+        {
+          "key": "weekly",
+          "text": "週線空頭"
+        },
+        {
+          "key": "rr",
+          "text": "報酬風險比算不出來"
+        },
+        {
+          "key": "levels",
+          "text": "收盤不在失效價和目標價之間"
+        },
+        {
+          "key": "rsi",
+          "text": "RSI 32（要 45–60）"
+        },
+        {
+          "key": "macd",
+          "text": "MACD 轉弱"
+        },
+        {
+          "key": "regime",
+          "text": "大盤空頭"
+        }
+      ],
+      "buyBelow": 58.2922,
+      "gapPct": 21.568717413972884,
+      "roomRR": null,
+      "plan": null,
+      "text": "收盤已跌破失效價 53.55，不進場。目前另外還卡：日線空頭、週線空頭、收盤不在失效價和目標價之間、RSI 32（要 45–60）、MACD 轉弱、大盤空頭。",
+      "notes": [
+        "第三季財報最晚 2026-11-14 要公布（法定期限，多數公司會提早），還有 5 個交易日"
+      ],
+      "mismatch": null,
+      "risk": {
+        "level": "low",
+        "total": 2,
+        "max": 10,
+        "reasons": []
+      },
+      "hold": {
+        "code": "exit",
+        "text": "收盤已跌破失效價 53.55，規則上這個部位已經失效，出場優先。第三季財報最晚 2026-11-14 要公布（法定期限，多數公司會提早），還有 5 個交易日。"
+      }
+    },
+    "4576.TW": {
+      "market": "TW",
+      "date": "2026-11-06",
+      "close": 167.0,
+      "ma20": 208.35,
+      "stop": 191.6786,
+      "target": 197.5643,
+      "entryLow": 205.2248,
+      "entryHigh": 210.4335,
+      "bias": -19.8464,
+      "high20": 238.0,
+      "rr": null,
+      "code": "below",
+      "signal": false,
+      "blockers": [
+        {
+          "key": "zone",
+          "text": "收盤已跌破失效價"
+        },
+        {
+          "key": "daily",
+          "text": "日線空頭"
+        },
+        {
+          "key": "rr",
+          "text": "報酬風險比算不出來"
+        },
+        {
+          "key": "levels",
+          "text": "收盤不在失效價和目標價之間"
+        },
+        {
+          "key": "rsi",
+          "text": "RSI 29（要 45–60）"
+        },
+        {
+          "key": "macd",
+          "text": "MACD 轉弱"
+        },
+        {
+          "key": "regime",
+          "text": "大盤空頭"
+        }
+      ],
+      "buyBelow": 210.4335,
+      "gapPct": 26.008083832335327,
+      "roomRR": null,
+      "plan": null,
+      "text": "收盤已跌破失效價 191.68，不進場。目前另外還卡：日線空頭、收盤不在失效價和目標價之間、RSI 29（要 45–60）、MACD 轉弱、大盤空頭。",
+      "notes": [
+        "第三季財報最晚 2026-11-14 要公布（法定期限，多數公司會提早），還有 5 個交易日"
+      ],
+      "mismatch": null,
+      "risk": {
+        "level": "low",
+        "total": 3,
+        "max": 10,
+        "reasons": []
+      },
+      "hold": {
+        "code": "exit",
+        "text": "收盤已跌破失效價 191.68，規則上這個部位已經失效，出場優先。第三季財報最晚 2026-11-14 要公布（法定期限，多數公司會提早），還有 5 個交易日。"
+      }
+    },
+    "1504.TW": {
+      "market": "TW",
+      "date": "2026-11-06",
+      "close": 59.7,
+      "ma20": 68.595,
+      "stop": 65.6464,
+      "target": 65.1057,
+      "entryLow": 67.5661,
+      "entryHigh": 69.2809,
+      "bias": -12.9674,
+      "high20": 73.3,
+      "rr": null,
+      "code": "below",
+      "signal": false,
+      "blockers": [
+        {
+          "key": "zone",
+          "text": "收盤已跌破失效價"
+        },
+        {
+          "key": "daily",
+          "text": "日線空頭"
+        },
+        {
+          "key": "weekly",
+          "text": "週線空頭"
+        },
+        {
+          "key": "rr",
+          "text": "報酬風險比算不出來"
+        },
+        {
+          "key": "levels",
+          "text": "收盤不在失效價和目標價之間"
+        },
+        {
+          "key": "rsi",
+          "text": "RSI 24（要 45–60）"
+        },
+        {
+          "key": "macd",
+          "text": "MACD 轉弱"
+        },
+        {
+          "key": "regime",
+          "text": "大盤空頭"
+        }
+      ],
+      "buyBelow": 69.25019999999999,
+      "gapPct": 15.996984924623092,
+      "roomRR": null,
+      "plan": null,
+      "text": "收盤已跌破失效價 65.65，不進場。目前另外還卡：日線空頭、週線空頭、收盤不在失效價和目標價之間、RSI 24（要 45–60）、MACD 轉弱、大盤空頭。",
+      "notes": [
+        "第三季財報最晚 2026-11-14 要公布（法定期限，多數公司會提早），還有 5 個交易日"
+      ],
+      "mismatch": null,
+      "risk": {
+        "level": "low",
+        "total": 2,
+        "max": 10,
+        "reasons": []
+      },
+      "hold": {
+        "code": "exit",
+        "text": "收盤已跌破失效價 65.65，規則上這個部位已經失效，出場優先。第三季財報最晚 2026-11-14 要公布（法定期限，多數公司會提早），還有 5 個交易日。"
+      }
+    },
+    "1590.TW": {
+      "market": "TW",
+      "date": "2026-11-06",
+      "close": 1010.0,
+      "ma20": 1121.5,
+      "stop": 1057.1286,
+      "target": 1128.0143,
+      "entryLow": 1104.6775,
+      "entryHigh": 1132.715,
+      "bias": -9.942,
+      "high20": 1255.0,
+      "rr": null,
+      "code": "below",
+      "signal": false,
+      "blockers": [
+        {
+          "key": "zone",
+          "text": "收盤已跌破失效價"
+        },
+        {
+          "key": "daily",
+          "text": "日線空頭"
+        },
+        {
+          "key": "weekly",
+          "text": "週線空頭"
+        },
+        {
+          "key": "rr",
+          "text": "報酬風險比算不出來"
+        },
+        {
+          "key": "levels",
+          "text": "收盤不在失效價和目標價之間"
+        },
+        {
+          "key": "rsi",
+          "text": "RSI 27（要 45–60）"
+        },
+        {
+          "key": "macd",
+          "text": "MACD 轉弱"
+        },
+        {
+          "key": "regime",
+          "text": "大盤空頭"
+        }
+      ],
+      "buyBelow": 1132.715,
+      "gapPct": 12.149999999999995,
+      "roomRR": null,
+      "plan": null,
+      "text": "收盤已跌破失效價 1,057.13，不進場。目前另外還卡：日線空頭、週線空頭、收盤不在失效價和目標價之間、RSI 27（要 45–60）、MACD 轉弱、大盤空頭。",
+      "notes": [
+        "第三季財報最晚 2026-11-14 要公布（法定期限，多數公司會提早），還有 5 個交易日"
+      ],
+      "mismatch": null,
+      "risk": {
+        "level": "low",
+        "total": 2,
+        "max": 10,
+        "reasons": []
+      },
+      "hold": {
+        "code": "exit",
+        "text": "收盤已跌破失效價 1,057.13，規則上這個部位已經失效，出場優先。第三季財報最晚 2026-11-14 要公布（法定期限，多數公司會提早），還有 5 個交易日。"
+      }
+    },
+    "3019.TW": {
+      "market": "TW",
+      "date": "2026-11-06",
+      "close": 123.5,
+      "ma20": 129.8,
+      "stop": 122.5143,
+      "target": 136.8571,
+      "entryLow": 127.853,
+      "entryHigh": 131.098,
+      "bias": -4.8536,
+      "high20": 140.0,
+      "rr": null,
+      "code": "below",
+      "signal": false,
+      "blockers": [
+        {
+          "key": "zone",
+          "text": "價格低於進場區"
+        },
+        {
+          "key": "daily",
+          "text": "日線空頭"
+        },
+        {
+          "key": "weekly",
+          "text": "週線空頭"
+        },
+        {
+          "key": "rr",
+          "text": "報酬風險比算不出來"
+        },
+        {
+          "key": "rsi",
+          "text": "RSI 42（要 45–60）"
+        },
+        {
+          "key": "regime",
+          "text": "大盤空頭"
+        }
+      ],
+      "buyBelow": 131.098,
+      "gapPct": 6.152226720647791,
+      "roomRR": 16.7393730343919,
+      "plan": null,
+      "text": "收盤 123.5 低於進場區下緣 127.85，等收盤站回 127.85 以上再看訊號。目前另外還卡：日線空頭、週線空頭、RSI 42（要 45–60）、大盤空頭。",
+      "notes": [
+        "第三季財報最晚 2026-11-14 要公布（法定期限，多數公司會提早），還有 5 個交易日"
+      ],
+      "mismatch": null,
+      "risk": {
+        "level": "mid",
+        "total": 5,
+        "max": 10,
+        "reasons": [
+          "風險中"
+        ]
+      },
+      "hold": {
+        "code": "watch",
+        "text": "收盤在 SMA20（129.8）之下，還沒破失效價 122.51（距離 0.8%）。收盤跌破失效價就是出場優先。第三季財報最晚 2026-11-14 要公布（法定期限，多數公司會提早），還有 5 個交易日。"
+      }
+    },
+    "2359.TW": {
+      "market": "TW",
+      "date": "2026-11-06",
+      "close": 93.1,
+      "ma20": 116.475,
+      "stop": 109.8321,
+      "target": 105.2786,
+      "entryLow": 114.7279,
+      "entryHigh": 117.6397,
+      "bias": -20.0687,
+      "high20": 131.0,
+      "rr": null,
+      "code": "below",
+      "signal": false,
+      "blockers": [
+        {
+          "key": "zone",
+          "text": "收盤已跌破失效價"
+        },
+        {
+          "key": "daily",
+          "text": "日線空頭"
+        },
+        {
+          "key": "weekly",
+          "text": "週線空頭"
+        },
+        {
+          "key": "rr",
+          "text": "報酬風險比算不出來"
+        },
+        {
+          "key": "levels",
+          "text": "收盤不在失效價和目標價之間"
+        },
+        {
+          "key": "rsi",
+          "text": "RSI 19（要 45–60）"
+        },
+        {
+          "key": "macd",
+          "text": "MACD 轉弱"
+        },
+        {
+          "key": "regime",
+          "text": "大盤空頭"
+        }
+      ],
+      "buyBelow": 117.6397,
+      "gapPct": 26.358431793770155,
+      "roomRR": null,
+      "plan": null,
+      "text": "收盤已跌破失效價 109.83，不進場。目前另外還卡：日線空頭、週線空頭、收盤不在失效價和目標價之間、RSI 19（要 45–60）、MACD 轉弱、大盤空頭。",
+      "notes": [
+        "第三季財報最晚 2026-11-14 要公布（法定期限，多數公司會提早），還有 5 個交易日"
+      ],
+      "mismatch": null,
+      "risk": {
+        "level": "low",
+        "total": 3,
+        "max": 10,
+        "reasons": []
+      },
+      "hold": {
+        "code": "exit",
+        "text": "收盤已跌破失效價 109.83，規則上這個部位已經失效，出場優先。第三季財報最晚 2026-11-14 要公布（法定期限，多數公司會提早），還有 5 個交易日。"
+      }
+    },
+    "3023.TW": {
+      "market": "TW",
+      "date": "2026-11-06",
+      "close": 258.5,
+      "ma20": 287.925,
+      "stop": 272.1536,
+      "target": 287.4143,
+      "entryLow": 283.6061,
+      "entryHigh": 290.8043,
+      "bias": -10.2197,
+      "high20": 333.5,
       "rr": null,
       "code": "below",
       "signal": false,
@@ -2384,15 +2922,15 @@
           "text": "RSI 34（要 45–60）"
         },
         {
-          "key": "macd",
-          "text": "MACD 轉弱"
+          "key": "regime",
+          "text": "大盤空頭"
         }
       ],
-      "buyBelow": 58.8451,
-      "gapPct": 18.044332998996993,
+      "buyBelow": 290.8043,
+      "gapPct": 12.49682785299806,
       "roomRR": null,
       "plan": null,
-      "text": "收盤已跌破失效價 54.37，不進場。目前另外還卡：日線空頭、週線空頭、收盤不在失效價和目標價之間、RSI 34（要 45–60）、MACD 轉弱。",
+      "text": "收盤已跌破失效價 272.15，不進場。目前另外還卡：日線空頭、週線空頭、收盤不在失效價和目標價之間、RSI 34（要 45–60）、大盤空頭。",
       "notes": [
         "第三季財報最晚 2026-11-14 要公布（法定期限，多數公司會提早），還有 5 個交易日"
       ],
@@ -2405,377 +2943,19 @@
       },
       "hold": {
         "code": "exit",
-        "text": "收盤已跌破失效價 54.37，規則上這個部位已經失效，出場優先。第三季財報最晚 2026-11-14 要公布（法定期限，多數公司會提早），還有 5 個交易日。"
-      }
-    },
-    "4576.TW": {
-      "market": "TW",
-      "date": "2026-11-05",
-      "close": 177.5,
-      "ma20": 211.6,
-      "stop": 195.9143,
-      "target": 206.2571,
-      "entryLow": 208.426,
-      "entryHigh": 213.716,
-      "bias": -16.1153,
-      "high20": 239.5,
-      "rr": null,
-      "code": "below",
-      "signal": false,
-      "blockers": [
-        {
-          "key": "zone",
-          "text": "收盤已跌破失效價"
-        },
-        {
-          "key": "daily",
-          "text": "日線空頭"
-        },
-        {
-          "key": "rr",
-          "text": "報酬風險比算不出來"
-        },
-        {
-          "key": "levels",
-          "text": "收盤不在失效價和目標價之間"
-        },
-        {
-          "key": "rsi",
-          "text": "RSI 33（要 45–60）"
-        },
-        {
-          "key": "macd",
-          "text": "MACD 轉弱"
-        }
-      ],
-      "buyBelow": 213.716,
-      "gapPct": 20.403380281690154,
-      "roomRR": null,
-      "plan": null,
-      "text": "收盤已跌破失效價 195.91，不進場。目前另外還卡：日線空頭、收盤不在失效價和目標價之間、RSI 33（要 45–60）、MACD 轉弱。",
-      "notes": [
-        "第三季財報最晚 2026-11-14 要公布（法定期限，多數公司會提早），還有 5 個交易日"
-      ],
-      "mismatch": null,
-      "risk": {
-        "level": "low",
-        "total": 3,
-        "max": 10,
-        "reasons": []
-      },
-      "hold": {
-        "code": "exit",
-        "text": "收盤已跌破失效價 195.91，規則上這個部位已經失效，出場優先。第三季財報最晚 2026-11-14 要公布（法定期限，多數公司會提早），還有 5 個交易日。"
-      }
-    },
-    "1504.TW": {
-      "market": "TW",
-      "date": "2026-11-05",
-      "close": 63.4,
-      "ma20": 69.275,
-      "stop": 66.7036,
-      "target": 68.1143,
-      "entryLow": 68.2359,
-      "entryHigh": 69.9677,
-      "bias": -8.4807,
-      "high20": 73.9,
-      "rr": null,
-      "code": "below",
-      "signal": false,
-      "blockers": [
-        {
-          "key": "zone",
-          "text": "收盤已跌破失效價"
-        },
-        {
-          "key": "daily",
-          "text": "日線空頭"
-        },
-        {
-          "key": "rr",
-          "text": "報酬風險比算不出來"
-        },
-        {
-          "key": "levels",
-          "text": "收盤不在失效價和目標價之間"
-        },
-        {
-          "key": "rsi",
-          "text": "RSI 31（要 45–60）"
-        },
-        {
-          "key": "macd",
-          "text": "MACD 轉弱"
-        }
-      ],
-      "buyBelow": 69.84646666666666,
-      "gapPct": 10.167928496319645,
-      "roomRR": null,
-      "plan": null,
-      "text": "收盤已跌破失效價 66.7，不進場。目前另外還卡：日線空頭、收盤不在失效價和目標價之間、RSI 31（要 45–60）、MACD 轉弱。",
-      "notes": [
-        "第三季財報最晚 2026-11-14 要公布（法定期限，多數公司會提早），還有 5 個交易日"
-      ],
-      "mismatch": null,
-      "risk": {
-        "level": "low",
-        "total": 2,
-        "max": 10,
-        "reasons": []
-      },
-      "hold": {
-        "code": "exit",
-        "text": "收盤已跌破失效價 66.7，規則上這個部位已經失效，出場優先。第三季財報最晚 2026-11-14 要公布（法定期限，多數公司會提早），還有 5 個交易日。"
-      }
-    },
-    "1590.TW": {
-      "market": "TW",
-      "date": "2026-11-05",
-      "close": 1050.0,
-      "ma20": 1132.5,
-      "stop": 1075.0714,
-      "target": 1155.2857,
-      "entryLow": 1115.5125,
-      "entryHigh": 1143.825,
-      "bias": -7.2848,
-      "high20": 1255.0,
-      "rr": null,
-      "code": "below",
-      "signal": false,
-      "blockers": [
-        {
-          "key": "zone",
-          "text": "收盤已跌破失效價"
-        },
-        {
-          "key": "daily",
-          "text": "日線空頭"
-        },
-        {
-          "key": "weekly",
-          "text": "週線空頭"
-        },
-        {
-          "key": "rr",
-          "text": "報酬風險比算不出來"
-        },
-        {
-          "key": "levels",
-          "text": "收盤不在失效價和目標價之間"
-        },
-        {
-          "key": "rsi",
-          "text": "RSI 31（要 45–60）"
-        },
-        {
-          "key": "macd",
-          "text": "MACD 轉弱"
-        }
-      ],
-      "buyBelow": 1143.825,
-      "gapPct": 8.93571428571429,
-      "roomRR": null,
-      "plan": null,
-      "text": "收盤已跌破失效價 1,075.07，不進場。目前另外還卡：日線空頭、週線空頭、收盤不在失效價和目標價之間、RSI 31（要 45–60）、MACD 轉弱。",
-      "notes": [
-        "第三季財報最晚 2026-11-14 要公布（法定期限，多數公司會提早），還有 5 個交易日"
-      ],
-      "mismatch": null,
-      "risk": {
-        "level": "low",
-        "total": 2,
-        "max": 10,
-        "reasons": []
-      },
-      "hold": {
-        "code": "exit",
-        "text": "收盤已跌破失效價 1,075.07，規則上這個部位已經失效，出場優先。第三季財報最晚 2026-11-14 要公布（法定期限，多數公司會提早），還有 5 個交易日。"
-      }
-    },
-    "3019.TW": {
-      "market": "TW",
-      "date": "2026-11-05",
-      "close": 128.5,
-      "ma20": 130.525,
-      "stop": 123.8393,
-      "target": 140.7571,
-      "entryLow": 128.5671,
-      "entryHigh": 131.8303,
-      "bias": -1.5514,
-      "high20": 141.0,
-      "rr": 2.6299,
-      "code": "below",
-      "signal": false,
-      "blockers": [
-        {
-          "key": "zone",
-          "text": "價格低於進場區"
-        },
-        {
-          "key": "daily",
-          "text": "日線空頭"
-        },
-        {
-          "key": "weekly",
-          "text": "週線空頭"
-        }
-      ],
-      "buyBelow": 131.8303,
-      "gapPct": 2.591673151750973,
-      "roomRR": 2.682000557856113,
-      "plan": null,
-      "text": "收盤 128.5 低於進場區下緣 128.57，等收盤站回 128.57 以上再看訊號。目前另外還卡：日線空頭、週線空頭。",
-      "notes": [
-        "第三季財報最晚 2026-11-14 要公布（法定期限，多數公司會提早），還有 5 個交易日"
-      ],
-      "mismatch": null,
-      "risk": {
-        "level": "mid",
-        "total": 5,
-        "max": 10,
-        "reasons": [
-          "風險中"
-        ]
-      },
-      "hold": {
-        "code": "watch",
-        "text": "收盤在 SMA20（130.53）之下，還沒破失效價 123.84（距離 3.6%）。收盤跌破失效價就是出場優先。第三季財報最晚 2026-11-14 要公布（法定期限，多數公司會提早），還有 5 個交易日。"
-      }
-    },
-    "2359.TW": {
-      "market": "TW",
-      "date": "2026-11-05",
-      "close": 99.4,
-      "ma20": 118.195,
-      "stop": 112.0579,
-      "target": 110.6514,
-      "entryLow": 116.4221,
-      "entryHigh": 119.377,
-      "bias": -15.9017,
-      "high20": 131.0,
-      "rr": null,
-      "code": "below",
-      "signal": false,
-      "blockers": [
-        {
-          "key": "zone",
-          "text": "收盤已跌破失效價"
-        },
-        {
-          "key": "daily",
-          "text": "日線空頭"
-        },
-        {
-          "key": "weekly",
-          "text": "週線空頭"
-        },
-        {
-          "key": "rr",
-          "text": "報酬風險比算不出來"
-        },
-        {
-          "key": "levels",
-          "text": "收盤不在失效價和目標價之間"
-        },
-        {
-          "key": "rsi",
-          "text": "RSI 22（要 45–60）"
-        },
-        {
-          "key": "macd",
-          "text": "MACD 轉弱"
-        }
-      ],
-      "buyBelow": 119.377,
-      "gapPct": 20.097585513078453,
-      "roomRR": null,
-      "plan": null,
-      "text": "收盤已跌破失效價 112.06，不進場。目前另外還卡：日線空頭、週線空頭、收盤不在失效價和目標價之間、RSI 22（要 45–60）、MACD 轉弱。",
-      "notes": [
-        "第三季財報最晚 2026-11-14 要公布（法定期限，多數公司會提早），還有 5 個交易日"
-      ],
-      "mismatch": null,
-      "risk": {
-        "level": "low",
-        "total": 3,
-        "max": 10,
-        "reasons": []
-      },
-      "hold": {
-        "code": "exit",
-        "text": "收盤已跌破失效價 112.06，規則上這個部位已經失效，出場優先。第三季財報最晚 2026-11-14 要公布（法定期限，多數公司會提早），還有 5 個交易日。"
-      }
-    },
-    "3023.TW": {
-      "market": "TW",
-      "date": "2026-11-05",
-      "close": 257.0,
-      "ma20": 291.15,
-      "stop": 276.75,
-      "target": 283.4,
-      "entryLow": 286.7827,
-      "entryHigh": 294.0615,
-      "bias": -11.7293,
-      "high20": 333.5,
-      "rr": null,
-      "code": "below",
-      "signal": false,
-      "blockers": [
-        {
-          "key": "zone",
-          "text": "收盤已跌破失效價"
-        },
-        {
-          "key": "daily",
-          "text": "日線空頭"
-        },
-        {
-          "key": "weekly",
-          "text": "週線空頭"
-        },
-        {
-          "key": "rr",
-          "text": "報酬風險比算不出來"
-        },
-        {
-          "key": "levels",
-          "text": "收盤不在失效價和目標價之間"
-        },
-        {
-          "key": "rsi",
-          "text": "RSI 33（要 45–60）"
-        }
-      ],
-      "buyBelow": 294.0615,
-      "gapPct": 14.420817120622576,
-      "roomRR": null,
-      "plan": null,
-      "text": "收盤已跌破失效價 276.75，不進場。目前另外還卡：日線空頭、週線空頭、收盤不在失效價和目標價之間、RSI 33（要 45–60）。",
-      "notes": [
-        "第三季財報最晚 2026-11-14 要公布（法定期限，多數公司會提早），還有 5 個交易日"
-      ],
-      "mismatch": null,
-      "risk": {
-        "level": "low",
-        "total": 2,
-        "max": 10,
-        "reasons": []
-      },
-      "hold": {
-        "code": "exit",
-        "text": "收盤已跌破失效價 276.75，規則上這個部位已經失效，出場優先。第三季財報最晚 2026-11-14 要公布（法定期限，多數公司會提早），還有 5 個交易日。"
+        "text": "收盤已跌破失效價 272.15，規則上這個部位已經失效，出場優先。第三季財報最晚 2026-11-14 要公布（法定期限，多數公司會提早），還有 5 個交易日。"
       }
     },
     "3665.TW": {
       "market": "TW",
-      "date": "2026-11-05",
-      "close": 1470.0,
-      "ma20": 1913.5,
-      "stop": 1778.0714,
-      "target": 1718.2857,
-      "entryLow": 1884.7975,
-      "entryHigh": 1932.635,
-      "bias": -23.1774,
+      "date": "2026-11-06",
+      "close": 1325.0,
+      "ma20": 1864.0,
+      "stop": 1722.1429,
+      "target": 1585.0714,
+      "entryLow": 1836.04,
+      "entryHigh": 1882.64,
+      "bias": -28.9163,
       "high20": 2400.0,
       "rr": null,
       "code": "below",
@@ -2803,14 +2983,22 @@
         },
         {
           "key": "rsi",
-          "text": "RSI 23（要 45–60）"
+          "text": "RSI 20（要 45–60）"
+        },
+        {
+          "key": "macd",
+          "text": "MACD 轉弱"
+        },
+        {
+          "key": "regime",
+          "text": "大盤空頭"
         }
       ],
-      "buyBelow": 1932.635,
-      "gapPct": 31.471768707482983,
+      "buyBelow": 1882.64,
+      "gapPct": 42.08603773584907,
       "roomRR": null,
       "plan": null,
-      "text": "收盤已跌破失效價 1,778.07，不進場。目前另外還卡：日線空頭、週線空頭、收盤不在失效價和目標價之間、RSI 23（要 45–60）。",
+      "text": "收盤已跌破失效價 1,722.14，不進場。目前另外還卡：日線空頭、週線空頭、收盤不在失效價和目標價之間、RSI 20（要 45–60）、MACD 轉弱、大盤空頭。",
       "notes": [
         "第三季財報最晚 2026-11-14 要公布（法定期限，多數公司會提早），還有 5 個交易日"
       ],
@@ -2823,19 +3011,19 @@
       },
       "hold": {
         "code": "exit",
-        "text": "收盤已跌破失效價 1,778.07，規則上這個部位已經失效，出場優先。第三季財報最晚 2026-11-14 要公布（法定期限，多數公司會提早），還有 5 個交易日。"
+        "text": "收盤已跌破失效價 1,722.14，規則上這個部位已經失效，出場優先。第三季財報最晚 2026-11-14 要公布（法定期限，多數公司會提早），還有 5 個交易日。"
       }
     },
     "4585.TW": {
       "market": "TW",
-      "date": "2026-11-05",
-      "close": 220.0,
-      "ma20": 266.35,
-      "stop": 255.55,
-      "target": 239.8,
-      "entryLow": 262.3548,
-      "entryHigh": 269.0135,
-      "bias": -17.4019,
+      "date": "2026-11-06",
+      "close": 206.0,
+      "ma20": 262.125,
+      "stop": 249.7821,
+      "target": 228.6286,
+      "entryLow": 258.1931,
+      "entryHigh": 264.7462,
+      "bias": -21.4115,
       "high20": 293.0,
       "rr": null,
       "code": "below",
@@ -2863,18 +3051,22 @@
         },
         {
           "key": "rsi",
-          "text": "RSI 14（要 45–60）"
+          "text": "RSI 11（要 45–60）"
         },
         {
           "key": "macd",
           "text": "MACD 轉弱"
+        },
+        {
+          "key": "regime",
+          "text": "大盤空頭"
         }
       ],
-      "buyBelow": 268.75,
-      "gapPct": 22.159090909090917,
+      "buyBelow": 264.7462,
+      "gapPct": 28.517572815533974,
       "roomRR": null,
       "plan": null,
-      "text": "收盤已跌破失效價 255.55，不進場。目前另外還卡：日線空頭、週線空頭、收盤不在失效價和目標價之間、RSI 14（要 45–60）、MACD 轉弱。",
+      "text": "收盤已跌破失效價 249.78，不進場。目前另外還卡：日線空頭、週線空頭、收盤不在失效價和目標價之間、RSI 11（要 45–60）、MACD 轉弱、大盤空頭。",
       "notes": [
         "第三季財報最晚 2026-11-14 要公布（法定期限，多數公司會提早），還有 5 個交易日"
       ],
@@ -2887,20 +3079,20 @@
       },
       "hold": {
         "code": "exit",
-        "text": "收盤已跌破失效價 255.55，規則上這個部位已經失效，出場優先。第三季財報最晚 2026-11-14 要公布（法定期限，多數公司會提早），還有 5 個交易日。"
+        "text": "收盤已跌破失效價 249.78，規則上這個部位已經失效，出場優先。第三季財報最晚 2026-11-14 要公布（法定期限，多數公司會提早），還有 5 個交易日。"
       }
     },
     "6215.TW": {
       "market": "TW",
-      "date": "2026-11-05",
-      "close": 75.2,
-      "ma20": 89.53,
-      "stop": 85.4586,
-      "target": 82.6643,
-      "entryLow": 88.1871,
-      "entryHigh": 90.4253,
-      "bias": -16.0058,
-      "high20": 99.0,
+      "date": "2026-11-06",
+      "close": 70.0,
+      "ma20": 88.18,
+      "stop": 83.68,
+      "target": 78.25,
+      "entryLow": 86.8573,
+      "entryHigh": 89.0618,
+      "bias": -20.6169,
+      "high20": 95.9,
       "rr": null,
       "code": "below",
       "signal": false,
@@ -2927,18 +3119,22 @@
         },
         {
           "key": "rsi",
-          "text": "RSI 21（要 45–60）"
+          "text": "RSI 17（要 45–60）"
         },
         {
           "key": "macd",
           "text": "MACD 轉弱"
+        },
+        {
+          "key": "regime",
+          "text": "大盤空頭"
         }
       ],
-      "buyBelow": 90.4253,
-      "gapPct": 20.24640957446806,
+      "buyBelow": 89.0618,
+      "gapPct": 27.231142857142853,
       "roomRR": null,
       "plan": null,
-      "text": "收盤已跌破失效價 85.46，不進場。目前另外還卡：日線空頭、週線空頭、收盤不在失效價和目標價之間、RSI 21（要 45–60）、MACD 轉弱。",
+      "text": "收盤已跌破失效價 83.68，不進場。目前另外還卡：日線空頭、週線空頭、收盤不在失效價和目標價之間、RSI 17（要 45–60）、MACD 轉弱、大盤空頭。",
       "notes": [
         "第三季財報最晚 2026-11-14 要公布（法定期限，多數公司會提早），還有 5 個交易日"
       ],
@@ -2951,20 +3147,20 @@
       },
       "hold": {
         "code": "exit",
-        "text": "收盤已跌破失效價 85.46，規則上這個部位已經失效，出場優先。第三季財報最晚 2026-11-14 要公布（法定期限，多數公司會提早），還有 5 個交易日。"
+        "text": "收盤已跌破失效價 83.68，規則上這個部位已經失效，出場優先。第三季財報最晚 2026-11-14 要公布（法定期限，多數公司會提早），還有 5 個交易日。"
       }
     },
     "8374.TW": {
       "market": "TW",
-      "date": "2026-11-05",
-      "close": 62.4,
-      "ma20": 70.78,
-      "stop": 67.5486,
-      "target": 68.3243,
-      "entryLow": 69.7183,
-      "entryHigh": 71.4878,
-      "bias": -11.8395,
-      "high20": 75.9,
+      "date": "2026-11-06",
+      "close": 57.9,
+      "ma20": 69.895,
+      "stop": 66.3121,
+      "target": 64.4686,
+      "entryLow": 68.8466,
+      "entryHigh": 70.594,
+      "bias": -17.1615,
+      "high20": 75.8,
       "rr": null,
       "code": "below",
       "signal": false,
@@ -2991,18 +3187,22 @@
         },
         {
           "key": "rsi",
-          "text": "RSI 22（要 45–60）"
+          "text": "RSI 17（要 45–60）"
         },
         {
           "key": "macd",
           "text": "MACD 轉弱"
+        },
+        {
+          "key": "regime",
+          "text": "大盤空頭"
         }
       ],
-      "buyBelow": 71.4878,
-      "gapPct": 14.563782051282036,
+      "buyBelow": 70.594,
+      "gapPct": 21.924006908462857,
       "roomRR": null,
       "plan": null,
-      "text": "收盤已跌破失效價 67.55，不進場。目前另外還卡：日線空頭、週線空頭、收盤不在失效價和目標價之間、RSI 22（要 45–60）、MACD 轉弱。",
+      "text": "收盤已跌破失效價 66.31，不進場。目前另外還卡：日線空頭、週線空頭、收盤不在失效價和目標價之間、RSI 17（要 45–60）、MACD 轉弱、大盤空頭。",
       "notes": [
         "第三季財報最晚 2026-11-14 要公布（法定期限，多數公司會提早），還有 5 個交易日"
       ],
@@ -3017,20 +3217,20 @@
       },
       "hold": {
         "code": "exit",
-        "text": "收盤已跌破失效價 67.55，規則上這個部位已經失效，出場優先。第三季財報最晚 2026-11-14 要公布（法定期限，多數公司會提早），還有 5 個交易日。"
+        "text": "收盤已跌破失效價 66.31，規則上這個部位已經失效，出場優先。第三季財報最晚 2026-11-14 要公布（法定期限，多數公司會提早），還有 5 個交易日。"
       }
     },
     "2317.TW": {
       "market": "TW",
-      "date": "2026-11-05",
-      "close": 235.0,
-      "ma20": 244.85,
-      "stop": 236.7071,
-      "target": 249.9286,
-      "entryLow": 241.1772,
-      "entryHigh": 247.2985,
-      "bias": -4.0229,
-      "high20": 254.5,
+      "date": "2026-11-06",
+      "close": 224.5,
+      "ma20": 243.475,
+      "stop": 234.0464,
+      "target": 241.7857,
+      "entryLow": 239.8229,
+      "entryHigh": 245.9098,
+      "bias": -7.7934,
+      "high20": 253.5,
       "rr": null,
       "code": "below",
       "signal": false,
@@ -3057,18 +3257,22 @@
         },
         {
           "key": "rsi",
-          "text": "RSI 39（要 45–60）"
+          "text": "RSI 32（要 45–60）"
         },
         {
           "key": "macd",
           "text": "MACD 轉弱"
+        },
+        {
+          "key": "regime",
+          "text": "大盤空頭"
         }
       ],
-      "buyBelow": 246.65949999999998,
-      "gapPct": 4.961489361702109,
+      "buyBelow": 245.5702,
+      "gapPct": 9.385389755011131,
       "roomRR": null,
       "plan": null,
-      "text": "收盤已跌破失效價 236.71，不進場。目前另外還卡：日線空頭、週線空頭、收盤不在失效價和目標價之間、RSI 39（要 45–60）、MACD 轉弱。",
+      "text": "收盤已跌破失效價 234.05，不進場。目前另外還卡：日線空頭、週線空頭、收盤不在失效價和目標價之間、RSI 32（要 45–60）、MACD 轉弱、大盤空頭。",
       "notes": [
         "第三季財報最晚 2026-11-14 要公布（法定期限，多數公司會提早），還有 5 個交易日"
       ],
@@ -3081,7 +3285,7 @@
       },
       "hold": {
         "code": "exit",
-        "text": "收盤已跌破失效價 236.71，規則上這個部位已經失效，出場優先。第三季財報最晚 2026-11-14 要公布（法定期限，多數公司會提早），還有 5 個交易日。"
+        "text": "收盤已跌破失效價 234.05，規則上這個部位已經失效，出場優先。第三季財報最晚 2026-11-14 要公布（法定期限，多數公司會提早），還有 5 個交易日。"
       }
     },
     "TSM": {
@@ -3196,7 +3400,7 @@
       "plan": null,
       "text": "收盤已跌破失效價 204.72，不進場。目前另外還卡：日線空頭、收盤不在失效價和目標價之間、RSI 25（要 45–60）、MACD 轉弱、大盤空頭。",
       "notes": [
-        "財報 2026-11-17，還有 8 個交易日（Yahoo，已確認）"
+        "財報 2026-11-17，還有 7 個交易日（Yahoo，已確認）"
       ],
       "mismatch": null,
       "risk": {
@@ -3207,7 +3411,7 @@
       },
       "hold": {
         "code": "exit",
-        "text": "收盤已跌破失效價 204.72，規則上這個部位已經失效，出場優先。財報 2026-11-17，還有 8 個交易日（Yahoo，已確認）。"
+        "text": "收盤已跌破失效價 204.72，規則上這個部位已經失效，出場優先。財報 2026-11-17，還有 7 個交易日（Yahoo，已確認）。"
       }
     },
     "AMD": {
@@ -3670,7 +3874,7 @@
       "plan": null,
       "text": "收盤已跌破失效價 50.78，不進場。目前另外還卡：日線空頭、週線空頭、收盤不在失效價和目標價之間、RSI 32（要 45–60）、大盤空頭。",
       "notes": [
-        "財報 2026-11-09，還有 2 個交易日（Yahoo，已確認）"
+        "財報 2026-11-09，還有 1 個交易日（Yahoo，已確認）"
       ],
       "mismatch": null,
       "risk": {
@@ -3683,7 +3887,7 @@
       },
       "hold": {
         "code": "exit",
-        "text": "收盤已跌破失效價 50.78，規則上這個部位已經失效，出場優先。財報 2026-11-09，還有 2 個交易日（Yahoo，已確認）。"
+        "text": "收盤已跌破失效價 50.78，規則上這個部位已經失效，出場優先。財報 2026-11-09，還有 1 個交易日（Yahoo，已確認）。"
       }
     },
     "ASTS": {
@@ -3740,7 +3944,7 @@
       "plan": null,
       "text": "收盤已跌破失效價 37.00，不進場。目前另外還卡：日線空頭、週線空頭、收盤不在失效價和目標價之間、RSI 25（要 45–60）、MACD 轉弱、大盤空頭。",
       "notes": [
-        "財報 2026-11-09，還有 2 個交易日（Yahoo，已確認）"
+        "財報 2026-11-09，還有 1 個交易日（Yahoo，已確認）"
       ],
       "mismatch": null,
       "risk": {
@@ -3753,7 +3957,7 @@
       },
       "hold": {
         "code": "exit",
-        "text": "收盤已跌破失效價 37.00，規則上這個部位已經失效，出場優先。財報 2026-11-09，還有 2 個交易日（Yahoo，已確認）。"
+        "text": "收盤已跌破失效價 37.00，規則上這個部位已經失效，出場優先。財報 2026-11-09，還有 1 個交易日（Yahoo，已確認）。"
       }
     },
     "ECHO": {
@@ -3790,7 +3994,7 @@
       "plan": null,
       "text": "收盤 89.92 低於進場區下緣 90.57，等收盤站回 90.57 以上再看訊號。目前另外還卡：週線空頭、大盤空頭。",
       "notes": [
-        "財報約 2026-11-06（Nasdaq預估，公司尚未確認），還有 1 個交易日"
+        "財報約 2026-11-06（Nasdaq預估，公司尚未確認），還有 0 個交易日；這是 2026-11-05 抓到的結果"
       ],
       "mismatch": null,
       "risk": {
@@ -3804,81 +4008,58 @@
       },
       "hold": {
         "code": "watch",
-        "text": "收盤在 SMA20（91.95）之下，還沒破失效價 85.82（距離 4.6%）。收盤跌破失效價就是出場優先。財報約 2026-11-06（Nasdaq預估，公司尚未確認），還有 1 個交易日。"
+        "text": "收盤在 SMA20（91.95）之下，還沒破失效價 85.82（距離 4.6%）。收盤跌破失效價就是出場優先。財報約 2026-11-06（Nasdaq預估，公司尚未確認），還有 0 個交易日；這是 2026-11-05 抓到的結果。"
       }
     },
     "BTC-USD": {
       "market": "CRYPTO",
-      "date": "2026-11-04",
-      "close": 80405.2891,
-      "ma20": 80203.573,
-      "stop": 77614.0969,
-      "target": 85152.6619,
-      "entryLow": 79000.5195,
-      "entryHigh": 81005.6088,
-      "bias": 0.2515,
+      "date": "2026-11-05",
+      "close": 75942.125,
+      "ma20": 79925.6391,
+      "stop": 77142.5069,
+      "target": 81044.5339,
+      "entryLow": 78726.7545,
+      "entryHigh": 80724.8955,
+      "bias": -4.984,
       "high20": 84840.0469,
-      "rr": 1.7008,
-      "code": "signal_unproven",
-      "signal": true,
-      "blockers": [],
-      "buyBelow": 80779.0121,
-      "gapPct": 0.46479902526712635,
-      "roomRR": 1.5888399946087632,
-      "plan": {
-        "entry": "下一個交易日開盤",
-        "openLow": 77614.0969,
-        "openHigh": 85152.6619,
-        "stop": 77614.0969,
-        "target": 85152.6619,
-        "maxHoldDays": 20,
-        "riskPerShare": 2791.1921999999904
-      },
-      "text": "規則訊號成立，但回測證據沒過。照規則的做法是：下一個交易日開盤買；開盤價要在 77,614.10～85,152.66 之間，否則不買。停損 77,614.10、目標 85,152.66，最多抱 20 個交易日。",
-      "notes": [
-        "加密貨幣回測：後段只有 14 筆（要 30 筆）、期望值區間下緣 −1.10R，沒有大於 0、只勝過 79.3% 的隨機進場（要 95%）"
-      ],
-      "mismatch": null,
-      "risk": {
-        "level": "low",
-        "total": 2,
-        "max": 8,
-        "reasons": []
-      },
-      "hold": {
-        "code": "keep",
-        "text": "續抱。失效價 77,614.10（距離 3.5%），收盤跌破就是出場優先。要加碼的話，條件和新進場一樣。"
-      }
-    },
-    "ETH-USD": {
-      "market": "CRYPTO",
-      "date": "2026-11-04",
-      "close": 2422.3118,
-      "ma20": 2349.4836,
-      "stop": 2248.7169,
-      "target": 2607.0507,
-      "entryLow": 2314.2414,
-      "entryHigh": 2372.9784,
-      "bias": 3.0998,
-      "high20": 2522.8418,
-      "rr": 1.0642,
-      "code": "pullback",
+      "rr": null,
+      "code": "below",
       "signal": false,
       "blockers": [
         {
           "key": "zone",
-          "text": "價格高於進場區"
+          "text": "收盤已跌破失效價"
+        },
+        {
+          "key": "daily",
+          "text": "日線空頭"
         },
         {
           "key": "rr",
-          "text": "報酬風險比 1.06（要 ≥1.5）"
+          "text": "報酬風險比算不出來"
+        },
+        {
+          "key": "levels",
+          "text": "收盤不在失效價和目標價之間"
+        },
+        {
+          "key": "rsi",
+          "text": "RSI 39（要 45–60）"
+        },
+        {
+          "key": "macd",
+          "text": "MACD 轉弱"
+        },
+        {
+          "key": "regime",
+          "text": "大盤空頭"
         }
       ],
-      "buyBelow": 2371.8761666666664,
-      "gapPct": -2.082128045338072,
-      "roomRR": 0.5791068746835314,
+      "buyBelow": 80544.11283333332,
+      "gapPct": 6.059861813628897,
+      "roomRR": null,
       "plan": null,
-      "text": "等收盤回到 2,371.88 以下（還差 −2.1%）再看訊號。",
+      "text": "收盤已跌破失效價 77,142.51，不進場。目前另外還卡：日線空頭、收盤不在失效價和目標價之間、RSI 39（要 45–60）、MACD 轉弱、大盤空頭。",
       "notes": [],
       "mismatch": null,
       "risk": {
@@ -3888,20 +4069,74 @@
         "reasons": []
       },
       "hold": {
-        "code": "keep",
-        "text": "續抱。失效價 2,248.72（距離 7.2%），收盤跌破就是出場優先。要加碼的話，條件和新進場一樣。"
+        "code": "exit",
+        "text": "收盤已跌破失效價 77,142.51，規則上這個部位已經失效，出場優先。"
+      }
+    },
+    "ETH-USD": {
+      "market": "CRYPTO",
+      "date": "2026-11-05",
+      "close": 2234.4763,
+      "ma20": 2340.2191,
+      "stop": 2230.0586,
+      "target": 2436.4372,
+      "entryLow": 2305.1158,
+      "entryHigh": 2363.6212,
+      "bias": -4.5185,
+      "high20": 2522.8418,
+      "rr": null,
+      "code": "below",
+      "signal": false,
+      "blockers": [
+        {
+          "key": "zone",
+          "text": "價格低於進場區"
+        },
+        {
+          "key": "daily",
+          "text": "日線空頭"
+        },
+        {
+          "key": "rr",
+          "text": "報酬風險比算不出來"
+        },
+        {
+          "key": "rsi",
+          "text": "RSI 40（要 45–60）"
+        },
+        {
+          "key": "regime",
+          "text": "大盤空頭"
+        }
+      ],
+      "buyBelow": 2363.6212,
+      "gapPct": 5.779649576055035,
+      "roomRR": 65.27502999298332,
+      "plan": null,
+      "text": "收盤 2,234.48 低於進場區下緣 2,305.12，等收盤站回 2,305.12 以上再看訊號。目前另外還卡：日線空頭、RSI 40（要 45–60）、大盤空頭。",
+      "notes": [],
+      "mismatch": null,
+      "risk": {
+        "level": "low",
+        "total": 2,
+        "max": 8,
+        "reasons": []
+      },
+      "hold": {
+        "code": "watch",
+        "text": "收盤在 SMA20（2,340.22）之下，還沒破失效價 2,230.06（距離 0.2%）。收盤跌破失效價就是出場優先。"
       }
     },
     "SOL-USD": {
       "market": "CRYPTO",
-      "date": "2026-11-04",
-      "close": 95.4884,
-      "ma20": 100.2834,
-      "stop": 95.6566,
-      "target": 103.9709,
-      "entryLow": 98.7792,
-      "entryHigh": 101.2863,
-      "bias": -4.7815,
+      "date": "2026-11-05",
+      "close": 89.1434,
+      "ma20": 99.5258,
+      "stop": 94.5466,
+      "target": 98.2719,
+      "entryLow": 98.0329,
+      "entryHigh": 100.521,
+      "bias": -10.4319,
       "high20": 109.0304,
       "rr": null,
       "code": "below",
@@ -3925,14 +4160,22 @@
         },
         {
           "key": "rsi",
-          "text": "RSI 37（要 45–60）"
+          "text": "RSI 29（要 45–60）"
+        },
+        {
+          "key": "macd",
+          "text": "MACD 轉弱"
+        },
+        {
+          "key": "regime",
+          "text": "大盤空頭"
         }
       ],
-      "buyBelow": 101.2863,
-      "gapPct": 6.071836998001845,
+      "buyBelow": 100.521,
+      "gapPct": 12.763255608379298,
       "roomRR": null,
       "plan": null,
-      "text": "收盤已跌破失效價 95.66，不進場。目前另外還卡：日線空頭、收盤不在失效價和目標價之間、RSI 37（要 45–60）。",
+      "text": "收盤已跌破失效價 94.55，不進場。目前另外還卡：日線空頭、收盤不在失效價和目標價之間、RSI 29（要 45–60）、MACD 轉弱、大盤空頭。",
       "notes": [],
       "mismatch": null,
       "risk": {
@@ -3943,7 +4186,7 @@
       },
       "hold": {
         "code": "exit",
-        "text": "收盤已跌破失效價 95.66，規則上這個部位已經失效，出場優先。"
+        "text": "收盤已跌破失效價 94.55，規則上這個部位已經失效，出場優先。"
       }
     }
   }
