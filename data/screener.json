@@ -1,5 +1,5 @@
 {
- "generatedAt": "2026-11-06T07:17:59.750440+00:00",
+ "generatedAt": "2026-11-06T14:27:40.479906+00:00",
  "params": {
   "rsi_lo": 45,
   "rsi_hi": 60,
@@ -25,7 +25,7 @@
    "failedSample": [
     "7856.TWO：只有 41 根日 K"
    ],
-   "candidates": 14,
+   "candidates": 13,
    "signals": 0,
    "picks": [
     {
@@ -178,7 +178,7 @@
      "date": "2026-11-06",
      "close": 37.55,
      "pct": -3.3462,
-     "entryLow": 36.1594,
+     "entryLow": 36.1593,
      "entryHigh": 37.0771,
      "stop": 32.1243,
      "target1": 45.9571,
@@ -527,77 +527,6 @@
      "watched": false
     },
     {
-     "code": "6609.TWO",
-     "name": "瀧澤科",
-     "market": "TW",
-     "date": "2026-11-06",
-     "close": 43.1,
-     "pct": -3.3632,
-     "entryLow": 41.503,
-     "entryHigh": 42.5563,
-     "stop": 38.1621,
-     "target1": 50.3836,
-     "rr": 1.475,
-     "rsi": 52.6616,
-     "volRatio": 2.1181,
-     "bias": 2.2903,
-     "zone": "ABOVE_ZONE",
-     "dailyTrend": "多頭",
-     "weeklyTrend": "盤整",
-     "regime": "BEAR",
-     "entrySignal": false,
-     "passed": 7,
-     "total": 9,
-     "checks": [
-      {
-       "k": "above",
-       "ok": true,
-       "t": "收在 SMA20 之上（乖離 2.3%）"
-      },
-      {
-       "k": "bias",
-       "ok": true,
-       "t": "乖離 0–6%"
-      },
-      {
-       "k": "high",
-       "ok": true,
-       "t": "未貼近 20 日高"
-      },
-      {
-       "k": "rr",
-       "ok": false,
-       "t": "報酬風險比 1.48 ≥ 1.5"
-      },
-      {
-       "k": "rsi",
-       "ok": true,
-       "t": "RSI 53（45–60）"
-      },
-      {
-       "k": "trend",
-       "ok": true,
-       "t": "日線多頭、週線盤整（不能是空頭）"
-      },
-      {
-       "k": "macd",
-       "ok": true,
-       "t": "MACD 零軸上（不能轉弱）"
-      },
-      {
-       "k": "market",
-       "ok": false,
-       "t": "大盤空頭"
-      },
-      {
-       "k": "vol",
-       "ok": true,
-       "t": "量比 2.12 ≥ 1.2"
-      }
-     ],
-     "watched": false
-    },
-    {
      "code": "4967.TW",
      "name": "十銓",
      "market": "TW",
@@ -738,10 +667,81 @@
       }
      ],
      "watched": false
+    },
+    {
+     "code": "6148.TWO",
+     "name": "驊宏資",
+     "market": "TW",
+     "date": "2026-11-06",
+     "close": 42.9,
+     "pct": -1.1521,
+     "entryLow": 40.0329,
+     "entryHigh": 41.0489,
+     "stop": 35.7139,
+     "target1": 51.9357,
+     "rr": 1.2574,
+     "rsi": 58.4495,
+     "volRatio": 3.3284,
+     "bias": 5.5545,
+     "zone": "ABOVE_ZONE",
+     "dailyTrend": "多頭",
+     "weeklyTrend": "多頭",
+     "regime": "BEAR",
+     "entrySignal": false,
+     "passed": 7,
+     "total": 9,
+     "checks": [
+      {
+       "k": "above",
+       "ok": true,
+       "t": "收在 SMA20 之上（乖離 5.6%）"
+      },
+      {
+       "k": "bias",
+       "ok": true,
+       "t": "乖離 0–6%"
+      },
+      {
+       "k": "high",
+       "ok": true,
+       "t": "未貼近 20 日高"
+      },
+      {
+       "k": "rr",
+       "ok": false,
+       "t": "報酬風險比 1.26 ≥ 1.5"
+      },
+      {
+       "k": "rsi",
+       "ok": true,
+       "t": "RSI 58（45–60）"
+      },
+      {
+       "k": "trend",
+       "ok": true,
+       "t": "日線多頭、週線多頭（不能是空頭）"
+      },
+      {
+       "k": "macd",
+       "ok": true,
+       "t": "MACD 零軸下（不能轉弱）"
+      },
+      {
+       "k": "market",
+       "ok": false,
+       "t": "大盤空頭"
+      },
+      {
+       "k": "vol",
+       "ok": true,
+       "t": "量比 3.33 ≥ 1.2"
+      }
+     ],
+     "watched": false
     }
    ],
    "universe": "證交所＋櫃買中心全市場日收盤，成交金額前 300 名",
-   "seconds": 62,
+   "seconds": 76,
    "session": "2026-11-06"
   },
   "US": {
@@ -1466,7 +1466,7 @@
     }
    ],
    "universe": "Nasdaq 全市場名單，市值前 300 名",
-   "seconds": 17,
+   "seconds": 23,
    "session": "2026-11-05"
   },
   "CRYPTO": {
@@ -1475,8 +1475,8 @@
    "failed": 6,
    "failedSample": [
     "FIGR_HELOC-USD：HTTPError",
-    "RAIN-USD：HTTPError",
     "UNI-USD：HTTPError",
+    "RAIN-USD：HTTPError",
     "CC-USD：HTTPError",
     "SUI-USD：HTTPError",
     "TAO-USD：HTTPError"
@@ -1557,7 +1557,7 @@
     }
    ],
    "universe": "CoinGecko 市值前 30 名（排除穩定幣、包裝與質押代幣）",
-   "seconds": 5,
+   "seconds": 7,
    "session": "2026-11-05"
   }
  }

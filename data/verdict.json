@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-11-06T07:17:59.508973+00:00",
-  "dataTimestamp": "2026-11-06T07:12:48.273682+00:00",
+  "generatedAt": "2026-11-06T14:27:40.349393+00:00",
+  "dataTimestamp": "2026-11-06T14:23:55.224702+00:00",
   "sessions": {
     "TW": "2026-11-06",
     "US": "2026-11-05",
@@ -114,9 +114,9 @@
     "conditions": 0,
     "pullback": 0,
     "no_chase": 0,
-    "below": 60,
-    "trend": 2,
-    "avoid": 1,
+    "below": 59,
+    "trend": 1,
+    "avoid": 3,
     "nodata": 0
   },
   "groups": {
@@ -148,7 +148,6 @@
       "3406.TW",
       "2327.TW",
       "4919.TW",
-      "1569.TWO",
       "2313.TW",
       "3491.TWO",
       "6285.TW",
@@ -189,11 +188,12 @@
       "SOL-USD"
     ],
     "trend": [
-      "2221.TWO",
       "MSFT"
     ],
     "avoid": [
-      "6213.TW"
+      "6213.TW",
+      "1569.TWO",
+      "2221.TWO"
     ],
     "nodata": []
   },
@@ -261,7 +261,7 @@
       "mismatch": null,
       "risk": {
         "level": "low",
-        "total": 1,
+        "total": 2,
         "max": 10,
         "reasons": []
       },
@@ -583,7 +583,7 @@
       "mismatch": null,
       "risk": {
         "level": "low",
-        "total": 3,
+        "total": 2,
         "max": 10,
         "reasons": []
       },
@@ -642,12 +642,10 @@
       ],
       "mismatch": null,
       "risk": {
-        "level": "mid",
-        "total": 4,
+        "level": "low",
+        "total": 3,
         "max": 10,
-        "reasons": [
-          "風險中"
-        ]
+        "reasons": []
       },
       "hold": {
         "code": "exit",
@@ -1612,7 +1610,7 @@
       "bias": -7.0263,
       "high20": 99.6,
       "rr": null,
-      "code": "below",
+      "code": "avoid",
       "signal": false,
       "blockers": [
         {
@@ -1636,16 +1634,19 @@
       "gapPct": 8.632824427480923,
       "roomRR": 7.7777777777778105,
       "plan": null,
-      "text": "收盤 78.6 低於進場區下緣 83.27，等收盤站回 83.27 以上再看訊號。目前另外還卡：MACD 轉弱、大盤空頭。",
+      "text": "列入注意股（2026-11-06），不碰。",
       "notes": [
         "第三季財報最晚 2026-11-14 要公布（法定期限，多數公司會提早），還有 5 個交易日"
       ],
       "mismatch": null,
       "risk": {
-        "level": "low",
-        "total": 2,
+        "level": "mid",
+        "total": 4,
         "max": 10,
-        "reasons": []
+        "reasons": [
+          "注意股",
+          "風險中"
+        ]
       },
       "hold": {
         "code": "watch",
@@ -1664,7 +1665,7 @@
       "bias": 1.5031,
       "high20": 195.0,
       "rr": 1.6256,
-      "code": "trend",
+      "code": "avoid",
       "signal": false,
       "blockers": [
         {
@@ -1680,16 +1681,19 @@
       "gapPct": -0.4956794425087119,
       "roomRR": 2.746139407900349,
       "plan": null,
-      "text": "大盤空頭，不進場。",
+      "text": "列入注意股（2026-11-06），不碰。",
       "notes": [
         "第三季財報最晚 2026-11-14 要公布（法定期限，多數公司會提早），還有 5 個交易日"
       ],
       "mismatch": null,
       "risk": {
-        "level": "low",
-        "total": 2,
+        "level": "mid",
+        "total": 4,
         "max": 10,
-        "reasons": []
+        "reasons": [
+          "注意股",
+          "風險中"
+        ]
       },
       "hold": {
         "code": "keep",
@@ -2802,12 +2806,10 @@
       ],
       "mismatch": null,
       "risk": {
-        "level": "mid",
-        "total": 5,
+        "level": "low",
+        "total": 3,
         "max": 10,
-        "reasons": [
-          "風險中"
-        ]
+        "reasons": []
       },
       "hold": {
         "code": "watch",
@@ -2872,10 +2874,12 @@
       ],
       "mismatch": null,
       "risk": {
-        "level": "low",
-        "total": 3,
+        "level": "mid",
+        "total": 4,
         "max": 10,
-        "reasons": []
+        "reasons": [
+          "風險中"
+        ]
       },
       "hold": {
         "code": "exit",
