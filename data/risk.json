@@ -1,8 +1,8 @@
 {
-  "generatedAt": "2026-11-07T02:21:08.844889+00:00",
+  "generatedAt": "2026-11-07T06:27:26.945045+00:00",
   "today": {
     "TW": "2026-11-07",
-    "US": "2026-11-06",
+    "US": "2026-11-07",
     "CRYPTO": "2026-11-07"
   },
   "thresholds": {
@@ -105,7 +105,7 @@
       "fail": 0
     },
     "sec_submissions": {
-      "ok": 1,
+      "ok": 2,
       "fail": 0
     },
     "okx_funding": {
@@ -122,7 +122,7 @@
     "fresh": true,
     "used": 25,
     "earnings": 5,
-    "autoEarnings": 11,
+    "autoEarnings": 10,
     "rejected": []
   },
   "symbols": {
@@ -2603,8 +2603,8 @@
       "items": {
         "tech": {
           "score": 0,
-          "why": "乖離 -9.43%",
-          "date": "2026-11-05"
+          "why": "乖離 -7.93%",
+          "date": "2026-11-06"
         },
         "earnings": {
           "score": 0,
@@ -2744,8 +2744,8 @@
       "items": {
         "tech": {
           "score": 0,
-          "why": "乖離 -15.71%",
-          "date": "2026-11-05"
+          "why": "乖離 -7.56%",
+          "date": "2026-11-06"
         },
         "earnings": {
           "score": null,
@@ -2790,8 +2790,8 @@
       "items": {
         "tech": {
           "score": 0,
-          "why": "乖離 -17.33%",
-          "date": "2026-11-05"
+          "why": "乖離 -3.28%",
+          "date": "2026-11-06"
         },
         "earnings": {
           "score": 2,
@@ -2840,8 +2840,8 @@
       "items": {
         "tech": {
           "score": 0,
-          "why": "乖離 -26.90%",
-          "date": "2026-11-05"
+          "why": "乖離 -19.94%",
+          "date": "2026-11-06"
         },
         "earnings": {
           "score": 2,
@@ -2874,20 +2874,15 @@
       "group": "US|航太科技"
     },
     "ECHO": {
-      "total": 4,
-      "max": 10,
-      "scored": 5,
-      "score10": 4.0,
-      "level": "mid",
-      "flags": [
-        "earnings_soon"
-      ],
+      "total": 2,
+      "max": 8,
+      "scored": 4,
+      "score10": 2.5,
+      "level": "low",
+      "flags": [],
       "gate": {
-        "block": true,
-        "reasons": [
-          "財報前觀察",
-          "風險中"
-        ]
+        "block": false,
+        "reasons": []
       },
       "items": {
         "tech": {
@@ -2896,13 +2891,8 @@
           "date": "2026-11-06"
         },
         "earnings": {
-          "score": 2,
-          "why": "財報約 2026-11-06（Nasdaq預估，公司尚未確認），還有 0 個交易日；這是 2026-11-05 抓到的結果",
-          "estimated": true,
-          "date": "2026-11-06",
-          "source": "https://www.nasdaq.com/market-activity/stocks/echo/earnings",
-          "days": 0,
-          "provider": "Nasdaq"
+          "score": null,
+          "why": "events.json 沒填，自動來源（Yahoo／Nasdaq／SEC）也抓不到財報日"
         },
         "fundamentals": {
           "score": 1,
@@ -2949,14 +2939,14 @@
         },
         "fundamentals": {
           "score": 1,
-          "why": "穩定幣總供給 30 日 -4.9%（292B 美元）、BTC 市占率 59.2%",
+          "why": "穩定幣總供給 30 日 -4.9%（292B 美元）、BTC 市占率 59.3%",
           "date": "2026-11-07",
           "source": "https://defillama.com/stablecoins",
           "label": "市場結構"
         },
         "chips": {
           "score": 0,
-          "why": "恐懼與貪婪指數 25（極度恐懼）；資金費率 +0.0045%、未平倉量 7 日 +5.2%",
+          "why": "恐懼與貪婪指數 25（極度恐懼）；資金費率 +0.0014%、未平倉量 7 日 +5.2%",
           "date": "2026-11-07",
           "source": "https://alternative.me/crypto/fear-and-greed-index/",
           "label": "情緒／槓桿"
@@ -2994,14 +2984,14 @@
         },
         "fundamentals": {
           "score": 1,
-          "why": "穩定幣總供給 30 日 -4.9%（292B 美元）、BTC 市占率 59.2%",
+          "why": "穩定幣總供給 30 日 -4.9%（292B 美元）、BTC 市占率 59.3%",
           "date": "2026-11-07",
           "source": "https://defillama.com/stablecoins",
           "label": "市場結構"
         },
         "chips": {
           "score": 0,
-          "why": "恐懼與貪婪指數 25（極度恐懼）；資金費率 +0.0058%、未平倉量 7 日 +6.5%",
+          "why": "恐懼與貪婪指數 25（極度恐懼）；資金費率 +0.0034%、未平倉量 7 日 +6.5%",
           "date": "2026-11-07",
           "source": "https://alternative.me/crypto/fear-and-greed-index/",
           "label": "情緒／槓桿"
@@ -3039,7 +3029,7 @@
         },
         "fundamentals": {
           "score": 1,
-          "why": "穩定幣總供給 30 日 -4.9%（292B 美元）、BTC 市占率 59.2%",
+          "why": "穩定幣總供給 30 日 -4.9%（292B 美元）、BTC 市占率 59.3%",
           "date": "2026-11-07",
           "source": "https://defillama.com/stablecoins",
           "label": "市場結構"

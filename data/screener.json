@@ -1,5 +1,5 @@
 {
- "generatedAt": "2026-11-07T02:23:43.228632+00:00",
+ "generatedAt": "2026-11-07T06:30:04.896278+00:00",
  "params": {
   "rsi_lo": 45,
   "rsi_hi": 60,
@@ -741,7 +741,7 @@
     }
    ],
    "universe": "證交所＋櫃買中心全市場日收盤，成交金額前 300 名",
-   "seconds": 33,
+   "seconds": 59,
    "session": "2026-11-06"
   },
   "US": {
@@ -751,9 +751,80 @@
    "failedSample": [
     "METAM：只有 9 根日 K"
    ],
-   "candidates": 21,
+   "candidates": 20,
    "signals": 0,
    "picks": [
+    {
+     "code": "UBS",
+     "name": "UBS Group AG Registered Ordinary Shares",
+     "market": "US",
+     "date": "2026-11-06",
+     "close": 47.78,
+     "pct": -2.0299,
+     "entryLow": 46.9417,
+     "entryHigh": 48.1331,
+     "stop": 46.2264,
+     "target1": 50.4019,
+     "rr": 1.6876,
+     "rsi": 47.5761,
+     "volRatio": 1.3853,
+     "bias": 0.2591,
+     "zone": "IN_ZONE",
+     "dailyTrend": "盤整",
+     "weeklyTrend": "盤整",
+     "regime": "BEAR",
+     "entrySignal": false,
+     "passed": 8,
+     "total": 9,
+     "checks": [
+      {
+       "k": "above",
+       "ok": true,
+       "t": "收在 SMA20 之上（乖離 0.3%）"
+      },
+      {
+       "k": "bias",
+       "ok": true,
+       "t": "乖離 0–6%"
+      },
+      {
+       "k": "high",
+       "ok": true,
+       "t": "未貼近 20 日高"
+      },
+      {
+       "k": "rr",
+       "ok": true,
+       "t": "報酬風險比 1.69 ≥ 1.5"
+      },
+      {
+       "k": "rsi",
+       "ok": true,
+       "t": "RSI 48（45–60）"
+      },
+      {
+       "k": "trend",
+       "ok": true,
+       "t": "日線盤整、週線盤整（不能是空頭）"
+      },
+      {
+       "k": "macd",
+       "ok": true,
+       "t": "MACD 零軸上（不能轉弱）"
+      },
+      {
+       "k": "market",
+       "ok": false,
+       "t": "大盤空頭"
+      },
+      {
+       "k": "vol",
+       "ok": true,
+       "t": "量比 1.39 ≥ 1.2"
+      }
+     ],
+     "watched": false
+    },
     {
      "code": "USB",
      "name": "U.S. Bancorp Common Stock",
@@ -1252,77 +1323,6 @@
      "watched": false
     },
     {
-     "code": "UBER",
-     "name": "Uber Technologies Inc. Common Stock",
-     "market": "US",
-     "date": "2026-11-05",
-     "close": 68.78,
-     "pct": -1.56,
-     "entryLow": 67.3573,
-     "entryHigh": 69.0668,
-     "stop": 66.0036,
-     "target1": 73.1423,
-     "rr": 1.5712,
-     "rsi": 50.9934,
-     "volRatio": 1.6184,
-     "bias": 0.5806,
-     "zone": "IN_ZONE",
-     "dailyTrend": "盤整",
-     "weeklyTrend": "空頭",
-     "regime": "BEAR",
-     "entrySignal": false,
-     "passed": 7,
-     "total": 9,
-     "checks": [
-      {
-       "k": "above",
-       "ok": true,
-       "t": "收在 SMA20 之上（乖離 0.6%）"
-      },
-      {
-       "k": "bias",
-       "ok": true,
-       "t": "乖離 0–6%"
-      },
-      {
-       "k": "high",
-       "ok": true,
-       "t": "未貼近 20 日高"
-      },
-      {
-       "k": "rr",
-       "ok": true,
-       "t": "報酬風險比 1.57 ≥ 1.5"
-      },
-      {
-       "k": "rsi",
-       "ok": true,
-       "t": "RSI 51（45–60）"
-      },
-      {
-       "k": "trend",
-       "ok": false,
-       "t": "日線盤整、週線空頭（不能是空頭）"
-      },
-      {
-       "k": "macd",
-       "ok": true,
-       "t": "MACD 零軸上（不能轉弱）"
-      },
-      {
-       "k": "market",
-       "ok": false,
-       "t": "大盤空頭"
-      },
-      {
-       "k": "vol",
-       "ok": true,
-       "t": "量比 1.62 ≥ 1.2"
-      }
-     ],
-     "watched": false
-    },
-    {
      "code": "TRV",
      "name": "The Travelers Companies Inc. Common Stoc",
      "market": "US",
@@ -1466,7 +1466,7 @@
     }
    ],
    "universe": "Nasdaq 全市場名單，市值前 300 名",
-   "seconds": 19,
+   "seconds": 16,
    "session": "2026-11-06"
   },
   "CRYPTO": {
