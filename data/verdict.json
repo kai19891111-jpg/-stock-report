@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-11-10T07:43:42.157178+00:00",
-  "dataTimestamp": "2026-11-10T07:38:43.277692+00:00",
+  "generatedAt": "2026-11-10T15:06:00.090095+00:00",
+  "dataTimestamp": "2026-11-10T14:59:41.977369+00:00",
   "sessions": {
     "TW": "2026-11-10",
     "US": "2026-11-09",
@@ -114,9 +114,9 @@
     "conditions": 0,
     "pullback": 0,
     "no_chase": 0,
-    "below": 50,
-    "trend": 11,
-    "avoid": 2,
+    "below": 49,
+    "trend": 10,
+    "avoid": 4,
     "nodata": 0
   },
   "groups": {
@@ -132,7 +132,6 @@
       "2308.TW",
       "2371.TW",
       "8210.TW",
-      "3324.TWO",
       "3653.TW",
       "3017.TW",
       "3037.TW",
@@ -180,7 +179,6 @@
     ],
     "trend": [
       "1569.TWO",
-      "2221.TWO",
       "3491.TWO",
       "2355.TW",
       "3019.TW",
@@ -192,8 +190,10 @@
       "ECHO"
     ],
     "avoid": [
+      "3324.TWO",
       "3189.TW",
-      "6213.TW"
+      "6213.TW",
+      "2221.TWO"
     ],
     "nodata": []
   },
@@ -201,6 +201,10 @@
     {
       "level": "info",
       "text": "財報日只填了 58／63 檔，其餘沒辦法提醒財報前風險。"
+    },
+    {
+      "level": "warn",
+      "text": "資料來源 nasdaq_earnings 這次完全沒抓到。"
     }
   ],
   "selfCheck": {
@@ -253,7 +257,7 @@
       "mismatch": null,
       "risk": {
         "level": "low",
-        "total": 1,
+        "total": 2,
         "max": 10,
         "reasons": []
       },
@@ -488,10 +492,12 @@
       ],
       "mismatch": null,
       "risk": {
-        "level": "low",
-        "total": 3,
+        "level": "mid",
+        "total": 4,
         "max": 10,
-        "reasons": []
+        "reasons": [
+          "風險中"
+        ]
       },
       "hold": {
         "code": "exit",
@@ -510,7 +516,7 @@
       "bias": -8.0417,
       "high20": 1535.0,
       "rr": null,
-      "code": "below",
+      "code": "avoid",
       "signal": false,
       "blockers": [
         {
@@ -534,16 +540,19 @@
       "gapPct": 9.832388663967606,
       "roomRR": 8.641971752274976,
       "plan": null,
-      "text": "收盤 1,235 低於進場區下緣 1,322.86，等收盤站回 1,322.86 以上再看訊號。目前另外還卡：RSI 44（要 45–60）、大盤空頭。",
+      "text": "列入注意股（2026-11-10），不碰。",
       "notes": [
         "第三季財報最晚 2026-11-14 要公布（法定期限，多數公司會提早），還有 3 個交易日"
       ],
       "mismatch": null,
       "risk": {
-        "level": "low",
-        "total": 2,
+        "level": "mid",
+        "total": 4,
         "max": 10,
-        "reasons": []
+        "reasons": [
+          "注意股",
+          "風險中"
+        ]
       },
       "hold": {
         "code": "watch",
@@ -1558,7 +1567,7 @@
       "bias": 10.425,
       "high20": 168.0,
       "rr": 1.0092,
-      "code": "trend",
+      "code": "avoid",
       "signal": false,
       "blockers": [
         {
@@ -1578,16 +1587,17 @@
       "gapPct": -8.535197368421056,
       "roomRR": 0.5012311490097551,
       "plan": null,
-      "text": "大盤空頭，不進場。",
+      "text": "列入注意股（2026-11-10），不碰。",
       "notes": [
         "第三季財報最晚 2026-11-14 要公布（法定期限，多數公司會提早），還有 3 個交易日"
       ],
       "mismatch": null,
       "risk": {
         "level": "mid",
-        "total": 4,
+        "total": 5,
         "max": 10,
         "reasons": [
+          "注意股",
           "風險中"
         ]
       },
@@ -1923,7 +1933,7 @@
       "mismatch": null,
       "risk": {
         "level": "low",
-        "total": 3,
+        "total": 2,
         "max": 10,
         "reasons": []
       },
@@ -1983,7 +1993,7 @@
       "mismatch": null,
       "risk": {
         "level": "low",
-        "total": 3,
+        "total": 2,
         "max": 10,
         "reasons": []
       },
@@ -2551,7 +2561,7 @@
       "mismatch": null,
       "risk": {
         "level": "low",
-        "total": 2,
+        "total": 3,
         "max": 10,
         "reasons": []
       },
