@@ -1,5 +1,5 @@
 {
- "generatedAt": "2026-11-11T01:16:49.101538+00:00",
+ "generatedAt": "2026-11-11T02:17:27.845790+00:00",
  "params": {
   "rsi_lo": 45,
   "rsi_hi": 60,
@@ -743,7 +743,7 @@
     }
    ],
    "universe": "證交所＋櫃買中心全市場日收盤，成交金額前 300 名",
-   "seconds": 45,
+   "seconds": 58,
    "session": "2026-11-10"
   },
   "US": {
@@ -751,27 +751,27 @@
    "ok": 67,
    "failed": 0,
    "failedSample": [],
-   "candidates": 2,
+   "candidates": 4,
    "signals": 0,
    "picks": [
     {
-     "code": "INTU",
-     "name": "INTU",
+     "code": "SNPS",
+     "name": "SNPS",
      "market": "US",
-     "date": "2026-11-09",
-     "close": 338.23,
-     "pct": -0.9575,
-     "entryLow": 330.9039,
-     "entryHigh": 339.3024,
-     "stop": 318.4659,
-     "target1": 370.2714,
-     "rr": 1.6212,
-     "rsi": 53.8474,
-     "volRatio": 0.767,
-     "bias": 0.6808,
+     "date": "2026-11-10",
+     "close": 459.95,
+     "pct": -1.5033,
+     "entryLow": 452.446,
+     "entryHigh": 463.9294,
+     "stop": 434.7463,
+     "target1": 505.0312,
+     "rr": 1.7887,
+     "rsi": 50.6579,
+     "volRatio": 0.4869,
+     "bias": 0.1337,
      "zone": "IN_ZONE",
      "dailyTrend": "多頭",
-     "weeklyTrend": "盤整",
+     "weeklyTrend": "多頭",
      "regime": "BEAR",
      "entrySignal": false,
      "passed": 7,
@@ -780,7 +780,7 @@
       {
        "k": "above",
        "ok": true,
-       "t": "收在 SMA20 之上（乖離 0.7%）"
+       "t": "收在 SMA20 之上（乖離 0.1%）"
       },
       {
        "k": "bias",
@@ -795,22 +795,22 @@
       {
        "k": "rr",
        "ok": true,
-       "t": "報酬風險比 1.62 ≥ 1.5"
+       "t": "報酬風險比 1.79 ≥ 1.5"
       },
       {
        "k": "rsi",
        "ok": true,
-       "t": "RSI 54（45–60）"
+       "t": "RSI 51（45–60）"
       },
       {
        "k": "trend",
        "ok": true,
-       "t": "日線多頭、週線盤整（不能是空頭）"
+       "t": "日線多頭、週線多頭（不能是空頭）"
       },
       {
        "k": "macd",
        "ok": true,
-       "t": "MACD 零軸上（不能轉弱）"
+       "t": "MACD 零軸下（不能轉弱）"
       },
       {
        "k": "market",
@@ -820,7 +820,150 @@
       {
        "k": "vol",
        "ok": false,
-       "t": "量比 0.77 ≥ 1.2"
+       "t": "量比 0.49 ≥ 1.2"
+      }
+     ],
+     "watched": false
+    },
+    {
+     "code": "MSFT",
+     "name": "MSFT",
+     "market": "US",
+     "date": "2026-11-10",
+     "close": 533.16,
+     "pct": -2.2048,
+     "entryLow": 523.1281,
+     "entryHigh": 536.4054,
+     "stop": 510.3422,
+     "target1": 571.2059,
+     "rr": 1.6674,
+     "rsi": 52.2966,
+     "volRatio": 1.0304,
+     "bias": 0.3889,
+     "zone": "IN_ZONE",
+     "dailyTrend": "多頭",
+     "weeklyTrend": "多頭",
+     "regime": "BEAR",
+     "entrySignal": false,
+     "passed": 7,
+     "total": 9,
+     "checks": [
+      {
+       "k": "above",
+       "ok": true,
+       "t": "收在 SMA20 之上（乖離 0.4%）"
+      },
+      {
+       "k": "bias",
+       "ok": true,
+       "t": "乖離 0–6%"
+      },
+      {
+       "k": "high",
+       "ok": true,
+       "t": "未貼近 20 日高"
+      },
+      {
+       "k": "rr",
+       "ok": true,
+       "t": "報酬風險比 1.67 ≥ 1.5"
+      },
+      {
+       "k": "rsi",
+       "ok": true,
+       "t": "RSI 52（45–60）"
+      },
+      {
+       "k": "trend",
+       "ok": true,
+       "t": "日線多頭、週線多頭（不能是空頭）"
+      },
+      {
+       "k": "macd",
+       "ok": true,
+       "t": "MACD 零軸下（不能轉弱）"
+      },
+      {
+       "k": "market",
+       "ok": false,
+       "t": "大盤空頭"
+      },
+      {
+       "k": "vol",
+       "ok": false,
+       "t": "量比 1.03 ≥ 1.2"
+      }
+     ],
+     "watched": true,
+     "group": "US|AI雲端／記憶體"
+    },
+    {
+     "code": "INTU",
+     "name": "INTU",
+     "market": "US",
+     "date": "2026-11-10",
+     "close": 340.44,
+     "pct": 0.6534,
+     "entryLow": 332.8241,
+     "entryHigh": 341.2714,
+     "stop": 320.2225,
+     "target1": 372.835,
+     "rr": 1.6023,
+     "rsi": 54.9031,
+     "volRatio": 0.8278,
+     "bias": 0.7539,
+     "zone": "IN_ZONE",
+     "dailyTrend": "多頭",
+     "weeklyTrend": "盤整",
+     "regime": "BEAR",
+     "entrySignal": false,
+     "passed": 7,
+     "total": 9,
+     "checks": [
+      {
+       "k": "above",
+       "ok": true,
+       "t": "收在 SMA20 之上（乖離 0.8%）"
+      },
+      {
+       "k": "bias",
+       "ok": true,
+       "t": "乖離 0–6%"
+      },
+      {
+       "k": "high",
+       "ok": true,
+       "t": "未貼近 20 日高"
+      },
+      {
+       "k": "rr",
+       "ok": true,
+       "t": "報酬風險比 1.60 ≥ 1.5"
+      },
+      {
+       "k": "rsi",
+       "ok": true,
+       "t": "RSI 55（45–60）"
+      },
+      {
+       "k": "trend",
+       "ok": true,
+       "t": "日線多頭、週線盤整（不能是空頭）"
+      },
+      {
+       "k": "macd",
+       "ok": true,
+       "t": "MACD 零軸下（不能轉弱）"
+      },
+      {
+       "k": "market",
+       "ok": false,
+       "t": "大盤空頭"
+      },
+      {
+       "k": "vol",
+       "ok": false,
+       "t": "量比 0.83 ≥ 1.2"
       }
      ],
      "watched": false
@@ -898,8 +1041,8 @@
     }
    ],
    "universe": "內建大型股名單（67 檔）",
-   "seconds": 4,
-   "session": "2026-11-09"
+   "seconds": 6,
+   "session": "2026-11-10"
   },
   "CRYPTO": {
    "scanned": 30,
