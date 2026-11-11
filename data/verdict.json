@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-11-11T07:01:22.325313+00:00",
-  "dataTimestamp": "2026-11-11T06:57:30.834958+00:00",
+  "generatedAt": "2026-11-11T14:35:06.743895+00:00",
+  "dataTimestamp": "2026-11-11T14:31:40.545495+00:00",
   "sessions": {
     "TW": "2026-11-11",
     "US": "2026-11-10",
-    "CRYPTO": "2026-11-09"
+    "CRYPTO": "2026-11-10"
   },
   "params": {
     "rsi_lo": 45,
@@ -98,8 +98,8 @@
       "expLow": -1.1059,
       "expHigh": 0.4029,
       "winRate": 0.2143,
-      "beats": 0.7933,
-      "why": "加密貨幣回測：後段只有 14 筆（要 30 筆）、期望值區間下緣 −1.11R，沒有大於 0、只勝過 79.3% 的隨機進場（要 95%）"
+      "beats": 0.8067,
+      "why": "加密貨幣回測：後段只有 14 筆（要 30 筆）、期望值區間下緣 −1.11R，沒有大於 0、只勝過 80.7% 的隨機進場（要 95%）"
     }
   },
   "regimeNotes": {
@@ -115,8 +115,8 @@
     "pullback": 0,
     "no_chase": 0,
     "below": 39,
-    "trend": 20,
-    "avoid": 4,
+    "trend": 19,
+    "avoid": 5,
     "nodata": 0
   },
   "groups": {
@@ -173,7 +173,6 @@
       "3653.TW",
       "3017.TW",
       "1303.TW",
-      "1569.TWO",
       "3491.TWO",
       "6271.TW",
       "2355.TW",
@@ -193,6 +192,7 @@
       "3324.TWO",
       "3189.TW",
       "6213.TW",
+      "1569.TWO",
       "2221.TWO"
     ],
     "nodata": []
@@ -249,7 +249,7 @@
       "mismatch": null,
       "risk": {
         "level": "low",
-        "total": 1,
+        "total": 0,
         "max": 10,
         "reasons": []
       },
@@ -777,7 +777,7 @@
       "mismatch": null,
       "risk": {
         "level": "low",
-        "total": 1,
+        "total": 2,
         "max": 10,
         "reasons": []
       },
@@ -1428,7 +1428,7 @@
       "bias": 19.2922,
       "high20": 104.5,
       "rr": 0.6523,
-      "code": "trend",
+      "code": "avoid",
       "signal": false,
       "blockers": [
         {
@@ -1456,16 +1456,19 @@
       "gapPct": -15.333971291866034,
       "roomRR": 0.0,
       "plan": null,
-      "text": "大盤空頭，不進場。",
+      "text": "列入注意股（2026-11-11），不碰。",
       "notes": [
         "第三季財報最晚 2026-11-14 要公布（法定期限，多數公司會提早），還有 2 個交易日"
       ],
       "mismatch": null,
       "risk": {
-        "level": "low",
-        "total": 3,
+        "level": "mid",
+        "total": 5,
         "max": 10,
-        "reasons": []
+        "reasons": [
+          "注意股",
+          "風險中"
+        ]
       },
       "hold": {
         "code": "hot",
@@ -3196,7 +3199,7 @@
       "mismatch": null,
       "risk": {
         "level": "low",
-        "total": 1,
+        "total": 2,
         "max": 10,
         "reasons": []
       },
@@ -3515,73 +3518,15 @@
     },
     "BTC-USD": {
       "market": "CRYPTO",
-      "date": "2026-11-09",
-      "close": 75223.1484,
-      "ma20": 78581.0398,
-      "stop": 75770.9378,
-      "target": 80375.0021,
-      "entryLow": 77402.3242,
-      "entryHigh": 79366.8502,
-      "bias": -4.2732,
-      "high20": 84840.0469,
-      "rr": null,
-      "code": "below",
-      "signal": false,
-      "blockers": [
-        {
-          "key": "zone",
-          "text": "收盤已跌破失效價"
-        },
-        {
-          "key": "daily",
-          "text": "日線空頭"
-        },
-        {
-          "key": "rr",
-          "text": "報酬風險比算不出來"
-        },
-        {
-          "key": "levels",
-          "text": "收盤不在失效價和目標價之間"
-        },
-        {
-          "key": "rsi",
-          "text": "RSI 38（要 45–60）"
-        },
-        {
-          "key": "regime",
-          "text": "大盤空頭"
-        }
-      ],
-      "buyBelow": 79205.50693333332,
-      "gapPct": 5.294059897835002,
-      "roomRR": null,
-      "plan": null,
-      "text": "收盤已跌破失效價 75,770.94，不進場。目前另外還卡：日線空頭、收盤不在失效價和目標價之間、RSI 38（要 45–60）、大盤空頭。",
-      "notes": [],
-      "mismatch": null,
-      "risk": {
-        "level": "low",
-        "total": 1,
-        "max": 8,
-        "reasons": []
-      },
-      "hold": {
-        "code": "exit",
-        "text": "收盤已跌破失效價 75,770.94，規則上這個部位已經失效，出場優先。"
-      }
-    },
-    "ETH-USD": {
-      "market": "CRYPTO",
-      "date": "2026-11-09",
-      "close": 2131.4985,
-      "ma20": 2293.4068,
-      "stop": 2180.5646,
-      "target": 2338.3758,
-      "entryLow": 2259.0057,
-      "entryHigh": 2316.3409,
-      "bias": -7.0597,
-      "high20": 2522.8418,
+      "date": "2026-11-10",
+      "close": 73720.1172,
+      "ma20": 78066.4473,
+      "stop": 75185.12,
+      "target": 79002.5504,
+      "entryLow": 76895.4506,
+      "entryHigh": 78847.1117,
+      "bias": -5.5675,
+      "high20": 84301.2812,
       "rr": null,
       "code": "below",
       "signal": false,
@@ -3615,11 +3560,11 @@
           "text": "大盤空頭"
         }
       ],
-      "buyBelow": 2316.3409,
-      "gapPct": 8.671946051099733,
+      "buyBelow": 78706.74213333333,
+      "gapPct": 6.764266149774034,
       "roomRR": null,
       "plan": null,
-      "text": "收盤已跌破失效價 2,180.56，不進場。目前另外還卡：日線空頭、收盤不在失效價和目標價之間、RSI 34（要 45–60）、MACD 轉弱、大盤空頭。",
+      "text": "收盤已跌破失效價 75,185.12，不進場。目前另外還卡：日線空頭、收盤不在失效價和目標價之間、RSI 34（要 45–60）、MACD 轉弱、大盤空頭。",
       "notes": [],
       "mismatch": null,
       "risk": {
@@ -3630,20 +3575,20 @@
       },
       "hold": {
         "code": "exit",
-        "text": "收盤已跌破失效價 2,180.56，規則上這個部位已經失效，出場優先。"
+        "text": "收盤已跌破失效價 75,185.12，規則上這個部位已經失效，出場優先。"
       }
     },
-    "SOL-USD": {
+    "ETH-USD": {
       "market": "CRYPTO",
-      "date": "2026-11-09",
-      "close": 86.5493,
-      "ma20": 96.2175,
-      "stop": 91.2949,
-      "target": 95.5741,
-      "entryLow": 94.7743,
-      "entryHigh": 97.1797,
-      "bias": -10.0483,
-      "high20": 109.0304,
+      "date": "2026-11-10",
+      "close": 2050.1809,
+      "ma20": 2272.3775,
+      "stop": 2154.0955,
+      "target": 2267.0313,
+      "entryLow": 2238.2919,
+      "entryHigh": 2295.1013,
+      "bias": -9.7782,
+      "high20": 2479.7739,
       "rr": null,
       "code": "below",
       "signal": false,
@@ -3666,18 +3611,22 @@
         },
         {
           "key": "rsi",
-          "text": "RSI 28（要 45–60）"
+          "text": "RSI 30（要 45–60）"
+        },
+        {
+          "key": "macd",
+          "text": "MACD 轉弱"
         },
         {
           "key": "regime",
           "text": "大盤空頭"
         }
       ],
-      "buyBelow": 97.1797,
-      "gapPct": 12.282479465460728,
+      "buyBelow": 2295.1013,
+      "gapPct": 11.946282398787345,
       "roomRR": null,
       "plan": null,
-      "text": "收盤已跌破失效價 91.29，不進場。目前另外還卡：日線空頭、收盤不在失效價和目標價之間、RSI 28（要 45–60）、大盤空頭。",
+      "text": "收盤已跌破失效價 2,154.10，不進場。目前另外還卡：日線空頭、收盤不在失效價和目標價之間、RSI 30（要 45–60）、MACD 轉弱、大盤空頭。",
       "notes": [],
       "mismatch": null,
       "risk": {
@@ -3688,7 +3637,69 @@
       },
       "hold": {
         "code": "exit",
-        "text": "收盤已跌破失效價 91.29，規則上這個部位已經失效，出場優先。"
+        "text": "收盤已跌破失效價 2,154.10，規則上這個部位已經失效，出場優先。"
+      }
+    },
+    "SOL-USD": {
+      "market": "CRYPTO",
+      "date": "2026-11-10",
+      "close": 83.2603,
+      "ma20": 95.0408,
+      "stop": 89.8996,
+      "target": 92.6859,
+      "entryLow": 93.6152,
+      "entryHigh": 95.9913,
+      "bias": -12.3953,
+      "high20": 107.3427,
+      "rr": null,
+      "code": "below",
+      "signal": false,
+      "blockers": [
+        {
+          "key": "zone",
+          "text": "收盤已跌破失效價"
+        },
+        {
+          "key": "daily",
+          "text": "日線空頭"
+        },
+        {
+          "key": "rr",
+          "text": "報酬風險比算不出來"
+        },
+        {
+          "key": "levels",
+          "text": "收盤不在失效價和目標價之間"
+        },
+        {
+          "key": "rsi",
+          "text": "RSI 24（要 45–60）"
+        },
+        {
+          "key": "macd",
+          "text": "MACD 轉弱"
+        },
+        {
+          "key": "regime",
+          "text": "大盤空頭"
+        }
+      ],
+      "buyBelow": 95.9913,
+      "gapPct": 15.290600682438082,
+      "roomRR": null,
+      "plan": null,
+      "text": "收盤已跌破失效價 89.90，不進場。目前另外還卡：日線空頭、收盤不在失效價和目標價之間、RSI 24（要 45–60）、MACD 轉弱、大盤空頭。",
+      "notes": [],
+      "mismatch": null,
+      "risk": {
+        "level": "low",
+        "total": 1,
+        "max": 8,
+        "reasons": []
+      },
+      "hold": {
+        "code": "exit",
+        "text": "收盤已跌破失效價 89.90，規則上這個部位已經失效，出場優先。"
       }
     }
   }

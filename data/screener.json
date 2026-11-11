@@ -1,5 +1,5 @@
 {
- "generatedAt": "2026-11-11T07:01:22.404822+00:00",
+ "generatedAt": "2026-11-11T14:35:06.848064+00:00",
  "params": {
   "rsi_lo": 45,
   "rsi_hi": 60,
@@ -27,7 +27,7 @@
    "failedSample": [
     "7856.TWO：只有 44 根日 K"
    ],
-   "candidates": 27,
+   "candidates": 28,
    "signals": 0,
    "picks": [
     {
@@ -609,9 +609,9 @@
      "pct": 9.9762,
      "entryLow": 90.95,
      "entryHigh": 93.2583,
-     "stop": 81.2607,
-     "target1": 112.9029,
-     "rr": 1.7905,
+     "stop": 81.2779,
+     "target1": 112.8714,
+     "rr": 1.7904,
      "rsi": 52.1708,
      "volRatio": 0.2509,
      "bias": 0.287,
@@ -744,7 +744,7 @@
     }
    ],
    "universe": "證交所＋櫃買中心全市場日收盤，成交金額前 300 名",
-   "seconds": 169,
+   "seconds": 43,
    "session": "2026-11-11"
   },
   "US": {
@@ -971,7 +971,7 @@
     }
    ],
    "universe": "內建大型股名單（67 檔）",
-   "seconds": 4,
+   "seconds": 5,
    "session": "2026-11-10"
   },
   "CRYPTO": {
@@ -985,86 +985,14 @@
     "SUI-USD：HTTPError",
     "RAIN-USD：HTTPError",
     "TAO-USD：HTTPError",
-    "PEPE-USD：HTTPError"
+    "USYC-USD：HTTPError"
    ],
-   "candidates": 1,
+   "candidates": 0,
    "signals": 0,
-   "picks": [
-    {
-     "code": "QNT-USD",
-     "name": "Quant",
-     "market": "CRYPTO",
-     "date": "2026-11-09",
-     "close": 194.278,
-     "pct": -0.1468,
-     "entryLow": 191.0381,
-     "entryHigh": 195.8868,
-     "stop": 176.865,
-     "target1": 225.5958,
-     "rr": 1.7985,
-     "rsi": 49.6096,
-     "volRatio": 1.0444,
-     "bias": 0.1705,
-     "zone": "IN_ZONE",
-     "dailyTrend": "多頭",
-     "weeklyTrend": "多頭",
-     "regime": "BEAR",
-     "entrySignal": false,
-     "passed": 7,
-     "total": 9,
-     "checks": [
-      {
-       "k": "above",
-       "ok": true,
-       "t": "收在 SMA20 之上（乖離 0.2%）"
-      },
-      {
-       "k": "bias",
-       "ok": true,
-       "t": "乖離 0–6%"
-      },
-      {
-       "k": "high",
-       "ok": true,
-       "t": "未貼近 20 日高"
-      },
-      {
-       "k": "rr",
-       "ok": true,
-       "t": "報酬風險比 1.80 ≥ 1.5"
-      },
-      {
-       "k": "rsi",
-       "ok": true,
-       "t": "RSI 50（45–60）"
-      },
-      {
-       "k": "trend",
-       "ok": true,
-       "t": "日線多頭、週線多頭（不能是空頭）"
-      },
-      {
-       "k": "macd",
-       "ok": true,
-       "t": "MACD 零軸下（不能轉弱）"
-      },
-      {
-       "k": "market",
-       "ok": false,
-       "t": "大盤空頭"
-      },
-      {
-       "k": "vol",
-       "ok": false,
-       "t": "量比 1.04 ≥ 1.2"
-      }
-     ],
-     "watched": false
-    }
-   ],
+   "picks": [],
    "universe": "CoinGecko 市值前 30 名（排除穩定幣、包裝與質押代幣）",
    "seconds": 7,
-   "session": "2026-11-09"
+   "session": null
   }
  }
 }
