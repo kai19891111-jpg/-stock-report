@@ -1,5 +1,5 @@
 {
- "generatedAt": "2026-11-10T15:06:00.233588+00:00",
+ "generatedAt": "2026-11-11T01:16:49.101538+00:00",
  "params": {
   "rsi_lo": 45,
   "rsi_hi": 60,
@@ -27,7 +27,7 @@
    "failedSample": [
     "7856.TWO：只有 43 根日 K"
    ],
-   "candidates": 12,
+   "candidates": 13,
    "signals": 0,
    "picks": [
     {
@@ -43,7 +43,7 @@
      "target1": 295.0571,
      "rr": 1.8203,
      "rsi": 47.9825,
-     "volRatio": 1.4964,
+     "volRatio": 1.4821,
      "bias": 0.0476,
      "zone": "IN_ZONE",
      "dailyTrend": "盤整",
@@ -96,7 +96,7 @@
       {
        "k": "vol",
        "ok": true,
-       "t": "量比 1.50 ≥ 1.2"
+       "t": "量比 1.48 ≥ 1.2"
       }
      ],
      "watched": false
@@ -114,7 +114,7 @@
      "target1": 91.6029,
      "rr": 1.5686,
      "rsi": 51.8187,
-     "volRatio": 1.3872,
+     "volRatio": 1.3798,
      "bias": 1.4902,
      "zone": "ABOVE_ZONE",
      "dailyTrend": "多頭",
@@ -167,7 +167,7 @@
       {
        "k": "vol",
        "ok": true,
-       "t": "量比 1.39 ≥ 1.2"
+       "t": "量比 1.38 ≥ 1.2"
       }
      ],
      "watched": false
@@ -185,7 +185,7 @@
      "target1": 63.1907,
      "rr": 1.5314,
      "rsi": 55.554,
-     "volRatio": 1.3028,
+     "volRatio": 1.2987,
      "bias": 1.8401,
      "zone": "ABOVE_ZONE",
      "dailyTrend": "多頭",
@@ -256,7 +256,7 @@
      "target1": 27.3121,
      "rr": 1.8206,
      "rsi": 55.3878,
-     "volRatio": 0.9024,
+     "volRatio": 0.9012,
      "bias": 0.0192,
      "zone": "IN_ZONE",
      "dailyTrend": "多頭",
@@ -323,11 +323,11 @@
      "pct": 0.142,
      "entryLow": 69.3637,
      "entryHigh": 71.1242,
-     "stop": 65.0971,
-     "target1": 80.2586,
+     "stop": 65.0886,
+     "target1": 80.2743,
      "rr": 1.8062,
      "rsi": 47.0119,
-     "volRatio": 2.9698,
+     "volRatio": 2.9549,
      "bias": 0.1136,
      "zone": "IN_ZONE",
      "dailyTrend": "盤整",
@@ -380,7 +380,7 @@
       {
        "k": "vol",
        "ok": true,
-       "t": "量比 2.97 ≥ 1.2"
+       "t": "量比 2.95 ≥ 1.2"
       }
      ],
      "watched": false
@@ -398,7 +398,7 @@
      "target1": 34.08,
      "rr": 1.6505,
      "rsi": 51.901,
-     "volRatio": 0.9302,
+     "volRatio": 0.927,
      "bias": 0.8517,
      "zone": "IN_ZONE",
      "dailyTrend": "多頭",
@@ -469,7 +469,7 @@
      "target1": 144.9571,
      "rr": 1.5611,
      "rsi": 50.4151,
-     "volRatio": 2.9581,
+     "volRatio": 2.9536,
      "bias": 1.0649,
      "zone": "ABOVE_ZONE",
      "dailyTrend": "盤整",
@@ -522,7 +522,7 @@
       {
        "k": "vol",
        "ok": true,
-       "t": "量比 2.96 ≥ 1.2"
+       "t": "量比 2.95 ≥ 1.2"
       }
      ],
      "watched": true,
@@ -541,7 +541,7 @@
      "target1": 125.7986,
      "rr": 1.3256,
      "rsi": 54.149,
-     "volRatio": 3.0833,
+     "volRatio": 3.0453,
      "bias": 3.3273,
      "zone": "ABOVE_ZONE",
      "dailyTrend": "多頭",
@@ -594,7 +594,7 @@
       {
        "k": "vol",
        "ok": true,
-       "t": "量比 3.08 ≥ 1.2"
+       "t": "量比 3.05 ≥ 1.2"
       }
      ],
      "watched": false
@@ -612,7 +612,7 @@
      "target1": 373.7714,
      "rr": 1.2917,
      "rsi": 52.0592,
-     "volRatio": 3.7262,
+     "volRatio": 3.7185,
      "bias": 4.9864,
      "zone": "ABOVE_ZONE",
      "dailyTrend": "盤整",
@@ -665,29 +665,29 @@
       {
        "k": "vol",
        "ok": true,
-       "t": "量比 3.73 ≥ 1.2"
+       "t": "量比 3.72 ≥ 1.2"
       }
      ],
      "watched": false
     },
     {
-     "code": "4977.TW",
-     "name": "眾達-KY",
+     "code": "4770.TW",
+     "name": "上品",
      "market": "TW",
      "date": "2026-11-10",
-     "close": 187.0,
-     "pct": 5.0562,
-     "entryLow": 174.6405,
-     "entryHigh": 179.073,
-     "stop": 158.5714,
-     "target1": 221.3357,
-     "rr": 1.2078,
-     "rsi": 55.0407,
-     "volRatio": 1.6706,
-     "bias": 5.471,
+     "close": 295.5,
+     "pct": 3.3217,
+     "entryLow": 280.8235,
+     "entryHigh": 287.951,
+     "stop": 262.5143,
+     "target1": 336.9071,
+     "rr": 1.2553,
+     "rsi": 55.848,
+     "volRatio": 1.9191,
+     "bias": 3.6478,
      "zone": "ABOVE_ZONE",
      "dailyTrend": "多頭",
-     "weeklyTrend": "盤整",
+     "weeklyTrend": "多頭",
      "regime": "BEAR",
      "entrySignal": false,
      "passed": 7,
@@ -696,7 +696,7 @@
       {
        "k": "above",
        "ok": true,
-       "t": "收在 SMA20 之上（乖離 5.5%）"
+       "t": "收在 SMA20 之上（乖離 3.6%）"
       },
       {
        "k": "bias",
@@ -711,22 +711,22 @@
       {
        "k": "rr",
        "ok": false,
-       "t": "報酬風險比 1.21 ≥ 1.5"
+       "t": "報酬風險比 1.26 ≥ 1.5"
       },
       {
        "k": "rsi",
        "ok": true,
-       "t": "RSI 55（45–60）"
+       "t": "RSI 56（45–60）"
       },
       {
        "k": "trend",
        "ok": true,
-       "t": "日線多頭、週線盤整（不能是空頭）"
+       "t": "日線多頭、週線多頭（不能是空頭）"
       },
       {
        "k": "macd",
        "ok": true,
-       "t": "MACD 零軸上（不能轉弱）"
+       "t": "MACD 零軸下（不能轉弱）"
       },
       {
        "k": "market",
@@ -736,14 +736,14 @@
       {
        "k": "vol",
        "ok": true,
-       "t": "量比 1.67 ≥ 1.2"
+       "t": "量比 1.92 ≥ 1.2"
       }
      ],
      "watched": false
     }
    ],
    "universe": "證交所＋櫃買中心全市場日收盤，成交金額前 300 名",
-   "seconds": 44,
+   "seconds": 45,
    "session": "2026-11-10"
   },
   "US": {
@@ -990,7 +990,7 @@
     }
    ],
    "universe": "CoinGecko 市值前 30 名（排除穩定幣、包裝與質押代幣）",
-   "seconds": 6,
+   "seconds": 7,
    "session": "2026-11-09"
   }
  }

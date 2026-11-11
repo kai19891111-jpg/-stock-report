@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-10",
+  "updatedAt": "2026-11-11",
   "earnings": {
     "2330.TW": {
       "date": "2026-10-15",
@@ -122,18 +122,6 @@
         "*"
       ],
       "source": "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm"
-    },
-    {
-      "id": "auto-cpi-2026-11-10",
-      "type": "scheduled",
-      "date": "2026-11-10",
-      "title": "美國 10 月 CPI 公布",
-      "targets": [
-        "US",
-        "CRYPTO",
-        "TW"
-      ],
-      "source": "https://www.bls.gov/schedule/news_release/cpi.htm"
     },
     {
       "id": "auto-cpi-2026-12-10",
