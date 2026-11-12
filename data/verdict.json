@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-11-12T07:44:25.489534+00:00",
-  "dataTimestamp": "2026-11-12T07:34:23.399263+00:00",
+  "generatedAt": "2026-11-12T15:29:39.734359+00:00",
+  "dataTimestamp": "2026-11-12T15:24:30.586552+00:00",
   "sessions": {
     "TW": "2026-11-12",
     "US": "2026-11-11",
@@ -115,8 +115,8 @@
     "pullback": 0,
     "no_chase": 0,
     "below": 45,
-    "trend": 15,
-    "avoid": 3,
+    "trend": 14,
+    "avoid": 4,
     "nodata": 0
   },
   "groups": {
@@ -176,7 +176,6 @@
     "trend": [
       "2330.TW",
       "1303.TW",
-      "3491.TWO",
       "6271.TW",
       "2355.TW",
       "2049.TW",
@@ -193,7 +192,8 @@
     "avoid": [
       "3189.TW",
       "1569.TWO",
-      "2221.TWO"
+      "2221.TWO",
+      "3491.TWO"
     ],
     "nodata": []
   },
@@ -553,7 +553,7 @@
       "mismatch": null,
       "risk": {
         "level": "low",
-        "total": 2,
+        "total": 3,
         "max": 10,
         "reasons": []
       },
@@ -787,7 +787,7 @@
       "mismatch": null,
       "risk": {
         "level": "low",
-        "total": 2,
+        "total": 1,
         "max": 10,
         "reasons": []
       },
@@ -1674,7 +1674,7 @@
       "bias": 11.2385,
       "high20": 1575.0,
       "rr": 0.8272,
-      "code": "trend",
+      "code": "avoid",
       "signal": false,
       "blockers": [
         {
@@ -1698,16 +1698,19 @@
       "gapPct": -9.204123711340205,
       "roomRR": 0.44800007168001155,
       "plan": null,
-      "text": "大盤空頭，不進場。",
+      "text": "列入注意股（2026-11-12），不碰。",
       "notes": [
         "第三季財報最晚 2026-11-14 要公布（法定期限，多數公司會提早），還有 1 個交易日"
       ],
       "mismatch": null,
       "risk": {
-        "level": "low",
-        "total": 3,
+        "level": "mid",
+        "total": 5,
         "max": 10,
-        "reasons": []
+        "reasons": [
+          "注意股",
+          "風險中"
+        ]
       },
       "hold": {
         "code": "keep",
