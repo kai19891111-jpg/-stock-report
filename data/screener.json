@@ -1,5 +1,5 @@
 {
- "generatedAt": "2026-11-13T07:09:29.327263+00:00",
+ "generatedAt": "2026-11-13T14:45:50.115645+00:00",
  "params": {
   "rsi_lo": 45,
   "rsi_hi": 60,
@@ -329,7 +329,7 @@
      "rr": 1.5423,
      "rsi": 57.0544,
      "volRatio": 1.3017,
-     "bias": 2.6177,
+     "bias": 2.6176,
      "zone": "ABOVE_ZONE",
      "dailyTrend": "多頭",
      "weeklyTrend": "多頭",
@@ -745,7 +745,7 @@
     }
    ],
    "universe": "證交所＋櫃買中心全市場日收盤，成交金額前 300 名",
-   "seconds": 42,
+   "seconds": 41,
    "session": "2026-11-13"
   },
   "US": {
@@ -1042,7 +1042,7 @@
     }
    ],
    "universe": "內建大型股名單（67 檔）",
-   "seconds": 4,
+   "seconds": 5,
    "session": "2026-11-12"
   },
   "CRYPTO": {
@@ -1058,84 +1058,12 @@
     "TAO-USD：HTTPError",
     "USYC-USD：HTTPError"
    ],
-   "candidates": 1,
+   "candidates": 0,
    "signals": 0,
-   "picks": [
-    {
-     "code": "GRAM-USD",
-     "name": "Gram (prev. Toncoin)",
-     "market": "CRYPTO",
-     "date": "2026-11-11",
-     "close": 1.1727,
-     "pct": 2.7363,
-     "entryLow": 1.1492,
-     "entryHigh": 1.1783,
-     "stop": 1.0832,
-     "target1": 1.3257,
-     "rr": 1.709,
-     "rsi": 46.6361,
-     "volRatio": 2.8579,
-     "bias": 0.5204,
-     "zone": "IN_ZONE",
-     "dailyTrend": "盤整",
-     "weeklyTrend": "盤整",
-     "regime": "BEAR",
-     "entrySignal": false,
-     "passed": 8,
-     "total": 9,
-     "checks": [
-      {
-       "k": "above",
-       "ok": true,
-       "t": "收在 SMA20 之上（乖離 0.5%）"
-      },
-      {
-       "k": "bias",
-       "ok": true,
-       "t": "乖離 0–6%"
-      },
-      {
-       "k": "high",
-       "ok": true,
-       "t": "未貼近 20 日高"
-      },
-      {
-       "k": "rr",
-       "ok": true,
-       "t": "報酬風險比 1.71 ≥ 1.5"
-      },
-      {
-       "k": "rsi",
-       "ok": true,
-       "t": "RSI 47（45–60）"
-      },
-      {
-       "k": "trend",
-       "ok": true,
-       "t": "日線盤整、週線盤整（不能是空頭）"
-      },
-      {
-       "k": "macd",
-       "ok": true,
-       "t": "MACD 零軸上（不能轉弱）"
-      },
-      {
-       "k": "market",
-       "ok": false,
-       "t": "大盤空頭"
-      },
-      {
-       "k": "vol",
-       "ok": true,
-       "t": "量比 2.86 ≥ 1.2"
-      }
-     ],
-     "watched": false
-    }
-   ],
+   "picks": [],
    "universe": "CoinGecko 市值前 30 名（排除穩定幣、包裝與質押代幣）",
    "seconds": 6,
-   "session": "2026-11-11"
+   "session": null
   }
  }
 }
