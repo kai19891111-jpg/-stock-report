@@ -1,5 +1,5 @@
 {
- "generatedAt": "2026-11-14T01:28:48.231128+00:00",
+ "generatedAt": "2026-11-14T02:43:24.740004+00:00",
  "params": {
   "rsi_lo": 45,
   "rsi_hi": 60,
@@ -745,7 +745,7 @@
     }
    ],
    "universe": "證交所＋櫃買中心全市場日收盤，成交金額前 300 名",
-   "seconds": 31,
+   "seconds": 34,
    "session": "2026-11-13"
   },
   "US": {
@@ -753,27 +753,27 @@
    "ok": 67,
    "failed": 0,
    "failedSample": [],
-   "candidates": 4,
+   "candidates": 2,
    "signals": 0,
    "picks": [
     {
-     "code": "MRK",
-     "name": "MRK",
+     "code": "META",
+     "name": "META",
      "market": "US",
-     "date": "2026-11-12",
-     "close": 146.95,
-     "pct": -0.1563,
-     "entryLow": 144.1784,
-     "entryHigh": 147.8377,
-     "stop": 141.0186,
-     "target1": 156.7683,
-     "rr": 1.6553,
-     "rsi": 51.1524,
-     "volRatio": 0.6179,
-     "bias": 0.3935,
+     "date": "2026-11-13",
+     "close": 641.69,
+     "pct": 2.8993,
+     "entryLow": 627.5066,
+     "entryHigh": 643.4331,
+     "stop": 611.9122,
+     "target1": 687.7989,
+     "rr": 1.5484,
+     "rsi": 47.7942,
+     "volRatio": 0.6367,
+     "bias": 0.7264,
      "zone": "IN_ZONE",
      "dailyTrend": "盤整",
-     "weeklyTrend": "多頭",
+     "weeklyTrend": "盤整",
      "regime": "BEAR",
      "entrySignal": false,
      "passed": 7,
@@ -782,7 +782,7 @@
       {
        "k": "above",
        "ok": true,
-       "t": "收在 SMA20 之上（乖離 0.4%）"
+       "t": "收在 SMA20 之上（乖離 0.7%）"
       },
       {
        "k": "bias",
@@ -797,17 +797,17 @@
       {
        "k": "rr",
        "ok": true,
-       "t": "報酬風險比 1.66 ≥ 1.5"
+       "t": "報酬風險比 1.55 ≥ 1.5"
       },
       {
        "k": "rsi",
        "ok": true,
-       "t": "RSI 51（45–60）"
+       "t": "RSI 48（45–60）"
       },
       {
        "k": "trend",
        "ok": true,
-       "t": "日線盤整、週線多頭（不能是空頭）"
+       "t": "日線盤整、週線盤整（不能是空頭）"
       },
       {
        "k": "macd",
@@ -822,29 +822,30 @@
       {
        "k": "vol",
        "ok": false,
-       "t": "量比 0.62 ≥ 1.2"
+       "t": "量比 0.64 ≥ 1.2"
       }
      ],
-     "watched": false
+     "watched": true,
+     "group": "US|AI雲端／記憶體"
     },
     {
-     "code": "ABT",
-     "name": "ABT",
+     "code": "AMD",
+     "name": "AMD",
      "market": "US",
-     "date": "2026-11-12",
-     "close": 107.25,
-     "pct": -1.8666,
-     "entryLow": 105.1793,
-     "entryHigh": 107.8488,
-     "stop": 103.1321,
-     "target1": 113.9396,
-     "rr": 1.6245,
-     "rsi": 51.389,
-     "volRatio": 1.0415,
-     "bias": 0.4392,
-     "zone": "IN_ZONE",
-     "dailyTrend": "多頭",
-     "weeklyTrend": "多頭",
+     "date": "2026-11-13",
+     "close": 534.06,
+     "pct": -8.7545,
+     "entryLow": 511.2367,
+     "entryHigh": 524.2122,
+     "stop": 461.5626,
+     "target1": 639.4023,
+     "rr": 1.453,
+     "rsi": 50.3561,
+     "volRatio": 1.4176,
+     "bias": 2.8974,
+     "zone": "ABOVE_ZONE",
+     "dailyTrend": "盤整",
+     "weeklyTrend": "盤整",
      "regime": "BEAR",
      "entrySignal": false,
      "passed": 7,
@@ -853,7 +854,7 @@
       {
        "k": "above",
        "ok": true,
-       "t": "收在 SMA20 之上（乖離 0.4%）"
+       "t": "收在 SMA20 之上（乖離 2.9%）"
       },
       {
        "k": "bias",
@@ -867,18 +868,18 @@
       },
       {
        "k": "rr",
-       "ok": true,
-       "t": "報酬風險比 1.62 ≥ 1.5"
+       "ok": false,
+       "t": "報酬風險比 1.45 ≥ 1.5"
       },
       {
        "k": "rsi",
        "ok": true,
-       "t": "RSI 51（45–60）"
+       "t": "RSI 50（45–60）"
       },
       {
        "k": "trend",
        "ok": true,
-       "t": "日線多頭、週線多頭（不能是空頭）"
+       "t": "日線盤整、週線盤整（不能是空頭）"
       },
       {
        "k": "macd",
@@ -892,158 +893,17 @@
       },
       {
        "k": "vol",
-       "ok": false,
-       "t": "量比 1.04 ≥ 1.2"
+       "ok": true,
+       "t": "量比 1.42 ≥ 1.2"
       }
      ],
-     "watched": false
-    },
-    {
-     "code": "TMO",
-     "name": "TMO",
-     "market": "US",
-     "date": "2026-11-12",
-     "close": 699.44,
-     "pct": -2.5456,
-     "entryLow": 684.8311,
-     "entryHigh": 702.2126,
-     "stop": 669.4866,
-     "target1": 746.6913,
-     "rr": 1.5775,
-     "rsi": 53.452,
-     "volRatio": 0.7461,
-     "bias": 0.6012,
-     "zone": "IN_ZONE",
-     "dailyTrend": "多頭",
-     "weeklyTrend": "多頭",
-     "regime": "BEAR",
-     "entrySignal": false,
-     "passed": 7,
-     "total": 9,
-     "checks": [
-      {
-       "k": "above",
-       "ok": true,
-       "t": "收在 SMA20 之上（乖離 0.6%）"
-      },
-      {
-       "k": "bias",
-       "ok": true,
-       "t": "乖離 0–6%"
-      },
-      {
-       "k": "high",
-       "ok": true,
-       "t": "未貼近 20 日高"
-      },
-      {
-       "k": "rr",
-       "ok": true,
-       "t": "報酬風險比 1.58 ≥ 1.5"
-      },
-      {
-       "k": "rsi",
-       "ok": true,
-       "t": "RSI 53（45–60）"
-      },
-      {
-       "k": "trend",
-       "ok": true,
-       "t": "日線多頭、週線多頭（不能是空頭）"
-      },
-      {
-       "k": "macd",
-       "ok": true,
-       "t": "MACD 零軸下（不能轉弱）"
-      },
-      {
-       "k": "market",
-       "ok": false,
-       "t": "大盤空頭"
-      },
-      {
-       "k": "vol",
-       "ok": false,
-       "t": "量比 0.75 ≥ 1.2"
-      }
-     ],
-     "watched": false
-    },
-    {
-     "code": "SNPS",
-     "name": "SNPS",
-     "market": "US",
-     "date": "2026-11-12",
-     "close": 462.69,
-     "pct": 0.1233,
-     "entryLow": 451.3019,
-     "entryHigh": 462.7562,
-     "stop": 435.1705,
-     "target1": 504.864,
-     "rr": 1.5325,
-     "rsi": 51.6005,
-     "volRatio": 0.8261,
-     "bias": 0.9855,
-     "zone": "IN_ZONE",
-     "dailyTrend": "多頭",
-     "weeklyTrend": "多頭",
-     "regime": "BEAR",
-     "entrySignal": false,
-     "passed": 7,
-     "total": 9,
-     "checks": [
-      {
-       "k": "above",
-       "ok": true,
-       "t": "收在 SMA20 之上（乖離 1.0%）"
-      },
-      {
-       "k": "bias",
-       "ok": true,
-       "t": "乖離 0–6%"
-      },
-      {
-       "k": "high",
-       "ok": true,
-       "t": "未貼近 20 日高"
-      },
-      {
-       "k": "rr",
-       "ok": true,
-       "t": "報酬風險比 1.53 ≥ 1.5"
-      },
-      {
-       "k": "rsi",
-       "ok": true,
-       "t": "RSI 52（45–60）"
-      },
-      {
-       "k": "trend",
-       "ok": true,
-       "t": "日線多頭、週線多頭（不能是空頭）"
-      },
-      {
-       "k": "macd",
-       "ok": true,
-       "t": "MACD 零軸下（不能轉弱）"
-      },
-      {
-       "k": "market",
-       "ok": false,
-       "t": "大盤空頭"
-      },
-      {
-       "k": "vol",
-       "ok": false,
-       "t": "量比 0.83 ≥ 1.2"
-      }
-     ],
-     "watched": false
+     "watched": true,
+     "group": "US|AI晶片"
     }
    ],
    "universe": "內建大型股名單（67 檔）",
    "seconds": 3,
-   "session": "2026-11-12"
+   "session": "2026-11-13"
   },
   "CRYPTO": {
    "scanned": 30,
