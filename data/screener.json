@@ -1,5 +1,5 @@
 {
- "generatedAt": "2026-11-14T02:43:24.740004+00:00",
+ "generatedAt": "2026-11-14T06:57:56.007458+00:00",
  "params": {
   "rsi_lo": 45,
   "rsi_hi": 60,
@@ -745,7 +745,7 @@
     }
    ],
    "universe": "證交所＋櫃買中心全市場日收盤，成交金額前 300 名",
-   "seconds": 34,
+   "seconds": 43,
    "session": "2026-11-13"
   },
   "US": {
@@ -911,8 +911,8 @@
    "failed": 7,
    "failedSample": [
     "FIGR_HELOC-USD：HTTPError",
-    "UNI-USD：HTTPError",
     "CC-USD：HTTPError",
+    "UNI-USD：HTTPError",
     "SUI-USD：HTTPError",
     "RAIN-USD：HTTPError",
     "TAO-USD：HTTPError",
