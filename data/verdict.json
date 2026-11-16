@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-11-15T07:03:26.472470+00:00",
-  "dataTimestamp": "2026-11-15T06:59:39.089767+00:00",
+  "generatedAt": "2026-11-16T07:16:24.203051+00:00",
+  "dataTimestamp": "2026-11-16T07:07:56.588105+00:00",
   "sessions": {
-    "TW": "2026-11-13",
+    "TW": "2026-11-16",
     "US": "2026-11-13",
-    "CRYPTO": "2026-11-13"
+    "CRYPTO": "2026-11-15"
   },
   "params": {
     "rsi_lo": 45,
@@ -71,13 +71,13 @@
     "TW": {
       "ok": false,
       "scope": "台股",
-      "n": 113,
-      "expectancyR": -0.079,
-      "expLow": -0.3861,
-      "expHigh": 0.2093,
-      "winRate": 0.3363,
-      "beats": 0.2833,
-      "why": "台股回測：期望值區間下緣 −0.39R，沒有大於 0、只勝過 28.3% 的隨機進場（要 95%）"
+      "n": 112,
+      "expectancyR": -0.0699,
+      "expLow": -0.3643,
+      "expHigh": 0.228,
+      "winRate": 0.3393,
+      "beats": 0.3367,
+      "why": "台股回測：期望值區間下緣 −0.36R，沒有大於 0、只勝過 33.7% 的隨機進場（要 95%）"
     },
     "US": {
       "ok": false,
@@ -98,8 +98,8 @@
       "expLow": -1.1059,
       "expHigh": 0.4029,
       "winRate": 0.2143,
-      "beats": 0.8267,
-      "why": "加密貨幣回測：後段只有 14 筆（要 30 筆）、期望值區間下緣 −1.11R，沒有大於 0、只勝過 82.7% 的隨機進場（要 95%）"
+      "beats": 0.8533,
+      "why": "加密貨幣回測：後段只有 14 筆（要 30 筆）、期望值區間下緣 −1.11R，沒有大於 0、只勝過 85.3% 的隨機進場（要 95%）"
     }
   },
   "regimeNotes": {
@@ -114,8 +114,8 @@
     "conditions": 0,
     "pullback": 0,
     "no_chase": 0,
-    "below": 39,
-    "trend": 21,
+    "below": 50,
+    "trend": 10,
     "avoid": 3,
     "nodata": 0
   },
@@ -127,37 +127,48 @@
     "pullback": [],
     "no_chase": [],
     "below": [
+      "2330.TW",
+      "2454.TW",
       "2308.TW",
       "2371.TW",
       "8210.TW",
       "3324.TWO",
       "3653.TW",
+      "3017.TW",
       "3037.TW",
       "8046.TW",
       "4958.TW",
       "6213.TW",
       "2383.TW",
+      "1303.TW",
       "2408.TW",
       "6770.TW",
       "3481.TW",
       "3406.TW",
       "2327.TW",
       "4919.TW",
+      "1569.TWO",
+      "2313.TW",
       "6285.TW",
+      "6271.TW",
       "2367.TW",
+      "2049.TW",
       "2233.TW",
       "1536.TW",
       "2464.TW",
       "1597.TW",
       "4583.TW",
       "4540.TW",
+      "4576.TW",
       "1504.TW",
+      "1590.TW",
       "2359.TW",
       "3023.TW",
       "3665.TW",
       "4585.TW",
       "6215.TW",
       "8374.TW",
+      "2317.TW",
       "TSM",
       "NVDA",
       "MU",
@@ -168,20 +179,9 @@
       "SOL-USD"
     ],
     "trend": [
-      "2330.TW",
-      "2454.TW",
-      "3017.TW",
-      "1303.TW",
-      "1569.TWO",
       "2221.TWO",
-      "2313.TW",
-      "6271.TW",
       "2355.TW",
-      "2049.TW",
-      "4576.TW",
-      "1590.TW",
       "3019.TW",
-      "2317.TW",
       "AMD",
       "AVGO",
       "MSFT",
@@ -214,99 +214,15 @@
   "symbols": {
     "2330.TW": {
       "market": "TW",
-      "date": "2026-11-13",
-      "close": 2350.0,
-      "ma20": 2345.5,
-      "stop": 2255.5,
-      "target": 2515.0,
-      "entryLow": 2310.3175,
-      "entryHigh": 2368.955,
-      "bias": 0.1919,
-      "high20": 2445.0,
-      "rr": 1.746,
-      "code": "trend",
-      "signal": false,
-      "blockers": [
-        {
-          "key": "regime",
-          "text": "大盤空頭"
-        }
-      ],
-      "buyBelow": 2365.5,
-      "gapPct": 0.6595744680851112,
-      "roomRR": 1.0052910052910053,
-      "plan": null,
-      "text": "大盤空頭，不進場。",
-      "notes": [],
-      "mismatch": null,
-      "risk": {
-        "level": "low",
-        "total": 0,
-        "max": 10,
-        "reasons": []
-      },
-      "hold": {
-        "code": "keep",
-        "text": "續抱。失效價 2,255.5（距離 4.0%），收盤跌破就是出場優先。要加碼的話，條件和新進場一樣。"
-      }
-    },
-    "2454.TW": {
-      "market": "TW",
-      "date": "2026-11-13",
-      "close": 4120.0,
-      "ma20": 3932.25,
-      "stop": 3586.8214,
-      "target": 4753.2857,
-      "entryLow": 3873.2663,
-      "entryHigh": 3971.5725,
-      "bias": 4.7746,
-      "high20": 4360.0,
-      "rr": 1.1878,
-      "code": "trend",
-      "signal": false,
-      "blockers": [
-        {
-          "key": "zone",
-          "text": "價格高於進場區"
-        },
-        {
-          "key": "rr",
-          "text": "報酬風險比 1.19（要 ≥1.5）"
-        },
-        {
-          "key": "regime",
-          "text": "大盤空頭"
-        }
-      ],
-      "buyBelow": 3971.5725,
-      "gapPct": -3.6026092233009677,
-      "roomRR": 0.45013059413862433,
-      "plan": null,
-      "text": "大盤空頭，不進場。",
-      "notes": [],
-      "mismatch": null,
-      "risk": {
-        "level": "low",
-        "total": 0,
-        "max": 10,
-        "reasons": []
-      },
-      "hold": {
-        "code": "keep",
-        "text": "續抱。失效價 3,586.82（距離 12.9%），收盤跌破就是出場優先。要加碼的話，條件和新進場一樣。"
-      }
-    },
-    "2308.TW": {
-      "market": "TW",
-      "date": "2026-11-13",
-      "close": 1240.0,
-      "ma20": 1387.0,
-      "stop": 1263.5714,
-      "target": 1466.2857,
-      "entryLow": 1366.195,
-      "entryHigh": 1400.87,
-      "bias": -10.5984,
-      "high20": 1665.0,
+      "date": "2026-11-16",
+      "close": 2215.0,
+      "ma20": 2335.25,
+      "stop": 2235.8214,
+      "target": 2397.2857,
+      "entryLow": 2300.2213,
+      "entryHigh": 2358.6025,
+      "bias": -5.1493,
+      "high20": 2435.0,
       "rr": null,
       "code": "below",
       "signal": false,
@@ -320,10 +236,6 @@
           "text": "日線空頭"
         },
         {
-          "key": "weekly",
-          "text": "週線空頭"
-        },
-        {
           "key": "rr",
           "text": "報酬風險比算不出來"
         },
@@ -333,43 +245,43 @@
         },
         {
           "key": "rsi",
-          "text": "RSI 36（要 45–60）"
+          "text": "RSI 39（要 45–60）"
         },
         {
           "key": "regime",
           "text": "大盤空頭"
         }
       ],
-      "buyBelow": 1400.87,
-      "gapPct": 12.97338709677418,
+      "buyBelow": 2357.3451999999997,
+      "gapPct": 6.426419864559807,
       "roomRR": null,
       "plan": null,
-      "text": "收盤已跌破失效價 1,263.57，不進場。目前另外還卡：日線空頭、週線空頭、收盤不在失效價和目標價之間、RSI 36（要 45–60）、大盤空頭。",
+      "text": "收盤已跌破失效價 2,235.82，不進場。目前另外還卡：日線空頭、收盤不在失效價和目標價之間、RSI 39（要 45–60）、大盤空頭。",
       "notes": [],
       "mismatch": null,
       "risk": {
         "level": "low",
-        "total": 1,
+        "total": 0,
         "max": 10,
         "reasons": []
       },
       "hold": {
         "code": "exit",
-        "text": "收盤已跌破失效價 1,263.57，規則上這個部位已經失效，出場優先。"
+        "text": "收盤已跌破失效價 2,235.82，規則上這個部位已經失效，出場優先。"
       }
     },
-    "2371.TW": {
+    "2454.TW": {
       "market": "TW",
-      "date": "2026-11-13",
-      "close": 26.85,
-      "ma20": 28.0825,
-      "stop": 26.2654,
-      "target": 30.1814,
-      "entryLow": 27.6613,
-      "entryHigh": 28.3633,
-      "bias": -4.3889,
-      "high20": 31.3,
-      "rr": null,
+      "date": "2026-11-16",
+      "close": 3795.0,
+      "ma20": 3909.5,
+      "stop": 3550.3571,
+      "target": 4453.4286,
+      "entryLow": 3850.8575,
+      "entryHigh": 3948.595,
+      "bias": -2.9288,
+      "high20": 4305.0,
+      "rr": 2.6914,
       "code": "below",
       "signal": false,
       "blockers": [
@@ -382,47 +294,43 @@
           "text": "日線空頭"
         },
         {
-          "key": "rr",
-          "text": "報酬風險比算不出來"
-        },
-        {
           "key": "rsi",
-          "text": "RSI 42（要 45–60）"
+          "text": "RSI 44（要 45–60）"
         },
         {
           "key": "regime",
           "text": "大盤空頭"
         }
       ],
-      "buyBelow": 28.3633,
-      "gapPct": 5.6361266294227,
-      "roomRR": 7.61204242216898,
+      "buyBelow": 3948.595,
+      "gapPct": 4.047299077733846,
+      "roomRR": 2.084671167648848,
       "plan": null,
-      "text": "收盤 26.85 低於進場區下緣 27.66，等收盤站回 27.66 以上再看訊號。目前另外還卡：日線空頭、RSI 42（要 45–60）、大盤空頭。",
+      "text": "收盤 3,795 低於進場區下緣 3,850.86，等收盤站回 3,850.86 以上再看訊號。目前另外還卡：日線空頭、RSI 44（要 45–60）、大盤空頭。",
       "notes": [],
       "mismatch": null,
       "risk": {
         "level": "low",
-        "total": 1,
+        "total": 0,
         "max": 10,
         "reasons": []
       },
       "hold": {
         "code": "watch",
-        "text": "收盤在 SMA20（28.08）之下，還沒破失效價 26.27（距離 2.2%）。收盤跌破失效價就是出場優先。"
+        "text": "收盤在 SMA20（3,909.5）之下，還沒破失效價 3,550.36（距離 6.4%）。收盤跌破失效價就是出場優先。"
       }
     },
-    "8210.TW": {
+    "2308.TW": {
       "market": "TW",
-      "date": "2026-11-13",
-      "close": 599.0,
-      "ma20": 694.1,
-      "stop": 641.8143,
-      "target": 694.8571,
-      "entryLow": 683.6885,
-      "entryHigh": 701.041,
-      "bias": -13.7012,
-      "high20": 846.0,
+      "date": "2026-11-16",
+      "close": 1120.0,
+      "ma20": 1361.25,
+      "stop": 1234.3929,
+      "target": 1352.5714,
+      "entryLow": 1340.8312,
+      "entryHigh": 1374.8625,
+      "bias": -17.7227,
+      "high20": 1660.0,
       "rr": null,
       "code": "below",
       "signal": false,
@@ -449,18 +357,150 @@
         },
         {
           "key": "rsi",
-          "text": "RSI 29（要 45–60）"
+          "text": "RSI 31（要 45–60）"
+        },
+        {
+          "key": "macd",
+          "text": "MACD 轉弱"
         },
         {
           "key": "regime",
           "text": "大盤空頭"
         }
       ],
-      "buyBelow": 701.041,
-      "gapPct": 17.03522537562605,
+      "buyBelow": 1374.8625,
+      "gapPct": 22.755580357142847,
       "roomRR": null,
       "plan": null,
-      "text": "收盤已跌破失效價 641.81，不進場。目前另外還卡：日線空頭、週線空頭、收盤不在失效價和目標價之間、RSI 29（要 45–60）、大盤空頭。",
+      "text": "收盤已跌破失效價 1,234.39，不進場。目前另外還卡：日線空頭、週線空頭、收盤不在失效價和目標價之間、RSI 31（要 45–60）、MACD 轉弱、大盤空頭。",
+      "notes": [],
+      "mismatch": null,
+      "risk": {
+        "level": "low",
+        "total": 1,
+        "max": 10,
+        "reasons": []
+      },
+      "hold": {
+        "code": "exit",
+        "text": "收盤已跌破失效價 1,234.39，規則上這個部位已經失效，出場優先。"
+      }
+    },
+    "2371.TW": {
+      "market": "TW",
+      "date": "2026-11-16",
+      "close": 25.55,
+      "ma20": 27.895,
+      "stop": 26.0564,
+      "target": 28.9207,
+      "entryLow": 27.4766,
+      "entryHigh": 28.1739,
+      "bias": -8.4065,
+      "high20": 31.3,
+      "rr": null,
+      "code": "below",
+      "signal": false,
+      "blockers": [
+        {
+          "key": "zone",
+          "text": "收盤已跌破失效價"
+        },
+        {
+          "key": "daily",
+          "text": "日線空頭"
+        },
+        {
+          "key": "rr",
+          "text": "報酬風險比算不出來"
+        },
+        {
+          "key": "levels",
+          "text": "收盤不在失效價和目標價之間"
+        },
+        {
+          "key": "rsi",
+          "text": "RSI 37（要 45–60）"
+        },
+        {
+          "key": "macd",
+          "text": "MACD 轉弱"
+        },
+        {
+          "key": "regime",
+          "text": "大盤空頭"
+        }
+      ],
+      "buyBelow": 28.1739,
+      "gapPct": 10.269667318982378,
+      "roomRR": null,
+      "plan": null,
+      "text": "收盤已跌破失效價 26.06，不進場。目前另外還卡：日線空頭、收盤不在失效價和目標價之間、RSI 37（要 45–60）、MACD 轉弱、大盤空頭。",
+      "notes": [],
+      "mismatch": null,
+      "risk": {
+        "level": "low",
+        "total": 1,
+        "max": 10,
+        "reasons": []
+      },
+      "hold": {
+        "code": "exit",
+        "text": "收盤已跌破失效價 26.06，規則上這個部位已經失效，出場優先。"
+      }
+    },
+    "8210.TW": {
+      "market": "TW",
+      "date": "2026-11-16",
+      "close": 545.0,
+      "ma20": 679.65,
+      "stop": 625.3929,
+      "target": 644.4714,
+      "entryLow": 669.4552,
+      "entryHigh": 686.4465,
+      "bias": -19.8117,
+      "high20": 831.0,
+      "rr": null,
+      "code": "below",
+      "signal": false,
+      "blockers": [
+        {
+          "key": "zone",
+          "text": "收盤已跌破失效價"
+        },
+        {
+          "key": "daily",
+          "text": "日線空頭"
+        },
+        {
+          "key": "weekly",
+          "text": "週線空頭"
+        },
+        {
+          "key": "rr",
+          "text": "報酬風險比算不出來"
+        },
+        {
+          "key": "levels",
+          "text": "收盤不在失效價和目標價之間"
+        },
+        {
+          "key": "rsi",
+          "text": "RSI 24（要 45–60）"
+        },
+        {
+          "key": "macd",
+          "text": "MACD 轉弱"
+        },
+        {
+          "key": "regime",
+          "text": "大盤空頭"
+        }
+      ],
+      "buyBelow": 686.4465,
+      "gapPct": 25.953486238532108,
+      "roomRR": null,
+      "plan": null,
+      "text": "收盤已跌破失效價 625.39，不進場。目前另外還卡：日線空頭、週線空頭、收盤不在失效價和目標價之間、RSI 24（要 45–60）、MACD 轉弱、大盤空頭。",
       "notes": [],
       "mismatch": null,
       "risk": {
@@ -471,242 +511,20 @@
       },
       "hold": {
         "code": "exit",
-        "text": "收盤已跌破失效價 641.81，規則上這個部位已經失效，出場優先。"
+        "text": "收盤已跌破失效價 625.39，規則上這個部位已經失效，出場優先。"
       }
     },
     "3324.TWO": {
       "market": "TW",
-      "date": "2026-11-13",
-      "close": 1140.0,
-      "ma20": 1304.75,
-      "stop": 1159.4643,
-      "target": 1406.3571,
-      "entryLow": 1285.1788,
-      "entryHigh": 1317.7975,
-      "bias": -12.6269,
+      "date": "2026-11-16",
+      "close": 1030.0,
+      "ma20": 1285.0,
+      "stop": 1140.1429,
+      "target": 1295.5714,
+      "entryLow": 1265.725,
+      "entryHigh": 1297.85,
+      "bias": -19.8444,
       "high20": 1515.0,
-      "rr": null,
-      "code": "below",
-      "signal": false,
-      "blockers": [
-        {
-          "key": "zone",
-          "text": "收盤已跌破失效價"
-        },
-        {
-          "key": "daily",
-          "text": "日線空頭"
-        },
-        {
-          "key": "rr",
-          "text": "報酬風險比算不出來"
-        },
-        {
-          "key": "levels",
-          "text": "收盤不在失效價和目標價之間"
-        },
-        {
-          "key": "rsi",
-          "text": "RSI 40（要 45–60）"
-        },
-        {
-          "key": "macd",
-          "text": "MACD 轉弱"
-        },
-        {
-          "key": "regime",
-          "text": "大盤空頭"
-        }
-      ],
-      "buyBelow": 1317.7975,
-      "gapPct": 15.596271929824557,
-      "roomRR": null,
-      "plan": null,
-      "text": "收盤已跌破失效價 1,159.46，不進場。目前另外還卡：日線空頭、收盤不在失效價和目標價之間、RSI 40（要 45–60）、MACD 轉弱、大盤空頭。",
-      "notes": [],
-      "mismatch": null,
-      "risk": {
-        "level": "low",
-        "total": 2,
-        "max": 10,
-        "reasons": []
-      },
-      "hold": {
-        "code": "exit",
-        "text": "收盤已跌破失效價 1,159.46，規則上這個部位已經失效，出場優先。"
-      }
-    },
-    "3653.TW": {
-      "market": "TW",
-      "date": "2026-11-13",
-      "close": 5345.0,
-      "ma20": 6100.25,
-      "stop": 5390.1071,
-      "target": 6646.9286,
-      "entryLow": 6008.7463,
-      "entryHigh": 6161.2525,
-      "bias": -12.3806,
-      "high20": 6985.0,
-      "rr": null,
-      "code": "below",
-      "signal": false,
-      "blockers": [
-        {
-          "key": "zone",
-          "text": "收盤已跌破失效價"
-        },
-        {
-          "key": "rr",
-          "text": "報酬風險比算不出來"
-        },
-        {
-          "key": "levels",
-          "text": "收盤不在失效價和目標價之間"
-        },
-        {
-          "key": "rsi",
-          "text": "RSI 41（要 45–60）"
-        },
-        {
-          "key": "macd",
-          "text": "MACD 轉弱"
-        },
-        {
-          "key": "regime",
-          "text": "大盤空頭"
-        }
-      ],
-      "buyBelow": 6161.2525,
-      "gapPct": 15.27132834424696,
-      "roomRR": null,
-      "plan": null,
-      "text": "收盤已跌破失效價 5,390.11，不進場。目前另外還卡：收盤不在失效價和目標價之間、RSI 41（要 45–60）、MACD 轉弱、大盤空頭。",
-      "notes": [],
-      "mismatch": null,
-      "risk": {
-        "level": "low",
-        "total": 1,
-        "max": 10,
-        "reasons": []
-      },
-      "hold": {
-        "code": "exit",
-        "text": "收盤已跌破失效價 5,390.11，規則上這個部位已經失效，出場優先。"
-      }
-    },
-    "3017.TW": {
-      "market": "TW",
-      "date": "2026-11-13",
-      "close": 3040.0,
-      "ma20": 2995.25,
-      "stop": 2704.6786,
-      "target": 3572.7143,
-      "entryLow": 2950.3212,
-      "entryHigh": 3025.2025,
-      "bias": 1.494,
-      "high20": 3450.0,
-      "rr": 1.5887,
-      "code": "trend",
-      "signal": false,
-      "blockers": [
-        {
-          "key": "zone",
-          "text": "價格高於進場區"
-        },
-        {
-          "key": "regime",
-          "text": "大盤空頭"
-        }
-      ],
-      "buyBelow": 3025.2025,
-      "gapPct": -0.48675986842106056,
-      "roomRR": 1.2227075277629171,
-      "plan": null,
-      "text": "大盤空頭，不進場。",
-      "notes": [],
-      "mismatch": null,
-      "risk": {
-        "level": "low",
-        "total": 1,
-        "max": 10,
-        "reasons": []
-      },
-      "hold": {
-        "code": "keep",
-        "text": "續抱。失效價 2,704.68（距離 11.0%），收盤跌破就是出場優先。要加碼的話，條件和新進場一樣。"
-      }
-    },
-    "3189.TW": {
-      "market": "TW",
-      "date": "2026-11-13",
-      "close": 668.0,
-      "ma20": 862.45,
-      "stop": 769.3643,
-      "target": 838.6571,
-      "entryLow": 849.5133,
-      "entryHigh": 871.0745,
-      "bias": -22.5462,
-      "high20": 1065.0,
-      "rr": null,
-      "code": "avoid",
-      "signal": false,
-      "blockers": [
-        {
-          "key": "zone",
-          "text": "收盤已跌破失效價"
-        },
-        {
-          "key": "daily",
-          "text": "日線空頭"
-        },
-        {
-          "key": "rr",
-          "text": "報酬風險比算不出來"
-        },
-        {
-          "key": "levels",
-          "text": "收盤不在失效價和目標價之間"
-        },
-        {
-          "key": "rsi",
-          "text": "RSI 32（要 45–60）"
-        },
-        {
-          "key": "regime",
-          "text": "大盤空頭"
-        }
-      ],
-      "buyBelow": 871.0745,
-      "gapPct": 30.400374251497,
-      "roomRR": null,
-      "plan": null,
-      "text": "處置股 2026-11-10～2026-11-16，不碰。",
-      "notes": [],
-      "mismatch": null,
-      "risk": {
-        "level": "high",
-        "total": 2,
-        "max": 10,
-        "reasons": [
-          "處置股"
-        ]
-      },
-      "hold": {
-        "code": "exit",
-        "text": "收盤已跌破失效價 769.36，規則上這個部位已經失效，出場優先。"
-      }
-    },
-    "3037.TW": {
-      "market": "TW",
-      "date": "2026-11-13",
-      "close": 785.0,
-      "ma20": 953.2,
-      "stop": 852.1429,
-      "target": 970.2714,
-      "entryLow": 938.902,
-      "entryHigh": 962.732,
-      "bias": -17.6458,
-      "high20": 1180.0,
       "rr": null,
       "code": "below",
       "signal": false,
@@ -732,39 +550,43 @@
           "text": "RSI 35（要 45–60）"
         },
         {
+          "key": "macd",
+          "text": "MACD 轉弱"
+        },
+        {
           "key": "regime",
           "text": "大盤空頭"
         }
       ],
-      "buyBelow": 962.732,
-      "gapPct": 22.641019108280247,
+      "buyBelow": 1297.85,
+      "gapPct": 26.00485436893203,
       "roomRR": null,
       "plan": null,
-      "text": "收盤已跌破失效價 852.14，不進場。目前另外還卡：日線空頭、收盤不在失效價和目標價之間、RSI 35（要 45–60）、大盤空頭。",
+      "text": "收盤已跌破失效價 1,140.14，不進場。目前另外還卡：日線空頭、收盤不在失效價和目標價之間、RSI 35（要 45–60）、MACD 轉弱、大盤空頭。",
       "notes": [],
       "mismatch": null,
       "risk": {
         "level": "low",
-        "total": 1,
+        "total": 2,
         "max": 10,
         "reasons": []
       },
       "hold": {
         "code": "exit",
-        "text": "收盤已跌破失效價 852.14，規則上這個部位已經失效，出場優先。"
+        "text": "收盤已跌破失效價 1,140.14，規則上這個部位已經失效，出場優先。"
       }
     },
-    "8046.TW": {
+    "3653.TW": {
       "market": "TW",
-      "date": "2026-11-13",
-      "close": 977.0,
-      "ma20": 1152.7,
-      "stop": 1030.5571,
-      "target": 1200.9286,
-      "entryLow": 1135.4095,
-      "entryHigh": 1164.227,
-      "bias": -15.2425,
-      "high20": 1410.0,
+      "date": "2026-11-16",
+      "close": 4815.0,
+      "ma20": 6004.5,
+      "stop": 5281.9286,
+      "target": 6139.7143,
+      "entryLow": 5914.4325,
+      "entryHigh": 6064.545,
+      "bias": -19.8101,
+      "high20": 6985.0,
       "rr": null,
       "code": "below",
       "signal": false,
@@ -787,18 +609,22 @@
         },
         {
           "key": "rsi",
-          "text": "RSI 38（要 45–60）"
+          "text": "RSI 36（要 45–60）"
+        },
+        {
+          "key": "macd",
+          "text": "MACD 轉弱"
         },
         {
           "key": "regime",
           "text": "大盤空頭"
         }
       ],
-      "buyBelow": 1164.227,
-      "gapPct": 19.163459570112607,
+      "buyBelow": 6064.545,
+      "gapPct": 25.95109034267913,
       "roomRR": null,
       "plan": null,
-      "text": "收盤已跌破失效價 1,030.56，不進場。目前另外還卡：日線空頭、收盤不在失效價和目標價之間、RSI 38（要 45–60）、大盤空頭。",
+      "text": "收盤已跌破失效價 5,281.93，不進場。目前另外還卡：日線空頭、收盤不在失效價和目標價之間、RSI 36（要 45–60）、MACD 轉弱、大盤空頭。",
       "notes": [],
       "mismatch": null,
       "risk": {
@@ -809,80 +635,20 @@
       },
       "hold": {
         "code": "exit",
-        "text": "收盤已跌破失效價 1,030.56，規則上這個部位已經失效，出場優先。"
+        "text": "收盤已跌破失效價 5,281.93，規則上這個部位已經失效，出場優先。"
       }
     },
-    "8358.TWO": {
+    "3017.TW": {
       "market": "TW",
-      "date": "2026-11-13",
-      "close": 376.5,
-      "ma20": 406.9,
-      "stop": 363.2714,
-      "target": 456.4857,
-      "entryLow": 400.7965,
-      "entryHigh": 410.969,
-      "bias": -7.4711,
-      "high20": 510.0,
-      "rr": null,
-      "code": "avoid",
-      "signal": false,
-      "blockers": [
-        {
-          "key": "zone",
-          "text": "價格低於進場區"
-        },
-        {
-          "key": "daily",
-          "text": "日線空頭"
-        },
-        {
-          "key": "weekly",
-          "text": "週線空頭"
-        },
-        {
-          "key": "rr",
-          "text": "報酬風險比算不出來"
-        },
-        {
-          "key": "rsi",
-          "text": "RSI 43（要 45–60）"
-        },
-        {
-          "key": "regime",
-          "text": "大盤空頭"
-        }
-      ],
-      "buyBelow": 410.969,
-      "gapPct": 9.155112881806104,
-      "roomRR": 10.091770860106156,
-      "plan": null,
-      "text": "列入注意股（2026-11-13），不碰。",
-      "notes": [],
-      "mismatch": null,
-      "risk": {
-        "level": "low",
-        "total": 2,
-        "max": 10,
-        "reasons": [
-          "注意股"
-        ]
-      },
-      "hold": {
-        "code": "watch",
-        "text": "收盤在 SMA20（406.9）之下，還沒破失效價 363.27（距離 3.5%）。收盤跌破失效價就是出場優先。"
-      }
-    },
-    "4958.TW": {
-      "market": "TW",
-      "date": "2026-11-13",
-      "close": 440.0,
-      "ma20": 486.425,
-      "stop": 437.8679,
-      "target": 529.0214,
-      "entryLow": 479.1286,
-      "entryHigh": 491.2893,
-      "bias": -9.5441,
-      "high20": 614.0,
+      "date": "2026-11-16",
+      "close": 2740.0,
+      "ma20": 2966.5,
+      "stop": 2673.3571,
+      "target": 3277.4286,
+      "entryLow": 2922.0025,
+      "entryHigh": 2996.165,
+      "bias": -7.6353,
+      "high20": 3450.0,
       "rr": null,
       "code": "below",
       "signal": false,
@@ -908,11 +674,11 @@
           "text": "大盤空頭"
         }
       ],
-      "buyBelow": 491.2893,
-      "gapPct": 11.656659090909095,
-      "roomRR": 81.60968059659568,
+      "buyBelow": 2996.165,
+      "gapPct": 9.349087591240867,
+      "roomRR": 10.653798079015196,
       "plan": null,
-      "text": "收盤 440 低於進場區下緣 479.13，等收盤站回 479.13 以上再看訊號。目前另外還卡：日線空頭、RSI 44（要 45–60）、大盤空頭。",
+      "text": "收盤 2,740 低於進場區下緣 2,922，等收盤站回 2,922 以上再看訊號。目前另外還卡：日線空頭、RSI 44（要 45–60）、大盤空頭。",
       "notes": [],
       "mismatch": null,
       "risk": {
@@ -923,19 +689,341 @@
       },
       "hold": {
         "code": "watch",
-        "text": "收盤在 SMA20（486.43）之下，還沒破失效價 437.87（距離 0.5%）。收盤跌破失效價就是出場優先。"
+        "text": "收盤在 SMA20（2,966.5）之下，還沒破失效價 2,673.36（距離 2.4%）。收盤跌破失效價就是出場優先。"
+      }
+    },
+    "3189.TW": {
+      "market": "TW",
+      "date": "2026-11-16",
+      "close": 602.0,
+      "ma20": 842.55,
+      "stop": 754.6929,
+      "target": 763.0714,
+      "entryLow": 829.9117,
+      "entryHigh": 850.9755,
+      "bias": -28.5502,
+      "high20": 1065.0,
+      "rr": null,
+      "code": "avoid",
+      "signal": false,
+      "blockers": [
+        {
+          "key": "zone",
+          "text": "收盤已跌破失效價"
+        },
+        {
+          "key": "daily",
+          "text": "日線空頭"
+        },
+        {
+          "key": "rr",
+          "text": "報酬風險比算不出來"
+        },
+        {
+          "key": "levels",
+          "text": "收盤不在失效價和目標價之間"
+        },
+        {
+          "key": "rsi",
+          "text": "RSI 29（要 45–60）"
+        },
+        {
+          "key": "macd",
+          "text": "MACD 轉弱"
+        },
+        {
+          "key": "regime",
+          "text": "大盤空頭"
+        }
+      ],
+      "buyBelow": 850.9755,
+      "gapPct": 41.35805647840532,
+      "roomRR": null,
+      "plan": null,
+      "text": "處置股 2026-11-10～2026-11-16，不碰。",
+      "notes": [],
+      "mismatch": null,
+      "risk": {
+        "level": "high",
+        "total": 2,
+        "max": 10,
+        "reasons": [
+          "處置股"
+        ]
+      },
+      "hold": {
+        "code": "exit",
+        "text": "收盤已跌破失效價 754.69，規則上這個部位已經失效，出場優先。"
+      }
+    },
+    "3037.TW": {
+      "market": "TW",
+      "date": "2026-11-16",
+      "close": 707.0,
+      "ma20": 934.05,
+      "stop": 835.7357,
+      "target": 887.2429,
+      "entryLow": 920.0392,
+      "entryHigh": 943.3905,
+      "bias": -24.3081,
+      "high20": 1180.0,
+      "rr": null,
+      "code": "below",
+      "signal": false,
+      "blockers": [
+        {
+          "key": "zone",
+          "text": "收盤已跌破失效價"
+        },
+        {
+          "key": "daily",
+          "text": "日線空頭"
+        },
+        {
+          "key": "rr",
+          "text": "報酬風險比算不出來"
+        },
+        {
+          "key": "levels",
+          "text": "收盤不在失效價和目標價之間"
+        },
+        {
+          "key": "rsi",
+          "text": "RSI 30（要 45–60）"
+        },
+        {
+          "key": "macd",
+          "text": "MACD 轉弱"
+        },
+        {
+          "key": "regime",
+          "text": "大盤空頭"
+        }
+      ],
+      "buyBelow": 943.3905,
+      "gapPct": 33.43571428571428,
+      "roomRR": null,
+      "plan": null,
+      "text": "收盤已跌破失效價 835.74，不進場。目前另外還卡：日線空頭、收盤不在失效價和目標價之間、RSI 30（要 45–60）、MACD 轉弱、大盤空頭。",
+      "notes": [],
+      "mismatch": null,
+      "risk": {
+        "level": "low",
+        "total": 1,
+        "max": 10,
+        "reasons": []
+      },
+      "hold": {
+        "code": "exit",
+        "text": "收盤已跌破失效價 835.74，規則上這個部位已經失效，出場優先。"
+      }
+    },
+    "8046.TW": {
+      "market": "TW",
+      "date": "2026-11-16",
+      "close": 880.0,
+      "ma20": 1128.95,
+      "stop": 1011.7786,
+      "target": 1094.8143,
+      "entryLow": 1112.0158,
+      "entryHigh": 1140.2395,
+      "bias": -22.0515,
+      "high20": 1400.0,
+      "rr": null,
+      "code": "below",
+      "signal": false,
+      "blockers": [
+        {
+          "key": "zone",
+          "text": "收盤已跌破失效價"
+        },
+        {
+          "key": "daily",
+          "text": "日線空頭"
+        },
+        {
+          "key": "rr",
+          "text": "報酬風險比算不出來"
+        },
+        {
+          "key": "levels",
+          "text": "收盤不在失效價和目標價之間"
+        },
+        {
+          "key": "rsi",
+          "text": "RSI 33（要 45–60）"
+        },
+        {
+          "key": "macd",
+          "text": "MACD 轉弱"
+        },
+        {
+          "key": "regime",
+          "text": "大盤空頭"
+        }
+      ],
+      "buyBelow": 1140.2395,
+      "gapPct": 29.572670454545435,
+      "roomRR": null,
+      "plan": null,
+      "text": "收盤已跌破失效價 1,011.78，不進場。目前另外還卡：日線空頭、收盤不在失效價和目標價之間、RSI 33（要 45–60）、MACD 轉弱、大盤空頭。",
+      "notes": [],
+      "mismatch": null,
+      "risk": {
+        "level": "low",
+        "total": 1,
+        "max": 10,
+        "reasons": []
+      },
+      "hold": {
+        "code": "exit",
+        "text": "收盤已跌破失效價 1,011.78，規則上這個部位已經失效，出場優先。"
+      }
+    },
+    "8358.TWO": {
+      "market": "TW",
+      "date": "2026-11-16",
+      "close": 339.0,
+      "ma20": 400.25,
+      "stop": 357.3929,
+      "target": 417.5714,
+      "entryLow": 394.2462,
+      "entryHigh": 404.2525,
+      "bias": -15.3029,
+      "high20": 510.0,
+      "rr": null,
+      "code": "avoid",
+      "signal": false,
+      "blockers": [
+        {
+          "key": "zone",
+          "text": "收盤已跌破失效價"
+        },
+        {
+          "key": "daily",
+          "text": "日線空頭"
+        },
+        {
+          "key": "weekly",
+          "text": "週線空頭"
+        },
+        {
+          "key": "rr",
+          "text": "報酬風險比算不出來"
+        },
+        {
+          "key": "levels",
+          "text": "收盤不在失效價和目標價之間"
+        },
+        {
+          "key": "rsi",
+          "text": "RSI 38（要 45–60）"
+        },
+        {
+          "key": "macd",
+          "text": "MACD 轉弱"
+        },
+        {
+          "key": "regime",
+          "text": "大盤空頭"
+        }
+      ],
+      "buyBelow": 404.2525,
+      "gapPct": 19.248525073746304,
+      "roomRR": null,
+      "plan": null,
+      "text": "列入注意股（2026-11-13），不碰。",
+      "notes": [],
+      "mismatch": null,
+      "risk": {
+        "level": "low",
+        "total": 2,
+        "max": 10,
+        "reasons": [
+          "注意股"
+        ]
+      },
+      "hold": {
+        "code": "exit",
+        "text": "收盤已跌破失效價 357.39，規則上這個部位已經失效，出場優先。"
+      }
+    },
+    "4958.TW": {
+      "market": "TW",
+      "date": "2026-11-16",
+      "close": 396.0,
+      "ma20": 478.375,
+      "stop": 432.475,
+      "target": 480.15,
+      "entryLow": 471.1994,
+      "entryHigh": 483.1587,
+      "bias": -17.2198,
+      "high20": 614.0,
+      "rr": null,
+      "code": "below",
+      "signal": false,
+      "blockers": [
+        {
+          "key": "zone",
+          "text": "收盤已跌破失效價"
+        },
+        {
+          "key": "daily",
+          "text": "日線空頭"
+        },
+        {
+          "key": "weekly",
+          "text": "週線空頭"
+        },
+        {
+          "key": "rr",
+          "text": "報酬風險比算不出來"
+        },
+        {
+          "key": "levels",
+          "text": "收盤不在失效價和目標價之間"
+        },
+        {
+          "key": "rsi",
+          "text": "RSI 38（要 45–60）"
+        },
+        {
+          "key": "macd",
+          "text": "MACD 轉弱"
+        },
+        {
+          "key": "regime",
+          "text": "大盤空頭"
+        }
+      ],
+      "buyBelow": 483.1587,
+      "gapPct": 22.009772727272736,
+      "roomRR": null,
+      "plan": null,
+      "text": "收盤已跌破失效價 432.48，不進場。目前另外還卡：日線空頭、週線空頭、收盤不在失效價和目標價之間、RSI 38（要 45–60）、MACD 轉弱、大盤空頭。",
+      "notes": [],
+      "mismatch": null,
+      "risk": {
+        "level": "low",
+        "total": 1,
+        "max": 10,
+        "reasons": []
+      },
+      "hold": {
+        "code": "exit",
+        "text": "收盤已跌破失效價 432.48，規則上這個部位已經失效，出場優先。"
       }
     },
     "6213.TW": {
       "market": "TW",
-      "date": "2026-11-13",
-      "close": 533.0,
-      "ma20": 661.6,
-      "stop": 579.7,
-      "target": 683.15,
-      "entryLow": 651.676,
-      "entryHigh": 668.216,
-      "bias": -19.4377,
+      "date": "2026-11-16",
+      "close": 480.0,
+      "ma20": 646.9,
+      "stop": 570.4857,
+      "target": 620.0929,
+      "entryLow": 637.1965,
+      "entryHigh": 653.369,
+      "bias": -25.8,
       "high20": 885.0,
       "rr": null,
       "code": "below",
@@ -955,18 +1043,18 @@
         },
         {
           "key": "rsi",
-          "text": "RSI 39（要 45–60）"
+          "text": "RSI 35（要 45–60）"
         },
         {
           "key": "regime",
           "text": "大盤空頭"
         }
       ],
-      "buyBelow": 668.216,
-      "gapPct": 25.3688555347092,
+      "buyBelow": 653.369,
+      "gapPct": 36.11854166666668,
       "roomRR": null,
       "plan": null,
-      "text": "收盤已跌破失效價 579.7，不進場。目前另外還卡：收盤不在失效價和目標價之間、RSI 39（要 45–60）、大盤空頭。",
+      "text": "收盤已跌破失效價 570.49，不進場。目前另外還卡：收盤不在失效價和目標價之間、RSI 35（要 45–60）、大盤空頭。",
       "notes": [],
       "mismatch": null,
       "risk": {
@@ -977,19 +1065,19 @@
       },
       "hold": {
         "code": "exit",
-        "text": "收盤已跌破失效價 579.7，規則上這個部位已經失效，出場優先。"
+        "text": "收盤已跌破失效價 570.49，規則上這個部位已經失效，出場優先。"
       }
     },
     "2383.TW": {
       "market": "TW",
-      "date": "2026-11-13",
-      "close": 4215.0,
-      "ma20": 4632.75,
-      "stop": 4154.4643,
-      "target": 5091.8571,
-      "entryLow": 4563.2587,
-      "entryHigh": 4679.0775,
-      "bias": -9.0173,
+      "date": "2026-11-16",
+      "close": 3795.0,
+      "ma20": 4564.25,
+      "stop": 4094.1071,
+      "target": 4656.9286,
+      "entryLow": 4495.7863,
+      "entryHigh": 4609.8925,
+      "bias": -16.8538,
       "high20": 5485.0,
       "rr": null,
       "code": "below",
@@ -997,7 +1085,7 @@
       "blockers": [
         {
           "key": "zone",
-          "text": "價格低於進場區"
+          "text": "收盤已跌破失效價"
         },
         {
           "key": "daily",
@@ -1012,19 +1100,27 @@
           "text": "報酬風險比算不出來"
         },
         {
+          "key": "levels",
+          "text": "收盤不在失效價和目標價之間"
+        },
+        {
           "key": "rsi",
-          "text": "RSI 41（要 45–60）"
+          "text": "RSI 35（要 45–60）"
+        },
+        {
+          "key": "macd",
+          "text": "MACD 轉弱"
         },
         {
           "key": "regime",
           "text": "大盤空頭"
         }
       ],
-      "buyBelow": 4679.0775,
-      "gapPct": 11.01014234875446,
-      "roomRR": 20.97935598332872,
+      "buyBelow": 4609.8925,
+      "gapPct": 21.472793148880108,
+      "roomRR": null,
       "plan": null,
-      "text": "收盤 4,215 低於進場區下緣 4,563.26，等收盤站回 4,563.26 以上再看訊號。目前另外還卡：日線空頭、週線空頭、RSI 41（要 45–60）、大盤空頭。",
+      "text": "收盤已跌破失效價 4,094.11，不進場。目前另外還卡：日線空頭、週線空頭、收盤不在失效價和目標價之間、RSI 35（要 45–60）、MACD 轉弱、大盤空頭。",
       "notes": [],
       "mismatch": null,
       "risk": {
@@ -1034,43 +1130,43 @@
         "reasons": []
       },
       "hold": {
-        "code": "watch",
-        "text": "收盤在 SMA20（4,632.75）之下，還沒破失效價 4,154.46（距離 1.4%）。收盤跌破失效價就是出場優先。"
+        "code": "exit",
+        "text": "收盤已跌破失效價 4,094.11，規則上這個部位已經失效，出場優先。"
       }
     },
     "1303.TW": {
       "market": "TW",
-      "date": "2026-11-13",
-      "close": 304.0,
-      "ma20": 292.625,
-      "stop": 261.5964,
-      "target": 360.8857,
-      "entryLow": 288.2356,
-      "entryHigh": 295.5512,
-      "bias": 3.8872,
+      "date": "2026-11-16",
+      "close": 274.0,
+      "ma20": 290.975,
+      "stop": 259.9893,
+      "target": 330.8071,
+      "entryLow": 286.6104,
+      "entryHigh": 293.8848,
+      "bias": -5.8338,
       "high20": 325.5,
-      "rr": 1.3415,
-      "code": "trend",
+      "rr": 4.0546,
+      "code": "below",
       "signal": false,
       "blockers": [
         {
           "key": "zone",
-          "text": "價格高於進場區"
+          "text": "價格低於進場區"
         },
         {
-          "key": "rr",
-          "text": "報酬風險比 1.34（要 ≥1.5）"
+          "key": "macd",
+          "text": "MACD 轉弱"
         },
         {
           "key": "regime",
           "text": "大盤空頭"
         }
       ],
-      "buyBelow": 295.5512,
-      "gapPct": -2.7792105263157896,
-      "roomRR": 0.5070324217755098,
+      "buyBelow": 293.8848,
+      "gapPct": 7.257226277372264,
+      "roomRR": 3.675762096112261,
       "plan": null,
-      "text": "大盤空頭，不進場。",
+      "text": "收盤 274 低於進場區下緣 286.61，等收盤站回 286.61 以上再看訊號。目前另外還卡：MACD 轉弱、大盤空頭。",
       "notes": [],
       "mismatch": null,
       "risk": {
@@ -1080,20 +1176,20 @@
         "reasons": []
       },
       "hold": {
-        "code": "keep",
-        "text": "續抱。失效價 261.6（距離 13.9%），收盤跌破就是出場優先。要加碼的話，條件和新進場一樣。"
+        "code": "watch",
+        "text": "收盤在 SMA20（290.98）之下，還沒破失效價 259.99（距離 5.1%）。收盤跌破失效價就是出場優先。"
       }
     },
     "2408.TW": {
       "market": "TW",
-      "date": "2026-11-13",
-      "close": 377.0,
-      "ma20": 414.675,
-      "stop": 371.9036,
-      "target": 455.4143,
-      "entryLow": 408.4549,
-      "entryHigh": 418.8218,
-      "bias": -9.0854,
+      "date": "2026-11-16",
+      "close": 340.0,
+      "ma20": 409.3,
+      "stop": 366.3143,
+      "target": 418.8071,
+      "entryLow": 403.1605,
+      "entryHigh": 413.393,
+      "bias": -16.9313,
       "high20": 497.5,
       "rr": null,
       "code": "below",
@@ -1101,7 +1197,7 @@
       "blockers": [
         {
           "key": "zone",
-          "text": "價格低於進場區"
+          "text": "收盤已跌破失效價"
         },
         {
           "key": "daily",
@@ -1112,19 +1208,27 @@
           "text": "報酬風險比算不出來"
         },
         {
+          "key": "levels",
+          "text": "收盤不在失效價和目標價之間"
+        },
+        {
           "key": "rsi",
-          "text": "RSI 39（要 45–60）"
+          "text": "RSI 33（要 45–60）"
+        },
+        {
+          "key": "macd",
+          "text": "MACD 轉弱"
         },
         {
           "key": "regime",
           "text": "大盤空頭"
         }
       ],
-      "buyBelow": 418.8218,
-      "gapPct": 11.093315649867375,
-      "roomRR": 23.644140962247782,
+      "buyBelow": 413.393,
+      "gapPct": 21.586176470588224,
+      "roomRR": null,
       "plan": null,
-      "text": "收盤 377 低於進場區下緣 408.45，等收盤站回 408.45 以上再看訊號。目前另外還卡：日線空頭、RSI 39（要 45–60）、大盤空頭。",
+      "text": "收盤已跌破失效價 366.31，不進場。目前另外還卡：日線空頭、收盤不在失效價和目標價之間、RSI 33（要 45–60）、MACD 轉弱、大盤空頭。",
       "notes": [],
       "mismatch": null,
       "risk": {
@@ -1134,20 +1238,20 @@
         "reasons": []
       },
       "hold": {
-        "code": "watch",
-        "text": "收盤在 SMA20（414.68）之下，還沒破失效價 371.9（距離 1.4%）。收盤跌破失效價就是出場優先。"
+        "code": "exit",
+        "text": "收盤已跌破失效價 366.31，規則上這個部位已經失效，出場優先。"
       }
     },
     "6770.TW": {
       "market": "TW",
-      "date": "2026-11-13",
-      "close": 57.0,
-      "ma20": 62.7,
-      "stop": 57.5271,
-      "target": 66.4836,
-      "entryLow": 61.7595,
-      "entryHigh": 63.327,
-      "bias": -9.0909,
+      "date": "2026-11-16",
+      "close": 53.7,
+      "ma20": 62.02,
+      "stop": 56.8471,
+      "target": 63.1836,
+      "entryLow": 61.0897,
+      "entryHigh": 62.6402,
+      "bias": -13.415,
       "high20": 73.0,
       "rr": null,
       "code": "below",
@@ -1175,18 +1279,22 @@
         },
         {
           "key": "rsi",
-          "text": "RSI 38（要 45–60）"
+          "text": "RSI 34（要 45–60）"
+        },
+        {
+          "key": "macd",
+          "text": "MACD 轉弱"
         },
         {
           "key": "regime",
           "text": "大盤空頭"
         }
       ],
-      "buyBelow": 63.327,
-      "gapPct": 11.099999999999998,
+      "buyBelow": 62.6402,
+      "gapPct": 16.64841713221601,
       "roomRR": null,
       "plan": null,
-      "text": "收盤已跌破失效價 57.53，不進場。目前另外還卡：日線空頭、週線空頭、收盤不在失效價和目標價之間、RSI 38（要 45–60）、大盤空頭。",
+      "text": "收盤已跌破失效價 56.85，不進場。目前另外還卡：日線空頭、週線空頭、收盤不在失效價和目標價之間、RSI 34（要 45–60）、MACD 轉弱、大盤空頭。",
       "notes": [],
       "mismatch": null,
       "risk": {
@@ -1197,120 +1305,20 @@
       },
       "hold": {
         "code": "exit",
-        "text": "收盤已跌破失效價 57.53，規則上這個部位已經失效，出場優先。"
+        "text": "收盤已跌破失效價 56.85，規則上這個部位已經失效，出場優先。"
       }
     },
     "3481.TW": {
       "market": "TW",
-      "date": "2026-11-13",
-      "close": 39.95,
-      "ma20": 43.31,
-      "stop": 39.5043,
-      "target": 46.9271,
-      "entryLow": 42.6604,
-      "entryHigh": 43.7431,
-      "bias": -7.758,
+      "date": "2026-11-16",
+      "close": 36.3,
+      "ma20": 42.7125,
+      "stop": 38.8125,
+      "target": 43.45,
+      "entryLow": 42.0718,
+      "entryHigh": 43.1396,
+      "bias": -15.0132,
       "high20": 49.7,
-      "rr": null,
-      "code": "below",
-      "signal": false,
-      "blockers": [
-        {
-          "key": "zone",
-          "text": "價格低於進場區"
-        },
-        {
-          "key": "daily",
-          "text": "日線空頭"
-        },
-        {
-          "key": "weekly",
-          "text": "週線空頭"
-        },
-        {
-          "key": "rr",
-          "text": "報酬風險比算不出來"
-        },
-        {
-          "key": "rsi",
-          "text": "RSI 41（要 45–60）"
-        },
-        {
-          "key": "regime",
-          "text": "大盤空頭"
-        }
-      ],
-      "buyBelow": 43.7431,
-      "gapPct": 9.494618272841038,
-      "roomRR": 21.875701144267335,
-      "plan": null,
-      "text": "收盤 39.95 低於進場區下緣 42.66，等收盤站回 42.66 以上再看訊號。目前另外還卡：日線空頭、週線空頭、RSI 41（要 45–60）、大盤空頭。",
-      "notes": [],
-      "mismatch": null,
-      "risk": {
-        "level": "low",
-        "total": 1,
-        "max": 10,
-        "reasons": []
-      },
-      "hold": {
-        "code": "watch",
-        "text": "收盤在 SMA20（43.31）之下，還沒破失效價 39.5（距離 1.1%）。收盤跌破失效價就是出場優先。"
-      }
-    },
-    "3406.TW": {
-      "market": "TW",
-      "date": "2026-11-13",
-      "close": 987.0,
-      "ma20": 1037.2,
-      "stop": 918.5714,
-      "target": 1204.4857,
-      "entryLow": 1021.642,
-      "entryHigh": 1047.572,
-      "bias": -4.84,
-      "high20": 1330.0,
-      "rr": 3.1783,
-      "code": "below",
-      "signal": false,
-      "blockers": [
-        {
-          "key": "zone",
-          "text": "價格低於進場區"
-        },
-        {
-          "key": "regime",
-          "text": "大盤空頭"
-        }
-      ],
-      "buyBelow": 1047.572,
-      "gapPct": 6.13698074974669,
-      "roomRR": 5.012524003121505,
-      "plan": null,
-      "text": "收盤 987 低於進場區下緣 1,021.64，等收盤站回 1,021.64 以上再看訊號。目前另外還卡：大盤空頭。",
-      "notes": [],
-      "mismatch": null,
-      "risk": {
-        "level": "low",
-        "total": 2,
-        "max": 10,
-        "reasons": []
-      },
-      "hold": {
-        "code": "watch",
-        "text": "收盤在 SMA20（1,037.2）之下，還沒破失效價 918.57（距離 6.9%）。收盤跌破失效價就是出場優先。"
-      }
-    },
-    "2327.TW": {
-      "market": "TW",
-      "date": "2026-11-13",
-      "close": 411.0,
-      "ma20": 477.1,
-      "stop": 435.4429,
-      "target": 487.3714,
-      "entryLow": 469.9435,
-      "entryHigh": 481.871,
-      "bias": -13.8545,
-      "high20": 595.0,
       "rr": null,
       "code": "below",
       "signal": false,
@@ -1340,15 +1348,19 @@
           "text": "RSI 35（要 45–60）"
         },
         {
+          "key": "macd",
+          "text": "MACD 轉弱"
+        },
+        {
           "key": "regime",
           "text": "大盤空頭"
         }
       ],
-      "buyBelow": 481.871,
-      "gapPct": 17.24355231143553,
+      "buyBelow": 43.1396,
+      "gapPct": 18.84187327823692,
       "roomRR": null,
       "plan": null,
-      "text": "收盤已跌破失效價 435.44，不進場。目前另外還卡：日線空頭、週線空頭、收盤不在失效價和目標價之間、RSI 35（要 45–60）、大盤空頭。",
+      "text": "收盤已跌破失效價 38.81，不進場。目前另外還卡：日線空頭、週線空頭、收盤不在失效價和目標價之間、RSI 35（要 45–60）、MACD 轉弱、大盤空頭。",
       "notes": [],
       "mismatch": null,
       "risk": {
@@ -1359,19 +1371,143 @@
       },
       "hold": {
         "code": "exit",
-        "text": "收盤已跌破失效價 435.44，規則上這個部位已經失效，出場優先。"
+        "text": "收盤已跌破失效價 38.81，規則上這個部位已經失效，出場優先。"
+      }
+    },
+    "3406.TW": {
+      "market": "TW",
+      "date": "2026-11-16",
+      "close": 889.0,
+      "ma20": 1027.4,
+      "stop": 907.6571,
+      "target": 1108.5286,
+      "entryLow": 1011.989,
+      "entryHigh": 1037.674,
+      "bias": -13.4709,
+      "high20": 1330.0,
+      "rr": null,
+      "code": "below",
+      "signal": false,
+      "blockers": [
+        {
+          "key": "zone",
+          "text": "收盤已跌破失效價"
+        },
+        {
+          "key": "rr",
+          "text": "報酬風險比算不出來"
+        },
+        {
+          "key": "levels",
+          "text": "收盤不在失效價和目標價之間"
+        },
+        {
+          "key": "rsi",
+          "text": "RSI 43（要 45–60）"
+        },
+        {
+          "key": "macd",
+          "text": "MACD 轉弱"
+        },
+        {
+          "key": "regime",
+          "text": "大盤空頭"
+        }
+      ],
+      "buyBelow": 1037.674,
+      "gapPct": 16.723734533183343,
+      "roomRR": null,
+      "plan": null,
+      "text": "收盤已跌破失效價 907.66，不進場。目前另外還卡：收盤不在失效價和目標價之間、RSI 43（要 45–60）、MACD 轉弱、大盤空頭。",
+      "notes": [],
+      "mismatch": null,
+      "risk": {
+        "level": "low",
+        "total": 2,
+        "max": 10,
+        "reasons": []
+      },
+      "hold": {
+        "code": "exit",
+        "text": "收盤已跌破失效價 907.66，規則上這個部位已經失效，出場優先。"
+      }
+    },
+    "2327.TW": {
+      "market": "TW",
+      "date": "2026-11-16",
+      "close": 374.0,
+      "ma20": 467.45,
+      "stop": 424.5929,
+      "target": 452.5714,
+      "entryLow": 460.4382,
+      "entryHigh": 472.1245,
+      "bias": -19.9914,
+      "high20": 559.0,
+      "rr": null,
+      "code": "below",
+      "signal": false,
+      "blockers": [
+        {
+          "key": "zone",
+          "text": "收盤已跌破失效價"
+        },
+        {
+          "key": "daily",
+          "text": "日線空頭"
+        },
+        {
+          "key": "weekly",
+          "text": "週線空頭"
+        },
+        {
+          "key": "rr",
+          "text": "報酬風險比算不出來"
+        },
+        {
+          "key": "levels",
+          "text": "收盤不在失效價和目標價之間"
+        },
+        {
+          "key": "rsi",
+          "text": "RSI 31（要 45–60）"
+        },
+        {
+          "key": "macd",
+          "text": "MACD 轉弱"
+        },
+        {
+          "key": "regime",
+          "text": "大盤空頭"
+        }
+      ],
+      "buyBelow": 472.1245,
+      "gapPct": 26.236497326203214,
+      "roomRR": null,
+      "plan": null,
+      "text": "收盤已跌破失效價 424.59，不進場。目前另外還卡：日線空頭、週線空頭、收盤不在失效價和目標價之間、RSI 31（要 45–60）、MACD 轉弱、大盤空頭。",
+      "notes": [],
+      "mismatch": null,
+      "risk": {
+        "level": "low",
+        "total": 1,
+        "max": 10,
+        "reasons": []
+      },
+      "hold": {
+        "code": "exit",
+        "text": "收盤已跌破失效價 424.59，規則上這個部位已經失效，出場優先。"
       }
     },
     "4919.TW": {
       "market": "TW",
-      "date": "2026-11-13",
-      "close": 106.5,
-      "ma20": 119.615,
-      "stop": 108.8064,
-      "target": 126.3157,
-      "entryLow": 117.8208,
-      "entryHigh": 120.8111,
-      "bias": -10.9643,
+      "date": "2026-11-16",
+      "close": 96.8,
+      "ma20": 117.505,
+      "stop": 106.3193,
+      "target": 117.3071,
+      "entryLow": 115.7424,
+      "entryHigh": 118.68,
+      "bias": -17.6205,
       "high20": 147.0,
       "rr": null,
       "code": "below",
@@ -1399,18 +1535,18 @@
         },
         {
           "key": "rsi",
-          "text": "RSI 42（要 45–60）"
+          "text": "RSI 37（要 45–60）"
         },
         {
           "key": "regime",
           "text": "大盤空頭"
         }
       ],
-      "buyBelow": 120.8111,
-      "gapPct": 13.437652582159632,
+      "buyBelow": 118.68,
+      "gapPct": 22.603305785123972,
       "roomRR": null,
       "plan": null,
-      "text": "收盤已跌破失效價 108.81，不進場。目前另外還卡：日線空頭、週線空頭、收盤不在失效價和目標價之間、RSI 42（要 45–60）、大盤空頭。",
+      "text": "收盤已跌破失效價 106.32，不進場。目前另外還卡：日線空頭、週線空頭、收盤不在失效價和目標價之間、RSI 37（要 45–60）、大盤空頭。",
       "notes": [],
       "mismatch": null,
       "risk": {
@@ -1421,71 +1557,63 @@
       },
       "hold": {
         "code": "exit",
-        "text": "收盤已跌破失效價 108.81，規則上這個部位已經失效，出場優先。"
+        "text": "收盤已跌破失效價 106.32，規則上這個部位已經失效，出場優先。"
       }
     },
     "1569.TWO": {
       "market": "TW",
-      "date": "2026-11-13",
-      "close": 97.3,
-      "ma20": 89.42,
-      "stop": 79.0657,
-      "target": 116.2829,
-      "entryLow": 88.0787,
-      "entryHigh": 90.3142,
-      "bias": 8.8123,
+      "date": "2026-11-16",
+      "close": 87.6,
+      "ma20": 89.855,
+      "stop": 79.355,
+      "target": 106.85,
+      "entryLow": 88.5072,
+      "entryHigh": 90.7535,
+      "bias": -2.5096,
       "high20": 109.0,
-      "rr": 1.0411,
-      "code": "trend",
+      "rr": 2.3347,
+      "code": "below",
       "signal": false,
       "blockers": [
         {
           "key": "zone",
-          "text": "價格高於進場區"
-        },
-        {
-          "key": "rr",
-          "text": "報酬風險比 1.04（要 ≥1.5）"
-        },
-        {
-          "key": "rsi",
-          "text": "RSI 61（要 45–60）"
+          "text": "價格低於進場區"
         },
         {
           "key": "regime",
           "text": "大盤空頭"
         }
       ],
-      "buyBelow": 90.3142,
-      "gapPct": -7.179650565262074,
-      "roomRR": 0.6416478833846108,
+      "buyBelow": 90.7535,
+      "gapPct": 3.5998858447488624,
+      "roomRR": 2.595512431776838,
       "plan": null,
-      "text": "大盤空頭，不進場。",
+      "text": "收盤 87.6 低於進場區下緣 88.51，等收盤站回 88.51 以上再看訊號。目前另外還卡：大盤空頭。",
       "notes": [],
       "mismatch": null,
       "risk": {
         "level": "low",
-        "total": 1,
+        "total": 0,
         "max": 10,
         "reasons": []
       },
       "hold": {
-        "code": "keep",
-        "text": "續抱。失效價 79.07（距離 18.7%），收盤跌破就是出場優先。要加碼的話，條件和新進場一樣。"
+        "code": "watch",
+        "text": "收盤在 SMA20（89.86）之下，還沒破失效價 79.36（距離 9.4%）。收盤跌破失效價就是出場優先。"
       }
     },
     "2221.TWO": {
       "market": "TW",
-      "date": "2026-11-13",
-      "close": 151.0,
-      "ma20": 139.925,
-      "stop": 118.7964,
-      "target": 189.7357,
-      "entryLow": 137.8261,
-      "entryHigh": 141.3243,
-      "bias": 7.915,
+      "date": "2026-11-16",
+      "close": 151.5,
+      "ma20": 141.4,
+      "stop": 119.7571,
+      "target": 191.1786,
+      "entryLow": 139.279,
+      "entryHigh": 142.814,
+      "bias": 7.1429,
       "high20": 181.0,
-      "rr": 1.2028,
+      "rr": 1.25,
       "code": "trend",
       "signal": false,
       "blockers": [
@@ -1495,16 +1623,16 @@
         },
         {
           "key": "rr",
-          "text": "報酬風險比 1.20（要 ≥1.5）"
+          "text": "報酬風險比 1.25（要 ≥1.5）"
         },
         {
           "key": "regime",
           "text": "大盤空頭"
         }
       ],
-      "buyBelow": 141.3243,
-      "gapPct": -6.407748344370868,
-      "roomRR": 0.9315728676297061,
+      "buyBelow": 142.814,
+      "gapPct": -5.733333333333334,
+      "roomRR": 0.9293416795566881,
       "plan": null,
       "text": "大盤空頭，不進場。",
       "notes": [],
@@ -1517,24 +1645,28 @@
       },
       "hold": {
         "code": "keep",
-        "text": "續抱。失效價 118.8（距離 21.3%），收盤跌破就是出場優先。要加碼的話，條件和新進場一樣。"
+        "text": "續抱。失效價 119.76（距離 21.0%），收盤跌破就是出場優先。要加碼的話，條件和新進場一樣。"
       }
     },
     "2313.TW": {
       "market": "TW",
-      "date": "2026-11-13",
-      "close": 205.5,
-      "ma20": 206.675,
-      "stop": 187.6893,
-      "target": 240.3071,
-      "entryLow": 203.5749,
-      "entryHigh": 208.7418,
-      "bias": -0.5685,
+      "date": "2026-11-16",
+      "close": 193.0,
+      "ma20": 203.925,
+      "stop": 184.3821,
+      "target": 228.8286,
+      "entryLow": 200.8661,
+      "entryHigh": 205.9643,
+      "bias": -5.3574,
       "high20": 266.0,
-      "rr": 1.9543,
-      "code": "trend",
+      "rr": 4.1575,
+      "code": "below",
       "signal": false,
       "blockers": [
+        {
+          "key": "zone",
+          "text": "價格低於進場區"
+        },
         {
           "key": "daily",
           "text": "日線空頭"
@@ -1544,15 +1676,19 @@
           "text": "週線空頭"
         },
         {
+          "key": "rsi",
+          "text": "RSI 44（要 45–60）"
+        },
+        {
           "key": "regime",
           "text": "大盤空頭"
         }
       ],
-      "buyBelow": 208.7418,
-      "gapPct": 1.5775182481751804,
-      "roomRR": 3.396834487134139,
+      "buyBelow": 205.9643,
+      "gapPct": 6.717253886010366,
+      "roomRR": 8.470741131830268,
       "plan": null,
-      "text": "日線空頭、週線空頭、大盤空頭，不進場。",
+      "text": "收盤 193 低於進場區下緣 200.87，等收盤站回 200.87 以上再看訊號。目前另外還卡：日線空頭、週線空頭、RSI 44（要 45–60）、大盤空頭。",
       "notes": [],
       "mismatch": null,
       "risk": {
@@ -1563,21 +1699,21 @@
       },
       "hold": {
         "code": "watch",
-        "text": "收盤在 SMA20（206.68）之下，還沒破失效價 187.69（距離 8.7%）。收盤跌破失效價就是出場優先。"
+        "text": "收盤在 SMA20（203.93）之下，還沒破失效價 184.38（距離 4.5%）。收盤跌破失效價就是出場優先。"
       }
     },
     "3491.TWO": {
       "market": "TW",
-      "date": "2026-11-13",
-      "close": 1430.0,
-      "ma20": 1313.25,
-      "stop": 1176.9643,
-      "target": 1679.8571,
-      "entryLow": 1293.5512,
-      "entryHigh": 1326.3825,
-      "bias": 8.8902,
+      "date": "2026-11-16",
+      "close": 1405.0,
+      "ma20": 1310.75,
+      "stop": 1170.1786,
+      "target": 1662.7143,
+      "entryLow": 1291.0887,
+      "entryHigh": 1323.8575,
+      "bias": 7.1905,
       "high20": 1575.0,
-      "rr": 0.9874,
+      "rr": 1.0975,
       "code": "avoid",
       "signal": false,
       "blockers": [
@@ -1586,17 +1722,21 @@
           "text": "價格高於進場區"
         },
         {
+          "key": "weekly",
+          "text": "週線空頭"
+        },
+        {
           "key": "rr",
-          "text": "報酬風險比 0.99（要 ≥1.5）"
+          "text": "報酬風險比 1.10（要 ≥1.5）"
         },
         {
           "key": "regime",
           "text": "大盤空頭"
         }
       ],
-      "buyBelow": 1326.3825,
-      "gapPct": -7.245979020979021,
-      "roomRR": 0.5730416696142088,
+      "buyBelow": 1323.8575,
+      "gapPct": -5.775266903914589,
+      "roomRR": 0.7239544607092879,
       "plan": null,
       "text": "列入注意股（2026-11-13），不碰。",
       "notes": [],
@@ -1612,938 +1752,20 @@
       },
       "hold": {
         "code": "keep",
-        "text": "續抱。失效價 1,176.96（距離 17.7%），收盤跌破就是出場優先。要加碼的話，條件和新進場一樣。"
+        "text": "續抱。失效價 1,170.18（距離 16.7%），收盤跌破就是出場優先。要加碼的話，條件和新進場一樣。"
       }
     },
     "6285.TW": {
       "market": "TW",
-      "date": "2026-11-13",
-      "close": 193.5,
-      "ma20": 213.95,
-      "stop": 195.6929,
-      "target": 226.9714,
-      "entryLow": 210.7407,
-      "entryHigh": 216.0895,
-      "bias": -9.5583,
+      "date": "2026-11-16",
+      "close": 179.0,
+      "ma20": 210.15,
+      "stop": 191.1214,
+      "target": 213.8857,
+      "entryLow": 206.9977,
+      "entryHigh": 212.2515,
+      "bias": -14.8227,
       "high20": 266.0,
-      "rr": null,
-      "code": "below",
-      "signal": false,
-      "blockers": [
-        {
-          "key": "zone",
-          "text": "收盤已跌破失效價"
-        },
-        {
-          "key": "daily",
-          "text": "日線空頭"
-        },
-        {
-          "key": "weekly",
-          "text": "週線空頭"
-        },
-        {
-          "key": "rr",
-          "text": "報酬風險比算不出來"
-        },
-        {
-          "key": "levels",
-          "text": "收盤不在失效價和目標價之間"
-        },
-        {
-          "key": "rsi",
-          "text": "RSI 41（要 45–60）"
-        },
-        {
-          "key": "regime",
-          "text": "大盤空頭"
-        }
-      ],
-      "buyBelow": 216.0895,
-      "gapPct": 11.674160206718343,
-      "roomRR": null,
-      "plan": null,
-      "text": "收盤已跌破失效價 195.69，不進場。目前另外還卡：日線空頭、週線空頭、收盤不在失效價和目標價之間、RSI 41（要 45–60）、大盤空頭。",
-      "notes": [],
-      "mismatch": null,
-      "risk": {
-        "level": "low",
-        "total": 0,
-        "max": 10,
-        "reasons": []
-      },
-      "hold": {
-        "code": "exit",
-        "text": "收盤已跌破失效價 195.69，規則上這個部位已經失效，出場優先。"
-      }
-    },
-    "6271.TW": {
-      "market": "TW",
-      "date": "2026-11-13",
-      "close": 221.0,
-      "ma20": 208.3,
-      "stop": 188.7143,
-      "target": 256.9071,
-      "entryLow": 205.1755,
-      "entryHigh": 210.383,
-      "bias": 6.097,
-      "high20": 237.0,
-      "rr": 1.1122,
-      "code": "trend",
-      "signal": false,
-      "blockers": [
-        {
-          "key": "zone",
-          "text": "價格高於進場區"
-        },
-        {
-          "key": "rr",
-          "text": "報酬風險比 1.11（要 ≥1.5）"
-        },
-        {
-          "key": "regime",
-          "text": "大盤空頭"
-        }
-      ],
-      "buyBelow": 210.383,
-      "gapPct": -4.804072398190041,
-      "roomRR": 0.49557544052010655,
-      "plan": null,
-      "text": "大盤空頭，不進場。",
-      "notes": [],
-      "mismatch": null,
-      "risk": {
-        "level": "low",
-        "total": 1,
-        "max": 10,
-        "reasons": []
-      },
-      "hold": {
-        "code": "keep",
-        "text": "續抱。失效價 188.71（距離 14.6%），收盤跌破就是出場優先。要加碼的話，條件和新進場一樣。"
-      }
-    },
-    "2367.TW": {
-      "market": "TW",
-      "date": "2026-11-13",
-      "close": 40.3,
-      "ma20": 41.2775,
-      "stop": 37.6304,
-      "target": 46.9864,
-      "entryLow": 40.6583,
-      "entryHigh": 41.6903,
-      "bias": -2.3681,
-      "high20": 48.25,
-      "rr": 2.5046,
-      "code": "below",
-      "signal": false,
-      "blockers": [
-        {
-          "key": "zone",
-          "text": "價格低於進場區"
-        },
-        {
-          "key": "daily",
-          "text": "日線空頭"
-        },
-        {
-          "key": "weekly",
-          "text": "週線空頭"
-        },
-        {
-          "key": "regime",
-          "text": "大盤空頭"
-        }
-      ],
-      "buyBelow": 41.6903,
-      "gapPct": 3.449875930521107,
-      "roomRR": 2.977974228348822,
-      "plan": null,
-      "text": "收盤 40.3 低於進場區下緣 40.66，等收盤站回 40.66 以上再看訊號。目前另外還卡：日線空頭、週線空頭、大盤空頭。",
-      "notes": [],
-      "mismatch": null,
-      "risk": {
-        "level": "low",
-        "total": 1,
-        "max": 10,
-        "reasons": []
-      },
-      "hold": {
-        "code": "watch",
-        "text": "收盤在 SMA20（41.28）之下，還沒破失效價 37.63（距離 6.6%）。收盤跌破失效價就是出場優先。"
-      }
-    },
-    "2355.TW": {
-      "market": "TW",
-      "date": "2026-11-13",
-      "close": 65.9,
-      "ma20": 52.3375,
-      "stop": 47.3832,
-      "target": 74.9829,
-      "entryLow": 51.5524,
-      "entryHigh": 52.8609,
-      "bias": 25.9135,
-      "high20": 66.7,
-      "rr": 0.4905,
-      "code": "trend",
-      "signal": false,
-      "blockers": [
-        {
-          "key": "zone",
-          "text": "價格高於進場區"
-        },
-        {
-          "key": "rr",
-          "text": "報酬風險比 0.49（要 ≥1.5）"
-        },
-        {
-          "key": "rsi",
-          "text": "RSI 77（要 45–60）"
-        },
-        {
-          "key": "distance",
-          "text": "離進場區 3.2 倍 ATR（上限 1.0）"
-        },
-        {
-          "key": "regime",
-          "text": "大盤空頭"
-        }
-      ],
-      "buyBelow": 52.8609,
-      "gapPct": -19.786191198786042,
-      "roomRR": 0.043204009332065856,
-      "plan": null,
-      "text": "大盤空頭，不進場。",
-      "notes": [],
-      "mismatch": null,
-      "risk": {
-        "level": "low",
-        "total": 2,
-        "max": 10,
-        "reasons": []
-      },
-      "hold": {
-        "code": "hot",
-        "text": "過熱（乖離 +25.9%），不加碼。出場參考：收盤跌破 SMA20（52.34），目前在它上方 25.9%。失效價 47.38。"
-      }
-    },
-    "2049.TW": {
-      "market": "TW",
-      "date": "2026-11-13",
-      "close": 314.0,
-      "ma20": 308.0,
-      "stop": 284.3429,
-      "target": 357.3714,
-      "entryLow": 303.38,
-      "entryHigh": 311.08,
-      "bias": 1.9481,
-      "high20": 347.5,
-      "rr": 1.4624,
-      "code": "trend",
-      "signal": false,
-      "blockers": [
-        {
-          "key": "zone",
-          "text": "價格高於進場區"
-        },
-        {
-          "key": "weekly",
-          "text": "週線空頭"
-        },
-        {
-          "key": "rr",
-          "text": "報酬風險比 1.46（要 ≥1.5）"
-        },
-        {
-          "key": "regime",
-          "text": "大盤空頭"
-        }
-      ],
-      "buyBelow": 311.08,
-      "gapPct": -0.9299363057324928,
-      "roomRR": 1.1295777402375817,
-      "plan": null,
-      "text": "週線空頭、大盤空頭，不進場。",
-      "notes": [],
-      "mismatch": null,
-      "risk": {
-        "level": "low",
-        "total": 0,
-        "max": 10,
-        "reasons": []
-      },
-      "hold": {
-        "code": "keep",
-        "text": "續抱。失效價 284.34（距離 9.4%），收盤跌破就是出場優先。要加碼的話，條件和新進場一樣。"
-      }
-    },
-    "2233.TW": {
-      "market": "TW",
-      "date": "2026-11-13",
-      "close": 113.0,
-      "ma20": 135.025,
-      "stop": 126.4536,
-      "target": 128.7143,
-      "entryLow": 132.9996,
-      "entryHigh": 136.3752,
-      "bias": -16.3118,
-      "high20": 158.0,
-      "rr": null,
-      "code": "below",
-      "signal": false,
-      "blockers": [
-        {
-          "key": "zone",
-          "text": "收盤已跌破失效價"
-        },
-        {
-          "key": "daily",
-          "text": "日線空頭"
-        },
-        {
-          "key": "weekly",
-          "text": "週線空頭"
-        },
-        {
-          "key": "rr",
-          "text": "報酬風險比算不出來"
-        },
-        {
-          "key": "levels",
-          "text": "收盤不在失效價和目標價之間"
-        },
-        {
-          "key": "rsi",
-          "text": "RSI 28（要 45–60）"
-        },
-        {
-          "key": "regime",
-          "text": "大盤空頭"
-        }
-      ],
-      "buyBelow": 136.3752,
-      "gapPct": 20.686017699115045,
-      "roomRR": null,
-      "plan": null,
-      "text": "收盤已跌破失效價 126.45，不進場。目前另外還卡：日線空頭、週線空頭、收盤不在失效價和目標價之間、RSI 28（要 45–60）、大盤空頭。",
-      "notes": [],
-      "mismatch": null,
-      "risk": {
-        "level": "low",
-        "total": 1,
-        "max": 10,
-        "reasons": []
-      },
-      "hold": {
-        "code": "exit",
-        "text": "收盤已跌破失效價 126.45，規則上這個部位已經失效，出場優先。"
-      }
-    },
-    "1536.TW": {
-      "market": "TW",
-      "date": "2026-11-13",
-      "close": 38.75,
-      "ma20": 41.6525,
-      "stop": 39.4496,
-      "target": 42.7886,
-      "entryLow": 41.0277,
-      "entryHigh": 42.069,
-      "bias": -6.9684,
-      "high20": 46.45,
-      "rr": null,
-      "code": "below",
-      "signal": false,
-      "blockers": [
-        {
-          "key": "zone",
-          "text": "收盤已跌破失效價"
-        },
-        {
-          "key": "daily",
-          "text": "日線空頭"
-        },
-        {
-          "key": "weekly",
-          "text": "週線空頭"
-        },
-        {
-          "key": "rr",
-          "text": "報酬風險比算不出來"
-        },
-        {
-          "key": "levels",
-          "text": "收盤不在失效價和目標價之間"
-        },
-        {
-          "key": "rsi",
-          "text": "RSI 35（要 45–60）"
-        },
-        {
-          "key": "regime",
-          "text": "大盤空頭"
-        }
-      ],
-      "buyBelow": 42.069,
-      "gapPct": 8.565161290322587,
-      "roomRR": null,
-      "plan": null,
-      "text": "收盤已跌破失效價 39.45，不進場。目前另外還卡：日線空頭、週線空頭、收盤不在失效價和目標價之間、RSI 35（要 45–60）、大盤空頭。",
-      "notes": [],
-      "mismatch": null,
-      "risk": {
-        "level": "low",
-        "total": 0,
-        "max": 10,
-        "reasons": []
-      },
-      "hold": {
-        "code": "exit",
-        "text": "收盤已跌破失效價 39.45，規則上這個部位已經失效，出場優先。"
-      }
-    },
-    "2464.TW": {
-      "market": "TW",
-      "date": "2026-11-13",
-      "close": 159.5,
-      "ma20": 162.6,
-      "stop": 148.2857,
-      "target": 185.7429,
-      "entryLow": 160.161,
-      "entryHigh": 164.226,
-      "bias": -1.9065,
-      "high20": 182.0,
-      "rr": 2.3401,
-      "code": "below",
-      "signal": false,
-      "blockers": [
-        {
-          "key": "zone",
-          "text": "價格低於進場區"
-        },
-        {
-          "key": "daily",
-          "text": "日線空頭"
-        },
-        {
-          "key": "regime",
-          "text": "大盤空頭"
-        }
-      ],
-      "buyBelow": 164.226,
-      "gapPct": 2.9630094043887167,
-      "roomRR": 2.0063668708702265,
-      "plan": null,
-      "text": "收盤 159.5 低於進場區下緣 160.16，等收盤站回 160.16 以上再看訊號。目前另外還卡：日線空頭、大盤空頭。",
-      "notes": [],
-      "mismatch": null,
-      "risk": {
-        "level": "low",
-        "total": 0,
-        "max": 10,
-        "reasons": []
-      },
-      "hold": {
-        "code": "watch",
-        "text": "收盤在 SMA20（162.6）之下，還沒破失效價 148.29（距離 7.0%）。收盤跌破失效價就是出場優先。"
-      }
-    },
-    "1597.TW": {
-      "market": "TW",
-      "date": "2026-11-13",
-      "close": 114.5,
-      "ma20": 129.15,
-      "stop": 118.1357,
-      "target": 134.6929,
-      "entryLow": 127.2127,
-      "entryHigh": 130.4415,
-      "bias": -11.3434,
-      "high20": 153.0,
-      "rr": null,
-      "code": "below",
-      "signal": false,
-      "blockers": [
-        {
-          "key": "zone",
-          "text": "收盤已跌破失效價"
-        },
-        {
-          "key": "daily",
-          "text": "日線空頭"
-        },
-        {
-          "key": "weekly",
-          "text": "週線空頭"
-        },
-        {
-          "key": "rr",
-          "text": "報酬風險比算不出來"
-        },
-        {
-          "key": "levels",
-          "text": "收盤不在失效價和目標價之間"
-        },
-        {
-          "key": "rsi",
-          "text": "RSI 40（要 45–60）"
-        },
-        {
-          "key": "regime",
-          "text": "大盤空頭"
-        }
-      ],
-      "buyBelow": 130.4415,
-      "gapPct": 13.922707423580771,
-      "roomRR": null,
-      "plan": null,
-      "text": "收盤已跌破失效價 118.14，不進場。目前另外還卡：日線空頭、週線空頭、收盤不在失效價和目標價之間、RSI 40（要 45–60）、大盤空頭。",
-      "notes": [],
-      "mismatch": null,
-      "risk": {
-        "level": "low",
-        "total": 0,
-        "max": 10,
-        "reasons": []
-      },
-      "hold": {
-        "code": "exit",
-        "text": "收盤已跌破失效價 118.14，規則上這個部位已經失效，出場優先。"
-      }
-    },
-    "4583.TW": {
-      "market": "TW",
-      "date": "2026-11-13",
-      "close": 348.0,
-      "ma20": 368.85,
-      "stop": 341.6786,
-      "target": 397.8143,
-      "entryLow": 363.3173,
-      "entryHigh": 372.5385,
-      "bias": -5.6527,
-      "high20": 411.5,
-      "rr": null,
-      "code": "below",
-      "signal": false,
-      "blockers": [
-        {
-          "key": "zone",
-          "text": "價格低於進場區"
-        },
-        {
-          "key": "daily",
-          "text": "日線空頭"
-        },
-        {
-          "key": "weekly",
-          "text": "週線空頭"
-        },
-        {
-          "key": "rr",
-          "text": "報酬風險比算不出來"
-        },
-        {
-          "key": "rsi",
-          "text": "RSI 40（要 45–60）"
-        },
-        {
-          "key": "regime",
-          "text": "大盤空頭"
-        }
-      ],
-      "buyBelow": 372.5385,
-      "gapPct": 7.051293103448275,
-      "roomRR": 10.045243142341914,
-      "plan": null,
-      "text": "收盤 348 低於進場區下緣 363.32，等收盤站回 363.32 以上再看訊號。目前另外還卡：日線空頭、週線空頭、RSI 40（要 45–60）、大盤空頭。",
-      "notes": [],
-      "mismatch": null,
-      "risk": {
-        "level": "low",
-        "total": 1,
-        "max": 10,
-        "reasons": []
-      },
-      "hold": {
-        "code": "watch",
-        "text": "收盤在 SMA20（368.85）之下，還沒破失效價 341.68（距離 1.8%）。收盤跌破失效價就是出場優先。"
-      }
-    },
-    "4540.TW": {
-      "market": "TW",
-      "date": "2026-11-13",
-      "close": 54.0,
-      "ma20": 55.88,
-      "stop": 51.2343,
-      "target": 62.5171,
-      "entryLow": 55.0418,
-      "entryHigh": 56.4388,
-      "bias": -3.3644,
-      "high20": 65.3,
-      "rr": 3.0795,
-      "code": "below",
-      "signal": false,
-      "blockers": [
-        {
-          "key": "zone",
-          "text": "價格低於進場區"
-        },
-        {
-          "key": "daily",
-          "text": "日線空頭"
-        },
-        {
-          "key": "weekly",
-          "text": "週線空頭"
-        },
-        {
-          "key": "regime",
-          "text": "大盤空頭"
-        }
-      ],
-      "buyBelow": 56.4388,
-      "gapPct": 4.516296296296307,
-      "roomRR": 4.085764905810459,
-      "plan": null,
-      "text": "收盤 54 低於進場區下緣 55.04，等收盤站回 55.04 以上再看訊號。目前另外還卡：日線空頭、週線空頭、大盤空頭。",
-      "notes": [],
-      "mismatch": null,
-      "risk": {
-        "level": "low",
-        "total": 1,
-        "max": 10,
-        "reasons": []
-      },
-      "hold": {
-        "code": "watch",
-        "text": "收盤在 SMA20（55.88）之下，還沒破失效價 51.23（距離 5.1%）。收盤跌破失效價就是出場優先。"
-      }
-    },
-    "4576.TW": {
-      "market": "TW",
-      "date": "2026-11-13",
-      "close": 201.5,
-      "ma20": 201.125,
-      "stop": 182.5679,
-      "target": 235.5214,
-      "entryLow": 198.1081,
-      "entryHigh": 203.1362,
-      "bias": 0.1865,
-      "high20": 236.0,
-      "rr": 1.797,
-      "code": "trend",
-      "signal": false,
-      "blockers": [
-        {
-          "key": "weekly",
-          "text": "週線空頭"
-        },
-        {
-          "key": "regime",
-          "text": "大盤空頭"
-        }
-      ],
-      "buyBelow": 203.1362,
-      "gapPct": 0.8120099255583213,
-      "roomRR": 1.8223018048710928,
-      "plan": null,
-      "text": "週線空頭、大盤空頭，不進場。",
-      "notes": [],
-      "mismatch": null,
-      "risk": {
-        "level": "low",
-        "total": 1,
-        "max": 10,
-        "reasons": []
-      },
-      "hold": {
-        "code": "keep",
-        "text": "續抱。失效價 182.57（距離 9.4%），收盤跌破就是出場優先。要加碼的話，條件和新進場一樣。"
-      }
-    },
-    "1504.TW": {
-      "market": "TW",
-      "date": "2026-11-13",
-      "close": 64.8,
-      "ma20": 67.06,
-      "stop": 63.2886,
-      "target": 71.7143,
-      "entryLow": 66.0541,
-      "entryHigh": 67.7306,
-      "bias": -3.3701,
-      "high20": 71.6,
-      "rr": null,
-      "code": "below",
-      "signal": false,
-      "blockers": [
-        {
-          "key": "zone",
-          "text": "價格低於進場區"
-        },
-        {
-          "key": "daily",
-          "text": "日線空頭"
-        },
-        {
-          "key": "weekly",
-          "text": "週線空頭"
-        },
-        {
-          "key": "rr",
-          "text": "報酬風險比算不出來"
-        },
-        {
-          "key": "rsi",
-          "text": "RSI 45（要 45–60）"
-        },
-        {
-          "key": "regime",
-          "text": "大盤空頭"
-        }
-      ],
-      "buyBelow": 67.7306,
-      "gapPct": 4.522530864197538,
-      "roomRR": 4.499139870318923,
-      "plan": null,
-      "text": "收盤 64.8 低於進場區下緣 66.05，等收盤站回 66.05 以上再看訊號。目前另外還卡：日線空頭、週線空頭、RSI 45（要 45–60）、大盤空頭。",
-      "notes": [],
-      "mismatch": null,
-      "risk": {
-        "level": "low",
-        "total": 1,
-        "max": 10,
-        "reasons": []
-      },
-      "hold": {
-        "code": "watch",
-        "text": "收盤在 SMA20（67.06）之下，還沒破失效價 63.29（距離 2.3%）。收盤跌破失效價就是出場優先。"
-      }
-    },
-    "1590.TW": {
-      "market": "TW",
-      "date": "2026-11-13",
-      "close": 1090.0,
-      "ma20": 1091.25,
-      "stop": 1017.45,
-      "target": 1225.3,
-      "entryLow": 1074.8812,
-      "entryHigh": 1102.1625,
-      "bias": -0.1145,
-      "high20": 1175.0,
-      "rr": 1.8649,
-      "code": "trend",
-      "signal": false,
-      "blockers": [
-        {
-          "key": "daily",
-          "text": "日線空頭"
-        },
-        {
-          "key": "weekly",
-          "text": "週線空頭"
-        },
-        {
-          "key": "regime",
-          "text": "大盤空頭"
-        }
-      ],
-      "buyBelow": 1102.1625,
-      "gapPct": 1.1158256880733797,
-      "roomRR": 1.1716057891109586,
-      "plan": null,
-      "text": "日線空頭、週線空頭、大盤空頭，不進場。",
-      "notes": [],
-      "mismatch": null,
-      "risk": {
-        "level": "low",
-        "total": 0,
-        "max": 10,
-        "reasons": []
-      },
-      "hold": {
-        "code": "watch",
-        "text": "收盤在 SMA20（1,091.25）之下，還沒破失效價 1,017.45（距離 6.7%）。收盤跌破失效價就是出場優先。"
-      }
-    },
-    "3019.TW": {
-      "market": "TW",
-      "date": "2026-11-13",
-      "close": 138.0,
-      "ma20": 129.0,
-      "stop": 120.0,
-      "target": 154.5,
-      "entryLow": 127.065,
-      "entryHigh": 130.29,
-      "bias": 6.9767,
-      "high20": 142.0,
-      "rr": 0.9167,
-      "code": "trend",
-      "signal": false,
-      "blockers": [
-        {
-          "key": "zone",
-          "text": "價格高於進場區"
-        },
-        {
-          "key": "rr",
-          "text": "報酬風險比 0.92（要 ≥1.5）"
-        },
-        {
-          "key": "distance",
-          "text": "離進場區 1.0 倍 ATR（上限 1.0）"
-        },
-        {
-          "key": "regime",
-          "text": "大盤空頭"
-        }
-      ],
-      "buyBelow": 130.29,
-      "gapPct": -5.58695652173914,
-      "roomRR": 0.2222222222222222,
-      "plan": null,
-      "text": "大盤空頭，不進場。",
-      "notes": [],
-      "mismatch": null,
-      "risk": {
-        "level": "low",
-        "total": 1,
-        "max": 10,
-        "reasons": []
-      },
-      "hold": {
-        "code": "keep",
-        "text": "續抱。失效價 120（距離 13.0%），收盤跌破就是出場優先。要加碼的話，條件和新進場一樣。"
-      }
-    },
-    "2359.TW": {
-      "market": "TW",
-      "date": "2026-11-13",
-      "close": 98.2,
-      "ma20": 109.93,
-      "stop": 102.3014,
-      "target": 112.1857,
-      "entryLow": 108.281,
-      "entryHigh": 111.0293,
-      "bias": -10.6704,
-      "high20": 124.0,
-      "rr": null,
-      "code": "below",
-      "signal": false,
-      "blockers": [
-        {
-          "key": "zone",
-          "text": "收盤已跌破失效價"
-        },
-        {
-          "key": "daily",
-          "text": "日線空頭"
-        },
-        {
-          "key": "weekly",
-          "text": "週線空頭"
-        },
-        {
-          "key": "rr",
-          "text": "報酬風險比算不出來"
-        },
-        {
-          "key": "levels",
-          "text": "收盤不在失效價和目標價之間"
-        },
-        {
-          "key": "rsi",
-          "text": "RSI 32（要 45–60）"
-        },
-        {
-          "key": "regime",
-          "text": "大盤空頭"
-        }
-      ],
-      "buyBelow": 111.0293,
-      "gapPct": 13.064460285132395,
-      "roomRR": null,
-      "plan": null,
-      "text": "收盤已跌破失效價 102.3，不進場。目前另外還卡：日線空頭、週線空頭、收盤不在失效價和目標價之間、RSI 32（要 45–60）、大盤空頭。",
-      "notes": [],
-      "mismatch": null,
-      "risk": {
-        "level": "low",
-        "total": 2,
-        "max": 10,
-        "reasons": []
-      },
-      "hold": {
-        "code": "exit",
-        "text": "收盤已跌破失效價 102.3，規則上這個部位已經失效，出場優先。"
-      }
-    },
-    "3023.TW": {
-      "market": "TW",
-      "date": "2026-11-13",
-      "close": 260.0,
-      "ma20": 272.95,
-      "stop": 255.9357,
-      "target": 291.1929,
-      "entryLow": 268.8558,
-      "entryHigh": 275.6795,
-      "bias": -4.7445,
-      "high20": 323.0,
-      "rr": null,
-      "code": "below",
-      "signal": false,
-      "blockers": [
-        {
-          "key": "zone",
-          "text": "價格低於進場區"
-        },
-        {
-          "key": "daily",
-          "text": "日線空頭"
-        },
-        {
-          "key": "weekly",
-          "text": "週線空頭"
-        },
-        {
-          "key": "rr",
-          "text": "報酬風險比算不出來"
-        },
-        {
-          "key": "rsi",
-          "text": "RSI 37（要 45–60）"
-        },
-        {
-          "key": "regime",
-          "text": "大盤空頭"
-        }
-      ],
-      "buyBelow": 275.6795,
-      "gapPct": 6.030576923076936,
-      "roomRR": 15.500824250178372,
-      "plan": null,
-      "text": "收盤 260 低於進場區下緣 268.86，等收盤站回 268.86 以上再看訊號。目前另外還卡：日線空頭、週線空頭、RSI 37（要 45–60）、大盤空頭。",
-      "notes": [],
-      "mismatch": null,
-      "risk": {
-        "level": "low",
-        "total": 0,
-        "max": 10,
-        "reasons": []
-      },
-      "hold": {
-        "code": "watch",
-        "text": "收盤在 SMA20（272.95）之下，還沒破失效價 255.94（距離 1.6%）。收盤跌破失效價就是出場優先。"
-      }
-    },
-    "3665.TW": {
-      "market": "TW",
-      "date": "2026-11-13",
-      "close": 1520.0,
-      "ma20": 1681.0,
-      "stop": 1526.7143,
-      "target": 1802.8571,
-      "entryLow": 1655.785,
-      "entryHigh": 1697.81,
-      "bias": -9.5776,
-      "high20": 2080.0,
       "rr": null,
       "code": "below",
       "signal": false,
@@ -2577,11 +1799,297 @@
           "text": "大盤空頭"
         }
       ],
-      "buyBelow": 1697.81,
-      "gapPct": 11.698026315789466,
+      "buyBelow": 212.2515,
+      "gapPct": 18.576256983240214,
       "roomRR": null,
       "plan": null,
-      "text": "收盤已跌破失效價 1,526.71，不進場。目前另外還卡：日線空頭、週線空頭、收盤不在失效價和目標價之間、RSI 36（要 45–60）、大盤空頭。",
+      "text": "收盤已跌破失效價 191.12，不進場。目前另外還卡：日線空頭、週線空頭、收盤不在失效價和目標價之間、RSI 36（要 45–60）、大盤空頭。",
+      "notes": [],
+      "mismatch": null,
+      "risk": {
+        "level": "low",
+        "total": 0,
+        "max": 10,
+        "reasons": []
+      },
+      "hold": {
+        "code": "exit",
+        "text": "收盤已跌破失效價 191.12，規則上這個部位已經失效，出場優先。"
+      }
+    },
+    "6271.TW": {
+      "market": "TW",
+      "date": "2026-11-16",
+      "close": 202.5,
+      "ma20": 206.975,
+      "stop": 186.9607,
+      "target": 239.1929,
+      "entryLow": 203.8704,
+      "entryHigh": 209.0447,
+      "bias": -2.1621,
+      "high20": 237.0,
+      "rr": 2.3613,
+      "code": "below",
+      "signal": false,
+      "blockers": [
+        {
+          "key": "zone",
+          "text": "價格低於進場區"
+        },
+        {
+          "key": "daily",
+          "text": "日線空頭"
+        },
+        {
+          "key": "regime",
+          "text": "大盤空頭"
+        }
+      ],
+      "buyBelow": 209.0447,
+      "gapPct": 3.231950617283963,
+      "roomRR": 2.2201772280604666,
+      "plan": null,
+      "text": "收盤 202.5 低於進場區下緣 203.87，等收盤站回 203.87 以上再看訊號。目前另外還卡：日線空頭、大盤空頭。",
+      "notes": [],
+      "mismatch": null,
+      "risk": {
+        "level": "low",
+        "total": 0,
+        "max": 10,
+        "reasons": []
+      },
+      "hold": {
+        "code": "watch",
+        "text": "收盤在 SMA20（206.97）之下，還沒破失效價 186.96（距離 7.7%）。收盤跌破失效價就是出場優先。"
+      }
+    },
+    "2367.TW": {
+      "market": "TW",
+      "date": "2026-11-16",
+      "close": 37.25,
+      "ma20": 40.815,
+      "stop": 37.0907,
+      "target": 44.0779,
+      "entryLow": 40.2028,
+      "entryHigh": 41.2231,
+      "bias": -8.7345,
+      "high20": 48.25,
+      "rr": null,
+      "code": "below",
+      "signal": false,
+      "blockers": [
+        {
+          "key": "zone",
+          "text": "價格低於進場區"
+        },
+        {
+          "key": "daily",
+          "text": "日線空頭"
+        },
+        {
+          "key": "weekly",
+          "text": "週線空頭"
+        },
+        {
+          "key": "rr",
+          "text": "報酬風險比算不出來"
+        },
+        {
+          "key": "rsi",
+          "text": "RSI 42（要 45–60）"
+        },
+        {
+          "key": "macd",
+          "text": "MACD 轉弱"
+        },
+        {
+          "key": "regime",
+          "text": "大盤空頭"
+        }
+      ],
+      "buyBelow": 41.2231,
+      "gapPct": 10.666040268456388,
+      "roomRR": 69.05210295040726,
+      "plan": null,
+      "text": "收盤 37.25 低於進場區下緣 40.2，等收盤站回 40.2 以上再看訊號。目前另外還卡：日線空頭、週線空頭、RSI 42（要 45–60）、MACD 轉弱、大盤空頭。",
+      "notes": [],
+      "mismatch": null,
+      "risk": {
+        "level": "low",
+        "total": 1,
+        "max": 10,
+        "reasons": []
+      },
+      "hold": {
+        "code": "watch",
+        "text": "收盤在 SMA20（40.81）之下，還沒破失效價 37.09（距離 0.4%）。收盤跌破失效價就是出場優先。"
+      }
+    },
+    "2355.TW": {
+      "market": "TW",
+      "date": "2026-11-16",
+      "close": 60.3,
+      "ma20": 52.7575,
+      "stop": 47.5032,
+      "target": 69.9329,
+      "entryLow": 51.9661,
+      "entryHigh": 53.2851,
+      "bias": 14.2965,
+      "high20": 66.7,
+      "rr": 0.7528,
+      "code": "trend",
+      "signal": false,
+      "blockers": [
+        {
+          "key": "zone",
+          "text": "價格高於進場區"
+        },
+        {
+          "key": "rr",
+          "text": "報酬風險比 0.75（要 ≥1.5）"
+        },
+        {
+          "key": "rsi",
+          "text": "RSI 64（要 45–60）"
+        },
+        {
+          "key": "distance",
+          "text": "離進場區 1.6 倍 ATR（上限 1.0）"
+        },
+        {
+          "key": "regime",
+          "text": "大盤空頭"
+        }
+      ],
+      "buyBelow": 53.2851,
+      "gapPct": -11.63333333333333,
+      "roomRR": 0.500125031257815,
+      "plan": null,
+      "text": "大盤空頭，不進場。",
+      "notes": [],
+      "mismatch": null,
+      "risk": {
+        "level": "low",
+        "total": 1,
+        "max": 10,
+        "reasons": []
+      },
+      "hold": {
+        "code": "keep",
+        "text": "續抱。失效價 47.5（距離 21.2%），收盤跌破就是出場優先。要加碼的話，條件和新進場一樣。"
+      }
+    },
+    "2049.TW": {
+      "market": "TW",
+      "date": "2026-11-16",
+      "close": 289.0,
+      "ma20": 306.9,
+      "stop": 283.5,
+      "target": 331.9,
+      "entryLow": 302.2965,
+      "entryHigh": 309.969,
+      "bias": -5.8325,
+      "high20": 347.5,
+      "rr": null,
+      "code": "below",
+      "signal": false,
+      "blockers": [
+        {
+          "key": "zone",
+          "text": "價格低於進場區"
+        },
+        {
+          "key": "daily",
+          "text": "日線空頭"
+        },
+        {
+          "key": "weekly",
+          "text": "週線空頭"
+        },
+        {
+          "key": "rr",
+          "text": "報酬風險比算不出來"
+        },
+        {
+          "key": "rsi",
+          "text": "RSI 42（要 45–60）"
+        },
+        {
+          "key": "regime",
+          "text": "大盤空頭"
+        }
+      ],
+      "buyBelow": 309.969,
+      "gapPct": 7.255709342560546,
+      "roomRR": 10.636363636363637,
+      "plan": null,
+      "text": "收盤 289 低於進場區下緣 302.3，等收盤站回 302.3 以上再看訊號。目前另外還卡：日線空頭、週線空頭、RSI 42（要 45–60）、大盤空頭。",
+      "notes": [],
+      "mismatch": null,
+      "risk": {
+        "level": "low",
+        "total": 0,
+        "max": 10,
+        "reasons": []
+      },
+      "hold": {
+        "code": "watch",
+        "text": "收盤在 SMA20（306.9）之下，還沒破失效價 283.5（距離 1.9%）。收盤跌破失效價就是出場優先。"
+      }
+    },
+    "2233.TW": {
+      "market": "TW",
+      "date": "2026-11-16",
+      "close": 103.5,
+      "ma20": 132.35,
+      "stop": 123.4786,
+      "target": 119.7643,
+      "entryLow": 130.3647,
+      "entryHigh": 133.6735,
+      "bias": -21.7983,
+      "high20": 155.5,
+      "rr": null,
+      "code": "below",
+      "signal": false,
+      "blockers": [
+        {
+          "key": "zone",
+          "text": "收盤已跌破失效價"
+        },
+        {
+          "key": "daily",
+          "text": "日線空頭"
+        },
+        {
+          "key": "weekly",
+          "text": "週線空頭"
+        },
+        {
+          "key": "rr",
+          "text": "報酬風險比算不出來"
+        },
+        {
+          "key": "levels",
+          "text": "收盤不在失效價和目標價之間"
+        },
+        {
+          "key": "rsi",
+          "text": "RSI 23（要 45–60）"
+        },
+        {
+          "key": "macd",
+          "text": "MACD 轉弱"
+        },
+        {
+          "key": "regime",
+          "text": "大盤空頭"
+        }
+      ],
+      "buyBelow": 133.6735,
+      "gapPct": 29.15314009661836,
+      "roomRR": null,
+      "plan": null,
+      "text": "收盤已跌破失效價 123.48，不進場。目前另外還卡：日線空頭、週線空頭、收盤不在失效價和目標價之間、RSI 23（要 45–60）、MACD 轉弱、大盤空頭。",
       "notes": [],
       "mismatch": null,
       "risk": {
@@ -2592,19 +2100,739 @@
       },
       "hold": {
         "code": "exit",
-        "text": "收盤已跌破失效價 1,526.71，規則上這個部位已經失效，出場優先。"
+        "text": "收盤已跌破失效價 123.48，規則上這個部位已經失效，出場優先。"
+      }
+    },
+    "1536.TW": {
+      "market": "TW",
+      "date": "2026-11-16",
+      "close": 36.0,
+      "ma20": 41.225,
+      "stop": 38.945,
+      "target": 40.18,
+      "entryLow": 40.6066,
+      "entryHigh": 41.6373,
+      "bias": -12.6743,
+      "high20": 46.45,
+      "rr": null,
+      "code": "below",
+      "signal": false,
+      "blockers": [
+        {
+          "key": "zone",
+          "text": "收盤已跌破失效價"
+        },
+        {
+          "key": "daily",
+          "text": "日線空頭"
+        },
+        {
+          "key": "weekly",
+          "text": "週線空頭"
+        },
+        {
+          "key": "rr",
+          "text": "報酬風險比算不出來"
+        },
+        {
+          "key": "levels",
+          "text": "收盤不在失效價和目標價之間"
+        },
+        {
+          "key": "rsi",
+          "text": "RSI 27（要 45–60）"
+        },
+        {
+          "key": "macd",
+          "text": "MACD 轉弱"
+        },
+        {
+          "key": "regime",
+          "text": "大盤空頭"
+        }
+      ],
+      "buyBelow": 41.6373,
+      "gapPct": 15.659166666666668,
+      "roomRR": null,
+      "plan": null,
+      "text": "收盤已跌破失效價 38.95，不進場。目前另外還卡：日線空頭、週線空頭、收盤不在失效價和目標價之間、RSI 27（要 45–60）、MACD 轉弱、大盤空頭。",
+      "notes": [],
+      "mismatch": null,
+      "risk": {
+        "level": "low",
+        "total": 0,
+        "max": 10,
+        "reasons": []
+      },
+      "hold": {
+        "code": "exit",
+        "text": "收盤已跌破失效價 38.95，規則上這個部位已經失效，出場優先。"
+      }
+    },
+    "2464.TW": {
+      "market": "TW",
+      "date": "2026-11-16",
+      "close": 144.5,
+      "ma20": 161.025,
+      "stop": 146.7536,
+      "target": 170.6643,
+      "entryLow": 158.6096,
+      "entryHigh": 162.6353,
+      "bias": -10.2624,
+      "high20": 182.0,
+      "rr": null,
+      "code": "below",
+      "signal": false,
+      "blockers": [
+        {
+          "key": "zone",
+          "text": "收盤已跌破失效價"
+        },
+        {
+          "key": "daily",
+          "text": "日線空頭"
+        },
+        {
+          "key": "rr",
+          "text": "報酬風險比算不出來"
+        },
+        {
+          "key": "levels",
+          "text": "收盤不在失效價和目標價之間"
+        },
+        {
+          "key": "rsi",
+          "text": "RSI 40（要 45–60）"
+        },
+        {
+          "key": "regime",
+          "text": "大盤空頭"
+        }
+      ],
+      "buyBelow": 162.6353,
+      "gapPct": 12.550380622837377,
+      "roomRR": null,
+      "plan": null,
+      "text": "收盤已跌破失效價 146.75，不進場。目前另外還卡：日線空頭、收盤不在失效價和目標價之間、RSI 40（要 45–60）、大盤空頭。",
+      "notes": [],
+      "mismatch": null,
+      "risk": {
+        "level": "low",
+        "total": 0,
+        "max": 10,
+        "reasons": []
+      },
+      "hold": {
+        "code": "exit",
+        "text": "收盤已跌破失效價 146.75，規則上這個部位已經失效，出場優先。"
+      }
+    },
+    "1597.TW": {
+      "market": "TW",
+      "date": "2026-11-16",
+      "close": 107.0,
+      "ma20": 127.3,
+      "stop": 116.5857,
+      "target": 126.6429,
+      "entryLow": 125.3905,
+      "entryHigh": 128.573,
+      "bias": -15.9466,
+      "high20": 153.0,
+      "rr": null,
+      "code": "below",
+      "signal": false,
+      "blockers": [
+        {
+          "key": "zone",
+          "text": "收盤已跌破失效價"
+        },
+        {
+          "key": "daily",
+          "text": "日線空頭"
+        },
+        {
+          "key": "weekly",
+          "text": "週線空頭"
+        },
+        {
+          "key": "rr",
+          "text": "報酬風險比算不出來"
+        },
+        {
+          "key": "levels",
+          "text": "收盤不在失效價和目標價之間"
+        },
+        {
+          "key": "rsi",
+          "text": "RSI 36（要 45–60）"
+        },
+        {
+          "key": "regime",
+          "text": "大盤空頭"
+        }
+      ],
+      "buyBelow": 128.573,
+      "gapPct": 20.161682242990665,
+      "roomRR": null,
+      "plan": null,
+      "text": "收盤已跌破失效價 116.59，不進場。目前另外還卡：日線空頭、週線空頭、收盤不在失效價和目標價之間、RSI 36（要 45–60）、大盤空頭。",
+      "notes": [],
+      "mismatch": null,
+      "risk": {
+        "level": "low",
+        "total": 0,
+        "max": 10,
+        "reasons": []
+      },
+      "hold": {
+        "code": "exit",
+        "text": "收盤已跌破失效價 116.59，規則上這個部位已經失效，出場優先。"
+      }
+    },
+    "4583.TW": {
+      "market": "TW",
+      "date": "2026-11-16",
+      "close": 348.0,
+      "ma20": 366.1,
+      "stop": 338.5,
+      "target": 398.6,
+      "entryLow": 360.6085,
+      "entryHigh": 369.761,
+      "bias": -4.944,
+      "high20": 402.0,
+      "rr": null,
+      "code": "below",
+      "signal": false,
+      "blockers": [
+        {
+          "key": "zone",
+          "text": "價格低於進場區"
+        },
+        {
+          "key": "daily",
+          "text": "日線空頭"
+        },
+        {
+          "key": "weekly",
+          "text": "週線空頭"
+        },
+        {
+          "key": "rr",
+          "text": "報酬風險比算不出來"
+        },
+        {
+          "key": "rsi",
+          "text": "RSI 40（要 45–60）"
+        },
+        {
+          "key": "regime",
+          "text": "大盤空頭"
+        }
+      ],
+      "buyBelow": 369.761,
+      "gapPct": 6.253160919540246,
+      "roomRR": 5.684210526315789,
+      "plan": null,
+      "text": "收盤 348 低於進場區下緣 360.61，等收盤站回 360.61 以上再看訊號。目前另外還卡：日線空頭、週線空頭、RSI 40（要 45–60）、大盤空頭。",
+      "notes": [],
+      "mismatch": null,
+      "risk": {
+        "level": "low",
+        "total": 1,
+        "max": 10,
+        "reasons": []
+      },
+      "hold": {
+        "code": "watch",
+        "text": "收盤在 SMA20（366.1）之下，還沒破失效價 338.5（距離 2.7%）。收盤跌破失效價就是出場優先。"
+      }
+    },
+    "4540.TW": {
+      "market": "TW",
+      "date": "2026-11-16",
+      "close": 49.0,
+      "ma20": 55.43,
+      "stop": 50.7329,
+      "target": 57.6114,
+      "entryLow": 54.5985,
+      "entryHigh": 55.9843,
+      "bias": -11.6002,
+      "high20": 65.3,
+      "rr": null,
+      "code": "below",
+      "signal": false,
+      "blockers": [
+        {
+          "key": "zone",
+          "text": "收盤已跌破失效價"
+        },
+        {
+          "key": "daily",
+          "text": "日線空頭"
+        },
+        {
+          "key": "weekly",
+          "text": "週線空頭"
+        },
+        {
+          "key": "rr",
+          "text": "報酬風險比算不出來"
+        },
+        {
+          "key": "levels",
+          "text": "收盤不在失效價和目標價之間"
+        },
+        {
+          "key": "rsi",
+          "text": "RSI 39（要 45–60）"
+        },
+        {
+          "key": "macd",
+          "text": "MACD 轉弱"
+        },
+        {
+          "key": "regime",
+          "text": "大盤空頭"
+        }
+      ],
+      "buyBelow": 55.9843,
+      "gapPct": 14.253673469387751,
+      "roomRR": null,
+      "plan": null,
+      "text": "收盤已跌破失效價 50.73，不進場。目前另外還卡：日線空頭、週線空頭、收盤不在失效價和目標價之間、RSI 39（要 45–60）、MACD 轉弱、大盤空頭。",
+      "notes": [],
+      "mismatch": null,
+      "risk": {
+        "level": "low",
+        "total": 1,
+        "max": 10,
+        "reasons": []
+      },
+      "hold": {
+        "code": "exit",
+        "text": "收盤已跌破失效價 50.73，規則上這個部位已經失效，出場優先。"
+      }
+    },
+    "4576.TW": {
+      "market": "TW",
+      "date": "2026-11-16",
+      "close": 186.0,
+      "ma20": 200.025,
+      "stop": 181.4679,
+      "target": 220.0214,
+      "entryLow": 197.0246,
+      "entryHigh": 202.0252,
+      "bias": -7.0116,
+      "high20": 236.0,
+      "rr": null,
+      "code": "below",
+      "signal": false,
+      "blockers": [
+        {
+          "key": "zone",
+          "text": "價格低於進場區"
+        },
+        {
+          "key": "daily",
+          "text": "日線空頭"
+        },
+        {
+          "key": "weekly",
+          "text": "週線空頭"
+        },
+        {
+          "key": "rr",
+          "text": "報酬風險比算不出來"
+        },
+        {
+          "key": "rsi",
+          "text": "RSI 43（要 45–60）"
+        },
+        {
+          "key": "regime",
+          "text": "大盤空頭"
+        }
+      ],
+      "buyBelow": 202.0252,
+      "gapPct": 8.615698924731197,
+      "roomRR": 11.032413230069912,
+      "plan": null,
+      "text": "收盤 186 低於進場區下緣 197.02，等收盤站回 197.02 以上再看訊號。目前另外還卡：日線空頭、週線空頭、RSI 43（要 45–60）、大盤空頭。",
+      "notes": [],
+      "mismatch": null,
+      "risk": {
+        "level": "low",
+        "total": 1,
+        "max": 10,
+        "reasons": []
+      },
+      "hold": {
+        "code": "watch",
+        "text": "收盤在 SMA20（200.03）之下，還沒破失效價 181.47（距離 2.4%）。收盤跌破失效價就是出場優先。"
+      }
+    },
+    "1504.TW": {
+      "market": "TW",
+      "date": "2026-11-16",
+      "close": 60.5,
+      "ma20": 66.6,
+      "stop": 62.6229,
+      "target": 67.7914,
+      "entryLow": 65.601,
+      "entryHigh": 67.266,
+      "bias": -9.1592,
+      "high20": 71.6,
+      "rr": null,
+      "code": "below",
+      "signal": false,
+      "blockers": [
+        {
+          "key": "zone",
+          "text": "收盤已跌破失效價"
+        },
+        {
+          "key": "daily",
+          "text": "日線空頭"
+        },
+        {
+          "key": "weekly",
+          "text": "週線空頭"
+        },
+        {
+          "key": "rr",
+          "text": "報酬風險比算不出來"
+        },
+        {
+          "key": "levels",
+          "text": "收盤不在失效價和目標價之間"
+        },
+        {
+          "key": "rsi",
+          "text": "RSI 37（要 45–60）"
+        },
+        {
+          "key": "macd",
+          "text": "MACD 轉弱"
+        },
+        {
+          "key": "regime",
+          "text": "大盤空頭"
+        }
+      ],
+      "buyBelow": 67.266,
+      "gapPct": 11.18347107438018,
+      "roomRR": null,
+      "plan": null,
+      "text": "收盤已跌破失效價 62.62，不進場。目前另外還卡：日線空頭、週線空頭、收盤不在失效價和目標價之間、RSI 37（要 45–60）、MACD 轉弱、大盤空頭。",
+      "notes": [],
+      "mismatch": null,
+      "risk": {
+        "level": "low",
+        "total": 1,
+        "max": 10,
+        "reasons": []
+      },
+      "hold": {
+        "code": "exit",
+        "text": "收盤已跌破失效價 62.62，規則上這個部位已經失效，出場優先。"
+      }
+    },
+    "1590.TW": {
+      "market": "TW",
+      "date": "2026-11-16",
+      "close": 1055.0,
+      "ma20": 1086.25,
+      "stop": 1014.5929,
+      "target": 1186.3714,
+      "entryLow": 1069.9562,
+      "entryHigh": 1097.1125,
+      "bias": -2.8769,
+      "high20": 1175.0,
+      "rr": 3.2512,
+      "code": "below",
+      "signal": false,
+      "blockers": [
+        {
+          "key": "zone",
+          "text": "價格低於進場區"
+        },
+        {
+          "key": "daily",
+          "text": "日線空頭"
+        },
+        {
+          "key": "weekly",
+          "text": "週線空頭"
+        },
+        {
+          "key": "rsi",
+          "text": "RSI 40（要 45–60）"
+        },
+        {
+          "key": "regime",
+          "text": "大盤空頭"
+        }
+      ],
+      "buyBelow": 1097.1125,
+      "gapPct": 3.9917061611374427,
+      "roomRR": 2.969775113779508,
+      "plan": null,
+      "text": "收盤 1,055 低於進場區下緣 1,069.96，等收盤站回 1,069.96 以上再看訊號。目前另外還卡：日線空頭、週線空頭、RSI 40（要 45–60）、大盤空頭。",
+      "notes": [],
+      "mismatch": null,
+      "risk": {
+        "level": "low",
+        "total": 0,
+        "max": 10,
+        "reasons": []
+      },
+      "hold": {
+        "code": "watch",
+        "text": "收盤在 SMA20（1,086.25）之下，還沒破失效價 1,014.59（距離 3.8%）。收盤跌破失效價就是出場優先。"
+      }
+    },
+    "3019.TW": {
+      "market": "TW",
+      "date": "2026-11-16",
+      "close": 127.5,
+      "ma20": 128.65,
+      "stop": 119.1357,
+      "target": 144.9429,
+      "entryLow": 126.7203,
+      "entryHigh": 129.9365,
+      "bias": -0.8939,
+      "high20": 142.0,
+      "rr": 2.0854,
+      "code": "trend",
+      "signal": false,
+      "blockers": [
+        {
+          "key": "daily",
+          "text": "日線空頭"
+        },
+        {
+          "key": "weekly",
+          "text": "週線空頭"
+        },
+        {
+          "key": "regime",
+          "text": "大盤空頭"
+        }
+      ],
+      "buyBelow": 129.9365,
+      "gapPct": 1.910980392156869,
+      "roomRR": 1.7335580981074328,
+      "plan": null,
+      "text": "日線空頭、週線空頭、大盤空頭，不進場。",
+      "notes": [],
+      "mismatch": null,
+      "risk": {
+        "level": "low",
+        "total": 0,
+        "max": 10,
+        "reasons": []
+      },
+      "hold": {
+        "code": "watch",
+        "text": "收盤在 SMA20（128.65）之下，還沒破失效價 119.14（距離 6.6%）。收盤跌破失效價就是出場優先。"
+      }
+    },
+    "2359.TW": {
+      "market": "TW",
+      "date": "2026-11-16",
+      "close": 88.6,
+      "ma20": 108.31,
+      "stop": 100.5271,
+      "target": 102.8686,
+      "entryLow": 106.6853,
+      "entryHigh": 109.3931,
+      "bias": -18.1978,
+      "high20": 123.0,
+      "rr": null,
+      "code": "below",
+      "signal": false,
+      "blockers": [
+        {
+          "key": "zone",
+          "text": "收盤已跌破失效價"
+        },
+        {
+          "key": "daily",
+          "text": "日線空頭"
+        },
+        {
+          "key": "weekly",
+          "text": "週線空頭"
+        },
+        {
+          "key": "rr",
+          "text": "報酬風險比算不出來"
+        },
+        {
+          "key": "levels",
+          "text": "收盤不在失效價和目標價之間"
+        },
+        {
+          "key": "rsi",
+          "text": "RSI 25（要 45–60）"
+        },
+        {
+          "key": "macd",
+          "text": "MACD 轉弱"
+        },
+        {
+          "key": "regime",
+          "text": "大盤空頭"
+        }
+      ],
+      "buyBelow": 109.3931,
+      "gapPct": 23.468510158013565,
+      "roomRR": null,
+      "plan": null,
+      "text": "收盤已跌破失效價 100.53，不進場。目前另外還卡：日線空頭、週線空頭、收盤不在失效價和目標價之間、RSI 25（要 45–60）、MACD 轉弱、大盤空頭。",
+      "notes": [],
+      "mismatch": null,
+      "risk": {
+        "level": "low",
+        "total": 2,
+        "max": 10,
+        "reasons": []
+      },
+      "hold": {
+        "code": "exit",
+        "text": "收盤已跌破失效價 100.53，規則上這個部位已經失效，出場優先。"
+      }
+    },
+    "3023.TW": {
+      "market": "TW",
+      "date": "2026-11-16",
+      "close": 257.0,
+      "ma20": 270.025,
+      "stop": 254.6821,
+      "target": 285.1286,
+      "entryLow": 265.9746,
+      "entryHigh": 272.7252,
+      "bias": -4.8236,
+      "high20": 316.0,
+      "rr": null,
+      "code": "below",
+      "signal": false,
+      "blockers": [
+        {
+          "key": "zone",
+          "text": "價格低於進場區"
+        },
+        {
+          "key": "daily",
+          "text": "日線空頭"
+        },
+        {
+          "key": "weekly",
+          "text": "週線空頭"
+        },
+        {
+          "key": "rr",
+          "text": "報酬風險比算不出來"
+        },
+        {
+          "key": "rsi",
+          "text": "RSI 36（要 45–60）"
+        },
+        {
+          "key": "regime",
+          "text": "大盤空頭"
+        }
+      ],
+      "buyBelow": 272.7252,
+      "gapPct": 6.118754863813214,
+      "roomRR": 25.454074809094344,
+      "plan": null,
+      "text": "收盤 257 低於進場區下緣 265.97，等收盤站回 265.97 以上再看訊號。目前另外還卡：日線空頭、週線空頭、RSI 36（要 45–60）、大盤空頭。",
+      "notes": [],
+      "mismatch": null,
+      "risk": {
+        "level": "low",
+        "total": 0,
+        "max": 10,
+        "reasons": []
+      },
+      "hold": {
+        "code": "watch",
+        "text": "收盤在 SMA20（270.02）之下，還沒破失效價 254.68（距離 0.9%）。收盤跌破失效價就是出場優先。"
+      }
+    },
+    "3665.TW": {
+      "market": "TW",
+      "date": "2026-11-16",
+      "close": 1470.0,
+      "ma20": 1653.75,
+      "stop": 1501.6071,
+      "target": 1748.9286,
+      "entryLow": 1628.9437,
+      "entryHigh": 1670.2875,
+      "bias": -11.1111,
+      "high20": 2080.0,
+      "rr": null,
+      "code": "below",
+      "signal": false,
+      "blockers": [
+        {
+          "key": "zone",
+          "text": "收盤已跌破失效價"
+        },
+        {
+          "key": "daily",
+          "text": "日線空頭"
+        },
+        {
+          "key": "weekly",
+          "text": "週線空頭"
+        },
+        {
+          "key": "rr",
+          "text": "報酬風險比算不出來"
+        },
+        {
+          "key": "levels",
+          "text": "收盤不在失效價和目標價之間"
+        },
+        {
+          "key": "rsi",
+          "text": "RSI 34（要 45–60）"
+        },
+        {
+          "key": "regime",
+          "text": "大盤空頭"
+        }
+      ],
+      "buyBelow": 1670.2875,
+      "gapPct": 13.624999999999998,
+      "roomRR": null,
+      "plan": null,
+      "text": "收盤已跌破失效價 1,501.61，不進場。目前另外還卡：日線空頭、週線空頭、收盤不在失效價和目標價之間、RSI 34（要 45–60）、大盤空頭。",
+      "notes": [],
+      "mismatch": null,
+      "risk": {
+        "level": "low",
+        "total": 1,
+        "max": 10,
+        "reasons": []
+      },
+      "hold": {
+        "code": "exit",
+        "text": "收盤已跌破失效價 1,501.61，規則上這個部位已經失效，出場優先。"
       }
     },
     "4585.TW": {
       "market": "TW",
-      "date": "2026-11-13",
-      "close": 213.5,
-      "ma20": 243.6,
-      "stop": 228.8143,
-      "target": 240.6071,
-      "entryLow": 239.946,
-      "entryHigh": 246.036,
-      "bias": -12.3563,
+      "date": "2026-11-16",
+      "close": 200.0,
+      "ma20": 239.55,
+      "stop": 224.4643,
+      "target": 227.6571,
+      "entryLow": 235.9567,
+      "entryHigh": 241.9455,
+      "bias": -16.5101,
       "high20": 283.0,
       "rr": null,
       "code": "below",
@@ -2632,18 +2860,22 @@
         },
         {
           "key": "rsi",
-          "text": "RSI 29（要 45–60）"
+          "text": "RSI 25（要 45–60）"
+        },
+        {
+          "key": "macd",
+          "text": "MACD 轉弱"
         },
         {
           "key": "regime",
           "text": "大盤空頭"
         }
       ],
-      "buyBelow": 246.036,
-      "gapPct": 15.239344262295074,
+      "buyBelow": 241.9455,
+      "gapPct": 20.972750000000005,
       "roomRR": null,
       "plan": null,
-      "text": "收盤已跌破失效價 228.81，不進場。目前另外還卡：日線空頭、週線空頭、收盤不在失效價和目標價之間、RSI 29（要 45–60）、大盤空頭。",
+      "text": "收盤已跌破失效價 224.46，不進場。目前另外還卡：日線空頭、週線空頭、收盤不在失效價和目標價之間、RSI 25（要 45–60）、MACD 轉弱、大盤空頭。",
       "notes": [],
       "mismatch": null,
       "risk": {
@@ -2654,19 +2886,19 @@
       },
       "hold": {
         "code": "exit",
-        "text": "收盤已跌破失效價 228.81，規則上這個部位已經失效，出場優先。"
+        "text": "收盤已跌破失效價 224.46，規則上這個部位已經失效，出場優先。"
       }
     },
     "6215.TW": {
       "market": "TW",
-      "date": "2026-11-13",
-      "close": 78.7,
-      "ma20": 84.545,
-      "stop": 78.8793,
-      "target": 89.0871,
-      "entryLow": 83.2768,
-      "entryHigh": 85.3904,
-      "bias": -6.9135,
+      "date": "2026-11-16",
+      "close": 73.4,
+      "ma20": 83.645,
+      "stop": 77.825,
+      "target": 84.07,
+      "entryLow": 82.3903,
+      "entryHigh": 84.4814,
+      "bias": -12.2482,
       "high20": 93.3,
       "rr": null,
       "code": "below",
@@ -2694,18 +2926,22 @@
         },
         {
           "key": "rsi",
-          "text": "RSI 38（要 45–60）"
+          "text": "RSI 32（要 45–60）"
+        },
+        {
+          "key": "macd",
+          "text": "MACD 轉弱"
         },
         {
           "key": "regime",
           "text": "大盤空頭"
         }
       ],
-      "buyBelow": 85.3904,
-      "gapPct": 8.501143583227444,
+      "buyBelow": 84.4814,
+      "gapPct": 15.097275204359661,
       "roomRR": null,
       "plan": null,
-      "text": "收盤已跌破失效價 78.88，不進場。目前另外還卡：日線空頭、週線空頭、收盤不在失效價和目標價之間、RSI 38（要 45–60）、大盤空頭。",
+      "text": "收盤已跌破失效價 77.83，不進場。目前另外還卡：日線空頭、週線空頭、收盤不在失效價和目標價之間、RSI 32（要 45–60）、MACD 轉弱、大盤空頭。",
       "notes": [],
       "mismatch": null,
       "risk": {
@@ -2716,19 +2952,19 @@
       },
       "hold": {
         "code": "exit",
-        "text": "收盤已跌破失效價 78.88，規則上這個部位已經失效，出場優先。"
+        "text": "收盤已跌破失效價 77.83，規則上這個部位已經失效，出場優先。"
       }
     },
     "8374.TW": {
       "market": "TW",
-      "date": "2026-11-13",
-      "close": 62.1,
-      "ma20": 67.06,
-      "stop": 62.6971,
-      "target": 70.0986,
-      "entryLow": 66.0541,
-      "entryHigh": 67.7306,
-      "bias": -7.3964,
+      "date": "2026-11-16",
+      "close": 60.8,
+      "ma20": 66.525,
+      "stop": 61.9479,
+      "target": 69.1914,
+      "entryLow": 65.5271,
+      "entryHigh": 67.1903,
+      "bias": -8.6058,
       "high20": 73.5,
       "rr": null,
       "code": "below",
@@ -2756,18 +2992,18 @@
         },
         {
           "key": "rsi",
-          "text": "RSI 35（要 45–60）"
+          "text": "RSI 33（要 45–60）"
         },
         {
           "key": "regime",
           "text": "大盤空頭"
         }
       ],
-      "buyBelow": 67.7306,
-      "gapPct": 9.066988727858295,
+      "buyBelow": 67.1903,
+      "gapPct": 10.510361842105254,
       "roomRR": null,
       "plan": null,
-      "text": "收盤已跌破失效價 62.7，不進場。目前另外還卡：日線空頭、週線空頭、收盤不在失效價和目標價之間、RSI 35（要 45–60）、大盤空頭。",
+      "text": "收盤已跌破失效價 61.95，不進場。目前另外還卡：日線空頭、週線空頭、收盤不在失效價和目標價之間、RSI 33（要 45–60）、大盤空頭。",
       "notes": [],
       "mismatch": null,
       "risk": {
@@ -2778,24 +3014,28 @@
       },
       "hold": {
         "code": "exit",
-        "text": "收盤已跌破失效價 62.7，規則上這個部位已經失效，出場優先。"
+        "text": "收盤已跌破失效價 61.95，規則上這個部位已經失效，出場優先。"
       }
     },
     "2317.TW": {
       "market": "TW",
-      "date": "2026-11-13",
-      "close": 241.0,
-      "ma20": 242.85,
-      "stop": 231.5357,
-      "target": 261.7429,
-      "entryLow": 239.2072,
-      "entryHigh": 245.2785,
-      "bias": -0.7618,
+      "date": "2026-11-16",
+      "close": 218.5,
+      "ma20": 241.575,
+      "stop": 228.6321,
+      "target": 242.2286,
+      "entryLow": 237.9514,
+      "entryHigh": 243.9907,
+      "bias": -9.5519,
       "high20": 253.5,
-      "rr": 2.1917,
-      "code": "trend",
+      "rr": null,
+      "code": "below",
       "signal": false,
       "blockers": [
+        {
+          "key": "zone",
+          "text": "收盤已跌破失效價"
+        },
         {
           "key": "daily",
           "text": "日線空頭"
@@ -2805,15 +3045,31 @@
           "text": "週線空頭"
         },
         {
+          "key": "rr",
+          "text": "報酬風險比算不出來"
+        },
+        {
+          "key": "levels",
+          "text": "收盤不在失效價和目標價之間"
+        },
+        {
+          "key": "rsi",
+          "text": "RSI 34（要 45–60）"
+        },
+        {
+          "key": "macd",
+          "text": "MACD 轉弱"
+        },
+        {
           "key": "regime",
           "text": "大盤空頭"
         }
       ],
-      "buyBelow": 245.2785,
-      "gapPct": 1.7753112033195073,
-      "roomRR": 1.3207527233921144,
+      "buyBelow": 243.9907,
+      "gapPct": 11.666224256292912,
+      "roomRR": null,
       "plan": null,
-      "text": "日線空頭、週線空頭、大盤空頭，不進場。",
+      "text": "收盤已跌破失效價 228.63，不進場。目前另外還卡：日線空頭、週線空頭、收盤不在失效價和目標價之間、RSI 34（要 45–60）、MACD 轉弱、大盤空頭。",
       "notes": [],
       "mismatch": null,
       "risk": {
@@ -2823,8 +3079,8 @@
         "reasons": []
       },
       "hold": {
-        "code": "watch",
-        "text": "收盤在 SMA20（242.85）之下，還沒破失效價 231.54（距離 3.9%）。收盤跌破失效價就是出場優先。"
+        "code": "exit",
+        "text": "收盤已跌破失效價 228.63，規則上這個部位已經失效，出場優先。"
       }
     },
     "TSM": {
@@ -2919,7 +3175,7 @@
       "plan": null,
       "text": "收盤已跌破失效價 185.48，不進場。目前另外還卡：日線空頭、收盤不在失效價和目標價之間、RSI 25（要 45–60）、大盤空頭。",
       "notes": [
-        "財報 2026-11-17，還有 2 個交易日（Yahoo，已確認）"
+        "財報 2026-11-17，還有 1 個交易日（Yahoo，已確認）"
       ],
       "mismatch": null,
       "risk": {
@@ -2932,7 +3188,7 @@
       },
       "hold": {
         "code": "exit",
-        "text": "收盤已跌破失效價 185.48，規則上這個部位已經失效，出場優先。財報 2026-11-17，還有 2 個交易日（Yahoo，已確認）。"
+        "text": "收盤已跌破失效價 185.48，規則上這個部位已經失效，出場優先。財報 2026-11-17，還有 1 個交易日（Yahoo，已確認）。"
       }
     },
     "AMD": {
@@ -3417,14 +3673,14 @@
     },
     "BTC-USD": {
       "market": "CRYPTO",
-      "date": "2026-11-13",
-      "close": 68249.2734,
-      "ma20": 76585.4371,
-      "stop": 73673.6492,
-      "target": 73587.5513,
-      "entryLow": 75436.6556,
-      "entryHigh": 77351.2915,
-      "bias": -10.8848,
+      "date": "2026-11-15",
+      "close": 65305.0625,
+      "ma20": 75055.5596,
+      "stop": 71498.5593,
+      "target": 71826.2296,
+      "entryLow": 73929.7262,
+      "entryHigh": 75806.1152,
+      "bias": -12.991,
       "high20": 81889.9453,
       "rr": null,
       "code": "below",
@@ -3459,11 +3715,11 @@
           "text": "大盤空頭"
         }
       ],
-      "buyBelow": 77232.50113333334,
-      "gapPct": 13.162378565825627,
+      "buyBelow": 75806.1152,
+      "gapPct": 16.079997932778944,
       "roomRR": null,
       "plan": null,
-      "text": "收盤已跌破失效價 73,673.65，不進場。目前另外還卡：日線空頭、收盤不在失效價和目標價之間、RSI 25（要 45–60）、MACD 轉弱、大盤空頭。",
+      "text": "收盤已跌破失效價 71,498.56，不進場。目前另外還卡：日線空頭、收盤不在失效價和目標價之間、RSI 25（要 45–60）、MACD 轉弱、大盤空頭。",
       "notes": [],
       "mismatch": null,
       "risk": {
@@ -3474,19 +3730,19 @@
       },
       "hold": {
         "code": "exit",
-        "text": "收盤已跌破失效價 73,673.65，規則上這個部位已經失效，出場優先。"
+        "text": "收盤已跌破失效價 71,498.56，規則上這個部位已經失效，出場優先。"
       }
     },
     "ETH-USD": {
       "market": "CRYPTO",
-      "date": "2026-11-13",
-      "close": 1927.5889,
-      "ma20": 2216.0813,
-      "stop": 2100.0333,
-      "target": 2140.3434,
-      "entryLow": 2182.84,
-      "entryHigh": 2238.2421,
-      "bias": -13.0181,
+      "date": "2026-11-15",
+      "close": 1835.4952,
+      "ma20": 2163.952,
+      "stop": 2024.0581,
+      "target": 2091.9674,
+      "entryLow": 2131.4927,
+      "entryHigh": 2185.5915,
+      "bias": -15.1786,
       "high20": 2446.0479,
       "rr": null,
       "code": "below",
@@ -3510,7 +3766,7 @@
         },
         {
           "key": "rsi",
-          "text": "RSI 25（要 45–60）"
+          "text": "RSI 27（要 45–60）"
         },
         {
           "key": "macd",
@@ -3521,11 +3777,11 @@
           "text": "大盤空頭"
         }
       ],
-      "buyBelow": 2238.2421,
-      "gapPct": 16.116154227698654,
+      "buyBelow": 2185.5915,
+      "gapPct": 19.073670146345243,
       "roomRR": null,
       "plan": null,
-      "text": "收盤已跌破失效價 2,100.03，不進場。目前另外還卡：日線空頭、收盤不在失效價和目標價之間、RSI 25（要 45–60）、MACD 轉弱、大盤空頭。",
+      "text": "收盤已跌破失效價 2,024.06，不進場。目前另外還卡：日線空頭、收盤不在失效價和目標價之間、RSI 27（要 45–60）、MACD 轉弱、大盤空頭。",
       "notes": [],
       "mismatch": null,
       "risk": {
@@ -3536,19 +3792,19 @@
       },
       "hold": {
         "code": "exit",
-        "text": "收盤已跌破失效價 2,100.03，規則上這個部位已經失效，出場優先。"
+        "text": "收盤已跌破失效價 2,024.06，規則上這個部位已經失效，出場優先。"
       }
     },
     "SOL-USD": {
       "market": "CRYPTO",
-      "date": "2026-11-13",
-      "close": 78.0961,
-      "ma20": 91.765,
-      "stop": 87.0221,
-      "target": 86.7915,
-      "entryLow": 90.3886,
-      "entryHigh": 92.6827,
-      "bias": -14.8956,
+      "date": "2026-11-15",
+      "close": 72.6789,
+      "ma20": 88.8089,
+      "stop": 83.1366,
+      "target": 83.0782,
+      "entryLow": 87.4768,
+      "entryHigh": 89.697,
+      "bias": -18.1626,
       "high20": 103.5009,
       "rr": null,
       "code": "below",
@@ -3572,7 +3828,7 @@
         },
         {
           "key": "rsi",
-          "text": "RSI 20（要 45–60）"
+          "text": "RSI 22（要 45–60）"
         },
         {
           "key": "macd",
@@ -3583,11 +3839,11 @@
           "text": "大盤空頭"
         }
       ],
-      "buyBelow": 92.6827,
-      "gapPct": 18.67775727597152,
+      "buyBelow": 89.697,
+      "gapPct": 23.415461708969175,
       "roomRR": null,
       "plan": null,
-      "text": "收盤已跌破失效價 87.02，不進場。目前另外還卡：日線空頭、收盤不在失效價和目標價之間、RSI 20（要 45–60）、MACD 轉弱、大盤空頭。",
+      "text": "收盤已跌破失效價 83.14，不進場。目前另外還卡：日線空頭、收盤不在失效價和目標價之間、RSI 22（要 45–60）、MACD 轉弱、大盤空頭。",
       "notes": [],
       "mismatch": null,
       "risk": {
@@ -3598,7 +3854,7 @@
       },
       "hold": {
         "code": "exit",
-        "text": "收盤已跌破失效價 87.02，規則上這個部位已經失效，出場優先。"
+        "text": "收盤已跌破失效價 83.14，規則上這個部位已經失效，出場優先。"
       }
     }
   }
