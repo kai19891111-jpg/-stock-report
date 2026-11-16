@@ -1,0 +1,4767 @@
+{
+ "generatedAt": "2026-11-16T11:10:34+00:00",
+ "dataTimestamp": "2026-11-16T07:07:56.588105+00:00",
+ "sessions": {
+  "TW": "2026-11-16",
+  "US": "2026-11-13",
+  "CRYPTO": "2026-11-15"
+ },
+ "source": "yahoo",
+ "isFinalClose": true,
+ "historyMode": "local-reconstruction",
+ "params": {
+  "pivot_k": 3,
+  "wpivot_k": 2,
+  "lookback": 120,
+  "wlookback": 52,
+  "merge_atr": 0.3,
+  "zone_atr": 0.5,
+  "stop_buf_atr": 0.5,
+  "brk_vol": 1.5,
+  "pb_vol": 1.0,
+  "extended_atr": 1.0,
+  "hot_atr": 2.5,
+  "hot_bias": 15.0,
+  "hot_rsi": 75.0,
+  "near_brk_atr": 2.0,
+  "min_rr": 1.5,
+  "earn_days": 3,
+  "min_bars": 20
+ },
+ "labels": {
+  "ready": "條件已成立",
+  "pullback": "等待回檔",
+  "breakout": "等待突破確認",
+  "hot": "過熱不追價",
+  "weak": "結構轉弱",
+  "nodata": "資料不足"
+ },
+ "order": [
+  "ready",
+  "pullback",
+  "breakout",
+  "hot",
+  "weak",
+  "nodata"
+ ],
+ "counts": {
+  "ready": 0,
+  "pullback": 10,
+  "breakout": 6,
+  "hot": 0,
+  "weak": 47,
+  "nodata": 2
+ },
+ "regimes": {
+  "TW": "BEAR",
+  "US": "BEAR",
+  "CRYPTO": "BEAR"
+ },
+ "notes": {
+  "writtenAt": "2026-11-16T19:40:00+08:00",
+  "validFor": {
+   "TW": "2026-11-16",
+   "US": "2026-11-13",
+   "CRYPTO": "2026-11-15"
+  },
+  "expiryRule": "手寫判讀只對 validFor 的那根日 K 有效；行情日期一變，頁面會把這一段標成「已過期，只看自動欄位」。",
+  "market": [
+   "台股 11/16 收盤：加權 41,040.08，跌 2,635.04 點（−6.03%），收在當日最低、史上第二大跌點；成交 8,450.56 億元。已和 latest.json（證交所官方日K）一致。",
+   "台積電 2,215（−135，−5.74%）、聯發科 3,795（−325）、台達電 1,120（跌停）、鴻海 218.5（−22.5），和 latest.json 收盤一致。",
+   "美股用 11/13（週五）收盤：Nasdaq 25,136.27、費半 10,146.32、美 10 年債 5.154%。兩地大盤都在 MA20、MA60 之下（空頭），本次沒有任何一檔標『條件已成立』。",
+   "重大事件：NVIDIA 11/12 公告黃仁勳辭去執行長與董事，由財務長 Colette Kress 代理（SEC 8-K）。NVIDIA 財報 11/17 美股盤後（台北 11/18 清晨），是整個 AI 供應鏈本週最大的單一變數。"
+  ],
+  "priority": [
+   {
+    "symbol": "MSFT",
+    "horizon": "波段",
+    "rank": 1,
+    "why": "週線多頭、收盤仍在 MA60（515.7）之上，是追蹤清單裡結構最完整的大型 AI 股；價格已在回檔區 515.7–523.9（MA60＋10/23 擺盪低點）。財報 10/28 已過。",
+    "missing": "收盤站回 MA5、收盤高於前一日高點、量比 ≥ 1.0；美股大盤空頭擋板解除（Nasdaq 站回 MA20 25,690）。",
+    "risk": "NVDA 財報與 CEO 交接若再引發 AI 資本支出疑慮，雲端股會被一起賣；以區間中點 519.8 計 RR 約 1.67（目標 541.3），收盤跌破失效價 506.9 就轉弱。"
+   },
+   {
+    "symbol": "TSLA",
+    "horizon": "波段",
+    "rank": 2,
+    "why": "日線多頭（收盤 > MA20 > MA60），回到 MA20＋10/09 前高轉支撐 385.4–390.2；也是人形機器人（Optimus）主線的美股代表。",
+    "missing": "收盤高於前一日高點、量比 ≥ 1.0、RSI 回升；大盤空頭擋板。",
+    "risk": "波動大（ATR ≈ 18），以區間中點 387.8 計 RR 約 2.3（目標 414.2）；收盤跌破 376.3 結構失效；Optimus 量產時程屬公司說法，不是已出貨數字。"
+   },
+   {
+    "symbol": "2355.TW",
+    "horizon": "波段",
+    "rank": 3,
+    "why": "台股清單裡唯一日線、週線同時多頭的一檔，11/16 大盤 −6% 當天仍爆量收高（量比約 3.6）；相對強弱最好。",
+    "missing": "目前不在區間：等回到 56.3–58.5（10/29 前高轉支撐）並出現止跌確認（以中點 57.4 計 RR 約 2.8、失效價 54.1）；帶量站上 20 日高 66.7 的突破以 66.7 計 RR 只有約 1.0，不追。",
+    "risk": "台股大盤空頭、櫃買 −6.8%；逆勢股常在大盤止跌時反而被調節。"
+   },
+   {
+    "symbol": "META",
+    "horizon": "短線",
+    "rank": 4,
+    "why": "在 MA20 回檔區 637.1–641.7，五項確認只差量能；第一目標 MA60 662.5，以區間中點 639.4 計 RR 約 1.8。",
+    "missing": "量比 ≥ 1.0（11/13 只有約 0.63）；大盤空頭擋板。只當短線，不當波段（週線盤整、MA20 下彎）。",
+    "risk": "收盤跌破 626.6（MA20 下方 0.5 ATR）即失效；AI 資本支出題材同樣受 NVDA 財報牽動。"
+   }
+  ],
+  "notPicked": "台積電、聯發科、輝達、美光、AMD、博通與散熱／ABF／CCL／機器人族群本次都不列優先：多數已『結構轉弱』，少數在 MA20 下方等突破但以觸發價計報酬風險比低於 1.5。沒有合適機會就等，不湊數。",
+  "positions": [
+   {
+    "symbol": "2330.TW",
+    "text": "持倉成本 2,572.1，11/16 收 2,215，結構轉弱；自動卡片的失效價 2,235.8 已跌破。下一個結構支撐是 11/06 擺盪低點 2,020（重評失效價 1,978.6）；這是部位風險提醒，不是加碼區。"
+   },
+   {
+    "symbol": "4958.TW",
+    "text": "持倉成本 481.9，11/16 收 396，結構轉弱；下一個支撐 355（11/06 擺盪低點）。"
+   },
+   {
+    "symbol": "SPCX",
+    "text": "持倉成本 152.12，11/13 收 139.11，在 MA20 142.1 下方等突破，週線空頭；以 142.1 計 RR 約 0.21，不加碼。"
+   }
+  ],
+  "additions": [
+   {
+    "symbol": "6274.TW",
+    "name": "台燿",
+    "group": "CCL／材料",
+    "basis": "台灣高階 CCL 三大廠之一；網通及伺服器（M7/M8 高階材料）約佔營收七成，9 月營收 61.26 億元、年增 114.8%。",
+    "sources": [
+     "https://www.esunsec.com.tw/article/post/652",
+     "https://www.moneyweekly.com.tw/_Article?AID=254912"
+    ],
+    "note": "上市／上櫃後綴由腳本自動判斷（.TW 抓不到會改 .TWO）。下一次自動更新後才有價位，這之前標『資料不足』。"
+   },
+   {
+    "symbol": "2439.TW",
+    "name": "美律",
+    "group": "AI眼鏡",
+    "basis": "報導指為 Meta AI 眼鏡的主要聲學供應商（麥克風／揚聲器）；無螢幕版 AI 眼鏡的關鍵零件。",
+    "sources": [
+     "https://money.udn.com/money/story/5607/9285343"
+    ],
+    "note": "供應關係來自媒體與法人報導，公司未逐項證實，標『報導』。下一次自動更新後才有價位。"
+   }
+  ],
+  "glassesRelated": "已在清單、和 AI 眼鏡有報導關聯的：玉晶光 3406（Ray-Ban Meta 鏡頭）、亞光 3019（非球面玻璃／光波導）、臻鼎-KY 4958 與華通 2313（Apple 眼鏡 PCB，報導）。不重複加入，只在這裡標註。",
+  "notAdded": "大立光、揚明光、今國光、鈺太等也常被列為 AI 眼鏡概念股，但目前多為『潛在』或單一報導，營收貢獻未經證實，暫不加入。"
+ },
+ "symbols": {
+  "2330.TW": {
+   "symbol": "2330.TW",
+   "bars": 34,
+   "date": "2026-11-16",
+   "close": 2215.0,
+   "ma5": 2317.0,
+   "ma20": 2335.25,
+   "ma60": 2412.17,
+   "atr": 82.86,
+   "rsi": 38.9,
+   "volRatio": 1.66,
+   "dailyTrend": "空頭",
+   "weeklyTrend": "盤整",
+   "marketRegime": "BEAR",
+   "bias20": -5.15,
+   "historyNote": "支撐壓力只取得到最近 34 根日 K（約 9 週）；MA60 與週線趨勢取自 latest.json（2 年日 K）。",
+   "pullback": {
+    "zone": [
+     2020.0,
+     2061.43
+    ],
+    "zoneWhy": "日線擺盪低點 2026-11-06＋近 20 日低 2020.0 到上方 0.5 ATR",
+    "confirm": "近 3 日最低碰到區間，之後收盤站回 MA5、收盤高於前一日高點、量比 ≥ 1.0、RSI 回升",
+    "confirmState": {
+     "touch": false,
+     "aboveMA5": false,
+     "abovePrevHigh": false,
+     "volume": true,
+     "rsiUp": false
+    },
+    "entry": 2040.71,
+    "entryWhy": "區間中點",
+    "stop": 1978.57,
+    "stopWhy": "日線擺盪低點 2026-11-06＋近 20 日低 下方 0.5 ATR",
+    "t1": 2335.25,
+    "t1Why": "MA20（下彎）",
+    "t2": 2395.0,
+    "t2Why": "日線擺盪高點 2026-11-11＋MA60（2 年日 K 算的）",
+    "rr1": 4.74,
+    "rr2": 5.7
+   },
+   "breakout": {
+    "trigger": 2335.25,
+    "triggerWhy": "MA20（下彎）",
+    "volume": "量比 ≥ 1.5（以 20 日均量計），收盤在當日區間上 1/3",
+    "retest": false,
+    "retestWhy": "突破當天若超過觸發價 1 ATR 才需等回測",
+    "entry": 2335.25,
+    "entryWhy": "以觸發價計",
+    "stop": 1978.57,
+    "stopWhy": "日線擺盪低點 2026-11-06＋近 20 日低 下方 0.5 ATR",
+    "t1": 2395.0,
+    "t1Why": "日線擺盪高點 2026-11-11＋MA60（2 年日 K 算的）",
+    "t2": 2435.0,
+    "t2Why": "日線擺盪高點 2026-10-22＋近 20 日高",
+    "rr1": 0.17,
+    "rr2": 0.28,
+    "distATR": 1.45
+   },
+   "status": "weak",
+   "label": "結構轉弱",
+   "why": [
+    "收盤在 MA20、MA60 之下，且MA20 下彎、收盤在 MA20 下方 1.5 ATR；先等止跌：不再破低、收盤站回 MA5，再看能否站上 MA20 2335.25。",
+    "擋板：大盤空頭（指數收在 MA20、MA60 之下）。"
+   ],
+   "blockers": [
+    "大盤空頭（指數收在 MA20、MA60 之下）"
+   ],
+   "market": "TW",
+   "theme": "AI晶片",
+   "earnings": {
+    "date": "2027-03-31",
+    "days": 97
+   }
+  },
+  "2454.TW": {
+   "symbol": "2454.TW",
+   "bars": 27,
+   "date": "2026-11-16",
+   "close": 3795.0,
+   "ma5": 3917.0,
+   "ma20": 3909.5,
+   "ma60": 4304.83,
+   "atr": 299.29,
+   "rsi": 40.7,
+   "volRatio": 1.29,
+   "dailyTrend": "空頭",
+   "weeklyTrend": "盤整",
+   "marketRegime": "BEAR",
+   "bias20": -2.93,
+   "historyNote": "支撐壓力只取得到最近 27 根日 K（約 7 週）；MA60 與週線趨勢取自 latest.json（2 年日 K）。",
+   "pullback": {
+    "zone": [
+     3115.0,
+     3264.64
+    ],
+    "zoneWhy": "日線擺盪低點 2026-11-06＋近 20 日低 3115.0 到上方 0.5 ATR",
+    "confirm": "近 3 日最低碰到區間，之後收盤站回 MA5、收盤高於前一日高點、量比 ≥ 1.0、RSI 回升",
+    "confirmState": {
+     "touch": false,
+     "aboveMA5": false,
+     "abovePrevHigh": false,
+     "volume": true,
+     "rsiUp": false
+    },
+    "entry": 3189.82,
+    "entryWhy": "區間中點",
+    "stop": 2965.36,
+    "stopWhy": "日線擺盪低點 2026-11-06＋近 20 日低 下方 0.5 ATR",
+    "t1": 4245.0,
+    "t1Why": "日線擺盪高點 2026-10-28＋MA60（2 年日 K 算的）＋近 20 日高",
+    "t2": 4843.57,
+    "t2Why": "第一目標上方已無紀錄內壓力，用第一目標 + 2 ATR",
+    "rr1": 4.7,
+    "rr2": 7.37
+   },
+   "breakout": {
+    "trigger": 3909.5,
+    "triggerWhy": "MA20（下彎）",
+    "volume": "量比 ≥ 1.5（以 20 日均量計），收盤在當日區間上 1/3",
+    "retest": false,
+    "retestWhy": "突破當天若超過觸發價 1 ATR 才需等回測",
+    "entry": 3909.5,
+    "entryWhy": "以觸發價計",
+    "stop": 2965.36,
+    "stopWhy": "日線擺盪低點 2026-11-06＋近 20 日低 下方 0.5 ATR",
+    "t1": 4245.0,
+    "t1Why": "日線擺盪高點 2026-10-28＋MA60（2 年日 K 算的）＋近 20 日高",
+    "t2": 4843.57,
+    "t2Why": "第一目標上方已無紀錄內壓力，用第一目標 + 2 ATR",
+    "rr1": 0.36,
+    "rr2": 0.99,
+    "distATR": 0.38
+   },
+   "status": "breakout",
+   "label": "等待突破確認",
+   "why": [
+    "收盤在觸發價 3909.5（MA20（下彎））下方 0.38 ATR，等帶量站上。",
+    "以觸發價計報酬風險比只有 0.36（失效價在 2965.36），突破當下也不追；要等突破後回測形成更高的低點再重算。",
+    "擋板：大盤空頭（指數收在 MA20、MA60 之下）。"
+   ],
+   "blockers": [
+    "大盤空頭（指數收在 MA20、MA60 之下）"
+   ],
+   "market": "TW",
+   "theme": "AI晶片",
+   "earnings": {
+    "date": "2027-03-31",
+    "days": 97
+   }
+  },
+  "2308.TW": {
+   "symbol": "2308.TW",
+   "bars": 27,
+   "date": "2026-11-16",
+   "close": 1120.0,
+   "ma5": 1234.0,
+   "ma20": 1361.25,
+   "ma60": 1655.0,
+   "atr": 105.71,
+   "rsi": 26.7,
+   "volRatio": 1.52,
+   "dailyTrend": "空頭",
+   "weeklyTrend": "空頭",
+   "marketRegime": "BEAR",
+   "bias20": -17.72,
+   "historyNote": "支撐壓力只取得到最近 27 根日 K（約 7 週）；MA60 與週線趨勢取自 latest.json（2 年日 K）。",
+   "pullback": {
+    "zone": [
+     1020.0,
+     1072.86
+    ],
+    "zoneWhy": "日線擺盪低點 2026-11-06＋近 20 日低 1020.0 到上方 0.5 ATR",
+    "confirm": "近 3 日最低碰到區間，之後收盤站回 MA5、收盤高於前一日高點、量比 ≥ 1.0、RSI 回升",
+    "confirmState": {
+     "touch": false,
+     "aboveMA5": false,
+     "abovePrevHigh": false,
+     "volume": true,
+     "rsiUp": false
+    },
+    "entry": 1046.43,
+    "entryWhy": "區間中點",
+    "stop": 967.14,
+    "stopWhy": "日線擺盪低點 2026-11-06＋近 20 日低 下方 0.5 ATR",
+    "t1": 1361.25,
+    "t1Why": "MA20（下彎）",
+    "t2": 1655.0,
+    "t2Why": "MA60（2 年日 K 算的）＋近 20 日高",
+    "rr1": 3.97,
+    "rr2": 7.68
+   },
+   "breakout": {
+    "trigger": 1361.25,
+    "triggerWhy": "MA20（下彎）",
+    "volume": "量比 ≥ 1.5（以 20 日均量計），收盤在當日區間上 1/3",
+    "retest": true,
+    "retestWhy": "週線空頭",
+    "entry": 1361.25,
+    "entryWhy": "以觸發價計",
+    "stop": 967.14,
+    "stopWhy": "日線擺盪低點 2026-11-06＋近 20 日低 下方 0.5 ATR",
+    "t1": 1655.0,
+    "t1Why": "MA60（2 年日 K 算的）＋近 20 日高",
+    "t2": 1866.43,
+    "t2Why": "第一目標上方已無紀錄內壓力，用第一目標 + 2 ATR",
+    "rr1": 0.75,
+    "rr2": 1.28,
+    "distATR": 2.28
+   },
+   "status": "weak",
+   "label": "結構轉弱",
+   "why": [
+    "收盤在 MA20、MA60 之下，且MA20 下彎、收盤在 MA20 下方 2.3 ATR；先等止跌：不再破低、收盤站回 MA5，再看能否站上 MA20 1361.25。",
+    "擋板：大盤空頭（指數收在 MA20、MA60 之下）。"
+   ],
+   "blockers": [
+    "大盤空頭（指數收在 MA20、MA60 之下）"
+   ],
+   "market": "TW",
+   "theme": "AI電源／電力",
+   "earnings": {
+    "date": "2027-03-31",
+    "days": 97
+   }
+  },
+  "2371.TW": {
+   "symbol": "2371.TW",
+   "bars": 27,
+   "date": "2026-11-16",
+   "close": 25.55,
+   "ma5": 26.65,
+   "ma20": 27.9,
+   "ma60": 28.52,
+   "atr": 1.53,
+   "rsi": 33.6,
+   "volRatio": 1.04,
+   "dailyTrend": "空頭",
+   "weeklyTrend": "盤整",
+   "marketRegime": "BEAR",
+   "bias20": -8.41,
+   "historyNote": "支撐壓力只取得到最近 27 根日 K（約 7 週）；MA60 與週線趨勢取自 latest.json（2 年日 K）。",
+   "pullback": {
+    "zone": [
+     24.7,
+     25.47
+    ],
+    "zoneWhy": "日線擺盪低點 2026-11-06＋近 20 日低 24.7 到上方 0.5 ATR",
+    "confirm": "近 3 日最低碰到區間，之後收盤站回 MA5、收盤高於前一日高點、量比 ≥ 1.0、RSI 回升",
+    "confirmState": {
+     "touch": false,
+     "aboveMA5": false,
+     "abovePrevHigh": false,
+     "volume": true,
+     "rsiUp": false
+    },
+    "entry": 25.08,
+    "entryWhy": "區間中點",
+    "stop": 23.93,
+    "stopWhy": "日線擺盪低點 2026-11-06＋近 20 日低 下方 0.5 ATR",
+    "t1": 27.5,
+    "t1Why": "日線擺盪低點 2026-10-30（跌破後轉壓力）＋MA20（下彎）",
+    "t2": 28.52,
+    "t2Why": "MA60（2 年日 K 算的）＋日線擺盪低點 2026-10-13（跌破後轉壓力）",
+    "rr1": 2.1,
+    "rr2": 2.99
+   },
+   "breakout": {
+    "trigger": 27.5,
+    "triggerWhy": "日線擺盪低點 2026-10-30（跌破後轉壓力）＋MA20（下彎）",
+    "volume": "量比 ≥ 1.5（以 20 日均量計），收盤在當日區間上 1/3",
+    "retest": false,
+    "retestWhy": "突破當天若超過觸發價 1 ATR 才需等回測",
+    "entry": 27.5,
+    "entryWhy": "以觸發價計",
+    "stop": 23.93,
+    "stopWhy": "日線擺盪低點 2026-11-06＋近 20 日低 下方 0.5 ATR",
+    "t1": 28.52,
+    "t1Why": "MA60（2 年日 K 算的）＋日線擺盪低點 2026-10-13（跌破後轉壓力）",
+    "t2": 29.2,
+    "t2Why": "日線擺盪高點 2026-10-27",
+    "rr1": 0.29,
+    "rr2": 0.48,
+    "distATR": 1.27
+   },
+   "status": "weak",
+   "label": "結構轉弱",
+   "why": [
+    "收盤在 MA20、MA60 之下，且MA20 下彎、收盤在 MA20 下方 1.5 ATR；先等止跌：不再破低、收盤站回 MA5，再看能否站上 MA20 27.9。",
+    "擋板：大盤空頭（指數收在 MA20、MA60 之下）。"
+   ],
+   "blockers": [
+    "大盤空頭（指數收在 MA20、MA60 之下）"
+   ],
+   "market": "TW",
+   "theme": "AI電源／電力",
+   "earnings": {
+    "date": "2027-03-31",
+    "days": 97
+   }
+  },
+  "8210.TW": {
+   "symbol": "8210.TW",
+   "bars": 27,
+   "date": "2026-11-16",
+   "close": 545.0,
+   "ma5": 583.8,
+   "ma20": 679.65,
+   "ma60": 832.25,
+   "atr": 45.21,
+   "rsi": 22.6,
+   "volRatio": 0.94,
+   "dailyTrend": "空頭",
+   "weeklyTrend": "空頭",
+   "marketRegime": "BEAR",
+   "bias20": -19.81,
+   "historyNote": "支撐壓力只取得到最近 27 根日 K（約 7 週）；MA60 與週線趨勢取自 latest.json（2 年日 K）。",
+   "pullback": {
+    "zone": [
+     526.0,
+     545.0
+    ],
+    "zoneWhy": "日線擺盪低點 2026-11-09＋近 20 日低 526.0 到上方 0.5 ATR",
+    "confirm": "近 3 日最低碰到區間，之後收盤站回 MA5、收盤高於前一日高點、量比 ≥ 1.0、RSI 回升",
+    "confirmState": {
+     "touch": true,
+     "aboveMA5": false,
+     "abovePrevHigh": false,
+     "volume": false,
+     "rsiUp": false
+    },
+    "entry": 535.5,
+    "entryWhy": "區間中點",
+    "stop": 503.39,
+    "stopWhy": "日線擺盪低點 2026-11-09＋近 20 日低 下方 0.5 ATR",
+    "t1": 679.65,
+    "t1Why": "MA20（下彎）",
+    "t2": 828.0,
+    "t2Why": "日線擺盪低點 2026-10-13（跌破後轉壓力）＋近 20 日高＋MA60（2 年日 K 算的）",
+    "rr1": 4.49,
+    "rr2": 9.11
+   },
+   "breakout": {
+    "trigger": 679.65,
+    "triggerWhy": "MA20（下彎）",
+    "volume": "量比 ≥ 1.5（以 20 日均量計），收盤在當日區間上 1/3",
+    "retest": true,
+    "retestWhy": "週線空頭",
+    "entry": 679.65,
+    "entryWhy": "以觸發價計",
+    "stop": 503.39,
+    "stopWhy": "日線擺盪低點 2026-11-09＋近 20 日低 下方 0.5 ATR",
+    "t1": 828.0,
+    "t1Why": "日線擺盪低點 2026-10-13（跌破後轉壓力）＋近 20 日高＋MA60（2 年日 K 算的）",
+    "t2": 918.43,
+    "t2Why": "第一目標上方已無紀錄內壓力，用第一目標 + 2 ATR",
+    "rr1": 0.84,
+    "rr2": 1.35,
+    "distATR": 2.98
+   },
+   "status": "weak",
+   "label": "結構轉弱",
+   "why": [
+    "收盤在 MA20、MA60 之下，且MA20 下彎、收盤在 MA20 下方 3.0 ATR；先等止跌：不再破低、收盤站回 MA5，再看能否站上 MA20 679.65。",
+    "擋板：大盤空頭（指數收在 MA20、MA60 之下）。"
+   ],
+   "blockers": [
+    "大盤空頭（指數收在 MA20、MA60 之下）"
+   ],
+   "market": "TW",
+   "theme": "AI伺服器／散熱",
+   "earnings": {
+    "date": "2027-03-31",
+    "days": 97
+   }
+  },
+  "3324.TWO": {
+   "symbol": "3324.TWO",
+   "bars": 27,
+   "date": "2026-11-16",
+   "close": 1030.0,
+   "ma5": 1175.0,
+   "ma20": 1285.0,
+   "ma60": 1345.6,
+   "atr": 120.71,
+   "rsi": 34.6,
+   "volRatio": 0.81,
+   "dailyTrend": "空頭",
+   "weeklyTrend": "盤整",
+   "marketRegime": "BEAR",
+   "bias20": -19.84,
+   "historyNote": "支撐壓力只取得到最近 27 根日 K（約 7 週）；MA60 與週線趨勢取自 latest.json（2 年日 K）。",
+   "pullback": null,
+   "breakout": {
+    "trigger": 1285.0,
+    "triggerWhy": "MA20（下彎）＋日線擺盪低點 2026-10-27（跌破後轉壓力）＋日線擺盪高點 2026-11-11＋日線擺盪低點 2026-10-19（跌破後轉壓力）",
+    "volume": "量比 ≥ 1.5（以 20 日均量計），收盤在當日區間上 1/3",
+    "retest": false,
+    "retestWhy": "突破當天若超過觸發價 1 ATR 才需等回測",
+    "entry": 1285.0,
+    "entryWhy": "以觸發價計",
+    "stop": 1103.93,
+    "stopWhy": "觸發價 − 1.5 ATR（下方沒有紀錄內的支撐）",
+    "t1": 1345.6,
+    "t1Why": "MA60（2 年日 K 算的）",
+    "t2": 1515.0,
+    "t2Why": "日線擺盪高點 2026-10-21＋日線擺盪高點 2026-10-29＋近 20 日高",
+    "rr1": 0.33,
+    "rr2": 1.27,
+    "distATR": 2.11
+   },
+   "status": "weak",
+   "label": "結構轉弱",
+   "why": [
+    "收盤在 MA20、MA60 之下，且近 3 日創 20 日新低；先等止跌：不再破低、收盤站回 MA5，再看能否站上 MA20 1285.0。",
+    "擋板：大盤空頭（指數收在 MA20、MA60 之下）。"
+   ],
+   "blockers": [
+    "大盤空頭（指數收在 MA20、MA60 之下）"
+   ],
+   "market": "TW",
+   "theme": "AI伺服器／散熱",
+   "earnings": {
+    "date": "2027-03-31",
+    "days": 97
+   }
+  },
+  "3653.TW": {
+   "symbol": "3653.TW",
+   "bars": 27,
+   "date": "2026-11-16",
+   "close": 4815.0,
+   "ma5": 5556.0,
+   "ma20": 6004.5,
+   "ma60": 6070.92,
+   "atr": 602.14,
+   "rsi": 33.7,
+   "volRatio": 0.48,
+   "dailyTrend": "空頭",
+   "weeklyTrend": "盤整",
+   "marketRegime": "BEAR",
+   "bias20": -19.81,
+   "historyNote": "支撐壓力只取得到最近 27 根日 K（約 7 週）；MA60 與週線趨勢取自 latest.json（2 年日 K）。",
+   "pullback": null,
+   "breakout": {
+    "trigger": 4970.0,
+    "triggerWhy": "日線擺盪低點 2026-11-09（跌破後轉壓力）",
+    "volume": "量比 ≥ 1.5（以 20 日均量計），收盤在當日區間上 1/3",
+    "retest": false,
+    "retestWhy": "突破當天若超過觸發價 1 ATR 才需等回測",
+    "entry": 4970.0,
+    "entryWhy": "以觸發價計",
+    "stop": 4066.79,
+    "stopWhy": "觸發價 − 1.5 ATR（下方沒有紀錄內的支撐）",
+    "t1": 5710.0,
+    "t1Why": "日線擺盪低點 2026-10-27（跌破後轉壓力）",
+    "t2": 6004.5,
+    "t2Why": "MA20（下彎）＋MA60（2 年日 K 算的）",
+    "rr1": 0.82,
+    "rr2": 1.15,
+    "distATR": 0.26
+   },
+   "status": "weak",
+   "label": "結構轉弱",
+   "why": [
+    "收盤在 MA20、MA60 之下，且近 3 日創 20 日新低；先等止跌：不再破低、收盤站回 MA5，再看能否站上 MA20 6004.5。",
+    "擋板：大盤空頭（指數收在 MA20、MA60 之下）。"
+   ],
+   "blockers": [
+    "大盤空頭（指數收在 MA20、MA60 之下）"
+   ],
+   "market": "TW",
+   "theme": "AI伺服器／散熱",
+   "earnings": {
+    "date": "2027-03-31",
+    "days": 97
+   }
+  },
+  "3017.TW": {
+   "symbol": "3017.TW",
+   "bars": 27,
+   "date": "2026-11-16",
+   "close": 2740.0,
+   "ma5": 2877.0,
+   "ma20": 2966.5,
+   "ma60": 3205.5,
+   "atr": 244.29,
+   "rsi": 41.5,
+   "volRatio": 1.17,
+   "dailyTrend": "空頭",
+   "weeklyTrend": "盤整",
+   "marketRegime": "BEAR",
+   "bias20": -7.64,
+   "historyNote": "支撐壓力只取得到最近 27 根日 K（約 7 週）；MA60 與週線趨勢取自 latest.json（2 年日 K）。",
+   "pullback": {
+    "zone": [
+     2310.0,
+     2432.14
+    ],
+    "zoneWhy": "日線擺盪低點 2026-11-06＋日線擺盪低點 2026-11-09＋近 20 日低 2310.0 到上方 0.5 ATR",
+    "confirm": "近 3 日最低碰到區間，之後收盤站回 MA5、收盤高於前一日高點、量比 ≥ 1.0、RSI 回升",
+    "confirmState": {
+     "touch": false,
+     "aboveMA5": false,
+     "abovePrevHigh": false,
+     "volume": true,
+     "rsiUp": false
+    },
+    "entry": 2371.07,
+    "entryWhy": "區間中點",
+    "stop": 2187.86,
+    "stopWhy": "日線擺盪低點 2026-11-06＋日線擺盪低點 2026-11-09＋近 20 日低 下方 0.5 ATR",
+    "t1": 2966.5,
+    "t1Why": "MA20（下彎）",
+    "t2": 3050.0,
+    "t2Why": "日線擺盪低點 2026-10-15（跌破後轉壓力）",
+    "rr1": 3.25,
+    "rr2": 3.71
+   },
+   "breakout": {
+    "trigger": 2966.5,
+    "triggerWhy": "MA20（下彎）",
+    "volume": "量比 ≥ 1.5（以 20 日均量計），收盤在當日區間上 1/3",
+    "retest": false,
+    "retestWhy": "突破當天若超過觸發價 1 ATR 才需等回測",
+    "entry": 2966.5,
+    "entryWhy": "以觸發價計",
+    "stop": 2187.86,
+    "stopWhy": "日線擺盪低點 2026-11-06＋日線擺盪低點 2026-11-09＋近 20 日低 下方 0.5 ATR",
+    "t1": 3205.5,
+    "t1Why": "MA60（2 年日 K 算的）",
+    "t2": 3450.0,
+    "t2Why": "日線擺盪高點 2026-10-21＋近 20 日高",
+    "rr1": 0.31,
+    "rr2": 0.62,
+    "distATR": 0.93
+   },
+   "status": "weak",
+   "label": "結構轉弱",
+   "why": [
+    "收盤在 MA20、MA60 之下，且MA20 下彎、收盤在 MA20 下方 0.9 ATR；先等止跌：不再破低、收盤站回 MA5，再看能否站上 MA20 2966.5。",
+    "擋板：大盤空頭（指數收在 MA20、MA60 之下）。"
+   ],
+   "blockers": [
+    "大盤空頭（指數收在 MA20、MA60 之下）"
+   ],
+   "market": "TW",
+   "theme": "AI伺服器／散熱",
+   "earnings": {
+    "date": "2027-03-31",
+    "days": 97
+   }
+  },
+  "3189.TW": {
+   "symbol": "3189.TW",
+   "bars": 27,
+   "date": "2026-11-16",
+   "close": 602.0,
+   "ma5": 684.6,
+   "ma20": 842.55,
+   "ma60": 883.35,
+   "atr": 73.21,
+   "rsi": 24.7,
+   "volRatio": 0.23,
+   "dailyTrend": "空頭",
+   "weeklyTrend": "盤整",
+   "marketRegime": "BEAR",
+   "bias20": -28.55,
+   "historyNote": "支撐壓力只取得到最近 27 根日 K（約 7 週）；MA60 與週線趨勢取自 latest.json（2 年日 K）。",
+   "pullback": null,
+   "breakout": {
+    "trigger": 666.0,
+    "triggerWhy": "日線擺盪低點 2026-11-06（跌破後轉壓力）＋日線擺盪低點 2026-11-09（跌破後轉壓力）",
+    "volume": "量比 ≥ 1.5（以 20 日均量計），收盤在當日區間上 1/3",
+    "retest": false,
+    "retestWhy": "突破當天若超過觸發價 1 ATR 才需等回測",
+    "entry": 666.0,
+    "entryWhy": "以觸發價計",
+    "stop": 556.18,
+    "stopWhy": "觸發價 − 1.5 ATR（下方沒有紀錄內的支撐）",
+    "t1": 842.55,
+    "t1Why": "MA20（下彎）",
+    "t2": 883.35,
+    "t2Why": "MA60（2 年日 K 算的）",
+    "rr1": 1.61,
+    "rr2": 1.98,
+    "distATR": 0.87
+   },
+   "status": "weak",
+   "label": "結構轉弱",
+   "why": [
+    "收盤在 MA20、MA60 之下，且近 3 日創 20 日新低；先等止跌：不再破低、收盤站回 MA5，再看能否站上 MA20 842.55。",
+    "擋板：大盤空頭（指數收在 MA20、MA60 之下）。"
+   ],
+   "blockers": [
+    "大盤空頭（指數收在 MA20、MA60 之下）"
+   ],
+   "market": "TW",
+   "theme": "PCB／載板",
+   "earnings": {
+    "date": "2027-03-31",
+    "days": 97
+   }
+  },
+  "3037.TW": {
+   "symbol": "3037.TW",
+   "bars": 27,
+   "date": "2026-11-16",
+   "close": 707.0,
+   "ma5": 795.2,
+   "ma20": 934.05,
+   "ma60": 1040.57,
+   "atr": 81.93,
+   "rsi": 25.7,
+   "volRatio": 0.84,
+   "dailyTrend": "空頭",
+   "weeklyTrend": "盤整",
+   "marketRegime": "BEAR",
+   "bias20": -24.31,
+   "historyNote": "支撐壓力只取得到最近 27 根日 K（約 7 週）；MA60 與週線趨勢取自 latest.json（2 年日 K）。",
+   "pullback": null,
+   "breakout": {
+    "trigger": 934.05,
+    "triggerWhy": "MA20（下彎）",
+    "volume": "量比 ≥ 1.5（以 20 日均量計），收盤在當日區間上 1/3",
+    "retest": false,
+    "retestWhy": "突破當天若超過觸發價 1 ATR 才需等回測",
+    "entry": 934.05,
+    "entryWhy": "以觸發價計",
+    "stop": 811.16,
+    "stopWhy": "觸發價 − 1.5 ATR（下方沒有紀錄內的支撐）",
+    "t1": 1040.0,
+    "t1Why": "日線擺盪低點 2026-10-19（跌破後轉壓力）＋MA60（2 年日 K 算的）",
+    "t2": 1180.0,
+    "t2Why": "日線擺盪高點 2026-10-22＋近 20 日高",
+    "rr1": 0.86,
+    "rr2": 2.0,
+    "distATR": 2.77
+   },
+   "status": "weak",
+   "label": "結構轉弱",
+   "why": [
+    "收盤在 MA20、MA60 之下，且近 3 日創 20 日新低；先等止跌：不再破低、收盤站回 MA5，再看能否站上 MA20 934.05。",
+    "擋板：大盤空頭（指數收在 MA20、MA60 之下）。"
+   ],
+   "blockers": [
+    "大盤空頭（指數收在 MA20、MA60 之下）"
+   ],
+   "market": "TW",
+   "theme": "PCB／載板",
+   "earnings": {
+    "date": "2027-03-31",
+    "days": 97
+   }
+  },
+  "8046.TW": {
+   "symbol": "8046.TW",
+   "bars": 27,
+   "date": "2026-11-16",
+   "close": 880.0,
+   "ma5": 982.8,
+   "ma20": 1128.95,
+   "ma60": 1196.07,
+   "atr": 97.64,
+   "rsi": 28.8,
+   "volRatio": 0.66,
+   "dailyTrend": "空頭",
+   "weeklyTrend": "盤整",
+   "marketRegime": "BEAR",
+   "bias20": -22.05,
+   "historyNote": "支撐壓力只取得到最近 27 根日 K（約 7 週）；MA60 與週線趨勢取自 latest.json（2 年日 K）。",
+   "pullback": {
+    "zone": [
+     867.0,
+     880.0
+    ],
+    "zoneWhy": "日線擺盪低點 2026-11-09＋近 20 日低 867.0 到上方 0.5 ATR",
+    "confirm": "近 3 日最低碰到區間，之後收盤站回 MA5、收盤高於前一日高點、量比 ≥ 1.0、RSI 回升",
+    "confirmState": {
+     "touch": true,
+     "aboveMA5": false,
+     "abovePrevHigh": false,
+     "volume": false,
+     "rsiUp": false
+    },
+    "entry": 873.5,
+    "entryWhy": "區間中點",
+    "stop": 818.18,
+    "stopWhy": "日線擺盪低點 2026-11-09＋近 20 日低 下方 0.5 ATR",
+    "t1": 1080.0,
+    "t1Why": "日線擺盪高點 2026-11-11",
+    "t2": 1128.95,
+    "t2Why": "MA20（下彎）",
+    "rr1": 3.73,
+    "rr2": 4.62
+   },
+   "breakout": {
+    "trigger": 1080.0,
+    "triggerWhy": "日線擺盪高點 2026-11-11",
+    "volume": "量比 ≥ 1.5（以 20 日均量計），收盤在當日區間上 1/3",
+    "retest": false,
+    "retestWhy": "突破當天若超過觸發價 1 ATR 才需等回測",
+    "entry": 1080.0,
+    "entryWhy": "以觸發價計",
+    "stop": 818.18,
+    "stopWhy": "日線擺盪低點 2026-11-09＋近 20 日低 下方 0.5 ATR",
+    "t1": 1128.95,
+    "t1Why": "MA20（下彎）",
+    "t2": 1196.07,
+    "t2Why": "MA60（2 年日 K 算的）",
+    "rr1": 0.19,
+    "rr2": 0.44,
+    "distATR": 2.05
+   },
+   "status": "weak",
+   "label": "結構轉弱",
+   "why": [
+    "收盤在 MA20、MA60 之下，且MA20 下彎、收盤在 MA20 下方 2.5 ATR；先等止跌：不再破低、收盤站回 MA5，再看能否站上 MA20 1128.95。",
+    "擋板：大盤空頭（指數收在 MA20、MA60 之下）。"
+   ],
+   "blockers": [
+    "大盤空頭（指數收在 MA20、MA60 之下）"
+   ],
+   "market": "TW",
+   "theme": "PCB／載板",
+   "earnings": {
+    "date": "2027-03-31",
+    "days": 97
+   }
+  },
+  "8358.TWO": {
+   "symbol": "8358.TWO",
+   "bars": 27,
+   "date": "2026-11-16",
+   "close": 339.0,
+   "ma5": 367.7,
+   "ma20": 400.25,
+   "ma60": 464.25,
+   "atr": 35.71,
+   "rsi": 35.5,
+   "volRatio": 0.86,
+   "dailyTrend": "空頭",
+   "weeklyTrend": "空頭",
+   "marketRegime": "BEAR",
+   "bias20": -15.3,
+   "historyNote": "支撐壓力只取得到最近 27 根日 K（約 7 週）；MA60 與週線趨勢取自 latest.json（2 年日 K）。",
+   "pullback": {
+    "zone": [
+     301.0,
+     318.86
+    ],
+    "zoneWhy": "日線擺盪低點 2026-11-06＋近 20 日低 301.0 到上方 0.5 ATR",
+    "confirm": "近 3 日最低碰到區間，之後收盤站回 MA5、收盤高於前一日高點、量比 ≥ 1.0、RSI 回升",
+    "confirmState": {
+     "touch": false,
+     "aboveMA5": false,
+     "abovePrevHigh": false,
+     "volume": false,
+     "rsiUp": false
+    },
+    "entry": 309.93,
+    "entryWhy": "區間中點",
+    "stop": 283.14,
+    "stopWhy": "日線擺盪低點 2026-11-06＋近 20 日低 下方 0.5 ATR",
+    "t1": 399.5,
+    "t1Why": "日線擺盪低點 2026-10-27（跌破後轉壓力）＋MA20（下彎）",
+    "t2": 464.25,
+    "t2Why": "MA60（2 年日 K 算的）",
+    "rr1": 3.34,
+    "rr2": 5.76
+   },
+   "breakout": {
+    "trigger": 399.5,
+    "triggerWhy": "日線擺盪低點 2026-10-27（跌破後轉壓力）＋MA20（下彎）",
+    "volume": "量比 ≥ 1.5（以 20 日均量計），收盤在當日區間上 1/3",
+    "retest": true,
+    "retestWhy": "週線空頭",
+    "entry": 399.5,
+    "entryWhy": "以觸發價計",
+    "stop": 283.14,
+    "stopWhy": "日線擺盪低點 2026-11-06＋近 20 日低 下方 0.5 ATR",
+    "t1": 464.25,
+    "t1Why": "MA60（2 年日 K 算的）",
+    "t2": 510.0,
+    "t2Why": "日線擺盪高點 2026-10-20＋近 20 日高",
+    "rr1": 0.56,
+    "rr2": 0.95,
+    "distATR": 1.69
+   },
+   "status": "weak",
+   "label": "結構轉弱",
+   "why": [
+    "收盤在 MA20、MA60 之下，且MA20 下彎、收盤在 MA20 下方 1.7 ATR；先等止跌：不再破低、收盤站回 MA5，再看能否站上 MA20 400.25。",
+    "擋板：大盤空頭（指數收在 MA20、MA60 之下）。"
+   ],
+   "blockers": [
+    "大盤空頭（指數收在 MA20、MA60 之下）"
+   ],
+   "market": "TW",
+   "theme": "PCB／載板",
+   "earnings": {
+    "date": "2027-03-31",
+    "days": 97
+   }
+  },
+  "4958.TW": {
+   "symbol": "4958.TW",
+   "bars": 27,
+   "date": "2026-11-16",
+   "close": 396.0,
+   "ma5": 431.5,
+   "ma20": 478.38,
+   "ma60": 494.86,
+   "atr": 38.25,
+   "rsi": 36.5,
+   "volRatio": 0.82,
+   "dailyTrend": "空頭",
+   "weeklyTrend": "空頭",
+   "marketRegime": "BEAR",
+   "bias20": -17.22,
+   "historyNote": "支撐壓力只取得到最近 27 根日 K（約 7 週）；MA60 與週線趨勢取自 latest.json（2 年日 K）。",
+   "pullback": {
+    "zone": [
+     355.0,
+     374.12
+    ],
+    "zoneWhy": "日線擺盪低點 2026-11-06＋近 20 日低 355.0 到上方 0.5 ATR",
+    "confirm": "近 3 日最低碰到區間，之後收盤站回 MA5、收盤高於前一日高點、量比 ≥ 1.0、RSI 回升",
+    "confirmState": {
+     "touch": false,
+     "aboveMA5": false,
+     "abovePrevHigh": false,
+     "volume": false,
+     "rsiUp": false
+    },
+    "entry": 364.56,
+    "entryWhy": "區間中點",
+    "stop": 335.88,
+    "stopWhy": "日線擺盪低點 2026-11-06＋近 20 日低 下方 0.5 ATR",
+    "t1": 478.38,
+    "t1Why": "MA20（下彎）",
+    "t2": 494.86,
+    "t2Why": "MA60（2 年日 K 算的）",
+    "rr1": 3.97,
+    "rr2": 4.54
+   },
+   "breakout": {
+    "trigger": 478.38,
+    "triggerWhy": "MA20（下彎）",
+    "volume": "量比 ≥ 1.5（以 20 日均量計），收盤在當日區間上 1/3",
+    "retest": true,
+    "retestWhy": "週線空頭",
+    "entry": 478.38,
+    "entryWhy": "以觸發價計",
+    "stop": 335.88,
+    "stopWhy": "日線擺盪低點 2026-11-06＋近 20 日低 下方 0.5 ATR",
+    "t1": 518.0,
+    "t1Why": "日線擺盪低點 2026-10-15（跌破後轉壓力）",
+    "t2": 614.0,
+    "t2Why": "日線擺盪高點 2026-10-22＋近 20 日高",
+    "rr1": 0.28,
+    "rr2": 0.95,
+    "distATR": 2.15
+   },
+   "status": "weak",
+   "label": "結構轉弱",
+   "why": [
+    "收盤在 MA20、MA60 之下，且MA20 下彎、收盤在 MA20 下方 2.2 ATR；先等止跌：不再破低、收盤站回 MA5，再看能否站上 MA20 478.38。",
+    "擋板：大盤空頭（指數收在 MA20、MA60 之下）。"
+   ],
+   "blockers": [
+    "大盤空頭（指數收在 MA20、MA60 之下）"
+   ],
+   "market": "TW",
+   "theme": "PCB／載板",
+   "earnings": {
+    "date": "2027-03-31",
+    "days": 97
+   }
+  },
+  "6213.TW": {
+   "symbol": "6213.TW",
+   "bars": 27,
+   "date": "2026-11-16",
+   "close": 480.0,
+   "ma5": 528.6,
+   "ma20": 646.9,
+   "ma60": 616.19,
+   "atr": 63.68,
+   "rsi": 33.6,
+   "volRatio": 0.65,
+   "dailyTrend": "盤整",
+   "weeklyTrend": "盤整",
+   "marketRegime": "BEAR",
+   "bias20": -25.8,
+   "historyNote": "支撐壓力只取得到最近 27 根日 K（約 7 週）；MA60 與週線趨勢取自 latest.json（2 年日 K）。",
+   "pullback": null,
+   "breakout": {
+    "trigger": 616.19,
+    "triggerWhy": "MA60（2 年日 K 算的）",
+    "volume": "量比 ≥ 1.5（以 20 日均量計），收盤在當日區間上 1/3",
+    "retest": false,
+    "retestWhy": "突破當天若超過觸發價 1 ATR 才需等回測",
+    "entry": 616.19,
+    "entryWhy": "以觸發價計",
+    "stop": 520.67,
+    "stopWhy": "觸發價 − 1.5 ATR（下方沒有紀錄內的支撐）",
+    "t1": 721.0,
+    "t1Why": "日線擺盪低點 2026-10-19（跌破後轉壓力）＋日線擺盪低點 2026-10-13（跌破後轉壓力）",
+    "t2": 858.0,
+    "t2Why": "日線擺盪高點 2026-10-14",
+    "rr1": 1.1,
+    "rr2": 2.53,
+    "distATR": 2.14
+   },
+   "status": "weak",
+   "label": "結構轉弱",
+   "why": [
+    "收盤在 MA20、MA60 之下，且近 3 日創 20 日新低；先等止跌：不再破低、收盤站回 MA5，再看能否站上 MA20 646.9。",
+    "擋板：大盤空頭（指數收在 MA20、MA60 之下）。"
+   ],
+   "blockers": [
+    "大盤空頭（指數收在 MA20、MA60 之下）"
+   ],
+   "market": "TW",
+   "theme": "CCL／材料",
+   "earnings": {
+    "date": "2027-03-31",
+    "days": 97
+   }
+  },
+  "2383.TW": {
+   "symbol": "2383.TW",
+   "bars": 27,
+   "date": "2026-11-16",
+   "close": 3795.0,
+   "ma5": 4196.0,
+   "ma20": 4564.25,
+   "ma60": 5118.0,
+   "atr": 391.79,
+   "rsi": 32.3,
+   "volRatio": 0.88,
+   "dailyTrend": "空頭",
+   "weeklyTrend": "空頭",
+   "marketRegime": "BEAR",
+   "bias20": -16.85,
+   "historyNote": "支撐壓力只取得到最近 27 根日 K（約 7 週）；MA60 與週線趨勢取自 latest.json（2 年日 K）。",
+   "pullback": {
+    "zone": [
+     3690.0,
+     3795.0
+    ],
+    "zoneWhy": "日線擺盪低點 2026-11-06＋近 20 日低 3690.0 到上方 0.5 ATR",
+    "confirm": "近 3 日最低碰到區間，之後收盤站回 MA5、收盤高於前一日高點、量比 ≥ 1.0、RSI 回升",
+    "confirmState": {
+     "touch": true,
+     "aboveMA5": false,
+     "abovePrevHigh": false,
+     "volume": false,
+     "rsiUp": false
+    },
+    "entry": 3742.5,
+    "entryWhy": "區間中點",
+    "stop": 3494.11,
+    "stopWhy": "日線擺盪低點 2026-11-06＋近 20 日低 下方 0.5 ATR",
+    "t1": 4564.25,
+    "t1Why": "MA20（下彎）＋日線擺盪高點 2026-11-11",
+    "t2": 4930.0,
+    "t2Why": "日線擺盪低點 2026-10-20（跌破後轉壓力）",
+    "rr1": 3.31,
+    "rr2": 4.78
+   },
+   "breakout": {
+    "trigger": 4564.25,
+    "triggerWhy": "MA20（下彎）＋日線擺盪高點 2026-11-11",
+    "volume": "量比 ≥ 1.5（以 20 日均量計），收盤在當日區間上 1/3",
+    "retest": true,
+    "retestWhy": "週線空頭",
+    "entry": 4564.25,
+    "entryWhy": "以觸發價計",
+    "stop": 3494.11,
+    "stopWhy": "日線擺盪低點 2026-11-06＋近 20 日低 下方 0.5 ATR",
+    "t1": 4930.0,
+    "t1Why": "日線擺盪低點 2026-10-20（跌破後轉壓力）",
+    "t2": 5118.0,
+    "t2Why": "MA60（2 年日 K 算的）",
+    "rr1": 0.34,
+    "rr2": 0.52,
+    "distATR": 1.96
+   },
+   "status": "weak",
+   "label": "結構轉弱",
+   "why": [
+    "收盤在 MA20、MA60 之下，且MA20 下彎、收盤在 MA20 下方 2.0 ATR；先等止跌：不再破低、收盤站回 MA5，再看能否站上 MA20 4564.25。",
+    "擋板：大盤空頭（指數收在 MA20、MA60 之下）。"
+   ],
+   "blockers": [
+    "大盤空頭（指數收在 MA20、MA60 之下）"
+   ],
+   "market": "TW",
+   "theme": "CCL／材料",
+   "earnings": {
+    "date": "2027-03-31",
+    "days": 97
+   }
+  },
+  "6274.TW": {
+   "symbol": "6274.TW",
+   "bars": 0,
+   "date": null,
+   "status": "nodata",
+   "label": "資料不足",
+   "why": [
+    "可用日 K 只有 0 根（至少要 20 根），不算價位。"
+   ],
+   "market": "TW",
+   "theme": "CCL／材料"
+  },
+  "1303.TW": {
+   "symbol": "1303.TW",
+   "bars": 27,
+   "date": "2026-11-16",
+   "close": 274.0,
+   "ma5": 294.6,
+   "ma20": 290.98,
+   "ma60": 260.87,
+   "atr": 25.82,
+   "rsi": 46.7,
+   "volRatio": 0.93,
+   "dailyTrend": "盤整",
+   "weeklyTrend": "盤整",
+   "marketRegime": "BEAR",
+   "bias20": -5.83,
+   "historyNote": "支撐壓力只取得到最近 27 根日 K（約 7 週）；MA60 與週線趨勢取自 latest.json（2 年日 K）。",
+   "pullback": {
+    "zone": [
+     260.87,
+     273.78
+    ],
+    "zoneWhy": "MA60（2 年日 K 算的） 260.87 到上方 0.5 ATR",
+    "confirm": "近 3 日最低碰到區間，之後收盤站回 MA5、收盤高於前一日高點、量比 ≥ 1.0、RSI 回升",
+    "confirmState": {
+     "touch": false,
+     "aboveMA5": false,
+     "abovePrevHigh": false,
+     "volume": false,
+     "rsiUp": false
+    },
+    "entry": 267.32,
+    "entryWhy": "區間中點",
+    "stop": 247.96,
+    "stopWhy": "MA60（2 年日 K 算的） 下方 0.5 ATR",
+    "t1": 290.98,
+    "t1Why": "MA20（下彎）＋日線擺盪低點 2026-10-20（跌破後轉壓力）",
+    "t2": 325.0,
+    "t2Why": "日線擺盪高點 2026-10-29＋日線擺盪高點 2026-10-21＋近 20 日高",
+    "rr1": 1.22,
+    "rr2": 2.98
+   },
+   "breakout": {
+    "trigger": 290.98,
+    "triggerWhy": "MA20（下彎）＋日線擺盪低點 2026-10-20（跌破後轉壓力）",
+    "volume": "量比 ≥ 1.5（以 20 日均量計），收盤在當日區間上 1/3",
+    "retest": false,
+    "retestWhy": "突破當天若超過觸發價 1 ATR 才需等回測",
+    "entry": 290.98,
+    "entryWhy": "以觸發價計",
+    "stop": 247.96,
+    "stopWhy": "MA60（2 年日 K 算的） 下方 0.5 ATR",
+    "t1": 325.0,
+    "t1Why": "日線擺盪高點 2026-10-29＋日線擺盪高點 2026-10-21＋近 20 日高",
+    "t2": 350.5,
+    "t2Why": "日線擺盪高點 2026-10-14",
+    "rr1": 0.79,
+    "rr2": 1.38,
+    "distATR": 0.66
+   },
+   "status": "breakout",
+   "label": "等待突破確認",
+   "why": [
+    "收盤在觸發價 290.98（MA20（下彎）＋日線擺盪低點 2026-10-20（跌破後轉壓力））下方 0.66 ATR，等帶量站上。",
+    "以觸發價計報酬風險比只有 0.79（失效價在 247.96），突破當下也不追；要等突破後回測形成更高的低點再重算。",
+    "擋板：大盤空頭（指數收在 MA20、MA60 之下）。"
+   ],
+   "blockers": [
+    "大盤空頭（指數收在 MA20、MA60 之下）"
+   ],
+   "market": "TW",
+   "theme": "CCL／材料",
+   "earnings": {
+    "date": "2027-03-31",
+    "days": 97
+   }
+  },
+  "2408.TW": {
+   "symbol": "2408.TW",
+   "bars": 27,
+   "date": "2026-11-16",
+   "close": 340.0,
+   "ma5": 374.7,
+   "ma20": 409.3,
+   "ma60": 474.68,
+   "atr": 35.82,
+   "rsi": 32.0,
+   "volRatio": 0.9,
+   "dailyTrend": "空頭",
+   "weeklyTrend": "盤整",
+   "marketRegime": "BEAR",
+   "bias20": -16.93,
+   "historyNote": "支撐壓力只取得到最近 27 根日 K（約 7 週）；MA60 與週線趨勢取自 latest.json（2 年日 K）。",
+   "pullback": {
+    "zone": [
+     324.0,
+     340.0
+    ],
+    "zoneWhy": "日線擺盪低點 2026-11-06＋近 20 日低 324.0 到上方 0.5 ATR",
+    "confirm": "近 3 日最低碰到區間，之後收盤站回 MA5、收盤高於前一日高點、量比 ≥ 1.0、RSI 回升",
+    "confirmState": {
+     "touch": true,
+     "aboveMA5": false,
+     "abovePrevHigh": false,
+     "volume": false,
+     "rsiUp": false
+    },
+    "entry": 332.0,
+    "entryWhy": "區間中點",
+    "stop": 306.09,
+    "stopWhy": "日線擺盪低點 2026-11-06＋近 20 日低 下方 0.5 ATR",
+    "t1": 409.3,
+    "t1Why": "MA20（下彎）＋日線擺盪低點 2026-10-22（跌破後轉壓力）",
+    "t2": 474.68,
+    "t2Why": "MA60（2 年日 K 算的）",
+    "rr1": 2.98,
+    "rr2": 5.51
+   },
+   "breakout": {
+    "trigger": 409.3,
+    "triggerWhy": "MA20（下彎）＋日線擺盪低點 2026-10-22（跌破後轉壓力）",
+    "volume": "量比 ≥ 1.5（以 20 日均量計），收盤在當日區間上 1/3",
+    "retest": false,
+    "retestWhy": "突破當天若超過觸發價 1 ATR 才需等回測",
+    "entry": 409.3,
+    "entryWhy": "以觸發價計",
+    "stop": 306.09,
+    "stopWhy": "日線擺盪低點 2026-11-06＋近 20 日低 下方 0.5 ATR",
+    "t1": 474.68,
+    "t1Why": "MA60（2 年日 K 算的）",
+    "t2": 497.5,
+    "t2Why": "日線擺盪高點 2026-10-29＋近 20 日高",
+    "rr1": 0.63,
+    "rr2": 0.85,
+    "distATR": 1.93
+   },
+   "status": "weak",
+   "label": "結構轉弱",
+   "why": [
+    "收盤在 MA20、MA60 之下，且MA20 下彎、收盤在 MA20 下方 1.9 ATR；先等止跌：不再破低、收盤站回 MA5，再看能否站上 MA20 409.3。",
+    "擋板：大盤空頭（指數收在 MA20、MA60 之下）。"
+   ],
+   "blockers": [
+    "大盤空頭（指數收在 MA20、MA60 之下）"
+   ],
+   "market": "TW",
+   "theme": "記憶體",
+   "earnings": {
+    "date": "2027-03-31",
+    "days": 97
+   }
+  },
+  "6770.TW": {
+   "symbol": "6770.TW",
+   "bars": 34,
+   "date": "2026-11-16",
+   "close": 53.7,
+   "ma5": 56.9,
+   "ma20": 62.02,
+   "ma60": 68.06,
+   "atr": 4.31,
+   "rsi": 34.0,
+   "volRatio": 0.73,
+   "dailyTrend": "空頭",
+   "weeklyTrend": "空頭",
+   "marketRegime": "BEAR",
+   "bias20": -13.42,
+   "historyNote": "支撐壓力只取得到最近 34 根日 K（約 9 週）；MA60 與週線趨勢取自 latest.json（2 年日 K）。",
+   "pullback": {
+    "zone": [
+     49.35,
+     51.51
+    ],
+    "zoneWhy": "日線擺盪低點 2026-11-06＋近 20 日低 49.35 到上方 0.5 ATR",
+    "confirm": "近 3 日最低碰到區間，之後收盤站回 MA5、收盤高於前一日高點、量比 ≥ 1.0、RSI 回升",
+    "confirmState": {
+     "touch": false,
+     "aboveMA5": false,
+     "abovePrevHigh": false,
+     "volume": false,
+     "rsiUp": false
+    },
+    "entry": 50.43,
+    "entryWhy": "區間中點",
+    "stop": 47.19,
+    "stopWhy": "日線擺盪低點 2026-11-06＋近 20 日低 下方 0.5 ATR",
+    "t1": 62.02,
+    "t1Why": "MA20（下彎）＋日線擺盪高點 2026-11-10＋日線擺盪低點 2026-10-19（跌破後轉壓力）",
+    "t2": 68.06,
+    "t2Why": "MA60（2 年日 K 算的）",
+    "rr1": 3.59,
+    "rr2": 5.46
+   },
+   "breakout": {
+    "trigger": 62.02,
+    "triggerWhy": "MA20（下彎）＋日線擺盪高點 2026-11-10＋日線擺盪低點 2026-10-19（跌破後轉壓力）",
+    "volume": "量比 ≥ 1.5（以 20 日均量計），收盤在當日區間上 1/3",
+    "retest": true,
+    "retestWhy": "週線空頭",
+    "entry": 62.02,
+    "entryWhy": "以觸發價計",
+    "stop": 47.19,
+    "stopWhy": "日線擺盪低點 2026-11-06＋近 20 日低 下方 0.5 ATR",
+    "t1": 68.06,
+    "t1Why": "MA60（2 年日 K 算的）",
+    "t2": 73.0,
+    "t2Why": "日線擺盪高點 2026-10-29＋近 20 日高",
+    "rr1": 0.41,
+    "rr2": 0.74,
+    "distATR": 1.93
+   },
+   "status": "weak",
+   "label": "結構轉弱",
+   "why": [
+    "收盤在 MA20、MA60 之下，且MA20 下彎、收盤在 MA20 下方 1.9 ATR；先等止跌：不再破低、收盤站回 MA5，再看能否站上 MA20 62.02。",
+    "擋板：大盤空頭（指數收在 MA20、MA60 之下）。"
+   ],
+   "blockers": [
+    "大盤空頭（指數收在 MA20、MA60 之下）"
+   ],
+   "market": "TW",
+   "theme": "記憶體",
+   "earnings": {
+    "date": "2027-03-31",
+    "days": 97
+   }
+  },
+  "3481.TW": {
+   "symbol": "3481.TW",
+   "bars": 34,
+   "date": "2026-11-16",
+   "close": 36.3,
+   "ma5": 38.98,
+   "ma20": 42.71,
+   "ma60": 47.04,
+   "atr": 3.25,
+   "rsi": 35.5,
+   "volRatio": 1.13,
+   "dailyTrend": "空頭",
+   "weeklyTrend": "空頭",
+   "marketRegime": "BEAR",
+   "bias20": -15.01,
+   "historyNote": "支撐壓力只取得到最近 34 根日 K（約 9 週）；MA60 與週線趨勢取自 latest.json（2 年日 K）。",
+   "pullback": {
+    "zone": [
+     34.2,
+     35.83
+    ],
+    "zoneWhy": "日線擺盪低點 2026-11-06＋近 20 日低 34.2 到上方 0.5 ATR",
+    "confirm": "近 3 日最低碰到區間，之後收盤站回 MA5、收盤高於前一日高點、量比 ≥ 1.0、RSI 回升",
+    "confirmState": {
+     "touch": false,
+     "aboveMA5": false,
+     "abovePrevHigh": false,
+     "volume": true,
+     "rsiUp": false
+    },
+    "entry": 35.01,
+    "entryWhy": "區間中點",
+    "stop": 32.58,
+    "stopWhy": "日線擺盪低點 2026-11-06＋近 20 日低 下方 0.5 ATR",
+    "t1": 42.71,
+    "t1Why": "MA20（下彎）",
+    "t2": 45.65,
+    "t2Why": "日線擺盪低點 2026-10-19（跌破後轉壓力）",
+    "rr1": 3.16,
+    "rr2": 4.36
+   },
+   "breakout": {
+    "trigger": 42.71,
+    "triggerWhy": "MA20（下彎）",
+    "volume": "量比 ≥ 1.5（以 20 日均量計），收盤在當日區間上 1/3",
+    "retest": true,
+    "retestWhy": "週線空頭",
+    "entry": 42.71,
+    "entryWhy": "以觸發價計",
+    "stop": 32.58,
+    "stopWhy": "日線擺盪低點 2026-11-06＋近 20 日低 下方 0.5 ATR",
+    "t1": 45.65,
+    "t1Why": "日線擺盪低點 2026-10-19（跌破後轉壓力）",
+    "t2": 47.04,
+    "t2Why": "MA60（2 年日 K 算的）",
+    "rr1": 0.29,
+    "rr2": 0.43,
+    "distATR": 1.97
+   },
+   "status": "weak",
+   "label": "結構轉弱",
+   "why": [
+    "收盤在 MA20、MA60 之下，且MA20 下彎、收盤在 MA20 下方 2.0 ATR；先等止跌：不再破低、收盤站回 MA5，再看能否站上 MA20 42.71。",
+    "擋板：大盤空頭（指數收在 MA20、MA60 之下）。"
+   ],
+   "blockers": [
+    "大盤空頭（指數收在 MA20、MA60 之下）"
+   ],
+   "market": "TW",
+   "theme": "光電／CPO",
+   "earnings": {
+    "date": "2027-03-31",
+    "days": 97
+   }
+  },
+  "3406.TW": {
+   "symbol": "3406.TW",
+   "bars": 27,
+   "date": "2026-11-16",
+   "close": 889.0,
+   "ma5": 951.2,
+   "ma20": 1027.4,
+   "ma60": 977.28,
+   "atr": 99.79,
+   "rsi": 45.7,
+   "volRatio": 1.17,
+   "dailyTrend": "盤整",
+   "weeklyTrend": "盤整",
+   "marketRegime": "BEAR",
+   "bias20": -13.47,
+   "historyNote": "支撐壓力只取得到最近 27 根日 K（約 7 週）；MA60 與週線趨勢取自 latest.json（2 年日 K）。",
+   "pullback": {
+    "zone": [
+     762.0,
+     811.89
+    ],
+    "zoneWhy": "日線擺盪低點 2026-11-06＋近 20 日低 762.0 到上方 0.5 ATR",
+    "confirm": "近 3 日最低碰到區間，之後收盤站回 MA5、收盤高於前一日高點、量比 ≥ 1.0、RSI 回升",
+    "confirmState": {
+     "touch": false,
+     "aboveMA5": false,
+     "abovePrevHigh": false,
+     "volume": true,
+     "rsiUp": false
+    },
+    "entry": 786.95,
+    "entryWhy": "區間中點",
+    "stop": 712.11,
+    "stopWhy": "日線擺盪低點 2026-11-06＋近 20 日低 下方 0.5 ATR",
+    "t1": 977.28,
+    "t1Why": "MA60（2 年日 K 算的）＋日線擺盪低點 2026-10-19（跌破後轉壓力）",
+    "t2": 1027.4,
+    "t2Why": "MA20（下彎）",
+    "rr1": 2.54,
+    "rr2": 3.21
+   },
+   "breakout": {
+    "trigger": 977.28,
+    "triggerWhy": "MA60（2 年日 K 算的）＋日線擺盪低點 2026-10-19（跌破後轉壓力）",
+    "volume": "量比 ≥ 1.5（以 20 日均量計），收盤在當日區間上 1/3",
+    "retest": false,
+    "retestWhy": "突破當天若超過觸發價 1 ATR 才需等回測",
+    "entry": 977.28,
+    "entryWhy": "以觸發價計",
+    "stop": 712.11,
+    "stopWhy": "日線擺盪低點 2026-11-06＋近 20 日低 下方 0.5 ATR",
+    "t1": 1027.4,
+    "t1Why": "MA20（下彎）",
+    "t2": 1220.0,
+    "t2Why": "日線擺盪高點 2026-10-16",
+    "rr1": 0.19,
+    "rr2": 0.92,
+    "distATR": 0.88
+   },
+   "status": "weak",
+   "label": "結構轉弱",
+   "why": [
+    "收盤在 MA20、MA60 之下，且MA20 下彎、收盤在 MA20 下方 1.4 ATR；先等止跌：不再破低、收盤站回 MA5，再看能否站上 MA20 1027.4。",
+    "擋板：大盤空頭（指數收在 MA20、MA60 之下）。"
+   ],
+   "blockers": [
+    "大盤空頭（指數收在 MA20、MA60 之下）"
+   ],
+   "market": "TW",
+   "theme": "光電／CPO",
+   "earnings": {
+    "date": "2027-03-31",
+    "days": 97
+   }
+  },
+  "2439.TW": {
+   "symbol": "2439.TW",
+   "bars": 0,
+   "date": null,
+   "status": "nodata",
+   "label": "資料不足",
+   "why": [
+    "可用日 K 只有 0 根（至少要 20 根），不算價位。"
+   ],
+   "market": "TW",
+   "theme": "AI眼鏡"
+  },
+  "2327.TW": {
+   "symbol": "2327.TW",
+   "bars": 27,
+   "date": "2026-11-16",
+   "close": 374.0,
+   "ma5": 406.6,
+   "ma20": 467.45,
+   "ma60": 537.08,
+   "atr": 35.71,
+   "rsi": 27.2,
+   "volRatio": 1.18,
+   "dailyTrend": "空頭",
+   "weeklyTrend": "空頭",
+   "marketRegime": "BEAR",
+   "bias20": -19.99,
+   "historyNote": "支撐壓力只取得到最近 27 根日 K（約 7 週）；MA60 與週線趨勢取自 latest.json（2 年日 K）。",
+   "pullback": {
+    "zone": [
+     364.5,
+     374.0
+    ],
+    "zoneWhy": "日線擺盪低點 2026-11-06＋近 20 日低 364.5 到上方 0.5 ATR",
+    "confirm": "近 3 日最低碰到區間，之後收盤站回 MA5、收盤高於前一日高點、量比 ≥ 1.0、RSI 回升",
+    "confirmState": {
+     "touch": true,
+     "aboveMA5": false,
+     "abovePrevHigh": false,
+     "volume": true,
+     "rsiUp": false
+    },
+    "entry": 369.25,
+    "entryWhy": "區間中點",
+    "stop": 346.64,
+    "stopWhy": "日線擺盪低點 2026-11-06＋近 20 日低 下方 0.5 ATR",
+    "t1": 442.0,
+    "t1Why": "日線擺盪高點 2026-11-10",
+    "t2": 467.45,
+    "t2Why": "MA20（下彎）",
+    "rr1": 3.22,
+    "rr2": 4.34
+   },
+   "breakout": {
+    "trigger": 442.0,
+    "triggerWhy": "日線擺盪高點 2026-11-10",
+    "volume": "量比 ≥ 1.5（以 20 日均量計），收盤在當日區間上 1/3",
+    "retest": true,
+    "retestWhy": "週線空頭",
+    "entry": 442.0,
+    "entryWhy": "以觸發價計",
+    "stop": 346.64,
+    "stopWhy": "日線擺盪低點 2026-11-06＋近 20 日低 下方 0.5 ATR",
+    "t1": 467.45,
+    "t1Why": "MA20（下彎）",
+    "t2": 506.0,
+    "t2Why": "日線擺盪低點 2026-10-22（跌破後轉壓力）",
+    "rr1": 0.27,
+    "rr2": 0.67,
+    "distATR": 1.9
+   },
+   "status": "weak",
+   "label": "結構轉弱",
+   "why": [
+    "收盤在 MA20、MA60 之下，且MA20 下彎、收盤在 MA20 下方 2.6 ATR；先等止跌：不再破低、收盤站回 MA5，再看能否站上 MA20 467.45。",
+    "擋板：大盤空頭（指數收在 MA20、MA60 之下）。"
+   ],
+   "blockers": [
+    "大盤空頭（指數收在 MA20、MA60 之下）"
+   ],
+   "market": "TW",
+   "theme": "零組件／廠務",
+   "earnings": {
+    "date": "2027-03-31",
+    "days": 97
+   }
+  },
+  "4919.TW": {
+   "symbol": "4919.TW",
+   "bars": 27,
+   "date": "2026-11-16",
+   "close": 96.8,
+   "ma5": 103.26,
+   "ma20": 117.5,
+   "ma60": 125.5,
+   "atr": 9.32,
+   "rsi": 33.7,
+   "volRatio": 0.94,
+   "dailyTrend": "空頭",
+   "weeklyTrend": "空頭",
+   "marketRegime": "BEAR",
+   "bias20": -17.62,
+   "historyNote": "支撐壓力只取得到最近 27 根日 K（約 7 週）；MA60 與週線趨勢取自 latest.json（2 年日 K）。",
+   "pullback": {
+    "zone": [
+     88.0,
+     92.66
+    ],
+    "zoneWhy": "日線擺盪低點 2026-11-06＋近 20 日低 88.0 到上方 0.5 ATR",
+    "confirm": "近 3 日最低碰到區間，之後收盤站回 MA5、收盤高於前一日高點、量比 ≥ 1.0、RSI 回升",
+    "confirmState": {
+     "touch": false,
+     "aboveMA5": false,
+     "abovePrevHigh": false,
+     "volume": false,
+     "rsiUp": false
+    },
+    "entry": 90.33,
+    "entryWhy": "區間中點",
+    "stop": 83.34,
+    "stopWhy": "日線擺盪低點 2026-11-06＋近 20 日低 下方 0.5 ATR",
+    "t1": 117.5,
+    "t1Why": "MA20（下彎）",
+    "t2": 125.5,
+    "t2Why": "MA60（2 年日 K 算的）",
+    "rr1": 3.89,
+    "rr2": 5.03
+   },
+   "breakout": {
+    "trigger": 117.5,
+    "triggerWhy": "MA20（下彎）",
+    "volume": "量比 ≥ 1.5（以 20 日均量計），收盤在當日區間上 1/3",
+    "retest": true,
+    "retestWhy": "週線空頭",
+    "entry": 117.5,
+    "entryWhy": "以觸發價計",
+    "stop": 83.34,
+    "stopWhy": "日線擺盪低點 2026-11-06＋近 20 日低 下方 0.5 ATR",
+    "t1": 125.5,
+    "t1Why": "MA60（2 年日 K 算的）",
+    "t2": 130.0,
+    "t2Why": "日線擺盪低點 2026-10-19（跌破後轉壓力）",
+    "rr1": 0.23,
+    "rr2": 0.37,
+    "distATR": 2.22
+   },
+   "status": "weak",
+   "label": "結構轉弱",
+   "why": [
+    "收盤在 MA20、MA60 之下，且MA20 下彎、收盤在 MA20 下方 2.2 ATR；先等止跌：不再破低、收盤站回 MA5，再看能否站上 MA20 117.5。",
+    "擋板：大盤空頭（指數收在 MA20、MA60 之下）。"
+   ],
+   "blockers": [
+    "大盤空頭（指數收在 MA20、MA60 之下）"
+   ],
+   "market": "TW",
+   "theme": "零組件／廠務",
+   "earnings": {
+    "date": "2027-03-31",
+    "days": 97
+   }
+  },
+  "1569.TWO": {
+   "symbol": "1569.TWO",
+   "bars": 26,
+   "date": "2026-11-16",
+   "close": 87.6,
+   "ma5": 97.38,
+   "ma20": 89.85,
+   "ma60": 68.05,
+   "atr": 8.75,
+   "rsi": 55.8,
+   "volRatio": 0.55,
+   "dailyTrend": "盤整",
+   "weeklyTrend": "多頭",
+   "marketRegime": "BEAR",
+   "bias20": -2.51,
+   "historyNote": "支撐壓力只取得到最近 26 根日 K（約 7 週）；MA60 與週線趨勢取自 latest.json（2 年日 K）。",
+   "pullback": {
+    "zone": [
+     86.3,
+     87.6
+    ],
+    "zoneWhy": "日線擺盪高點 2026-10-14（突破後轉支撐） 86.3 到上方 0.5 ATR",
+    "confirm": "近 3 日最低碰到區間，之後收盤站回 MA5、收盤高於前一日高點、量比 ≥ 1.0、RSI 回升",
+    "confirmState": {
+     "touch": true,
+     "aboveMA5": false,
+     "abovePrevHigh": false,
+     "volume": false,
+     "rsiUp": false
+    },
+    "entry": 86.95,
+    "entryWhy": "區間中點",
+    "stop": 81.92,
+    "stopWhy": "日線擺盪高點 2026-10-14（突破後轉支撐） 下方 0.5 ATR",
+    "t1": 99.6,
+    "t1Why": "日線擺盪高點 2026-10-29",
+    "t2": 109.0,
+    "t2Why": "近 20 日高",
+    "rr1": 2.52,
+    "rr2": 4.39
+   },
+   "breakout": {
+    "trigger": 89.85,
+    "triggerWhy": "MA20（上彎）",
+    "volume": "量比 ≥ 1.5（以 20 日均量計），收盤在當日區間上 1/3",
+    "retest": false,
+    "retestWhy": "突破當天若超過觸發價 1 ATR 才需等回測",
+    "entry": 89.85,
+    "entryWhy": "以觸發價計",
+    "stop": 81.92,
+    "stopWhy": "日線擺盪高點 2026-10-14（突破後轉支撐） 下方 0.5 ATR",
+    "t1": 99.6,
+    "t1Why": "日線擺盪高點 2026-10-29",
+    "t2": 109.0,
+    "t2Why": "近 20 日高",
+    "rr1": 1.23,
+    "rr2": 2.41,
+    "distATR": 0.26
+   },
+   "status": "pullback",
+   "label": "等待回檔",
+   "why": [
+    "價格已在回檔區間，但還缺：收盤站回 MA5、收盤高於前一日高、量比 ≥ 1.0、RSI 回升。",
+    "擋板：大盤空頭（指數收在 MA20、MA60 之下）。"
+   ],
+   "blockers": [
+    "大盤空頭（指數收在 MA20、MA60 之下）"
+   ],
+   "market": "TW",
+   "theme": "零組件／廠務",
+   "earnings": {
+    "date": "2027-03-31",
+    "days": 97
+   }
+  },
+  "2221.TWO": {
+   "symbol": "2221.TWO",
+   "bars": 34,
+   "date": "2026-11-16",
+   "close": 151.5,
+   "ma5": 154.4,
+   "ma20": 141.4,
+   "ma60": 126.46,
+   "atr": 18.04,
+   "rsi": 49.4,
+   "volRatio": 2.3,
+   "dailyTrend": "多頭",
+   "weeklyTrend": "盤整",
+   "marketRegime": "BEAR",
+   "bias20": 7.14,
+   "historyNote": "支撐壓力只取得到最近 34 根日 K（約 9 週）；MA60 與週線趨勢取自 latest.json（2 年日 K）。",
+   "pullback": {
+    "zone": [
+     141.4,
+     150.42
+    ],
+    "zoneWhy": "MA20（上彎） 141.4 到上方 0.5 ATR",
+    "confirm": "近 3 日最低碰到區間，之後收盤站回 MA5、收盤高於前一日高點、量比 ≥ 1.0、RSI 回升",
+    "confirmState": {
+     "touch": true,
+     "aboveMA5": false,
+     "abovePrevHigh": false,
+     "volume": true,
+     "rsiUp": true
+    },
+    "entry": 145.91,
+    "entryWhy": "區間中點",
+    "stop": 132.38,
+    "stopWhy": "MA20（上彎） 下方 0.5 ATR",
+    "t1": 168.0,
+    "t1Why": "日線擺盪高點 2026-10-30",
+    "t2": 181.0,
+    "t2Why": "近 20 日高",
+    "rr1": 1.63,
+    "rr2": 2.59
+   },
+   "breakout": {
+    "trigger": 168.0,
+    "triggerWhy": "日線擺盪高點 2026-10-30",
+    "volume": "量比 ≥ 1.5（以 20 日均量計），收盤在當日區間上 1/3",
+    "retest": false,
+    "retestWhy": "突破當天若超過觸發價 1 ATR 才需等回測",
+    "entry": 168.0,
+    "entryWhy": "以觸發價計",
+    "stop": 132.38,
+    "stopWhy": "MA20（上彎） 下方 0.5 ATR",
+    "t1": 181.0,
+    "t1Why": "近 20 日高",
+    "t2": 195.0,
+    "t2Why": "日線擺盪高點 2026-10-07＋日線擺盪高點 2026-10-08",
+    "rr1": 0.36,
+    "rr2": 0.76,
+    "distATR": 0.91
+   },
+   "status": "pullback",
+   "label": "等待回檔",
+   "why": [
+    "價格已在回檔區間，但還缺：收盤站回 MA5、收盤高於前一日高。",
+    "擋板：大盤空頭（指數收在 MA20、MA60 之下）。"
+   ],
+   "blockers": [
+    "大盤空頭（指數收在 MA20、MA60 之下）"
+   ],
+   "market": "TW",
+   "theme": "零組件／廠務",
+   "earnings": {
+    "date": "2027-03-31",
+    "days": 97
+   }
+  },
+  "2313.TW": {
+   "symbol": "2313.TW",
+   "bars": 21,
+   "date": "2026-11-16",
+   "close": 193.0,
+   "ma5": 193.9,
+   "ma20": 203.93,
+   "ma60": 222.61,
+   "atr": 16.29,
+   "rsi": 29.1,
+   "volRatio": 2.48,
+   "dailyTrend": "空頭",
+   "weeklyTrend": "空頭",
+   "marketRegime": "BEAR",
+   "bias20": -5.36,
+   "historyNote": "支撐壓力只取得到最近 21 根日 K（約 6 週）；MA60 與週線趨勢取自 latest.json（2 年日 K）。",
+   "pullback": {
+    "zone": [
+     149.0,
+     157.14
+    ],
+    "zoneWhy": "日線擺盪低點 2026-11-06＋近 20 日低 149.0 到上方 0.5 ATR",
+    "confirm": "近 3 日最低碰到區間，之後收盤站回 MA5、收盤高於前一日高點、量比 ≥ 1.0、RSI 回升",
+    "confirmState": {
+     "touch": false,
+     "aboveMA5": false,
+     "abovePrevHigh": false,
+     "volume": true,
+     "rsiUp": false
+    },
+    "entry": 153.07,
+    "entryWhy": "區間中點",
+    "stop": 140.86,
+    "stopWhy": "日線擺盪低點 2026-11-06＋近 20 日低 下方 0.5 ATR",
+    "t1": 203.93,
+    "t1Why": "MA20（下彎）",
+    "t2": 222.61,
+    "t2Why": "MA60（2 年日 K 算的）",
+    "rr1": 4.16,
+    "rr2": 5.69
+   },
+   "breakout": {
+    "trigger": 203.93,
+    "triggerWhy": "MA20（下彎）",
+    "volume": "量比 ≥ 1.5（以 20 日均量計），收盤在當日區間上 1/3",
+    "retest": true,
+    "retestWhy": "週線空頭",
+    "entry": 203.93,
+    "entryWhy": "以觸發價計",
+    "stop": 140.86,
+    "stopWhy": "日線擺盪低點 2026-11-06＋近 20 日低 下方 0.5 ATR",
+    "t1": 222.61,
+    "t1Why": "MA60（2 年日 K 算的）",
+    "t2": 266.0,
+    "t2Why": "日線擺盪高點 2026-10-21＋近 20 日高",
+    "rr1": 0.3,
+    "rr2": 0.98,
+    "distATR": 0.67
+   },
+   "status": "weak",
+   "label": "結構轉弱",
+   "why": [
+    "收盤在 MA20、MA60 之下，且MA20 下彎、收盤在 MA20 下方 0.7 ATR；先等止跌：不再破低、收盤站回 MA5，再看能否站上 MA20 203.93。",
+    "擋板：大盤空頭（指數收在 MA20、MA60 之下）。"
+   ],
+   "blockers": [
+    "大盤空頭（指數收在 MA20、MA60 之下）"
+   ],
+   "market": "TW",
+   "theme": "低軌衛星",
+   "earnings": {
+    "date": "2027-03-31",
+    "days": 97
+   }
+  },
+  "3491.TWO": {
+   "symbol": "3491.TWO",
+   "bars": 21,
+   "date": "2026-11-16",
+   "close": 1405.0,
+   "ma5": 1406.0,
+   "ma20": 1310.75,
+   "ma60": 1408.75,
+   "atr": 117.14,
+   "rsi": 44.0,
+   "volRatio": 3.96,
+   "dailyTrend": "盤整",
+   "weeklyTrend": "空頭",
+   "marketRegime": "BEAR",
+   "bias20": 7.19,
+   "historyNote": "支撐壓力只取得到最近 21 根日 K（約 6 週）；MA60 與週線趨勢取自 latest.json（2 年日 K）。",
+   "pullback": {
+    "zone": [
+     1310.75,
+     1369.32
+    ],
+    "zoneWhy": "MA20（下彎） 1310.75 到上方 0.5 ATR",
+    "confirm": "近 3 日最低碰到區間，之後收盤站回 MA5、收盤高於前一日高點、量比 ≥ 1.0、RSI 回升",
+    "confirmState": {
+     "touch": false,
+     "aboveMA5": false,
+     "abovePrevHigh": false,
+     "volume": true,
+     "rsiUp": false
+    },
+    "entry": 1340.04,
+    "entryWhy": "區間中點",
+    "stop": 1252.18,
+    "stopWhy": "MA20（下彎） 下方 0.5 ATR",
+    "t1": 1470.0,
+    "t1Why": "日線擺盪高點 2026-10-22",
+    "t2": 1575.0,
+    "t2Why": "近 20 日高",
+    "rr1": 1.48,
+    "rr2": 2.67
+   },
+   "breakout": {
+    "trigger": 1470.0,
+    "triggerWhy": "日線擺盪高點 2026-10-22",
+    "volume": "量比 ≥ 1.5（以 20 日均量計），收盤在當日區間上 1/3",
+    "retest": true,
+    "retestWhy": "週線空頭",
+    "entry": 1470.0,
+    "entryWhy": "以觸發價計",
+    "stop": 1252.18,
+    "stopWhy": "MA20（下彎） 下方 0.5 ATR",
+    "t1": 1575.0,
+    "t1Why": "近 20 日高",
+    "t2": 1809.29,
+    "t2Why": "第一目標上方已無紀錄內壓力，用第一目標 + 2 ATR",
+    "rr1": 0.48,
+    "rr2": 1.56,
+    "distATR": 0.55
+   },
+   "status": "breakout",
+   "label": "等待突破確認",
+   "why": [
+    "收盤在觸發價 1470.0（日線擺盪高點 2026-10-22）下方 0.55 ATR，等帶量站上後回測不破。",
+    "以觸發價計報酬風險比只有 0.48（失效價在 1252.18），突破當下也不追；要等突破後回測形成更高的低點再重算。",
+    "擋板：大盤空頭（指數收在 MA20、MA60 之下）。"
+   ],
+   "blockers": [
+    "大盤空頭（指數收在 MA20、MA60 之下）"
+   ],
+   "market": "TW",
+   "theme": "低軌衛星",
+   "earnings": {
+    "date": "2027-03-31",
+    "days": 97
+   }
+  },
+  "6285.TW": {
+   "symbol": "6285.TW",
+   "bars": 21,
+   "date": "2026-11-16",
+   "close": 179.0,
+   "ma5": 189.2,
+   "ma20": 210.15,
+   "ma60": 229.27,
+   "atr": 15.86,
+   "rsi": 22.4,
+   "volRatio": 1.47,
+   "dailyTrend": "空頭",
+   "weeklyTrend": "空頭",
+   "marketRegime": "BEAR",
+   "bias20": -14.82,
+   "historyNote": "支撐壓力只取得到最近 21 根日 K（約 6 週）；MA60 與週線趨勢取自 latest.json（2 年日 K）。",
+   "pullback": {
+    "zone": [
+     164.5,
+     172.43
+    ],
+    "zoneWhy": "日線擺盪低點 2026-11-06＋近 20 日低 164.5 到上方 0.5 ATR",
+    "confirm": "近 3 日最低碰到區間，之後收盤站回 MA5、收盤高於前一日高點、量比 ≥ 1.0、RSI 回升",
+    "confirmState": {
+     "touch": false,
+     "aboveMA5": false,
+     "abovePrevHigh": false,
+     "volume": true,
+     "rsiUp": false
+    },
+    "entry": 168.46,
+    "entryWhy": "區間中點",
+    "stop": 156.57,
+    "stopWhy": "日線擺盪低點 2026-11-06＋近 20 日低 下方 0.5 ATR",
+    "t1": 210.15,
+    "t1Why": "MA20（下彎）",
+    "t2": 229.27,
+    "t2Why": "MA60（2 年日 K 算的）",
+    "rr1": 3.51,
+    "rr2": 5.11
+   },
+   "breakout": {
+    "trigger": 210.15,
+    "triggerWhy": "MA20（下彎）",
+    "volume": "量比 ≥ 1.5（以 20 日均量計），收盤在當日區間上 1/3",
+    "retest": true,
+    "retestWhy": "週線空頭",
+    "entry": 210.15,
+    "entryWhy": "以觸發價計",
+    "stop": 156.57,
+    "stopWhy": "日線擺盪低點 2026-11-06＋近 20 日低 下方 0.5 ATR",
+    "t1": 229.27,
+    "t1Why": "MA60（2 年日 K 算的）",
+    "t2": 266.0,
+    "t2Why": "日線擺盪高點 2026-10-21＋近 20 日高",
+    "rr1": 0.36,
+    "rr2": 1.04,
+    "distATR": 1.96
+   },
+   "status": "weak",
+   "label": "結構轉弱",
+   "why": [
+    "收盤在 MA20、MA60 之下，且MA20 下彎、收盤在 MA20 下方 2.0 ATR；先等止跌：不再破低、收盤站回 MA5，再看能否站上 MA20 210.15。",
+    "擋板：大盤空頭（指數收在 MA20、MA60 之下）。"
+   ],
+   "blockers": [
+    "大盤空頭（指數收在 MA20、MA60 之下）"
+   ],
+   "market": "TW",
+   "theme": "低軌衛星",
+   "earnings": {
+    "date": "2027-03-31",
+    "days": 97
+   }
+  },
+  "6271.TW": {
+   "symbol": "6271.TW",
+   "bars": 21,
+   "date": "2026-11-16",
+   "close": 202.5,
+   "ma5": 211.2,
+   "ma20": 206.97,
+   "ma60": 218.4,
+   "atr": 16.68,
+   "rsi": 39.3,
+   "volRatio": 1.16,
+   "dailyTrend": "空頭",
+   "weeklyTrend": "盤整",
+   "marketRegime": "BEAR",
+   "bias20": -2.16,
+   "historyNote": "支撐壓力只取得到最近 21 根日 K（約 6 週）；MA60 與週線趨勢取自 latest.json（2 年日 K）。",
+   "pullback": {
+    "zone": [
+     164.0,
+     172.34
+    ],
+    "zoneWhy": "日線擺盪低點 2026-11-06＋近 20 日低 164.0 到上方 0.5 ATR",
+    "confirm": "近 3 日最低碰到區間，之後收盤站回 MA5、收盤高於前一日高點、量比 ≥ 1.0、RSI 回升",
+    "confirmState": {
+     "touch": false,
+     "aboveMA5": false,
+     "abovePrevHigh": false,
+     "volume": true,
+     "rsiUp": false
+    },
+    "entry": 168.17,
+    "entryWhy": "區間中點",
+    "stop": 155.66,
+    "stopWhy": "日線擺盪低點 2026-11-06＋近 20 日低 下方 0.5 ATR",
+    "t1": 218.4,
+    "t1Why": "MA60（2 年日 K 算的）＋日線擺盪高點 2026-11-03",
+    "t2": 237.0,
+    "t2Why": "日線擺盪高點 2026-10-21＋近 20 日高",
+    "rr1": 4.02,
+    "rr2": 5.5
+   },
+   "breakout": {
+    "trigger": 206.97,
+    "triggerWhy": "MA20（下彎）",
+    "volume": "量比 ≥ 1.5（以 20 日均量計），收盤在當日區間上 1/3",
+    "retest": false,
+    "retestWhy": "突破當天若超過觸發價 1 ATR 才需等回測",
+    "entry": 206.97,
+    "entryWhy": "以觸發價計",
+    "stop": 155.66,
+    "stopWhy": "日線擺盪低點 2026-11-06＋近 20 日低 下方 0.5 ATR",
+    "t1": 218.4,
+    "t1Why": "MA60（2 年日 K 算的）＋日線擺盪高點 2026-11-03",
+    "t2": 237.0,
+    "t2Why": "日線擺盪高點 2026-10-21＋近 20 日高",
+    "rr1": 0.22,
+    "rr2": 0.59,
+    "distATR": 0.27
+   },
+   "status": "breakout",
+   "label": "等待突破確認",
+   "why": [
+    "收盤在觸發價 206.97（MA20（下彎））下方 0.27 ATR，等帶量站上。",
+    "以觸發價計報酬風險比只有 0.22（失效價在 155.66），突破當下也不追；要等突破後回測形成更高的低點再重算。",
+    "擋板：大盤空頭（指數收在 MA20、MA60 之下）。"
+   ],
+   "blockers": [
+    "大盤空頭（指數收在 MA20、MA60 之下）"
+   ],
+   "market": "TW",
+   "theme": "低軌衛星",
+   "earnings": {
+    "date": "2027-03-31",
+    "days": 97
+   }
+  },
+  "2367.TW": {
+   "symbol": "2367.TW",
+   "bars": 21,
+   "date": "2026-11-16",
+   "close": 37.25,
+   "ma5": 38.65,
+   "ma20": 40.81,
+   "ma60": 42.57,
+   "atr": 3.1,
+   "rsi": 29.8,
+   "volRatio": 1.45,
+   "dailyTrend": "空頭",
+   "weeklyTrend": "空頭",
+   "marketRegime": "BEAR",
+   "bias20": -8.73,
+   "historyNote": "支撐壓力只取得到最近 21 根日 K（約 6 週）；MA60 與週線趨勢取自 latest.json（2 年日 K）。",
+   "pullback": {
+    "zone": [
+     31.5,
+     33.05
+    ],
+    "zoneWhy": "日線擺盪低點 2026-11-06＋近 20 日低 31.5 到上方 0.5 ATR",
+    "confirm": "近 3 日最低碰到區間，之後收盤站回 MA5、收盤高於前一日高點、量比 ≥ 1.0、RSI 回升",
+    "confirmState": {
+     "touch": false,
+     "aboveMA5": false,
+     "abovePrevHigh": false,
+     "volume": true,
+     "rsiUp": false
+    },
+    "entry": 32.28,
+    "entryWhy": "區間中點",
+    "stop": 29.95,
+    "stopWhy": "日線擺盪低點 2026-11-06＋近 20 日低 下方 0.5 ATR",
+    "t1": 40.81,
+    "t1Why": "MA20（下彎）",
+    "t2": 42.57,
+    "t2Why": "MA60（2 年日 K 算的）",
+    "rr1": 3.67,
+    "rr2": 4.42
+   },
+   "breakout": {
+    "trigger": 40.81,
+    "triggerWhy": "MA20（下彎）",
+    "volume": "量比 ≥ 1.5（以 20 日均量計），收盤在當日區間上 1/3",
+    "retest": true,
+    "retestWhy": "週線空頭",
+    "entry": 40.81,
+    "entryWhy": "以觸發價計",
+    "stop": 29.95,
+    "stopWhy": "日線擺盪低點 2026-11-06＋近 20 日低 下方 0.5 ATR",
+    "t1": 42.57,
+    "t1Why": "MA60（2 年日 K 算的）",
+    "t2": 48.25,
+    "t2Why": "日線擺盪高點 2026-10-21＋近 20 日高",
+    "rr1": 0.16,
+    "rr2": 0.68,
+    "distATR": 1.15
+   },
+   "status": "weak",
+   "label": "結構轉弱",
+   "why": [
+    "收盤在 MA20、MA60 之下，且MA20 下彎、收盤在 MA20 下方 1.1 ATR；先等止跌：不再破低、收盤站回 MA5，再看能否站上 MA20 40.81。",
+    "擋板：大盤空頭（指數收在 MA20、MA60 之下）。"
+   ],
+   "blockers": [
+    "大盤空頭（指數收在 MA20、MA60 之下）"
+   ],
+   "market": "TW",
+   "theme": "低軌衛星",
+   "earnings": {
+    "date": "2027-03-31",
+    "days": 97
+   }
+  },
+  "2355.TW": {
+   "symbol": "2355.TW",
+   "bars": 21,
+   "date": "2026-11-16",
+   "close": 60.3,
+   "ma5": 58.92,
+   "ma20": 52.76,
+   "ma60": 46.61,
+   "atr": 4.38,
+   "rsi": 57.2,
+   "volRatio": 3.63,
+   "dailyTrend": "多頭",
+   "weeklyTrend": "多頭",
+   "marketRegime": "BEAR",
+   "bias20": 14.3,
+   "historyNote": "支撐壓力只取得到最近 21 根日 K（約 6 週）；MA60 與週線趨勢取自 latest.json（2 年日 K）。",
+   "pullback": {
+    "zone": [
+     56.3,
+     58.49
+    ],
+    "zoneWhy": "日線擺盪高點 2026-10-29（突破後轉支撐） 56.3 到上方 0.5 ATR",
+    "confirm": "近 3 日最低碰到區間，之後收盤站回 MA5、收盤高於前一日高點、量比 ≥ 1.0、RSI 回升",
+    "confirmState": {
+     "touch": false,
+     "aboveMA5": true,
+     "abovePrevHigh": false,
+     "volume": true,
+     "rsiUp": false
+    },
+    "entry": 57.39,
+    "entryWhy": "區間中點",
+    "stop": 54.11,
+    "stopWhy": "日線擺盪高點 2026-10-29（突破後轉支撐） 下方 0.5 ATR",
+    "t1": 66.7,
+    "t1Why": "近 20 日高",
+    "t2": 75.46,
+    "t2Why": "第一目標上方已無紀錄內壓力，用第一目標 + 2 ATR",
+    "rr1": 2.83,
+    "rr2": 5.5
+   },
+   "breakout": {
+    "trigger": 66.7,
+    "triggerWhy": "近 20 日高",
+    "volume": "量比 ≥ 1.5（以 20 日均量計），收盤在當日區間上 1/3",
+    "retest": false,
+    "retestWhy": "突破當天若超過觸發價 1 ATR 才需等回測",
+    "entry": 66.7,
+    "entryWhy": "以觸發價計",
+    "stop": 54.11,
+    "stopWhy": "日線擺盪高點 2026-10-29（突破後轉支撐） 下方 0.5 ATR",
+    "t1": 79.84,
+    "t1Why": "紀錄內上方已無壓力，用進場價 + 3 ATR",
+    "t2": 88.59,
+    "t2Why": "第一目標上方已無紀錄內壓力，用第一目標 + 2 ATR",
+    "rr1": 1.04,
+    "rr2": 1.74,
+    "distATR": 1.46
+   },
+   "status": "pullback",
+   "label": "等待回檔",
+   "why": [
+    "結構未破、價格不在區間，等回到 [56.3, 58.49]（日線擺盪高點 2026-10-29（突破後轉支撐） 56.3 到上方 0.5 ATR）。",
+    "擋板：大盤空頭（指數收在 MA20、MA60 之下）。"
+   ],
+   "blockers": [
+    "大盤空頭（指數收在 MA20、MA60 之下）"
+   ],
+   "market": "TW",
+   "theme": "低軌衛星",
+   "earnings": {
+    "date": "2027-03-31",
+    "days": 97
+   }
+  },
+  "2049.TW": {
+   "symbol": "2049.TW",
+   "bars": 20,
+   "date": "2026-11-16",
+   "close": 289.0,
+   "ma5": 304.7,
+   "ma20": 306.9,
+   "ma60": 330.63,
+   "atr": 19.5,
+   "rsi": 43.7,
+   "volRatio": 1.21,
+   "dailyTrend": "空頭",
+   "weeklyTrend": "空頭",
+   "marketRegime": "BEAR",
+   "bias20": -5.83,
+   "historyNote": "支撐壓力只取得到最近 20 根日 K（約 5 週）；MA60 與週線趨勢取自 latest.json（2 年日 K）。",
+   "pullback": {
+    "zone": [
+     256.5,
+     266.25
+    ],
+    "zoneWhy": "日線擺盪低點 2026-11-06＋近 20 日低 256.5 到上方 0.5 ATR",
+    "confirm": "近 3 日最低碰到區間，之後收盤站回 MA5、收盤高於前一日高點、量比 ≥ 1.0、RSI 回升",
+    "confirmState": {
+     "touch": false,
+     "aboveMA5": false,
+     "abovePrevHigh": false,
+     "volume": true,
+     "rsiUp": false
+    },
+    "entry": 261.38,
+    "entryWhy": "區間中點",
+    "stop": 246.75,
+    "stopWhy": "日線擺盪低點 2026-11-06＋近 20 日低 下方 0.5 ATR",
+    "t1": 299.0,
+    "t1Why": "日線擺盪低點 2026-10-23（跌破後轉壓力）",
+    "t2": 306.9,
+    "t2Why": "MA20（下彎）",
+    "rr1": 2.57,
+    "rr2": 3.11
+   },
+   "breakout": {
+    "trigger": 299.0,
+    "triggerWhy": "日線擺盪低點 2026-10-23（跌破後轉壓力）",
+    "volume": "量比 ≥ 1.5（以 20 日均量計），收盤在當日區間上 1/3",
+    "retest": true,
+    "retestWhy": "週線空頭",
+    "entry": 299.0,
+    "entryWhy": "以觸發價計",
+    "stop": 246.75,
+    "stopWhy": "日線擺盪低點 2026-11-06＋近 20 日低 下方 0.5 ATR",
+    "t1": 330.63,
+    "t1Why": "MA60（2 年日 K 算的）",
+    "t2": 347.5,
+    "t2Why": "日線擺盪高點 2026-10-28＋近 20 日高",
+    "rr1": 0.61,
+    "rr2": 0.93,
+    "distATR": 0.51
+   },
+   "status": "weak",
+   "label": "結構轉弱",
+   "why": [
+    "收盤在 MA20、MA60 之下，且MA20 下彎、收盤在 MA20 下方 0.9 ATR；先等止跌：不再破低、收盤站回 MA5，再看能否站上 MA20 306.9。",
+    "擋板：大盤空頭（指數收在 MA20、MA60 之下）。"
+   ],
+   "blockers": [
+    "大盤空頭（指數收在 MA20、MA60 之下）"
+   ],
+   "market": "TW",
+   "theme": "機器人・減速傳動",
+   "earnings": {
+    "date": "2027-03-31",
+    "days": 97
+   }
+  },
+  "2233.TW": {
+   "symbol": "2233.TW",
+   "bars": 20,
+   "date": "2026-11-16",
+   "close": 103.5,
+   "ma5": 112.2,
+   "ma20": 132.35,
+   "ma60": 155.23,
+   "atr": 7.39,
+   "rsi": 23.2,
+   "volRatio": 1.61,
+   "dailyTrend": "空頭",
+   "weeklyTrend": "空頭",
+   "marketRegime": "BEAR",
+   "bias20": -21.8,
+   "historyNote": "支撐壓力只取得到最近 20 根日 K（約 5 週）；MA60 與週線趨勢取自 latest.json（2 年日 K）。",
+   "pullback": {
+    "zone": [
+     103.0,
+     103.5
+    ],
+    "zoneWhy": "近 20 日低 103.0 到上方 0.5 ATR",
+    "confirm": "近 3 日最低碰到區間，之後收盤站回 MA5、收盤高於前一日高點、量比 ≥ 1.0、RSI 回升",
+    "confirmState": {
+     "touch": true,
+     "aboveMA5": false,
+     "abovePrevHigh": false,
+     "volume": true,
+     "rsiUp": false
+    },
+    "entry": 103.25,
+    "entryWhy": "區間中點",
+    "stop": 99.3,
+    "stopWhy": "近 20 日低 下方 0.5 ATR",
+    "t1": 110.0,
+    "t1Why": "日線擺盪低點 2026-11-06（跌破後轉壓力）",
+    "t2": 132.35,
+    "t2Why": "MA20（下彎）",
+    "rr1": 1.71,
+    "rr2": 7.37
+   },
+   "breakout": {
+    "trigger": 110.0,
+    "triggerWhy": "日線擺盪低點 2026-11-06（跌破後轉壓力）",
+    "volume": "量比 ≥ 1.5（以 20 日均量計），收盤在當日區間上 1/3",
+    "retest": true,
+    "retestWhy": "週線空頭",
+    "entry": 110.0,
+    "entryWhy": "以觸發價計",
+    "stop": 99.3,
+    "stopWhy": "近 20 日低 下方 0.5 ATR",
+    "t1": 132.35,
+    "t1Why": "MA20（下彎）",
+    "t2": 155.23,
+    "t2Why": "MA60（2 年日 K 算的）＋近 20 日高",
+    "rr1": 2.09,
+    "rr2": 4.23,
+    "distATR": 0.88
+   },
+   "status": "weak",
+   "label": "結構轉弱",
+   "why": [
+    "收盤在 MA20、MA60 之下，且近 3 日創 20 日新低；先等止跌：不再破低、收盤站回 MA5，再看能否站上 MA20 132.35。",
+    "擋板：大盤空頭（指數收在 MA20、MA60 之下）。"
+   ],
+   "blockers": [
+    "大盤空頭（指數收在 MA20、MA60 之下）"
+   ],
+   "market": "TW",
+   "theme": "機器人・減速傳動",
+   "earnings": {
+    "date": "2027-03-31",
+    "days": 97
+   }
+  },
+  "1536.TW": {
+   "symbol": "1536.TW",
+   "bars": 20,
+   "date": "2026-11-16",
+   "close": 36.0,
+   "ma5": 37.72,
+   "ma20": 41.23,
+   "ma60": 45.45,
+   "atr": 1.9,
+   "rsi": 28.4,
+   "volRatio": 0.94,
+   "dailyTrend": "空頭",
+   "weeklyTrend": "空頭",
+   "marketRegime": "BEAR",
+   "bias20": -12.67,
+   "historyNote": "支撐壓力只取得到最近 20 根日 K（約 5 週）；MA60 與週線趨勢取自 latest.json（2 年日 K）。",
+   "pullback": {
+    "zone": [
+     34.75,
+     35.7
+    ],
+    "zoneWhy": "日線擺盪低點 2026-11-06＋近 20 日低 34.75 到上方 0.5 ATR",
+    "confirm": "近 3 日最低碰到區間，之後收盤站回 MA5、收盤高於前一日高點、量比 ≥ 1.0、RSI 回升",
+    "confirmState": {
+     "touch": false,
+     "aboveMA5": false,
+     "abovePrevHigh": false,
+     "volume": false,
+     "rsiUp": false
+    },
+    "entry": 35.23,
+    "entryWhy": "區間中點",
+    "stop": 33.8,
+    "stopWhy": "日線擺盪低點 2026-11-06＋近 20 日低 下方 0.5 ATR",
+    "t1": 41.23,
+    "t1Why": "MA20（下彎）",
+    "t2": 43.8,
+    "t2Why": "日線擺盪低點 2026-10-22（跌破後轉壓力）＋日線擺盪低點 2026-10-23（跌破後轉壓力）",
+    "rr1": 4.21,
+    "rr2": 6.02
+   },
+   "breakout": {
+    "trigger": 41.23,
+    "triggerWhy": "MA20（下彎）",
+    "volume": "量比 ≥ 1.5（以 20 日均量計），收盤在當日區間上 1/3",
+    "retest": true,
+    "retestWhy": "週線空頭",
+    "entry": 41.23,
+    "entryWhy": "以觸發價計",
+    "stop": 33.8,
+    "stopWhy": "日線擺盪低點 2026-11-06＋近 20 日低 下方 0.5 ATR",
+    "t1": 43.8,
+    "t1Why": "日線擺盪低點 2026-10-22（跌破後轉壓力）＋日線擺盪低點 2026-10-23（跌破後轉壓力）",
+    "t2": 45.45,
+    "t2Why": "MA60（2 年日 K 算的）",
+    "rr1": 0.35,
+    "rr2": 0.57,
+    "distATR": 2.75
+   },
+   "status": "weak",
+   "label": "結構轉弱",
+   "why": [
+    "收盤在 MA20、MA60 之下，且MA20 下彎、收盤在 MA20 下方 2.8 ATR；先等止跌：不再破低、收盤站回 MA5，再看能否站上 MA20 41.23。",
+    "擋板：大盤空頭（指數收在 MA20、MA60 之下）。"
+   ],
+   "blockers": [
+    "大盤空頭（指數收在 MA20、MA60 之下）"
+   ],
+   "market": "TW",
+   "theme": "機器人・減速傳動",
+   "earnings": {
+    "date": "2027-03-31",
+    "days": 97
+   }
+  },
+  "2464.TW": {
+   "symbol": "2464.TW",
+   "bars": 20,
+   "date": "2026-11-16",
+   "close": 144.5,
+   "ma5": 155.5,
+   "ma20": 161.03,
+   "ma60": 180.66,
+   "atr": 11.89,
+   "rsi": 35.2,
+   "volRatio": 0.99,
+   "dailyTrend": "空頭",
+   "weeklyTrend": "盤整",
+   "marketRegime": "BEAR",
+   "bias20": -10.26,
+   "historyNote": "支撐壓力只取得到最近 20 根日 K（約 5 週）；MA60 與週線趨勢取自 latest.json（2 年日 K）。",
+   "pullback": {
+    "zone": [
+     130.5,
+     136.45
+    ],
+    "zoneWhy": "日線擺盪低點 2026-11-06＋近 20 日低 130.5 到上方 0.5 ATR",
+    "confirm": "近 3 日最低碰到區間，之後收盤站回 MA5、收盤高於前一日高點、量比 ≥ 1.0、RSI 回升",
+    "confirmState": {
+     "touch": false,
+     "aboveMA5": false,
+     "abovePrevHigh": false,
+     "volume": false,
+     "rsiUp": false
+    },
+    "entry": 133.47,
+    "entryWhy": "區間中點",
+    "stop": 124.55,
+    "stopWhy": "日線擺盪低點 2026-11-06＋近 20 日低 下方 0.5 ATR",
+    "t1": 161.0,
+    "t1Why": "日線擺盪低點 2026-10-22（跌破後轉壓力）＋日線擺盪低點 2026-10-23（跌破後轉壓力）＋MA20（下彎）",
+    "t2": 180.66,
+    "t2Why": "MA60（2 年日 K 算的）＋日線擺盪高點 2026-10-28＋近 20 日高",
+    "rr1": 3.09,
+    "rr2": 5.29
+   },
+   "breakout": {
+    "trigger": 161.0,
+    "triggerWhy": "日線擺盪低點 2026-10-22（跌破後轉壓力）＋日線擺盪低點 2026-10-23（跌破後轉壓力）＋MA20（下彎）",
+    "volume": "量比 ≥ 1.5（以 20 日均量計），收盤在當日區間上 1/3",
+    "retest": false,
+    "retestWhy": "突破當天若超過觸發價 1 ATR 才需等回測",
+    "entry": 161.0,
+    "entryWhy": "以觸發價計",
+    "stop": 124.55,
+    "stopWhy": "日線擺盪低點 2026-11-06＋近 20 日低 下方 0.5 ATR",
+    "t1": 180.66,
+    "t1Why": "MA60（2 年日 K 算的）＋日線擺盪高點 2026-10-28＋近 20 日高",
+    "t2": 204.44,
+    "t2Why": "第一目標上方已無紀錄內壓力，用第一目標 + 2 ATR",
+    "rr1": 0.54,
+    "rr2": 1.19,
+    "distATR": 1.39
+   },
+   "status": "weak",
+   "label": "結構轉弱",
+   "why": [
+    "收盤在 MA20、MA60 之下，且MA20 下彎、收盤在 MA20 下方 1.4 ATR；先等止跌：不再破低、收盤站回 MA5，再看能否站上 MA20 161.03。",
+    "擋板：大盤空頭（指數收在 MA20、MA60 之下）。"
+   ],
+   "blockers": [
+    "大盤空頭（指數收在 MA20、MA60 之下）"
+   ],
+   "market": "TW",
+   "theme": "機器人・減速傳動",
+   "earnings": {
+    "date": "2027-03-31",
+    "days": 97
+   }
+  },
+  "1597.TW": {
+   "symbol": "1597.TW",
+   "bars": 20,
+   "date": "2026-11-16",
+   "close": 107.0,
+   "ma5": 112.7,
+   "ma20": 127.3,
+   "ma60": 137.66,
+   "atr": 8.93,
+   "rsi": 31.2,
+   "volRatio": 0.74,
+   "dailyTrend": "空頭",
+   "weeklyTrend": "空頭",
+   "marketRegime": "BEAR",
+   "bias20": -15.95,
+   "historyNote": "支撐壓力只取得到最近 20 根日 K（約 5 週）；MA60 與週線趨勢取自 latest.json（2 年日 K）。",
+   "pullback": {
+    "zone": [
+     103.5,
+     107.0
+    ],
+    "zoneWhy": "日線擺盪低點 2026-11-06＋近 20 日低 103.5 到上方 0.5 ATR",
+    "confirm": "近 3 日最低碰到區間，之後收盤站回 MA5、收盤高於前一日高點、量比 ≥ 1.0、RSI 回升",
+    "confirmState": {
+     "touch": true,
+     "aboveMA5": false,
+     "abovePrevHigh": false,
+     "volume": false,
+     "rsiUp": false
+    },
+    "entry": 105.25,
+    "entryWhy": "區間中點",
+    "stop": 99.04,
+    "stopWhy": "日線擺盪低點 2026-11-06＋近 20 日低 下方 0.5 ATR",
+    "t1": 127.3,
+    "t1Why": "MA20（下彎）",
+    "t2": 135.0,
+    "t2Why": "日線擺盪低點 2026-10-22（跌破後轉壓力）＋日線擺盪低點 2026-10-23（跌破後轉壓力）＋MA60（2 年日 K 算的）",
+    "rr1": 3.55,
+    "rr2": 4.79
+   },
+   "breakout": {
+    "trigger": 127.3,
+    "triggerWhy": "MA20（下彎）",
+    "volume": "量比 ≥ 1.5（以 20 日均量計），收盤在當日區間上 1/3",
+    "retest": true,
+    "retestWhy": "週線空頭",
+    "entry": 127.3,
+    "entryWhy": "以觸發價計",
+    "stop": 99.04,
+    "stopWhy": "日線擺盪低點 2026-11-06＋近 20 日低 下方 0.5 ATR",
+    "t1": 135.0,
+    "t1Why": "日線擺盪低點 2026-10-22（跌破後轉壓力）＋日線擺盪低點 2026-10-23（跌破後轉壓力）＋MA60（2 年日 K 算的）",
+    "t2": 153.0,
+    "t2Why": "日線擺盪高點 2026-10-28＋近 20 日高",
+    "rr1": 0.27,
+    "rr2": 0.91,
+    "distATR": 2.27
+   },
+   "status": "weak",
+   "label": "結構轉弱",
+   "why": [
+    "收盤在 MA20、MA60 之下，且MA20 下彎、收盤在 MA20 下方 2.3 ATR；先等止跌：不再破低、收盤站回 MA5，再看能否站上 MA20 127.3。",
+    "擋板：大盤空頭（指數收在 MA20、MA60 之下）。"
+   ],
+   "blockers": [
+    "大盤空頭（指數收在 MA20、MA60 之下）"
+   ],
+   "market": "TW",
+   "theme": "機器人・減速傳動",
+   "earnings": {
+    "date": "2027-03-31",
+    "days": 97
+   }
+  },
+  "4583.TW": {
+   "symbol": "4583.TW",
+   "bars": 20,
+   "date": "2026-11-16",
+   "close": 348.0,
+   "ma5": 346.4,
+   "ma20": 366.1,
+   "ma60": 415.34,
+   "atr": 23.0,
+   "rsi": 35.9,
+   "volRatio": 1.14,
+   "dailyTrend": "空頭",
+   "weeklyTrend": "空頭",
+   "marketRegime": "BEAR",
+   "bias20": -4.94,
+   "historyNote": "支撐壓力只取得到最近 20 根日 K（約 5 週）；MA60 與週線趨勢取自 latest.json（2 年日 K）。",
+   "pullback": {
+    "zone": [
+     303.5,
+     315.0
+    ],
+    "zoneWhy": "日線擺盪低點 2026-11-06＋近 20 日低 303.5 到上方 0.5 ATR",
+    "confirm": "近 3 日最低碰到區間，之後收盤站回 MA5、收盤高於前一日高點、量比 ≥ 1.0、RSI 回升",
+    "confirmState": {
+     "touch": false,
+     "aboveMA5": true,
+     "abovePrevHigh": false,
+     "volume": true,
+     "rsiUp": false
+    },
+    "entry": 309.25,
+    "entryWhy": "區間中點",
+    "stop": 292.0,
+    "stopWhy": "日線擺盪低點 2026-11-06＋近 20 日低 下方 0.5 ATR",
+    "t1": 366.1,
+    "t1Why": "MA20（下彎）",
+    "t2": 402.0,
+    "t2Why": "日線擺盪高點 2026-10-28＋近 20 日高",
+    "rr1": 3.3,
+    "rr2": 5.38
+   },
+   "breakout": {
+    "trigger": 366.1,
+    "triggerWhy": "MA20（下彎）",
+    "volume": "量比 ≥ 1.5（以 20 日均量計），收盤在當日區間上 1/3",
+    "retest": true,
+    "retestWhy": "週線空頭",
+    "entry": 366.1,
+    "entryWhy": "以觸發價計",
+    "stop": 292.0,
+    "stopWhy": "日線擺盪低點 2026-11-06＋近 20 日低 下方 0.5 ATR",
+    "t1": 402.0,
+    "t1Why": "日線擺盪高點 2026-10-28＋近 20 日高",
+    "t2": 415.34,
+    "t2Why": "MA60（2 年日 K 算的）",
+    "rr1": 0.48,
+    "rr2": 0.66,
+    "distATR": 0.79
+   },
+   "status": "weak",
+   "label": "結構轉弱",
+   "why": [
+    "收盤在 MA20、MA60 之下，且MA20 下彎、收盤在 MA20 下方 0.8 ATR；先等止跌：不再破低、收盤站回 MA5，再看能否站上 MA20 366.1。",
+    "擋板：大盤空頭（指數收在 MA20、MA60 之下）。"
+   ],
+   "blockers": [
+    "大盤空頭（指數收在 MA20、MA60 之下）"
+   ],
+   "market": "TW",
+   "theme": "機器人・減速傳動",
+   "earnings": {
+    "date": "2027-03-31",
+    "days": 97
+   }
+  },
+  "4540.TW": {
+   "symbol": "4540.TW",
+   "bars": 20,
+   "date": "2026-11-16",
+   "close": 49.0,
+   "ma5": 51.86,
+   "ma20": 55.43,
+   "ma60": 58.02,
+   "atr": 3.91,
+   "rsi": 37.7,
+   "volRatio": 0.53,
+   "dailyTrend": "空頭",
+   "weeklyTrend": "空頭",
+   "marketRegime": "BEAR",
+   "bias20": -11.6,
+   "historyNote": "支撐壓力只取得到最近 20 根日 K（約 5 週）；MA60 與週線趨勢取自 latest.json（2 年日 K）。",
+   "pullback": {
+    "zone": [
+     44.9,
+     46.86
+    ],
+    "zoneWhy": "日線擺盪低點 2026-11-06＋近 20 日低 44.9 到上方 0.5 ATR",
+    "confirm": "近 3 日最低碰到區間，之後收盤站回 MA5、收盤高於前一日高點、量比 ≥ 1.0、RSI 回升",
+    "confirmState": {
+     "touch": false,
+     "aboveMA5": false,
+     "abovePrevHigh": false,
+     "volume": false,
+     "rsiUp": false
+    },
+    "entry": 45.88,
+    "entryWhy": "區間中點",
+    "stop": 42.94,
+    "stopWhy": "日線擺盪低點 2026-11-06＋近 20 日低 下方 0.5 ATR",
+    "t1": 55.43,
+    "t1Why": "MA20（下彎）",
+    "t2": 58.02,
+    "t2Why": "MA60（2 年日 K 算的）",
+    "rr1": 3.25,
+    "rr2": 4.14
+   },
+   "breakout": {
+    "trigger": 55.43,
+    "triggerWhy": "MA20（下彎）",
+    "volume": "量比 ≥ 1.5（以 20 日均量計），收盤在當日區間上 1/3",
+    "retest": true,
+    "retestWhy": "週線空頭",
+    "entry": 55.43,
+    "entryWhy": "以觸發價計",
+    "stop": 42.94,
+    "stopWhy": "日線擺盪低點 2026-11-06＋近 20 日低 下方 0.5 ATR",
+    "t1": 58.02,
+    "t1Why": "MA60（2 年日 K 算的）",
+    "t2": 65.3,
+    "t2Why": "日線擺盪高點 2026-10-29＋近 20 日高",
+    "rr1": 0.21,
+    "rr2": 0.79,
+    "distATR": 1.64
+   },
+   "status": "weak",
+   "label": "結構轉弱",
+   "why": [
+    "收盤在 MA20、MA60 之下，且MA20 下彎、收盤在 MA20 下方 1.6 ATR；先等止跌：不再破低、收盤站回 MA5，再看能否站上 MA20 55.43。",
+    "擋板：大盤空頭（指數收在 MA20、MA60 之下）。"
+   ],
+   "blockers": [
+    "大盤空頭（指數收在 MA20、MA60 之下）"
+   ],
+   "market": "TW",
+   "theme": "機器人・減速傳動",
+   "earnings": {
+    "date": "2027-03-31",
+    "days": 97
+   }
+  },
+  "4576.TW": {
+   "symbol": "4576.TW",
+   "bars": 20,
+   "date": "2026-11-16",
+   "close": 186.0,
+   "ma5": 195.9,
+   "ma20": 200.03,
+   "ma60": 217.7,
+   "atr": 15.46,
+   "rsi": 42.8,
+   "volRatio": 1.19,
+   "dailyTrend": "空頭",
+   "weeklyTrend": "空頭",
+   "marketRegime": "BEAR",
+   "bias20": -7.01,
+   "historyNote": "支撐壓力只取得到最近 20 根日 K（約 5 週）；MA60 與週線趨勢取自 latest.json（2 年日 K）。",
+   "pullback": {
+    "zone": [
+     160.0,
+     167.73
+    ],
+    "zoneWhy": "日線擺盪低點 2026-11-06＋近 20 日低 160.0 到上方 0.5 ATR",
+    "confirm": "近 3 日最低碰到區間，之後收盤站回 MA5、收盤高於前一日高點、量比 ≥ 1.0、RSI 回升",
+    "confirmState": {
+     "touch": false,
+     "aboveMA5": false,
+     "abovePrevHigh": false,
+     "volume": true,
+     "rsiUp": false
+    },
+    "entry": 163.87,
+    "entryWhy": "區間中點",
+    "stop": 152.27,
+    "stopWhy": "日線擺盪低點 2026-11-06＋近 20 日低 下方 0.5 ATR",
+    "t1": 200.03,
+    "t1Why": "MA20（下彎）",
+    "t2": 217.7,
+    "t2Why": "MA60（2 年日 K 算的）",
+    "rr1": 3.12,
+    "rr2": 4.64
+   },
+   "breakout": {
+    "trigger": 200.03,
+    "triggerWhy": "MA20（下彎）",
+    "volume": "量比 ≥ 1.5（以 20 日均量計），收盤在當日區間上 1/3",
+    "retest": true,
+    "retestWhy": "週線空頭",
+    "entry": 200.03,
+    "entryWhy": "以觸發價計",
+    "stop": 152.27,
+    "stopWhy": "日線擺盪低點 2026-11-06＋近 20 日低 下方 0.5 ATR",
+    "t1": 217.7,
+    "t1Why": "MA60（2 年日 K 算的）",
+    "t2": 236.0,
+    "t2Why": "日線擺盪高點 2026-10-28＋近 20 日高",
+    "rr1": 0.37,
+    "rr2": 0.75,
+    "distATR": 0.91
+   },
+   "status": "weak",
+   "label": "結構轉弱",
+   "why": [
+    "收盤在 MA20、MA60 之下，且MA20 下彎、收盤在 MA20 下方 0.9 ATR；先等止跌：不再破低、收盤站回 MA5，再看能否站上 MA20 200.03。",
+    "擋板：大盤空頭（指數收在 MA20、MA60 之下）。"
+   ],
+   "blockers": [
+    "大盤空頭（指數收在 MA20、MA60 之下）"
+   ],
+   "market": "TW",
+   "theme": "機器人・馬達驅動",
+   "earnings": {
+    "date": "2027-03-31",
+    "days": 97
+   }
+  },
+  "1504.TW": {
+   "symbol": "1504.TW",
+   "bars": 20,
+   "date": "2026-11-16",
+   "close": 60.5,
+   "ma5": 63.48,
+   "ma20": 66.6,
+   "ma60": 69.35,
+   "atr": 3.31,
+   "rsi": 38.1,
+   "volRatio": 1.15,
+   "dailyTrend": "空頭",
+   "weeklyTrend": "空頭",
+   "marketRegime": "BEAR",
+   "bias20": -9.16,
+   "historyNote": "支撐壓力只取得到最近 20 根日 K（約 5 週）；MA60 與週線趨勢取自 latest.json（2 年日 K）。",
+   "pullback": {
+    "zone": [
+     57.2,
+     58.86
+    ],
+    "zoneWhy": "日線擺盪低點 2026-11-06＋近 20 日低 57.2 到上方 0.5 ATR",
+    "confirm": "近 3 日最低碰到區間，之後收盤站回 MA5、收盤高於前一日高點、量比 ≥ 1.0、RSI 回升",
+    "confirmState": {
+     "touch": false,
+     "aboveMA5": false,
+     "abovePrevHigh": false,
+     "volume": true,
+     "rsiUp": false
+    },
+    "entry": 58.03,
+    "entryWhy": "區間中點",
+    "stop": 55.54,
+    "stopWhy": "日線擺盪低點 2026-11-06＋近 20 日低 下方 0.5 ATR",
+    "t1": 66.6,
+    "t1Why": "MA20（下彎）",
+    "t2": 69.35,
+    "t2Why": "MA60（2 年日 K 算的）",
+    "rr1": 3.45,
+    "rr2": 4.55
+   },
+   "breakout": {
+    "trigger": 66.6,
+    "triggerWhy": "MA20（下彎）",
+    "volume": "量比 ≥ 1.5（以 20 日均量計），收盤在當日區間上 1/3",
+    "retest": true,
+    "retestWhy": "週線空頭",
+    "entry": 66.6,
+    "entryWhy": "以觸發價計",
+    "stop": 55.54,
+    "stopWhy": "日線擺盪低點 2026-11-06＋近 20 日低 下方 0.5 ATR",
+    "t1": 69.35,
+    "t1Why": "MA60（2 年日 K 算的）",
+    "t2": 71.0,
+    "t2Why": "日線擺盪高點 2026-11-02＋日線擺盪高點 2026-10-22＋近 20 日高",
+    "rr1": 0.25,
+    "rr2": 0.4,
+    "distATR": 1.84
+   },
+   "status": "weak",
+   "label": "結構轉弱",
+   "why": [
+    "收盤在 MA20、MA60 之下，且MA20 下彎、收盤在 MA20 下方 1.8 ATR；先等止跌：不再破低、收盤站回 MA5，再看能否站上 MA20 66.6。",
+    "擋板：大盤空頭（指數收在 MA20、MA60 之下）。"
+   ],
+   "blockers": [
+    "大盤空頭（指數收在 MA20、MA60 之下）"
+   ],
+   "market": "TW",
+   "theme": "機器人・馬達驅動",
+   "earnings": {
+    "date": "2027-03-31",
+    "days": 97
+   }
+  },
+  "1590.TW": {
+   "symbol": "1590.TW",
+   "bars": 20,
+   "date": "2026-11-16",
+   "close": 1055.0,
+   "ma5": 1063.0,
+   "ma20": 1086.25,
+   "ma60": 1226.83,
+   "atr": 59.71,
+   "rsi": 37.7,
+   "volRatio": 0.47,
+   "dailyTrend": "空頭",
+   "weeklyTrend": "空頭",
+   "marketRegime": "BEAR",
+   "bias20": -2.88,
+   "historyNote": "支撐壓力只取得到最近 20 根日 K（約 5 週）；MA60 與週線趨勢取自 latest.json（2 年日 K）。",
+   "pullback": {
+    "zone": [
+     949.0,
+     978.86
+    ],
+    "zoneWhy": "日線擺盪低點 2026-11-06＋近 20 日低 949.0 到上方 0.5 ATR",
+    "confirm": "近 3 日最低碰到區間，之後收盤站回 MA5、收盤高於前一日高點、量比 ≥ 1.0、RSI 回升",
+    "confirmState": {
+     "touch": false,
+     "aboveMA5": false,
+     "abovePrevHigh": false,
+     "volume": false,
+     "rsiUp": false
+    },
+    "entry": 963.93,
+    "entryWhy": "區間中點",
+    "stop": 919.14,
+    "stopWhy": "日線擺盪低點 2026-11-06＋近 20 日低 下方 0.5 ATR",
+    "t1": 1086.25,
+    "t1Why": "MA20（下彎）＋日線擺盪低點 2026-10-22（跌破後轉壓力）",
+    "t2": 1110.0,
+    "t2Why": "日線擺盪高點 2026-11-10",
+    "rr1": 2.73,
+    "rr2": 3.26
+   },
+   "breakout": {
+    "trigger": 1086.25,
+    "triggerWhy": "MA20（下彎）＋日線擺盪低點 2026-10-22（跌破後轉壓力）",
+    "volume": "量比 ≥ 1.5（以 20 日均量計），收盤在當日區間上 1/3",
+    "retest": true,
+    "retestWhy": "週線空頭",
+    "entry": 1086.25,
+    "entryWhy": "以觸發價計",
+    "stop": 919.14,
+    "stopWhy": "日線擺盪低點 2026-11-06＋近 20 日低 下方 0.5 ATR",
+    "t1": 1175.0,
+    "t1Why": "日線擺盪高點 2026-10-27＋近 20 日高",
+    "t2": 1226.83,
+    "t2Why": "MA60（2 年日 K 算的）",
+    "rr1": 0.53,
+    "rr2": 0.84,
+    "distATR": 0.52
+   },
+   "status": "weak",
+   "label": "結構轉弱",
+   "why": [
+    "收盤在 MA20、MA60 之下，且MA20 下彎、收盤在 MA20 下方 0.5 ATR；先等止跌：不再破低、收盤站回 MA5，再看能否站上 MA20 1086.25。",
+    "擋板：大盤空頭（指數收在 MA20、MA60 之下）。"
+   ],
+   "blockers": [
+    "大盤空頭（指數收在 MA20、MA60 之下）"
+   ],
+   "market": "TW",
+   "theme": "機器人・馬達驅動",
+   "earnings": {
+    "date": "2027-03-31",
+    "days": 97
+   }
+  },
+  "3019.TW": {
+   "symbol": "3019.TW",
+   "bars": 20,
+   "date": "2026-11-16",
+   "close": 127.5,
+   "ma5": 132.4,
+   "ma20": 128.65,
+   "ma60": 134.9,
+   "atr": 7.93,
+   "rsi": 47.7,
+   "volRatio": 1.08,
+   "dailyTrend": "空頭",
+   "weeklyTrend": "空頭",
+   "marketRegime": "BEAR",
+   "bias20": -0.89,
+   "historyNote": "支撐壓力只取得到最近 20 根日 K（約 5 週）；MA60 與週線趨勢取自 latest.json（2 年日 K）。",
+   "pullback": {
+    "zone": [
+     110.0,
+     113.96
+    ],
+    "zoneWhy": "日線擺盪低點 2026-11-04＋近 20 日低 110.0 到上方 0.5 ATR",
+    "confirm": "近 3 日最低碰到區間，之後收盤站回 MA5、收盤高於前一日高點、量比 ≥ 1.0、RSI 回升",
+    "confirmState": {
+     "touch": false,
+     "aboveMA5": false,
+     "abovePrevHigh": false,
+     "volume": true,
+     "rsiUp": false
+    },
+    "entry": 111.98,
+    "entryWhy": "區間中點",
+    "stop": 106.04,
+    "stopWhy": "日線擺盪低點 2026-11-04＋近 20 日低 下方 0.5 ATR",
+    "t1": 134.9,
+    "t1Why": "MA60（2 年日 K 算的）",
+    "t2": 142.0,
+    "t2Why": "近 20 日高",
+    "rr1": 3.85,
+    "rr2": 5.05
+   },
+   "breakout": {
+    "trigger": 134.9,
+    "triggerWhy": "MA60（2 年日 K 算的）",
+    "volume": "量比 ≥ 1.5（以 20 日均量計），收盤在當日區間上 1/3",
+    "retest": true,
+    "retestWhy": "週線空頭、觸發價是下彎的 MA60",
+    "entry": 134.9,
+    "entryWhy": "以觸發價計",
+    "stop": 106.04,
+    "stopWhy": "日線擺盪低點 2026-11-04＋近 20 日低 下方 0.5 ATR",
+    "t1": 142.0,
+    "t1Why": "近 20 日高",
+    "t2": 157.86,
+    "t2Why": "第一目標上方已無紀錄內壓力，用第一目標 + 2 ATR",
+    "rr1": 0.25,
+    "rr2": 0.8,
+    "distATR": 0.93
+   },
+   "status": "breakout",
+   "label": "等待突破確認",
+   "why": [
+    "收盤在觸發價 134.9（MA60（2 年日 K 算的））下方 0.93 ATR，等帶量站上後回測不破。",
+    "以觸發價計報酬風險比只有 0.25（失效價在 106.04），突破當下也不追；要等突破後回測形成更高的低點再重算。",
+    "擋板：大盤空頭（指數收在 MA20、MA60 之下）。"
+   ],
+   "blockers": [
+    "大盤空頭（指數收在 MA20、MA60 之下）"
+   ],
+   "market": "TW",
+   "theme": "機器人・感測視覺",
+   "earnings": {
+    "date": "2027-03-31",
+    "days": 97
+   }
+  },
+  "2359.TW": {
+   "symbol": "2359.TW",
+   "bars": 20,
+   "date": "2026-11-16",
+   "close": 88.6,
+   "ma5": 96.8,
+   "ma20": 108.31,
+   "ma60": 125.83,
+   "atr": 6.49,
+   "rsi": 25.8,
+   "volRatio": 1.2,
+   "dailyTrend": "空頭",
+   "weeklyTrend": "空頭",
+   "marketRegime": "BEAR",
+   "bias20": -18.2,
+   "historyNote": "支撐壓力只取得到最近 20 根日 K（約 5 週）；MA60 與週線趨勢取自 latest.json（2 年日 K）。",
+   "pullback": {
+    "zone": [
+     88.4,
+     88.6
+    ],
+    "zoneWhy": "近 20 日低 88.4 到上方 0.5 ATR",
+    "confirm": "近 3 日最低碰到區間，之後收盤站回 MA5、收盤高於前一日高點、量比 ≥ 1.0、RSI 回升",
+    "confirmState": {
+     "touch": true,
+     "aboveMA5": false,
+     "abovePrevHigh": false,
+     "volume": true,
+     "rsiUp": false
+    },
+    "entry": 88.5,
+    "entryWhy": "區間中點",
+    "stop": 85.16,
+    "stopWhy": "近 20 日低 下方 0.5 ATR",
+    "t1": 108.31,
+    "t1Why": "MA20（下彎）",
+    "t2": 115.0,
+    "t2Why": "日線擺盪低點 2026-10-22（跌破後轉壓力）＋日線擺盪低點 2026-10-23（跌破後轉壓力）",
+    "rr1": 5.93,
+    "rr2": 7.93
+   },
+   "breakout": {
+    "trigger": 108.31,
+    "triggerWhy": "MA20（下彎）",
+    "volume": "量比 ≥ 1.5（以 20 日均量計），收盤在當日區間上 1/3",
+    "retest": true,
+    "retestWhy": "週線空頭",
+    "entry": 108.31,
+    "entryWhy": "以觸發價計",
+    "stop": 85.16,
+    "stopWhy": "近 20 日低 下方 0.5 ATR",
+    "t1": 115.0,
+    "t1Why": "日線擺盪低點 2026-10-22（跌破後轉壓力）＋日線擺盪低點 2026-10-23（跌破後轉壓力）",
+    "t2": 123.0,
+    "t2Why": "日線擺盪高點 2026-10-27＋近 20 日高",
+    "rr1": 0.29,
+    "rr2": 0.63,
+    "distATR": 3.04
+   },
+   "status": "weak",
+   "label": "結構轉弱",
+   "why": [
+    "收盤在 MA20、MA60 之下，且近 3 日創 20 日新低；先等止跌：不再破低、收盤站回 MA5，再看能否站上 MA20 108.31。",
+    "擋板：大盤空頭（指數收在 MA20、MA60 之下）。"
+   ],
+   "blockers": [
+    "大盤空頭（指數收在 MA20、MA60 之下）"
+   ],
+   "market": "TW",
+   "theme": "機器人・感測視覺",
+   "earnings": {
+    "date": "2027-03-31",
+    "days": 97
+   }
+  },
+  "3023.TW": {
+   "symbol": "3023.TW",
+   "bars": 20,
+   "date": "2026-11-16",
+   "close": 257.0,
+   "ma5": 261.9,
+   "ma20": 270.02,
+   "ma60": 303.5,
+   "atr": 12.79,
+   "rsi": 22.7,
+   "volRatio": 0.49,
+   "dailyTrend": "空頭",
+   "weeklyTrend": "空頭",
+   "marketRegime": "BEAR",
+   "bias20": -4.82,
+   "historyNote": "支撐壓力只取得到最近 20 根日 K（約 5 週）；MA60 與週線趨勢取自 latest.json（2 年日 K）。",
+   "pullback": {
+    "zone": [
+     235.5,
+     241.89
+    ],
+    "zoneWhy": "日線擺盪低點 2026-11-03＋近 20 日低 235.5 到上方 0.5 ATR",
+    "confirm": "近 3 日最低碰到區間，之後收盤站回 MA5、收盤高於前一日高點、量比 ≥ 1.0、RSI 回升",
+    "confirmState": {
+     "touch": false,
+     "aboveMA5": false,
+     "abovePrevHigh": false,
+     "volume": false,
+     "rsiUp": false
+    },
+    "entry": 238.7,
+    "entryWhy": "區間中點",
+    "stop": 229.11,
+    "stopWhy": "日線擺盪低點 2026-11-03＋近 20 日低 下方 0.5 ATR",
+    "t1": 270.02,
+    "t1Why": "MA20（下彎）",
+    "t2": 303.5,
+    "t2Why": "MA60（2 年日 K 算的）",
+    "rr1": 3.27,
+    "rr2": 6.76
+   },
+   "breakout": {
+    "trigger": 270.02,
+    "triggerWhy": "MA20（下彎）",
+    "volume": "量比 ≥ 1.5（以 20 日均量計），收盤在當日區間上 1/3",
+    "retest": true,
+    "retestWhy": "週線空頭",
+    "entry": 270.02,
+    "entryWhy": "以觸發價計",
+    "stop": 229.11,
+    "stopWhy": "日線擺盪低點 2026-11-03＋近 20 日低 下方 0.5 ATR",
+    "t1": 303.5,
+    "t1Why": "MA60（2 年日 K 算的）",
+    "t2": 316.0,
+    "t2Why": "近 20 日高",
+    "rr1": 0.82,
+    "rr2": 1.12,
+    "distATR": 1.02
+   },
+   "status": "weak",
+   "label": "結構轉弱",
+   "why": [
+    "收盤在 MA20、MA60 之下，且MA20 下彎、收盤在 MA20 下方 1.0 ATR；先等止跌：不再破低、收盤站回 MA5，再看能否站上 MA20 270.02。",
+    "擋板：大盤空頭（指數收在 MA20、MA60 之下）。"
+   ],
+   "blockers": [
+    "大盤空頭（指數收在 MA20、MA60 之下）"
+   ],
+   "market": "TW",
+   "theme": "機器人・線材連接",
+   "earnings": {
+    "date": "2027-03-31",
+    "days": 97
+   }
+  },
+  "3665.TW": {
+   "symbol": "3665.TW",
+   "bars": 20,
+   "date": "2026-11-16",
+   "close": 1470.0,
+   "ma5": 1523.0,
+   "ma20": 1653.75,
+   "ma60": 2013.42,
+   "atr": 126.79,
+   "rsi": 22.2,
+   "volRatio": 1.54,
+   "dailyTrend": "空頭",
+   "weeklyTrend": "空頭",
+   "marketRegime": "BEAR",
+   "bias20": -11.11,
+   "historyNote": "支撐壓力只取得到最近 20 根日 K（約 5 週）；MA60 與週線趨勢取自 latest.json（2 年日 K）。",
+   "pullback": {
+    "zone": [
+     1295.0,
+     1358.39
+    ],
+    "zoneWhy": "日線擺盪低點 2026-11-09＋近 20 日低 1295.0 到上方 0.5 ATR",
+    "confirm": "近 3 日最低碰到區間，之後收盤站回 MA5、收盤高於前一日高點、量比 ≥ 1.0、RSI 回升",
+    "confirmState": {
+     "touch": false,
+     "aboveMA5": false,
+     "abovePrevHigh": false,
+     "volume": true,
+     "rsiUp": false
+    },
+    "entry": 1326.7,
+    "entryWhy": "區間中點",
+    "stop": 1231.61,
+    "stopWhy": "日線擺盪低點 2026-11-09＋近 20 日低 下方 0.5 ATR",
+    "t1": 1653.75,
+    "t1Why": "MA20（下彎）",
+    "t2": 2013.42,
+    "t2Why": "MA60（2 年日 K 算的）",
+    "rr1": 3.44,
+    "rr2": 7.22
+   },
+   "breakout": {
+    "trigger": 1653.75,
+    "triggerWhy": "MA20（下彎）",
+    "volume": "量比 ≥ 1.5（以 20 日均量計），收盤在當日區間上 1/3",
+    "retest": true,
+    "retestWhy": "週線空頭",
+    "entry": 1653.75,
+    "entryWhy": "以觸發價計",
+    "stop": 1231.61,
+    "stopWhy": "日線擺盪低點 2026-11-09＋近 20 日低 下方 0.5 ATR",
+    "t1": 2013.42,
+    "t1Why": "MA60（2 年日 K 算的）",
+    "t2": 2080.0,
+    "t2Why": "近 20 日高",
+    "rr1": 0.85,
+    "rr2": 1.01,
+    "distATR": 1.45
+   },
+   "status": "weak",
+   "label": "結構轉弱",
+   "why": [
+    "收盤在 MA20、MA60 之下，且MA20 下彎、收盤在 MA20 下方 1.4 ATR；先等止跌：不再破低、收盤站回 MA5，再看能否站上 MA20 1653.75。",
+    "擋板：大盤空頭（指數收在 MA20、MA60 之下）。"
+   ],
+   "blockers": [
+    "大盤空頭（指數收在 MA20、MA60 之下）"
+   ],
+   "market": "TW",
+   "theme": "機器人・線材連接",
+   "earnings": {
+    "date": "2027-03-31",
+    "days": 97
+   }
+  },
+  "4585.TW": {
+   "symbol": "4585.TW",
+   "bars": 20,
+   "date": "2026-11-16",
+   "close": 200.0,
+   "ma5": 210.5,
+   "ma20": 239.55,
+   "ma60": 275.99,
+   "atr": 12.57,
+   "rsi": 23.6,
+   "volRatio": 0.97,
+   "dailyTrend": "空頭",
+   "weeklyTrend": "空頭",
+   "marketRegime": "BEAR",
+   "bias20": -16.51,
+   "historyNote": "支撐壓力只取得到最近 20 根日 K（約 5 週）；MA60 與週線趨勢取自 latest.json（2 年日 K）。",
+   "pullback": {
+    "zone": [
+     198.0,
+     200.0
+    ],
+    "zoneWhy": "日線擺盪低點 2026-11-06＋近 20 日低 198.0 到上方 0.5 ATR",
+    "confirm": "近 3 日最低碰到區間，之後收盤站回 MA5、收盤高於前一日高點、量比 ≥ 1.0、RSI 回升",
+    "confirmState": {
+     "touch": true,
+     "aboveMA5": false,
+     "abovePrevHigh": false,
+     "volume": false,
+     "rsiUp": false
+    },
+    "entry": 199.0,
+    "entryWhy": "區間中點",
+    "stop": 191.71,
+    "stopWhy": "日線擺盪低點 2026-11-06＋近 20 日低 下方 0.5 ATR",
+    "t1": 239.55,
+    "t1Why": "MA20（下彎）",
+    "t2": 275.99,
+    "t2Why": "MA60（2 年日 K 算的）",
+    "rr1": 5.57,
+    "rr2": 10.57
+   },
+   "breakout": {
+    "trigger": 239.55,
+    "triggerWhy": "MA20（下彎）",
+    "volume": "量比 ≥ 1.5（以 20 日均量計），收盤在當日區間上 1/3",
+    "retest": true,
+    "retestWhy": "週線空頭",
+    "entry": 239.55,
+    "entryWhy": "以觸發價計",
+    "stop": 191.71,
+    "stopWhy": "日線擺盪低點 2026-11-06＋近 20 日低 下方 0.5 ATR",
+    "t1": 275.99,
+    "t1Why": "MA60（2 年日 K 算的）",
+    "t2": 283.0,
+    "t2Why": "近 20 日高",
+    "rr1": 0.76,
+    "rr2": 0.91,
+    "distATR": 3.15
+   },
+   "status": "weak",
+   "label": "結構轉弱",
+   "why": [
+    "收盤在 MA20、MA60 之下，且MA20 下彎、收盤在 MA20 下方 3.1 ATR；先等止跌：不再破低、收盤站回 MA5，再看能否站上 MA20 239.55。",
+    "擋板：大盤空頭（指數收在 MA20、MA60 之下）。"
+   ],
+   "blockers": [
+    "大盤空頭（指數收在 MA20、MA60 之下）"
+   ],
+   "market": "TW",
+   "theme": "機器人・整機系統",
+   "earnings": {
+    "date": "2027-03-31",
+    "days": 97
+   }
+  },
+  "6215.TW": {
+   "symbol": "6215.TW",
+   "bars": 20,
+   "date": "2026-11-16",
+   "close": 73.4,
+   "ma5": 77.54,
+   "ma20": 83.65,
+   "ma60": 92.56,
+   "atr": 4.85,
+   "rsi": 28.9,
+   "volRatio": 0.95,
+   "dailyTrend": "空頭",
+   "weeklyTrend": "空頭",
+   "marketRegime": "BEAR",
+   "bias20": -12.25,
+   "historyNote": "支撐壓力只取得到最近 20 根日 K（約 5 週）；MA60 與週線趨勢取自 latest.json（2 年日 K）。",
+   "pullback": {
+    "zone": [
+     67.7,
+     70.12
+    ],
+    "zoneWhy": "日線擺盪低點 2026-11-06＋近 20 日低 67.7 到上方 0.5 ATR",
+    "confirm": "近 3 日最低碰到區間，之後收盤站回 MA5、收盤高於前一日高點、量比 ≥ 1.0、RSI 回升",
+    "confirmState": {
+     "touch": false,
+     "aboveMA5": false,
+     "abovePrevHigh": false,
+     "volume": false,
+     "rsiUp": false
+    },
+    "entry": 68.91,
+    "entryWhy": "區間中點",
+    "stop": 65.28,
+    "stopWhy": "日線擺盪低點 2026-11-06＋近 20 日低 下方 0.5 ATR",
+    "t1": 83.65,
+    "t1Why": "MA20（下彎）",
+    "t2": 92.56,
+    "t2Why": "MA60（2 年日 K 算的）＋日線擺盪高點 2026-10-27＋近 20 日高",
+    "rr1": 4.05,
+    "rr2": 6.5
+   },
+   "breakout": {
+    "trigger": 83.65,
+    "triggerWhy": "MA20（下彎）",
+    "volume": "量比 ≥ 1.5（以 20 日均量計），收盤在當日區間上 1/3",
+    "retest": true,
+    "retestWhy": "週線空頭",
+    "entry": 83.65,
+    "entryWhy": "以觸發價計",
+    "stop": 65.28,
+    "stopWhy": "日線擺盪低點 2026-11-06＋近 20 日低 下方 0.5 ATR",
+    "t1": 92.56,
+    "t1Why": "MA60（2 年日 K 算的）＋日線擺盪高點 2026-10-27＋近 20 日高",
+    "t2": 102.26,
+    "t2Why": "第一目標上方已無紀錄內壓力，用第一目標 + 2 ATR",
+    "rr1": 0.49,
+    "rr2": 1.01,
+    "distATR": 2.11
+   },
+   "status": "weak",
+   "label": "結構轉弱",
+   "why": [
+    "收盤在 MA20、MA60 之下，且MA20 下彎、收盤在 MA20 下方 2.1 ATR；先等止跌：不再破低、收盤站回 MA5，再看能否站上 MA20 83.65。",
+    "擋板：大盤空頭（指數收在 MA20、MA60 之下）。"
+   ],
+   "blockers": [
+    "大盤空頭（指數收在 MA20、MA60 之下）"
+   ],
+   "market": "TW",
+   "theme": "機器人・整機系統",
+   "earnings": {
+    "date": "2027-03-31",
+    "days": 97
+   }
+  },
+  "8374.TW": {
+   "symbol": "8374.TW",
+   "bars": 20,
+   "date": "2026-11-16",
+   "close": 60.8,
+   "ma5": 61.8,
+   "ma20": 66.53,
+   "ma60": 74.27,
+   "atr": 3.81,
+   "rsi": 32.1,
+   "volRatio": 2.68,
+   "dailyTrend": "空頭",
+   "weeklyTrend": "空頭",
+   "marketRegime": "BEAR",
+   "bias20": -8.61,
+   "historyNote": "支撐壓力只取得到最近 20 根日 K（約 5 週）；MA60 與週線趨勢取自 latest.json（2 年日 K）。",
+   "pullback": {
+    "zone": [
+     56.2,
+     58.11
+    ],
+    "zoneWhy": "日線擺盪低點 2026-11-06＋近 20 日低 56.2 到上方 0.5 ATR",
+    "confirm": "近 3 日最低碰到區間，之後收盤站回 MA5、收盤高於前一日高點、量比 ≥ 1.0、RSI 回升",
+    "confirmState": {
+     "touch": false,
+     "aboveMA5": false,
+     "abovePrevHigh": false,
+     "volume": true,
+     "rsiUp": false
+    },
+    "entry": 57.15,
+    "entryWhy": "區間中點",
+    "stop": 54.29,
+    "stopWhy": "日線擺盪低點 2026-11-06＋近 20 日低 下方 0.5 ATR",
+    "t1": 66.53,
+    "t1Why": "MA20（下彎）",
+    "t2": 73.5,
+    "t2Why": "日線擺盪高點 2026-10-27＋日線擺盪高點 2026-10-29＋近 20 日高＋MA60（2 年日 K 算的）",
+    "rr1": 3.28,
+    "rr2": 5.71
+   },
+   "breakout": {
+    "trigger": 66.53,
+    "triggerWhy": "MA20（下彎）",
+    "volume": "量比 ≥ 1.5（以 20 日均量計），收盤在當日區間上 1/3",
+    "retest": true,
+    "retestWhy": "週線空頭",
+    "entry": 66.53,
+    "entryWhy": "以觸發價計",
+    "stop": 54.29,
+    "stopWhy": "日線擺盪低點 2026-11-06＋近 20 日低 下方 0.5 ATR",
+    "t1": 73.5,
+    "t1Why": "日線擺盪高點 2026-10-27＋日線擺盪高點 2026-10-29＋近 20 日高＋MA60（2 年日 K 算的）",
+    "t2": 81.13,
+    "t2Why": "第一目標上方已無紀錄內壓力，用第一目標 + 2 ATR",
+    "rr1": 0.57,
+    "rr2": 1.19,
+    "distATR": 1.5
+   },
+   "status": "weak",
+   "label": "結構轉弱",
+   "why": [
+    "收盤在 MA20、MA60 之下，且MA20 下彎、收盤在 MA20 下方 1.5 ATR；先等止跌：不再破低、收盤站回 MA5，再看能否站上 MA20 66.53。",
+    "擋板：大盤空頭（指數收在 MA20、MA60 之下）。"
+   ],
+   "blockers": [
+    "大盤空頭（指數收在 MA20、MA60 之下）"
+   ],
+   "market": "TW",
+   "theme": "機器人・整機系統",
+   "earnings": {
+    "date": "2027-03-31",
+    "days": 97
+   }
+  },
+  "2317.TW": {
+   "symbol": "2317.TW",
+   "bars": 20,
+   "date": "2026-11-16",
+   "close": 218.5,
+   "ma5": 236.6,
+   "ma20": 241.57,
+   "ma60": 246.8,
+   "atr": 10.79,
+   "rsi": 35.6,
+   "volRatio": 1.89,
+   "dailyTrend": "空頭",
+   "weeklyTrend": "空頭",
+   "marketRegime": "BEAR",
+   "bias20": -9.55,
+   "historyNote": "支撐壓力只取得到最近 20 根日 K（約 5 週）；MA60 與週線趨勢取自 latest.json（2 年日 K）。",
+   "pullback": {
+    "zone": [
+     212.5,
+     217.89
+    ],
+    "zoneWhy": "日線擺盪低點 2026-11-06＋近 20 日低 212.5 到上方 0.5 ATR",
+    "confirm": "近 3 日最低碰到區間，之後收盤站回 MA5、收盤高於前一日高點、量比 ≥ 1.0、RSI 回升",
+    "confirmState": {
+     "touch": true,
+     "aboveMA5": false,
+     "abovePrevHigh": false,
+     "volume": true,
+     "rsiUp": false
+    },
+    "entry": 215.2,
+    "entryWhy": "區間中點",
+    "stop": 207.11,
+    "stopWhy": "日線擺盪低點 2026-11-06＋近 20 日低 下方 0.5 ATR",
+    "t1": 241.57,
+    "t1Why": "MA20（下彎）",
+    "t2": 246.8,
+    "t2Why": "MA60（2 年日 K 算的）＋日線擺盪高點 2026-11-10",
+    "rr1": 3.26,
+    "rr2": 3.91
+   },
+   "breakout": {
+    "trigger": 241.57,
+    "triggerWhy": "MA20（下彎）",
+    "volume": "量比 ≥ 1.5（以 20 日均量計），收盤在當日區間上 1/3",
+    "retest": true,
+    "retestWhy": "週線空頭",
+    "entry": 241.57,
+    "entryWhy": "以觸發價計",
+    "stop": 207.11,
+    "stopWhy": "日線擺盪低點 2026-11-06＋近 20 日低 下方 0.5 ATR",
+    "t1": 253.5,
+    "t1Why": "日線擺盪高點 2026-10-29＋近 20 日高",
+    "t2": 275.07,
+    "t2Why": "第一目標上方已無紀錄內壓力，用第一目標 + 2 ATR",
+    "rr1": 0.35,
+    "rr2": 0.97,
+    "distATR": 2.14
+   },
+   "status": "weak",
+   "label": "結構轉弱",
+   "why": [
+    "收盤在 MA20、MA60 之下，且MA20 下彎、收盤在 MA20 下方 2.1 ATR；先等止跌：不再破低、收盤站回 MA5，再看能否站上 MA20 241.57。",
+    "擋板：大盤空頭（指數收在 MA20、MA60 之下）。"
+   ],
+   "blockers": [
+    "大盤空頭（指數收在 MA20、MA60 之下）"
+   ],
+   "market": "TW",
+   "theme": "機器人・整機系統",
+   "earnings": {
+    "date": "2027-03-31",
+    "days": 97
+   }
+  },
+  "TSM": {
+   "symbol": "TSM",
+   "bars": 36,
+   "date": "2026-11-13",
+   "close": 398.73,
+   "ma5": 400.53,
+   "ma20": 408.86,
+   "ma60": 427.94,
+   "atr": 19.05,
+   "rsi": 45.6,
+   "volRatio": 0.73,
+   "dailyTrend": "空頭",
+   "weeklyTrend": "盤整",
+   "marketRegime": "BEAR",
+   "bias20": -2.48,
+   "historyNote": "支撐壓力只取得到最近 36 根日 K（約 8 週）；MA60 與週線趨勢取自 latest.json（2 年日 K）。",
+   "pullback": {
+    "zone": [
+     351.19,
+     360.71
+    ],
+    "zoneWhy": "日線擺盪低點 2026-11-05＋近 20 日低 351.19 到上方 0.5 ATR",
+    "confirm": "近 3 日最低碰到區間，之後收盤站回 MA5、收盤高於前一日高點、量比 ≥ 1.0、RSI 回升",
+    "confirmState": {
+     "touch": false,
+     "aboveMA5": false,
+     "abovePrevHigh": false,
+     "volume": false,
+     "rsiUp": false
+    },
+    "entry": 355.95,
+    "entryWhy": "區間中點",
+    "stop": 341.67,
+    "stopWhy": "日線擺盪低點 2026-11-05＋近 20 日低 下方 0.5 ATR",
+    "t1": 427.94,
+    "t1Why": "MA60（2 年日 K 算的）",
+    "t2": 435.16,
+    "t2Why": "日線擺盪高點 2026-10-21",
+    "rr1": 5.04,
+    "rr2": 5.54
+   },
+   "breakout": {
+    "trigger": 407.13,
+    "triggerWhy": "日線擺盪低點 2026-10-15（跌破後轉壓力）＋MA20（下彎）＋日線擺盪低點 2026-10-22（跌破後轉壓力）",
+    "volume": "量比 ≥ 1.5（以 20 日均量計），收盤在當日區間上 1/3",
+    "retest": false,
+    "retestWhy": "突破當天若超過觸發價 1 ATR 才需等回測",
+    "entry": 407.13,
+    "entryWhy": "以觸發價計",
+    "stop": 341.67,
+    "stopWhy": "日線擺盪低點 2026-11-05＋近 20 日低 下方 0.5 ATR",
+    "t1": 427.94,
+    "t1Why": "MA60（2 年日 K 算的）",
+    "t2": 435.16,
+    "t2Why": "日線擺盪高點 2026-10-21",
+    "rr1": 0.32,
+    "rr2": 0.43,
+    "distATR": 0.44
+   },
+   "status": "weak",
+   "label": "結構轉弱",
+   "why": [
+    "收盤在 MA20、MA60 之下，且MA20 下彎、收盤在 MA20 下方 0.5 ATR；先等止跌：不再破低、收盤站回 MA5，再看能否站上 MA20 408.86。",
+    "擋板：大盤空頭（指數收在 MA20、MA60 之下）。"
+   ],
+   "blockers": [
+    "大盤空頭（指數收在 MA20、MA60 之下）"
+   ],
+   "market": "US",
+   "theme": "AI晶片",
+   "earnings": {
+    "date": "2027-01-14",
+    "days": 44
+   }
+  },
+  "NVDA": {
+   "symbol": "NVDA",
+   "bars": 36,
+   "date": "2026-11-13",
+   "close": 162.85,
+   "ma5": 170.07,
+   "ma20": 198.69,
+   "ma60": 215.25,
+   "atr": 11.0,
+   "rsi": 25.2,
+   "volRatio": 1.85,
+   "dailyTrend": "空頭",
+   "weeklyTrend": "盤整",
+   "marketRegime": "BEAR",
+   "bias20": -18.04,
+   "historyNote": "支撐壓力只取得到最近 36 根日 K（約 8 週）；MA60 與週線趨勢取自 latest.json（2 年日 K）。",
+   "pullback": {
+    "zone": [
+     148.8,
+     154.3
+    ],
+    "zoneWhy": "近 20 日低 148.8 到上方 0.5 ATR",
+    "confirm": "近 3 日最低碰到區間，之後收盤站回 MA5、收盤高於前一日高點、量比 ≥ 1.0、RSI 回升",
+    "confirmState": {
+     "touch": true,
+     "aboveMA5": false,
+     "abovePrevHigh": false,
+     "volume": true,
+     "rsiUp": false
+    },
+    "entry": 151.55,
+    "entryWhy": "區間中點",
+    "stop": 143.3,
+    "stopWhy": "近 20 日低 下方 0.5 ATR",
+    "t1": 198.69,
+    "t1Why": "MA20（下彎）",
+    "t2": 210.18,
+    "t2Why": "日線擺盪低點 2026-10-23（跌破後轉壓力）",
+    "rr1": 5.71,
+    "rr2": 7.1
+   },
+   "breakout": {
+    "trigger": 198.69,
+    "triggerWhy": "MA20（下彎）",
+    "volume": "量比 ≥ 1.5（以 20 日均量計），收盤在當日區間上 1/3",
+    "retest": false,
+    "retestWhy": "突破當天若超過觸發價 1 ATR 才需等回測",
+    "entry": 198.69,
+    "entryWhy": "以觸發價計",
+    "stop": 143.3,
+    "stopWhy": "近 20 日低 下方 0.5 ATR",
+    "t1": 210.18,
+    "t1Why": "日線擺盪低點 2026-10-23（跌破後轉壓力）",
+    "t2": 215.25,
+    "t2Why": "MA60（2 年日 K 算的）",
+    "rr1": 0.21,
+    "rr2": 0.3,
+    "distATR": 3.26
+   },
+   "status": "weak",
+   "label": "結構轉弱",
+   "why": [
+    "收盤在 MA20、MA60 之下，且近 3 日創 20 日新低；先等止跌：不再破低、收盤站回 MA5，再看能否站上 MA20 198.69。",
+    "擋板：大盤空頭（指數收在 MA20、MA60 之下）、財報 2026-11-17，2 個交易日內。"
+   ],
+   "blockers": [
+    "大盤空頭（指數收在 MA20、MA60 之下）",
+    "財報 2026-11-17，2 個交易日內"
+   ],
+   "market": "US",
+   "theme": "AI晶片",
+   "earnings": {
+    "date": "2026-11-17",
+    "days": 2
+   }
+  },
+  "AMD": {
+   "symbol": "AMD",
+   "bars": 29,
+   "date": "2026-11-13",
+   "close": 534.06,
+   "ma5": 539.21,
+   "ma20": 519.02,
+   "ma60": 540.06,
+   "atr": 47.88,
+   "rsi": 45.0,
+   "volRatio": 1.48,
+   "dailyTrend": "盤整",
+   "weeklyTrend": "盤整",
+   "marketRegime": "BEAR",
+   "bias20": 2.9,
+   "historyNote": "支撐壓力只取得到最近 29 根日 K（約 6 週）；MA60 與週線趨勢取自 latest.json（2 年日 K）。",
+   "pullback": {
+    "zone": [
+     519.02,
+     534.06
+    ],
+    "zoneWhy": "MA20（下彎） 519.02 到上方 0.5 ATR",
+    "confirm": "近 3 日最低碰到區間，之後收盤站回 MA5、收盤高於前一日高點、量比 ≥ 1.0、RSI 回升",
+    "confirmState": {
+     "touch": true,
+     "aboveMA5": false,
+     "abovePrevHigh": false,
+     "volume": true,
+     "rsiUp": false
+    },
+    "entry": 526.54,
+    "entryWhy": "區間中點",
+    "stop": 495.08,
+    "stopWhy": "MA20（下彎） 下方 0.5 ATR",
+    "t1": 579.18,
+    "t1Why": "日線擺盪高點 2026-10-28",
+    "t2": 594.0,
+    "t2Why": "近 20 日高",
+    "rr1": 1.67,
+    "rr2": 2.14
+   },
+   "breakout": {
+    "trigger": 556.79,
+    "triggerWhy": "日線擺盪高點 2026-10-21",
+    "volume": "量比 ≥ 1.5（以 20 日均量計），收盤在當日區間上 1/3",
+    "retest": false,
+    "retestWhy": "突破當天若超過觸發價 1 ATR 才需等回測",
+    "entry": 556.79,
+    "entryWhy": "以觸發價計",
+    "stop": 495.08,
+    "stopWhy": "MA20（下彎） 下方 0.5 ATR",
+    "t1": 594.0,
+    "t1Why": "近 20 日高",
+    "t2": 689.77,
+    "t2Why": "第一目標上方已無紀錄內壓力，用第一目標 + 2 ATR",
+    "rr1": 0.6,
+    "rr2": 2.15,
+    "distATR": 0.47
+   },
+   "status": "pullback",
+   "label": "等待回檔",
+   "why": [
+    "價格已在回檔區間，但還缺：收盤站回 MA5、收盤高於前一日高、RSI 回升。",
+    "擋板：大盤空頭（指數收在 MA20、MA60 之下）。"
+   ],
+   "blockers": [
+    "大盤空頭（指數收在 MA20、MA60 之下）"
+   ],
+   "market": "US",
+   "theme": "AI晶片",
+   "earnings": {
+    "date": "2027-02-02",
+    "days": 57
+   }
+  },
+  "AVGO": {
+   "symbol": "AVGO",
+   "bars": 36,
+   "date": "2026-11-13",
+   "close": 347.01,
+   "ma5": 341.61,
+   "ma20": 330.96,
+   "ma60": 348.56,
+   "atr": 20.25,
+   "rsi": 54.7,
+   "volRatio": 1.18,
+   "dailyTrend": "盤整",
+   "weeklyTrend": "盤整",
+   "marketRegime": "BEAR",
+   "bias20": 4.85,
+   "historyNote": "支撐壓力只取得到最近 36 根日 K（約 8 週）；MA60 與週線趨勢取自 latest.json（2 年日 K）。",
+   "pullback": {
+    "zone": [
+     343.29,
+     347.01
+    ],
+    "zoneWhy": "日線擺盪低點 2026-10-01 343.29 到上方 0.5 ATR",
+    "confirm": "近 3 日最低碰到區間，之後收盤站回 MA5、收盤高於前一日高點、量比 ≥ 1.0、RSI 回升",
+    "confirmState": {
+     "touch": true,
+     "aboveMA5": true,
+     "abovePrevHigh": false,
+     "volume": true,
+     "rsiUp": false
+    },
+    "entry": 345.15,
+    "entryWhy": "區間中點",
+    "stop": 333.17,
+    "stopWhy": "日線擺盪低點 2026-10-01 下方 0.5 ATR",
+    "t1": 369.82,
+    "t1Why": "近 20 日高",
+    "t2": 380.84,
+    "t2Why": "日線擺盪高點 2026-10-06",
+    "rr1": 2.06,
+    "rr2": 2.98
+   },
+   "breakout": {
+    "trigger": 352.4,
+    "triggerWhy": "日線擺盪高點 2026-10-28",
+    "volume": "量比 ≥ 1.5（以 20 日均量計），收盤在當日區間上 1/3",
+    "retest": false,
+    "retestWhy": "突破當天若超過觸發價 1 ATR 才需等回測",
+    "entry": 352.4,
+    "entryWhy": "以觸發價計",
+    "stop": 333.17,
+    "stopWhy": "日線擺盪低點 2026-10-01 下方 0.5 ATR",
+    "t1": 369.82,
+    "t1Why": "近 20 日高",
+    "t2": 380.84,
+    "t2Why": "日線擺盪高點 2026-10-06",
+    "rr1": 0.91,
+    "rr2": 1.48,
+    "distATR": 0.27
+   },
+   "status": "pullback",
+   "label": "等待回檔",
+   "why": [
+    "價格已在回檔區間，但還缺：收盤高於前一日高、RSI 回升。",
+    "擋板：大盤空頭（指數收在 MA20、MA60 之下）。"
+   ],
+   "blockers": [
+    "大盤空頭（指數收在 MA20、MA60 之下）"
+   ],
+   "market": "US",
+   "theme": "AI晶片",
+   "earnings": {
+    "date": "2026-12-09",
+    "days": 18
+   }
+  },
+  "MSFT": {
+   "symbol": "MSFT",
+   "bars": 29,
+   "date": "2026-11-13",
+   "close": 523.88,
+   "ma5": 529.27,
+   "ma20": 529.39,
+   "ma60": 515.71,
+   "atr": 17.55,
+   "rsi": 47.8,
+   "volRatio": 1.0,
+   "dailyTrend": "盤整",
+   "weeklyTrend": "多頭",
+   "marketRegime": "BEAR",
+   "bias20": -1.04,
+   "historyNote": "支撐壓力只取得到最近 29 根日 K（約 6 週）；MA60 與週線趨勢取自 latest.json（2 年日 K）。",
+   "pullback": {
+    "zone": [
+     515.7,
+     523.88
+    ],
+    "zoneWhy": "日線擺盪低點 2026-10-23＋MA60（2 年日 K 算的） 515.7 到上方 0.5 ATR",
+    "confirm": "近 3 日最低碰到區間，之後收盤站回 MA5、收盤高於前一日高點、量比 ≥ 1.0、RSI 回升",
+    "confirmState": {
+     "touch": true,
+     "aboveMA5": false,
+     "abovePrevHigh": false,
+     "volume": false,
+     "rsiUp": true
+    },
+    "entry": 519.79,
+    "entryWhy": "區間中點",
+    "stop": 506.92,
+    "stopWhy": "日線擺盪低點 2026-10-23＋MA60（2 年日 K 算的） 下方 0.5 ATR",
+    "t1": 541.29,
+    "t1Why": "日線擺盪高點 2026-10-29",
+    "t2": 551.15,
+    "t2Why": "日線擺盪高點 2026-10-13",
+    "rr1": 1.67,
+    "rr2": 2.44
+   },
+   "breakout": {
+    "trigger": 529.39,
+    "triggerWhy": "MA20（下彎）",
+    "volume": "量比 ≥ 1.5（以 20 日均量計），收盤在當日區間上 1/3",
+    "retest": false,
+    "retestWhy": "突破當天若超過觸發價 1 ATR 才需等回測",
+    "entry": 529.39,
+    "entryWhy": "以觸發價計",
+    "stop": 506.92,
+    "stopWhy": "日線擺盪低點 2026-10-23＋MA60（2 年日 K 算的） 下方 0.5 ATR",
+    "t1": 541.29,
+    "t1Why": "日線擺盪高點 2026-10-29",
+    "t2": 551.15,
+    "t2Why": "日線擺盪高點 2026-10-13",
+    "rr1": 0.53,
+    "rr2": 0.97,
+    "distATR": 0.31
+   },
+   "status": "pullback",
+   "label": "等待回檔",
+   "why": [
+    "價格已在回檔區間，但還缺：收盤站回 MA5、收盤高於前一日高、量比 ≥ 1.0。",
+    "擋板：大盤空頭（指數收在 MA20、MA60 之下）。"
+   ],
+   "blockers": [
+    "大盤空頭（指數收在 MA20、MA60 之下）"
+   ],
+   "market": "US",
+   "theme": "AI雲端／記憶體",
+   "earnings": {
+    "date": "2027-01-27",
+    "days": 53
+   }
+  },
+  "META": {
+   "symbol": "META",
+   "bars": 29,
+   "date": "2026-11-13",
+   "close": 641.69,
+   "ma5": 635.37,
+   "ma20": 637.06,
+   "ma60": 662.48,
+   "atr": 20.96,
+   "rsi": 44.2,
+   "volRatio": 0.63,
+   "dailyTrend": "盤整",
+   "weeklyTrend": "盤整",
+   "marketRegime": "BEAR",
+   "bias20": 0.73,
+   "historyNote": "支撐壓力只取得到最近 29 根日 K（約 6 週）；MA60 與週線趨勢取自 latest.json（2 年日 K）。",
+   "pullback": {
+    "zone": [
+     637.06,
+     641.69
+    ],
+    "zoneWhy": "MA20（下彎） 637.06 到上方 0.5 ATR",
+    "confirm": "近 3 日最低碰到區間，之後收盤站回 MA5、收盤高於前一日高點、量比 ≥ 1.0、RSI 回升",
+    "confirmState": {
+     "touch": true,
+     "aboveMA5": true,
+     "abovePrevHigh": true,
+     "volume": false,
+     "rsiUp": true
+    },
+    "entry": 639.38,
+    "entryWhy": "區間中點",
+    "stop": 626.58,
+    "stopWhy": "MA20（下彎） 下方 0.5 ATR",
+    "t1": 662.48,
+    "t1Why": "MA60（2 年日 K 算的）",
+    "t2": 713.22,
+    "t2Why": "近 20 日高",
+    "rr1": 1.81,
+    "rr2": 5.77
+   },
+   "breakout": {
+    "trigger": 662.48,
+    "triggerWhy": "MA60（2 年日 K 算的）",
+    "volume": "量比 ≥ 1.5（以 20 日均量計），收盤在當日區間上 1/3",
+    "retest": true,
+    "retestWhy": "觸發價是下彎的 MA60",
+    "entry": 662.48,
+    "entryWhy": "以觸發價計",
+    "stop": 626.58,
+    "stopWhy": "MA20（下彎） 下方 0.5 ATR",
+    "t1": 713.22,
+    "t1Why": "近 20 日高",
+    "t2": 771.27,
+    "t2Why": "日線擺盪高點 2026-10-13",
+    "rr1": 1.41,
+    "rr2": 3.03,
+    "distATR": 0.99
+   },
+   "status": "pullback",
+   "label": "等待回檔",
+   "why": [
+    "價格已在回檔區間，但還缺：量比 ≥ 1.0。",
+    "擋板：大盤空頭（指數收在 MA20、MA60 之下）。"
+   ],
+   "blockers": [
+    "大盤空頭（指數收在 MA20、MA60 之下）"
+   ],
+   "market": "US",
+   "theme": "AI雲端／記憶體",
+   "earnings": {
+    "date": "2027-01-27",
+    "days": 53
+   }
+  },
+  "MU": {
+   "symbol": "MU",
+   "bars": 36,
+   "date": "2026-11-13",
+   "close": 778.31,
+   "ma5": 769.26,
+   "ma20": 838.0,
+   "ma60": 943.53,
+   "atr": 64.86,
+   "rsi": 41.8,
+   "volRatio": 0.91,
+   "dailyTrend": "空頭",
+   "weeklyTrend": "盤整",
+   "marketRegime": "BEAR",
+   "bias20": -7.12,
+   "historyNote": "支撐壓力只取得到最近 36 根日 K（約 8 週）；MA60 與週線趨勢取自 latest.json（2 年日 K）。",
+   "pullback": {
+    "zone": [
+     650.0,
+     682.43
+    ],
+    "zoneWhy": "日線擺盪低點 2026-11-05＋近 20 日低 650.0 到上方 0.5 ATR",
+    "confirm": "近 3 日最低碰到區間，之後收盤站回 MA5、收盤高於前一日高點、量比 ≥ 1.0、RSI 回升",
+    "confirmState": {
+     "touch": false,
+     "aboveMA5": true,
+     "abovePrevHigh": false,
+     "volume": false,
+     "rsiUp": false
+    },
+    "entry": 666.22,
+    "entryWhy": "區間中點",
+    "stop": 617.57,
+    "stopWhy": "日線擺盪低點 2026-11-05＋近 20 日低 下方 0.5 ATR",
+    "t1": 838.0,
+    "t1Why": "MA20（下彎）＋日線擺盪低點 2026-10-22（跌破後轉壓力）",
+    "t2": 858.0,
+    "t2Why": "日線擺盪低點 2026-10-15（跌破後轉壓力）",
+    "rr1": 3.53,
+    "rr2": 3.94
+   },
+   "breakout": {
+    "trigger": 838.0,
+    "triggerWhy": "MA20（下彎）＋日線擺盪低點 2026-10-22（跌破後轉壓力）",
+    "volume": "量比 ≥ 1.5（以 20 日均量計），收盤在當日區間上 1/3",
+    "retest": false,
+    "retestWhy": "突破當天若超過觸發價 1 ATR 才需等回測",
+    "entry": 838.0,
+    "entryWhy": "以觸發價計",
+    "stop": 617.57,
+    "stopWhy": "日線擺盪低點 2026-11-05＋近 20 日低 下方 0.5 ATR",
+    "t1": 928.45,
+    "t1Why": "日線擺盪高點 2026-10-21＋MA60（2 年日 K 算的）",
+    "t2": 990.0,
+    "t2Why": "日線擺盪高點 2026-10-28＋近 20 日高",
+    "rr1": 0.41,
+    "rr2": 0.69,
+    "distATR": 0.92
+   },
+   "status": "weak",
+   "label": "結構轉弱",
+   "why": [
+    "收盤在 MA20、MA60 之下，且MA20 下彎、收盤在 MA20 下方 0.9 ATR；先等止跌：不再破低、收盤站回 MA5，再看能否站上 MA20 838.0。",
+    "擋板：大盤空頭（指數收在 MA20、MA60 之下）。"
+   ],
+   "blockers": [
+    "大盤空頭（指數收在 MA20、MA60 之下）"
+   ],
+   "market": "US",
+   "theme": "AI雲端／記憶體",
+   "earnings": {
+    "date": "2026-12-23",
+    "days": 28
+   }
+  },
+  "TSLA": {
+   "symbol": "TSLA",
+   "bars": 36,
+   "date": "2026-11-13",
+   "close": 390.22,
+   "ma5": 387.27,
+   "ma20": 385.36,
+   "ma60": 371.76,
+   "atr": 18.16,
+   "rsi": 53.8,
+   "volRatio": 0.79,
+   "dailyTrend": "多頭",
+   "weeklyTrend": "盤整",
+   "marketRegime": "BEAR",
+   "bias20": 1.26,
+   "historyNote": "支撐壓力只取得到最近 36 根日 K（約 8 週）；MA60 與週線趨勢取自 latest.json（2 年日 K）。",
+   "pullback": {
+    "zone": [
+     385.36,
+     390.22
+    ],
+    "zoneWhy": "MA20（上彎）＋日線擺盪高點 2026-10-09（突破後轉支撐） 385.36 到上方 0.5 ATR",
+    "confirm": "近 3 日最低碰到區間，之後收盤站回 MA5、收盤高於前一日高點、量比 ≥ 1.0、RSI 回升",
+    "confirmState": {
+     "touch": true,
+     "aboveMA5": true,
+     "abovePrevHigh": false,
+     "volume": false,
+     "rsiUp": false
+    },
+    "entry": 387.79,
+    "entryWhy": "區間中點",
+    "stop": 376.28,
+    "stopWhy": "MA20（上彎）＋日線擺盪高點 2026-10-09（突破後轉支撐） 下方 0.5 ATR",
+    "t1": 414.23,
+    "t1Why": "日線擺盪高點 2026-11-02＋近 20 日高",
+    "t2": 450.56,
+    "t2Why": "第一目標上方已無紀錄內壓力，用第一目標 + 2 ATR",
+    "rr1": 2.3,
+    "rr2": 5.45
+   },
+   "breakout": {
+    "trigger": 414.23,
+    "triggerWhy": "日線擺盪高點 2026-11-02＋近 20 日高",
+    "volume": "量比 ≥ 1.5（以 20 日均量計），收盤在當日區間上 1/3",
+    "retest": false,
+    "retestWhy": "突破當天若超過觸發價 1 ATR 才需等回測",
+    "entry": 414.23,
+    "entryWhy": "以觸發價計",
+    "stop": 376.28,
+    "stopWhy": "MA20（上彎）＋日線擺盪高點 2026-10-09（突破後轉支撐） 下方 0.5 ATR",
+    "t1": 468.72,
+    "t1Why": "紀錄內上方已無壓力，用進場價 + 3 ATR",
+    "t2": 505.04,
+    "t2Why": "第一目標上方已無紀錄內壓力，用第一目標 + 2 ATR",
+    "rr1": 1.44,
+    "rr2": 2.39,
+    "distATR": 1.32
+   },
+   "status": "pullback",
+   "label": "等待回檔",
+   "why": [
+    "價格已在回檔區間，但還缺：收盤高於前一日高、量比 ≥ 1.0、RSI 回升。",
+    "擋板：大盤空頭（指數收在 MA20、MA60 之下）。"
+   ],
+   "blockers": [
+    "大盤空頭（指數收在 MA20、MA60 之下）"
+   ],
+   "market": "US",
+   "theme": "AI機器人",
+   "earnings": {
+    "date": "2027-01-27",
+    "days": 53
+   }
+  },
+  "SPCX": {
+   "symbol": "SPCX",
+   "bars": 29,
+   "date": "2026-11-13",
+   "close": 139.11,
+   "ma5": 140.79,
+   "ma20": 142.1,
+   "ma60": 147.56,
+   "atr": 8.0,
+   "rsi": 39.7,
+   "volRatio": 0.68,
+   "dailyTrend": "空頭",
+   "weeklyTrend": "空頭",
+   "marketRegime": "BEAR",
+   "bias20": -2.11,
+   "historyNote": "支撐壓力只取得到最近 29 根日 K（約 6 週）；MA60 與週線趨勢取自 latest.json（2 年日 K）。",
+   "pullback": {
+    "zone": [
+     120.39,
+     124.39
+    ],
+    "zoneWhy": "日線擺盪低點 2026-11-05＋近 20 日低 120.39 到上方 0.5 ATR",
+    "confirm": "近 3 日最低碰到區間，之後收盤站回 MA5、收盤高於前一日高點、量比 ≥ 1.0、RSI 回升",
+    "confirmState": {
+     "touch": false,
+     "aboveMA5": false,
+     "abovePrevHigh": false,
+     "volume": false,
+     "rsiUp": false
+    },
+    "entry": 122.39,
+    "entryWhy": "區間中點",
+    "stop": 116.39,
+    "stopWhy": "日線擺盪低點 2026-11-05＋近 20 日低 下方 0.5 ATR",
+    "t1": 147.56,
+    "t1Why": "MA60（2 年日 K 算的）",
+    "t2": 166.18,
+    "t2Why": "日線擺盪高點 2026-10-21＋近 20 日高",
+    "rr1": 4.19,
+    "rr2": 7.29
+   },
+   "breakout": {
+    "trigger": 142.1,
+    "triggerWhy": "MA20（下彎）＋日線擺盪低點 2026-10-22（跌破後轉壓力）",
+    "volume": "量比 ≥ 1.5（以 20 日均量計），收盤在當日區間上 1/3",
+    "retest": true,
+    "retestWhy": "週線空頭",
+    "entry": 142.1,
+    "entryWhy": "以觸發價計",
+    "stop": 116.39,
+    "stopWhy": "日線擺盪低點 2026-11-05＋近 20 日低 下方 0.5 ATR",
+    "t1": 147.56,
+    "t1Why": "MA60（2 年日 K 算的）",
+    "t2": 166.18,
+    "t2Why": "日線擺盪高點 2026-10-21＋近 20 日高",
+    "rr1": 0.21,
+    "rr2": 0.94,
+    "distATR": 0.37
+   },
+   "status": "breakout",
+   "label": "等待突破確認",
+   "why": [
+    "收盤在觸發價 142.1（MA20（下彎）＋日線擺盪低點 2026-10-22（跌破後轉壓力））下方 0.37 ATR，等帶量站上後回測不破。",
+    "以觸發價計報酬風險比只有 0.21（失效價在 116.39），突破當下也不追；要等突破後回測形成更高的低點再重算。",
+    "擋板：大盤空頭（指數收在 MA20、MA60 之下）。"
+   ],
+   "blockers": [
+    "大盤空頭（指數收在 MA20、MA60 之下）"
+   ],
+   "market": "US",
+   "theme": "航太科技"
+  },
+  "RKLB": {
+   "symbol": "RKLB",
+   "bars": 21,
+   "date": "2026-11-13",
+   "close": 61.53,
+   "ma5": 62.66,
+   "ma20": 55.78,
+   "ma60": 63.04,
+   "atr": 5.28,
+   "rsi": 53.4,
+   "volRatio": 0.67,
+   "dailyTrend": "盤整",
+   "weeklyTrend": "空頭",
+   "marketRegime": "BEAR",
+   "bias20": 10.31,
+   "historyNote": "支撐壓力只取得到最近 21 根日 K（約 5 週）；MA60 與週線趨勢取自 latest.json（2 年日 K）。",
+   "pullback": {
+    "zone": [
+     61.13,
+     61.53
+    ],
+    "zoneWhy": "日線擺盪高點 2026-10-29（突破後轉支撐） 61.13 到上方 0.5 ATR",
+    "confirm": "近 3 日最低碰到區間，之後收盤站回 MA5、收盤高於前一日高點、量比 ≥ 1.0、RSI 回升",
+    "confirmState": {
+     "touch": true,
+     "aboveMA5": false,
+     "abovePrevHigh": false,
+     "volume": false,
+     "rsiUp": false
+    },
+    "entry": 61.33,
+    "entryWhy": "區間中點",
+    "stop": 58.49,
+    "stopWhy": "日線擺盪高點 2026-10-29（突破後轉支撐） 下方 0.5 ATR",
+    "t1": 68.26,
+    "t1Why": "近 20 日高",
+    "t2": 78.82,
+    "t2Why": "第一目標上方已無紀錄內壓力，用第一目標 + 2 ATR",
+    "rr1": 2.44,
+    "rr2": 6.16
+   },
+   "breakout": {
+    "trigger": 63.04,
+    "triggerWhy": "MA60（2 年日 K 算的）",
+    "volume": "量比 ≥ 1.5（以 20 日均量計），收盤在當日區間上 1/3",
+    "retest": true,
+    "retestWhy": "週線空頭、觸發價是下彎的 MA60",
+    "entry": 63.04,
+    "entryWhy": "以觸發價計",
+    "stop": 58.49,
+    "stopWhy": "日線擺盪高點 2026-10-29（突破後轉支撐） 下方 0.5 ATR",
+    "t1": 68.26,
+    "t1Why": "近 20 日高",
+    "t2": 78.82,
+    "t2Why": "第一目標上方已無紀錄內壓力，用第一目標 + 2 ATR",
+    "rr1": 1.15,
+    "rr2": 3.46,
+    "distATR": 0.29
+   },
+   "status": "pullback",
+   "label": "等待回檔",
+   "why": [
+    "價格已在回檔區間，但還缺：收盤站回 MA5、收盤高於前一日高、量比 ≥ 1.0、RSI 回升。",
+    "擋板：大盤空頭（指數收在 MA20、MA60 之下）。"
+   ],
+   "blockers": [
+    "大盤空頭（指數收在 MA20、MA60 之下）"
+   ],
+   "market": "US",
+   "theme": "航太科技",
+   "earnings": {
+    "date": "2027-02-25",
+    "days": 74
+   }
+  },
+  "ASTS": {
+   "symbol": "ASTS",
+   "bars": 21,
+   "date": "2026-11-13",
+   "close": 32.6,
+   "ma5": 34.86,
+   "ma20": 37.81,
+   "ma60": 51.62,
+   "atr": 4.1,
+   "rsi": 36.6,
+   "volRatio": 0.85,
+   "dailyTrend": "空頭",
+   "weeklyTrend": "空頭",
+   "marketRegime": "BEAR",
+   "bias20": -13.77,
+   "historyNote": "支撐壓力只取得到最近 21 根日 K（約 5 週）；MA60 與週線趨勢取自 latest.json（2 年日 K）。",
+   "pullback": {
+    "zone": [
+     27.58,
+     29.63
+    ],
+    "zoneWhy": "日線擺盪低點 2026-11-06＋近 20 日低 27.58 到上方 0.5 ATR",
+    "confirm": "近 3 日最低碰到區間，之後收盤站回 MA5、收盤高於前一日高點、量比 ≥ 1.0、RSI 回升",
+    "confirmState": {
+     "touch": false,
+     "aboveMA5": false,
+     "abovePrevHigh": false,
+     "volume": false,
+     "rsiUp": false
+    },
+    "entry": 28.6,
+    "entryWhy": "區間中點",
+    "stop": 25.53,
+    "stopWhy": "日線擺盪低點 2026-11-06＋近 20 日低 下方 0.5 ATR",
+    "t1": 36.72,
+    "t1Why": "日線擺盪低點 2026-10-23（跌破後轉壓力）＋MA20（下彎）",
+    "t2": 44.85,
+    "t2Why": "日線擺盪高點 2026-10-29＋近 20 日高",
+    "rr1": 2.64,
+    "rr2": 5.29
+   },
+   "breakout": {
+    "trigger": 36.72,
+    "triggerWhy": "日線擺盪低點 2026-10-23（跌破後轉壓力）＋MA20（下彎）",
+    "volume": "量比 ≥ 1.5（以 20 日均量計），收盤在當日區間上 1/3",
+    "retest": true,
+    "retestWhy": "週線空頭",
+    "entry": 36.72,
+    "entryWhy": "以觸發價計",
+    "stop": 25.53,
+    "stopWhy": "日線擺盪低點 2026-11-06＋近 20 日低 下方 0.5 ATR",
+    "t1": 44.85,
+    "t1Why": "日線擺盪高點 2026-10-29＋近 20 日高",
+    "t2": 51.62,
+    "t2Why": "MA60（2 年日 K 算的）",
+    "rr1": 0.73,
+    "rr2": 1.33,
+    "distATR": 1.01
+   },
+   "status": "weak",
+   "label": "結構轉弱",
+   "why": [
+    "收盤在 MA20、MA60 之下，且MA20 下彎、收盤在 MA20 下方 1.3 ATR；先等止跌：不再破低、收盤站回 MA5，再看能否站上 MA20 37.81。",
+    "擋板：大盤空頭（指數收在 MA20、MA60 之下）。"
+   ],
+   "blockers": [
+    "大盤空頭（指數收在 MA20、MA60 之下）"
+   ],
+   "market": "US",
+   "theme": "航太科技",
+   "earnings": {
+    "date": "2027-02-10",
+    "days": 63
+   }
+  },
+  "ECHO": {
+   "symbol": "ECHO",
+   "bars": 20,
+   "date": "2026-11-13",
+   "close": 100.0,
+   "ma5": 101.14,
+   "ma20": 94.88,
+   "ma60": 92.28,
+   "atr": 5.47,
+   "rsi": 55.6,
+   "volRatio": 1.11,
+   "dailyTrend": "多頭",
+   "weeklyTrend": "盤整",
+   "marketRegime": "BEAR",
+   "bias20": 5.39,
+   "historyNote": "支撐壓力只取得到最近 20 根日 K（約 4 週）；MA60 與週線趨勢取自 latest.json（2 年日 K）。",
+   "pullback": {
+    "zone": [
+     94.88,
+     97.62
+    ],
+    "zoneWhy": "MA20（下彎） 94.88 到上方 0.5 ATR",
+    "confirm": "近 3 日最低碰到區間，之後收盤站回 MA5、收盤高於前一日高點、量比 ≥ 1.0、RSI 回升",
+    "confirmState": {
+     "touch": true,
+     "aboveMA5": false,
+     "abovePrevHigh": false,
+     "volume": true,
+     "rsiUp": true
+    },
+    "entry": 96.25,
+    "entryWhy": "區間中點",
+    "stop": 92.15,
+    "stopWhy": "MA20（下彎） 下方 0.5 ATR",
+    "t1": 105.03,
+    "t1Why": "近 20 日高",
+    "t2": 115.98,
+    "t2Why": "第一目標上方已無紀錄內壓力，用第一目標 + 2 ATR",
+    "rr1": 2.14,
+    "rr2": 4.81
+   },
+   "breakout": {
+    "trigger": 102.46,
+    "triggerWhy": "日線擺盪高點 2026-11-03",
+    "volume": "量比 ≥ 1.5（以 20 日均量計），收盤在當日區間上 1/3",
+    "retest": false,
+    "retestWhy": "突破當天若超過觸發價 1 ATR 才需等回測",
+    "entry": 102.46,
+    "entryWhy": "以觸發價計",
+    "stop": 92.15,
+    "stopWhy": "MA20（下彎） 下方 0.5 ATR",
+    "t1": 118.88,
+    "t1Why": "紀錄內上方已無壓力，用進場價 + 3 ATR",
+    "t2": 129.82,
+    "t2Why": "第一目標上方已無紀錄內壓力，用第一目標 + 2 ATR",
+    "rr1": 1.59,
+    "rr2": 2.65,
+    "distATR": 0.45
+   },
+   "status": "pullback",
+   "label": "等待回檔",
+   "why": [
+    "價格已在回檔區間，但還缺：收盤站回 MA5、收盤高於前一日高。",
+    "擋板：大盤空頭（指數收在 MA20、MA60 之下）。"
+   ],
+   "blockers": [
+    "大盤空頭（指數收在 MA20、MA60 之下）"
+   ],
+   "market": "US",
+   "theme": "航太科技"
+  },
+  "BTC-USD": {
+   "symbol": "BTC-USD",
+   "bars": 30,
+   "date": "2026-11-15",
+   "close": 65305.06,
+   "ma5": 68597.96,
+   "ma20": 75055.56,
+   "ma60": 80290.22,
+   "atr": 2964.17,
+   "rsi": 23.4,
+   "volRatio": 1.51,
+   "dailyTrend": "空頭",
+   "weeklyTrend": "盤整",
+   "marketRegime": "BEAR",
+   "bias20": -12.99,
+   "historyNote": "支撐壓力只取得到最近 30 根日 K（約 5 週）；MA60 與週線趨勢取自 latest.json（2 年日 K）。",
+   "pullback": {
+    "zone": [
+     62017.88,
+     63499.97
+    ],
+    "zoneWhy": "近 20 日低 62017.88 到上方 0.5 ATR",
+    "confirm": "近 3 日最低碰到區間，之後收盤站回 MA5、收盤高於前一日高點、量比 ≥ 1.0、RSI 回升",
+    "confirmState": {
+     "touch": true,
+     "aboveMA5": false,
+     "abovePrevHigh": false,
+     "volume": true,
+     "rsiUp": true
+    },
+    "entry": 62758.92,
+    "entryWhy": "區間中點",
+    "stop": 60535.8,
+    "stopWhy": "近 20 日低 下方 0.5 ATR",
+    "t1": 75055.56,
+    "t1Why": "MA20（下彎）",
+    "t2": 76189.88,
+    "t2Why": "日線擺盪低點 2026-10-30（跌破後轉壓力）",
+    "rr1": 5.53,
+    "rr2": 6.04
+   },
+   "breakout": {
+    "trigger": 75055.56,
+    "triggerWhy": "MA20（下彎）",
+    "volume": "量比 ≥ 1.5（以 20 日均量計），收盤在當日區間上 1/3",
+    "retest": false,
+    "retestWhy": "突破當天若超過觸發價 1 ATR 才需等回測",
+    "entry": 75055.56,
+    "entryWhy": "以觸發價計",
+    "stop": 60535.8,
+    "stopWhy": "近 20 日低 下方 0.5 ATR",
+    "t1": 79145.54,
+    "t1Why": "日線擺盪低點 2026-10-24（跌破後轉壓力）",
+    "t2": 80290.22,
+    "t2Why": "MA60（2 年日 K 算的）＋日線擺盪高點 2026-11-04",
+    "rr1": 0.28,
+    "rr2": 0.36,
+    "distATR": 3.29
+   },
+   "status": "weak",
+   "label": "結構轉弱",
+   "why": [
+    "收盤在 MA20、MA60 之下，且近 3 日創 20 日新低；先等止跌：不再破低、收盤站回 MA5，再看能否站上 MA20 75055.56。",
+    "擋板：大盤空頭（指數收在 MA20、MA60 之下）。"
+   ],
+   "blockers": [
+    "大盤空頭（指數收在 MA20、MA60 之下）"
+   ],
+   "market": "CRYPTO",
+   "theme": "主流幣"
+  },
+  "ETH-USD": {
+   "symbol": "ETH-USD",
+   "bars": 30,
+   "date": "2026-11-15",
+   "close": 1835.5,
+   "ma5": 1920.98,
+   "ma20": 2163.95,
+   "ma60": 2425.41,
+   "atr": 116.58,
+   "rsi": 25.6,
+   "volRatio": 1.45,
+   "dailyTrend": "空頭",
+   "weeklyTrend": "盤整",
+   "marketRegime": "BEAR",
+   "bias20": -15.18,
+   "historyNote": "支撐壓力只取得到最近 30 根日 K（約 5 週）；MA60 與週線趨勢取自 latest.json（2 年日 K）。",
+   "pullback": {
+    "zone": [
+     1712.38,
+     1770.67
+    ],
+    "zoneWhy": "近 20 日低 1712.38 到上方 0.5 ATR",
+    "confirm": "近 3 日最低碰到區間，之後收盤站回 MA5、收盤高於前一日高點、量比 ≥ 1.0、RSI 回升",
+    "confirmState": {
+     "touch": true,
+     "aboveMA5": false,
+     "abovePrevHigh": false,
+     "volume": true,
+     "rsiUp": true
+    },
+    "entry": 1741.53,
+    "entryWhy": "區間中點",
+    "stop": 1654.09,
+    "stopWhy": "近 20 日低 下方 0.5 ATR",
+    "t1": 2163.95,
+    "t1Why": "MA20（下彎）＋日線擺盪低點 2026-10-30（跌破後轉壓力）",
+    "t2": 2280.55,
+    "t2Why": "日線擺盪低點 2026-10-24（跌破後轉壓力）",
+    "rr1": 4.83,
+    "rr2": 6.16
+   },
+   "breakout": {
+    "trigger": 2163.95,
+    "triggerWhy": "MA20（下彎）＋日線擺盪低點 2026-10-30（跌破後轉壓力）",
+    "volume": "量比 ≥ 1.5（以 20 日均量計），收盤在當日區間上 1/3",
+    "retest": false,
+    "retestWhy": "突破當天若超過觸發價 1 ATR 才需等回測",
+    "entry": 2163.95,
+    "entryWhy": "以觸發價計",
+    "stop": 1654.09,
+    "stopWhy": "近 20 日低 下方 0.5 ATR",
+    "t1": 2280.55,
+    "t1Why": "日線擺盪低點 2026-10-24（跌破後轉壓力）",
+    "t2": 2388.03,
+    "t2Why": "日線擺盪高點 2026-10-28",
+    "rr1": 0.23,
+    "rr2": 0.44,
+    "distATR": 2.82
+   },
+   "status": "weak",
+   "label": "結構轉弱",
+   "why": [
+    "收盤在 MA20、MA60 之下，且近 3 日創 20 日新低；先等止跌：不再破低、收盤站回 MA5，再看能否站上 MA20 2163.95。",
+    "擋板：大盤空頭（指數收在 MA20、MA60 之下）。"
+   ],
+   "blockers": [
+    "大盤空頭（指數收在 MA20、MA60 之下）"
+   ],
+   "market": "CRYPTO",
+   "theme": "主流幣"
+  },
+  "SOL-USD": {
+   "symbol": "SOL-USD",
+   "bars": 26,
+   "date": "2026-11-15",
+   "close": 72.68,
+   "ma5": 77.19,
+   "ma20": 88.81,
+   "ma60": 104.02,
+   "atr": 4.73,
+   "rsi": 19.8,
+   "volRatio": 1.66,
+   "dailyTrend": "空頭",
+   "weeklyTrend": "盤整",
+   "marketRegime": "BEAR",
+   "bias20": -18.16,
+   "historyNote": "支撐壓力只取得到最近 26 根日 K（約 4 週）；MA60 與週線趨勢取自 latest.json（2 年日 K）。",
+   "pullback": {
+    "zone": [
+     67.55,
+     69.91
+    ],
+    "zoneWhy": "近 20 日低 67.55 到上方 0.5 ATR",
+    "confirm": "近 3 日最低碰到區間，之後收盤站回 MA5、收盤高於前一日高點、量比 ≥ 1.0、RSI 回升",
+    "confirmState": {
+     "touch": true,
+     "aboveMA5": false,
+     "abovePrevHigh": false,
+     "volume": true,
+     "rsiUp": true
+    },
+    "entry": 68.73,
+    "entryWhy": "區間中點",
+    "stop": 65.19,
+    "stopWhy": "近 20 日低 下方 0.5 ATR",
+    "t1": 88.81,
+    "t1Why": "MA20（下彎）",
+    "t2": 97.7,
+    "t2Why": "日線擺盪高點 2026-11-04＋日線擺盪低點 2026-10-24（跌破後轉壓力）",
+    "rr1": 5.66,
+    "rr2": 8.17
+   },
+   "breakout": {
+    "trigger": 88.81,
+    "triggerWhy": "MA20（下彎）",
+    "volume": "量比 ≥ 1.5（以 20 日均量計），收盤在當日區間上 1/3",
+    "retest": false,
+    "retestWhy": "突破當天若超過觸發價 1 ATR 才需等回測",
+    "entry": 88.81,
+    "entryWhy": "以觸發價計",
+    "stop": 65.19,
+    "stopWhy": "近 20 日低 下方 0.5 ATR",
+    "t1": 97.7,
+    "t1Why": "日線擺盪高點 2026-11-04＋日線擺盪低點 2026-10-24（跌破後轉壓力）",
+    "t2": 103.5,
+    "t2Why": "日線擺盪高點 2026-10-28＋近 20 日高＋MA60（2 年日 K 算的）",
+    "rr1": 0.38,
+    "rr2": 0.62,
+    "distATR": 3.41
+   },
+   "status": "weak",
+   "label": "結構轉弱",
+   "why": [
+    "收盤在 MA20、MA60 之下，且近 3 日創 20 日新低；先等止跌：不再破低、收盤站回 MA5，再看能否站上 MA20 88.81。",
+    "擋板：大盤空頭（指數收在 MA20、MA60 之下）。"
+   ],
+   "blockers": [
+    "大盤空頭（指數收在 MA20、MA60 之下）"
+   ],
+   "market": "CRYPTO",
+   "theme": "主流幣"
+  }
+ }
+}

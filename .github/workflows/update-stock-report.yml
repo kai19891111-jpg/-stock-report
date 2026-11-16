@@ -39,6 +39,9 @@ jobs:
       - name: Final verdict
         continue-on-error: true
         run: python scripts/verdict.py
+      - name: Entry review（入場時機重評）
+        continue-on-error: true
+        run: python scripts/entry_review.py
       - name: Auto screener（自動選股雷達）
         continue-on-error: true
         timeout-minutes: 25
