@@ -66,7 +66,11 @@
       rr: x.status === "weak" ? "不計（結構轉弱，不設進場）" :
         use && use.rr1 != null ? use.rr1 + "／" + use.rr2 + "（" + kind + "，以 " + num(use.entry) + " 計）" : "算不出來"
     };
-    if (x.status === "weak" && pb) p.zone = "止跌觀察 " + zone;
+    if (x.status === "weak") {
+      p.zone = pb ? "止跌觀察 " + zone : "下方無紀錄內支撐";
+      p.stop = "不設"; p.stopWhy = "結構轉弱不進場；止跌（不再破低＋站回 MA5）後才重算";
+      p.tgt = "—"; p.tgtWhy = "先看能否站回 MA20 " + num(x.ma20);
+    }
     return p;
   }
 
