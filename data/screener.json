@@ -1,5 +1,5 @@
 {
- "generatedAt": "2026-11-17T03:51:35.399385+00:00",
+ "generatedAt": "2026-11-17T04:49:18.474010+00:00",
  "params": {
   "rsi_lo": 45,
   "rsi_hi": 60,
@@ -742,7 +742,7 @@
     }
    ],
    "universe": "證交所＋櫃買中心全市場日收盤，成交金額前 300 名",
-   "seconds": 39,
+   "seconds": 37,
    "session": "2026-11-16"
   },
   "US": {
@@ -846,7 +846,7 @@
    "signals": 0,
    "picks": [],
    "universe": "CoinGecko 市值前 30 名（排除穩定幣、包裝與質押代幣）",
-   "seconds": 7,
+   "seconds": 6,
    "session": null
   }
  }
