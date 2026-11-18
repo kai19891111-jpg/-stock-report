@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-11-18T07:55:54.679216+00:00",
-  "dataTimestamp": "2026-11-18T07:51:13.061110+00:00",
+  "generatedAt": "2026-11-18T15:51:22.279207+00:00",
+  "dataTimestamp": "2026-11-18T15:47:48.212641+00:00",
   "sessions": {
     "TW": "2026-11-18",
     "US": "2026-11-17",
@@ -203,10 +203,6 @@
     {
       "level": "info",
       "text": "財報日只填了 60／65 檔，其餘沒辦法提醒財報前風險。"
-    },
-    {
-      "level": "warn",
-      "text": "資料來源 nasdaq_earnings 這次完全沒抓到。"
     }
   ],
   "selfCheck": {
@@ -267,7 +263,7 @@
       "mismatch": null,
       "risk": {
         "level": "low",
-        "total": 0,
+        "total": 1,
         "max": 10,
         "reasons": []
       },
@@ -723,7 +719,7 @@
       "mismatch": null,
       "risk": {
         "level": "low",
-        "total": 0,
+        "total": 1,
         "max": 10,
         "reasons": []
       },
@@ -1211,7 +1207,7 @@
       "mismatch": null,
       "risk": {
         "level": "low",
-        "total": 1,
+        "total": 0,
         "max": 10,
         "reasons": []
       },
@@ -1335,7 +1331,7 @@
       "mismatch": null,
       "risk": {
         "level": "low",
-        "total": 1,
+        "total": 0,
         "max": 10,
         "reasons": []
       },
@@ -1397,7 +1393,7 @@
       "mismatch": null,
       "risk": {
         "level": "low",
-        "total": 1,
+        "total": 0,
         "max": 10,
         "reasons": []
       },
@@ -1659,8 +1655,8 @@
       "date": "2026-11-18",
       "close": 82.0,
       "ma20": 90.24,
-      "stop": 79.4143,
-      "target": 101.8471,
+      "stop": 79.3886,
+      "target": 101.8943,
       "entryLow": 88.8864,
       "entryHigh": 91.1424,
       "bias": -9.1312,
@@ -1688,7 +1684,7 @@
       ],
       "buyBelow": 91.1424,
       "gapPct": 11.149268292682923,
-      "roomRR": 10.442046641141653,
+      "roomRR": 10.339281611396173,
       "plan": null,
       "text": "收盤 82 低於進場區下緣 88.89，等收盤站回 88.89 以上再看訊號。目前另外還卡：MACD 轉弱、大盤空頭。",
       "notes": [],
@@ -1701,7 +1697,7 @@
       },
       "hold": {
         "code": "watch",
-        "text": "收盤在 SMA20（90.24）之下，還沒破失效價 79.41（距離 3.2%）。收盤跌破失效價就是出場優先。"
+        "text": "收盤在 SMA20（90.24）之下，還沒破失效價 79.39（距離 3.2%）。收盤跌破失效價就是出場優先。"
       }
     },
     "2221.TWO": {
@@ -1789,7 +1785,7 @@
       "mismatch": null,
       "risk": {
         "level": "low",
-        "total": 0,
+        "total": 1,
         "max": 10,
         "reasons": []
       },
@@ -1834,16 +1830,15 @@
       "gapPct": -11.524668874172184,
       "roomRR": 0.21633870680220818,
       "plan": null,
-      "text": "列入注意股（2026-11-17），不碰。",
+      "text": "處置股 2026-11-19～2026-11-27，不碰。",
       "notes": [],
       "mismatch": null,
       "risk": {
-        "level": "mid",
+        "level": "high",
         "total": 4,
         "max": 10,
         "reasons": [
-          "注意股",
-          "風險中"
+          "處置股"
         ]
       },
       "hold": {
@@ -1888,7 +1883,7 @@
       "mismatch": null,
       "risk": {
         "level": "low",
-        "total": 1,
+        "total": 0,
         "max": 10,
         "reasons": []
       },
@@ -2538,7 +2533,7 @@
       "mismatch": null,
       "risk": {
         "level": "low",
-        "total": 1,
+        "total": 2,
         "max": 10,
         "reasons": []
       },
@@ -2604,7 +2599,7 @@
       "mismatch": null,
       "risk": {
         "level": "low",
-        "total": 1,
+        "total": 2,
         "max": 10,
         "reasons": []
       },
@@ -3130,7 +3125,7 @@
       "mismatch": null,
       "risk": {
         "level": "low",
-        "total": 1,
+        "total": 0,
         "max": 10,
         "reasons": []
       },
