@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-11-19T07:51:11.326010+00:00",
-  "dataTimestamp": "2026-11-19T07:47:31.405735+00:00",
+  "generatedAt": "2026-11-19T15:56:23.862319+00:00",
+  "dataTimestamp": "2026-11-19T15:52:20.656868+00:00",
   "sessions": {
     "TW": "2026-11-19",
     "US": "2026-11-18",
@@ -114,9 +114,9 @@
     "conditions": 0,
     "pullback": 0,
     "no_chase": 0,
-    "below": 55,
+    "below": 52,
     "trend": 8,
-    "avoid": 2,
+    "avoid": 5,
     "nodata": 0
   },
   "groups": {
@@ -132,7 +132,6 @@
       "2308.TW",
       "2371.TW",
       "8210.TW",
-      "3324.TWO",
       "3653.TW",
       "3017.TW",
       "3189.TW",
@@ -142,7 +141,6 @@
       "4958.TW",
       "6213.TW",
       "2383.TW",
-      "6274.TW",
       "1303.TW",
       "2408.TW",
       "6770.TW",
@@ -151,7 +149,6 @@
       "2439.TW",
       "2327.TW",
       "4919.TW",
-      "1569.TWO",
       "2313.TW",
       "6285.TW",
       "6271.TW",
@@ -194,6 +191,9 @@
       "ECHO"
     ],
     "avoid": [
+      "3324.TWO",
+      "6274.TW",
+      "1569.TWO",
       "2221.TWO",
       "3491.TWO"
     ],
@@ -528,7 +528,7 @@
       "bias": -27.5207,
       "high20": 1515.0,
       "rr": null,
-      "code": "below",
+      "code": "avoid",
       "signal": false,
       "blockers": [
         {
@@ -564,14 +564,16 @@
       "gapPct": 39.35022675736961,
       "roomRR": null,
       "plan": null,
-      "text": "收盤已跌破失效價 1,073.84，不進場。目前另外還卡：日線空頭、收盤不在失效價和目標價之間、RSI 32（要 45–60）、MACD 轉弱、大盤空頭。",
+      "text": "列入注意股（2026-11-19），不碰。",
       "notes": [],
       "mismatch": null,
       "risk": {
         "level": "low",
-        "total": 1,
+        "total": 3,
         "max": 10,
-        "reasons": []
+        "reasons": [
+          "注意股"
+        ]
       },
       "hold": {
         "code": "exit",
@@ -1069,7 +1071,7 @@
       "mismatch": null,
       "risk": {
         "level": "low",
-        "total": 1,
+        "total": 0,
         "max": 10,
         "reasons": []
       },
@@ -1156,7 +1158,7 @@
       "bias": -35.7385,
       "high20": 1615.0,
       "rr": null,
-      "code": "below",
+      "code": "avoid",
       "signal": false,
       "blockers": [
         {
@@ -1196,14 +1198,16 @@
       "gapPct": 57.170303468208104,
       "roomRR": null,
       "plan": null,
-      "text": "收盤已跌破失效價 958.22，不進場。目前另外還卡：日線空頭、週線空頭、收盤不在失效價和目標價之間、RSI 24（要 45–60）、MACD 轉弱、大盤空頭。",
+      "text": "列入注意股（2026-11-19），不碰。",
       "notes": [],
       "mismatch": null,
       "risk": {
         "level": "low",
-        "total": 0,
+        "total": 2,
         "max": 10,
-        "reasons": []
+        "reasons": [
+          "注意股"
+        ]
       },
       "hold": {
         "code": "exit",
@@ -1259,7 +1263,7 @@
       "mismatch": null,
       "risk": {
         "level": "low",
-        "total": 0,
+        "total": 1,
         "max": 10,
         "reasons": []
       },
@@ -1734,7 +1738,7 @@
       "bias": -17.5879,
       "high20": 109.0,
       "rr": null,
-      "code": "below",
+      "code": "avoid",
       "signal": false,
       "blockers": [
         {
@@ -1766,14 +1770,16 @@
       "gapPct": 22.55487804878049,
       "roomRR": null,
       "plan": null,
-      "text": "收盤已跌破失效價 78.78，不進場。目前另外還卡：收盤不在失效價和目標價之間、RSI 41（要 45–60）、MACD 轉弱、大盤空頭。",
+      "text": "列入注意股（2026-11-19），不碰。",
       "notes": [],
       "mismatch": null,
       "risk": {
         "level": "low",
-        "total": 0,
+        "total": 2,
         "max": 10,
-        "reasons": []
+        "reasons": [
+          "注意股"
+        ]
       },
       "hold": {
         "code": "exit",
@@ -1995,7 +2001,7 @@
       "mismatch": null,
       "risk": {
         "level": "low",
-        "total": 0,
+        "total": 1,
         "max": 10,
         "reasons": []
       },
@@ -2057,7 +2063,7 @@
       "mismatch": null,
       "risk": {
         "level": "low",
-        "total": 0,
+        "total": 1,
         "max": 10,
         "reasons": []
       },
@@ -2227,7 +2233,7 @@
       "mismatch": null,
       "risk": {
         "level": "low",
-        "total": 0,
+        "total": 1,
         "max": 10,
         "reasons": []
       },
@@ -2743,7 +2749,7 @@
       "mismatch": null,
       "risk": {
         "level": "low",
-        "total": 2,
+        "total": 1,
         "max": 10,
         "reasons": []
       },
@@ -2863,7 +2869,7 @@
       "mismatch": null,
       "risk": {
         "level": "low",
-        "total": 0,
+        "total": 1,
         "max": 10,
         "reasons": []
       },
