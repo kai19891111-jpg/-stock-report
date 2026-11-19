@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-19T02:32:09.331262+00:00",
+  "updatedAt": "2026-11-19T03:50:05.402921+00:00",
   "note": "scripts/risk.py 自動抓到的美股財報日。要指定日期請改 data/events.json 的 earnings，那邊永遠優先。",
   "symbols": {
     "AMD": {

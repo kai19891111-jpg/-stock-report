@@ -1,5 +1,5 @@
 {
- "generatedAt": "2026-11-19T02:35:07.934492+00:00",
+ "generatedAt": "2026-11-19T03:53:29.899673+00:00",
  "params": {
   "rsi_lo": 45,
   "rsi_hi": 60,
@@ -600,15 +600,16 @@
     }
    ],
    "universe": "證交所＋櫃買中心全市場日收盤，成交金額前 300 名",
-   "seconds": 81,
+   "seconds": 34,
    "session": "2026-11-18"
   },
   "US": {
    "scanned": 300,
-   "ok": 299,
-   "failed": 1,
+   "ok": 298,
+   "failed": 2,
    "failedSample": [
-    "METAM：只有 17 根日 K"
+    "METAM：只有 17 根日 K",
+    "SNDK：只有 2 根日 K"
    ],
    "candidates": 9,
    "signals": 0,
@@ -1254,7 +1255,7 @@
     }
    ],
    "universe": "Nasdaq 全市場名單，市值前 300 名",
-   "seconds": 17,
+   "seconds": 18,
    "session": "2026-11-18"
   },
   "CRYPTO": {
@@ -1263,8 +1264,8 @@
    "failed": 7,
    "failedSample": [
     "FIGR_HELOC-USD：HTTPError",
-    "RAIN-USD：HTTPError",
     "CC-USD：HTTPError",
+    "RAIN-USD：HTTPError",
     "UNI-USD：HTTPError",
     "SUI-USD：HTTPError",
     "TAO-USD：HTTPError",

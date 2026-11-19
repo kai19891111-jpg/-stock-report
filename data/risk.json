@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-19T02:32:09.331262+00:00",
+  "generatedAt": "2026-11-19T03:50:05.402921+00:00",
   "today": {
     "TW": "2026-11-19",
     "US": "2026-11-18",
@@ -2951,14 +2951,14 @@
         },
         "fundamentals": {
           "score": 1,
-          "why": "穩定幣總供給 30 日 -5.4%（285B 美元）、BTC 市占率 58.0%",
+          "why": "穩定幣總供給 30 日 -5.4%（285B 美元）、BTC 市占率 58.1%",
           "date": "2026-11-19",
           "source": "https://defillama.com/stablecoins",
           "label": "市場結構"
         },
         "chips": {
           "score": 0,
-          "why": "恐懼與貪婪指數 10（極度恐懼）；資金費率 -0.0032%、未平倉量 7 日 -19.1%",
+          "why": "恐懼與貪婪指數 10（極度恐懼）；資金費率 -0.0039%、未平倉量 7 日 -19.1%",
           "date": "2026-11-19",
           "source": "https://alternative.me/crypto/fear-and-greed-index/",
           "label": "情緒／槓桿"
@@ -2995,14 +2995,14 @@
         },
         "fundamentals": {
           "score": 1,
-          "why": "穩定幣總供給 30 日 -5.4%（285B 美元）、BTC 市占率 58.0%",
+          "why": "穩定幣總供給 30 日 -5.4%（285B 美元）、BTC 市占率 58.1%",
           "date": "2026-11-19",
           "source": "https://defillama.com/stablecoins",
           "label": "市場結構"
         },
         "chips": {
           "score": 0,
-          "why": "恐懼與貪婪指數 10（極度恐懼）；資金費率 +0.0024%、未平倉量 7 日 -12.0%",
+          "why": "恐懼與貪婪指數 10（極度恐懼）；資金費率 +0.0029%、未平倉量 7 日 -12.0%",
           "date": "2026-11-19",
           "source": "https://alternative.me/crypto/fear-and-greed-index/",
           "label": "情緒／槓桿"
@@ -3039,14 +3039,14 @@
         },
         "fundamentals": {
           "score": 1,
-          "why": "穩定幣總供給 30 日 -5.4%（285B 美元）、BTC 市占率 58.0%",
+          "why": "穩定幣總供給 30 日 -5.4%（285B 美元）、BTC 市占率 58.1%",
           "date": "2026-11-19",
           "source": "https://defillama.com/stablecoins",
           "label": "市場結構"
         },
         "chips": {
           "score": 0,
-          "why": "恐懼與貪婪指數 10（極度恐懼）；資金費率 +0.0017%、未平倉量 7 日 -23.2%",
+          "why": "恐懼與貪婪指數 10（極度恐懼）；資金費率 +0.0034%、未平倉量 7 日 -23.2%",
           "date": "2026-11-19",
           "source": "https://alternative.me/crypto/fear-and-greed-index/",
           "label": "情緒／槓桿"
