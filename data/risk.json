@@ -1,9 +1,9 @@
 {
-  "generatedAt": "2026-11-19T15:53:15.669995+00:00",
+  "generatedAt": "2026-11-20T02:17:25.783825+00:00",
   "today": {
-    "TW": "2026-11-19",
+    "TW": "2026-11-20",
     "US": "2026-11-19",
-    "CRYPTO": "2026-11-19"
+    "CRYPTO": "2026-11-20"
   },
   "thresholds": {
     "bias_mid": 6.0,
@@ -118,7 +118,7 @@
     }
   },
   "events": {
-    "updatedAt": "2026-11-19",
+    "updatedAt": "2026-11-20",
     "fresh": true,
     "used": 24,
     "earnings": 5,
@@ -145,11 +145,11 @@
         },
         "earnings": {
           "score": 0,
-          "why": "年報最晚 2027-03-31 要公布（法定期限，多數公司會提早），還有 94 個交易日",
+          "why": "年報最晚 2027-03-31 要公布（法定期限，多數公司會提早），還有 93 個交易日",
           "estimated": true,
           "date": "2027-03-31",
           "source": "https://mops.twse.com.tw/mops/#/web/t100sb02_1",
-          "days": 94,
+          "days": 93,
           "provider": "法定期限"
         },
         "fundamentals": {
@@ -165,7 +165,7 @@
         "policy": {
           "score": 0,
           "why": "14 天內沒有排定事件，也沒有生效中的不利政策",
-          "date": "2026-11-19"
+          "date": "2026-11-20"
         }
       },
       "market": "TW",
@@ -190,11 +190,11 @@
         },
         "earnings": {
           "score": 0,
-          "why": "年報最晚 2027-03-31 要公布（法定期限，多數公司會提早），還有 94 個交易日",
+          "why": "年報最晚 2027-03-31 要公布（法定期限，多數公司會提早），還有 93 個交易日",
           "estimated": true,
           "date": "2027-03-31",
           "source": "https://mops.twse.com.tw/mops/#/web/t100sb02_1",
-          "days": 94,
+          "days": 93,
           "provider": "法定期限"
         },
         "fundamentals": {
@@ -210,7 +210,7 @@
         "policy": {
           "score": 0,
           "why": "14 天內沒有排定事件，也沒有生效中的不利政策",
-          "date": "2026-11-19"
+          "date": "2026-11-20"
         }
       },
       "market": "TW",
@@ -235,11 +235,11 @@
         },
         "earnings": {
           "score": 0,
-          "why": "年報最晚 2027-03-31 要公布（法定期限，多數公司會提早），還有 94 個交易日",
+          "why": "年報最晚 2027-03-31 要公布（法定期限，多數公司會提早），還有 93 個交易日",
           "estimated": true,
           "date": "2027-03-31",
           "source": "https://mops.twse.com.tw/mops/#/web/t100sb02_1",
-          "days": 94,
+          "days": 93,
           "provider": "法定期限"
         },
         "fundamentals": {
@@ -255,7 +255,7 @@
         "policy": {
           "score": 0,
           "why": "14 天內沒有排定事件，也沒有生效中的不利政策",
-          "date": "2026-11-19"
+          "date": "2026-11-20"
         }
       },
       "market": "TW",
@@ -280,11 +280,11 @@
         },
         "earnings": {
           "score": 0,
-          "why": "年報最晚 2027-03-31 要公布（法定期限，多數公司會提早），還有 94 個交易日",
+          "why": "年報最晚 2027-03-31 要公布（法定期限，多數公司會提早），還有 93 個交易日",
           "estimated": true,
           "date": "2027-03-31",
           "source": "https://mops.twse.com.tw/mops/#/web/t100sb02_1",
-          "days": 94,
+          "days": 93,
           "provider": "法定期限"
         },
         "fundamentals": {
@@ -300,7 +300,7 @@
         "policy": {
           "score": 0,
           "why": "14 天內沒有排定事件，也沒有生效中的不利政策",
-          "date": "2026-11-19"
+          "date": "2026-11-20"
         }
       },
       "market": "TW",
@@ -325,11 +325,11 @@
         },
         "earnings": {
           "score": 0,
-          "why": "年報最晚 2027-03-31 要公布（法定期限，多數公司會提早），還有 94 個交易日",
+          "why": "年報最晚 2027-03-31 要公布（法定期限，多數公司會提早），還有 93 個交易日",
           "estimated": true,
           "date": "2027-03-31",
           "source": "https://mops.twse.com.tw/mops/#/web/t100sb02_1",
-          "days": 94,
+          "days": 93,
           "provider": "法定期限"
         },
         "fundamentals": {
@@ -345,7 +345,7 @@
         "policy": {
           "score": 0,
           "why": "14 天內沒有排定事件，也沒有生效中的不利政策",
-          "date": "2026-11-19"
+          "date": "2026-11-20"
         }
       },
       "market": "TW",
@@ -374,11 +374,11 @@
         },
         "earnings": {
           "score": 0,
-          "why": "年報最晚 2027-03-31 要公布（法定期限，多數公司會提早），還有 94 個交易日",
+          "why": "年報最晚 2027-03-31 要公布（法定期限，多數公司會提早），還有 93 個交易日",
           "estimated": true,
           "date": "2027-03-31",
           "source": "https://mops.twse.com.tw/mops/#/web/t100sb02_1",
-          "days": 94,
+          "days": 93,
           "provider": "法定期限"
         },
         "fundamentals": {
@@ -395,7 +395,7 @@
         "policy": {
           "score": 0,
           "why": "14 天內沒有排定事件，也沒有生效中的不利政策",
-          "date": "2026-11-19"
+          "date": "2026-11-20"
         }
       },
       "market": "TW",
@@ -420,11 +420,11 @@
         },
         "earnings": {
           "score": 0,
-          "why": "年報最晚 2027-03-31 要公布（法定期限，多數公司會提早），還有 94 個交易日",
+          "why": "年報最晚 2027-03-31 要公布（法定期限，多數公司會提早），還有 93 個交易日",
           "estimated": true,
           "date": "2027-03-31",
           "source": "https://mops.twse.com.tw/mops/#/web/t100sb02_1",
-          "days": 94,
+          "days": 93,
           "provider": "法定期限"
         },
         "fundamentals": {
@@ -440,7 +440,7 @@
         "policy": {
           "score": 0,
           "why": "14 天內沒有排定事件，也沒有生效中的不利政策",
-          "date": "2026-11-19"
+          "date": "2026-11-20"
         }
       },
       "market": "TW",
@@ -465,11 +465,11 @@
         },
         "earnings": {
           "score": 0,
-          "why": "年報最晚 2027-03-31 要公布（法定期限，多數公司會提早），還有 94 個交易日",
+          "why": "年報最晚 2027-03-31 要公布（法定期限，多數公司會提早），還有 93 個交易日",
           "estimated": true,
           "date": "2027-03-31",
           "source": "https://mops.twse.com.tw/mops/#/web/t100sb02_1",
-          "days": 94,
+          "days": 93,
           "provider": "法定期限"
         },
         "fundamentals": {
@@ -485,7 +485,7 @@
         "policy": {
           "score": 0,
           "why": "14 天內沒有排定事件，也沒有生效中的不利政策",
-          "date": "2026-11-19"
+          "date": "2026-11-20"
         }
       },
       "market": "TW",
@@ -510,11 +510,11 @@
         },
         "earnings": {
           "score": 0,
-          "why": "年報最晚 2027-03-31 要公布（法定期限，多數公司會提早），還有 94 個交易日",
+          "why": "年報最晚 2027-03-31 要公布（法定期限，多數公司會提早），還有 93 個交易日",
           "estimated": true,
           "date": "2027-03-31",
           "source": "https://mops.twse.com.tw/mops/#/web/t100sb02_1",
-          "days": 94,
+          "days": 93,
           "provider": "法定期限"
         },
         "fundamentals": {
@@ -530,7 +530,7 @@
         "policy": {
           "score": 0,
           "why": "14 天內沒有排定事件，也沒有生效中的不利政策",
-          "date": "2026-11-19"
+          "date": "2026-11-20"
         }
       },
       "market": "TW",
@@ -555,11 +555,11 @@
         },
         "earnings": {
           "score": 0,
-          "why": "年報最晚 2027-03-31 要公布（法定期限，多數公司會提早），還有 94 個交易日",
+          "why": "年報最晚 2027-03-31 要公布（法定期限，多數公司會提早），還有 93 個交易日",
           "estimated": true,
           "date": "2027-03-31",
           "source": "https://mops.twse.com.tw/mops/#/web/t100sb02_1",
-          "days": 94,
+          "days": 93,
           "provider": "法定期限"
         },
         "fundamentals": {
@@ -575,7 +575,7 @@
         "policy": {
           "score": 0,
           "why": "14 天內沒有排定事件，也沒有生效中的不利政策",
-          "date": "2026-11-19"
+          "date": "2026-11-20"
         }
       },
       "market": "TW",
@@ -600,11 +600,11 @@
         },
         "earnings": {
           "score": 0,
-          "why": "年報最晚 2027-03-31 要公布（法定期限，多數公司會提早），還有 94 個交易日",
+          "why": "年報最晚 2027-03-31 要公布（法定期限，多數公司會提早），還有 93 個交易日",
           "estimated": true,
           "date": "2027-03-31",
           "source": "https://mops.twse.com.tw/mops/#/web/t100sb02_1",
-          "days": 94,
+          "days": 93,
           "provider": "法定期限"
         },
         "fundamentals": {
@@ -620,7 +620,7 @@
         "policy": {
           "score": 0,
           "why": "14 天內沒有排定事件，也沒有生效中的不利政策",
-          "date": "2026-11-19"
+          "date": "2026-11-20"
         }
       },
       "market": "TW",
@@ -645,11 +645,11 @@
         },
         "earnings": {
           "score": 0,
-          "why": "年報最晚 2027-03-31 要公布（法定期限，多數公司會提早），還有 94 個交易日",
+          "why": "年報最晚 2027-03-31 要公布（法定期限，多數公司會提早），還有 93 個交易日",
           "estimated": true,
           "date": "2027-03-31",
           "source": "https://mops.twse.com.tw/mops/#/web/t100sb02_1",
-          "days": 94,
+          "days": 93,
           "provider": "法定期限"
         },
         "fundamentals": {
@@ -665,7 +665,7 @@
         "policy": {
           "score": 0,
           "why": "14 天內沒有排定事件，也沒有生效中的不利政策",
-          "date": "2026-11-19"
+          "date": "2026-11-20"
         }
       },
       "market": "TW",
@@ -690,11 +690,11 @@
         },
         "earnings": {
           "score": 0,
-          "why": "年報最晚 2027-03-31 要公布（法定期限，多數公司會提早），還有 94 個交易日",
+          "why": "年報最晚 2027-03-31 要公布（法定期限，多數公司會提早），還有 93 個交易日",
           "estimated": true,
           "date": "2027-03-31",
           "source": "https://mops.twse.com.tw/mops/#/web/t100sb02_1",
-          "days": 94,
+          "days": 93,
           "provider": "法定期限"
         },
         "fundamentals": {
@@ -710,7 +710,7 @@
         "policy": {
           "score": 0,
           "why": "14 天內沒有排定事件，也沒有生效中的不利政策",
-          "date": "2026-11-19"
+          "date": "2026-11-20"
         }
       },
       "market": "TW",
@@ -735,11 +735,11 @@
         },
         "earnings": {
           "score": 0,
-          "why": "年報最晚 2027-03-31 要公布（法定期限，多數公司會提早），還有 94 個交易日",
+          "why": "年報最晚 2027-03-31 要公布（法定期限，多數公司會提早），還有 93 個交易日",
           "estimated": true,
           "date": "2027-03-31",
           "source": "https://mops.twse.com.tw/mops/#/web/t100sb02_1",
-          "days": 94,
+          "days": 93,
           "provider": "法定期限"
         },
         "fundamentals": {
@@ -755,7 +755,7 @@
         "policy": {
           "score": 0,
           "why": "14 天內沒有排定事件，也沒有生效中的不利政策",
-          "date": "2026-11-19"
+          "date": "2026-11-20"
         }
       },
       "market": "TW",
@@ -780,11 +780,11 @@
         },
         "earnings": {
           "score": 0,
-          "why": "年報最晚 2027-03-31 要公布（法定期限，多數公司會提早），還有 94 個交易日",
+          "why": "年報最晚 2027-03-31 要公布（法定期限，多數公司會提早），還有 93 個交易日",
           "estimated": true,
           "date": "2027-03-31",
           "source": "https://mops.twse.com.tw/mops/#/web/t100sb02_1",
-          "days": 94,
+          "days": 93,
           "provider": "法定期限"
         },
         "fundamentals": {
@@ -800,7 +800,7 @@
         "policy": {
           "score": 0,
           "why": "14 天內沒有排定事件，也沒有生效中的不利政策",
-          "date": "2026-11-19"
+          "date": "2026-11-20"
         }
       },
       "market": "TW",
@@ -829,11 +829,11 @@
         },
         "earnings": {
           "score": 0,
-          "why": "年報最晚 2027-03-31 要公布（法定期限，多數公司會提早），還有 94 個交易日",
+          "why": "年報最晚 2027-03-31 要公布（法定期限，多數公司會提早），還有 93 個交易日",
           "estimated": true,
           "date": "2027-03-31",
           "source": "https://mops.twse.com.tw/mops/#/web/t100sb02_1",
-          "days": 94,
+          "days": 93,
           "provider": "法定期限"
         },
         "fundamentals": {
@@ -850,7 +850,7 @@
         "policy": {
           "score": 0,
           "why": "14 天內沒有排定事件，也沒有生效中的不利政策",
-          "date": "2026-11-19"
+          "date": "2026-11-20"
         }
       },
       "market": "TW",
@@ -875,11 +875,11 @@
         },
         "earnings": {
           "score": 0,
-          "why": "年報最晚 2027-03-31 要公布（法定期限，多數公司會提早），還有 94 個交易日",
+          "why": "年報最晚 2027-03-31 要公布（法定期限，多數公司會提早），還有 93 個交易日",
           "estimated": true,
           "date": "2027-03-31",
           "source": "https://mops.twse.com.tw/mops/#/web/t100sb02_1",
-          "days": 94,
+          "days": 93,
           "provider": "法定期限"
         },
         "fundamentals": {
@@ -895,7 +895,7 @@
         "policy": {
           "score": 0,
           "why": "14 天內沒有排定事件，也沒有生效中的不利政策",
-          "date": "2026-11-19"
+          "date": "2026-11-20"
         }
       },
       "market": "TW",
@@ -920,11 +920,11 @@
         },
         "earnings": {
           "score": 0,
-          "why": "年報最晚 2027-03-31 要公布（法定期限，多數公司會提早），還有 94 個交易日",
+          "why": "年報最晚 2027-03-31 要公布（法定期限，多數公司會提早），還有 93 個交易日",
           "estimated": true,
           "date": "2027-03-31",
           "source": "https://mops.twse.com.tw/mops/#/web/t100sb02_1",
-          "days": 94,
+          "days": 93,
           "provider": "法定期限"
         },
         "fundamentals": {
@@ -940,7 +940,7 @@
         "policy": {
           "score": 0,
           "why": "14 天內沒有排定事件，也沒有生效中的不利政策",
-          "date": "2026-11-19"
+          "date": "2026-11-20"
         }
       },
       "market": "TW",
@@ -965,11 +965,11 @@
         },
         "earnings": {
           "score": 0,
-          "why": "年報最晚 2027-03-31 要公布（法定期限，多數公司會提早），還有 94 個交易日",
+          "why": "年報最晚 2027-03-31 要公布（法定期限，多數公司會提早），還有 93 個交易日",
           "estimated": true,
           "date": "2027-03-31",
           "source": "https://mops.twse.com.tw/mops/#/web/t100sb02_1",
-          "days": 94,
+          "days": 93,
           "provider": "法定期限"
         },
         "fundamentals": {
@@ -985,7 +985,7 @@
         "policy": {
           "score": 0,
           "why": "14 天內沒有排定事件，也沒有生效中的不利政策",
-          "date": "2026-11-19"
+          "date": "2026-11-20"
         }
       },
       "market": "TW",
@@ -1010,11 +1010,11 @@
         },
         "earnings": {
           "score": 0,
-          "why": "年報最晚 2027-03-31 要公布（法定期限，多數公司會提早），還有 94 個交易日",
+          "why": "年報最晚 2027-03-31 要公布（法定期限，多數公司會提早），還有 93 個交易日",
           "estimated": true,
           "date": "2027-03-31",
           "source": "https://mops.twse.com.tw/mops/#/web/t100sb02_1",
-          "days": 94,
+          "days": 93,
           "provider": "法定期限"
         },
         "fundamentals": {
@@ -1030,7 +1030,7 @@
         "policy": {
           "score": 0,
           "why": "14 天內沒有排定事件，也沒有生效中的不利政策",
-          "date": "2026-11-19"
+          "date": "2026-11-20"
         }
       },
       "market": "TW",
@@ -1055,11 +1055,11 @@
         },
         "earnings": {
           "score": 0,
-          "why": "年報最晚 2027-03-31 要公布（法定期限，多數公司會提早），還有 94 個交易日",
+          "why": "年報最晚 2027-03-31 要公布（法定期限，多數公司會提早），還有 93 個交易日",
           "estimated": true,
           "date": "2027-03-31",
           "source": "https://mops.twse.com.tw/mops/#/web/t100sb02_1",
-          "days": 94,
+          "days": 93,
           "provider": "法定期限"
         },
         "fundamentals": {
@@ -1075,7 +1075,7 @@
         "policy": {
           "score": 0,
           "why": "14 天內沒有排定事件，也沒有生效中的不利政策",
-          "date": "2026-11-19"
+          "date": "2026-11-20"
         }
       },
       "market": "TW",
@@ -1100,11 +1100,11 @@
         },
         "earnings": {
           "score": 0,
-          "why": "年報最晚 2027-03-31 要公布（法定期限，多數公司會提早），還有 94 個交易日",
+          "why": "年報最晚 2027-03-31 要公布（法定期限，多數公司會提早），還有 93 個交易日",
           "estimated": true,
           "date": "2027-03-31",
           "source": "https://mops.twse.com.tw/mops/#/web/t100sb02_1",
-          "days": 94,
+          "days": 93,
           "provider": "法定期限"
         },
         "fundamentals": {
@@ -1120,7 +1120,7 @@
         "policy": {
           "score": 0,
           "why": "14 天內沒有排定事件，也沒有生效中的不利政策",
-          "date": "2026-11-19"
+          "date": "2026-11-20"
         }
       },
       "market": "TW",
@@ -1145,11 +1145,11 @@
         },
         "earnings": {
           "score": 0,
-          "why": "年報最晚 2027-03-31 要公布（法定期限，多數公司會提早），還有 94 個交易日",
+          "why": "年報最晚 2027-03-31 要公布（法定期限，多數公司會提早），還有 93 個交易日",
           "estimated": true,
           "date": "2027-03-31",
           "source": "https://mops.twse.com.tw/mops/#/web/t100sb02_1",
-          "days": 94,
+          "days": 93,
           "provider": "法定期限"
         },
         "fundamentals": {
@@ -1165,7 +1165,7 @@
         "policy": {
           "score": 0,
           "why": "14 天內沒有排定事件，也沒有生效中的不利政策",
-          "date": "2026-11-19"
+          "date": "2026-11-20"
         }
       },
       "market": "TW",
@@ -1190,11 +1190,11 @@
         },
         "earnings": {
           "score": 0,
-          "why": "年報最晚 2027-03-31 要公布（法定期限，多數公司會提早），還有 94 個交易日",
+          "why": "年報最晚 2027-03-31 要公布（法定期限，多數公司會提早），還有 93 個交易日",
           "estimated": true,
           "date": "2027-03-31",
           "source": "https://mops.twse.com.tw/mops/#/web/t100sb02_1",
-          "days": 94,
+          "days": 93,
           "provider": "法定期限"
         },
         "fundamentals": {
@@ -1210,7 +1210,7 @@
         "policy": {
           "score": 0,
           "why": "14 天內沒有排定事件，也沒有生效中的不利政策",
-          "date": "2026-11-19"
+          "date": "2026-11-20"
         }
       },
       "market": "TW",
@@ -1239,11 +1239,11 @@
         },
         "earnings": {
           "score": 0,
-          "why": "年報最晚 2027-03-31 要公布（法定期限，多數公司會提早），還有 94 個交易日",
+          "why": "年報最晚 2027-03-31 要公布（法定期限，多數公司會提早），還有 93 個交易日",
           "estimated": true,
           "date": "2027-03-31",
           "source": "https://mops.twse.com.tw/mops/#/web/t100sb02_1",
-          "days": 94,
+          "days": 93,
           "provider": "法定期限"
         },
         "fundamentals": {
@@ -1260,7 +1260,7 @@
         "policy": {
           "score": 0,
           "why": "14 天內沒有排定事件，也沒有生效中的不利政策",
-          "date": "2026-11-19"
+          "date": "2026-11-20"
         }
       },
       "market": "TW",
@@ -1289,11 +1289,11 @@
         },
         "earnings": {
           "score": 0,
-          "why": "年報最晚 2027-03-31 要公布（法定期限，多數公司會提早），還有 94 個交易日",
+          "why": "年報最晚 2027-03-31 要公布（法定期限，多數公司會提早），還有 93 個交易日",
           "estimated": true,
           "date": "2027-03-31",
           "source": "https://mops.twse.com.tw/mops/#/web/t100sb02_1",
-          "days": 94,
+          "days": 93,
           "provider": "法定期限"
         },
         "fundamentals": {
@@ -1310,7 +1310,7 @@
         "policy": {
           "score": 0,
           "why": "14 天內沒有排定事件，也沒有生效中的不利政策",
-          "date": "2026-11-19"
+          "date": "2026-11-20"
         }
       },
       "market": "TW",
@@ -1335,11 +1335,11 @@
         },
         "earnings": {
           "score": 0,
-          "why": "年報最晚 2027-03-31 要公布（法定期限，多數公司會提早），還有 94 個交易日",
+          "why": "年報最晚 2027-03-31 要公布（法定期限，多數公司會提早），還有 93 個交易日",
           "estimated": true,
           "date": "2027-03-31",
           "source": "https://mops.twse.com.tw/mops/#/web/t100sb02_1",
-          "days": 94,
+          "days": 93,
           "provider": "法定期限"
         },
         "fundamentals": {
@@ -1355,7 +1355,7 @@
         "policy": {
           "score": 0,
           "why": "14 天內沒有排定事件，也沒有生效中的不利政策",
-          "date": "2026-11-19"
+          "date": "2026-11-20"
         }
       },
       "market": "TW",
@@ -1384,11 +1384,11 @@
         },
         "earnings": {
           "score": 0,
-          "why": "年報最晚 2027-03-31 要公布（法定期限，多數公司會提早），還有 94 個交易日",
+          "why": "年報最晚 2027-03-31 要公布（法定期限，多數公司會提早），還有 93 個交易日",
           "estimated": true,
           "date": "2027-03-31",
           "source": "https://mops.twse.com.tw/mops/#/web/t100sb02_1",
-          "days": 94,
+          "days": 93,
           "provider": "法定期限"
         },
         "fundamentals": {
@@ -1405,7 +1405,7 @@
         "policy": {
           "score": 0,
           "why": "14 天內沒有排定事件，也沒有生效中的不利政策",
-          "date": "2026-11-19"
+          "date": "2026-11-20"
         }
       },
       "market": "TW",
@@ -1430,11 +1430,11 @@
         },
         "earnings": {
           "score": 0,
-          "why": "年報最晚 2027-03-31 要公布（法定期限，多數公司會提早），還有 94 個交易日",
+          "why": "年報最晚 2027-03-31 要公布（法定期限，多數公司會提早），還有 93 個交易日",
           "estimated": true,
           "date": "2027-03-31",
           "source": "https://mops.twse.com.tw/mops/#/web/t100sb02_1",
-          "days": 94,
+          "days": 93,
           "provider": "法定期限"
         },
         "fundamentals": {
@@ -1450,7 +1450,7 @@
         "policy": {
           "score": 0,
           "why": "14 天內沒有排定事件，也沒有生效中的不利政策",
-          "date": "2026-11-19"
+          "date": "2026-11-20"
         }
       },
       "market": "TW",
@@ -1475,11 +1475,11 @@
         },
         "earnings": {
           "score": 0,
-          "why": "年報最晚 2027-03-31 要公布（法定期限，多數公司會提早），還有 94 個交易日",
+          "why": "年報最晚 2027-03-31 要公布（法定期限，多數公司會提早），還有 93 個交易日",
           "estimated": true,
           "date": "2027-03-31",
           "source": "https://mops.twse.com.tw/mops/#/web/t100sb02_1",
-          "days": 94,
+          "days": 93,
           "provider": "法定期限"
         },
         "fundamentals": {
@@ -1495,7 +1495,7 @@
         "policy": {
           "score": 0,
           "why": "14 天內沒有排定事件，也沒有生效中的不利政策",
-          "date": "2026-11-19"
+          "date": "2026-11-20"
         }
       },
       "market": "TW",
@@ -1520,11 +1520,11 @@
         },
         "earnings": {
           "score": 0,
-          "why": "年報最晚 2027-03-31 要公布（法定期限，多數公司會提早），還有 94 個交易日",
+          "why": "年報最晚 2027-03-31 要公布（法定期限，多數公司會提早），還有 93 個交易日",
           "estimated": true,
           "date": "2027-03-31",
           "source": "https://mops.twse.com.tw/mops/#/web/t100sb02_1",
-          "days": 94,
+          "days": 93,
           "provider": "法定期限"
         },
         "fundamentals": {
@@ -1540,7 +1540,7 @@
         "policy": {
           "score": 0,
           "why": "14 天內沒有排定事件，也沒有生效中的不利政策",
-          "date": "2026-11-19"
+          "date": "2026-11-20"
         }
       },
       "market": "TW",
@@ -1565,11 +1565,11 @@
         },
         "earnings": {
           "score": 0,
-          "why": "年報最晚 2027-03-31 要公布（法定期限，多數公司會提早），還有 94 個交易日",
+          "why": "年報最晚 2027-03-31 要公布（法定期限，多數公司會提早），還有 93 個交易日",
           "estimated": true,
           "date": "2027-03-31",
           "source": "https://mops.twse.com.tw/mops/#/web/t100sb02_1",
-          "days": 94,
+          "days": 93,
           "provider": "法定期限"
         },
         "fundamentals": {
@@ -1585,7 +1585,7 @@
         "policy": {
           "score": 0,
           "why": "14 天內沒有排定事件，也沒有生效中的不利政策",
-          "date": "2026-11-19"
+          "date": "2026-11-20"
         }
       },
       "market": "TW",
@@ -1610,11 +1610,11 @@
         },
         "earnings": {
           "score": 0,
-          "why": "年報最晚 2027-03-31 要公布（法定期限，多數公司會提早），還有 94 個交易日",
+          "why": "年報最晚 2027-03-31 要公布（法定期限，多數公司會提早），還有 93 個交易日",
           "estimated": true,
           "date": "2027-03-31",
           "source": "https://mops.twse.com.tw/mops/#/web/t100sb02_1",
-          "days": 94,
+          "days": 93,
           "provider": "法定期限"
         },
         "fundamentals": {
@@ -1630,7 +1630,7 @@
         "policy": {
           "score": 0,
           "why": "14 天內沒有排定事件，也沒有生效中的不利政策",
-          "date": "2026-11-19"
+          "date": "2026-11-20"
         }
       },
       "market": "TW",
@@ -1655,11 +1655,11 @@
         },
         "earnings": {
           "score": 0,
-          "why": "年報最晚 2027-03-31 要公布（法定期限，多數公司會提早），還有 94 個交易日",
+          "why": "年報最晚 2027-03-31 要公布（法定期限，多數公司會提早），還有 93 個交易日",
           "estimated": true,
           "date": "2027-03-31",
           "source": "https://mops.twse.com.tw/mops/#/web/t100sb02_1",
-          "days": 94,
+          "days": 93,
           "provider": "法定期限"
         },
         "fundamentals": {
@@ -1675,7 +1675,7 @@
         "policy": {
           "score": 0,
           "why": "14 天內沒有排定事件，也沒有生效中的不利政策",
-          "date": "2026-11-19"
+          "date": "2026-11-20"
         }
       },
       "market": "TW",
@@ -1700,11 +1700,11 @@
         },
         "earnings": {
           "score": 0,
-          "why": "年報最晚 2027-03-31 要公布（法定期限，多數公司會提早），還有 94 個交易日",
+          "why": "年報最晚 2027-03-31 要公布（法定期限，多數公司會提早），還有 93 個交易日",
           "estimated": true,
           "date": "2027-03-31",
           "source": "https://mops.twse.com.tw/mops/#/web/t100sb02_1",
-          "days": 94,
+          "days": 93,
           "provider": "法定期限"
         },
         "fundamentals": {
@@ -1720,7 +1720,7 @@
         "policy": {
           "score": 0,
           "why": "14 天內沒有排定事件，也沒有生效中的不利政策",
-          "date": "2026-11-19"
+          "date": "2026-11-20"
         }
       },
       "market": "TW",
@@ -1745,11 +1745,11 @@
         },
         "earnings": {
           "score": 0,
-          "why": "年報最晚 2027-03-31 要公布（法定期限，多數公司會提早），還有 94 個交易日",
+          "why": "年報最晚 2027-03-31 要公布（法定期限，多數公司會提早），還有 93 個交易日",
           "estimated": true,
           "date": "2027-03-31",
           "source": "https://mops.twse.com.tw/mops/#/web/t100sb02_1",
-          "days": 94,
+          "days": 93,
           "provider": "法定期限"
         },
         "fundamentals": {
@@ -1765,7 +1765,7 @@
         "policy": {
           "score": 0,
           "why": "14 天內沒有排定事件，也沒有生效中的不利政策",
-          "date": "2026-11-19"
+          "date": "2026-11-20"
         }
       },
       "market": "TW",
@@ -1790,11 +1790,11 @@
         },
         "earnings": {
           "score": 0,
-          "why": "年報最晚 2027-03-31 要公布（法定期限，多數公司會提早），還有 94 個交易日",
+          "why": "年報最晚 2027-03-31 要公布（法定期限，多數公司會提早），還有 93 個交易日",
           "estimated": true,
           "date": "2027-03-31",
           "source": "https://mops.twse.com.tw/mops/#/web/t100sb02_1",
-          "days": 94,
+          "days": 93,
           "provider": "法定期限"
         },
         "fundamentals": {
@@ -1810,7 +1810,7 @@
         "policy": {
           "score": 0,
           "why": "14 天內沒有排定事件，也沒有生效中的不利政策",
-          "date": "2026-11-19"
+          "date": "2026-11-20"
         }
       },
       "market": "TW",
@@ -1835,11 +1835,11 @@
         },
         "earnings": {
           "score": 0,
-          "why": "年報最晚 2027-03-31 要公布（法定期限，多數公司會提早），還有 94 個交易日",
+          "why": "年報最晚 2027-03-31 要公布（法定期限，多數公司會提早），還有 93 個交易日",
           "estimated": true,
           "date": "2027-03-31",
           "source": "https://mops.twse.com.tw/mops/#/web/t100sb02_1",
-          "days": 94,
+          "days": 93,
           "provider": "法定期限"
         },
         "fundamentals": {
@@ -1855,7 +1855,7 @@
         "policy": {
           "score": 0,
           "why": "14 天內沒有排定事件，也沒有生效中的不利政策",
-          "date": "2026-11-19"
+          "date": "2026-11-20"
         }
       },
       "market": "TW",
@@ -1880,11 +1880,11 @@
         },
         "earnings": {
           "score": 0,
-          "why": "年報最晚 2027-03-31 要公布（法定期限，多數公司會提早），還有 94 個交易日",
+          "why": "年報最晚 2027-03-31 要公布（法定期限，多數公司會提早），還有 93 個交易日",
           "estimated": true,
           "date": "2027-03-31",
           "source": "https://mops.twse.com.tw/mops/#/web/t100sb02_1",
-          "days": 94,
+          "days": 93,
           "provider": "法定期限"
         },
         "fundamentals": {
@@ -1900,7 +1900,7 @@
         "policy": {
           "score": 0,
           "why": "14 天內沒有排定事件，也沒有生效中的不利政策",
-          "date": "2026-11-19"
+          "date": "2026-11-20"
         }
       },
       "market": "TW",
@@ -1925,11 +1925,11 @@
         },
         "earnings": {
           "score": 0,
-          "why": "年報最晚 2027-03-31 要公布（法定期限，多數公司會提早），還有 94 個交易日",
+          "why": "年報最晚 2027-03-31 要公布（法定期限，多數公司會提早），還有 93 個交易日",
           "estimated": true,
           "date": "2027-03-31",
           "source": "https://mops.twse.com.tw/mops/#/web/t100sb02_1",
-          "days": 94,
+          "days": 93,
           "provider": "法定期限"
         },
         "fundamentals": {
@@ -1945,7 +1945,7 @@
         "policy": {
           "score": 0,
           "why": "14 天內沒有排定事件，也沒有生效中的不利政策",
-          "date": "2026-11-19"
+          "date": "2026-11-20"
         }
       },
       "market": "TW",
@@ -1970,11 +1970,11 @@
         },
         "earnings": {
           "score": 0,
-          "why": "年報最晚 2027-03-31 要公布（法定期限，多數公司會提早），還有 94 個交易日",
+          "why": "年報最晚 2027-03-31 要公布（法定期限，多數公司會提早），還有 93 個交易日",
           "estimated": true,
           "date": "2027-03-31",
           "source": "https://mops.twse.com.tw/mops/#/web/t100sb02_1",
-          "days": 94,
+          "days": 93,
           "provider": "法定期限"
         },
         "fundamentals": {
@@ -1990,7 +1990,7 @@
         "policy": {
           "score": 0,
           "why": "14 天內沒有排定事件，也沒有生效中的不利政策",
-          "date": "2026-11-19"
+          "date": "2026-11-20"
         }
       },
       "market": "TW",
@@ -2015,11 +2015,11 @@
         },
         "earnings": {
           "score": 0,
-          "why": "年報最晚 2027-03-31 要公布（法定期限，多數公司會提早），還有 94 個交易日",
+          "why": "年報最晚 2027-03-31 要公布（法定期限，多數公司會提早），還有 93 個交易日",
           "estimated": true,
           "date": "2027-03-31",
           "source": "https://mops.twse.com.tw/mops/#/web/t100sb02_1",
-          "days": 94,
+          "days": 93,
           "provider": "法定期限"
         },
         "fundamentals": {
@@ -2035,7 +2035,7 @@
         "policy": {
           "score": 0,
           "why": "14 天內沒有排定事件，也沒有生效中的不利政策",
-          "date": "2026-11-19"
+          "date": "2026-11-20"
         }
       },
       "market": "TW",
@@ -2060,11 +2060,11 @@
         },
         "earnings": {
           "score": 0,
-          "why": "年報最晚 2027-03-31 要公布（法定期限，多數公司會提早），還有 94 個交易日",
+          "why": "年報最晚 2027-03-31 要公布（法定期限，多數公司會提早），還有 93 個交易日",
           "estimated": true,
           "date": "2027-03-31",
           "source": "https://mops.twse.com.tw/mops/#/web/t100sb02_1",
-          "days": 94,
+          "days": 93,
           "provider": "法定期限"
         },
         "fundamentals": {
@@ -2080,7 +2080,7 @@
         "policy": {
           "score": 0,
           "why": "14 天內沒有排定事件，也沒有生效中的不利政策",
-          "date": "2026-11-19"
+          "date": "2026-11-20"
         }
       },
       "market": "TW",
@@ -2105,11 +2105,11 @@
         },
         "earnings": {
           "score": 0,
-          "why": "年報最晚 2027-03-31 要公布（法定期限，多數公司會提早），還有 94 個交易日",
+          "why": "年報最晚 2027-03-31 要公布（法定期限，多數公司會提早），還有 93 個交易日",
           "estimated": true,
           "date": "2027-03-31",
           "source": "https://mops.twse.com.tw/mops/#/web/t100sb02_1",
-          "days": 94,
+          "days": 93,
           "provider": "法定期限"
         },
         "fundamentals": {
@@ -2125,7 +2125,7 @@
         "policy": {
           "score": 0,
           "why": "14 天內沒有排定事件，也沒有生效中的不利政策",
-          "date": "2026-11-19"
+          "date": "2026-11-20"
         }
       },
       "market": "TW",
@@ -2150,11 +2150,11 @@
         },
         "earnings": {
           "score": 0,
-          "why": "年報最晚 2027-03-31 要公布（法定期限，多數公司會提早），還有 94 個交易日",
+          "why": "年報最晚 2027-03-31 要公布（法定期限，多數公司會提早），還有 93 個交易日",
           "estimated": true,
           "date": "2027-03-31",
           "source": "https://mops.twse.com.tw/mops/#/web/t100sb02_1",
-          "days": 94,
+          "days": 93,
           "provider": "法定期限"
         },
         "fundamentals": {
@@ -2170,7 +2170,7 @@
         "policy": {
           "score": 0,
           "why": "14 天內沒有排定事件，也沒有生效中的不利政策",
-          "date": "2026-11-19"
+          "date": "2026-11-20"
         }
       },
       "market": "TW",
@@ -2195,11 +2195,11 @@
         },
         "earnings": {
           "score": 0,
-          "why": "年報最晚 2027-03-31 要公布（法定期限，多數公司會提早），還有 94 個交易日",
+          "why": "年報最晚 2027-03-31 要公布（法定期限，多數公司會提早），還有 93 個交易日",
           "estimated": true,
           "date": "2027-03-31",
           "source": "https://mops.twse.com.tw/mops/#/web/t100sb02_1",
-          "days": 94,
+          "days": 93,
           "provider": "法定期限"
         },
         "fundamentals": {
@@ -2215,7 +2215,7 @@
         "policy": {
           "score": 0,
           "why": "14 天內沒有排定事件，也沒有生效中的不利政策",
-          "date": "2026-11-19"
+          "date": "2026-11-20"
         }
       },
       "market": "TW",
@@ -2240,11 +2240,11 @@
         },
         "earnings": {
           "score": 0,
-          "why": "年報最晚 2027-03-31 要公布（法定期限，多數公司會提早），還有 94 個交易日",
+          "why": "年報最晚 2027-03-31 要公布（法定期限，多數公司會提早），還有 93 個交易日",
           "estimated": true,
           "date": "2027-03-31",
           "source": "https://mops.twse.com.tw/mops/#/web/t100sb02_1",
-          "days": 94,
+          "days": 93,
           "provider": "法定期限"
         },
         "fundamentals": {
@@ -2260,7 +2260,7 @@
         "policy": {
           "score": 0,
           "why": "14 天內沒有排定事件，也沒有生效中的不利政策",
-          "date": "2026-11-19"
+          "date": "2026-11-20"
         }
       },
       "market": "TW",
@@ -2285,11 +2285,11 @@
         },
         "earnings": {
           "score": 0,
-          "why": "年報最晚 2027-03-31 要公布（法定期限，多數公司會提早），還有 94 個交易日",
+          "why": "年報最晚 2027-03-31 要公布（法定期限，多數公司會提早），還有 93 個交易日",
           "estimated": true,
           "date": "2027-03-31",
           "source": "https://mops.twse.com.tw/mops/#/web/t100sb02_1",
-          "days": 94,
+          "days": 93,
           "provider": "法定期限"
         },
         "fundamentals": {
@@ -2305,7 +2305,7 @@
         "policy": {
           "score": 0,
           "why": "14 天內沒有排定事件，也沒有生效中的不利政策",
-          "date": "2026-11-19"
+          "date": "2026-11-20"
         }
       },
       "market": "TW",
@@ -2330,11 +2330,11 @@
         },
         "earnings": {
           "score": 0,
-          "why": "年報最晚 2027-03-31 要公布（法定期限，多數公司會提早），還有 94 個交易日",
+          "why": "年報最晚 2027-03-31 要公布（法定期限，多數公司會提早），還有 93 個交易日",
           "estimated": true,
           "date": "2027-03-31",
           "source": "https://mops.twse.com.tw/mops/#/web/t100sb02_1",
-          "days": 94,
+          "days": 93,
           "provider": "法定期限"
         },
         "fundamentals": {
@@ -2350,7 +2350,7 @@
         "policy": {
           "score": 0,
           "why": "14 天內沒有排定事件，也沒有生效中的不利政策",
-          "date": "2026-11-19"
+          "date": "2026-11-20"
         }
       },
       "market": "TW",
@@ -2375,11 +2375,11 @@
         },
         "earnings": {
           "score": 0,
-          "why": "年報最晚 2027-03-31 要公布（法定期限，多數公司會提早），還有 94 個交易日",
+          "why": "年報最晚 2027-03-31 要公布（法定期限，多數公司會提早），還有 93 個交易日",
           "estimated": true,
           "date": "2027-03-31",
           "source": "https://mops.twse.com.tw/mops/#/web/t100sb02_1",
-          "days": 94,
+          "days": 93,
           "provider": "法定期限"
         },
         "fundamentals": {
@@ -2395,7 +2395,7 @@
         "policy": {
           "score": 0,
           "why": "14 天內沒有排定事件，也沒有生效中的不利政策",
-          "date": "2026-11-19"
+          "date": "2026-11-20"
         }
       },
       "market": "TW",
@@ -2440,7 +2440,7 @@
         "policy": {
           "score": 0,
           "why": "14 天內沒有排定事件，也沒有生效中的不利政策",
-          "date": "2026-11-19"
+          "date": "2026-11-20"
         }
       },
       "market": "US",
@@ -2486,7 +2486,7 @@
         "policy": {
           "score": 0,
           "why": "14 天內沒有排定事件，也沒有生效中的不利政策",
-          "date": "2026-11-19"
+          "date": "2026-11-20"
         }
       },
       "market": "US",
@@ -2532,7 +2532,7 @@
         "policy": {
           "score": 0,
           "why": "14 天內沒有排定事件，也沒有生效中的不利政策",
-          "date": "2026-11-19"
+          "date": "2026-11-20"
         }
       },
       "market": "US",
@@ -2577,7 +2577,7 @@
         "policy": {
           "score": 0,
           "why": "14 天內沒有排定事件，也沒有生效中的不利政策",
-          "date": "2026-11-19"
+          "date": "2026-11-20"
         }
       },
       "market": "US",
@@ -2623,7 +2623,7 @@
         "policy": {
           "score": 0,
           "why": "14 天內沒有排定事件，也沒有生效中的不利政策",
-          "date": "2026-11-19"
+          "date": "2026-11-20"
         }
       },
       "market": "US",
@@ -2669,7 +2669,7 @@
         "policy": {
           "score": 0,
           "why": "14 天內沒有排定事件，也沒有生效中的不利政策",
-          "date": "2026-11-19"
+          "date": "2026-11-20"
         }
       },
       "market": "US",
@@ -2694,11 +2694,10 @@
         },
         "earnings": {
           "score": 0,
-          "why": "財報約 2026-12-23（Yahoo預估，公司尚未確認），還有 24 個交易日",
-          "estimated": true,
-          "date": "2026-12-23",
+          "why": "財報 2026-12-17，還有 20 個交易日（Yahoo，已確認）",
+          "date": "2026-12-17",
           "source": "https://finance.yahoo.com/quote/MU/",
-          "days": 24,
+          "days": 20,
           "provider": "Yahoo"
         },
         "fundamentals": {
@@ -2715,7 +2714,7 @@
         "policy": {
           "score": 0,
           "why": "14 天內沒有排定事件，也沒有生效中的不利政策",
-          "date": "2026-11-19"
+          "date": "2026-11-20"
         }
       },
       "market": "US",
@@ -2761,7 +2760,7 @@
         "policy": {
           "score": 0,
           "why": "14 天內沒有排定事件，也沒有生效中的不利政策",
-          "date": "2026-11-19"
+          "date": "2026-11-20"
         }
       },
       "market": "US",
@@ -2802,7 +2801,7 @@
         "policy": {
           "score": 0,
           "why": "14 天內沒有排定事件，也沒有生效中的不利政策",
-          "date": "2026-11-19"
+          "date": "2026-11-20"
         }
       },
       "market": "US",
@@ -2848,7 +2847,7 @@
         "policy": {
           "score": 0,
           "why": "14 天內沒有排定事件，也沒有生效中的不利政策",
-          "date": "2026-11-19"
+          "date": "2026-11-20"
         }
       },
       "market": "US",
@@ -2895,7 +2894,7 @@
         "policy": {
           "score": 0,
           "why": "14 天內沒有排定事件，也沒有生效中的不利政策",
-          "date": "2026-11-19"
+          "date": "2026-11-20"
         }
       },
       "market": "US",
@@ -2937,7 +2936,7 @@
         "policy": {
           "score": 0,
           "why": "14 天內沒有排定事件，也沒有生效中的不利政策",
-          "date": "2026-11-19"
+          "date": "2026-11-20"
         }
       },
       "market": "US",
@@ -2966,22 +2965,22 @@
         },
         "fundamentals": {
           "score": 1,
-          "why": "穩定幣總供給 30 日 -5.4%（285B 美元）、BTC 市占率 58.1%",
-          "date": "2026-11-19",
+          "why": "穩定幣總供給 30 日 -5.9%（284B 美元）、BTC 市占率 57.9%",
+          "date": "2026-11-20",
           "source": "https://defillama.com/stablecoins",
           "label": "市場結構"
         },
         "chips": {
           "score": 0,
-          "why": "恐懼與貪婪指數 10（極度恐懼）；資金費率 -0.0019%、未平倉量 7 日 -19.1%",
-          "date": "2026-11-19",
+          "why": "恐懼與貪婪指數 12（極度恐懼）；資金費率 +0.0002%、未平倉量 7 日 -21.1%",
+          "date": "2026-11-20",
           "source": "https://alternative.me/crypto/fear-and-greed-index/",
           "label": "情緒／槓桿"
         },
         "policy": {
           "score": 0,
           "why": "14 天內沒有排定事件，也沒有生效中的不利政策",
-          "date": "2026-11-19"
+          "date": "2026-11-20"
         }
       },
       "market": "CRYPTO",
@@ -3010,22 +3009,22 @@
         },
         "fundamentals": {
           "score": 1,
-          "why": "穩定幣總供給 30 日 -5.4%（285B 美元）、BTC 市占率 58.1%",
-          "date": "2026-11-19",
+          "why": "穩定幣總供給 30 日 -5.9%（284B 美元）、BTC 市占率 57.9%",
+          "date": "2026-11-20",
           "source": "https://defillama.com/stablecoins",
           "label": "市場結構"
         },
         "chips": {
           "score": 0,
-          "why": "恐懼與貪婪指數 10（極度恐懼）；資金費率 -0.0011%、未平倉量 7 日 -12.0%",
-          "date": "2026-11-19",
+          "why": "恐懼與貪婪指數 12（極度恐懼）；資金費率 +0.0043%、未平倉量 7 日 -8.8%",
+          "date": "2026-11-20",
           "source": "https://alternative.me/crypto/fear-and-greed-index/",
           "label": "情緒／槓桿"
         },
         "policy": {
           "score": 0,
           "why": "14 天內沒有排定事件，也沒有生效中的不利政策",
-          "date": "2026-11-19"
+          "date": "2026-11-20"
         }
       },
       "market": "CRYPTO",
@@ -3054,22 +3053,22 @@
         },
         "fundamentals": {
           "score": 1,
-          "why": "穩定幣總供給 30 日 -5.4%（285B 美元）、BTC 市占率 58.1%",
-          "date": "2026-11-19",
+          "why": "穩定幣總供給 30 日 -5.9%（284B 美元）、BTC 市占率 57.9%",
+          "date": "2026-11-20",
           "source": "https://defillama.com/stablecoins",
           "label": "市場結構"
         },
         "chips": {
           "score": 0,
-          "why": "恐懼與貪婪指數 10（極度恐懼）；資金費率 +0.0049%、未平倉量 7 日 -23.2%",
-          "date": "2026-11-19",
+          "why": "恐懼與貪婪指數 12（極度恐懼）；資金費率 -0.0002%、未平倉量 7 日 -22.8%",
+          "date": "2026-11-20",
           "source": "https://alternative.me/crypto/fear-and-greed-index/",
           "label": "情緒／槓桿"
         },
         "policy": {
           "score": 0,
           "why": "14 天內沒有排定事件，也沒有生效中的不利政策",
-          "date": "2026-11-19"
+          "date": "2026-11-20"
         }
       },
       "market": "CRYPTO",
