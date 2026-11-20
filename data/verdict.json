@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-11-20T07:45:24.649803+00:00",
-  "dataTimestamp": "2026-11-20T07:39:19.829143+00:00",
+  "generatedAt": "2026-11-20T15:39:18.053062+00:00",
+  "dataTimestamp": "2026-11-20T15:35:10.751803+00:00",
   "sessions": {
     "TW": "2026-11-20",
     "US": "2026-11-19",
@@ -263,7 +263,7 @@
       "mismatch": null,
       "risk": {
         "level": "low",
-        "total": 1,
+        "total": 0,
         "max": 10,
         "reasons": []
       },
@@ -449,7 +449,7 @@
       "mismatch": null,
       "risk": {
         "level": "low",
-        "total": 2,
+        "total": 1,
         "max": 10,
         "reasons": []
       },
@@ -1275,7 +1275,7 @@
       "mismatch": null,
       "risk": {
         "level": "low",
-        "total": 1,
+        "total": 0,
         "max": 10,
         "reasons": []
       },
@@ -1915,7 +1915,7 @@
       "mismatch": null,
       "risk": {
         "level": "low",
-        "total": 1,
+        "total": 0,
         "max": 10,
         "reasons": []
       },
@@ -2033,7 +2033,7 @@
       "mismatch": null,
       "risk": {
         "level": "low",
-        "total": 1,
+        "total": 0,
         "max": 10,
         "reasons": []
       },
@@ -2099,7 +2099,7 @@
       "mismatch": null,
       "risk": {
         "level": "low",
-        "total": 1,
+        "total": 0,
         "max": 10,
         "reasons": []
       },
@@ -2281,7 +2281,7 @@
       "mismatch": null,
       "risk": {
         "level": "low",
-        "total": 1,
+        "total": 0,
         "max": 10,
         "reasons": []
       },
@@ -2735,7 +2735,7 @@
       "mismatch": null,
       "risk": {
         "level": "low",
-        "total": 2,
+        "total": 1,
         "max": 10,
         "reasons": []
       },
@@ -2929,7 +2929,7 @@
       "mismatch": null,
       "risk": {
         "level": "low",
-        "total": 1,
+        "total": 0,
         "max": 10,
         "reasons": []
       },

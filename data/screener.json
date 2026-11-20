@@ -1,5 +1,5 @@
 {
- "generatedAt": "2026-11-20T07:45:25.061170+00:00",
+ "generatedAt": "2026-11-20T15:39:18.566855+00:00",
  "params": {
   "rsi_lo": 45,
   "rsi_hi": 60,
@@ -20,12 +20,10 @@
  "markets": {
   "TW": {
    "scanned": 300,
-   "ok": 299,
-   "failed": 1,
-   "failedSample": [
-    "7856.TWO：只有 51 根日 K"
-   ],
-   "candidates": 6,
+   "ok": 300,
+   "failed": 0,
+   "failedSample": [],
+   "candidates": 5,
    "signals": 0,
    "picks": [
     {
@@ -382,88 +380,18 @@
       }
      ],
      "watched": false
-    },
-    {
-     "code": "8415.TWO",
-     "name": "大國鋼",
-     "market": "TW",
-     "date": "2026-11-20",
-     "close": 39.85,
-     "pct": -5.5687,
-     "entryLow": 37.1739,
-     "entryHigh": 38.1174,
-     "stop": 35.2157,
-     "target1": 44.4779,
-     "rr": 0.9986,
-     "rsi": 58.9195,
-     "volRatio": 2.32,
-     "bias": 5.5909,
-     "zone": "ABOVE_ZONE",
-     "dailyTrend": "多頭",
-     "weeklyTrend": "多頭",
-     "regime": "BEAR",
-     "entrySignal": false,
-     "passed": 7,
-     "total": 9,
-     "checks": [
-      {
-       "k": "above",
-       "ok": true,
-       "t": "收在 SMA20 之上（乖離 5.6%）"
-      },
-      {
-       "k": "bias",
-       "ok": true,
-       "t": "乖離 0–6%"
-      },
-      {
-       "k": "high",
-       "ok": true,
-       "t": "未貼近 20 日高"
-      },
-      {
-       "k": "rr",
-       "ok": false,
-       "t": "報酬風險比 1.00 ≥ 1.5"
-      },
-      {
-       "k": "rsi",
-       "ok": true,
-       "t": "RSI 59（45–60）"
-      },
-      {
-       "k": "trend",
-       "ok": true,
-       "t": "日線多頭、週線多頭（不能是空頭）"
-      },
-      {
-       "k": "macd",
-       "ok": true,
-       "t": "MACD 零軸上（不能轉弱）"
-      },
-      {
-       "k": "market",
-       "ok": false,
-       "t": "大盤空頭"
-      },
-      {
-       "k": "vol",
-       "ok": true,
-       "t": "量比 2.32 ≥ 1.2"
-      }
-     ],
-     "watched": false
     }
    ],
    "universe": "證交所＋櫃買中心全市場日收盤，成交金額前 300 名",
-   "seconds": 236,
+   "seconds": 39,
    "session": "2026-11-20"
   },
   "US": {
    "scanned": 300,
-   "ok": 299,
-   "failed": 1,
+   "ok": 298,
+   "failed": 2,
    "failedSample": [
+    "ANT：只有 1 根日 K",
     "METAM：只有 18 根日 K"
    ],
    "candidates": 14,
@@ -1181,21 +1109,22 @@
     }
    ],
    "universe": "Nasdaq 全市場名單，市值前 300 名",
-   "seconds": 23,
+   "seconds": 25,
    "session": "2026-11-19"
   },
   "CRYPTO": {
    "scanned": 30,
-   "ok": 23,
-   "failed": 7,
+   "ok": 22,
+   "failed": 8,
    "failedSample": [
     "FIGR_HELOC-USD：HTTPError",
     "CC-USD：HTTPError",
+    "SUI-USD：HTTPError",
     "UNI-USD：HTTPError",
     "RAIN-USD：HTTPError",
-    "SUI-USD：HTTPError",
     "TAO-USD：HTTPError",
-    "EURSAFO-USD：HTTPError"
+    "EURSAFO-USD：HTTPError",
+    "USYC-USD：HTTPError"
    ],
    "candidates": 0,
    "signals": 0,
