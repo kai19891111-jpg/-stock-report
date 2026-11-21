@@ -1,8 +1,8 @@
 {
-  "generatedAt": "2026-11-21T03:27:37.300691+00:00",
+  "generatedAt": "2026-11-21T07:37:32.642482+00:00",
   "today": {
     "TW": "2026-11-21",
-    "US": "2026-11-20",
+    "US": "2026-11-21",
     "CRYPTO": "2026-11-21"
   },
   "thresholds": {
@@ -352,19 +352,15 @@
       "group": "TW|AI伺服器／散熱"
     },
     "3324.TWO": {
-      "total": 3,
+      "total": 1,
       "max": 10,
       "scored": 5,
-      "score10": 3.0,
+      "score10": 1.0,
       "level": "low",
-      "flags": [
-        "attention"
-      ],
+      "flags": [],
       "gate": {
-        "block": true,
-        "reasons": [
-          "注意股"
-        ]
+        "block": false,
+        "reasons": []
       },
       "items": {
         "tech": {
@@ -387,10 +383,9 @@
           "date": "2026-10"
         },
         "chips": {
-          "score": 2,
-          "why": "列入注意股（2026-11-19）",
-          "date": "2026-11-19",
-          "flag": "attention"
+          "score": 0,
+          "why": "近 5 日法人 +943 張、融資 -842 張",
+          "date": "2026-11-20"
         },
         "policy": {
           "score": 0,
@@ -807,19 +802,15 @@
       "group": "TW|CCL／材料"
     },
     "6274.TW": {
-      "total": 2,
+      "total": 0,
       "max": 10,
       "scored": 5,
-      "score10": 2.0,
+      "score10": 0.0,
       "level": "low",
-      "flags": [
-        "attention"
-      ],
+      "flags": [],
       "gate": {
-        "block": true,
-        "reasons": [
-          "注意股"
-        ]
+        "block": false,
+        "reasons": []
       },
       "items": {
         "tech": {
@@ -842,10 +833,9 @@
           "date": "2026-10"
         },
         "chips": {
-          "score": 2,
-          "why": "列入注意股（2026-11-19）",
-          "date": "2026-11-19",
-          "flag": "attention"
+          "score": 0,
+          "why": "近 5 日法人 +3839 張、融資 -4259 張",
+          "date": "2026-11-20"
         },
         "policy": {
           "score": 0,
@@ -1253,8 +1243,8 @@
         },
         "chips": {
           "score": 2,
-          "why": "列入注意股（2026-11-19）",
-          "date": "2026-11-19",
+          "why": "列入注意股（2026-11-20）",
+          "date": "2026-11-20",
           "flag": "attention"
         },
         "policy": {
@@ -1267,19 +1257,15 @@
       "group": "TW|零組件／廠務"
     },
     "2221.TWO": {
-      "total": 2,
+      "total": 0,
       "max": 10,
       "scored": 5,
-      "score10": 2.0,
+      "score10": 0.0,
       "level": "low",
-      "flags": [
-        "attention"
-      ],
+      "flags": [],
       "gate": {
-        "block": true,
-        "reasons": [
-          "注意股"
-        ]
+        "block": false,
+        "reasons": []
       },
       "items": {
         "tech": {
@@ -1302,10 +1288,9 @@
           "date": "2026-10"
         },
         "chips": {
-          "score": 2,
-          "why": "列入注意股（2026-11-19）",
-          "date": "2026-11-19",
-          "flag": "attention"
+          "score": 0,
+          "why": "近 5 日法人 +371 張、融資 -209 張",
+          "date": "2026-11-20"
         },
         "policy": {
           "score": 0,
@@ -2956,8 +2941,8 @@
       "items": {
         "tech": {
           "score": 0,
-          "why": "乖離 -13.95%",
-          "date": "2026-11-19"
+          "why": "乖離 -17.19%",
+          "date": "2026-11-20"
         },
         "earnings": {
           "score": null,
@@ -2965,14 +2950,14 @@
         },
         "fundamentals": {
           "score": 1,
-          "why": "穩定幣總供給 30 日 -6.3%（283B 美元）、BTC 市占率 57.7%",
+          "why": "穩定幣總供給 30 日 -6.3%（283B 美元）、BTC 市占率 57.6%",
           "date": "2026-11-21",
           "source": "https://defillama.com/stablecoins",
           "label": "市場結構"
         },
         "chips": {
           "score": 0,
-          "why": "恐懼與貪婪指數 12（極度恐懼）；資金費率 -0.0049%、未平倉量 7 日 -15.5%",
+          "why": "恐懼與貪婪指數 12（極度恐懼）；資金費率 -0.0038%、未平倉量 7 日 -15.5%",
           "date": "2026-11-21",
           "source": "https://alternative.me/crypto/fear-and-greed-index/",
           "label": "情緒／槓桿"
@@ -3000,8 +2985,8 @@
       "items": {
         "tech": {
           "score": 0,
-          "why": "乖離 -14.91%",
-          "date": "2026-11-19"
+          "why": "乖離 -20.27%",
+          "date": "2026-11-20"
         },
         "earnings": {
           "score": null,
@@ -3009,14 +2994,14 @@
         },
         "fundamentals": {
           "score": 1,
-          "why": "穩定幣總供給 30 日 -6.3%（283B 美元）、BTC 市占率 57.7%",
+          "why": "穩定幣總供給 30 日 -6.3%（283B 美元）、BTC 市占率 57.6%",
           "date": "2026-11-21",
           "source": "https://defillama.com/stablecoins",
           "label": "市場結構"
         },
         "chips": {
           "score": 0,
-          "why": "恐懼與貪婪指數 12（極度恐懼）；資金費率 -0.0164%、未平倉量 7 日 -16.5%",
+          "why": "恐懼與貪婪指數 12（極度恐懼）；資金費率 -0.0049%、未平倉量 7 日 -16.5%",
           "date": "2026-11-21",
           "source": "https://alternative.me/crypto/fear-and-greed-index/",
           "label": "情緒／槓桿"
@@ -3044,8 +3029,8 @@
       "items": {
         "tech": {
           "score": 0,
-          "why": "乖離 -12.72%",
-          "date": "2026-11-19"
+          "why": "乖離 -16.55%",
+          "date": "2026-11-20"
         },
         "earnings": {
           "score": null,
@@ -3053,14 +3038,14 @@
         },
         "fundamentals": {
           "score": 1,
-          "why": "穩定幣總供給 30 日 -6.3%（283B 美元）、BTC 市占率 57.7%",
+          "why": "穩定幣總供給 30 日 -6.3%（283B 美元）、BTC 市占率 57.6%",
           "date": "2026-11-21",
           "source": "https://defillama.com/stablecoins",
           "label": "市場結構"
         },
         "chips": {
           "score": 0,
-          "why": "恐懼與貪婪指數 12（極度恐懼）；資金費率 -0.0110%、未平倉量 7 日 -22.9%",
+          "why": "恐懼與貪婪指數 12（極度恐懼）；資金費率 -0.0118%、未平倉量 7 日 -22.9%",
           "date": "2026-11-21",
           "source": "https://alternative.me/crypto/fear-and-greed-index/",
           "label": "情緒／槓桿"

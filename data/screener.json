@@ -1,5 +1,5 @@
 {
- "generatedAt": "2026-11-21T03:31:15.774491+00:00",
+ "generatedAt": "2026-11-21T07:40:55.632361+00:00",
  "params": {
   "rsi_lo": 45,
   "rsi_hi": 60,
@@ -690,11 +690,11 @@
      "pct": 0.2061,
      "entryLow": 47.8208,
      "entryHigh": 49.0345,
-     "stop": 47.6087,
-     "target1": 50.3339,
-     "rr": 1.7216,
+     "stop": 47.5911,
+     "target1": 50.3661,
+     "rr": 1.7236,
      "rsi": 55.014,
-     "volRatio": 1.1491,
+     "volRatio": 1.1492,
      "bias": 0.1256,
      "zone": "IN_ZONE",
      "dailyTrend": "多頭",
@@ -1180,7 +1180,7 @@
     }
    ],
    "universe": "Nasdaq 全市場名單，市值前 300 名",
-   "seconds": 17,
+   "seconds": 15,
    "session": "2026-11-20"
   },
   "CRYPTO": {
@@ -1191,8 +1191,8 @@
     "FIGR_HELOC-USD：HTTPError",
     "CC-USD：HTTPError",
     "UNI-USD：HTTPError",
-    "RAIN-USD：HTTPError",
     "SUI-USD：HTTPError",
+    "RAIN-USD：HTTPError",
     "TAO-USD：HTTPError",
     "EURSAFO-USD：HTTPError",
     "USYC-USD：HTTPError"
