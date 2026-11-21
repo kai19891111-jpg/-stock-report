@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-21T02:11:00.484357+00:00",
+  "generatedAt": "2026-11-21T03:27:37.300691+00:00",
   "today": {
     "TW": "2026-11-21",
     "US": "2026-11-20",
@@ -2415,8 +2415,8 @@
       "items": {
         "tech": {
           "score": 0,
-          "why": "乖離 -11.26%",
-          "date": "2026-11-19"
+          "why": "乖離 -18.65%",
+          "date": "2026-11-20"
         },
         "earnings": {
           "score": 0,
@@ -2460,8 +2460,8 @@
       "items": {
         "tech": {
           "score": 0,
-          "why": "乖離 -21.40%",
-          "date": "2026-11-19"
+          "why": "乖離 -30.82%",
+          "date": "2026-11-20"
         },
         "earnings": {
           "score": 0,
@@ -2506,8 +2506,8 @@
       "items": {
         "tech": {
           "score": 0,
-          "why": "乖離 -4.77%",
-          "date": "2026-11-19"
+          "why": "乖離 -16.64%",
+          "date": "2026-11-20"
         },
         "earnings": {
           "score": 0,
@@ -2552,8 +2552,8 @@
       "items": {
         "tech": {
           "score": 0,
-          "why": "乖離 +4.02%",
-          "date": "2026-11-19"
+          "why": "乖離 -8.42%",
+          "date": "2026-11-20"
         },
         "earnings": {
           "score": 0,
@@ -2597,8 +2597,8 @@
       "items": {
         "tech": {
           "score": 0,
-          "why": "乖離 -5.08%",
-          "date": "2026-11-19"
+          "why": "乖離 -7.35%",
+          "date": "2026-11-20"
         },
         "earnings": {
           "score": 0,
@@ -2643,8 +2643,8 @@
       "items": {
         "tech": {
           "score": 0,
-          "why": "乖離 -4.25%",
-          "date": "2026-11-19"
+          "why": "乖離 -9.33%",
+          "date": "2026-11-20"
         },
         "earnings": {
           "score": 0,
@@ -2689,8 +2689,8 @@
       "items": {
         "tech": {
           "score": 0,
-          "why": "乖離 -13.78%",
-          "date": "2026-11-19"
+          "why": "乖離 -24.43%",
+          "date": "2026-11-20"
         },
         "earnings": {
           "score": 0,
@@ -2734,8 +2734,8 @@
       "items": {
         "tech": {
           "score": 0,
-          "why": "乖離 -3.03%",
-          "date": "2026-11-19"
+          "why": "乖離 -10.13%",
+          "date": "2026-11-20"
         },
         "earnings": {
           "score": 0,
@@ -2780,8 +2780,8 @@
       "items": {
         "tech": {
           "score": 0,
-          "why": "乖離 -1.24%",
-          "date": "2026-11-19"
+          "why": "乖離 -8.18%",
+          "date": "2026-11-20"
         },
         "earnings": {
           "score": null,
@@ -2821,8 +2821,8 @@
       "items": {
         "tech": {
           "score": 0,
-          "why": "乖離 -9.34%",
-          "date": "2026-11-19"
+          "why": "乖離 -18.73%",
+          "date": "2026-11-20"
         },
         "earnings": {
           "score": 0,
@@ -2867,8 +2867,8 @@
       "items": {
         "tech": {
           "score": 0,
-          "why": "乖離 -27.07%",
-          "date": "2026-11-19"
+          "why": "乖離 -31.98%",
+          "date": "2026-11-20"
         },
         "earnings": {
           "score": 0,
@@ -2914,8 +2914,8 @@
       "items": {
         "tech": {
           "score": 0,
-          "why": "乖離 -4.56%",
-          "date": "2026-11-19"
+          "why": "乖離 -12.67%",
+          "date": "2026-11-20"
         },
         "earnings": {
           "score": null,
@@ -2965,14 +2965,14 @@
         },
         "fundamentals": {
           "score": 1,
-          "why": "穩定幣總供給 30 日 -6.3%（282B 美元）、BTC 市占率 57.8%",
+          "why": "穩定幣總供給 30 日 -6.3%（283B 美元）、BTC 市占率 57.7%",
           "date": "2026-11-21",
           "source": "https://defillama.com/stablecoins",
           "label": "市場結構"
         },
         "chips": {
           "score": 0,
-          "why": "恐懼與貪婪指數 12（極度恐懼）；資金費率 -0.0073%、未平倉量 7 日 -15.5%",
+          "why": "恐懼與貪婪指數 12（極度恐懼）；資金費率 -0.0049%、未平倉量 7 日 -15.5%",
           "date": "2026-11-21",
           "source": "https://alternative.me/crypto/fear-and-greed-index/",
           "label": "情緒／槓桿"
@@ -3009,14 +3009,14 @@
         },
         "fundamentals": {
           "score": 1,
-          "why": "穩定幣總供給 30 日 -6.3%（282B 美元）、BTC 市占率 57.8%",
+          "why": "穩定幣總供給 30 日 -6.3%（283B 美元）、BTC 市占率 57.7%",
           "date": "2026-11-21",
           "source": "https://defillama.com/stablecoins",
           "label": "市場結構"
         },
         "chips": {
           "score": 0,
-          "why": "恐懼與貪婪指數 12（極度恐懼）；資金費率 -0.0190%、未平倉量 7 日 -16.5%",
+          "why": "恐懼與貪婪指數 12（極度恐懼）；資金費率 -0.0164%、未平倉量 7 日 -16.5%",
           "date": "2026-11-21",
           "source": "https://alternative.me/crypto/fear-and-greed-index/",
           "label": "情緒／槓桿"
@@ -3053,14 +3053,14 @@
         },
         "fundamentals": {
           "score": 1,
-          "why": "穩定幣總供給 30 日 -6.3%（282B 美元）、BTC 市占率 57.8%",
+          "why": "穩定幣總供給 30 日 -6.3%（283B 美元）、BTC 市占率 57.7%",
           "date": "2026-11-21",
           "source": "https://defillama.com/stablecoins",
           "label": "市場結構"
         },
         "chips": {
           "score": 0,
-          "why": "恐懼與貪婪指數 12（極度恐懼）；資金費率 -0.0129%、未平倉量 7 日 -22.9%",
+          "why": "恐懼與貪婪指數 12（極度恐懼）；資金費率 -0.0110%、未平倉量 7 日 -22.9%",
           "date": "2026-11-21",
           "source": "https://alternative.me/crypto/fear-and-greed-index/",
           "label": "情緒／槓桿"
