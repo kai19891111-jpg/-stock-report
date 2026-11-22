@@ -1,5 +1,5 @@
 {
- "generatedAt": "2026-11-21T07:40:55.632361+00:00",
+ "generatedAt": "2026-11-22T07:21:59.815574+00:00",
  "params": {
   "rsi_lo": 45,
   "rsi_hi": 60,
@@ -454,7 +454,7 @@
     }
    ],
    "universe": "證交所＋櫃買中心全市場日收盤，成交金額前 300 名",
-   "seconds": 38,
+   "seconds": 37,
    "session": "2026-11-20"
   },
   "US": {
@@ -1180,7 +1180,7 @@
     }
    ],
    "universe": "Nasdaq 全市場名單，市值前 300 名",
-   "seconds": 15,
+   "seconds": 23,
    "session": "2026-11-20"
   },
   "CRYPTO": {
@@ -1201,7 +1201,7 @@
    "signals": 0,
    "picks": [],
    "universe": "CoinGecko 市值前 30 名（排除穩定幣、包裝與質押代幣）",
-   "seconds": 6,
+   "seconds": 7,
    "session": null
   }
  }
