@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-23T08:04:51.277191+00:00",
+  "updatedAt": "2026-11-23T18:25:55.346171+00:00",
   "note": "scripts/risk.py 自動抓到的美股財報日。要指定日期請改 data/events.json 的 earnings，那邊永遠優先。",
   "symbols": {
     "AMD": {
@@ -8,7 +8,7 @@
       "estimated": true,
       "provider": "Yahoo",
       "source": "https://finance.yahoo.com/quote/AMD/",
-      "fetchedAt": "2026-11-22"
+      "fetchedAt": "2026-11-23"
     },
     "ASTS": {
       "date": "2026-11-09",
@@ -21,9 +21,9 @@
     "AVGO": {
       "date": "2026-12-09",
       "dateEnd": null,
-      "estimated": true,
-      "provider": "Nasdaq",
-      "source": "https://www.nasdaq.com/market-activity/stocks/avgo/earnings",
+      "estimated": false,
+      "provider": "Yahoo",
+      "source": "https://finance.yahoo.com/quote/AVGO/",
       "fetchedAt": "2026-11-23"
     },
     "ECHO": {
@@ -40,7 +40,7 @@
       "estimated": true,
       "provider": "Yahoo",
       "source": "https://finance.yahoo.com/quote/META/",
-      "fetchedAt": "2026-11-22"
+      "fetchedAt": "2026-11-23"
     },
     "MSFT": {
       "date": "2027-01-27",
@@ -48,14 +48,14 @@
       "estimated": true,
       "provider": "Yahoo",
       "source": "https://finance.yahoo.com/quote/MSFT/",
-      "fetchedAt": "2026-11-22"
+      "fetchedAt": "2026-11-23"
     },
     "MU": {
-      "date": "2026-12-16",
+      "date": "2026-12-17",
       "dateEnd": null,
-      "estimated": true,
-      "provider": "Nasdaq",
-      "source": "https://www.nasdaq.com/market-activity/stocks/mu/earnings",
+      "estimated": false,
+      "provider": "Yahoo",
+      "source": "https://finance.yahoo.com/quote/MU/",
       "fetchedAt": "2026-11-23"
     },
     "NVDA": {
@@ -88,7 +88,7 @@
       "estimated": true,
       "provider": "Yahoo",
       "source": "https://finance.yahoo.com/quote/TSLA/",
-      "fetchedAt": "2026-11-22"
+      "fetchedAt": "2026-11-23"
     },
     "TSM": {
       "date": "2027-01-14",
@@ -96,7 +96,7 @@
       "estimated": true,
       "provider": "Yahoo",
       "source": "https://finance.yahoo.com/quote/TSM/",
-      "fetchedAt": "2026-11-22"
+      "fetchedAt": "2026-11-23"
     }
   }
 }
