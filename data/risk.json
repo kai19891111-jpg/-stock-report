@@ -1,7 +1,7 @@
 {
-  "generatedAt": "2026-11-24T10:18:57.335769+00:00",
+  "generatedAt": "2026-11-24T17:55:11.208672+00:00",
   "today": {
-    "TW": "2026-11-24",
+    "TW": "2026-11-25",
     "US": "2026-11-24",
     "CRYPTO": "2026-11-24"
   },
@@ -97,11 +97,11 @@
       "fail": 0
     },
     "nasdaq_earnings": {
-      "ok": 5,
+      "ok": 4,
       "fail": 0
     },
     "sec_submissions": {
-      "ok": 5,
+      "ok": 4,
       "fail": 0
     },
     "sec_facts": {
@@ -118,19 +118,19 @@
     }
   },
   "events": {
-    "updatedAt": "2026-11-24",
+    "updatedAt": "2026-11-25",
     "fresh": true,
     "used": 24,
     "earnings": 5,
-    "autoEarnings": 10,
+    "autoEarnings": 11,
     "rejected": []
   },
   "symbols": {
     "2330.TW": {
-      "total": 0,
+      "total": 1,
       "max": 10,
       "scored": 5,
-      "score10": 0.0,
+      "score10": 1.0,
       "level": "low",
       "flags": [],
       "gate": {
@@ -140,16 +140,16 @@
       "items": {
         "tech": {
           "score": 0,
-          "why": "乖離 -0.88%",
-          "date": "2026-11-24"
+          "why": "乖離 -10.11%",
+          "date": "2026-11-23"
         },
         "earnings": {
           "score": 0,
-          "why": "年報最晚 2027-03-31 要公布（法定期限，多數公司會提早），還有 91 個交易日",
+          "why": "年報最晚 2027-03-31 要公布（法定期限，多數公司會提早），還有 90 個交易日",
           "estimated": true,
           "date": "2027-03-31",
           "source": "https://mops.twse.com.tw/mops/#/web/t100sb02_1",
-          "days": 91,
+          "days": 90,
           "provider": "法定期限"
         },
         "fundamentals": {
@@ -159,13 +159,14 @@
         },
         "chips": {
           "score": 0,
-          "why": "近 5 日法人 -30162 張、融資 -1733 張",
+          "why": "近 5 日法人 -30162 張、融資 -1539 張",
           "date": "2026-11-24"
         },
         "policy": {
-          "score": 0,
-          "why": "14 天內沒有排定事件，也沒有生效中的不利政策",
-          "date": "2026-11-24"
+          "score": 1,
+          "why": "2026-12-09 FOMC 利率決議（12/8–9 會議，附經濟預測）",
+          "date": "2026-12-09",
+          "source": "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm"
         }
       },
       "market": "TW",
@@ -184,17 +185,17 @@
       },
       "items": {
         "tech": {
-          "score": 1,
-          "why": "乖離 +6.16%",
-          "date": "2026-11-24"
+          "score": 0,
+          "why": "乖離 -3.29%",
+          "date": "2026-11-23"
         },
         "earnings": {
           "score": 0,
-          "why": "年報最晚 2027-03-31 要公布（法定期限，多數公司會提早），還有 91 個交易日",
+          "why": "年報最晚 2027-03-31 要公布（法定期限，多數公司會提早），還有 90 個交易日",
           "estimated": true,
           "date": "2027-03-31",
           "source": "https://mops.twse.com.tw/mops/#/web/t100sb02_1",
-          "days": 91,
+          "days": 90,
           "provider": "法定期限"
         },
         "fundamentals": {
@@ -204,23 +205,24 @@
         },
         "chips": {
           "score": 1,
-          "why": "近 5 日法人 -3982 張、融資 +520 張",
+          "why": "近 5 日法人 -3905 張、融資 +844 張",
           "date": "2026-11-24"
         },
         "policy": {
-          "score": 0,
-          "why": "14 天內沒有排定事件，也沒有生效中的不利政策",
-          "date": "2026-11-24"
+          "score": 1,
+          "why": "2026-12-09 FOMC 利率決議（12/8–9 會議，附經濟預測）",
+          "date": "2026-12-09",
+          "source": "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm"
         }
       },
       "market": "TW",
       "group": "TW|AI晶片"
     },
     "2308.TW": {
-      "total": 1,
+      "total": 2,
       "max": 10,
       "scored": 5,
-      "score10": 1.0,
+      "score10": 2.0,
       "level": "low",
       "flags": [],
       "gate": {
@@ -230,16 +232,16 @@
       "items": {
         "tech": {
           "score": 0,
-          "why": "乖離 -8.88%",
-          "date": "2026-11-24"
+          "why": "乖離 -18.32%",
+          "date": "2026-11-23"
         },
         "earnings": {
           "score": 0,
-          "why": "年報最晚 2027-03-31 要公布（法定期限，多數公司會提早），還有 91 個交易日",
+          "why": "年報最晚 2027-03-31 要公布（法定期限，多數公司會提早），還有 90 個交易日",
           "estimated": true,
           "date": "2027-03-31",
           "source": "https://mops.twse.com.tw/mops/#/web/t100sb02_1",
-          "days": 91,
+          "days": 90,
           "provider": "法定期限"
         },
         "fundamentals": {
@@ -249,23 +251,24 @@
         },
         "chips": {
           "score": 1,
-          "why": "近 5 日法人 -7621 張、融資 +2214 張",
+          "why": "近 5 日法人 -7621 張、融資 +1726 張",
           "date": "2026-11-24"
         },
         "policy": {
-          "score": 0,
-          "why": "14 天內沒有排定事件，也沒有生效中的不利政策",
-          "date": "2026-11-24"
+          "score": 1,
+          "why": "2026-12-09 FOMC 利率決議（12/8–9 會議，附經濟預測）",
+          "date": "2026-12-09",
+          "source": "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm"
         }
       },
       "market": "TW",
       "group": "TW|AI電源／電力"
     },
     "2371.TW": {
-      "total": 1,
+      "total": 2,
       "max": 10,
       "scored": 5,
-      "score10": 1.0,
+      "score10": 2.0,
       "level": "low",
       "flags": [],
       "gate": {
@@ -275,16 +278,16 @@
       "items": {
         "tech": {
           "score": 0,
-          "why": "乖離 -5.59%",
-          "date": "2026-11-24"
+          "why": "乖離 -14.59%",
+          "date": "2026-11-23"
         },
         "earnings": {
           "score": 0,
-          "why": "年報最晚 2027-03-31 要公布（法定期限，多數公司會提早），還有 91 個交易日",
+          "why": "年報最晚 2027-03-31 要公布（法定期限，多數公司會提早），還有 90 個交易日",
           "estimated": true,
           "date": "2027-03-31",
           "source": "https://mops.twse.com.tw/mops/#/web/t100sb02_1",
-          "days": 91,
+          "days": 90,
           "provider": "法定期限"
         },
         "fundamentals": {
@@ -294,23 +297,24 @@
         },
         "chips": {
           "score": 0,
-          "why": "近 5 日法人 +1376 張、融資 -1340 張",
+          "why": "近 5 日法人 +1376 張、融資 -1507 張",
           "date": "2026-11-24"
         },
         "policy": {
-          "score": 0,
-          "why": "14 天內沒有排定事件，也沒有生效中的不利政策",
-          "date": "2026-11-24"
+          "score": 1,
+          "why": "2026-12-09 FOMC 利率決議（12/8–9 會議，附經濟預測）",
+          "date": "2026-12-09",
+          "source": "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm"
         }
       },
       "market": "TW",
       "group": "TW|AI電源／電力"
     },
     "8210.TW": {
-      "total": 1,
+      "total": 2,
       "max": 10,
       "scored": 5,
-      "score10": 1.0,
+      "score10": 2.0,
       "level": "low",
       "flags": [],
       "gate": {
@@ -320,16 +324,16 @@
       "items": {
         "tech": {
           "score": 0,
-          "why": "乖離 -18.68%",
-          "date": "2026-11-24"
+          "why": "乖離 -27.87%",
+          "date": "2026-11-23"
         },
         "earnings": {
           "score": 0,
-          "why": "年報最晚 2027-03-31 要公布（法定期限，多數公司會提早），還有 91 個交易日",
+          "why": "年報最晚 2027-03-31 要公布（法定期限，多數公司會提早），還有 90 個交易日",
           "estimated": true,
           "date": "2027-03-31",
           "source": "https://mops.twse.com.tw/mops/#/web/t100sb02_1",
-          "days": 91,
+          "days": 90,
           "provider": "法定期限"
         },
         "fundamentals": {
@@ -339,23 +343,24 @@
         },
         "chips": {
           "score": 0,
-          "why": "近 5 日法人 +1234 張、融資 -1125 張",
+          "why": "近 5 日法人 +1234 張、融資 -996 張",
           "date": "2026-11-24"
         },
         "policy": {
-          "score": 0,
-          "why": "14 天內沒有排定事件，也沒有生效中的不利政策",
-          "date": "2026-11-24"
+          "score": 1,
+          "why": "2026-12-09 FOMC 利率決議（12/8–9 會議，附經濟預測）",
+          "date": "2026-12-09",
+          "source": "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm"
         }
       },
       "market": "TW",
       "group": "TW|AI伺服器／散熱"
     },
     "3324.TWO": {
-      "total": 1,
+      "total": 2,
       "max": 10,
       "scored": 5,
-      "score10": 1.0,
+      "score10": 2.0,
       "level": "low",
       "flags": [],
       "gate": {
@@ -370,11 +375,11 @@
         },
         "earnings": {
           "score": 0,
-          "why": "年報最晚 2027-03-31 要公布（法定期限，多數公司會提早），還有 91 個交易日",
+          "why": "年報最晚 2027-03-31 要公布（法定期限，多數公司會提早），還有 90 個交易日",
           "estimated": true,
           "date": "2027-03-31",
           "source": "https://mops.twse.com.tw/mops/#/web/t100sb02_1",
-          "days": 91,
+          "days": 90,
           "provider": "法定期限"
         },
         "fundamentals": {
@@ -384,23 +389,24 @@
         },
         "chips": {
           "score": 0,
-          "why": "近 5 日法人 -144 張、融資 -391 張",
+          "why": "近 5 日法人 -144 張、融資 -169 張",
           "date": "2026-11-24"
         },
         "policy": {
-          "score": 0,
-          "why": "14 天內沒有排定事件，也沒有生效中的不利政策",
-          "date": "2026-11-24"
+          "score": 1,
+          "why": "2026-12-09 FOMC 利率決議（12/8–9 會議，附經濟預測）",
+          "date": "2026-12-09",
+          "source": "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm"
         }
       },
       "market": "TW",
       "group": "TW|AI伺服器／散熱"
     },
     "3653.TW": {
-      "total": 2,
+      "total": 3,
       "max": 10,
       "scored": 5,
-      "score10": 2.0,
+      "score10": 3.0,
       "level": "high",
       "flags": [
         "disposition"
@@ -414,16 +420,16 @@
       "items": {
         "tech": {
           "score": 0,
-          "why": "乖離 -24.16%",
-          "date": "2026-11-24"
+          "why": "乖離 -32.15%",
+          "date": "2026-11-23"
         },
         "earnings": {
           "score": 0,
-          "why": "年報最晚 2027-03-31 要公布（法定期限，多數公司會提早），還有 91 個交易日",
+          "why": "年報最晚 2027-03-31 要公布（法定期限，多數公司會提早），還有 90 個交易日",
           "estimated": true,
           "date": "2027-03-31",
           "source": "https://mops.twse.com.tw/mops/#/web/t100sb02_1",
-          "days": 91,
+          "days": 90,
           "provider": "法定期限"
         },
         "fundamentals": {
@@ -438,19 +444,20 @@
           "flag": "disposition"
         },
         "policy": {
-          "score": 0,
-          "why": "14 天內沒有排定事件，也沒有生效中的不利政策",
-          "date": "2026-11-24"
+          "score": 1,
+          "why": "2026-12-09 FOMC 利率決議（12/8–9 會議，附經濟預測）",
+          "date": "2026-12-09",
+          "source": "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm"
         }
       },
       "market": "TW",
       "group": "TW|AI伺服器／散熱"
     },
     "3017.TW": {
-      "total": 1,
+      "total": 2,
       "max": 10,
       "scored": 5,
-      "score10": 1.0,
+      "score10": 2.0,
       "level": "low",
       "flags": [],
       "gate": {
@@ -460,16 +467,16 @@
       "items": {
         "tech": {
           "score": 0,
-          "why": "乖離 -5.16%",
-          "date": "2026-11-24"
+          "why": "乖離 -14.56%",
+          "date": "2026-11-23"
         },
         "earnings": {
           "score": 0,
-          "why": "年報最晚 2027-03-31 要公布（法定期限，多數公司會提早），還有 91 個交易日",
+          "why": "年報最晚 2027-03-31 要公布（法定期限，多數公司會提早），還有 90 個交易日",
           "estimated": true,
           "date": "2027-03-31",
           "source": "https://mops.twse.com.tw/mops/#/web/t100sb02_1",
-          "days": 91,
+          "days": 90,
           "provider": "法定期限"
         },
         "fundamentals": {
@@ -479,19 +486,66 @@
         },
         "chips": {
           "score": 0,
-          "why": "近 5 日法人 +788 張、融資 -337 張",
+          "why": "近 5 日法人 +788 張、融資 -243 張",
           "date": "2026-11-24"
         },
         "policy": {
-          "score": 0,
-          "why": "14 天內沒有排定事件，也沒有生效中的不利政策",
-          "date": "2026-11-24"
+          "score": 1,
+          "why": "2026-12-09 FOMC 利率決議（12/8–9 會議，附經濟預測）",
+          "date": "2026-12-09",
+          "source": "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm"
         }
       },
       "market": "TW",
       "group": "TW|AI伺服器／散熱"
     },
     "3189.TW": {
+      "total": 2,
+      "max": 10,
+      "scored": 5,
+      "score10": 2.0,
+      "level": "low",
+      "flags": [],
+      "gate": {
+        "block": false,
+        "reasons": []
+      },
+      "items": {
+        "tech": {
+          "score": 0,
+          "why": "乖離 -35.62%",
+          "date": "2026-11-23"
+        },
+        "earnings": {
+          "score": 0,
+          "why": "年報最晚 2027-03-31 要公布（法定期限，多數公司會提早），還有 90 個交易日",
+          "estimated": true,
+          "date": "2027-03-31",
+          "source": "https://mops.twse.com.tw/mops/#/web/t100sb02_1",
+          "days": 90,
+          "provider": "法定期限"
+        },
+        "fundamentals": {
+          "score": 0,
+          "why": "營收年增 +49.0%（2026-10）、毛利率 33.9%，年變動 +15.0 個百分點（2026-09-30）",
+          "date": "2026-10"
+        },
+        "chips": {
+          "score": 1,
+          "why": "近 5 日法人 -14860 張、融資 +2941 張",
+          "date": "2026-11-24"
+        },
+        "policy": {
+          "score": 1,
+          "why": "2026-12-09 FOMC 利率決議（12/8–9 會議，附經濟預測）",
+          "date": "2026-12-09",
+          "source": "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm"
+        }
+      },
+      "market": "TW",
+      "group": "TW|PCB／載板"
+    },
+    "3037.TW": {
       "total": 1,
       "max": 10,
       "scored": 5,
@@ -505,61 +559,16 @@
       "items": {
         "tech": {
           "score": 0,
-          "why": "乖離 -27.07%",
-          "date": "2026-11-24"
+          "why": "乖離 -31.22%",
+          "date": "2026-11-23"
         },
         "earnings": {
           "score": 0,
-          "why": "年報最晚 2027-03-31 要公布（法定期限，多數公司會提早），還有 91 個交易日",
+          "why": "年報最晚 2027-03-31 要公布（法定期限，多數公司會提早），還有 90 個交易日",
           "estimated": true,
           "date": "2027-03-31",
           "source": "https://mops.twse.com.tw/mops/#/web/t100sb02_1",
-          "days": 91,
-          "provider": "法定期限"
-        },
-        "fundamentals": {
-          "score": 0,
-          "why": "營收年增 +49.0%（2026-10）、毛利率 33.9%，年變動 +15.0 個百分點（2026-09-30）",
-          "date": "2026-10"
-        },
-        "chips": {
-          "score": 1,
-          "why": "近 5 日法人 -14860 張、融資 +2116 張",
-          "date": "2026-11-24"
-        },
-        "policy": {
-          "score": 0,
-          "why": "14 天內沒有排定事件，也沒有生效中的不利政策",
-          "date": "2026-11-24"
-        }
-      },
-      "market": "TW",
-      "group": "TW|PCB／載板"
-    },
-    "3037.TW": {
-      "total": 0,
-      "max": 10,
-      "scored": 5,
-      "score10": 0.0,
-      "level": "low",
-      "flags": [],
-      "gate": {
-        "block": false,
-        "reasons": []
-      },
-      "items": {
-        "tech": {
-          "score": 0,
-          "why": "乖離 -22.30%",
-          "date": "2026-11-24"
-        },
-        "earnings": {
-          "score": 0,
-          "why": "年報最晚 2027-03-31 要公布（法定期限，多數公司會提早），還有 91 個交易日",
-          "estimated": true,
-          "date": "2027-03-31",
-          "source": "https://mops.twse.com.tw/mops/#/web/t100sb02_1",
-          "days": 91,
+          "days": 90,
           "provider": "法定期限"
         },
         "fundamentals": {
@@ -569,23 +578,24 @@
         },
         "chips": {
           "score": 0,
-          "why": "近 5 日法人 -6033 張、融資 -2197 張",
+          "why": "近 5 日法人 -6033 張、融資 -1050 張",
           "date": "2026-11-24"
         },
         "policy": {
-          "score": 0,
-          "why": "14 天內沒有排定事件，也沒有生效中的不利政策",
-          "date": "2026-11-24"
+          "score": 1,
+          "why": "2026-12-09 FOMC 利率決議（12/8–9 會議，附經濟預測）",
+          "date": "2026-12-09",
+          "source": "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm"
         }
       },
       "market": "TW",
       "group": "TW|PCB／載板"
     },
     "8046.TW": {
-      "total": 0,
+      "total": 1,
       "max": 10,
       "scored": 5,
-      "score10": 0.0,
+      "score10": 1.0,
       "level": "low",
       "flags": [],
       "gate": {
@@ -595,16 +605,16 @@
       "items": {
         "tech": {
           "score": 0,
-          "why": "乖離 -22.71%",
-          "date": "2026-11-24"
+          "why": "乖離 -31.59%",
+          "date": "2026-11-23"
         },
         "earnings": {
           "score": 0,
-          "why": "年報最晚 2027-03-31 要公布（法定期限，多數公司會提早），還有 91 個交易日",
+          "why": "年報最晚 2027-03-31 要公布（法定期限，多數公司會提早），還有 90 個交易日",
           "estimated": true,
           "date": "2027-03-31",
           "source": "https://mops.twse.com.tw/mops/#/web/t100sb02_1",
-          "days": 91,
+          "days": 90,
           "provider": "法定期限"
         },
         "fundamentals": {
@@ -614,23 +624,24 @@
         },
         "chips": {
           "score": 0,
-          "why": "近 5 日法人 +1956 張、融資 -551 張",
+          "why": "近 5 日法人 +1956 張、融資 -191 張",
           "date": "2026-11-24"
         },
         "policy": {
-          "score": 0,
-          "why": "14 天內沒有排定事件，也沒有生效中的不利政策",
-          "date": "2026-11-24"
+          "score": 1,
+          "why": "2026-12-09 FOMC 利率決議（12/8–9 會議，附經濟預測）",
+          "date": "2026-12-09",
+          "source": "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm"
         }
       },
       "market": "TW",
       "group": "TW|PCB／載板"
     },
     "8358.TWO": {
-      "total": 2,
+      "total": 3,
       "max": 10,
       "scored": 5,
-      "score10": 2.0,
+      "score10": 3.0,
       "level": "low",
       "flags": [
         "attention"
@@ -649,11 +660,11 @@
         },
         "earnings": {
           "score": 0,
-          "why": "年報最晚 2027-03-31 要公布（法定期限，多數公司會提早），還有 91 個交易日",
+          "why": "年報最晚 2027-03-31 要公布（法定期限，多數公司會提早），還有 90 個交易日",
           "estimated": true,
           "date": "2027-03-31",
           "source": "https://mops.twse.com.tw/mops/#/web/t100sb02_1",
-          "days": 91,
+          "days": 90,
           "provider": "法定期限"
         },
         "fundamentals": {
@@ -668,19 +679,20 @@
           "flag": "attention"
         },
         "policy": {
-          "score": 0,
-          "why": "14 天內沒有排定事件，也沒有生效中的不利政策",
-          "date": "2026-11-24"
+          "score": 1,
+          "why": "2026-12-09 FOMC 利率決議（12/8–9 會議，附經濟預測）",
+          "date": "2026-12-09",
+          "source": "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm"
         }
       },
       "market": "TW",
       "group": "TW|PCB／載板"
     },
     "4958.TW": {
-      "total": 0,
+      "total": 1,
       "max": 10,
       "scored": 5,
-      "score10": 0.0,
+      "score10": 1.0,
       "level": "low",
       "flags": [],
       "gate": {
@@ -690,16 +702,16 @@
       "items": {
         "tech": {
           "score": 0,
-          "why": "乖離 -12.63%",
-          "date": "2026-11-24"
+          "why": "乖離 -22.00%",
+          "date": "2026-11-23"
         },
         "earnings": {
           "score": 0,
-          "why": "年報最晚 2027-03-31 要公布（法定期限，多數公司會提早），還有 91 個交易日",
+          "why": "年報最晚 2027-03-31 要公布（法定期限，多數公司會提早），還有 90 個交易日",
           "estimated": true,
           "date": "2027-03-31",
           "source": "https://mops.twse.com.tw/mops/#/web/t100sb02_1",
-          "days": 91,
+          "days": 90,
           "provider": "法定期限"
         },
         "fundamentals": {
@@ -709,23 +721,24 @@
         },
         "chips": {
           "score": 0,
-          "why": "近 5 日法人 +7326 張、融資 -5556 張",
+          "why": "近 5 日法人 +7326 張、融資 -4353 張",
           "date": "2026-11-24"
         },
         "policy": {
-          "score": 0,
-          "why": "14 天內沒有排定事件，也沒有生效中的不利政策",
-          "date": "2026-11-24"
+          "score": 1,
+          "why": "2026-12-09 FOMC 利率決議（12/8–9 會議，附經濟預測）",
+          "date": "2026-12-09",
+          "source": "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm"
         }
       },
       "market": "TW",
       "group": "TW|PCB／載板"
     },
     "6213.TW": {
-      "total": 0,
+      "total": 1,
       "max": 10,
       "scored": 5,
-      "score10": 0.0,
+      "score10": 1.0,
       "level": "low",
       "flags": [],
       "gate": {
@@ -735,16 +748,16 @@
       "items": {
         "tech": {
           "score": 0,
-          "why": "乖離 -19.93%",
-          "date": "2026-11-24"
+          "why": "乖離 -29.28%",
+          "date": "2026-11-23"
         },
         "earnings": {
           "score": 0,
-          "why": "年報最晚 2027-03-31 要公布（法定期限，多數公司會提早），還有 91 個交易日",
+          "why": "年報最晚 2027-03-31 要公布（法定期限，多數公司會提早），還有 90 個交易日",
           "estimated": true,
           "date": "2027-03-31",
           "source": "https://mops.twse.com.tw/mops/#/web/t100sb02_1",
-          "days": 91,
+          "days": 90,
           "provider": "法定期限"
         },
         "fundamentals": {
@@ -754,23 +767,24 @@
         },
         "chips": {
           "score": 0,
-          "why": "近 5 日法人 +541 張、融資 -2816 張",
+          "why": "近 5 日法人 +541 張、融資 -1237 張",
           "date": "2026-11-24"
         },
         "policy": {
-          "score": 0,
-          "why": "14 天內沒有排定事件，也沒有生效中的不利政策",
-          "date": "2026-11-24"
+          "score": 1,
+          "why": "2026-12-09 FOMC 利率決議（12/8–9 會議，附經濟預測）",
+          "date": "2026-12-09",
+          "source": "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm"
         }
       },
       "market": "TW",
       "group": "TW|CCL／材料"
     },
     "2383.TW": {
-      "total": 0,
+      "total": 1,
       "max": 10,
       "scored": 5,
-      "score10": 0.0,
+      "score10": 1.0,
       "level": "low",
       "flags": [],
       "gate": {
@@ -780,16 +794,16 @@
       "items": {
         "tech": {
           "score": 0,
-          "why": "乖離 -15.92%",
-          "date": "2026-11-24"
+          "why": "乖離 -24.74%",
+          "date": "2026-11-23"
         },
         "earnings": {
           "score": 0,
-          "why": "年報最晚 2027-03-31 要公布（法定期限，多數公司會提早），還有 91 個交易日",
+          "why": "年報最晚 2027-03-31 要公布（法定期限，多數公司會提早），還有 90 個交易日",
           "estimated": true,
           "date": "2027-03-31",
           "source": "https://mops.twse.com.tw/mops/#/web/t100sb02_1",
-          "days": 91,
+          "days": 90,
           "provider": "法定期限"
         },
         "fundamentals": {
@@ -799,23 +813,24 @@
         },
         "chips": {
           "score": 0,
-          "why": "近 5 日法人 -11 張、融資 -651 張",
+          "why": "近 5 日法人 -15 張、融資 -193 張",
           "date": "2026-11-24"
         },
         "policy": {
-          "score": 0,
-          "why": "14 天內沒有排定事件，也沒有生效中的不利政策",
-          "date": "2026-11-24"
+          "score": 1,
+          "why": "2026-12-09 FOMC 利率決議（12/8–9 會議，附經濟預測）",
+          "date": "2026-12-09",
+          "source": "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm"
         }
       },
       "market": "TW",
       "group": "TW|CCL／材料"
     },
     "6274.TW": {
-      "total": 0,
+      "total": 1,
       "max": 10,
       "scored": 5,
-      "score10": 0.0,
+      "score10": 1.0,
       "level": "low",
       "flags": [],
       "gate": {
@@ -830,11 +845,11 @@
         },
         "earnings": {
           "score": 0,
-          "why": "年報最晚 2027-03-31 要公布（法定期限，多數公司會提早），還有 91 個交易日",
+          "why": "年報最晚 2027-03-31 要公布（法定期限，多數公司會提早），還有 90 個交易日",
           "estimated": true,
           "date": "2027-03-31",
           "source": "https://mops.twse.com.tw/mops/#/web/t100sb02_1",
-          "days": 91,
+          "days": 90,
           "provider": "法定期限"
         },
         "fundamentals": {
@@ -844,19 +859,66 @@
         },
         "chips": {
           "score": 0,
-          "why": "近 5 日法人 +2154 張、融資 -4343 張",
+          "why": "近 5 日法人 +2154 張、融資 -3366 張",
           "date": "2026-11-24"
         },
         "policy": {
-          "score": 0,
-          "why": "14 天內沒有排定事件，也沒有生效中的不利政策",
-          "date": "2026-11-24"
+          "score": 1,
+          "why": "2026-12-09 FOMC 利率決議（12/8–9 會議，附經濟預測）",
+          "date": "2026-12-09",
+          "source": "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm"
         }
       },
       "market": "TW",
       "group": "TW|CCL／材料"
     },
     "1303.TW": {
+      "total": 2,
+      "max": 10,
+      "scored": 5,
+      "score10": 2.0,
+      "level": "low",
+      "flags": [],
+      "gate": {
+        "block": false,
+        "reasons": []
+      },
+      "items": {
+        "tech": {
+          "score": 0,
+          "why": "乖離 -17.24%",
+          "date": "2026-11-23"
+        },
+        "earnings": {
+          "score": 0,
+          "why": "年報最晚 2027-03-31 要公布（法定期限，多數公司會提早），還有 90 個交易日",
+          "estimated": true,
+          "date": "2027-03-31",
+          "source": "https://mops.twse.com.tw/mops/#/web/t100sb02_1",
+          "days": 90,
+          "provider": "法定期限"
+        },
+        "fundamentals": {
+          "score": 0,
+          "why": "營收年增 +64.6%（2026-10）、毛利率 24.5%，年變動 +16.2 個百分點（2026-09-30）",
+          "date": "2026-10"
+        },
+        "chips": {
+          "score": 1,
+          "why": "近 5 日法人 -20912 張、融資 +2235 張",
+          "date": "2026-11-24"
+        },
+        "policy": {
+          "score": 1,
+          "why": "2026-12-09 FOMC 利率決議（12/8–9 會議，附經濟預測）",
+          "date": "2026-12-09",
+          "source": "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm"
+        }
+      },
+      "market": "TW",
+      "group": "TW|CCL／材料"
+    },
+    "2408.TW": {
       "total": 1,
       "max": 10,
       "scored": 5,
@@ -870,61 +932,16 @@
       "items": {
         "tech": {
           "score": 0,
-          "why": "乖離 -8.20%",
-          "date": "2026-11-24"
+          "why": "乖離 -25.63%",
+          "date": "2026-11-23"
         },
         "earnings": {
           "score": 0,
-          "why": "年報最晚 2027-03-31 要公布（法定期限，多數公司會提早），還有 91 個交易日",
+          "why": "年報最晚 2027-03-31 要公布（法定期限，多數公司會提早），還有 90 個交易日",
           "estimated": true,
           "date": "2027-03-31",
           "source": "https://mops.twse.com.tw/mops/#/web/t100sb02_1",
-          "days": 91,
-          "provider": "法定期限"
-        },
-        "fundamentals": {
-          "score": 0,
-          "why": "營收年增 +64.6%（2026-10）、毛利率 24.5%，年變動 +16.2 個百分點（2026-09-30）",
-          "date": "2026-10"
-        },
-        "chips": {
-          "score": 1,
-          "why": "近 5 日法人 -20912 張、融資 +1395 張",
-          "date": "2026-11-24"
-        },
-        "policy": {
-          "score": 0,
-          "why": "14 天內沒有排定事件，也沒有生效中的不利政策",
-          "date": "2026-11-24"
-        }
-      },
-      "market": "TW",
-      "group": "TW|CCL／材料"
-    },
-    "2408.TW": {
-      "total": 0,
-      "max": 10,
-      "scored": 5,
-      "score10": 0.0,
-      "level": "low",
-      "flags": [],
-      "gate": {
-        "block": false,
-        "reasons": []
-      },
-      "items": {
-        "tech": {
-          "score": 0,
-          "why": "乖離 -16.76%",
-          "date": "2026-11-24"
-        },
-        "earnings": {
-          "score": 0,
-          "why": "年報最晚 2027-03-31 要公布（法定期限，多數公司會提早），還有 91 個交易日",
-          "estimated": true,
-          "date": "2027-03-31",
-          "source": "https://mops.twse.com.tw/mops/#/web/t100sb02_1",
-          "days": 91,
+          "days": 90,
           "provider": "法定期限"
         },
         "fundamentals": {
@@ -934,23 +951,24 @@
         },
         "chips": {
           "score": 0,
-          "why": "近 5 日法人 +1225 張、融資 -10146 張",
+          "why": "近 5 日法人 +1225 張、融資 -9352 張",
           "date": "2026-11-24"
         },
         "policy": {
-          "score": 0,
-          "why": "14 天內沒有排定事件，也沒有生效中的不利政策",
-          "date": "2026-11-24"
+          "score": 1,
+          "why": "2026-12-09 FOMC 利率決議（12/8–9 會議，附經濟預測）",
+          "date": "2026-12-09",
+          "source": "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm"
         }
       },
       "market": "TW",
       "group": "TW|記憶體"
     },
     "6770.TW": {
-      "total": 0,
+      "total": 1,
       "max": 10,
       "scored": 5,
-      "score10": 0.0,
+      "score10": 1.0,
       "level": "low",
       "flags": [],
       "gate": {
@@ -960,16 +978,16 @@
       "items": {
         "tech": {
           "score": 0,
-          "why": "乖離 -6.56%",
-          "date": "2026-11-24"
+          "why": "乖離 -16.16%",
+          "date": "2026-11-23"
         },
         "earnings": {
           "score": 0,
-          "why": "年報最晚 2027-03-31 要公布（法定期限，多數公司會提早），還有 91 個交易日",
+          "why": "年報最晚 2027-03-31 要公布（法定期限，多數公司會提早），還有 90 個交易日",
           "estimated": true,
           "date": "2027-03-31",
           "source": "https://mops.twse.com.tw/mops/#/web/t100sb02_1",
-          "days": 91,
+          "days": 90,
           "provider": "法定期限"
         },
         "fundamentals": {
@@ -979,23 +997,24 @@
         },
         "chips": {
           "score": 0,
-          "why": "近 5 日法人 +27169 張、融資 -22075 張",
+          "why": "近 5 日法人 +27169 張、融資 -19953 張",
           "date": "2026-11-24"
         },
         "policy": {
-          "score": 0,
-          "why": "14 天內沒有排定事件，也沒有生效中的不利政策",
-          "date": "2026-11-24"
+          "score": 1,
+          "why": "2026-12-09 FOMC 利率決議（12/8–9 會議，附經濟預測）",
+          "date": "2026-12-09",
+          "source": "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm"
         }
       },
       "market": "TW",
       "group": "TW|記憶體"
     },
     "3481.TW": {
-      "total": 0,
+      "total": 1,
       "max": 10,
       "scored": 5,
-      "score10": 0.0,
+      "score10": 1.0,
       "level": "low",
       "flags": [],
       "gate": {
@@ -1005,16 +1024,16 @@
       "items": {
         "tech": {
           "score": 0,
-          "why": "乖離 -13.69%",
-          "date": "2026-11-24"
+          "why": "乖離 -22.78%",
+          "date": "2026-11-23"
         },
         "earnings": {
           "score": 0,
-          "why": "年報最晚 2027-03-31 要公布（法定期限，多數公司會提早），還有 91 個交易日",
+          "why": "年報最晚 2027-03-31 要公布（法定期限，多數公司會提早），還有 90 個交易日",
           "estimated": true,
           "date": "2027-03-31",
           "source": "https://mops.twse.com.tw/mops/#/web/t100sb02_1",
-          "days": 91,
+          "days": 90,
           "provider": "法定期限"
         },
         "fundamentals": {
@@ -1024,23 +1043,24 @@
         },
         "chips": {
           "score": 0,
-          "why": "近 5 日法人 +28918 張、融資 -44667 張",
+          "why": "近 5 日法人 +28918 張、融資 -41439 張",
           "date": "2026-11-24"
         },
         "policy": {
-          "score": 0,
-          "why": "14 天內沒有排定事件，也沒有生效中的不利政策",
-          "date": "2026-11-24"
+          "score": 1,
+          "why": "2026-12-09 FOMC 利率決議（12/8–9 會議，附經濟預測）",
+          "date": "2026-12-09",
+          "source": "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm"
         }
       },
       "market": "TW",
       "group": "TW|光電／CPO"
     },
     "3406.TW": {
-      "total": 2,
+      "total": 3,
       "max": 10,
       "scored": 5,
-      "score10": 2.0,
+      "score10": 3.0,
       "level": "low",
       "flags": [],
       "gate": {
@@ -1050,16 +1070,16 @@
       "items": {
         "tech": {
           "score": 0,
-          "why": "乖離 -19.27%",
-          "date": "2026-11-24"
+          "why": "乖離 -28.40%",
+          "date": "2026-11-23"
         },
         "earnings": {
           "score": 0,
-          "why": "年報最晚 2027-03-31 要公布（法定期限，多數公司會提早），還有 91 個交易日",
+          "why": "年報最晚 2027-03-31 要公布（法定期限，多數公司會提早），還有 90 個交易日",
           "estimated": true,
           "date": "2027-03-31",
           "source": "https://mops.twse.com.tw/mops/#/web/t100sb02_1",
-          "days": 91,
+          "days": 90,
           "provider": "法定期限"
         },
         "fundamentals": {
@@ -1069,23 +1089,24 @@
         },
         "chips": {
           "score": 0,
-          "why": "近 5 日法人 -1826 張、融資 -301 張",
+          "why": "近 5 日法人 -1786 張、融資 -88 張",
           "date": "2026-11-24"
         },
         "policy": {
-          "score": 0,
-          "why": "14 天內沒有排定事件，也沒有生效中的不利政策",
-          "date": "2026-11-24"
+          "score": 1,
+          "why": "2026-12-09 FOMC 利率決議（12/8–9 會議，附經濟預測）",
+          "date": "2026-12-09",
+          "source": "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm"
         }
       },
       "market": "TW",
       "group": "TW|光電／CPO"
     },
     "2439.TW": {
-      "total": 2,
+      "total": 3,
       "max": 10,
       "scored": 5,
-      "score10": 2.0,
+      "score10": 3.0,
       "level": "low",
       "flags": [],
       "gate": {
@@ -1095,16 +1116,16 @@
       "items": {
         "tech": {
           "score": 0,
-          "why": "乖離 -6.86%",
-          "date": "2026-11-24"
+          "why": "乖離 -13.86%",
+          "date": "2026-11-23"
         },
         "earnings": {
           "score": 0,
-          "why": "年報最晚 2027-03-31 要公布（法定期限，多數公司會提早），還有 91 個交易日",
+          "why": "年報最晚 2027-03-31 要公布（法定期限，多數公司會提早），還有 90 個交易日",
           "estimated": true,
           "date": "2027-03-31",
           "source": "https://mops.twse.com.tw/mops/#/web/t100sb02_1",
-          "days": 91,
+          "days": 90,
           "provider": "法定期限"
         },
         "fundamentals": {
@@ -1114,23 +1135,24 @@
         },
         "chips": {
           "score": 0,
-          "why": "近 5 日法人 +522 張、融資 -262 張",
+          "why": "近 5 日法人 +522 張、融資 -258 張",
           "date": "2026-11-24"
         },
         "policy": {
-          "score": 0,
-          "why": "14 天內沒有排定事件，也沒有生效中的不利政策",
-          "date": "2026-11-24"
+          "score": 1,
+          "why": "2026-12-09 FOMC 利率決議（12/8–9 會議，附經濟預測）",
+          "date": "2026-12-09",
+          "source": "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm"
         }
       },
       "market": "TW",
       "group": "TW|AI眼鏡"
     },
     "2327.TW": {
-      "total": 0,
+      "total": 1,
       "max": 10,
       "scored": 5,
-      "score10": 0.0,
+      "score10": 1.0,
       "level": "low",
       "flags": [],
       "gate": {
@@ -1140,16 +1162,16 @@
       "items": {
         "tech": {
           "score": 0,
-          "why": "乖離 -16.80%",
-          "date": "2026-11-24"
+          "why": "乖離 -25.99%",
+          "date": "2026-11-23"
         },
         "earnings": {
           "score": 0,
-          "why": "年報最晚 2027-03-31 要公布（法定期限，多數公司會提早），還有 91 個交易日",
+          "why": "年報最晚 2027-03-31 要公布（法定期限，多數公司會提早），還有 90 個交易日",
           "estimated": true,
           "date": "2027-03-31",
           "source": "https://mops.twse.com.tw/mops/#/web/t100sb02_1",
-          "days": 91,
+          "days": 90,
           "provider": "法定期限"
         },
         "fundamentals": {
@@ -1159,23 +1181,24 @@
         },
         "chips": {
           "score": 0,
-          "why": "近 5 日法人 -3911 張、融資 -3042 張",
+          "why": "近 5 日法人 -3911 張、融資 -1786 張",
           "date": "2026-11-24"
         },
         "policy": {
-          "score": 0,
-          "why": "14 天內沒有排定事件，也沒有生效中的不利政策",
-          "date": "2026-11-24"
+          "score": 1,
+          "why": "2026-12-09 FOMC 利率決議（12/8–9 會議，附經濟預測）",
+          "date": "2026-12-09",
+          "source": "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm"
         }
       },
       "market": "TW",
       "group": "TW|零組件／廠務"
     },
     "4919.TW": {
-      "total": 0,
+      "total": 1,
       "max": 10,
       "scored": 5,
-      "score10": 0.0,
+      "score10": 1.0,
       "level": "low",
       "flags": [],
       "gate": {
@@ -1185,16 +1208,16 @@
       "items": {
         "tech": {
           "score": 0,
-          "why": "乖離 -11.87%",
-          "date": "2026-11-24"
+          "why": "乖離 -21.42%",
+          "date": "2026-11-23"
         },
         "earnings": {
           "score": 0,
-          "why": "年報最晚 2027-03-31 要公布（法定期限，多數公司會提早），還有 91 個交易日",
+          "why": "年報最晚 2027-03-31 要公布（法定期限，多數公司會提早），還有 90 個交易日",
           "estimated": true,
           "date": "2027-03-31",
           "source": "https://mops.twse.com.tw/mops/#/web/t100sb02_1",
-          "days": 91,
+          "days": 90,
           "provider": "法定期限"
         },
         "fundamentals": {
@@ -1204,23 +1227,24 @@
         },
         "chips": {
           "score": 0,
-          "why": "近 5 日法人 -690 張、融資 -1742 張",
+          "why": "近 5 日法人 -690 張、融資 -1711 張",
           "date": "2026-11-24"
         },
         "policy": {
-          "score": 0,
-          "why": "14 天內沒有排定事件，也沒有生效中的不利政策",
-          "date": "2026-11-24"
+          "score": 1,
+          "why": "2026-12-09 FOMC 利率決議（12/8–9 會議，附經濟預測）",
+          "date": "2026-12-09",
+          "source": "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm"
         }
       },
       "market": "TW",
       "group": "TW|零組件／廠務"
     },
     "1569.TWO": {
-      "total": 2,
+      "total": 3,
       "max": 10,
       "scored": 5,
-      "score10": 2.0,
+      "score10": 3.0,
       "level": "high",
       "flags": [
         "disposition"
@@ -1239,11 +1263,11 @@
         },
         "earnings": {
           "score": 0,
-          "why": "年報最晚 2027-03-31 要公布（法定期限，多數公司會提早），還有 91 個交易日",
+          "why": "年報最晚 2027-03-31 要公布（法定期限，多數公司會提早），還有 90 個交易日",
           "estimated": true,
           "date": "2027-03-31",
           "source": "https://mops.twse.com.tw/mops/#/web/t100sb02_1",
-          "days": 91,
+          "days": 90,
           "provider": "法定期限"
         },
         "fundamentals": {
@@ -1258,19 +1282,20 @@
           "flag": "disposition"
         },
         "policy": {
-          "score": 0,
-          "why": "14 天內沒有排定事件，也沒有生效中的不利政策",
-          "date": "2026-11-24"
+          "score": 1,
+          "why": "2026-12-09 FOMC 利率決議（12/8–9 會議，附經濟預測）",
+          "date": "2026-12-09",
+          "source": "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm"
         }
       },
       "market": "TW",
       "group": "TW|零組件／廠務"
     },
     "2221.TWO": {
-      "total": 0,
+      "total": 1,
       "max": 10,
       "scored": 5,
-      "score10": 0.0,
+      "score10": 1.0,
       "level": "low",
       "flags": [],
       "gate": {
@@ -1285,11 +1310,11 @@
         },
         "earnings": {
           "score": 0,
-          "why": "年報最晚 2027-03-31 要公布（法定期限，多數公司會提早），還有 91 個交易日",
+          "why": "年報最晚 2027-03-31 要公布（法定期限，多數公司會提早），還有 90 個交易日",
           "estimated": true,
           "date": "2027-03-31",
           "source": "https://mops.twse.com.tw/mops/#/web/t100sb02_1",
-          "days": 91,
+          "days": 90,
           "provider": "法定期限"
         },
         "fundamentals": {
@@ -1299,23 +1324,24 @@
         },
         "chips": {
           "score": 0,
-          "why": "近 5 日法人 +399 張、融資 -339 張",
+          "why": "近 5 日法人 +399 張、融資 -259 張",
           "date": "2026-11-24"
         },
         "policy": {
-          "score": 0,
-          "why": "14 天內沒有排定事件，也沒有生效中的不利政策",
-          "date": "2026-11-24"
+          "score": 1,
+          "why": "2026-12-09 FOMC 利率決議（12/8–9 會議，附經濟預測）",
+          "date": "2026-12-09",
+          "source": "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm"
         }
       },
       "market": "TW",
       "group": "TW|零組件／廠務"
     },
     "2313.TW": {
-      "total": 0,
+      "total": 1,
       "max": 10,
       "scored": 5,
-      "score10": 0.0,
+      "score10": 1.0,
       "level": "low",
       "flags": [],
       "gate": {
@@ -1325,16 +1351,16 @@
       "items": {
         "tech": {
           "score": 0,
-          "why": "乖離 -8.35%",
-          "date": "2026-11-24"
+          "why": "乖離 -17.50%",
+          "date": "2026-11-23"
         },
         "earnings": {
           "score": 0,
-          "why": "年報最晚 2027-03-31 要公布（法定期限，多數公司會提早），還有 91 個交易日",
+          "why": "年報最晚 2027-03-31 要公布（法定期限，多數公司會提早），還有 90 個交易日",
           "estimated": true,
           "date": "2027-03-31",
           "source": "https://mops.twse.com.tw/mops/#/web/t100sb02_1",
-          "days": 91,
+          "days": 90,
           "provider": "法定期限"
         },
         "fundamentals": {
@@ -1344,23 +1370,24 @@
         },
         "chips": {
           "score": 0,
-          "why": "近 5 日法人 -5636 張、融資 -4710 張",
+          "why": "近 5 日法人 -5636 張、融資 -4275 張",
           "date": "2026-11-24"
         },
         "policy": {
-          "score": 0,
-          "why": "14 天內沒有排定事件，也沒有生效中的不利政策",
-          "date": "2026-11-24"
+          "score": 1,
+          "why": "2026-12-09 FOMC 利率決議（12/8–9 會議，附經濟預測）",
+          "date": "2026-12-09",
+          "source": "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm"
         }
       },
       "market": "TW",
       "group": "TW|低軌衛星"
     },
     "3491.TWO": {
-      "total": 3,
+      "total": 4,
       "max": 10,
       "scored": 5,
-      "score10": 3.0,
+      "score10": 4.0,
       "level": "high",
       "flags": [
         "disposition"
@@ -1379,11 +1406,11 @@
         },
         "earnings": {
           "score": 0,
-          "why": "年報最晚 2027-03-31 要公布（法定期限，多數公司會提早），還有 91 個交易日",
+          "why": "年報最晚 2027-03-31 要公布（法定期限，多數公司會提早），還有 90 個交易日",
           "estimated": true,
           "date": "2027-03-31",
           "source": "https://mops.twse.com.tw/mops/#/web/t100sb02_1",
-          "days": 91,
+          "days": 90,
           "provider": "法定期限"
         },
         "fundamentals": {
@@ -1398,105 +1425,16 @@
           "flag": "disposition"
         },
         "policy": {
-          "score": 0,
-          "why": "14 天內沒有排定事件，也沒有生效中的不利政策",
-          "date": "2026-11-24"
+          "score": 1,
+          "why": "2026-12-09 FOMC 利率決議（12/8–9 會議，附經濟預測）",
+          "date": "2026-12-09",
+          "source": "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm"
         }
       },
       "market": "TW",
       "group": "TW|低軌衛星"
     },
     "6285.TW": {
-      "total": 0,
-      "max": 10,
-      "scored": 5,
-      "score10": 0.0,
-      "level": "low",
-      "flags": [],
-      "gate": {
-        "block": false,
-        "reasons": []
-      },
-      "items": {
-        "tech": {
-          "score": 0,
-          "why": "乖離 -0.13%",
-          "date": "2026-11-24"
-        },
-        "earnings": {
-          "score": 0,
-          "why": "年報最晚 2027-03-31 要公布（法定期限，多數公司會提早），還有 91 個交易日",
-          "estimated": true,
-          "date": "2027-03-31",
-          "source": "https://mops.twse.com.tw/mops/#/web/t100sb02_1",
-          "days": 91,
-          "provider": "法定期限"
-        },
-        "fundamentals": {
-          "score": 0,
-          "why": "營收年增 +77.8%（2026-10）、毛利率 12.2%，年變動 +0.1 個百分點（2026-09-30）",
-          "date": "2026-10"
-        },
-        "chips": {
-          "score": 0,
-          "why": "近 5 日法人 -4289 張、融資 -713 張",
-          "date": "2026-11-24"
-        },
-        "policy": {
-          "score": 0,
-          "why": "14 天內沒有排定事件，也沒有生效中的不利政策",
-          "date": "2026-11-24"
-        }
-      },
-      "market": "TW",
-      "group": "TW|低軌衛星"
-    },
-    "6271.TW": {
-      "total": 0,
-      "max": 10,
-      "scored": 5,
-      "score10": 0.0,
-      "level": "low",
-      "flags": [],
-      "gate": {
-        "block": false,
-        "reasons": []
-      },
-      "items": {
-        "tech": {
-          "score": 0,
-          "why": "乖離 -5.03%",
-          "date": "2026-11-24"
-        },
-        "earnings": {
-          "score": 0,
-          "why": "年報最晚 2027-03-31 要公布（法定期限，多數公司會提早），還有 91 個交易日",
-          "estimated": true,
-          "date": "2027-03-31",
-          "source": "https://mops.twse.com.tw/mops/#/web/t100sb02_1",
-          "days": 91,
-          "provider": "法定期限"
-        },
-        "fundamentals": {
-          "score": 0,
-          "why": "營收年增 +25.1%（2026-10）、毛利率 33.7%，年變動 +6.5 個百分點（2026-09-30）",
-          "date": "2026-10"
-        },
-        "chips": {
-          "score": 0,
-          "why": "近 5 日法人 -957 張、融資 -68 張",
-          "date": "2026-11-24"
-        },
-        "policy": {
-          "score": 0,
-          "why": "14 天內沒有排定事件，也沒有生效中的不利政策",
-          "date": "2026-11-24"
-        }
-      },
-      "market": "TW",
-      "group": "TW|低軌衛星"
-    },
-    "2367.TW": {
       "total": 1,
       "max": 10,
       "scored": 5,
@@ -1510,16 +1448,108 @@
       "items": {
         "tech": {
           "score": 0,
-          "why": "乖離 -9.62%",
-          "date": "2026-11-24"
+          "why": "乖離 -9.89%",
+          "date": "2026-11-23"
         },
         "earnings": {
           "score": 0,
-          "why": "年報最晚 2027-03-31 要公布（法定期限，多數公司會提早），還有 91 個交易日",
+          "why": "年報最晚 2027-03-31 要公布（法定期限，多數公司會提早），還有 90 個交易日",
           "estimated": true,
           "date": "2027-03-31",
           "source": "https://mops.twse.com.tw/mops/#/web/t100sb02_1",
-          "days": 91,
+          "days": 90,
+          "provider": "法定期限"
+        },
+        "fundamentals": {
+          "score": 0,
+          "why": "營收年增 +77.8%（2026-10）、毛利率 12.2%，年變動 +0.1 個百分點（2026-09-30）",
+          "date": "2026-10"
+        },
+        "chips": {
+          "score": 0,
+          "why": "近 5 日法人 -4289 張、融資 -785 張",
+          "date": "2026-11-24"
+        },
+        "policy": {
+          "score": 1,
+          "why": "2026-12-09 FOMC 利率決議（12/8–9 會議，附經濟預測）",
+          "date": "2026-12-09",
+          "source": "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm"
+        }
+      },
+      "market": "TW",
+      "group": "TW|低軌衛星"
+    },
+    "6271.TW": {
+      "total": 1,
+      "max": 10,
+      "scored": 5,
+      "score10": 1.0,
+      "level": "low",
+      "flags": [],
+      "gate": {
+        "block": false,
+        "reasons": []
+      },
+      "items": {
+        "tech": {
+          "score": 0,
+          "why": "乖離 -13.96%",
+          "date": "2026-11-23"
+        },
+        "earnings": {
+          "score": 0,
+          "why": "年報最晚 2027-03-31 要公布（法定期限，多數公司會提早），還有 90 個交易日",
+          "estimated": true,
+          "date": "2027-03-31",
+          "source": "https://mops.twse.com.tw/mops/#/web/t100sb02_1",
+          "days": 90,
+          "provider": "法定期限"
+        },
+        "fundamentals": {
+          "score": 0,
+          "why": "營收年增 +25.1%（2026-10）、毛利率 33.7%，年變動 +6.5 個百分點（2026-09-30）",
+          "date": "2026-10"
+        },
+        "chips": {
+          "score": 0,
+          "why": "近 5 日法人 -957 張、融資 -305 張",
+          "date": "2026-11-24"
+        },
+        "policy": {
+          "score": 1,
+          "why": "2026-12-09 FOMC 利率決議（12/8–9 會議，附經濟預測）",
+          "date": "2026-12-09",
+          "source": "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm"
+        }
+      },
+      "market": "TW",
+      "group": "TW|低軌衛星"
+    },
+    "2367.TW": {
+      "total": 2,
+      "max": 10,
+      "scored": 5,
+      "score10": 2.0,
+      "level": "low",
+      "flags": [],
+      "gate": {
+        "block": false,
+        "reasons": []
+      },
+      "items": {
+        "tech": {
+          "score": 0,
+          "why": "乖離 -18.48%",
+          "date": "2026-11-23"
+        },
+        "earnings": {
+          "score": 0,
+          "why": "年報最晚 2027-03-31 要公布（法定期限，多數公司會提早），還有 90 個交易日",
+          "estimated": true,
+          "date": "2027-03-31",
+          "source": "https://mops.twse.com.tw/mops/#/web/t100sb02_1",
+          "days": 90,
           "provider": "法定期限"
         },
         "fundamentals": {
@@ -1529,13 +1559,14 @@
         },
         "chips": {
           "score": 0,
-          "why": "近 5 日法人 -3286 張、融資 -1909 張",
+          "why": "近 5 日法人 -3286 張、融資 -1542 張",
           "date": "2026-11-24"
         },
         "policy": {
-          "score": 0,
-          "why": "14 天內沒有排定事件，也沒有生效中的不利政策",
-          "date": "2026-11-24"
+          "score": 1,
+          "why": "2026-12-09 FOMC 利率決議（12/8–9 會議，附經濟預測）",
+          "date": "2026-12-09",
+          "source": "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm"
         }
       },
       "market": "TW",
@@ -1554,17 +1585,17 @@
       },
       "items": {
         "tech": {
-          "score": 1,
-          "why": "乖離 +9.40%",
-          "date": "2026-11-24"
+          "score": 0,
+          "why": "乖離 +0.43%",
+          "date": "2026-11-23"
         },
         "earnings": {
           "score": 0,
-          "why": "年報最晚 2027-03-31 要公布（法定期限，多數公司會提早），還有 91 個交易日",
+          "why": "年報最晚 2027-03-31 要公布（法定期限，多數公司會提早），還有 90 個交易日",
           "estimated": true,
           "date": "2027-03-31",
           "source": "https://mops.twse.com.tw/mops/#/web/t100sb02_1",
-          "days": 91,
+          "days": 90,
           "provider": "法定期限"
         },
         "fundamentals": {
@@ -1574,23 +1605,24 @@
         },
         "chips": {
           "score": 0,
-          "why": "近 5 日法人 -7290 張、融資 -1465 張",
+          "why": "近 5 日法人 -7290 張、融資 -333 張",
           "date": "2026-11-24"
         },
         "policy": {
-          "score": 0,
-          "why": "14 天內沒有排定事件，也沒有生效中的不利政策",
-          "date": "2026-11-24"
+          "score": 1,
+          "why": "2026-12-09 FOMC 利率決議（12/8–9 會議，附經濟預測）",
+          "date": "2026-12-09",
+          "source": "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm"
         }
       },
       "market": "TW",
       "group": "TW|低軌衛星"
     },
     "2049.TW": {
-      "total": 0,
+      "total": 1,
       "max": 10,
       "scored": 5,
-      "score10": 0.0,
+      "score10": 1.0,
       "level": "low",
       "flags": [],
       "gate": {
@@ -1600,16 +1632,16 @@
       "items": {
         "tech": {
           "score": 0,
-          "why": "乖離 -7.58%",
-          "date": "2026-11-24"
+          "why": "乖離 -10.62%",
+          "date": "2026-11-23"
         },
         "earnings": {
           "score": 0,
-          "why": "年報最晚 2027-03-31 要公布（法定期限，多數公司會提早），還有 91 個交易日",
+          "why": "年報最晚 2027-03-31 要公布（法定期限，多數公司會提早），還有 90 個交易日",
           "estimated": true,
           "date": "2027-03-31",
           "source": "https://mops.twse.com.tw/mops/#/web/t100sb02_1",
-          "days": 91,
+          "days": 90,
           "provider": "法定期限"
         },
         "fundamentals": {
@@ -1619,469 +1651,20 @@
         },
         "chips": {
           "score": 0,
-          "why": "近 5 日法人 -3390 張、融資 -708 張",
+          "why": "近 5 日法人 -3390 張、融資 -91 張",
           "date": "2026-11-24"
         },
         "policy": {
-          "score": 0,
-          "why": "14 天內沒有排定事件，也沒有生效中的不利政策",
-          "date": "2026-11-24"
+          "score": 1,
+          "why": "2026-12-09 FOMC 利率決議（12/8–9 會議，附經濟預測）",
+          "date": "2026-12-09",
+          "source": "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm"
         }
       },
       "market": "TW",
       "group": "TW|機器人・減速傳動"
     },
     "2233.TW": {
-      "total": 1,
-      "max": 10,
-      "scored": 5,
-      "score10": 1.0,
-      "level": "low",
-      "flags": [],
-      "gate": {
-        "block": false,
-        "reasons": []
-      },
-      "items": {
-        "tech": {
-          "score": 0,
-          "why": "乖離 -21.73%",
-          "date": "2026-11-24"
-        },
-        "earnings": {
-          "score": 0,
-          "why": "年報最晚 2027-03-31 要公布（法定期限，多數公司會提早），還有 91 個交易日",
-          "estimated": true,
-          "date": "2027-03-31",
-          "source": "https://mops.twse.com.tw/mops/#/web/t100sb02_1",
-          "days": 91,
-          "provider": "法定期限"
-        },
-        "fundamentals": {
-          "score": 1,
-          "why": "營收年增 +8.2%（2026-10）、毛利率 25.5%，年變動 -5.3 個百分點（2026-09-30）",
-          "date": "2026-10"
-        },
-        "chips": {
-          "score": 0,
-          "why": "近 5 日法人 +447 張、融資 -536 張",
-          "date": "2026-11-24"
-        },
-        "policy": {
-          "score": 0,
-          "why": "14 天內沒有排定事件，也沒有生效中的不利政策",
-          "date": "2026-11-24"
-        }
-      },
-      "market": "TW",
-      "group": "TW|機器人・減速傳動"
-    },
-    "1536.TW": {
-      "total": 1,
-      "max": 10,
-      "scored": 5,
-      "score10": 1.0,
-      "level": "low",
-      "flags": [],
-      "gate": {
-        "block": false,
-        "reasons": []
-      },
-      "items": {
-        "tech": {
-          "score": 0,
-          "why": "乖離 -13.33%",
-          "date": "2026-11-24"
-        },
-        "earnings": {
-          "score": 0,
-          "why": "年報最晚 2027-03-31 要公布（法定期限，多數公司會提早），還有 91 個交易日",
-          "estimated": true,
-          "date": "2027-03-31",
-          "source": "https://mops.twse.com.tw/mops/#/web/t100sb02_1",
-          "days": 91,
-          "provider": "法定期限"
-        },
-        "fundamentals": {
-          "score": 1,
-          "why": "營收年增 +18.5%（2026-10）、毛利率 1.5%，年變動 -2.5 個百分點（2026-09-30）",
-          "date": "2026-10"
-        },
-        "chips": {
-          "score": 0,
-          "why": "近 5 日法人 +1213 張、融資 -1007 張",
-          "date": "2026-11-24"
-        },
-        "policy": {
-          "score": 0,
-          "why": "14 天內沒有排定事件，也沒有生效中的不利政策",
-          "date": "2026-11-24"
-        }
-      },
-      "market": "TW",
-      "group": "TW|機器人・減速傳動"
-    },
-    "2464.TW": {
-      "total": 0,
-      "max": 10,
-      "scored": 5,
-      "score10": 0.0,
-      "level": "low",
-      "flags": [],
-      "gate": {
-        "block": false,
-        "reasons": []
-      },
-      "items": {
-        "tech": {
-          "score": 0,
-          "why": "乖離 -7.03%",
-          "date": "2026-11-24"
-        },
-        "earnings": {
-          "score": 0,
-          "why": "年報最晚 2027-03-31 要公布（法定期限，多數公司會提早），還有 91 個交易日",
-          "estimated": true,
-          "date": "2027-03-31",
-          "source": "https://mops.twse.com.tw/mops/#/web/t100sb02_1",
-          "days": 91,
-          "provider": "法定期限"
-        },
-        "fundamentals": {
-          "score": 0,
-          "why": "營收年增 +96.0%（2026-10）、毛利率 22.5%，年變動 +4.0 個百分點（2026-09-30）",
-          "date": "2026-10"
-        },
-        "chips": {
-          "score": 0,
-          "why": "近 5 日法人 +1329 張、融資 -2000 張",
-          "date": "2026-11-24"
-        },
-        "policy": {
-          "score": 0,
-          "why": "14 天內沒有排定事件，也沒有生效中的不利政策",
-          "date": "2026-11-24"
-        }
-      },
-      "market": "TW",
-      "group": "TW|機器人・減速傳動"
-    },
-    "1597.TW": {
-      "total": 0,
-      "max": 10,
-      "scored": 5,
-      "score10": 0.0,
-      "level": "low",
-      "flags": [],
-      "gate": {
-        "block": false,
-        "reasons": []
-      },
-      "items": {
-        "tech": {
-          "score": 0,
-          "why": "乖離 -14.50%",
-          "date": "2026-11-24"
-        },
-        "earnings": {
-          "score": 0,
-          "why": "年報最晚 2027-03-31 要公布（法定期限，多數公司會提早），還有 91 個交易日",
-          "estimated": true,
-          "date": "2027-03-31",
-          "source": "https://mops.twse.com.tw/mops/#/web/t100sb02_1",
-          "days": 91,
-          "provider": "法定期限"
-        },
-        "fundamentals": {
-          "score": 0,
-          "why": "營收年增 +42.3%（2026-10）、毛利率 40.1%，年變動 +0.7 個百分點（2026-09-30）",
-          "date": "2026-10"
-        },
-        "chips": {
-          "score": 0,
-          "why": "近 5 日法人 +69 張、融資 -839 張",
-          "date": "2026-11-24"
-        },
-        "policy": {
-          "score": 0,
-          "why": "14 天內沒有排定事件，也沒有生效中的不利政策",
-          "date": "2026-11-24"
-        }
-      },
-      "market": "TW",
-      "group": "TW|機器人・減速傳動"
-    },
-    "4583.TW": {
-      "total": 0,
-      "max": 10,
-      "scored": 5,
-      "score10": 0.0,
-      "level": "low",
-      "flags": [],
-      "gate": {
-        "block": false,
-        "reasons": []
-      },
-      "items": {
-        "tech": {
-          "score": 0,
-          "why": "乖離 -0.28%",
-          "date": "2026-11-24"
-        },
-        "earnings": {
-          "score": 0,
-          "why": "年報最晚 2027-03-31 要公布（法定期限，多數公司會提早），還有 91 個交易日",
-          "estimated": true,
-          "date": "2027-03-31",
-          "source": "https://mops.twse.com.tw/mops/#/web/t100sb02_1",
-          "days": 91,
-          "provider": "法定期限"
-        },
-        "fundamentals": {
-          "score": 0,
-          "why": "營收年增 +21.6%（2026-10）、毛利率 53.0%，年變動 +1.1 個百分點（2026-09-30）",
-          "date": "2026-10"
-        },
-        "chips": {
-          "score": 0,
-          "why": "近 5 日法人 -82 張、融資 -346 張",
-          "date": "2026-11-24"
-        },
-        "policy": {
-          "score": 0,
-          "why": "14 天內沒有排定事件，也沒有生效中的不利政策",
-          "date": "2026-11-24"
-        }
-      },
-      "market": "TW",
-      "group": "TW|機器人・減速傳動"
-    },
-    "4540.TW": {
-      "total": 1,
-      "max": 10,
-      "scored": 5,
-      "score10": 1.0,
-      "level": "low",
-      "flags": [],
-      "gate": {
-        "block": false,
-        "reasons": []
-      },
-      "items": {
-        "tech": {
-          "score": 0,
-          "why": "乖離 -9.82%",
-          "date": "2026-11-24"
-        },
-        "earnings": {
-          "score": 0,
-          "why": "年報最晚 2027-03-31 要公布（法定期限，多數公司會提早），還有 91 個交易日",
-          "estimated": true,
-          "date": "2027-03-31",
-          "source": "https://mops.twse.com.tw/mops/#/web/t100sb02_1",
-          "days": 91,
-          "provider": "法定期限"
-        },
-        "fundamentals": {
-          "score": 1,
-          "why": "營收年增 +11.5%（2026-10）、年增率連兩個月放緩（+45%→+40%→+11%）、毛利率 23.7%，年變動 +19.4 個百分點（2026-09-30）",
-          "date": "2026-10"
-        },
-        "chips": {
-          "score": 0,
-          "why": "近 5 日法人 -121 張、融資 -754 張",
-          "date": "2026-11-24"
-        },
-        "policy": {
-          "score": 0,
-          "why": "14 天內沒有排定事件，也沒有生效中的不利政策",
-          "date": "2026-11-24"
-        }
-      },
-      "market": "TW",
-      "group": "TW|機器人・減速傳動"
-    },
-    "4576.TW": {
-      "total": 1,
-      "max": 10,
-      "scored": 5,
-      "score10": 1.0,
-      "level": "low",
-      "flags": [],
-      "gate": {
-        "block": false,
-        "reasons": []
-      },
-      "items": {
-        "tech": {
-          "score": 0,
-          "why": "乖離 -5.22%",
-          "date": "2026-11-24"
-        },
-        "earnings": {
-          "score": 0,
-          "why": "年報最晚 2027-03-31 要公布（法定期限，多數公司會提早），還有 91 個交易日",
-          "estimated": true,
-          "date": "2027-03-31",
-          "source": "https://mops.twse.com.tw/mops/#/web/t100sb02_1",
-          "days": 91,
-          "provider": "法定期限"
-        },
-        "fundamentals": {
-          "score": 1,
-          "why": "營收年增 +68.7%（2026-10）、年增率連兩個月放緩（+98%→+75%→+69%）、毛利率 42.4%，年變動 +8.6 個百分點（2026-09-30）",
-          "date": "2026-10"
-        },
-        "chips": {
-          "score": 0,
-          "why": "近 5 日法人 +141 張、融資 -296 張",
-          "date": "2026-11-24"
-        },
-        "policy": {
-          "score": 0,
-          "why": "14 天內沒有排定事件，也沒有生效中的不利政策",
-          "date": "2026-11-24"
-        }
-      },
-      "market": "TW",
-      "group": "TW|機器人・馬達驅動"
-    },
-    "1504.TW": {
-      "total": 1,
-      "max": 10,
-      "scored": 5,
-      "score10": 1.0,
-      "level": "low",
-      "flags": [],
-      "gate": {
-        "block": false,
-        "reasons": []
-      },
-      "items": {
-        "tech": {
-          "score": 0,
-          "why": "乖離 -6.52%",
-          "date": "2026-11-24"
-        },
-        "earnings": {
-          "score": 0,
-          "why": "年報最晚 2027-03-31 要公布（法定期限，多數公司會提早），還有 91 個交易日",
-          "estimated": true,
-          "date": "2027-03-31",
-          "source": "https://mops.twse.com.tw/mops/#/web/t100sb02_1",
-          "days": 91,
-          "provider": "法定期限"
-        },
-        "fundamentals": {
-          "score": 1,
-          "why": "營收年增 +16.1%（2026-10）、毛利率 23.0%，年變動 -1.4 個百分點（2026-09-30）",
-          "date": "2026-10"
-        },
-        "chips": {
-          "score": 0,
-          "why": "近 5 日法人 -734 張、融資 -2581 張",
-          "date": "2026-11-24"
-        },
-        "policy": {
-          "score": 0,
-          "why": "14 天內沒有排定事件，也沒有生效中的不利政策",
-          "date": "2026-11-24"
-        }
-      },
-      "market": "TW",
-      "group": "TW|機器人・馬達驅動"
-    },
-    "1590.TW": {
-      "total": 0,
-      "max": 10,
-      "scored": 5,
-      "score10": 0.0,
-      "level": "low",
-      "flags": [],
-      "gate": {
-        "block": false,
-        "reasons": []
-      },
-      "items": {
-        "tech": {
-          "score": 0,
-          "why": "乖離 -1.41%",
-          "date": "2026-11-24"
-        },
-        "earnings": {
-          "score": 0,
-          "why": "年報最晚 2027-03-31 要公布（法定期限，多數公司會提早），還有 91 個交易日",
-          "estimated": true,
-          "date": "2027-03-31",
-          "source": "https://mops.twse.com.tw/mops/#/web/t100sb02_1",
-          "days": 91,
-          "provider": "法定期限"
-        },
-        "fundamentals": {
-          "score": 0,
-          "why": "營收年增 +32.2%（2026-10）、毛利率 49.4%，年變動 +3.3 個百分點（2026-09-30）",
-          "date": "2026-10"
-        },
-        "chips": {
-          "score": 0,
-          "why": "近 5 日法人 +39 張、融資 -60 張",
-          "date": "2026-11-24"
-        },
-        "policy": {
-          "score": 0,
-          "why": "14 天內沒有排定事件，也沒有生效中的不利政策",
-          "date": "2026-11-24"
-        }
-      },
-      "market": "TW",
-      "group": "TW|機器人・馬達驅動"
-    },
-    "3019.TW": {
-      "total": 0,
-      "max": 10,
-      "scored": 5,
-      "score10": 0.0,
-      "level": "low",
-      "flags": [],
-      "gate": {
-        "block": false,
-        "reasons": []
-      },
-      "items": {
-        "tech": {
-          "score": 0,
-          "why": "乖離 -8.03%",
-          "date": "2026-11-24"
-        },
-        "earnings": {
-          "score": 0,
-          "why": "年報最晚 2027-03-31 要公布（法定期限，多數公司會提早），還有 91 個交易日",
-          "estimated": true,
-          "date": "2027-03-31",
-          "source": "https://mops.twse.com.tw/mops/#/web/t100sb02_1",
-          "days": 91,
-          "provider": "法定期限"
-        },
-        "fundamentals": {
-          "score": 0,
-          "why": "營收年增 +2.7%（2026-10）、毛利率 23.2%，年變動 +1.2 個百分點（2026-09-30）",
-          "date": "2026-10"
-        },
-        "chips": {
-          "score": 0,
-          "why": "近 5 日法人 -3121 張、融資 -1083 張",
-          "date": "2026-11-24"
-        },
-        "policy": {
-          "score": 0,
-          "why": "14 天內沒有排定事件，也沒有生效中的不利政策",
-          "date": "2026-11-24"
-        }
-      },
-      "market": "TW",
-      "group": "TW|機器人・感測視覺"
-    },
-    "2359.TW": {
       "total": 2,
       "max": 10,
       "scored": 5,
@@ -2095,16 +1678,476 @@
       "items": {
         "tech": {
           "score": 0,
-          "why": "乖離 -18.15%",
-          "date": "2026-11-24"
+          "why": "乖離 -28.75%",
+          "date": "2026-11-23"
         },
         "earnings": {
           "score": 0,
-          "why": "年報最晚 2027-03-31 要公布（法定期限，多數公司會提早），還有 91 個交易日",
+          "why": "年報最晚 2027-03-31 要公布（法定期限，多數公司會提早），還有 90 個交易日",
           "estimated": true,
           "date": "2027-03-31",
           "source": "https://mops.twse.com.tw/mops/#/web/t100sb02_1",
-          "days": 91,
+          "days": 90,
+          "provider": "法定期限"
+        },
+        "fundamentals": {
+          "score": 1,
+          "why": "營收年增 +8.2%（2026-10）、毛利率 25.5%，年變動 -5.3 個百分點（2026-09-30）",
+          "date": "2026-10"
+        },
+        "chips": {
+          "score": 0,
+          "why": "近 5 日法人 +447 張、融資 -469 張",
+          "date": "2026-11-24"
+        },
+        "policy": {
+          "score": 1,
+          "why": "2026-12-09 FOMC 利率決議（12/8–9 會議，附經濟預測）",
+          "date": "2026-12-09",
+          "source": "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm"
+        }
+      },
+      "market": "TW",
+      "group": "TW|機器人・減速傳動"
+    },
+    "1536.TW": {
+      "total": 2,
+      "max": 10,
+      "scored": 5,
+      "score10": 2.0,
+      "level": "low",
+      "flags": [],
+      "gate": {
+        "block": false,
+        "reasons": []
+      },
+      "items": {
+        "tech": {
+          "score": 0,
+          "why": "乖離 -22.47%",
+          "date": "2026-11-23"
+        },
+        "earnings": {
+          "score": 0,
+          "why": "年報最晚 2027-03-31 要公布（法定期限，多數公司會提早），還有 90 個交易日",
+          "estimated": true,
+          "date": "2027-03-31",
+          "source": "https://mops.twse.com.tw/mops/#/web/t100sb02_1",
+          "days": 90,
+          "provider": "法定期限"
+        },
+        "fundamentals": {
+          "score": 1,
+          "why": "營收年增 +18.5%（2026-10）、毛利率 1.5%，年變動 -2.5 個百分點（2026-09-30）",
+          "date": "2026-10"
+        },
+        "chips": {
+          "score": 0,
+          "why": "近 5 日法人 +1213 張、融資 -888 張",
+          "date": "2026-11-24"
+        },
+        "policy": {
+          "score": 1,
+          "why": "2026-12-09 FOMC 利率決議（12/8–9 會議，附經濟預測）",
+          "date": "2026-12-09",
+          "source": "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm"
+        }
+      },
+      "market": "TW",
+      "group": "TW|機器人・減速傳動"
+    },
+    "2464.TW": {
+      "total": 1,
+      "max": 10,
+      "scored": 5,
+      "score10": 1.0,
+      "level": "low",
+      "flags": [],
+      "gate": {
+        "block": false,
+        "reasons": []
+      },
+      "items": {
+        "tech": {
+          "score": 0,
+          "why": "乖離 -16.41%",
+          "date": "2026-11-23"
+        },
+        "earnings": {
+          "score": 0,
+          "why": "年報最晚 2027-03-31 要公布（法定期限，多數公司會提早），還有 90 個交易日",
+          "estimated": true,
+          "date": "2027-03-31",
+          "source": "https://mops.twse.com.tw/mops/#/web/t100sb02_1",
+          "days": 90,
+          "provider": "法定期限"
+        },
+        "fundamentals": {
+          "score": 0,
+          "why": "營收年增 +96.0%（2026-10）、毛利率 22.5%，年變動 +4.0 個百分點（2026-09-30）",
+          "date": "2026-10"
+        },
+        "chips": {
+          "score": 0,
+          "why": "近 5 日法人 +1329 張、融資 -1811 張",
+          "date": "2026-11-24"
+        },
+        "policy": {
+          "score": 1,
+          "why": "2026-12-09 FOMC 利率決議（12/8–9 會議，附經濟預測）",
+          "date": "2026-12-09",
+          "source": "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm"
+        }
+      },
+      "market": "TW",
+      "group": "TW|機器人・減速傳動"
+    },
+    "1597.TW": {
+      "total": 1,
+      "max": 10,
+      "scored": 5,
+      "score10": 1.0,
+      "level": "low",
+      "flags": [],
+      "gate": {
+        "block": false,
+        "reasons": []
+      },
+      "items": {
+        "tech": {
+          "score": 0,
+          "why": "乖離 -23.77%",
+          "date": "2026-11-23"
+        },
+        "earnings": {
+          "score": 0,
+          "why": "年報最晚 2027-03-31 要公布（法定期限，多數公司會提早），還有 90 個交易日",
+          "estimated": true,
+          "date": "2027-03-31",
+          "source": "https://mops.twse.com.tw/mops/#/web/t100sb02_1",
+          "days": 90,
+          "provider": "法定期限"
+        },
+        "fundamentals": {
+          "score": 0,
+          "why": "營收年增 +42.3%（2026-10）、毛利率 40.1%，年變動 +0.7 個百分點（2026-09-30）",
+          "date": "2026-10"
+        },
+        "chips": {
+          "score": 0,
+          "why": "近 5 日法人 +69 張、融資 -339 張",
+          "date": "2026-11-24"
+        },
+        "policy": {
+          "score": 1,
+          "why": "2026-12-09 FOMC 利率決議（12/8–9 會議，附經濟預測）",
+          "date": "2026-12-09",
+          "source": "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm"
+        }
+      },
+      "market": "TW",
+      "group": "TW|機器人・減速傳動"
+    },
+    "4583.TW": {
+      "total": 1,
+      "max": 10,
+      "scored": 5,
+      "score10": 1.0,
+      "level": "low",
+      "flags": [],
+      "gate": {
+        "block": false,
+        "reasons": []
+      },
+      "items": {
+        "tech": {
+          "score": 0,
+          "why": "乖離 -8.06%",
+          "date": "2026-11-23"
+        },
+        "earnings": {
+          "score": 0,
+          "why": "年報最晚 2027-03-31 要公布（法定期限，多數公司會提早），還有 90 個交易日",
+          "estimated": true,
+          "date": "2027-03-31",
+          "source": "https://mops.twse.com.tw/mops/#/web/t100sb02_1",
+          "days": 90,
+          "provider": "法定期限"
+        },
+        "fundamentals": {
+          "score": 0,
+          "why": "營收年增 +21.6%（2026-10）、毛利率 53.0%，年變動 +1.1 個百分點（2026-09-30）",
+          "date": "2026-10"
+        },
+        "chips": {
+          "score": 0,
+          "why": "近 5 日法人 -82 張、融資 -339 張",
+          "date": "2026-11-24"
+        },
+        "policy": {
+          "score": 1,
+          "why": "2026-12-09 FOMC 利率決議（12/8–9 會議，附經濟預測）",
+          "date": "2026-12-09",
+          "source": "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm"
+        }
+      },
+      "market": "TW",
+      "group": "TW|機器人・減速傳動"
+    },
+    "4540.TW": {
+      "total": 2,
+      "max": 10,
+      "scored": 5,
+      "score10": 2.0,
+      "level": "low",
+      "flags": [],
+      "gate": {
+        "block": false,
+        "reasons": []
+      },
+      "items": {
+        "tech": {
+          "score": 0,
+          "why": "乖離 -19.22%",
+          "date": "2026-11-23"
+        },
+        "earnings": {
+          "score": 0,
+          "why": "年報最晚 2027-03-31 要公布（法定期限，多數公司會提早），還有 90 個交易日",
+          "estimated": true,
+          "date": "2027-03-31",
+          "source": "https://mops.twse.com.tw/mops/#/web/t100sb02_1",
+          "days": 90,
+          "provider": "法定期限"
+        },
+        "fundamentals": {
+          "score": 1,
+          "why": "營收年增 +11.5%（2026-10）、年增率連兩個月放緩（+45%→+40%→+11%）、毛利率 23.7%，年變動 +19.4 個百分點（2026-09-30）",
+          "date": "2026-10"
+        },
+        "chips": {
+          "score": 0,
+          "why": "近 5 日法人 -121 張、融資 -691 張",
+          "date": "2026-11-24"
+        },
+        "policy": {
+          "score": 1,
+          "why": "2026-12-09 FOMC 利率決議（12/8–9 會議，附經濟預測）",
+          "date": "2026-12-09",
+          "source": "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm"
+        }
+      },
+      "market": "TW",
+      "group": "TW|機器人・減速傳動"
+    },
+    "4576.TW": {
+      "total": 2,
+      "max": 10,
+      "scored": 5,
+      "score10": 2.0,
+      "level": "low",
+      "flags": [],
+      "gate": {
+        "block": false,
+        "reasons": []
+      },
+      "items": {
+        "tech": {
+          "score": 0,
+          "why": "乖離 -14.67%",
+          "date": "2026-11-23"
+        },
+        "earnings": {
+          "score": 0,
+          "why": "年報最晚 2027-03-31 要公布（法定期限，多數公司會提早），還有 90 個交易日",
+          "estimated": true,
+          "date": "2027-03-31",
+          "source": "https://mops.twse.com.tw/mops/#/web/t100sb02_1",
+          "days": 90,
+          "provider": "法定期限"
+        },
+        "fundamentals": {
+          "score": 1,
+          "why": "營收年增 +68.7%（2026-10）、年增率連兩個月放緩（+98%→+75%→+69%）、毛利率 42.4%，年變動 +8.6 個百分點（2026-09-30）",
+          "date": "2026-10"
+        },
+        "chips": {
+          "score": 0,
+          "why": "近 5 日法人 +141 張、融資 -252 張",
+          "date": "2026-11-24"
+        },
+        "policy": {
+          "score": 1,
+          "why": "2026-12-09 FOMC 利率決議（12/8–9 會議，附經濟預測）",
+          "date": "2026-12-09",
+          "source": "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm"
+        }
+      },
+      "market": "TW",
+      "group": "TW|機器人・馬達驅動"
+    },
+    "1504.TW": {
+      "total": 2,
+      "max": 10,
+      "scored": 5,
+      "score10": 2.0,
+      "level": "low",
+      "flags": [],
+      "gate": {
+        "block": false,
+        "reasons": []
+      },
+      "items": {
+        "tech": {
+          "score": 0,
+          "why": "乖離 -15.50%",
+          "date": "2026-11-23"
+        },
+        "earnings": {
+          "score": 0,
+          "why": "年報最晚 2027-03-31 要公布（法定期限，多數公司會提早），還有 90 個交易日",
+          "estimated": true,
+          "date": "2027-03-31",
+          "source": "https://mops.twse.com.tw/mops/#/web/t100sb02_1",
+          "days": 90,
+          "provider": "法定期限"
+        },
+        "fundamentals": {
+          "score": 1,
+          "why": "營收年增 +16.1%（2026-10）、毛利率 23.0%，年變動 -1.4 個百分點（2026-09-30）",
+          "date": "2026-10"
+        },
+        "chips": {
+          "score": 0,
+          "why": "近 5 日法人 -734 張、融資 -1543 張",
+          "date": "2026-11-24"
+        },
+        "policy": {
+          "score": 1,
+          "why": "2026-12-09 FOMC 利率決議（12/8–9 會議，附經濟預測）",
+          "date": "2026-12-09",
+          "source": "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm"
+        }
+      },
+      "market": "TW",
+      "group": "TW|機器人・馬達驅動"
+    },
+    "1590.TW": {
+      "total": 1,
+      "max": 10,
+      "scored": 5,
+      "score10": 1.0,
+      "level": "low",
+      "flags": [],
+      "gate": {
+        "block": false,
+        "reasons": []
+      },
+      "items": {
+        "tech": {
+          "score": 0,
+          "why": "乖離 -10.53%",
+          "date": "2026-11-23"
+        },
+        "earnings": {
+          "score": 0,
+          "why": "年報最晚 2027-03-31 要公布（法定期限，多數公司會提早），還有 90 個交易日",
+          "estimated": true,
+          "date": "2027-03-31",
+          "source": "https://mops.twse.com.tw/mops/#/web/t100sb02_1",
+          "days": 90,
+          "provider": "法定期限"
+        },
+        "fundamentals": {
+          "score": 0,
+          "why": "營收年增 +32.2%（2026-10）、毛利率 49.4%，年變動 +3.3 個百分點（2026-09-30）",
+          "date": "2026-10"
+        },
+        "chips": {
+          "score": 0,
+          "why": "近 5 日法人 +37 張、融資 -58 張",
+          "date": "2026-11-24"
+        },
+        "policy": {
+          "score": 1,
+          "why": "2026-12-09 FOMC 利率決議（12/8–9 會議，附經濟預測）",
+          "date": "2026-12-09",
+          "source": "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm"
+        }
+      },
+      "market": "TW",
+      "group": "TW|機器人・馬達驅動"
+    },
+    "3019.TW": {
+      "total": 1,
+      "max": 10,
+      "scored": 5,
+      "score10": 1.0,
+      "level": "low",
+      "flags": [],
+      "gate": {
+        "block": false,
+        "reasons": []
+      },
+      "items": {
+        "tech": {
+          "score": 0,
+          "why": "乖離 -12.66%",
+          "date": "2026-11-23"
+        },
+        "earnings": {
+          "score": 0,
+          "why": "年報最晚 2027-03-31 要公布（法定期限，多數公司會提早），還有 90 個交易日",
+          "estimated": true,
+          "date": "2027-03-31",
+          "source": "https://mops.twse.com.tw/mops/#/web/t100sb02_1",
+          "days": 90,
+          "provider": "法定期限"
+        },
+        "fundamentals": {
+          "score": 0,
+          "why": "營收年增 +2.7%（2026-10）、毛利率 23.2%，年變動 +1.2 個百分點（2026-09-30）",
+          "date": "2026-10"
+        },
+        "chips": {
+          "score": 0,
+          "why": "近 5 日法人 -3121 張、融資 -1096 張",
+          "date": "2026-11-24"
+        },
+        "policy": {
+          "score": 1,
+          "why": "2026-12-09 FOMC 利率決議（12/8–9 會議，附經濟預測）",
+          "date": "2026-12-09",
+          "source": "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm"
+        }
+      },
+      "market": "TW",
+      "group": "TW|機器人・感測視覺"
+    },
+    "2359.TW": {
+      "total": 3,
+      "max": 10,
+      "scored": 5,
+      "score10": 3.0,
+      "level": "low",
+      "flags": [],
+      "gate": {
+        "block": false,
+        "reasons": []
+      },
+      "items": {
+        "tech": {
+          "score": 0,
+          "why": "乖離 -27.14%",
+          "date": "2026-11-23"
+        },
+        "earnings": {
+          "score": 0,
+          "why": "年報最晚 2027-03-31 要公布（法定期限，多數公司會提早），還有 90 個交易日",
+          "estimated": true,
+          "date": "2027-03-31",
+          "source": "https://mops.twse.com.tw/mops/#/web/t100sb02_1",
+          "days": 90,
           "provider": "法定期限"
         },
         "fundamentals": {
@@ -2114,13 +2157,14 @@
         },
         "chips": {
           "score": 0,
-          "why": "近 5 日法人 +1306 張、融資 -972 張",
+          "why": "近 5 日法人 +1306 張、融資 -919 張",
           "date": "2026-11-24"
         },
         "policy": {
-          "score": 0,
-          "why": "14 天內沒有排定事件，也沒有生效中的不利政策",
-          "date": "2026-11-24"
+          "score": 1,
+          "why": "2026-12-09 FOMC 利率決議（12/8–9 會議，附經濟預測）",
+          "date": "2026-12-09",
+          "source": "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm"
         }
       },
       "market": "TW",
@@ -2139,17 +2183,17 @@
       },
       "items": {
         "tech": {
-          "score": 1,
-          "why": "乖離 +6.25%",
-          "date": "2026-11-24"
+          "score": 0,
+          "why": "乖離 +5.97%",
+          "date": "2026-11-23"
         },
         "earnings": {
           "score": 0,
-          "why": "年報最晚 2027-03-31 要公布（法定期限，多數公司會提早），還有 91 個交易日",
+          "why": "年報最晚 2027-03-31 要公布（法定期限，多數公司會提早），還有 90 個交易日",
           "estimated": true,
           "date": "2027-03-31",
           "source": "https://mops.twse.com.tw/mops/#/web/t100sb02_1",
-          "days": 91,
+          "days": 90,
           "provider": "法定期限"
         },
         "fundamentals": {
@@ -2159,23 +2203,24 @@
         },
         "chips": {
           "score": 0,
-          "why": "近 5 日法人 +2057 張、融資 -85 張",
+          "why": "近 5 日法人 +2057 張、融資 +274 張",
           "date": "2026-11-24"
         },
         "policy": {
-          "score": 0,
-          "why": "14 天內沒有排定事件，也沒有生效中的不利政策",
-          "date": "2026-11-24"
+          "score": 1,
+          "why": "2026-12-09 FOMC 利率決議（12/8–9 會議，附經濟預測）",
+          "date": "2026-12-09",
+          "source": "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm"
         }
       },
       "market": "TW",
       "group": "TW|機器人・線材連接"
     },
     "3665.TW": {
-      "total": 0,
+      "total": 1,
       "max": 10,
       "scored": 5,
-      "score10": 0.0,
+      "score10": 1.0,
       "level": "low",
       "flags": [],
       "gate": {
@@ -2185,16 +2230,16 @@
       "items": {
         "tech": {
           "score": 0,
-          "why": "乖離 +3.15%",
-          "date": "2026-11-24"
+          "why": "乖離 -6.55%",
+          "date": "2026-11-23"
         },
         "earnings": {
           "score": 0,
-          "why": "年報最晚 2027-03-31 要公布（法定期限，多數公司會提早），還有 91 個交易日",
+          "why": "年報最晚 2027-03-31 要公布（法定期限，多數公司會提早），還有 90 個交易日",
           "estimated": true,
           "date": "2027-03-31",
           "source": "https://mops.twse.com.tw/mops/#/web/t100sb02_1",
-          "days": 91,
+          "days": 90,
           "provider": "法定期限"
         },
         "fundamentals": {
@@ -2204,23 +2249,24 @@
         },
         "chips": {
           "score": 0,
-          "why": "近 5 日法人 +1590 張、融資 -982 張",
+          "why": "近 5 日法人 +1590 張、融資 -753 張",
           "date": "2026-11-24"
         },
         "policy": {
-          "score": 0,
-          "why": "14 天內沒有排定事件，也沒有生效中的不利政策",
-          "date": "2026-11-24"
+          "score": 1,
+          "why": "2026-12-09 FOMC 利率決議（12/8–9 會議，附經濟預測）",
+          "date": "2026-12-09",
+          "source": "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm"
         }
       },
       "market": "TW",
       "group": "TW|機器人・線材連接"
     },
     "4585.TW": {
-      "total": 0,
+      "total": 1,
       "max": 10,
       "scored": 5,
-      "score10": 0.0,
+      "score10": 1.0,
       "level": "low",
       "flags": [],
       "gate": {
@@ -2230,16 +2276,16 @@
       "items": {
         "tech": {
           "score": 0,
-          "why": "乖離 -9.36%",
-          "date": "2026-11-24"
+          "why": "乖離 -18.35%",
+          "date": "2026-11-23"
         },
         "earnings": {
           "score": 0,
-          "why": "年報最晚 2027-03-31 要公布（法定期限，多數公司會提早），還有 91 個交易日",
+          "why": "年報最晚 2027-03-31 要公布（法定期限，多數公司會提早），還有 90 個交易日",
           "estimated": true,
           "date": "2027-03-31",
           "source": "https://mops.twse.com.tw/mops/#/web/t100sb02_1",
-          "days": 91,
+          "days": 90,
           "provider": "法定期限"
         },
         "fundamentals": {
@@ -2249,23 +2295,24 @@
         },
         "chips": {
           "score": 0,
-          "why": "近 5 日法人 +178 張、融資 -54 張",
+          "why": "近 5 日法人 +178 張、融資 -37 張",
           "date": "2026-11-24"
         },
         "policy": {
-          "score": 0,
-          "why": "14 天內沒有排定事件，也沒有生效中的不利政策",
-          "date": "2026-11-24"
+          "score": 1,
+          "why": "2026-12-09 FOMC 利率決議（12/8–9 會議，附經濟預測）",
+          "date": "2026-12-09",
+          "source": "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm"
         }
       },
       "market": "TW",
       "group": "TW|機器人・整機系統"
     },
     "6215.TW": {
-      "total": 1,
+      "total": 2,
       "max": 10,
       "scored": 5,
-      "score10": 1.0,
+      "score10": 2.0,
       "level": "low",
       "flags": [],
       "gate": {
@@ -2275,16 +2322,16 @@
       "items": {
         "tech": {
           "score": 0,
-          "why": "乖離 -12.25%",
-          "date": "2026-11-24"
+          "why": "乖離 -21.40%",
+          "date": "2026-11-23"
         },
         "earnings": {
           "score": 0,
-          "why": "年報最晚 2027-03-31 要公布（法定期限，多數公司會提早），還有 91 個交易日",
+          "why": "年報最晚 2027-03-31 要公布（法定期限，多數公司會提早），還有 90 個交易日",
           "estimated": true,
           "date": "2027-03-31",
           "source": "https://mops.twse.com.tw/mops/#/web/t100sb02_1",
-          "days": 91,
+          "days": 90,
           "provider": "法定期限"
         },
         "fundamentals": {
@@ -2294,19 +2341,66 @@
         },
         "chips": {
           "score": 0,
-          "why": "近 5 日法人 +875 張、融資 -1048 張",
+          "why": "近 5 日法人 +875 張、融資 -907 張",
           "date": "2026-11-24"
         },
         "policy": {
-          "score": 0,
-          "why": "14 天內沒有排定事件，也沒有生效中的不利政策",
-          "date": "2026-11-24"
+          "score": 1,
+          "why": "2026-12-09 FOMC 利率決議（12/8–9 會議，附經濟預測）",
+          "date": "2026-12-09",
+          "source": "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm"
         }
       },
       "market": "TW",
       "group": "TW|機器人・整機系統"
     },
     "8374.TW": {
+      "total": 2,
+      "max": 10,
+      "scored": 5,
+      "score10": 2.0,
+      "level": "low",
+      "flags": [],
+      "gate": {
+        "block": false,
+        "reasons": []
+      },
+      "items": {
+        "tech": {
+          "score": 0,
+          "why": "乖離 -18.93%",
+          "date": "2026-11-23"
+        },
+        "earnings": {
+          "score": 0,
+          "why": "年報最晚 2027-03-31 要公布（法定期限，多數公司會提早），還有 90 個交易日",
+          "estimated": true,
+          "date": "2027-03-31",
+          "source": "https://mops.twse.com.tw/mops/#/web/t100sb02_1",
+          "days": 90,
+          "provider": "法定期限"
+        },
+        "fundamentals": {
+          "score": 1,
+          "why": "營收年增 +4.4%（2026-10）、年增率連兩個月放緩（+35%→+20%→+4%）、毛利率 25.9%，年變動 +2.8 個百分點（2026-09-30）",
+          "date": "2026-10"
+        },
+        "chips": {
+          "score": 0,
+          "why": "近 5 日法人 +275 張、融資 -199 張",
+          "date": "2026-11-24"
+        },
+        "policy": {
+          "score": 1,
+          "why": "2026-12-09 FOMC 利率決議（12/8–9 會議，附經濟預測）",
+          "date": "2026-12-09",
+          "source": "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm"
+        }
+      },
+      "market": "TW",
+      "group": "TW|機器人・整機系統"
+    },
+    "2317.TW": {
       "total": 1,
       "max": 10,
       "scored": 5,
@@ -2320,61 +2414,16 @@
       "items": {
         "tech": {
           "score": 0,
-          "why": "乖離 -9.77%",
-          "date": "2026-11-24"
+          "why": "乖離 -12.10%",
+          "date": "2026-11-23"
         },
         "earnings": {
           "score": 0,
-          "why": "年報最晚 2027-03-31 要公布（法定期限，多數公司會提早），還有 91 個交易日",
+          "why": "年報最晚 2027-03-31 要公布（法定期限，多數公司會提早），還有 90 個交易日",
           "estimated": true,
           "date": "2027-03-31",
           "source": "https://mops.twse.com.tw/mops/#/web/t100sb02_1",
-          "days": 91,
-          "provider": "法定期限"
-        },
-        "fundamentals": {
-          "score": 1,
-          "why": "營收年增 +4.4%（2026-10）、年增率連兩個月放緩（+35%→+20%→+4%）、毛利率 25.9%，年變動 +2.8 個百分點（2026-09-30）",
-          "date": "2026-10"
-        },
-        "chips": {
-          "score": 0,
-          "why": "近 5 日法人 +275 張、融資 -201 張",
-          "date": "2026-11-24"
-        },
-        "policy": {
-          "score": 0,
-          "why": "14 天內沒有排定事件，也沒有生效中的不利政策",
-          "date": "2026-11-24"
-        }
-      },
-      "market": "TW",
-      "group": "TW|機器人・整機系統"
-    },
-    "2317.TW": {
-      "total": 0,
-      "max": 10,
-      "scored": 5,
-      "score10": 0.0,
-      "level": "low",
-      "flags": [],
-      "gate": {
-        "block": false,
-        "reasons": []
-      },
-      "items": {
-        "tech": {
-          "score": 0,
-          "why": "乖離 -2.91%",
-          "date": "2026-11-24"
-        },
-        "earnings": {
-          "score": 0,
-          "why": "年報最晚 2027-03-31 要公布（法定期限，多數公司會提早），還有 91 個交易日",
-          "estimated": true,
-          "date": "2027-03-31",
-          "source": "https://mops.twse.com.tw/mops/#/web/t100sb02_1",
-          "days": 91,
+          "days": 90,
           "provider": "法定期限"
         },
         "fundamentals": {
@@ -2384,13 +2433,14 @@
         },
         "chips": {
           "score": 0,
-          "why": "近 5 日法人 -5303 張、融資 -1737 張",
+          "why": "近 5 日法人 -5303 張、融資 -2437 張",
           "date": "2026-11-24"
         },
         "policy": {
-          "score": 0,
-          "why": "14 天內沒有排定事件，也沒有生效中的不利政策",
-          "date": "2026-11-24"
+          "score": 1,
+          "why": "2026-12-09 FOMC 利率決議（12/8–9 會議，附經濟預測）",
+          "date": "2026-12-09",
+          "source": "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm"
         }
       },
       "market": "TW",
@@ -2435,7 +2485,7 @@
         "policy": {
           "score": 0,
           "why": "14 天內沒有排定事件，也沒有生效中的不利政策",
-          "date": "2026-11-24"
+          "date": "2026-11-25"
         }
       },
       "market": "US",
@@ -2481,7 +2531,7 @@
         "policy": {
           "score": 0,
           "why": "14 天內沒有排定事件，也沒有生效中的不利政策",
-          "date": "2026-11-24"
+          "date": "2026-11-25"
         }
       },
       "market": "US",
@@ -2506,8 +2556,7 @@
         },
         "earnings": {
           "score": 0,
-          "why": "財報約 2027-02-02（Yahoo預估，公司尚未確認），還有 50 個交易日",
-          "estimated": true,
+          "why": "財報 2027-02-02，還有 50 個交易日（Yahoo，已確認）",
           "date": "2027-02-02",
           "source": "https://finance.yahoo.com/quote/AMD/",
           "days": 50,
@@ -2527,7 +2576,7 @@
         "policy": {
           "score": 0,
           "why": "14 天內沒有排定事件，也沒有生效中的不利政策",
-          "date": "2026-11-24"
+          "date": "2026-11-25"
         }
       },
       "market": "US",
@@ -2572,7 +2621,7 @@
         "policy": {
           "score": 0,
           "why": "14 天內沒有排定事件，也沒有生效中的不利政策",
-          "date": "2026-11-24"
+          "date": "2026-11-25"
         }
       },
       "market": "US",
@@ -2618,7 +2667,7 @@
         "policy": {
           "score": 0,
           "why": "14 天內沒有排定事件，也沒有生效中的不利政策",
-          "date": "2026-11-24"
+          "date": "2026-11-25"
         }
       },
       "market": "US",
@@ -2664,7 +2713,7 @@
         "policy": {
           "score": 0,
           "why": "14 天內沒有排定事件，也沒有生效中的不利政策",
-          "date": "2026-11-24"
+          "date": "2026-11-25"
         }
       },
       "market": "US",
@@ -2709,7 +2758,7 @@
         "policy": {
           "score": 0,
           "why": "14 天內沒有排定事件，也沒有生效中的不利政策",
-          "date": "2026-11-24"
+          "date": "2026-11-25"
         }
       },
       "market": "US",
@@ -2755,7 +2804,7 @@
         "policy": {
           "score": 0,
           "why": "14 天內沒有排定事件，也沒有生效中的不利政策",
-          "date": "2026-11-24"
+          "date": "2026-11-25"
         }
       },
       "market": "US",
@@ -2763,8 +2812,8 @@
     },
     "SPCX": {
       "total": 0,
-      "max": 8,
-      "scored": 4,
+      "max": 10,
+      "scored": 5,
       "score10": 0.0,
       "level": "low",
       "flags": [],
@@ -2779,8 +2828,13 @@
           "date": "2026-11-23"
         },
         "earnings": {
-          "score": null,
-          "why": "events.json 沒填，自動來源（Yahoo／Nasdaq／SEC）也抓不到財報日"
+          "score": 0,
+          "why": "財報約 2027-02-09（Yahoo預估，公司尚未確認），還有 55 個交易日",
+          "estimated": true,
+          "date": "2027-02-09",
+          "source": "https://finance.yahoo.com/quote/SPCX/",
+          "days": 55,
+          "provider": "Yahoo"
         },
         "fundamentals": {
           "score": 0,
@@ -2796,7 +2850,7 @@
         "policy": {
           "score": 0,
           "why": "14 天內沒有排定事件，也沒有生效中的不利政策",
-          "date": "2026-11-24"
+          "date": "2026-11-25"
         }
       },
       "market": "US",
@@ -2842,7 +2896,7 @@
         "policy": {
           "score": 0,
           "why": "14 天內沒有排定事件，也沒有生效中的不利政策",
-          "date": "2026-11-24"
+          "date": "2026-11-25"
         }
       },
       "market": "US",
@@ -2889,7 +2943,7 @@
         "policy": {
           "score": 0,
           "why": "14 天內沒有排定事件，也沒有生效中的不利政策",
-          "date": "2026-11-24"
+          "date": "2026-11-25"
         }
       },
       "market": "US",
@@ -2931,7 +2985,7 @@
         "policy": {
           "score": 0,
           "why": "14 天內沒有排定事件，也沒有生效中的不利政策",
-          "date": "2026-11-24"
+          "date": "2026-11-25"
         }
       },
       "market": "US",
@@ -2960,14 +3014,14 @@
         },
         "fundamentals": {
           "score": 1,
-          "why": "穩定幣總供給 30 日 -5.7%（283B 美元）、BTC 市占率 58.6%",
+          "why": "穩定幣總供給 30 日 -5.7%（283B 美元）、BTC 市占率 57.9%",
           "date": "2026-11-24",
           "source": "https://defillama.com/stablecoins",
           "label": "市場結構"
         },
         "chips": {
           "score": 0,
-          "why": "恐懼與貪婪指數 11（極度恐懼）；資金費率 +0.0029%、未平倉量 7 日 -6.3%",
+          "why": "恐懼與貪婪指數 11（極度恐懼）；資金費率 +0.0059%、未平倉量 7 日 -8.9%",
           "date": "2026-11-24",
           "source": "https://alternative.me/crypto/fear-and-greed-index/",
           "label": "情緒／槓桿"
@@ -2975,7 +3029,7 @@
         "policy": {
           "score": 0,
           "why": "14 天內沒有排定事件，也沒有生效中的不利政策",
-          "date": "2026-11-24"
+          "date": "2026-11-25"
         }
       },
       "market": "CRYPTO",
@@ -3004,14 +3058,14 @@
         },
         "fundamentals": {
           "score": 1,
-          "why": "穩定幣總供給 30 日 -5.7%（283B 美元）、BTC 市占率 58.6%",
+          "why": "穩定幣總供給 30 日 -5.7%（283B 美元）、BTC 市占率 57.9%",
           "date": "2026-11-24",
           "source": "https://defillama.com/stablecoins",
           "label": "市場結構"
         },
         "chips": {
           "score": 0,
-          "why": "恐懼與貪婪指數 11（極度恐懼）；資金費率 -0.0010%、未平倉量 7 日 -1.9%",
+          "why": "恐懼與貪婪指數 11（極度恐懼）；資金費率 +0.0050%、未平倉量 7 日 -2.6%",
           "date": "2026-11-24",
           "source": "https://alternative.me/crypto/fear-and-greed-index/",
           "label": "情緒／槓桿"
@@ -3019,7 +3073,7 @@
         "policy": {
           "score": 0,
           "why": "14 天內沒有排定事件，也沒有生效中的不利政策",
-          "date": "2026-11-24"
+          "date": "2026-11-25"
         }
       },
       "market": "CRYPTO",
@@ -3048,14 +3102,14 @@
         },
         "fundamentals": {
           "score": 1,
-          "why": "穩定幣總供給 30 日 -5.7%（283B 美元）、BTC 市占率 58.6%",
+          "why": "穩定幣總供給 30 日 -5.7%（283B 美元）、BTC 市占率 57.9%",
           "date": "2026-11-24",
           "source": "https://defillama.com/stablecoins",
           "label": "市場結構"
         },
         "chips": {
           "score": 0,
-          "why": "恐懼與貪婪指數 11（極度恐懼）；資金費率 +0.0093%、未平倉量 7 日 -10.2%",
+          "why": "恐懼與貪婪指數 11（極度恐懼）；資金費率 -0.0033%、未平倉量 7 日 -14.5%",
           "date": "2026-11-24",
           "source": "https://alternative.me/crypto/fear-and-greed-index/",
           "label": "情緒／槓桿"
@@ -3063,7 +3117,7 @@
         "policy": {
           "score": 0,
           "why": "14 天內沒有排定事件，也沒有生效中的不利政策",
-          "date": "2026-11-24"
+          "date": "2026-11-25"
         }
       },
       "market": "CRYPTO",

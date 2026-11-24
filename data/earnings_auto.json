@@ -1,11 +1,11 @@
 {
-  "updatedAt": "2026-11-24T10:18:57.335769+00:00",
+  "updatedAt": "2026-11-24T17:55:11.208672+00:00",
   "note": "scripts/risk.py 自動抓到的美股財報日。要指定日期請改 data/events.json 的 earnings，那邊永遠優先。",
   "symbols": {
     "AMD": {
       "date": "2027-02-02",
       "dateEnd": null,
-      "estimated": true,
+      "estimated": false,
       "provider": "Yahoo",
       "source": "https://finance.yahoo.com/quote/AMD/",
       "fetchedAt": "2026-11-24"
@@ -75,12 +75,12 @@
       "fetchedAt": "2026-11-09"
     },
     "SPCX": {
-      "date": "2026-11-03",
+      "date": "2027-02-09",
       "dateEnd": null,
       "estimated": true,
-      "provider": "Nasdaq",
-      "source": "https://www.nasdaq.com/market-activity/stocks/spcx/earnings",
-      "fetchedAt": "2026-10-21"
+      "provider": "Yahoo",
+      "source": "https://finance.yahoo.com/quote/SPCX/",
+      "fetchedAt": "2026-11-24"
     },
     "TSLA": {
       "date": "2027-01-27",
