@@ -1,5 +1,5 @@
 {
- "generatedAt": "2026-11-25T05:05:05.648306+00:00",
+ "generatedAt": "2026-11-25T09:03:36.117054+00:00",
  "params": {
   "rsi_lo": 45,
   "rsi_hi": 60,
@@ -23,97 +23,26 @@
    "ok": 299,
    "failed": 1,
    "failedSample": [
-    "7856.TWO：只有 53 根日 K"
+    "7856.TWO：只有 54 根日 K"
    ],
-   "candidates": 24,
+   "candidates": 7,
    "signals": 0,
    "picks": [
     {
-     "code": "2603.TW",
-     "name": "長榮",
+     "code": "1216.TW",
+     "name": "統一",
      "market": "TW",
-     "date": "2026-11-24",
-     "close": 257.0,
-     "pct": 9.5949,
-     "entryLow": 252.16,
-     "entryHigh": 258.56,
-     "stop": 241.2143,
-     "target1": 284.1071,
-     "rr": 1.7172,
-     "rsi": 52.945,
-     "volRatio": 3.2958,
-     "bias": 0.3906,
-     "zone": "IN_ZONE",
-     "dailyTrend": "多頭",
-     "weeklyTrend": "多頭",
-     "regime": "BEAR",
-     "entrySignal": false,
-     "passed": 8,
-     "total": 9,
-     "checks": [
-      {
-       "k": "above",
-       "ok": true,
-       "t": "收在 SMA20 之上（乖離 0.4%）"
-      },
-      {
-       "k": "bias",
-       "ok": true,
-       "t": "乖離 0–6%"
-      },
-      {
-       "k": "high",
-       "ok": true,
-       "t": "未貼近 20 日高"
-      },
-      {
-       "k": "rr",
-       "ok": true,
-       "t": "報酬風險比 1.72 ≥ 1.5"
-      },
-      {
-       "k": "rsi",
-       "ok": true,
-       "t": "RSI 53（45–60）"
-      },
-      {
-       "k": "trend",
-       "ok": true,
-       "t": "日線多頭、週線多頭（不能是空頭）"
-      },
-      {
-       "k": "macd",
-       "ok": true,
-       "t": "MACD 零軸下（不能轉弱）"
-      },
-      {
-       "k": "market",
-       "ok": false,
-       "t": "大盤空頭"
-      },
-      {
-       "k": "vol",
-       "ok": true,
-       "t": "量比 3.30 ≥ 1.2"
-      }
-     ],
-     "watched": false
-    },
-    {
-     "code": "5876.TW",
-     "name": "上海商銀",
-     "market": "TW",
-     "date": "2026-11-24",
-     "close": 52.7,
-     "pct": 7.8813,
-     "entryLow": 51.6263,
-     "entryHigh": 52.9366,
-     "stop": 49.7511,
-     "target1": 57.5793,
-     "rr": 1.6546,
-     "rsi": 52.9284,
-     "volRatio": 1.5322,
-     "bias": 0.5485,
+     "date": "2026-11-25",
+     "close": 78.7,
+     "pct": 1.6796,
+     "entryLow": 77.1501,
+     "entryHigh": 79.1082,
+     "stop": 74.905,
+     "target1": 84.97,
+     "rr": 1.6522,
+     "rsi": 53.4812,
+     "volRatio": 2.146,
+     "bias": 0.4788,
      "zone": "IN_ZONE",
      "dailyTrend": "多頭",
      "weeklyTrend": "多頭",
@@ -165,98 +94,27 @@
       {
        "k": "vol",
        "ok": true,
-       "t": "量比 1.53 ≥ 1.2"
+       "t": "量比 2.15 ≥ 1.2"
       }
      ],
      "watched": false
     },
     {
-     "code": "2027.TW",
-     "name": "大成鋼",
+     "code": "6708.TWO",
+     "name": "天擎",
      "market": "TW",
-     "date": "2026-11-24",
-     "close": 48.15,
-     "pct": 7.5978,
-     "entryLow": 46.8614,
-     "entryHigh": 48.0508,
-     "stop": 44.0393,
-     "target1": 54.6321,
-     "rr": 1.5769,
-     "rsi": 52.1782,
-     "volRatio": 2.0607,
-     "bias": 1.2086,
+     "date": "2026-11-25",
+     "close": 76.5,
+     "pct": 2.6846,
+     "entryLow": 73.5253,
+     "entryHigh": 75.3914,
+     "stop": 64.0336,
+     "target1": 95.9543,
+     "rr": 1.5605,
+     "rsi": 53.7199,
+     "volRatio": 1.6456,
+     "bias": 2.4851,
      "zone": "ABOVE_ZONE",
-     "dailyTrend": "盤整",
-     "weeklyTrend": "多頭",
-     "regime": "BEAR",
-     "entrySignal": false,
-     "passed": 8,
-     "total": 9,
-     "checks": [
-      {
-       "k": "above",
-       "ok": true,
-       "t": "收在 SMA20 之上（乖離 1.2%）"
-      },
-      {
-       "k": "bias",
-       "ok": true,
-       "t": "乖離 0–6%"
-      },
-      {
-       "k": "high",
-       "ok": true,
-       "t": "未貼近 20 日高"
-      },
-      {
-       "k": "rr",
-       "ok": true,
-       "t": "報酬風險比 1.58 ≥ 1.5"
-      },
-      {
-       "k": "rsi",
-       "ok": true,
-       "t": "RSI 52（45–60）"
-      },
-      {
-       "k": "trend",
-       "ok": true,
-       "t": "日線盤整、週線多頭（不能是空頭）"
-      },
-      {
-       "k": "macd",
-       "ok": true,
-       "t": "MACD 零軸下（不能轉弱）"
-      },
-      {
-       "k": "market",
-       "ok": false,
-       "t": "大盤空頭"
-      },
-      {
-       "k": "vol",
-       "ok": true,
-       "t": "量比 2.06 ≥ 1.2"
-      }
-     ],
-     "watched": false
-    },
-    {
-     "code": "3293.TWO",
-     "name": "鈊象",
-     "market": "TW",
-     "date": "2026-11-24",
-     "close": 786.0,
-     "pct": 4.106,
-     "entryLow": 766.7733,
-     "entryHigh": 786.2345,
-     "stop": 738.5929,
-     "target1": 859.0714,
-     "rr": 1.5414,
-     "rsi": 52.4775,
-     "volRatio": 1.9151,
-     "bias": 0.9699,
-     "zone": "IN_ZONE",
      "dailyTrend": "多頭",
      "weeklyTrend": "多頭",
      "regime": "BEAR",
@@ -267,7 +125,7 @@
       {
        "k": "above",
        "ok": true,
-       "t": "收在 SMA20 之上（乖離 1.0%）"
+       "t": "收在 SMA20 之上（乖離 2.5%）"
       },
       {
        "k": "bias",
@@ -282,12 +140,12 @@
       {
        "k": "rr",
        "ok": true,
-       "t": "報酬風險比 1.54 ≥ 1.5"
+       "t": "報酬風險比 1.56 ≥ 1.5"
       },
       {
        "k": "rsi",
        "ok": true,
-       "t": "RSI 52（45–60）"
+       "t": "RSI 54（45–60）"
       },
       {
        "k": "trend",
@@ -307,29 +165,29 @@
       {
        "k": "vol",
        "ok": true,
-       "t": "量比 1.92 ≥ 1.2"
+       "t": "量比 1.65 ≥ 1.2"
       }
      ],
      "watched": false
     },
     {
-     "code": "5314.TWO",
-     "name": "世紀*",
+     "code": "7828.TWO",
+     "name": "創新服務",
      "market": "TW",
-     "date": "2026-11-24",
-     "close": 22.3,
-     "pct": 5.6872,
-     "entryLow": 21.8793,
-     "entryHigh": 22.4346,
-     "stop": 19.8596,
-     "target1": 26.6136,
-     "rr": 1.7676,
-     "rsi": 47.0337,
-     "volRatio": 1.0813,
-     "bias": 0.3939,
+     "date": "2026-11-25",
+     "close": 1275.0,
+     "pct": -9.894,
+     "entryLow": 1244.7938,
+     "entryHigh": 1276.3875,
+     "stop": 1101.75,
+     "target1": 1572.0,
+     "rr": 1.7143,
+     "rsi": 45.7974,
+     "volRatio": 1.3887,
+     "bias": 0.8902,
      "zone": "IN_ZONE",
      "dailyTrend": "盤整",
-     "weeklyTrend": "盤整",
+     "weeklyTrend": "空頭",
      "regime": "BEAR",
      "entrySignal": false,
      "passed": 7,
@@ -338,7 +196,7 @@
       {
        "k": "above",
        "ok": true,
-       "t": "收在 SMA20 之上（乖離 0.4%）"
+       "t": "收在 SMA20 之上（乖離 0.9%）"
       },
       {
        "k": "bias",
@@ -353,17 +211,17 @@
       {
        "k": "rr",
        "ok": true,
-       "t": "報酬風險比 1.77 ≥ 1.5"
+       "t": "報酬風險比 1.71 ≥ 1.5"
       },
       {
        "k": "rsi",
        "ok": true,
-       "t": "RSI 47（45–60）"
+       "t": "RSI 46（45–60）"
       },
       {
        "k": "trend",
-       "ok": true,
-       "t": "日線盤整、週線盤整（不能是空頭）"
+       "ok": false,
+       "t": "日線盤整、週線空頭（不能是空頭）"
       },
       {
        "k": "macd",
@@ -377,241 +235,28 @@
       },
       {
        "k": "vol",
-       "ok": false,
-       "t": "量比 1.08 ≥ 1.2"
+       "ok": true,
+       "t": "量比 1.39 ≥ 1.2"
       }
      ],
      "watched": false
     },
     {
-     "code": "3014.TW",
-     "name": "聯陽",
+     "code": "2345.TW",
+     "name": "智邦",
      "market": "TW",
-     "date": "2026-11-24",
-     "close": 130.5,
-     "pct": 9.6639,
-     "entryLow": 127.8037,
-     "entryHigh": 131.0475,
-     "stop": 120.5786,
-     "target1": 147.3143,
-     "rr": 1.6947,
-     "rsi": 49.8678,
-     "volRatio": 1.8503,
-     "bias": 0.578,
+     "date": "2026-11-25",
+     "close": 1475.0,
+     "pct": -0.6734,
+     "entryLow": 1438.5925,
+     "entryHigh": 1475.105,
+     "stop": 1294.6429,
+     "target1": 1779.0714,
+     "rr": 1.6859,
+     "rsi": 46.2812,
+     "volRatio": 2.026,
+     "bias": 0.9928,
      "zone": "IN_ZONE",
-     "dailyTrend": "盤整",
-     "weeklyTrend": "空頭",
-     "regime": "BEAR",
-     "entrySignal": false,
-     "passed": 7,
-     "total": 9,
-     "checks": [
-      {
-       "k": "above",
-       "ok": true,
-       "t": "收在 SMA20 之上（乖離 0.6%）"
-      },
-      {
-       "k": "bias",
-       "ok": true,
-       "t": "乖離 0–6%"
-      },
-      {
-       "k": "high",
-       "ok": true,
-       "t": "未貼近 20 日高"
-      },
-      {
-       "k": "rr",
-       "ok": true,
-       "t": "報酬風險比 1.69 ≥ 1.5"
-      },
-      {
-       "k": "rsi",
-       "ok": true,
-       "t": "RSI 50（45–60）"
-      },
-      {
-       "k": "trend",
-       "ok": false,
-       "t": "日線盤整、週線空頭（不能是空頭）"
-      },
-      {
-       "k": "macd",
-       "ok": true,
-       "t": "MACD 零軸下（不能轉弱）"
-      },
-      {
-       "k": "market",
-       "ok": false,
-       "t": "大盤空頭"
-      },
-      {
-       "k": "vol",
-       "ok": true,
-       "t": "量比 1.85 ≥ 1.2"
-      }
-     ],
-     "watched": false
-    },
-    {
-     "code": "3044.TW",
-     "name": "健鼎",
-     "market": "TW",
-     "date": "2026-11-24",
-     "close": 486.5,
-     "pct": 9.9435,
-     "entryLow": 473.391,
-     "entryHigh": 485.406,
-     "stop": 425.3571,
-     "target1": 587.7786,
-     "rr": 1.6564,
-     "rsi": 49.5754,
-     "volRatio": 0.2824,
-     "bias": 1.2276,
-     "zone": "ABOVE_ZONE",
-     "dailyTrend": "盤整",
-     "weeklyTrend": "盤整",
-     "regime": "BEAR",
-     "entrySignal": false,
-     "passed": 7,
-     "total": 9,
-     "checks": [
-      {
-       "k": "above",
-       "ok": true,
-       "t": "收在 SMA20 之上（乖離 1.2%）"
-      },
-      {
-       "k": "bias",
-       "ok": true,
-       "t": "乖離 0–6%"
-      },
-      {
-       "k": "high",
-       "ok": true,
-       "t": "未貼近 20 日高"
-      },
-      {
-       "k": "rr",
-       "ok": true,
-       "t": "報酬風險比 1.66 ≥ 1.5"
-      },
-      {
-       "k": "rsi",
-       "ok": true,
-       "t": "RSI 50（45–60）"
-      },
-      {
-       "k": "trend",
-       "ok": true,
-       "t": "日線盤整、週線盤整（不能是空頭）"
-      },
-      {
-       "k": "macd",
-       "ok": true,
-       "t": "MACD 零軸下（不能轉弱）"
-      },
-      {
-       "k": "market",
-       "ok": false,
-       "t": "大盤空頭"
-      },
-      {
-       "k": "vol",
-       "ok": false,
-       "t": "量比 0.28 ≥ 1.2"
-      }
-     ],
-     "watched": false
-    },
-    {
-     "code": "5469.TW",
-     "name": "瀚宇博",
-     "market": "TW",
-     "date": "2026-11-24",
-     "close": 71.2,
-     "pct": 3.3382,
-     "entryLow": 69.3883,
-     "entryHigh": 71.1495,
-     "stop": 63.8536,
-     "target1": 83.2843,
-     "rr": 1.6449,
-     "rsi": 48.8322,
-     "volRatio": 2.5716,
-     "bias": 1.0718,
-     "zone": "ABOVE_ZONE",
-     "dailyTrend": "盤整",
-     "weeklyTrend": "空頭",
-     "regime": "BEAR",
-     "entrySignal": false,
-     "passed": 7,
-     "total": 9,
-     "checks": [
-      {
-       "k": "above",
-       "ok": true,
-       "t": "收在 SMA20 之上（乖離 1.1%）"
-      },
-      {
-       "k": "bias",
-       "ok": true,
-       "t": "乖離 0–6%"
-      },
-      {
-       "k": "high",
-       "ok": true,
-       "t": "未貼近 20 日高"
-      },
-      {
-       "k": "rr",
-       "ok": true,
-       "t": "報酬風險比 1.64 ≥ 1.5"
-      },
-      {
-       "k": "rsi",
-       "ok": true,
-       "t": "RSI 49（45–60）"
-      },
-      {
-       "k": "trend",
-       "ok": false,
-       "t": "日線盤整、週線空頭（不能是空頭）"
-      },
-      {
-       "k": "macd",
-       "ok": true,
-       "t": "MACD 零軸下（不能轉弱）"
-      },
-      {
-       "k": "market",
-       "ok": false,
-       "t": "大盤空頭"
-      },
-      {
-       "k": "vol",
-       "ok": true,
-       "t": "量比 2.57 ≥ 1.2"
-      }
-     ],
-     "watched": false
-    },
-    {
-     "code": "4739.TW",
-     "name": "康普",
-     "market": "TW",
-     "date": "2026-11-24",
-     "close": 70.7,
-     "pct": 8.9368,
-     "entryLow": 68.9352,
-     "entryHigh": 70.6848,
-     "stop": 64.6107,
-     "target1": 80.5529,
-     "rr": 1.6181,
-     "rsi": 48.2297,
-     "volRatio": 1.2925,
-     "bias": 1.0216,
-     "zone": "ABOVE_ZONE",
      "dailyTrend": "盤整",
      "weeklyTrend": "空頭",
      "regime": "BEAR",
@@ -637,12 +282,12 @@
       {
        "k": "rr",
        "ok": true,
-       "t": "報酬風險比 1.62 ≥ 1.5"
+       "t": "報酬風險比 1.69 ≥ 1.5"
       },
       {
        "k": "rsi",
        "ok": true,
-       "t": "RSI 48（45–60）"
+       "t": "RSI 46（45–60）"
       },
       {
        "k": "trend",
@@ -662,29 +307,29 @@
       {
        "k": "vol",
        "ok": true,
-       "t": "量比 1.29 ≥ 1.2"
+       "t": "量比 2.03 ≥ 1.2"
       }
      ],
      "watched": false
     },
     {
-     "code": "2645.TW",
-     "name": "長榮航太",
+     "code": "6148.TWO",
+     "name": "驊宏資",
      "market": "TW",
-     "date": "2026-11-24",
-     "close": 161.0,
-     "pct": 6.2706,
-     "entryLow": 156.9105,
-     "entryHigh": 160.893,
-     "stop": 148.2857,
-     "target1": 181.1929,
-     "rr": 1.5882,
-     "rsi": 49.6981,
-     "volRatio": 1.5819,
-     "bias": 1.0672,
+     "date": "2026-11-25",
+     "close": 49.25,
+     "pct": -3.2417,
+     "entryLow": 47.7627,
+     "entryHigh": 48.9749,
+     "stop": 41.0114,
+     "target1": 62.9607,
+     "rr": 1.6642,
+     "rsi": 52.5308,
+     "volRatio": 1.3234,
+     "bias": 1.5673,
      "zone": "ABOVE_ZONE",
-     "dailyTrend": "盤整",
-     "weeklyTrend": "空頭",
+     "dailyTrend": "多頭",
+     "weeklyTrend": "多頭",
      "regime": "BEAR",
      "entrySignal": false,
      "passed": 7,
@@ -693,7 +338,7 @@
       {
        "k": "above",
        "ok": true,
-       "t": "收在 SMA20 之上（乖離 1.1%）"
+       "t": "收在 SMA20 之上（乖離 1.6%）"
       },
       {
        "k": "bias",
@@ -708,17 +353,88 @@
       {
        "k": "rr",
        "ok": true,
-       "t": "報酬風險比 1.59 ≥ 1.5"
+       "t": "報酬風險比 1.66 ≥ 1.5"
       },
       {
        "k": "rsi",
        "ok": true,
-       "t": "RSI 50（45–60）"
+       "t": "RSI 53（45–60）"
       },
       {
        "k": "trend",
+       "ok": true,
+       "t": "日線多頭、週線多頭（不能是空頭）"
+      },
+      {
+       "k": "macd",
        "ok": false,
-       "t": "日線盤整、週線空頭（不能是空頭）"
+       "t": "MACD 轉弱（不能轉弱）"
+      },
+      {
+       "k": "market",
+       "ok": false,
+       "t": "大盤空頭"
+      },
+      {
+       "k": "vol",
+       "ok": true,
+       "t": "量比 1.32 ≥ 1.2"
+      }
+     ],
+     "watched": false
+    },
+    {
+     "code": "6690.TWO",
+     "name": "安碁資訊",
+     "market": "TW",
+     "date": "2026-11-25",
+     "close": 200.0,
+     "pct": 0.2506,
+     "entryLow": 190.6221,
+     "entryHigh": 195.4603,
+     "stop": 173.0393,
+     "target1": 237.5571,
+     "rr": 1.393,
+     "rsi": 54.4304,
+     "volRatio": 2.3699,
+     "bias": 3.3458,
+     "zone": "ABOVE_ZONE",
+     "dailyTrend": "多頭",
+     "weeklyTrend": "多頭",
+     "regime": "BEAR",
+     "entrySignal": false,
+     "passed": 7,
+     "total": 9,
+     "checks": [
+      {
+       "k": "above",
+       "ok": true,
+       "t": "收在 SMA20 之上（乖離 3.3%）"
+      },
+      {
+       "k": "bias",
+       "ok": true,
+       "t": "乖離 0–6%"
+      },
+      {
+       "k": "high",
+       "ok": true,
+       "t": "未貼近 20 日高"
+      },
+      {
+       "k": "rr",
+       "ok": false,
+       "t": "報酬風險比 1.39 ≥ 1.5"
+      },
+      {
+       "k": "rsi",
+       "ok": true,
+       "t": "RSI 54（45–60）"
+      },
+      {
+       "k": "trend",
+       "ok": true,
+       "t": "日線多頭、週線多頭（不能是空頭）"
       },
       {
        "k": "macd",
@@ -733,15 +449,86 @@
       {
        "k": "vol",
        "ok": true,
-       "t": "量比 1.58 ≥ 1.2"
+       "t": "量比 2.37 ≥ 1.2"
+      }
+     ],
+     "watched": false
+    },
+    {
+     "code": "2474.TW",
+     "name": "可成",
+     "market": "TW",
+     "date": "2026-11-25",
+     "close": 200.5,
+     "pct": -2.6699,
+     "entryLow": 189.9819,
+     "entryHigh": 194.8038,
+     "stop": 183.7464,
+     "target1": 217.2357,
+     "rr": 0.9989,
+     "rsi": 56.1372,
+     "volRatio": 1.4695,
+     "bias": 3.9533,
+     "zone": "ABOVE_ZONE",
+     "dailyTrend": "盤整",
+     "weeklyTrend": "盤整",
+     "regime": "BEAR",
+     "entrySignal": false,
+     "passed": 7,
+     "total": 9,
+     "checks": [
+      {
+       "k": "above",
+       "ok": true,
+       "t": "收在 SMA20 之上（乖離 4.0%）"
+      },
+      {
+       "k": "bias",
+       "ok": true,
+       "t": "乖離 0–6%"
+      },
+      {
+       "k": "high",
+       "ok": true,
+       "t": "未貼近 20 日高"
+      },
+      {
+       "k": "rr",
+       "ok": false,
+       "t": "報酬風險比 1.00 ≥ 1.5"
+      },
+      {
+       "k": "rsi",
+       "ok": true,
+       "t": "RSI 56（45–60）"
+      },
+      {
+       "k": "trend",
+       "ok": true,
+       "t": "日線盤整、週線盤整（不能是空頭）"
+      },
+      {
+       "k": "macd",
+       "ok": true,
+       "t": "MACD 零軸上（不能轉弱）"
+      },
+      {
+       "k": "market",
+       "ok": false,
+       "t": "大盤空頭"
+      },
+      {
+       "k": "vol",
+       "ok": true,
+       "t": "量比 1.47 ≥ 1.2"
       }
      ],
      "watched": false
     }
    ],
    "universe": "證交所＋櫃買中心全市場日收盤，成交金額前 300 名",
-   "seconds": 46,
-   "session": "2026-11-24"
+   "seconds": 62,
+   "session": "2026-11-25"
   },
   "US": {
    "scanned": 300,
@@ -1467,7 +1254,7 @@
     }
    ],
    "universe": "Nasdaq 全市場名單，市值前 300 名",
-   "seconds": 24,
+   "seconds": 18,
    "session": "2026-11-24"
   },
   "CRYPTO": {
@@ -1480,8 +1267,8 @@
     "UNI-USD：HTTPError",
     "SUI-USD：HTTPError",
     "USYC-USD：HTTPError",
-    "TAO-USD：HTTPError",
-    "EURSAFO-USD：HTTPError"
+    "EURSAFO-USD：HTTPError",
+    "TAO-USD：HTTPError"
    ],
    "candidates": 0,
    "signals": 0,
