@@ -1,8 +1,8 @@
 {
-  "generatedAt": "2026-11-25T04:09:08.883434+00:00",
+  "generatedAt": "2026-11-25T05:02:11.474787+00:00",
   "today": {
     "TW": "2026-11-25",
-    "US": "2026-11-24",
+    "US": "2026-11-25",
     "CRYPTO": "2026-11-25"
   },
   "thresholds": {
@@ -2447,10 +2447,10 @@
       "group": "TW|機器人・整機系統"
     },
     "TSM": {
-      "total": 0,
+      "total": 1,
       "max": 10,
       "scored": 5,
-      "score10": 0.0,
+      "score10": 1.0,
       "level": "low",
       "flags": [],
       "gate": {
@@ -2465,11 +2465,11 @@
         },
         "earnings": {
           "score": 0,
-          "why": "財報約 2027-01-14（Yahoo預估，公司尚未確認），還有 37 個交易日",
+          "why": "財報約 2027-01-14（Yahoo預估，公司尚未確認），還有 36 個交易日",
           "estimated": true,
           "date": "2027-01-14",
           "source": "https://finance.yahoo.com/quote/TSM/",
-          "days": 37,
+          "days": 36,
           "provider": "Yahoo"
         },
         "fundamentals": {
@@ -2483,19 +2483,20 @@
           "date": "2026-10-29"
         },
         "policy": {
-          "score": 0,
-          "why": "14 天內沒有排定事件，也沒有生效中的不利政策",
-          "date": "2026-11-25"
+          "score": 1,
+          "why": "2026-12-09 FOMC 利率決議（12/8–9 會議，附經濟預測）",
+          "date": "2026-12-09",
+          "source": "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm"
         }
       },
       "market": "US",
       "group": "US|AI晶片"
     },
     "NVDA": {
-      "total": 0,
+      "total": 1,
       "max": 10,
       "scored": 5,
-      "score10": 0.0,
+      "score10": 1.0,
       "level": "low",
       "flags": [],
       "gate": {
@@ -2510,11 +2511,11 @@
         },
         "earnings": {
           "score": 0,
-          "why": "財報約 2027-02-24（SEC 歷年發布日推估預估，公司尚未確認），還有 66 個交易日",
+          "why": "財報約 2027-02-24（SEC 歷年發布日推估預估，公司尚未確認），還有 65 個交易日",
           "estimated": true,
           "date": "2027-02-24",
           "source": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&type=8-K&CIK=0001045810",
-          "days": 66,
+          "days": 65,
           "provider": "SEC 歷年發布日推估"
         },
         "fundamentals": {
@@ -2529,19 +2530,20 @@
           "date": "2026-10-29"
         },
         "policy": {
-          "score": 0,
-          "why": "14 天內沒有排定事件，也沒有生效中的不利政策",
-          "date": "2026-11-25"
+          "score": 1,
+          "why": "2026-12-09 FOMC 利率決議（12/8–9 會議，附經濟預測）",
+          "date": "2026-12-09",
+          "source": "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm"
         }
       },
       "market": "US",
       "group": "US|AI晶片"
     },
     "AMD": {
-      "total": 0,
+      "total": 1,
       "max": 10,
       "scored": 5,
-      "score10": 0.0,
+      "score10": 1.0,
       "level": "low",
       "flags": [],
       "gate": {
@@ -2556,10 +2558,10 @@
         },
         "earnings": {
           "score": 0,
-          "why": "財報 2027-02-02，還有 50 個交易日（Yahoo，已確認）",
+          "why": "財報 2027-02-02，還有 49 個交易日（Yahoo，已確認）",
           "date": "2027-02-02",
           "source": "https://finance.yahoo.com/quote/AMD/",
-          "days": 50,
+          "days": 49,
           "provider": "Yahoo"
         },
         "fundamentals": {
@@ -2574,19 +2576,20 @@
           "date": "2026-10-29"
         },
         "policy": {
-          "score": 0,
-          "why": "14 天內沒有排定事件，也沒有生效中的不利政策",
-          "date": "2026-11-25"
+          "score": 1,
+          "why": "2026-12-09 FOMC 利率決議（12/8–9 會議，附經濟預測）",
+          "date": "2026-12-09",
+          "source": "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm"
         }
       },
       "market": "US",
       "group": "US|AI晶片"
     },
     "AVGO": {
-      "total": 0,
+      "total": 2,
       "max": 10,
       "scored": 5,
-      "score10": 0.0,
+      "score10": 2.0,
       "level": "low",
       "flags": [],
       "gate": {
@@ -2600,11 +2603,11 @@
           "date": "2026-11-24"
         },
         "earnings": {
-          "score": 0,
-          "why": "財報 2026-12-09，還有 11 個交易日（Yahoo，已確認）",
+          "score": 1,
+          "why": "財報 2026-12-09，還有 10 個交易日（Yahoo，已確認）",
           "date": "2026-12-09",
           "source": "https://finance.yahoo.com/quote/AVGO/",
-          "days": 11,
+          "days": 10,
           "provider": "Yahoo"
         },
         "fundamentals": {
@@ -2619,19 +2622,20 @@
           "date": "2026-10-29"
         },
         "policy": {
-          "score": 0,
-          "why": "14 天內沒有排定事件，也沒有生效中的不利政策",
-          "date": "2026-11-25"
+          "score": 1,
+          "why": "2026-12-09 FOMC 利率決議（12/8–9 會議，附經濟預測）",
+          "date": "2026-12-09",
+          "source": "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm"
         }
       },
       "market": "US",
       "group": "US|AI晶片"
     },
     "MSFT": {
-      "total": 1,
+      "total": 2,
       "max": 10,
       "scored": 5,
-      "score10": 1.0,
+      "score10": 2.0,
       "level": "low",
       "flags": [],
       "gate": {
@@ -2646,11 +2650,11 @@
         },
         "earnings": {
           "score": 0,
-          "why": "財報約 2027-01-27（Yahoo預估，公司尚未確認），還有 46 個交易日",
+          "why": "財報約 2027-01-27（Yahoo預估，公司尚未確認），還有 45 個交易日",
           "estimated": true,
           "date": "2027-01-27",
           "source": "https://finance.yahoo.com/quote/MSFT/",
-          "days": 46,
+          "days": 45,
           "provider": "Yahoo"
         },
         "fundamentals": {
@@ -2665,19 +2669,20 @@
           "date": "2026-10-29"
         },
         "policy": {
-          "score": 0,
-          "why": "14 天內沒有排定事件，也沒有生效中的不利政策",
-          "date": "2026-11-25"
+          "score": 1,
+          "why": "2026-12-09 FOMC 利率決議（12/8–9 會議，附經濟預測）",
+          "date": "2026-12-09",
+          "source": "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm"
         }
       },
       "market": "US",
       "group": "US|AI雲端／記憶體"
     },
     "META": {
-      "total": 2,
+      "total": 3,
       "max": 10,
       "scored": 5,
-      "score10": 2.0,
+      "score10": 3.0,
       "level": "low",
       "flags": [],
       "gate": {
@@ -2692,11 +2697,11 @@
         },
         "earnings": {
           "score": 0,
-          "why": "財報約 2027-01-27（Yahoo預估，公司尚未確認），還有 46 個交易日",
+          "why": "財報約 2027-01-27（Yahoo預估，公司尚未確認），還有 45 個交易日",
           "estimated": true,
           "date": "2027-01-27",
           "source": "https://finance.yahoo.com/quote/META/",
-          "days": 46,
+          "days": 45,
           "provider": "Yahoo"
         },
         "fundamentals": {
@@ -2711,19 +2716,20 @@
           "date": "2026-10-29"
         },
         "policy": {
-          "score": 0,
-          "why": "14 天內沒有排定事件，也沒有生效中的不利政策",
-          "date": "2026-11-25"
+          "score": 1,
+          "why": "2026-12-09 FOMC 利率決議（12/8–9 會議，附經濟預測）",
+          "date": "2026-12-09",
+          "source": "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm"
         }
       },
       "market": "US",
       "group": "US|AI雲端／記憶體"
     },
     "MU": {
-      "total": 0,
+      "total": 1,
       "max": 10,
       "scored": 5,
-      "score10": 0.0,
+      "score10": 1.0,
       "level": "low",
       "flags": [],
       "gate": {
@@ -2738,10 +2744,10 @@
         },
         "earnings": {
           "score": 0,
-          "why": "財報 2026-12-17，還有 17 個交易日（Yahoo，已確認）",
+          "why": "財報 2026-12-17，還有 16 個交易日（Yahoo，已確認）",
           "date": "2026-12-17",
           "source": "https://finance.yahoo.com/quote/MU/",
-          "days": 17,
+          "days": 16,
           "provider": "Yahoo"
         },
         "fundamentals": {
@@ -2756,19 +2762,20 @@
           "date": "2026-10-29"
         },
         "policy": {
-          "score": 0,
-          "why": "14 天內沒有排定事件，也沒有生效中的不利政策",
-          "date": "2026-11-25"
+          "score": 1,
+          "why": "2026-12-09 FOMC 利率決議（12/8–9 會議，附經濟預測）",
+          "date": "2026-12-09",
+          "source": "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm"
         }
       },
       "market": "US",
       "group": "US|AI雲端／記憶體"
     },
     "TSLA": {
-      "total": 1,
+      "total": 2,
       "max": 10,
       "scored": 5,
-      "score10": 1.0,
+      "score10": 2.0,
       "level": "low",
       "flags": [],
       "gate": {
@@ -2783,11 +2790,11 @@
         },
         "earnings": {
           "score": 0,
-          "why": "財報約 2027-01-27（Yahoo預估，公司尚未確認），還有 46 個交易日",
+          "why": "財報約 2027-01-27（Yahoo預估，公司尚未確認），還有 45 個交易日",
           "estimated": true,
           "date": "2027-01-27",
           "source": "https://finance.yahoo.com/quote/TSLA/",
-          "days": 46,
+          "days": 45,
           "provider": "Yahoo"
         },
         "fundamentals": {
@@ -2802,19 +2809,20 @@
           "date": "2026-10-29"
         },
         "policy": {
-          "score": 0,
-          "why": "14 天內沒有排定事件，也沒有生效中的不利政策",
-          "date": "2026-11-25"
+          "score": 1,
+          "why": "2026-12-09 FOMC 利率決議（12/8–9 會議，附經濟預測）",
+          "date": "2026-12-09",
+          "source": "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm"
         }
       },
       "market": "US",
       "group": "US|AI機器人"
     },
     "SPCX": {
-      "total": 0,
+      "total": 1,
       "max": 10,
       "scored": 5,
-      "score10": 0.0,
+      "score10": 1.0,
       "level": "low",
       "flags": [],
       "gate": {
@@ -2829,11 +2837,11 @@
         },
         "earnings": {
           "score": 0,
-          "why": "財報約 2027-02-09（Yahoo預估，公司尚未確認），還有 55 個交易日",
+          "why": "財報約 2027-02-09（Yahoo預估，公司尚未確認），還有 54 個交易日",
           "estimated": true,
           "date": "2027-02-09",
           "source": "https://finance.yahoo.com/quote/SPCX/",
-          "days": 55,
+          "days": 54,
           "provider": "Yahoo"
         },
         "fundamentals": {
@@ -2848,19 +2856,20 @@
           "date": "2026-10-29"
         },
         "policy": {
-          "score": 0,
-          "why": "14 天內沒有排定事件，也沒有生效中的不利政策",
-          "date": "2026-11-25"
+          "score": 1,
+          "why": "2026-12-09 FOMC 利率決議（12/8–9 會議，附經濟預測）",
+          "date": "2026-12-09",
+          "source": "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm"
         }
       },
       "market": "US",
       "group": "US|航太科技"
     },
     "RKLB": {
-      "total": 1,
+      "total": 2,
       "max": 10,
       "scored": 5,
-      "score10": 1.0,
+      "score10": 2.0,
       "level": "low",
       "flags": [],
       "gate": {
@@ -2875,11 +2884,11 @@
         },
         "earnings": {
           "score": 0,
-          "why": "財報約 2027-02-25（SEC 歷年發布日推估預估，公司尚未確認），還有 67 個交易日",
+          "why": "財報約 2027-02-25（SEC 歷年發布日推估預估，公司尚未確認），還有 66 個交易日",
           "estimated": true,
           "date": "2027-02-25",
           "source": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&type=8-K&CIK=0001819994",
-          "days": 67,
+          "days": 66,
           "provider": "SEC 歷年發布日推估"
         },
         "fundamentals": {
@@ -2894,19 +2903,20 @@
           "date": "2026-10-29"
         },
         "policy": {
-          "score": 0,
-          "why": "14 天內沒有排定事件，也沒有生效中的不利政策",
-          "date": "2026-11-25"
+          "score": 1,
+          "why": "2026-12-09 FOMC 利率決議（12/8–9 會議，附經濟預測）",
+          "date": "2026-12-09",
+          "source": "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm"
         }
       },
       "market": "US",
       "group": "US|航太科技"
     },
     "ASTS": {
-      "total": 0,
+      "total": 1,
       "max": 10,
       "scored": 5,
-      "score10": 0.0,
+      "score10": 1.0,
       "level": "low",
       "flags": [],
       "gate": {
@@ -2921,11 +2931,11 @@
         },
         "earnings": {
           "score": 0,
-          "why": "財報約 2027-02-10（SEC 歷年發布日推估預估，公司尚未確認），還有 56 個交易日",
+          "why": "財報約 2027-02-10（SEC 歷年發布日推估預估，公司尚未確認），還有 55 個交易日",
           "estimated": true,
           "date": "2027-02-10",
           "source": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&type=8-K&CIK=0001780312",
-          "days": 56,
+          "days": 55,
           "provider": "SEC 歷年發布日推估"
         },
         "fundamentals": {
@@ -2941,19 +2951,20 @@
           "date": "2026-10-29"
         },
         "policy": {
-          "score": 0,
-          "why": "14 天內沒有排定事件，也沒有生效中的不利政策",
-          "date": "2026-11-25"
+          "score": 1,
+          "why": "2026-12-09 FOMC 利率決議（12/8–9 會議，附經濟預測）",
+          "date": "2026-12-09",
+          "source": "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm"
         }
       },
       "market": "US",
       "group": "US|航太科技"
     },
     "ECHO": {
-      "total": 1,
+      "total": 2,
       "max": 8,
       "scored": 4,
-      "score10": 1.2,
+      "score10": 2.5,
       "level": "low",
       "flags": [],
       "gate": {
@@ -2983,9 +2994,10 @@
           "date": "2026-10-29"
         },
         "policy": {
-          "score": 0,
-          "why": "14 天內沒有排定事件，也沒有生效中的不利政策",
-          "date": "2026-11-25"
+          "score": 1,
+          "why": "2026-12-09 FOMC 利率決議（12/8–9 會議，附經濟預測）",
+          "date": "2026-12-09",
+          "source": "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm"
         }
       },
       "market": "US",
@@ -3021,7 +3033,7 @@
         },
         "chips": {
           "score": 0,
-          "why": "恐懼與貪婪指數 13（極度恐懼）；資金費率 +0.0038%、未平倉量 7 日 -8.9%",
+          "why": "恐懼與貪婪指數 13（極度恐懼）；資金費率 +0.0052%、未平倉量 7 日 -8.9%",
           "date": "2026-11-25",
           "source": "https://alternative.me/crypto/fear-and-greed-index/",
           "label": "情緒／槓桿"
@@ -3066,7 +3078,7 @@
         },
         "chips": {
           "score": 0,
-          "why": "恐懼與貪婪指數 13（極度恐懼）；資金費率 +0.0066%、未平倉量 7 日 -2.6%",
+          "why": "恐懼與貪婪指數 13（極度恐懼）；資金費率 +0.0057%、未平倉量 7 日 -2.6%",
           "date": "2026-11-25",
           "source": "https://alternative.me/crypto/fear-and-greed-index/",
           "label": "情緒／槓桿"

@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-11-25T04:12:00.395299+00:00",
-  "dataTimestamp": "2026-11-25T04:08:23.752556+00:00",
+  "generatedAt": "2026-11-25T05:05:05.375897+00:00",
+  "dataTimestamp": "2026-11-25T05:01:01.755330+00:00",
   "sessions": {
     "TW": "2026-11-24",
     "US": "2026-11-24",
@@ -3083,7 +3083,7 @@
       "mismatch": null,
       "risk": {
         "level": "low",
-        "total": 0,
+        "total": 1,
         "max": 10,
         "reasons": []
       },
@@ -3145,7 +3145,7 @@
       "mismatch": null,
       "risk": {
         "level": "low",
-        "total": 0,
+        "total": 1,
         "max": 10,
         "reasons": []
       },
@@ -3207,7 +3207,7 @@
       "mismatch": null,
       "risk": {
         "level": "low",
-        "total": 0,
+        "total": 1,
         "max": 10,
         "reasons": []
       },
@@ -3265,17 +3265,19 @@
       "roomRR": 201.40638734252002,
       "plan": null,
       "text": "收盤 301.08 低於進場區下緣 324.59，等收盤站回 324.59 以上再看訊號。目前另外還卡：日線空頭、週線空頭、RSI 41（要 45–60）、MACD 轉弱、大盤空頭。",
-      "notes": [],
+      "notes": [
+        "財報 2026-12-09，還有 10 個交易日（Yahoo，已確認）"
+      ],
       "mismatch": null,
       "risk": {
         "level": "low",
-        "total": 0,
+        "total": 2,
         "max": 10,
         "reasons": []
       },
       "hold": {
         "code": "watch",
-        "text": "收盤在 SMA20（329.54）之下，還沒破失效價 300.74（距離 0.1%）。收盤跌破失效價就是出場優先。"
+        "text": "收盤在 SMA20（329.54）之下，還沒破失效價 300.74（距離 0.1%）。收盤跌破失效價就是出場優先。財報 2026-12-09，還有 10 個交易日（Yahoo，已確認）。"
       }
     },
     "MSFT": {
@@ -3323,7 +3325,7 @@
       "mismatch": null,
       "risk": {
         "level": "low",
-        "total": 1,
+        "total": 2,
         "max": 10,
         "reasons": []
       },
@@ -3377,7 +3379,7 @@
       "mismatch": null,
       "risk": {
         "level": "low",
-        "total": 2,
+        "total": 3,
         "max": 10,
         "reasons": []
       },
@@ -3443,7 +3445,7 @@
       "mismatch": null,
       "risk": {
         "level": "low",
-        "total": 0,
+        "total": 1,
         "max": 10,
         "reasons": []
       },
@@ -3481,7 +3483,7 @@
       "mismatch": null,
       "risk": {
         "level": "low",
-        "total": 1,
+        "total": 2,
         "max": 10,
         "reasons": []
       },
@@ -3547,7 +3549,7 @@
       "mismatch": null,
       "risk": {
         "level": "low",
-        "total": 0,
+        "total": 1,
         "max": 10,
         "reasons": []
       },
@@ -3613,7 +3615,7 @@
       "mismatch": null,
       "risk": {
         "level": "low",
-        "total": 1,
+        "total": 2,
         "max": 10,
         "reasons": []
       },
@@ -3675,7 +3677,7 @@
       "mismatch": null,
       "risk": {
         "level": "low",
-        "total": 0,
+        "total": 1,
         "max": 10,
         "reasons": []
       },
@@ -3737,7 +3739,7 @@
       "mismatch": null,
       "risk": {
         "level": "low",
-        "total": 1,
+        "total": 2,
         "max": 8,
         "reasons": []
       },
