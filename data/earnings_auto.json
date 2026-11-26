@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-26T03:31:51.159825+00:00",
+  "updatedAt": "2026-11-26T04:21:48.939747+00:00",
   "note": "scripts/risk.py 自動抓到的美股財報日。要指定日期請改 data/events.json 的 earnings，那邊永遠優先。",
   "symbols": {
     "AMD": {
@@ -21,9 +21,9 @@
     "AVGO": {
       "date": "2026-12-09",
       "dateEnd": null,
-      "estimated": false,
-      "provider": "Yahoo",
-      "source": "https://finance.yahoo.com/quote/AVGO/",
+      "estimated": true,
+      "provider": "Nasdaq",
+      "source": "https://www.nasdaq.com/market-activity/stocks/avgo/earnings",
       "fetchedAt": "2026-11-25"
     },
     "ECHO": {
@@ -53,9 +53,9 @@
     "MU": {
       "date": "2026-12-17",
       "dateEnd": null,
-      "estimated": false,
-      "provider": "Yahoo",
-      "source": "https://finance.yahoo.com/quote/MU/",
+      "estimated": true,
+      "provider": "Nasdaq",
+      "source": "https://www.nasdaq.com/market-activity/stocks/mu/earnings",
       "fetchedAt": "2026-11-25"
     },
     "NVDA": {
@@ -75,11 +75,11 @@
       "fetchedAt": "2026-11-09"
     },
     "SPCX": {
-      "date": "2027-02-09",
+      "date": "2027-01-19",
       "dateEnd": null,
       "estimated": true,
-      "provider": "Yahoo",
-      "source": "https://finance.yahoo.com/quote/SPCX/",
+      "provider": "Nasdaq",
+      "source": "https://www.nasdaq.com/market-activity/stocks/spcx/earnings",
       "fetchedAt": "2026-11-25"
     },
     "TSLA": {
