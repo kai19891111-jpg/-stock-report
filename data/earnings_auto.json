@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-26T04:21:48.939747+00:00",
+  "updatedAt": "2026-11-26T08:47:18.520604+00:00",
   "note": "scripts/risk.py 自動抓到的美股財報日。要指定日期請改 data/events.json 的 earnings，那邊永遠優先。",
   "symbols": {
     "AMD": {
@@ -8,7 +8,7 @@
       "estimated": false,
       "provider": "Yahoo",
       "source": "https://finance.yahoo.com/quote/AMD/",
-      "fetchedAt": "2026-11-25"
+      "fetchedAt": "2026-11-26"
     },
     "ASTS": {
       "date": "2026-11-09",
@@ -21,10 +21,10 @@
     "AVGO": {
       "date": "2026-12-09",
       "dateEnd": null,
-      "estimated": true,
-      "provider": "Nasdaq",
-      "source": "https://www.nasdaq.com/market-activity/stocks/avgo/earnings",
-      "fetchedAt": "2026-11-25"
+      "estimated": false,
+      "provider": "Yahoo",
+      "source": "https://finance.yahoo.com/quote/AVGO/",
+      "fetchedAt": "2026-11-26"
     },
     "ECHO": {
       "date": "2026-11-06",
@@ -40,7 +40,7 @@
       "estimated": true,
       "provider": "Yahoo",
       "source": "https://finance.yahoo.com/quote/META/",
-      "fetchedAt": "2026-11-25"
+      "fetchedAt": "2026-11-26"
     },
     "MSFT": {
       "date": "2027-01-27",
@@ -48,15 +48,15 @@
       "estimated": true,
       "provider": "Yahoo",
       "source": "https://finance.yahoo.com/quote/MSFT/",
-      "fetchedAt": "2026-11-25"
+      "fetchedAt": "2026-11-26"
     },
     "MU": {
       "date": "2026-12-17",
       "dateEnd": null,
-      "estimated": true,
-      "provider": "Nasdaq",
-      "source": "https://www.nasdaq.com/market-activity/stocks/mu/earnings",
-      "fetchedAt": "2026-11-25"
+      "estimated": false,
+      "provider": "Yahoo",
+      "source": "https://finance.yahoo.com/quote/MU/",
+      "fetchedAt": "2026-11-26"
     },
     "NVDA": {
       "date": "2026-11-17",
@@ -75,12 +75,12 @@
       "fetchedAt": "2026-11-09"
     },
     "SPCX": {
-      "date": "2027-01-19",
+      "date": "2027-02-09",
       "dateEnd": null,
       "estimated": true,
-      "provider": "Nasdaq",
-      "source": "https://www.nasdaq.com/market-activity/stocks/spcx/earnings",
-      "fetchedAt": "2026-11-25"
+      "provider": "Yahoo",
+      "source": "https://finance.yahoo.com/quote/SPCX/",
+      "fetchedAt": "2026-11-26"
     },
     "TSLA": {
       "date": "2027-01-27",
@@ -88,7 +88,7 @@
       "estimated": true,
       "provider": "Yahoo",
       "source": "https://finance.yahoo.com/quote/TSLA/",
-      "fetchedAt": "2026-11-25"
+      "fetchedAt": "2026-11-26"
     },
     "TSM": {
       "date": "2027-01-14",
@@ -96,7 +96,7 @@
       "estimated": true,
       "provider": "Yahoo",
       "source": "https://finance.yahoo.com/quote/TSM/",
-      "fetchedAt": "2026-11-25"
+      "fetchedAt": "2026-11-26"
     }
   }
 }
