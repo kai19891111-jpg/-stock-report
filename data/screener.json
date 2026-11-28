@@ -1,5 +1,5 @@
 {
- "generatedAt": "2026-11-28T04:17:20.415146+00:00",
+ "generatedAt": "2026-11-28T08:21:59.154246+00:00",
  "params": {
   "rsi_lo": 45,
   "rsi_hi": 60,
@@ -670,7 +670,7 @@
     }
    ],
    "universe": "證交所＋櫃買中心全市場日收盤，成交金額前 300 名",
-   "seconds": 41,
+   "seconds": 39,
    "session": "2026-11-27"
   },
   "US": {
@@ -1397,13 +1397,13 @@
     }
    ],
    "universe": "Nasdaq 全市場名單，市值前 300 名",
-   "seconds": 27,
+   "seconds": 19,
    "session": "2026-11-27"
   },
   "CRYPTO": {
    "scanned": 30,
-   "ok": 23,
-   "failed": 7,
+   "ok": 22,
+   "failed": 8,
    "failedSample": [
     "FIGR_HELOC-USD：HTTPError",
     "CC-USD：HTTPError",
@@ -1411,13 +1411,14 @@
     "SUI-USD：HTTPError",
     "TAO-USD：HTTPError",
     "USYC-USD：HTTPError",
-    "EURSAFO-USD：HTTPError"
+    "EURSAFO-USD：HTTPError",
+    "BTW-USD：HTTPError"
    ],
    "candidates": 0,
    "signals": 0,
    "picks": [],
    "universe": "CoinGecko 市值前 30 名（排除穩定幣、包裝與質押代幣）",
-   "seconds": 7,
+   "seconds": 6,
    "session": null
   }
  }
